@@ -1,0 +1,1833 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>YSFLIGHT PILOT'S MANUAL</title>
+</head>
+
+<body topmargin="16" leftmargin="16" style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0">
+
+<center>
+
+          <p align="left"><b><font size="4" face="Arial">YS FLIGHT SIMULATOR<br>
+          PILOT'S MANUAL<br>
+          REVISION 08/09/2013</font></b></p>
+
+          <p align="left"></p>
+        </center>
+<table border="3" width="100%" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>
+          <p align="left">YSFLIGHT Family:&nbsp;</p>
+          <ul>
+            <li>
+              <p align="left">YS FLIGHT SIMULATOR (Free)</li>
+            <li>
+              <p align="left"><a href="http://homepage3.nifty.com/ysflight/aircraftsoft/aircraftsofte.html#ACROSCSV">United
+              States and Japanese Aerobatic Screensaver</a> ($15, free to try)</li>
+            <li>
+              <p align="left"><a href="http://homepage3.nifty.com/ysflight/aircraftsoft/aircraftsofte.html#DFSCSV">3D Dogfight
+              Screensaver</a> ($15, free to try)</li>
+            <li>
+              <p align="left"><a href="http://homepage3.nifty.com/ysflight/aircraftsoft/aircraftsofte.html#LDGSCSV">3D
+              Landing Screensaver</a> ($15, free to try)</li>
+            <li>
+              <p align="left">
+              <a href="http://homepage3.nifty.com/ysflight/aircraftsoft/aircraftsofte.html#CONCORDESCSVDX">
+              Concorde Screensaver Delux</a> (Free)</li>
+            <li>
+              <p align="left" style="margin-top: 0; margin-bottom: 0">
+              <a href="http://homepage3.nifty.com/ysflight/aircraftsoft/aircraftsofte.html#SCNEDIT">
+              YSFLIGHT Scenery Editor</a> ($15, free to try)</li>
+          </ul>
+          <p align="left">Available at&nbsp;</p>
+          <blockquote>
+            <p align="left"><a href="http://download.en.ysflight.com">YSFLIGHT.COM
+            Airplane Software Section</a></p>
+          </blockquote>
+    </td>
+  </tr>
+</table>
+
+<center>
+
+          <p align="left"></p>
+
+          <p align="left"></p>
+        </center>
+<p>  </p>
+<p>  </p>
+          <p align="left"><i><img border="0" src="opengl_concorde.png" align="right" width="407" height="193"><font size="5">CONTENTS</font></i></p>
+          <ul>
+            <li>
+              <p align="left"><a href="#Introduction">Introduction</a></li>
+            <li>
+              <p align="left" style="margin-top: 0; margin-bottom: 0"><a href="#SYSREQ">System Requirement</a></li>
+            <li>
+              <p align="left"><a href="#LAUNCH">Launching The Program</a></li>
+            <li>
+              <p align="left"><a href="#TERMINATE">Terminating The Program</a></li>
+            <li>
+              <p align="left"><a href="#INSTANTFLIGHT">Instant Flight</a></li>
+            <li>
+              <p align="left"><a href="#IFSLOW">If the program does not run fast....</a></li>
+            <li>
+              <p align="left"><a href="#CONFIGDLG">Configuration Dialog</a></li>
+            <li>
+              <p align="left"><a href="#OPTIONDLG">Option Dialog</a></li>
+            <li>
+              <p align="left"><a href="#CONTROLASSIGNMENT">Changing 
+              Key/Mouse/Joystick Assignment</a></li>
+            <li>
+              <p align="left" style="margin-top: 0; margin-bottom: 0"><a href="#PREPARETOFLY">Prepare To Fly<br>
+              </a>- <a href="#FREEFLIGHT">Free flight</a><br>
+              - <a href="#DOGFIGHT">Air combat</a><br>
+              - <a href="#INSTANTDOGFIGHT">Instant dogfight</a><br>
+              - <a href="#INTERCEPTMISSION">Intercept Mission
+              </a> <br>
+              - <a href="#CLOSEAIRSUPPORTMISSION">Close Air Support Mission</a><br>
+              - <a href="#CONFIGENVIRONMENT">Configure Day/Night, Fog, and Wind<br>
+              </a>- <a href="#PREVMISSION">Re-trying the Previous Mission</a></li>
+            <li>
+              <p align="left"><a href="#HOWTOCONTROL">Flying an Airplane
+              (Keystrokes, Mouse and Joystick)</a></li>
+            <li>
+              <p align="left"><a href="#WEAPONS">Weapon System</a></li>
+            <li>
+              <p align="left"><a href="#RADARNAVAID">Navigation Aid (VOR and ADF), 
+              Instrument Landing System (ILS), and RADAR</a></li>
+            <li>
+              <p align="left"><a href="#IFR">Instrument Flight</a></li>
+            <li>
+              <p align="left"><a href="#FUELAMMOSUPPLY">Fuel/Ammo Supply</a></li>
+            <li>
+              <p align="left"><a href="#NETWORK">Network Play</a></li>
+            <li>
+              <p align="left" style="margin-top: 0; margin-bottom: 1"><a href="#YFSUTIL">Flight Record Utility</a></li>
+            <li>
+              <p align="left" style="margin-top: 0; margin-bottom: 1">
+              <a href="#GROUNDVEHICLE">Ground Vehicles</a><br>
+              - <a href="#GROUNDVEHICLECONTROL">Controlling Ground Vehicles</a><br>
+              - Ground to Air Defense Mission</li>
+            <li>
+              <p align="left"><a href="#PROGRAMMING">If you are interested in 3D Graphics programming</a></li>
+            <li>
+              <p align="left"><a href="#CONTACT">Contact Information</a></li>
+            <li>
+              <p align="left"><a href="#APPENDIX-A">Appendix A - Notation of the position</a></li>
+            <li>
+              <p align="left"><a href="#APPENDIX-B">Appendix B - Sample missions</a></li>
+            <li>
+              <p align="left"><a href="#APPENDIX-C">Appendix C - Anti Ground Attack missions</a></li>
+            <li>
+              <p align="left"><a href="#COMPARAM">Appendix D - Command
+              Parameters</a></li>
+            <li>
+              <p align="left"><a href="#CONFIGFILES">Appendix E - Configuration
+              Files</a></li>
+          </ul>
+          <p align="left">If you are using Windows XP Service Pack 2, and would 
+          like to use the network mode, please read <a href="xpsp2e.html">this 
+          page</a>, too.</p>
+          <p align="left"></p>
+          <p align="left">(*)Please also refer to the YSFLIGHT support page. 
+          YSFLIGHT support page is linked from</p>
+          <blockquote>
+            <p align="left"><a href="http://www.ysflight.com">http://www.ysflight.com</a></p>
+          </blockquote>
+    <p>  </p>
+<p>  </p>
+<p>  </p>
+<center>
+
+          <h2 align="left"><a name="Introduction"></a><u>Introduction</u></h2>
+          <p align="left">
+          <img border="0" src="opengl_f22.png" align="right" width="328" height="256">This program is a flight simulator. You can fly an airplane in your
+          PC. In this simulator, you can:&nbsp;</p>
+          <ul>
+            <li>
+              <p align="left">Take off and land</li>
+            <li>
+              <p align="left">Dogfight with computer airplane</li>
+            <li>
+              <p align="left">Attack ground targets</li>
+            <li>
+              <p align="left">Fly a formation leader</li>
+            <li>
+              <p align="left">Trail smoke to draw a picture in the sky</li>
+            <li>
+              <p align="left">Fight against your opponent over network</li>
+          </ul>
+        </center>
+        <p align="left">You can choose your airplane from more than 30 modern airplanes.
+        Like other flight simulators, you can change viewpoint while flying. You can
+        watch your airplane from outside, from the opponent airplane's view, missile view, etc. When you are watching from the outside, you'll see
+        the motion of the landing gear and rotation of propeller if you are flying
+        a propeller airplane.&nbsp;
+        </p>
+    <p><br clear="all">
+  </p>
+<p>  </p>
+        <h2 align="left"><u><a name="SYSREQ"></a>System Requirement</u></h2>
+        <p align="left">Following environment is required.&nbsp;</p>
+        <ul>
+          <li>
+            <p align="left">Windows XP SP3, Windows 7, Windows 8, Linux, Mac OS 
+            10.6.x or higher</li>
+          <li>
+            <p align="left">Pentium 1.2GMHz or faster&nbsp;</li>
+          <li>
+            <p align="left">The program requires roughly 20MB of available 
+            memory to run.</li>
+          <li>
+            <p align="left">DirectX 9.0 or OpenGL 1.2 or higher</li>
+        </ul>
+          <p align="left">If you are using Windows XP Service Pack 3, and would 
+          like to use the network mode, please read <a href="xpsp2e.html">this 
+          page</a>, too.</p>
+        <p align="left">Following devices are recommended but not required.&nbsp;</p>
+        <ul>
+          <li>
+            <p align="left">Joystick. It's better if the joystick has a POV control. Even better      if you have a throttle lever, and don't forget a rudder pedal :-)&nbsp;</li>
+        </ul>
+    <p>  </p>
+<p>  </p>
+        <h2 align="left"><u><a name="LAUNCH"></a>Launching the program</u></h2>
+        <p align="left"><b>[Windows]</b></p>
+        <p align="left">&nbsp;You can launch a program from choosing an item from:</p>
+        <blockquote>
+          <p align="left"><b>START MENU -&gt; Program -&gt; YS FLIGHT SIMULATOR</b></p>
+        </blockquote>
+        <p align="left">You can choose one of the following.&nbsp; If you
+        keep&nbsp; SHIFT key pressed down while starting the program, the
+        program always start in normal window mode (not full screen mode).&nbsp;
+        See &quot;<a href="#OPTIONDLG">Option Dialog</a>&quot; for more details.</p>
+        <p align="left"></p>
+        <table border="2">
+          <tr>
+            <td><b>YSFLIGHT OpenGL 2.0</b></td>
+            <td>OpenGL 2.0: Best-quality graphics.&nbsp; Requires reasonably 
+            good display adapter.</td>
+          </tr>
+          <tr>
+            <td><b>YSFLIGHT OpenGL 1.x</b></td>
+            <td>OpenGL 1.x:
+              Polygons are smooth-shaded.&nbsp; Typically runs faster than
+              CPU-Rendered version when PC's graphics card is equipped with an
+              OpenGL accelerator.&nbsp; The graphics quality is better than
+              CPU-Rendered version.</td>
+          </tr>
+          <tr>
+            <td><b>YSFLIGHT Direct3D</b></td>
+            <td>Direct3D9: Some graphics cards that is not capable of 
+            drawing OpenGL fast may be able to draw Direct 3D fast.&nbsp; If 
+            OpenGL version does not work well, you can try Direct3D version.</td>
+          </tr>
+          <tr>
+            <td><b>YSFLIGHT Console Server</b></td>
+            <td>This program works as a network server.&nbsp; You cannot fly 
+            with this program.</td>
+          </tr>
+        </table>
+        <p align="left">If you are not sure which executables to use, please try
+        both and use whichever you feel comfortable.&nbsp; (Most of the recent
+        graphics cards are equipped with OpenGL accelerator, though).</p>
+        <p align="left">  </p>
+        <p align="left"><b>[Mac]</b></p>
+        <p align="left">Double-click on ysflight bundle.</p>
+        <p align="left">  </p>
+        <p align="left"><b>[Linux]</b></p>
+        <p align="left">Please move to the directory in which you extracted
+        files, and type:</p>
+        <p align="left">% ysflight2</p>
+        <p align="left">&quot;% &quot; here is showing a prompt.&nbsp; So, you really need 
+        to type only &quot;ysflight2&quot;&nbsp; If the program doesn't start, please also 
+        try:</p>
+        <p align="left">% ./ysflight2</p>
+        <p align="left">It will work if . (current directory) is not included in 
+        path.&nbsp; The executable &quot;ysflight2&quot; uses OpenGL 2.0 features.&nbsp; 
+        However, if your environment is not OpenGL 2.0 capable, just type &quot;ysflight&quot; 
+        instead.</p>
+        <p align="left">You can start a console-server version by typing:</p>
+        <p align="left">% ./ysflight-consvr</p>
+        <p align="left">If you run a console-server version, make sure your 
+        console window has at least 25 lines, or the messages will be messed up.</p>
+        <p align="left">Please also read the <a href="#COMPARAM">command
+        parameters</a> section.&nbsp; There's no Non-OpenGL version for Linux.&nbsp;&nbsp;&nbsp; </p>
+        <p>  </p>
+<p>  </p>
+        <h2 align="left"><u><a name="TERMINATE"></a>Terminating the program</u></h2>
+        <p align="left">Choose <b>File-&gt;Exit</b> to terminate the program.&nbsp;</p>
+    <p>  </p>
+<p>  </p>
+        <h2 align="left"><u><a name="INSTANTFLIGHT"></a>Instant Flight</u></h2>
+        <p align="left">
+        OK. Let's fly before going into boring explanations. The following steps will take you to the airfield.
+        (In Linux, please start the program by typing <b>ysflight -flyyfs fly_f22.yfs</b>
+        , instead of steps 1 to 5.&nbsp; Case sensitive.)</p>
+        <ol>
+          <li>
+            <p align="left">Launch the program.&nbsp;</li>
+          <li>
+            <p align="left">Press ESC key to terminate the demonstration.&nbsp;</li>
+          <li>
+            <p align="left">Choose <b>Simulation -&gt; Create New Flight<br>
+            </b>
+            <img border="0" src="Simulation_CreateNewFlight.png" width="400" height="320"></li>
+          <li>
+            <p align="left">Click &quot;Fly Now&quot; button in &quot;Create New Flight&quot; 
+            dialog.<br>
+            <img border="0" src="FlyNowButton.png" width="415" height="443"></li>
+          <li>
+            <p align="left">At this point, you may get the following warning message:<br>
+            <b>&nbsp;&nbsp;&nbsp; &quot;Joystick is not connected or configured&quot;</b><br>
+    If you have a joystick connected, and still getting this warning,    you might not have configured the joystick in the control panel.    Go to
+            <b>StartMenu-&gt;Setting-&gt;ControlPanel-&gt;Joystick</b>, configure it    and try again.&nbsp;<br>
+    If you do not have a joystick and you don't want to have this    warning, go to
+            <a href="#CONFIGDLG">Configuration</a> and    turn off joysticks, or buy a new joystick :-)</li>
+          <li>
+            <p align="left">Center the joystick. If you don't have a joystick, you    have to use mouse instead of joystick. You can move    mouse
+            to know the correspondence of mouse cursor and    joystick position.</li>
+          <li>
+            <p align="left">    Move the stick to the center before proceed. Press any    trigger button, mouse button or space key to go to    airfield.<br>
+            <img border="0" src="joystick.png" width="391" height="357">&nbsp;</li>
+          <li>
+            <p align="left">Ready to fly!<br>
+            <img border="0" src="takeoff.png" width="601" height="440"></li>
+        </ol>
+        <p align="left">Now, you are ready to fly. I don't explain the details of the
+        flight dynamics here. I hope you know how to fly an airplane :-) So, press TAB key to turn on afterburner. After getting 120kt, slowly pull the stick back (move mouse down).  </p>
+        <blockquote>
+        <p align="left">
+        <img border="0" src="120kt.png" width="601" height="440"></p>
+        </blockquote>
+        <p align="left">If you pull the stick too much before gaining sufficient 
+        airspeed, it may cause a tail-strike accident, or if you are in a big 
+        airplane, the airplane may not be able to accelerate to the take-off 
+        speed within the length of the runway because of the drag.&nbsp; Make sure
+        you have enough airspeed, then pull the stick slowly. Then, the airplane will take you to the air. Have fun! You can read about
+        detailed control in &quot;<a href="#HOWTOCONTROL">How to control?</a>&quot;
+        section.&nbsp;</p>
+    <p>  </p>
+<p>  </p>
+        <h2 align="left"><u><a name="IFSLOW"></a>If the program does not run fast...</u></h2>
+        <p align="left">
+        <img border="0" src="opengl_f18e.png" align="right" width="426" height="279">I 
+        am trying to make this program run comfortable in a three-year old PC.&nbsp; 
+        In fact, I am compiling and testing this program on my 2008 MacBook Pro.&nbsp; 
+        However, you may have to turn off some features or lower the resolution 
+        to run this program on relatively slower PCs.&nbsp;</p>
+        <p align="left">If you are using YSFLIGHT on Windows, there are three 
+        different executables included in the installation package, &quot;OpenGL 
+        2.0&quot;, &quot;OpenGL 1.x&quot;, and &quot;Direct 3D&quot;, which you can choose from Start 
+        Menu.</p>
+        <p align="left">Most of the recent PCs are equipped with a 3D-graphics 
+        capable display adapter.&nbsp; If you are lucky enough, OpenGL 2.0 
+        implementation will give good-enough performance and good graphics 
+        quality.&nbsp; However, sometimes implementation of OpenGL is 
+        incomplete, or in many cases flawed.&nbsp; In that case, you can try 
+        YSFLIGHT Direct3D.&nbsp; It can be opposite.&nbsp; OpenGL implementation 
+        may work and Direct 3D implementation may fall apart.</p>
+        <p align="left">If you are using Linux, there's no &quot;CPU Rendered&quot; or 
+        &quot;Direct 3D&quot; version.&nbsp; Please make sure your X-Window system 
+        supports OpenGL.&nbsp; If you installed Linux from scratch, most likely 
+        the OpenGL driver was not installed with the basic package.&nbsp; You 
+        may need to go through a painful process to install the OpenGL driver.&nbsp; 
+        (Painful unless you are an Linux system expert.&nbsp; At least that was 
+        painful to me.)&nbsp; But, if you are successful, and if your display 
+        adapter supports 3D acceleration, you will be able to enjoy YSFLIGHT in 
+        Linux.</p>
+        <p align="left">Your choice of the field will affect the speed. Most air fields
+        have many facilities, hangars and other ground objects. If your PC is not very fast, the program cannot take care of those ground
+        objects quickly. However, the field &quot;SMALL_MAP&quot; does not have many ground objects. If you want to fly a dogfight or an endurance mode,
+        you may not care much about the ground. In such cases, choosing &quot;SMALL_MAP&quot; will be better in terms of the program speed.&nbsp;
+        In contrast, a map &quot;TOHOKU&quot;, which is available after 20010718
+        version, is heavy.&nbsp; You need at least a PenIII450MHz and a fast
+        graphics card to play TOHOKU map without stress.&nbsp; &quot;NORTH_KYUSYU&quot; 
+        would be the most complex scenery that comes with the standard package, 
+        and you may require a decent display adapter to fly comfortably in that 
+        scenery.</p>
+        <p align="left">If you still feel slow, you can go to <a href="#CONFIGDLG">Configuration Dialog</a>
+        and turn off some features. Choose <b> Option-&gt;Config</b> and press "Draw Fast" button.
+        Settings will automatically be customized for relatively slower PCs. You can turn off some more features to speed up, but I do not
+        recommend. (For the detail, see <a href="#CONFIGDLG">Configuration Dialog</a>)&nbsp;</p>
+        <p align="left">If still you feel slow after turning off features, you can lower
+        the resolution. Then, go to <a href="#OPTIONDLG">Option Dialog</a> and choose lower resolution.&nbsp;</p>
+        <p align="left">If you are running this program under Windows NT, you'll feel
+        some short stopping while flying. Typically, when you change throttle setting, fire a gun, stop firing a gun etc...
+        In such case, go to <a href="#OPTIONDLG">Option Dialog</a> and turn off sound. This Windows NT's stopping is caused by WAV
+        playing function.&nbsp; </p>
+    <p>  </p>
+<p>  </p>
+        <h2 align="left"><u><a name="CONFIGDLG"></a>Config Dialog</u></h2>
+        <p align="left">In the Configuration Dialog, you can configure graphics features and simulation features. Each setting means:</p>
+        <p align="left"><font face="Arial"><b>[Default Tab]</b></font></p>
+        <p align="left">
+        <img border="0" src="configdlg1.png" width="361" height="487">&nbsp;</p>
+        <p align="left"><b>Default Environment</b><br>
+        You can choose DAY or NIGHT.</p>
+        <p align="left"><b>Light Direction</b><br>
+        Specify from which direction the scene is lit.</p>
+        <p align="left"><b>Default Airplane</b><br>
+ The airplane chosen in
+        this list will first show up in the <a href="#SELECTAIRPLANE">airplane
+        selection screen.</a></p>
+        <p align="left"><b>Default Field</b><br>
+        The field chosen in this list will first show up in the create-flight
+        dialog.</p>
+        <p align="left"><b>Default Position</b><br>
+        The start position chosen in this list will first show up in the
+        create-flight dialog.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+        <p align="left"><font face="Arial"><b>[Game Tab]</b></font></p>
+        <p align="left">
+        <img border="0" src="configdlg2.png" width="363" height="487"></p>
+        <p align="left"><b>Black Out<br>
+        </b>  If this box is on, when you apply a high G force, you will lose visibility  gradually, and finally will be blacked out. (If high negative G force, will  red out).&nbsp;</p>
+        <p align="left"><b>Mid Air Collision<br>
+        </b>  If this box is on, when you collided with another airplane, your airplane  will get damage, and typically, will crash. If this box is off, your airplane  will never collide with another airplane.&nbsp;</p>
+        <p align="left"><b>No Tail Strike Accident</b><br>
+        If this box is on, the airplane will not explode when you strike tail on 
+        take off or landing.</p>
+        <p align="left"><b>Can Land Anywhere</b><br>
+        If this box is checked, you can land anywhere.&nbsp; However, if the
+        speed is too fast (like more than 20kt) the airplane will vibrate
+        violently, and ends up crashing or tail-striking.</p>
+        <p align="left"><b>Rudder Auto Coordination<br>
+        </b>  If this box is on, computer automatically control the rudder to eliminate  sideslip of the airplane. To be fair, it is applied to all airplanes flying  (except recorded airplanes). In actual flight, a pilot has to use rudder  pedal while turning so that the airplane will not have side slip. It is called  "turn coordination". But, I guess many users do not have a rudder pedal, and  it is a pain to coordinate a turn by keyboard. So you can turn on this box.</p>
+        <p align="left"><b>Precise Simulation<br>
+        </b>  If this box is on, the program computes dynamics at least every 50ms. If this  box is off, the program computes dynamics once when a screen is refreshed once.  Usually, refreshing a screen takes more time than 50ms. So, if this box is off,  the simulation is less precise. (I don't recommend you to turn off this box.  You may try if this program runs really slow on your PC).&nbsp;</p>
+        <p align="left"><b>Always show HUD<br>
+        </b>If this box is checked, HUD is shown even when you are
+        looking at your airplane from the outside.</p>
+        <p align="left"><b>Use Simple HUD</b><br>
+        If this box is checked, simplified version of HUD will be shown.&nbsp; 
+        In a low-resolution environment, the simplified HUD may be easier to 
+        read than the standard HUD.</p>
+        <p align="left"><b>Do not Use Instrument Panel<br>
+        </b>If this box is checked, the program draws Head Up Display no matter 
+        if the airplane has an instrument panel or not.</p>
+        <p align="left"><b>Always Draw Player Name<br>
+        </b>If<b> </b>this box is checked, player name is always visible.</p>
+        <p align="left"><b>Draw Virtual Joystick<br>
+        </b>If this box is checked, small virtual joystick will be drawn on the 
+        screen while flying.</p>
+        <p align="left"><b>F8 Camera Delay</b><br>
+        If this box is on, external airplane camera (assigned to F8 key by 
+        default) follows the airplane with some time delay.</p>
+        <p align="left"><b>Do not show an airplane on radar if it is below XXXX 
+        ft.<br>
+        </b>The airplane flying below XXXX ft and far from the player airplane 
+        will not be shown on the radar.</p>
+        <p align="left"><b>Show IAS</b><br>
+        If this check box is on, the airspeed shown in the instrument and HUD 
+        will be indicated airspeed (IAS).&nbsp; If this box is off, true 
+        airspeed (TAS) will be shown.&nbsp; In a real airplane, the airspeed 
+        indicator shows IAS.&nbsp; Default setting is ON.</p>
+        <p align="left"></p>
+        <p align="left"><font face="Arial"><b>[Graphics Tab]</b></font></p>
+        <p align="left">
+        <img border="0" src="configdlg3.png" width="361" height="485"></p>
+        <p align="left"><b>Draw Shadow<br>
+        </b>  If this check box is on, the shadow of the airplane is drawn precisely  when the airplane is flying low. If this box is off, still the shadow  is drawn, but the shadow is roughly drawn.&nbsp;</p>
+        <p align="left"><b>Draw Shadow of Dead Airplane<br>
+        </b>If this box is checked, the program draws shadow of crashed
+        airplanes.&nbsp;</p>          
+        <p align="left"><b>Draw Ordinance<br>
+        </b>If this box is checked, the program draws ordinances loaded on the
+        airplanes.</p>          
+        <p align="left"><b>Draw Coarse Weapon<br>
+        </b>If this box is checked, the program draws weapons with less polygons 
+        so that it can draw scenes faster.</p>          
+        <p align="left"><b>Horizon Gradation<br>
+        </b>  If this check box is on, you'll see a gradation on the horizon. If  this box is off, no gradation on the horizon.&nbsp;</p>
+        <p align="left"><b>Draw Cloud<br>
+        </b>  As it is.&nbsp;</p>
+        <p align="left"><b>Solid Cloud / Flat Cloud<br>
+        </b>If Solid Cloud is chosen (default) the cloud will have some volume, 
+        otherwise (if Flat Cloud is chosen) the cloud will not have volume (just 
+        flat).</p>          
+        <p align="left"><b>Airplane Graphics</b><br>
+        Automatic : Draws high quality model when an airplane is close to the
+        viewpoint, and low quality model when far away.<br>
+        Always High Quality : Draw high quality model regardless of the distance
+        from the viewpoint.<br>
+        Always Coarse : Draw low quality model regardless of the distance from
+        the viewpoint.&nbsp;</p>          
+        <p align="left"><b>Draw Light in Daylight<br>
+        </b>If this box is checked, runway lights and city lights are visible in
+        DAY mode.</p>
+        <p align="left"><b>Smoke<br>
+        </b>Configure type of smoke, how long the smoke remains and the resolution of  the smoke.</p>
+        <p align="left">  You can choose a type of smoke from: towel, solid, circle and noodle.  Towel smoke looks like a
+        lo---ng towel.  Solid smoke is most similar to actual smoke. But solid smoke takes more  time to draw than other types.  Noodle smoke looks like a
+        lo---ng noodle. It can be drawn quickly, but  does not look nice.&nbsp;</p>
+        <p align="left">  If you choose circle smoke, the smoke is drawn as a sequence of circles.  it cannot be drawn very fast, also does not look good. So I don't  recommend it. I just experimentally implemented this feature.</p>
+        <p align="left">  Remain ?? seconds, means as it is.</p>
+        <p align="left">Draw every ?? steps specifies the resolution of the smoke. If you specify  smaller number, the resolution becomes better, but the drawing will be  slower. By default, smoke is drawn every 4 steps.&nbsp;</p>
+        <p align="left"><font face="Arial"><b>[OpenGL Tab]</b></font></p>          
+        <p align="left">
+        <img border="0" src="configdlg4.png" width="361" height="485"></p>          
+        <p align="left"><b>Fog<br>
+        </b>If this box is checked, the program draws fog, which increases
+        reality a little bit.&nbsp; Only available on OpenGL version.&nbsp; This
+        option, however, requires a card that can draw OpenGL graphics fast.</p>          
+        <p align="left"><b> Z-Buffer Quality<br>
+        </b>It specifies quality of Z-Buffering in OpenGL version.&nbsp; You can
+        choose one of &quot;LOW(FAST)&quot;, &quot;HIGH&quot;, &quot;VERY
+        HIGH&quot;, and &quot;SUPER HIGH.&quot;&nbsp; Lower Z-Buffer quality
+        gives higher frame ratio, but you'll see some objects that are not
+        supposed to be visible.&nbsp; Higher Z-Buffer quality gives better
+        graphics and you'll less likely see objects that are not supposed to be
+        visible, but by sacrificing frame ratio.</p>          
+        <p align="left"><b>Transparent Object (OpenGL only)<br>
+        </b>Some objects (typically afterburner) become semi-transparent if it
+        is checked.</p>          
+        <p align="left"><b>Transparent Smoke (OpenGL only)<br>
+        </b>Smokes become semi-transparent if it is checked.</p>          
+        <p align="left"><b>Transparent Vapor (OpenGL only)<br>
+        </b>Vapor become semi-transparent if it is checked.</p>          
+        <p align="left"><b>Reduce Peep Hole Made by Transparent Polygons (OpenGL 
+        only)</b><br>
+        Transparent polygons sometimes makes <i>peep holes</i> in which you'll 
+        see something that is supposed to be hidden by another object.&nbsp; 
+        Perfectly eliminating such peep holes is computationally intensive, and 
+        will make the program very slow.&nbsp; However, I can reduce such peep 
+        holes by slight increase of computation.&nbsp; If you turn this check 
+        box on, the program will try to reduce such peep holes.&nbsp; An example 
+        of the effect of this check box is shown below.</p>          
+        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+          <tr>
+            <td width="50%">
+            <img border="0" src="peephole1.png" width="391" height="268"></td>
+            <td width="50%" valign="top">&lt;- &quot;Reduce Peep Hole Made by 
+            Transparent Polygons&quot; off.&nbsp; The horizon that is supposed to be 
+            hidden by the hangar is visible through a peep hole created by the 
+            propeller polygon of A6M5.</td>
+          </tr>
+          <tr>
+            <td width="50%">
+            <img border="0" src="peephole2.png" width="391" height="268"></td>
+            <td width="50%" valign="top">&lt;-&quot;Reduce Peep Hole Made by Transparent 
+            Polygons&quot; on.&nbsp; The peep hole is gone. </td>
+          </tr>
+        </table>
+        <p align="left"><b>Use Display List for Drawing Cloud<br>
+        </b>If this box is checked, the program uses what is called &quot;display 
+        lists&quot; for drawing clouds.&nbsp; If the graphics card has sufficient 
+        memory buffer for storing display lists, the drawing performance should 
+        increase.</p>          
+        <p align="left">Without display lists, the program transfers all 
+        polygons every time a scene is drawn.&nbsp; If the object is static and 
+        does not move, the program ends up with sending exactly the same 
+        information each time, and it creates considerable transaction of data 
+        between CPU and the graphics card.&nbsp; Instead of sending the same 
+        data many times, the program can transfer a chunk of data to the 
+        graphics card only once and later tell the graphics card to draw the 
+        chunk of data already stored in the graphics card's memory.&nbsp; By 
+        doing this, the program only needs to tell the graphics card the 
+        identification number of the chunk of data to draw the same thing.&nbsp; 
+        For example, if a missile model consists of 1000 polygons, the program 
+        needs to send 1000 polygons to the graphics card for each frame if it 
+        does not use display lists.&nbsp; If that many polygons are stored in 
+        the graphics card's memory, the program only needs to send one integer 
+        number to the graphics card to draw the object.&nbsp; It'll save time 
+        for drawing graphics significantly.</p>          
+        <p align="left"><b>Use Display List for Drawing Weapons<br>
+        </b>If this box is checked, the program uses display lists 
+        for drawing weapons.</p>          
+        <p align="left"><b>Use Display List for Drawing Explosions<br>
+        </b>If this box is checked, the program uses display lists 
+        for drawing explosions..</p>          
+        <p align="left"><b>Use Ground Texture</b><br>
+        If this box is checked, the program uses texture to draw maps.</p>
+        <p align="left"><b>Use Runway Light Texture</b><br>
+        If this box is checked, the program uses texture to draw runway lights.</p>
+        <p align="left"></p>
+              <p>
+              <img border="0" src="concorde_cockpit.png" width="629" height="475"></p>
+              <p>  </p>
+        <h2 align="left"><u><a name="OPTIONDLG"></a>Option Dialog</u></h2>
+        <p align="left">
+        <img border="0" src="optiondlg.png" align="right" width="338" height="516">To 
+        change program option, select:</p>
+        <p align="left">
+        &nbsp;&nbsp;&nbsp; &quot;Option&quot;-&gt;&quot;Option&quot;</p>
+        <p align="left">
+        <b>Screen Mode:</b> You can select normal window, maximized, or other 
+        full-screen modes.</p>
+        <p align="left">
+        <b>Remember Window Position and Size:</b> The program remembers the 
+        position and the size of the window when the program terminates.</p>
+        <p align="left">
+        <b>Always On Top:</b> Keep YSFLIGHT window always on top of other 
+        windows.</p>
+        <p align="left">
+        <b>Font Size:</b> You can select the height of the font in pixels.</p>
+        <p align="left">
+        <b>Language:</b> You can select FORCE ENGLISH, AUTOMATIC, or SELECT 
+        LANGUAGE FILE.&nbsp; If you want to use an external language file, which 
+        may be prepared by a volunteer YSFLIGHT user community, choose &quot;SELECT 
+        LANGUAGE FILE&quot; and specify the language file you downloaded.</p>
+        <p align="left">
+        <b>Select Language File:</b> You can click on this button only when 
+        &quot;SELECT LANGUAGE FILE&quot; is selected as &quot;Language&quot;</p>
+        <p align="left">
+        <b>Sound:</b> Turn on/off sound effect.</p>
+        <p align="left">
+        <b>Opening Demo:</b> Turn on/off opening demo.</p>
+        <p align="left">
+        <b>Use Map Preview:</b> Turn on/off map preview.</p>
+        <p align="left">
+        <b>Use Taskbar Icon:</b> If this button is turned on, the program will 
+        stay in the task bar area, when it is minimized.</p>
+        <p align="left">
+        <b>Show Background Picture:</b> Turn on/off background picture.</p>
+        <p align="left">
+        <b>My GPU has issues with D3DXSprite:</b> If your font is dissolving due 
+        to Direct 3D's problem, try turning it on.&nbsp; It might solve the 
+        problem.</p>
+        <p align="left">
+        <b>My Direct 3D cannot draw fonts:</b> Direct 3D is such a horrible API 
+        and it cannot draw fonts correctly in some environments.&nbsp; If you 
+        experience such problem, turning this option on may solve the problem.</p>
+        <p align="left">If you change a screen mode in OpenGL version, you may
+        encounter some problems due to incompatibilities of video card
+        drivers.&nbsp; If you cannot start up OpenGL version after changing the
+        resolution, try one of following three options.</p>
+        <p align="left">(1) Start YSFLIGHT with pressing SHIFT key down.&nbsp;
+        The program will always start in normal window mode if you do so.&nbsp;
+        Then, go to Option Dialog and set the screen mode back to normal window.</p>
+        <p align="left">(2) If option (1) doesn't work, choose &quot;YSFLIGHT - RESET 
+        SETTING&quot; from &quot;Start Menu&quot; -&gt; &quot;Programs&quot; -&gt; &quot;YS FLIGHT SIMULATION SYSTEM 
+        2000.&quot;&nbsp; This will initialize all the settings.</p>
+        <p align="left">(3) If option (2) doesn't work, start the Non-OpenGL version
+        and go to Option Dialog to set the screen mode back to normal window.</p>
+        <p align="left">(4) If none of the above two options works, re-install YSFLIGHT.</p>
+        <p align="left">If all three options fails, you should suspect problems
+        of your video card driver or something other than YSFLIGHT.</p>
+        <p align="left">If you are using an Intel GPU, the letters may appear 
+        like dissolving to the background.&nbsp; If it happens, the numbers and 
+        messages on the simplified HUD may become very hard to read.&nbsp; If 
+        you encounter this problem, you can check &quot;My GPU has issues with 
+        D3DXSprite&quot;.&nbsp; If this box is checked, the program uses system font 
+        to draw text.&nbsp; The texts may not be aligned correctly, but this 
+        solves the dissolving-letter problem.</p>
+        <p align="left">  </p>
+<p>  </p>
+              <h2><a name="CONTROLASSIGNMENT"></a><u>Changing 
+              Keyboard/Mouse/Joystick Assignment</u></h2>
+              <p>
+              <img border="0" src="ctlassign.png" align="right" width="537" height="462">You 
+              can change functionalities assigned to joystick, mouse, and 
+              keyboard.&nbsp; To change assignments, please choose:<br>
+              <br>
+&nbsp;&nbsp;&nbsp; &quot;Option&quot; -&gt; &quot;Config Key/Mouse/Joystick Assignment&quot;<br>
+              <br>
+              The dialog shown on the right will appear.</p>
+              <p>In the dialog, choose a functionality in list boxes, and click 
+              &quot;Change&quot; button to change the assignment.&nbsp; For example, if 
+              you want to assign Axis 3 of Joystick 2 to throttle, click 
+              &quot;Throttle&quot; in &quot;Joystick/Mouse Axes&quot; box, and click &quot;Change&quot; button 
+              located right of &quot;Joystick/Mouse Axes.&quot;&nbsp; Then, choose 
+              Joystick 2 Axis 3, (check &quot;Reverse&quot; if necessary) and click &quot;OK.&quot;</p>
+              <p>You can also save your assignment to a file by clicking &quot;Save&quot; 
+              button, and you can load your assignment when you re-install 
+              YSFLIGHT, or upgrade to a newer version.&nbsp; <b><u>However, if 
+              you load the assignment configured by an older version, no key or 
+              button is assigned to a new features added in a newer version.</u>&nbsp;
+              </b>If you upgrade YSFLIGHT to a newer version, and if you load 
+              your key assignment, please assign new features to appropriate 
+              keys or buttons manually.</p>
+              <p>If you need to reset the assignment back to the default 
+              assignment, click &quot;Default&quot; button. 
+<p>If you are using a joystick that is not joystick #1 in your environment, you 
+don't have to re-assign all the axes one by one.&nbsp; Instead, you can click on 
+&quot;Set Default Keys and Buttons but My Primary Joystick is not Joystick #1&quot;, and 
+then make a complete circle with your joystick that you want to use in YSFLIGHT.</p>
+<p>  </p>
+        <h2 align="left"><u><a name="PREPARETOFLY"></a>Prepare to fly</u></h2>
+        <p align="left">There are the following four types of flights in this
+        simulator.</p>
+        <blockquote>
+          <ul>
+            <li>
+              <p align="left"><a href="#FREEFLIGHT">Free flight</a></li>
+            <li>
+              <p align="left"><a href="#DOGFIGHT">Air combat</a></li>
+            <li>
+              <p align="left"><a href="#INSTANTDOGFIGHT">Instant dogfight</a></li>
+            <li>
+              <p align="left"><a href="#INTERCEPTMISSION">Intercept mission</a></li>
+          </ul>
+        </blockquote>
+        <p align="left"><b><font face="Arial Narrow"><a name="FREEFLIGHT"></a></font>
+        <font face="Arial">Free Flight</font></b></p>
+        <p align="left">To start the free-flight mode, select Simulation -&gt; 
+        Create New Flight.&nbsp; You will then see the following dialog.</p>
+            <p align="left">
+            <img border="0" src="newflightdlg-tab1.png" width="658" height="442"><p align="left">
+<b>General Tab</b><p align="left">
+<b>Field </b>You can select a field.<p align="left"><b>Search </b>You can search 
+a field by typing keywords.<p align="left">
+<b>Change Player Airplane&nbsp; </b>You can change your aircraft by 
+clicking this button.&nbsp; See <a href="#SELECTAIRPLANE">aircraft selection</a> 
+below for more information.<p align="left"><b>Start Pos&nbsp; </b>You can select your starting position in the selected 
+field.<p align="left"><b>OK</b>&nbsp; Return to the main menu.&nbsp; Then you 
+can select &quot;Simulation&quot; -&gt; &quot;Fly&quot; to start flying, or &quot;File&quot;-&gt;&quot;Save&quot; to save your 
+selection.&nbsp; If you want to start flying immediately, click &quot;Fly Now&quot; button 
+instead.<p align="left"><b>Cancel </b>&nbsp;Return to the main menu.&nbsp; The 
+selection made in this dialog will be thrown away.<p align="left"><b>Fly Now</b>&nbsp; 
+Start flying.<p align="left">  <p align="left">
+<img border="0" src="newflightdlg-tab2.png" width="658" height="442"><p align="left">
+<b>Wingman Tab</b><p align="left"><b>
+Change Wingman X&nbsp; </b>You can select your wingman by clicking 
+this button.<p align="left"><b>Delete&nbsp; </b>You can de-select 
+your wingman by clicking this button.<p align="left"><b>Start Pos&nbsp; </b>You can select a start position for the wingman with this drop list.<p align="left">  <p align="left">
+<img border="0" src="newflightdlg-tab3.png" width="658" height="442"><p align="left">
+<b>Formation&nbsp; </b>If you select wingmen and select one of the 
+formations here, your wingmen will try to form a selected formation with you.<p align="left">  <p align="left">
+<img border="0" src="newflightdlg-tab4.png" width="658" height="442"><b>(7) Environment</b><p align="left">
+<b>Environment tab</b><p align="left"><b>Day/Night</b>&nbsp; Select day or night.<p align="left"><b>
+Wind Dir&nbsp; </b>Wind direction.<p align="left"><b>Wind Speed&nbsp; </b>Wind speed.<p align="left"><b>
+Visibility&nbsp; </b>Visibility.<p align="left"><a name="SELECTAIRPLANE"></a>
+<b><font size="4">Aircraft Selection</font></b><p align="left">When it is 
+necessary to select an aircraft, you will see the following dialog.&nbsp; In 
+this dialog, you can select your aircraft, weapons, fuel, and smoke.&nbsp; By 
+the way, rotate the aircraft by pressing the mouse left-button outside the GUI 
+items, and the moving the mouse cursor with the left button held down.</p>
+        <blockquote>
+          <p align="left"><b>&lt;&lt; AIRCRAFT TAB &gt;&gt;</b></p>
+        <p align="left">
+        <img border="0" src="selectair_airtabe.png" width="668" height="520"></p>
+          <p align="left"><b>Select Aircraft</b>&nbsp; This list box allows you 
+          to select an aircraft.</p>
+          <p align="left"><b>Search</b>&nbsp; You can type keywords in this text 
+          box to narrow down your selection.&nbsp; For example, if you type &quot;F 
+          18&quot; in the text box, only aircrafts that has &quot;F&quot; and &quot;18&quot; in its name 
+          are shown in the Select Aircraft list box.</p>
+        <p align="left">
+          </p>
+        <p align="left">
+        <b>&lt;&lt; LOADING TAB &gt;&gt;</b></p>
+        <p align="left">
+        <img border="0" src="selectair_loadtabe.png" width="668" height="520"></p>
+        <p align="left">
+        <b>AAM (Short Range)</b>&nbsp; A short-range missile for dog fighting.&nbsp; 
+        However, once the missile loses its target, the missile will never 
+        re-acquire the target again.</p>
+        <p align="left">
+        <b>A-AAM (Short Range)</b>&nbsp; A short-range missile for dog fighting.&nbsp; 
+        Even when the missile loses its target, if the aircraft that fired this 
+        missile is still maintaining lock-on to the target, the missile turns 
+        toward its target again.</p>
+        <p align="left">
+        <b>AAM (Mid Range)</b>&nbsp; A mid-range missile.&nbsp; This missile is 
+        not as agile as short-range missiles.&nbsp; However, when the missile 
+        loses its target, if the aircraft that fired this missile is still 
+        maintaining lock-on to the target, the missile turns toward its target 
+        again.</p>
+        <p align="left">
+        <b>AGM</b>&nbsp; An anti-ground missile.</p>
+        <p align="left">
+        <b>Rocket</b>&nbsp; A rocket is an unguided.&nbsp; But, when it hits the 
+        target, it is a lot more destructive compared to a machine gun.</p>
+        <p align="left">
+        <b>Chaff/Flare Pod</b>&nbsp; This allows you to carry extra 
+        chaff/flares.</p>
+        <p align="left">
+        <b>BOM(500lb)</b>&nbsp; 500-pound free-fall bomb.&nbsp; It is strong, 
+        and if you drop it from low-altitude, your airplane may be blown away by 
+        the explosion.</p>
+        <p align="left">
+        <b>BOM(250lb)</b>&nbsp; 250-pound free-fall bomb.&nbsp; It is less 
+        strong than 500-pound bomb.&nbsp; However, if you drop it from 
+        low-altitude, your airplane may be blown away by the explosion.</p>
+        <p align="left">
+        <b>BOM(500lb-HD)</b>&nbsp; 500-pound high-drag bomb.&nbsp; It is 
+        suitable for low-altitude high-speed bombing.&nbsp; Once dropped, it 
+        opens banes to increase aerodynamic drag, and the bomb will land behind 
+        the airplane.</p>
+        <p align="left">
+        <b>FUEL TANK</b>&nbsp; This will let you carry extra fuel.&nbsp; When 
+        you need to increase your agility or when it is empty, you can drop it.</p>
+        <p align="left">
+        <b>Fuel (%)</b>&nbsp; Specify fuel by percent of its internal fuel tank.</p>
+        <p align="left">
+        <b>Smoke</b>&nbsp; If checked, the airplane carries smoke oil.</p>
+        <p align="left">
+        <b>Smoke Color</b>&nbsp; Specify color of smoke.</p>
+        <p align="left">
+          </p>
+        <p align="left">
+        <b>&lt;&lt; CATEGORY TAB &gt;&gt;</b></p>
+        <p align="left">
+        <img border="0" src="selectair_cattabe.png" width="668" height="520"></p>
+        <p align="left">
+        <b>Category</b>&nbsp; You can narrow down your airplane search by these 
+        check boxes.</p>
+        </blockquote>
+        <p align="left"></p>
+        <p align="left"><b><font face="Arial Narrow"><a name="DOGFIGHT"></a></font>
+        <font face="Arial">Air Combat</font></b></p>
+        <p align="left">You can create and fly an air-combat mission.&nbsp; 
+        Select &quot;<b>Simulation -&gt; Create Air Combat</b>&quot; from the main menu.&nbsp; 
+        You will see the following dialog.&nbsp; In the dialog, select your 
+        airplane and enemy airplane.&nbsp; You can have up to two wingmen and 
+        five enemies.&nbsp; Also, you can select whether you use air-to-air 
+        missiles.&nbsp; Click &quot;OK&quot; to return to main menu so that you can save 
+        the mission from the main menu.&nbsp; If you want to start flying 
+        immediately, click &quot;Fly Now&quot; button.</p>
+        <p align="left">
+            <img border="0" src="aircombatdlg.png" width="753" height="329"></p>
+            <p align="left">  <p align="left">  <p align="left"><a name="INSTANTDOGFIGHT"></a>
+        <b><font face="Arial">Instant Dogfight</font></b></p>
+        <p align="left">Since 2000/07/03 release version, you can fly an instant dogfight. In this
+        mode, if you kill opponent airplanes, new opponent airplane will be generated
+        and will attack on you.</p>
+        <p align="left">The dogfight is limited to 15 minutes. No opponent airplane will be generated
+        after this time period. If you survive 15 minutes of the air combat and if you
+        kill the remaining enemies after this time period, you'll have chance to
+        land to the base alive.</p>
+        <p align="left">To play Instant Dogfight, choose <b> "Simulation"->"Fly Endurance
+        Mode&quot;</b>.</p>
+            <p align="left">  <p align="left"><p><a name="INTERCEPTMISSION"></a><b>
+        <font face="Arial">Intercept
+                Mission</font></b><font face="Arial"> </font>
+                <p>In an intercept mission, you  take
+                off with your wingman (wingmen), and intercept attackers.&nbsp;
+                To play an intercept mission, choose <b>&quot;Simulation&quot;
+                -&gt; &quot;Intercept Mission.&quot;&nbsp;</b></p>
+                <p><p><p><a name="CLOSEAIRSUPPORTMISSION"></a>
+        <font face="Arial"><b>Close Air Support Mission</b></font><p>In a close 
+        air support mission, you need to destroy enemy tanks attacking your 
+        base.&nbsp; To play a close air support mission, choose <b>&quot;Simulation&quot;</b> 
+        -&gt; <b>&quot;Close Air Support Mission.&quot;</b><p>&nbsp;
+                <p><p><a name="CONFIGENVIRONMENT"></a><font face="Arial"><b>Configure Day/Night, Fog,
+                and Wind</b></font>
+                <p>To configure Day/Night, Fog, and Wind, select <b>&quot;Simulation&quot;</b>
+                -&gt; <b>&quot;Set Environment&quot;</b> after creating <a href="#FREEFLIGHT">flight</a>
+                or <a href="#DOGFIGHT">dogfight</a>, before selecting <b>&quot;Simulation&quot;</b>
+                -&gt; <b>&quot;Fly.&quot;</b>&nbsp; Or, you can choose default
+                environment in <a href="#CONFIGDLG">Config Dialog</a>.&nbsp;
+                (Configuration by <b>&quot;Simulation&quot;</b> -&gt; <b>&quot;Set
+                Environment&quot;</b> overrides the configuration of <a href="#CONFIGDLG">Config
+                Dialog</a>.)&nbsp;
+                <p><p><b><font face="Arial Narrow"><a name="PREVMISSION"></a></font>
+        <font face="Arial">Re-trying
+        the Previous Mission</font></b>
+                <p>You can re-try the previous mission by choosing &quot;<b>Simulation</b>&quot;
+                -&gt; &quot;<b>Retry Previous Mission</b>&quot;
+                <p>&nbsp;
+                <p>&nbsp;
+            <h2 align="left"><u><a name="HOWTOCONTROL"></a>Flying
+        an Airplane (Keystrokes, Mouse and Joystick)</u></h2>
+        <p align="left">You may want to printout the key assignments. So, I prepared independent page
+        for it.&nbsp;</p>
+        <p align="left"><a href="control.html">[CLICK HERE TO READ]</a><br>
+        </p>
+        <p align="left">You <font face="Arial Black" size="7"><b>CAN</b></font>
+        use a keyboard to control elevator and aileron, if you really
+        want.&nbsp; Please see <a href="#CONTROLASSIGNMENT">Changing 
+        Key/Mouse/Joystick Assignent</a> to change
+        settings.
+        </p>
+        <p align="left">&nbsp;
+        </p>
+              <p>  </p>
+                <h2><u><a name="HUD"></a>Head Up
+                Display / Instrument Panel</u></h2>
+                <p><b>Standard HUD</b></p>
+                <p><img border="0" src="3dhud.png" width="628" height="516"></p>
+                <p>(1) Ammuition.&nbsp; &gt;&gt;&lt;&lt; indicates the ammunition
+                is selected, and ready to launch by trigger 1.<br>
+                (2) Bank angle indicator<br>
+                (3) Airspeed (kt)<br>
+                (4) Altitude (ft)<br>
+                (5) VSI: Vertical Speed Indicator (feet/minutes)<br>
+                (6) Attitude of the airplane.&nbsp; Line of 0 is the horizon.<br>
+                (7) Mach number and G force<br>
+                (8) Velocity vector.&nbsp; Activated and de-activated by V key.<br>
+                (9) Throttle setting<br>
+                (10) Remaining fuel<br>
+                (11) Elevator, aileron and rudder<br>
+                (12) Heading angle indicator<br>
+                (13) Landing gear, brake, flap, and spoiler (airbrake)</p>
+                <p>  </p>
+                <p><b>Simplified HUD</b></p>
+                <p>In a low-resolution environment, the simplified HUD may be 
+                easier to read than the standard HUD.&nbsp; You can choose to 
+                use simplified HUD by checking the box &quot;Use Simple HUD&quot; in the 
+                &quot;Game Rule&quot; tab of <a href="#CONFIGDLG">the Configuration dialog</a>.</p>
+                <p><img border="0" src="hud.png" width="551" height="396"></p>
+                <p>
+                  (1) Ammuition.&nbsp; &gt;&gt;&lt;&lt; indicates the ammunition
+                is selected, and ready to launch by trigger 1.<br>
+                (2) Bank angle indicator<br>
+                (3) Climb/Descend ratio (x100 feet/minutes)<br>
+                (4) Heading angle indicator<br>
+                (5) Airspeed (kt)<br>
+                (6) Attitude of the airplane.<br>
+                (7) Altitude (ft)<br>
+                (8) Mach number<br>
+                (9) G force<br>
+                (10) Throttle setting<br>
+                (11) Velocity vector.&nbsp; Activated by V key.<br>
+                (12) Landing gear, brake, flap, and spoiler (airbrake)<br>
+                (13) Elevator, aileron and rudder<br>
+                (14) Remaining fuel<br>
+                <p>
+                  <b>Instrument Panel</b><p>
+                  (* Instrument panel configuration vary from airplane to 
+                  airplane.)<p>
+                  <img border="0" src="instpanel.png" width="594" height="216"><p>
+                  (1) Airspeed Indicator<br>
+                  (2) Attitude Indicator<br>
+                  (3) Altemeter<br>
+                  (4) ILS<br>
+                  (5) Flap<br>
+                  (6) Fuel quantity<br>
+                  (7) Brake<br>
+                  (8) Turn coordinator<br>
+                  (9) Heading indicator<br>
+                  (10) Vertical speed inciator<br>
+                  (11) VOR<br>
+                  (12) Throttle setting<p>  </p>
+<p>  </p>
+        <h2 align="left"><u><a name="WEAPONS"></a>Weapon System</u></h2>
+        <p align="left">After 2000/07/03 version, the way to control weapon system changed from the
+        previous version. You have to choose a weapon by 2 key or trigger 2 of the
+        joystick, and fire it by 1 key, SPACE key or trigger 1 of the joystick.</p>
+        <p align="left">Available weapons  and equipments are as follows.</p>
+        <table border="1">
+          <tr>
+            <td>      GUN</td>
+            <td>      Machine Gun. No guidance. And, it has no effect      against a huge target like bridges and aircraft      carriers (except the gun loaded on A-10A Thunderbolt2).&nbsp;</td>
+          </tr>
+          <tr>
+            <td>      AAM&nbsp;</td>
+            <td>      Air to Air Missile. The missile is guided to the      locked on target. You can fire from any direction,      but you have higher chance to kill the target when      you fired the weapon from the behind the target.&nbsp;</td>
+          </tr>
+          <tr>
+            <td>      A-AAM</td>
+            <td>      Air to Air Missile.&nbsp; It is guided just like an 
+            ordinary AAM.&nbsp; However, even after missing the target once, as 
+            long as the airplane that fired this missile still maintains lock-on 
+            to the target, this missile will maneuver to re-acquire the target.</td>
+          </tr>
+          <tr>
+            <td>      AGM&nbsp;</td>
+            <td>      Air to Ground Missile. The missile is guided to the      locked on target.&nbsp;</td>
+          </tr>
+          <tr>
+            <td>      RKT</td>
+            <td>      Rockets.</td>
+          </tr>
+          <tr>
+            <td>      FLR</td>
+            <td>      Flare to fool anti-air missiles.</td>
+          </tr>
+          <tr>
+            <td>      BOM&nbsp;</td>
+            <td>      There are three types of bombs.&nbsp;      500lb/250lb Free Fall Bomb 
+            and 500lb high-drag bomb. No guidance. Most effective when it 
+            directly hits the target. But, if you dropped the bomb close enough 
+            to the target, you can destroy it.&nbsp; There is no bomb-sight for 
+            a high-drag bomb.</td>
+          </tr>
+          <tr>
+            <td>      SMOKE&nbsp;</td>
+            <td>      It's not a weapon, but you can operate same as a weapon.&nbsp;</td>
+          </tr>
+          <tr>
+            <td>      FUEL</td>
+            <td>      External fuel tank.&nbsp; You can drop it when you need to 
+            make your airplane lighter immediately.</td>
+          </tr>
+        </table>
+        <p align="left">Available weapons depend on the airplane.</p>
+              <p>  </p>
+<p>  </p>
+        <h2 align="left"><u><b><a name="RADARNAVAID"></a></b>Navigation Aid (VOR 
+        and ADF), Instrument Landing System (ILS), and RADAR</u></h2>
+        <p align="left"> In YSFLIGHT, you can use two types of navigation 
+        equipments, VOR and ADF.</p>
+        <p align="left"> A VOR indicates a deviation of a certain course passing 
+        through a selected VOR station from your airplane.&nbsp; It also tells 
+        if the VOR station is in front of or behind your airplane.&nbsp; Many of 
+        the airplanes in YSFLIGHT has two VOR receivers.&nbsp; To distinguish 
+        them, one is called NAV1, and the other NAV2.</p>
+        <p align="left"> To use VOR, first you select a station, and then 
+        specify the course by selecting a course heading called OBS.&nbsp; Press 
+        L-key to select a VOR receiver.&nbsp; You will see a menu for selecting 
+        a VOR station.&nbsp; Pressing L-key one more time will switch to NAV2, 
+        and another stroke will switch to a NDB-selection menu.&nbsp; (NDB is a 
+        station for ADF.)&nbsp; After selecting a station, press 7-key or 8-key 
+        to change OBS.</p>
+        <p align="left"> Meaning of VOR indication is as follows.&nbsp; Assume 
+        that you turned your airplane to the OBS heading.&nbsp; The needle of 
+        the VOR tells lateral deviation of the course from your airplane.&nbsp; 
+        For example, the needle of NAV1 shown below is right of the center.&nbsp; 
+        So, if your airplane heading is 360, the VOR station is on your right.&nbsp; 
+        Also, beside the OBS is TO/FROM indication.&nbsp; If it says &quot;TO&quot;, the 
+        station is ahead of you, or &quot;FR&quot; behind you.</p>
+        <table border="0" cellspacing="1" width="432" id="AutoNumber1">
+          <tr>
+            <td><img border="0" src="nav1.png" width="143" height="144"></td>
+            <td><img border="0" src="nav2.png" width="143" height="144"></td>
+            <td><img border="0" src="adf.png" width="143" height="144"></td>
+          </tr>
+          <tr>
+            <td>NAV1</td>
+            <td>NAV2</td>
+            <td>ADF</td>
+          </tr>
+        </table>
+        <p align="left"> When I learned it for the first time, my first 
+        impression was why is this thing so complicated?&nbsp; But, if you just 
+        want to fly to the station, there is an easy way of using it.&nbsp; 
+        First select a station, then turn OBS (by 7- or 8-key) until the needle 
+        is centered and TO/FROM indication becomes TO.&nbsp; Then, the OBS tells 
+        you the heading you must fly to reach the station.</p>
+        <p align="left"> You can also tune NAV1 to an ILS, or Instrument Landing 
+        System.&nbsp; If you tune NAV1 to an ILS, it will tell you lateral and 
+        vertical deviation of the ideal approach path from your airplane.&nbsp; 
+        The vertical deviation is shown by the horizontal needle called glide 
+        slope.&nbsp; The vertical needle will show you the lateral deviation of 
+        the ideal approach course from your airplane.&nbsp; So, once you are on 
+        the approach course, you will be able to fly an ideal approach path by 
+        chasing the needle.&nbsp; You can also tune NAV2 to an ILS, but it does 
+        not have glide slope indication.&nbsp; When you tune NAV1 or NAV2 to an 
+        ILS, OBS does not have an effect on the indication.</p>
+        <p align="left"> If an airplane is equipped with HUD, ILS needle will 
+        also be shown on the HUD as shown below.</p>
+        <p align="left"><img border="0" src="ils.png" width="234" height="182"><br>
+          </p>
+        <p align="left">ADF is a lot more simple.&nbsp; ADF needle will tell a 
+        relative direction to the selected NDB station from your airplane.&nbsp; 
+        If you keep the needle centered, you will eventually come to above the 
+        NDB station.</p>
+        <p align="left"></p>
+        <p align="left">Also RADAR equipment is available for air combat and anti-ground attack. You can
+        turn on the RADAR or change the RADAR range by 3 key or trigger 3 of the joystick.
+        The RADAR range cycles through OFF -> 5 miles -> 10 miles -> 50 miles -> (repeat).&nbsp;</p>
+        <p align="left">The RADAR has three modes as Anti-Air, Anti-Ground and Bombing. The mode changes
+        automatically when you change the wapon of choice.</p>
+        <div align="left">
+          <table border="0">
+            <tr>
+              <td><img border="0" src="radar_aam.png" width="127" height="128"></td>
+              <td><img border="0" src="radar_agm.png" width="127" height="128"></td>
+              <td><img border="0" src="radar_bomb.png" width="127" height="127"></td>
+            </tr>
+            <tr>
+              <td align="center">(Anti-Air mode)</td>
+              <td align="center">(Anti-Ground mode)</td>
+              <td align="center">(Bombing mode)</td>
+            </tr>
+          </table>
+        </div>
+        <p align="left">In Anti-Air mode, X marks show the ground objects and square marks show airplanes. White marks are friendly
+        objects and Green marks are hostile objects. A small tip of line attached to the
+        square show the flying directions of the airplane.</p>
+        <p align="left">Anti-Ground mode is almost same as the Anti-Air mode, but it shows more
+        objects in front of the airplane than ones behind the airplane.</p>
+        <p align="left">In Bombing mode, the circle on the radar shows the estimated impact point of
+        the bomb. If you are flying B-2 or Tu-144, you can carpet bomb referring to
+        the circle and the cross mark.</p>
+              <p>  </p>
+              <p>  </p>
+              <p>  <a name="IFR"></a><u><b><font size="5">Instrument Flight</font></b></u></p>
+              <p>  From release version 2012/07/01, you can fly instrument 
+              flight under guidance from a virtual air traffic controller.&nbsp; 
+              Please see the following URL for more details.</p>
+<blockquote>
+              <p>  <a href="http://ifr.en.ysflight.com">
+              http://ifr.en.ysflight.com</a></p>
+</blockquote>
+              <p>  </p>
+<p>  </p>
+<p><a name="FUELAMMOSUPPLY"></a><u><b><font size="5">Fuel/Ammo Supply</font></b></u></p>
+<p>You can re-fuel or re-load ammo by completely stopping your airplane near a 
+supply truck or on an aircraft carrier and then pressing HOME key.&nbsp; (You 
+can assign a different key for this functionality by selecting &quot;<b>Option -&gt; 
+Joystick/Key Assignment</b>&quot; from the main menu.)&nbsp; In the following dialog, 
+change fuel/ammo and click OK.&nbsp; Some supply trucks can supply only fuels 
+and no weapons.</p>
+<p><img border="0" src="supplydlg.png" width="731" height="570"></p>
+<p>  </p>
+<p>  </p>
+        <h2 align="left"><u><b><a name="NETWORK"></a></b>Network Play</u></h2>
+        <p align="left"><b><font size="4" face="Arial">CAUTION:&nbsp; If you are 
+        using Windows XP Service Pack 2, you need to unblock YSFLIGHT from 
+        Windows Firewall.&nbsp; Please follow <a href="xpsp2e.html">this link</a> 
+        for more information.</font></b></p>
+        <p align="left">Since 20001125 release version, YSFLIGHT2000 features network play.
+        More than one player can fly a same airspace and fight against each other.  Or you can cooperatively attack heavily defended ground
+        target.  If your PCs are connected to a high speed (10Mbps or faster) connection, you may be able to fly a formation of 6 airplanes and
+        perform an aerobatic flight.  I haven't tested how many players are practically possible, but theoretically, the program must accept 17
+        players at maximum.</p>
+        <p align="left">Since 20021205 release version, you can play <a href="#INSTANTDOGFIGHT">Endurance
+        Mode</a> and <a href="#INTERCEPTMISSION">Intercept Mission</a> over the
+        network.&nbsp; You can cooperatively attack against computer airplanes
+        or defend your base with your friend.&nbsp; To start the endurance mode,
+        press E key in the server menu.&nbsp; To start the Intercept mission,
+        press B key in the server menu.&nbsp; If you want to terminate the
+        Endurande mode or the Intercept mission, press T key.&nbsp; (Pressing T
+        key does not delete already flying computer airplanes.&nbsp; You have to
+        take care of them anyway.)</p>
+        <p align="left">In the network play, you may get damage even when you don't see any
+        bullets or missiles striking your airplane.  In such a case, your opponent's airplane is seeing his bullet or missile striking your
+        airplane.  It is because there is always some delay in transmitting position information.  This problem can be moderated if I write a
+        smart code that expect future path of the airplane, however, instead of making my code smart, I made a rule of the network play as follows.&nbsp;</p>
+        <blockquote>
+          <p align="left"><b>Say user A is flying an airplane P in computer X, and user B is flying
+          an airplane Q in computer Y.  If user A fired a weapon and the weapon strikes airplane Q in either one of (or both) computer X or computer Y, airplane
+          Q gets damage.&nbsp;</b></p>
+        </blockquote>
+        <p>In summary, if you really see your airplane being hit, or your opponent
+        sees his weapon striking your airplane, you get damage.</p>
+        <p>Consequently, even you think that your opponent's bullets are strayed
+        from your airplane, say 20m behind you, you shouldn't stop your maneuver to avoid opponent's attack.  If you are flying at 200m/s,
+        and if the network delay is 0.1 second, you'll see your opponent's bullets strayed 20m behind you when your opponent is seeing his
+        bullets striking directly your airplane.  And, this is a game to play happily.  Don't begin fist fight screaming "Hey, your bullet
+        didn't hit me!  You did something unfair!".  Your opponent is not unfair.  It is a nature of
+        network play.</p>
+        <p>If you want to fly with a friend who is apart from you, you may want
+        to chat with your friend while flying, though, YSFLIGHT2000 itself does
+        not transmit texts for chatting.&nbsp; In such a case, you can open an
+        external chatting program beside YSFLIGHT2000's window.&nbsp; However,
+        while you are chatting with your friend, you cannot control your
+        airplane.&nbsp; In order not to crash your airplane while chatting, you
+        can use auto-pilot.&nbsp; If you press BS (backspace) key, your airplane
+        will fly a holding pattern until you press BS key once more.&nbsp;&nbsp;</p>
+        <p><b>But, I don't recommend to use voice chat and YSFLIGHT2000 at the
+        same time.&nbsp; Experiments showed that Windows may freeze if you try
+        to use voice chatting program and YSFLIGHT2000 at the same time.&nbsp;
+        You can avoid this problem by turning off YSFLIGHT2000's sound
+        effects.&nbsp; However, even if you successfully start YSFLIGHT2000,
+        practically you cannot fly with your friend over network because the
+        network-load of voice transmission eats bandwidth up and YSFLIGHT2000
+        cannot transmit airplane's position, state etc.</b></p>
+        <p><img border="0" src="serverclient.png" align="right" width="227" height="189">To play over the network, one player needs one computer.  And, one
+        computer must work as a server.  The other computers must connect to the server as clients.  The figure on the right shows an
+        schematic image of the network connection.  A player in front of the computer can join the flight either when a computer is working
+        as a server or when a computer is connected to the server.&nbsp;</p>
+        <p>To begin a server, choose Network menu -&gt; Server and type your name.  To access to a server as a client, choose Network menu -&gt;
+        Client, and type your name and the network hostname of the server.</p>
+        <p>The server address is shown under the server menu as follows.&nbsp;
+        So, you can tell it to your friend by phone or chat program or in
+        whatever way you have.</p>
+        <blockquote>
+        <p><img border="0" src="hostname.png" width="353" height="332"></p>
+        </blockquote>
+        <p>However, when your PC is sharing an IP address with another PC(s) (eg.
+        when a PC is connected via dial-up router), or when your PC has more
+        than one network connection (eg. dial-up connection + LAN card), this
+        address may not be valid.&nbsp; In such a case, please ask your network
+        administrator for the correct address.&nbsp; (Please do not ask me about
+        the host address.&nbsp; It depends on your PC's environment, and I am
+        not your tech support.&nbsp; I'm suffering from overwhelming E-Mail of
+        this kind of question.&nbsp; I'll ignore them all.)</p>
+        <blockquote>
+          <p><b><font face="Arial">CAUTION: When a YSFLIGHT version of the
+          client does not match a YSFLIGHT version of the server, the client may
+          get the following message and be rejected from the server.<br>
+          <img border="0" src="versionconflict.png" width="344" height="87"><br>
+          If you see this message, please upgrade both the server and the client
+          to the latest version of YSFLIGHT.</font></b></p>
+        <p>(*1 YSFLIGHT of version 20021205 or newer has a feature that smoothes
+        the motion of airplanes behind the network.&nbsp; However, if a server
+        or a client is running YSFLIGHT of older version than 20021205, this
+        feature does not work.)
+        </p>
+        </blockquote>
+        <p>Now you are ready to join the flight</p>
+        <p>When you start a server, you will see a server dialog by which you 
+        can control the server.</p>
+        <blockquote>
+        <p><img border="0" src="serverdlge.png" width="484" height="372"><br>
+        <b>Server Dialog</b></p>
+        </blockquote>
+        <p>When you log on to the server, you will see a client dialog by which 
+        you can control the client.</p>
+        <blockquote>
+        <p><img border="0" src="clientdlge.png" width="484" height="256"><br>
+        <b>Client Dialog</b></p>
+        </blockquote>
+        <p>Or, you can control your server or client also by the following 
+        short-cut keys.</p>
+        <table border="1">
+          <tr>
+            <td>A</td>
+            <td>Choose airplane</td>
+          </tr>
+          <tr>
+            <td>S</td>
+            <td>Choose start position</td>
+          </tr>
+          <tr>
+            <td>J</td>
+            <td>Start flying</td>
+          </tr>
+          <tr>
+            <td>L</td>
+            <td>List users (on the client, flying users only)</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>Dispell user.&nbsp; (Server only)</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>Lock server and block all further logon request.&nbsp; Pressing
+              C key again to unlock the server.&nbsp; (Server only)</td>
+          </tr>
+          <tr>
+            <td>E</td>
+            <td>Start the <a href="#INSTANTDOGFIGHT">Endurance mode</a></td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>Start the <a href="#INTERCEPTMISSION">Intercept mission</a></td>
+          </tr>
+          <tr>
+            <td>T</td>
+            <td>Terminate the Endurance mode or the Intercept mission</td>
+          </tr>
+          <tr>
+            <td>ESC</td>
+            <td>Terminate server or client</td>
+          </tr>
+          <tr>
+            <td>1,2,3,4</td>
+            <td>    Choose IFF code.  IFF stands for "Identify Friend or Foe system".    You cannot lock on an airplane which has same IFF code (thus,    your missile will not be guided toward the airplane with same IFF
+              code)</td>
+          </tr>
+        </table>
+        <p>To choose an airplane or a start position, use arrow keys, UP arrow and
+        DOWN arrow.  If you press UP or DOWN key with SHIFT key, choice moves faster.  Press SPACE key to decide.  (You can press ESC key or ENTER
+        key to decide.  ESC will not cancel your choice).&nbsp;</p>
+        <p>When flying with more than two players, be careful not to begin a flight
+        at the same position, or you will end up with mid air collision as soon as you
+        start a flight.</p>
+        <p>I am not assuming to use this network play feature between the PCs that
+        are located in a remote places.  I am assuming all PCs are in the same room and players have voice communications.  So, the program itself doesn't
+        have chatting capability.  If you want to chat with your opponent while flying, please run another chatting program simultaneously.&nbsp;</p>
+        <p>You can configure network-play options by Network menu->Network Option.
+        If you choose Network menu->Network Option, the following dialog pops up.The following table explains each item.&nbsp;</p>
+        <table border="1" width="719" height="232">
+          <tr>
+            <td colspan="2" width="704" height="19"><b>General</b><p>
+            <img border="0" src="netconfig_gen.png" width="525" height="409"></td>
+          </tr>
+          <tr>
+            <td width="160" height="38"><b>Network Port</b></td>
+            <td width="538" height="38">      Specify network port number for network
+              play.&nbsp; The default port number is 7915.&nbsp; A client cannot
+              connect to a server if network port numbers doesn't match.</td>
+          </tr>
+          <tr>
+            <td width="160" height="38"><b>User Name</b></td>
+            <td width="538" height="38">      Specify a default username.</td>
+          </tr>
+          <tr>
+            <td width="160" height="38"><b>Save Chat Log</b></td>
+            <td width="538" height="38">      If you check this box, chat log 
+            will be saved in &quot;My Documents\YSFLIGHT.COM\YSFLIGHT\netchatlog&quot;</td>
+          </tr>
+          <tr>
+            <td width="698" height="1" colspan="2"><b>Client</b><p>
+            <img border="0" src="netconfig_cli.png" width="525" height="409"></td>
+          </tr>
+          <tr>
+            <td width="160" height="1">Host Address</td>
+            <td width="538" height="1">      Specify a default hostname to connect
+              when your PC works as a client.</td>
+          </tr>
+          <tr>
+            <td width="160" height="1">Start Position</td>
+            <td width="538" height="1">      Specify a default start position when
+              your PC works as a client.</td>
+          </tr>
+          <tr>
+            <td width="160" height="1">IFF</td>
+            <td width="538" height="1">      Specify a default IFF code when your PC works as a client.&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="160" height="1">Record Flight&nbsp;</td>
+            <td width="538" height="1">      If you check this box, the program records flight      while running a client.&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="698" height="38" colspan="2"><b>
+            Server1</b><p>
+            <img border="0" src="netconfig_svr1.png" width="525" height="409"></td>
+          </tr>
+          <tr>
+            <td width="160" height="38"><b>Field</b></td>
+            <td width="538" height="38">      Specify a field that you use in a network play.      A server has a right to choose a field.  So, this      "Field" is valid only when your PC is working as      a server.&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="160" height="38"><b>StartPosition&nbsp;</b></td>
+            <td width="538" height="38">      Specify a default start position when your PC works      as a server.  You can change the start position       by [S] key after you start a server.&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="160" height="13"><b>IFF</b></td>
+            <td width="538" height="13">      Specify a default IFF (Identify Friend or Foe) code      when your PC works as a server.&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="160" height="6"><b>Record Flight</b></td>
+            <td width="538" height="6">      If you check this box, the program records flight      while running a server.&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="160" height="7"><b>Config Intercept Mission</b></td>
+            <td width="538" height="7">      Change settings of the Intercept
+              mission.</td>
+          </tr>
+          <tr>
+            <td width="160" height="12"><b>Disable Chat</b></td>
+            <td width="538" height="12">      If this box is 
+            on, the users cannot send/receive text messages.</td>
+          </tr>
+          <tr>
+            <td width="160" height="12"><b>Log On Time Out</b></td>
+            <td width="538" height="12">      If a client connects to the 
+            server, but does not complete the log-on request within the 
+            specified time, the server will disconnect the client.</td>
+          </tr>
+          <tr>
+            <td width="160" height="12"><b>Multi Connection from Same IP</b></td>
+            <td width="538" height="12">      Limit connection from a single IP 
+            address.</td>
+          </tr>
+          <tr>
+            <td width="160" height="19"><b>Reset Server Every</b></td>
+            <td width="538" height="19">      You can choose the interval of 
+            resetting the server.&nbsp; When the server is reset, all the users 
+            are logged out, and need to connect again to continue playing.&nbsp; 
+            The server sends warning messages 30, 15, 10, and 5 minutes before 
+            reset.</td>
+          </tr>
+          <tr>
+            <td width="160" height="19">      <b>Stop Server After Resetting</b></td>
+            <td width="538" height="19">      If N times is chosen for this 
+            option, and Reset Server Every X Hours is set, the server will 
+            terminate automatically after resetting N times.&nbsp; This option 
+            may be useful if you'd like to run a server only on weekends.&nbsp;
+            <p>You can configure the network options so that it resets every 6 
+            hours, and stops the server after resetting nine times.&nbsp; Then, 
+            set a task scheduler so that it launches fsmaino.exe with the 
+            options &quot;-server Server -autoexit&quot; at 6pm every Friday.&nbsp; Then, 
+            the server starts at 6pm on Friday, reset at 0am, 6am, 12 noon, 6pm 
+            on Saturday and Sunday, and stops at 0am on Monday.</td>
+          </tr>
+          <tr>
+            <td width="698" height="19" colspan="2">      <b>
+            Server2</b><p>
+            <img border="0" src="netconfig_svr2.png" width="525" height="409"></td>
+          </tr>
+          <tr>
+            <td width="160" height="19" valign="top">      <b>Ground Fire</b></td>
+            <td width="538" height="19" valign="top">      If this check box is on, AAAs and
+              SAMs will fire at airplanes during the network play.</td>
+          </tr>
+          <tr>
+            <td width="160" height="19" valign="top">      <b>Use AAM/AGM</b></td>
+            <td width="538" height="19" valign="top">      If you check this box, the program allow to use AAM/AGM 
+            in the network mode.  The server has right to decide to      allow or not to allow AAM/AGM.&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="160" height="19" valign="top">      <b>Use 
+            Gun/Bomb/Rocket</b></td>
+            <td width="538" height="19" valign="top">      If you check this box, the program allow to use 
+            Gun/Bomb/Rocket in the network mode.  The server has right to decide to      allow or not to allow
+            Gun/Bomb/Rocket.&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="160" height="19" valign="top">      <b>Disable Radar Gun Sight</b></td>
+            <td width="538" height="19" valign="top">      If this check box is on, 
+            radar gun sight (or lead gun 
+            sight) is disabled in all the client regardless the configuration of 
+            the client.</td>
+          </tr>
+          <tr>
+            <td width="160" height="19" valign="top">      <b>Disable Third 
+            Airplane View</b></td>
+            <td width="538" height="19" valign="top">      If this check box is 
+            on, no player is allowed to see other airplane's activities by using 
+            view control (by default F3 key.)</td>
+          </tr>
+          <tr>
+            <td width="160" height="19" valign="top">      <b>Notify Take Off / 
+            Leave</b></td>
+            <td width="538" height="19" valign="top">      If this check box is 
+            on, the server notifies clients when a user takes off or leaves the 
+            airplane.</td>
+          </tr>
+          <tr>
+            <td width="160" height="19" valign="top">      <b>Show User Name</b></td>
+            <td width="538" height="19" valign="top">      This option 
+            controls if the username is shown always, never, only within 1000m, 
+            only within 2000m, or only within 4000m.</td>
+          </tr>
+          <tr>
+            <td width="160" height="32" valign="top"><b>Mid Air Collision</b></td>
+            <td width="538" height="32" valign="top">      This option 
+            controls if &quot;Mid Air Collision&quot; option in the network mode is same 
+            as server, enabled, disabled, or do not control (up to the client.)</td>
+          </tr>
+          <tr>
+            <td width="160" height="32" valign="top"><b>Black Out</b></td>
+            <td width="538" height="32" valign="top">      This option 
+            controls if &quot;Black Out&quot; option in the network mode is same as 
+            server, enabled, disabled, or do not control (up to the client.)</td>
+          </tr>
+          <tr>
+            <td width="160" height="1" valign="top"><b>Can Land Anywhere</b></td>
+            <td width="538" height="1" valign="top">      This option 
+            controls if &quot;Can Land Anywhere&quot; option in the network mode is same 
+            as server, enabled, disabled, or do not control (up to the client.)</td>
+          </tr>
+          <tr>
+            <td width="160" height="1" valign="top"><b>Radar Alt 
+            Limit</b></td>
+            <td width="538" height="1" valign="top">      If 
+            &quot;Same as Server&quot; is chosen, the lowest altitude that an airplane is 
+            visible on the radar on the clients will be set to the same altitude 
+            as the server.</td>
+          </tr>
+          <tr>
+            <td width="698" height="1" valign="top" colspan="2">
+            <b>Server 3</b><p>
+            <img border="0" src="netconfig_svr3.png" width="525" height="409"></td>
+          </tr>
+          <tr>
+            <td width="160" height="1" valign="top"><b>Blocked IP Addresses</b></td>
+            <td width="538" height="1" valign="top">      The server will reject 
+            connection from the IP Addresses listed here.</td>
+          </tr>
+          <tr>
+            <td width="160" height="1" valign="top"><b>Add</b></td>
+            <td width="538" height="1" valign="top">      Add an IP address to 
+            the list</td>
+          </tr>
+          <tr>
+            <td width="160" height="1" valign="top"><b>Delete</b></td>
+            <td width="538" height="1" valign="top">      Delete selected IP 
+            address from the list.</td>
+          </tr>
+          <tr>
+            <td width="698" height="19" colspan="2"><b>
+            Outside</b></td>
+          </tr>
+          <tr>
+            <td width="160" height="19">Set Default</td>
+            <td width="538" height="19">Set all configurations to the default
+              values.</td>
+          </tr>
+        </table>
+              <p>  </p>
+<p>  </p>
+      <h2 align="left"><u><b><font face="Arial" size="4"><a name="YFSUTIL"></a></font></b>Flight
+      Record Utility</u></h2>
+      <p align="left"><b><font face="Arial" size="3">- Decimating a flight
+      record</font></b></p>
+      <p align="left">When you fly a very good flight, you may want to show
+      your flight record to your friend by sending the flight record by E-Mail
+      or by posting it on your Web site.&nbsp; However, a flight record file
+      tends to be big, often too big to send by E-Mail or to store in your Web
+      space that your internet service provider gave you.&nbsp; In such a case,
+      you can 'decimate' your flight record to reduce the size of a flight
+      record file.&nbsp;</p>
+      <p align="left"><b><font face="Arial">CAUTION: These operations are not
+      undoable.&nbsp; I recommend to save your raw flight record before
+      decimation for backup.</font></b></p>
+      <p align="left">There are two ways to decimate a flight record.&nbsp; One
+      reduces the time precision, and the other reduces the space
+      precision.&nbsp; To reduce the time precision, choose &quot;Flight Record <u>U</u>tility&quot;-&gt;&quot;Set
+      Time Precision&quot; and specify the time step.&nbsp; Default time step is
+      0.05 second, thus the flight record is taken once every 0.05 second.&nbsp;
+      By specifying larger number, you can reduce the size of a flight record.</p>
+      <p align="left">To reduce the space precision, choose &quot;Flight Record
+      Utility&quot;-&gt;&quot;Set Space Precision&quot; and specify the space
+      precision in meters.&nbsp; The default space precision is 0.01, which
+      means two digits after decimal point will be stored in the flight record
+      file.&nbsp; By specifying larger number, you can reduce the size of a
+      flight record.</p>
+      <p align="left"><b><font face="Arial">- Editing a flight record</font></b></p>
+      <p align="left"><img border="0" src="yfsutildlg.png" align="right" width="165" height="335">You
+      can also chop off some portion of the flight record that is not very
+      spectacular.&nbsp; To edit your flight record, choose &quot;Flight Record <u>U</u>tility&quot;-&gt;&quot;Edit
+      Flight Record.&quot;&nbsp; You will see a screen similar to &quot;Replay
+      Flight Record&quot;, but you will see a dialog as shown on the
+      right.&nbsp; Meaning of each buttons and textboxes are as follows.</p>
+      <p align="left"><b><font face="Arial">CAUTION: These operations are not
+      undoable.&nbsp; I recommend to save your raw flight record before editing for backup.</font></b></p>
+      <table border="1" width="500">
+        <tr>
+          <td width="123">T0, T1</td>
+          <td width="361">Time marker (you can manually type in a number or
+            capture the current position by &quot;Capture&quot; button)</td>
+        </tr>
+        <tr>
+          <td width="123">Jump</td>
+          <td width="361">Jump to the time marker</td>
+        </tr>
+        <tr>
+          <td width="123">Capture</td>
+          <td width="361">Capture current time to a marker</td>
+        </tr>
+        <tr>
+          <td width="123">Delete-Between T0 and T1</td>
+          <td width="361">Delete flight record between T0 and T1.</td>
+        </tr>
+        <tr>
+          <td width="123">Delete-Before T0 and after T1</td>
+          <td width="361">Delete flight record before T0 and after T1. (Thus,
+            only between T0 and T1 will remain).</td>
+        </tr>
+        <tr>
+          <td width="123">Play- ||</td>
+          <td width="361">Pause</td>
+        </tr>
+        <tr>
+          <td width="123">Play- &gt;</td>
+          <td width="361">Play at 1x speed</td>
+        </tr>
+        <tr>
+          <td width="123">Play- &lt;&lt;&lt;</td>
+          <td width="361">Very fast rewind</td>
+        </tr>
+        <tr>
+          <td width="123">Play- &lt;&lt;</td>
+          <td width="361">Fast rewind</td>
+        </tr>
+        <tr>
+          <td width="123">Play- &gt;&gt;</td>
+          <td width="361">Fast forward</td>
+        </tr>
+        <tr>
+          <td width="123">Play- &gt;&gt;&gt;</td>
+          <td width="361">Very fast forward</td>
+        </tr>
+      </table>
+      <p align="left">
+      <p align="left">
+      <p align="left">
+<a name="GROUNDVEHICLE"></a><u><b><font size="5">Ground Vehicle</font></b></u><p align="left">
+<a name="GROUNDVEHICLECONTROL"></a><b><font size="4">Controlling Ground Vehicles</font></b><p align="left">
+You can start a simulation in a ground vehicle by selecting 
+&quot;Simulation&quot;-&gt;&quot;Create Simulation in Ground Object&quot; or 
+&quot;Simulation&quot;-&gt;&quot;Ground-To-Air Defense Mission&quot;<p align="left">
+You can control a ground vehicle as follows:<blockquote>
+      <p align="left">
+<b>Throttle (Q/A keys by default):</b> Control forward speed<p align="left">
+<b>Brake (B key by default):</b> Turn on/off brake<p align="left">
+<b>Thrust Reverser (&quot;.&quot; key by default): </b>Control backward speed<p align="left">
+<b>Joystick:</b> Turn left and right when no weapon is selected, or controlling 
+firing direction when a weapon is selected.</blockquote>
+      <p align="left">
+      <p align="left">
+<a name="GROUNDTOAIRDEFENSEMISSION"></a><b>Ground-to-Air Defense Mission</b><p>  
+You can try &quot;Ground-to-Air Defense Mission&quot; from &quot;Simulation Menu&quot;.&nbsp; In 
+this mission, you control an anti-air ground vehicle and defend the base.&nbsp; 
+Not all maps are prepared for the ground-to-air defense mission.</p>
+<p>  </p>
+<p>  </p>
+        <h2 align="left"><u><b><a name="PROGRAMMING"></a></b>If you are interested in 3D Graphics programming</u></h2>
+        <p align="left">This flight simulator is built using <a href="http://member.nifty.ne.jp/ysdynamics/impulse/impulse.html">Blue Impulse 3D Graphics SDK</a>
+        and <a href="http://ciel.me.cmu.edu/soji/ysclass/ysclass.html">YS Geometric Calculation Library</a>.</p>
+        <p align="left">Blue Impulse 3D Graphics SDK is designed for interactive
+        3D visualization programs. I developed it for my master's thesis research project. It runs in a acceptable speed
+        even in a relatively slow platforms. One advantage of the toolkit is cross-platform capability. Actually, if I re-compile
+        source code of this flight simulator in SGI or X-Window environment, it runs (Except dialog boxes and joystick
+        features. I just used #ifdef WIN32,#endif for those WIN32 depending part). Another advantage is scalability. If
+        you build a program in a relatively slower platform, you'll want to use flat-shaded version. But, you can get smooth&nbsp;<br>
+        shaded version just by re-compile with the library file of OpenGL implementation.&nbsp;</p>
+        <p align="left">YS Geometric Calculation Library provides wide variety of
+        3D calculation features, including basic vector classes, matrix classes, shell classes, intersection/collision
+        detection..... This library also has template classes like array, linked list etc.&nbsp;</p>
+        <p align="left">Both toolkits are free and open source. Please visit the
+        Web site.&nbsp;</p>
+        <ul>
+          <li>
+            <p align="left"><a href="http://member.nifty.ne.jp/ysdynamics/impulse/impulse.html">  Blue Impulse 3D Graphics SDK</a></li>
+          <li>
+            <p align="left">
+            <a href="http://cielab3.me.cmu.edu/~soji/ysclass/ysclass.html">YS Geometric Calculation Library</a></li>
+        </ul>
+        <p align="left">But, it doesn't mean I'm going to open source codes of
+        YSFLIGHT2000. I have no plan to open the source code of this flight
+        simulator. Only source codes of toolkits are open.</p>
+                <p>Blue Impulse 3D Graphics SDK is a foundation toolkit of
+                YSFLIGHT2000.&nbsp; But, it doesn't mean that you can easily
+                modify existing airplane or create new airplane in
+                YSFLIGHT2000.&nbsp; Blue Impulse 3D Graphics SDK is a general
+                purpose 3D Graphics toolkit.&nbsp; But it is not dedicated to
+                YSFLIGHT2000.<p>  </p>
+<p>  </p>
+        <h2 align="left"><u><b><a name="CONTACT"></a>Contact Information</b></u></h2>
+        <p align="left"><img border="0" src="opengl_harrier.png" align="right" width="379" height="234">Comments are welcome. Send E-Mail to:</p>
+        <blockquote>
+          <p align="left"><img border="0" src="email.png" width="170" height="18"></p>
+        </blockquote>
+        <p align="left">In both address, I can read E-Mail written in either Japanese or English.</p>
+        <p align="left">Web-Page:</p>
+                <blockquote>
+        <p align="left"><a href="http://www.ysflight.com">http://www.ysflight.com</a></p>
+                </blockquote>
+        <p align="left">Related Web-Page:</p>
+        <blockquote>
+          <p align="left"><a href="http://download.en.ysflight.com">AIRPLANE
+          SOFTWARE</a>&nbsp;&nbsp; -&nbsp;&nbsp; Download cool 3D airplane
+          screensavers etc.</p>
+          <p align="left"><a href="http://ciel.me.cmu.edu/soji/photo/photo.html">Airplane
+          Photo Gallery</a>&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp; Tons of
+          airplane photos.</p>
+        </blockquote>
+              <p>  </p>
+<p>  </p>
+        <h2 align="left"><u><a name="APPENDIX-A"></a>Appendix A - Notation of the position</u></h2>
+        <table border="1">
+          <tr>
+            <td>  RWxx_yy&nbsp;</td>
+            <td>  On the runway. &quot;xx&quot; means the direction of the runway.
+              &quot;yy&quot;  means the position number.&nbsp;</td>
+          </tr>
+          <tr>
+            <td>NORTHxxxxx_yy,&nbsp;<br>
+              SOUTHxxxxx_yy,&nbsp;<br>
+              EASTxxxxx_yy,&nbsp;<br>
+  WESTxxxxx_yy&nbsp;</td>
+            <td>  North, south, east or west of the airfield. &quot;xxxxx&quot; means  the altitude (ft).
+              &quot;yy&quot; means the position number.&nbsp;</td>
+          </tr>
+        </table>
+              <p>  </p>
+<p>  </p>
+        <h2 align="left"><u><a name="APPENDIX-B"></a>Appendix B - Sample missions</u></h2>
+        <p align="left">
+        <img border="0" src="opengl_typhoon.png" align="right" width="519" height="412">There are several example missions. You can choose them from
+        <b>File-&gt;Load</b>, then choose <b>Simulation-&gt;Fly</b>.</p>
+        <p align="left">I write brief explanations of each mission.&nbsp;</p>
+        <ul>
+          <li>
+            <p align="left"><b>EscortMission.yfs</b><br>
+            A cargo airplane is inbound to your base.&nbsp; Take off and escort 
+            them back to the base safely.</li>
+          <li>
+            <p align="left"><b>fly_f22.yfs<br>
+            </b>This file is used in <a href="#INSTANTFLIGHT">Instant Flight</a> section.&nbsp;</li>
+          <li>
+            <p align="left"><b>A6M5vsB29.yfs</b><br>
+            A formation of B-29 is approaching Misawa air base.&nbsp; Take off 
+            in A6M5 Zero Fighter and intercept the bomber formation.&nbsp; Give 
+            appropriate commands to your wingmen to make the mission successful.</li>
+          <li>
+            <p align="left"><b>P51vsG4M.yfs</b><br>
+            A formation of G4M Betty is approaching your base.&nbsp; Take off in 
+            P-51 Mustang and intercept the bomber formation.&nbsp; Give 
+            appropriate commands to your wingmen to make the mission successful.</li>
+          <li>
+            <p align="left"><b>SpitfireVsFw190.yfs</b><br>
+            Ride Royal Air Force Spitfire and intercept Luftwaffe Focke Wulf 190 
+            over London.</li>
+          <li>
+            <p align="left"><b>fleetbattle1.yfs</b><br>
+            Take off the aircraft carrier with your wingman, fly east, and 
+            destroy enemy fleet before they destroy a friendly aircraft carrier.&nbsp; 
+            After the mission, return to the ground base, or the carrier that 
+            you took off.&nbsp; You need to give appropriate commands to your 
+            wingman to win the battle.</li>
+          <li>
+            <p align="left"><b>fleetbattle2.yfs<br>
+            </b>Take off the aircraft carrier with your wingman, fly east, and 
+            destroy enemy fleet.&nbsp; Fighters are guarding the airspace around 
+            the enemy fleet.&nbsp; Use mid range missile to destroy some of 
+            them, and destroy the rest of them in a dogfight.&nbsp; After the 
+            mission, return to the carrier that you took off.&nbsp; You need to 
+            give appropriate commands to your wingman to win the battle.</li>
+          <li>
+            <p align="left"><b>concorde_in_hawaii.yfs</b><br>
+            Take off Kona International Airport in Hawaii island, turn left
+            heading 310, climb maintain 45,000ft, and you are cleared for Mach
+            2.0!&nbsp; When Oahu island is close, descend and decelerate to
+            prepare to land.&nbsp; Fly south of Oahu island with heading 260,
+            altitude 2,500ft.&nbsp; Make 180 degree right turn, and you are
+            cleared for ILS approach runway 8L of Honolulu International
+            Airport.&nbsp; Final approach speed is 160kt.&nbsp; Use PageUp/PageDown
+            key to move variable geometry nose (or droop nose) to gain downward
+            visibility!</li>
+        </ul>
+        <ul>
+          <li>
+            <p align="left"><b>badiamond.yfs</b></li>
+          <li>
+            <p align="left"><b>bidiamond.yfs</b></li>
+          <li>
+            <p align="left"><b>tbdiamond.yfs</b><br>
+            Fly a formation leader of world famous "United States Navy Blue Angels",
+            "United States Airforce Thunderbirds" or "Japan Air Self Defence Force Blue Impulse".
+            At the beginning, you'll be on runway. You'll see another three airplanes behind
+            (use M key to look back).&nbsp;</li>
+        </ul>
+        <blockquote>
+          <p align="left">To take off, turn on afterburner and push the throttle to the max power
+          (press TAB key once and press Q key until the power becomes max, or just
+          push your throttle lever forward if you have an external throttle lever).&nbsp;</p>
+          <p align="left">After air-bourn, keep the nose 10 to 15 degree pitch. Press B key or use POV to
+          look back periodically. You'll see the #4 airplane sliding into its position. After #4 took in position, turn off the afterburner and reduce the
+          power to the half of military (press TAB once again and press A key until the
+          power becomes half, or just pull your throttle lever back to that power).&nbsp;</p>
+          <p align="left">Again, use M key or POV control, wait until other airplanes catch up you.
+          You can make smooth turn during this procedure.&nbsp;</p>
+          <p align="left">At this point, you can fly what ever you want. But, remember that you are the
+          formation leader. You must not perform a rapid maneuver, especially lateral
+          maneuvers (rolling). You have to fly really nice and smooth. You also should
+          not use max power or minimum power with airbrake. If you fly so, they cannot
+          keep up with you because other airplanes have the same flight dynamic characteristic (no more acceleration or
+          deceleration). You also have to&nbsp;<br>
+          keep between 200kt and 500kt until landing.&nbsp;</p>
+          <p align="left">If you pull your trigger 1 or 2, other airplanes will draw a smoke with you.
+          You can try, diamond roll, diamond loop, and whatever diamond something
+          maneuver with trailing smoke. You should keep plus G (more than 2.0G is
+          good) while you are performing a formation aerobatic maneuver.&nbsp;</p>
+          <p align="left">Finally, you should land your airplane to the runway. Your wingmen will just
+          follow you. So, you have to land exactly on the centerline of the runway.&nbsp;</p>
+          <p align="left">Try!&nbsp;</p>
+        </blockquote>
+              <p>  </p>
+<p>  </p>
+        <h2 align="left"><u><a name="APPENDIX-C"></a>Appendix C - Anti-Ground Attack Missions</u></h2>
+        <p align="left">After 20000226 version, anti air artillery and surface to air missiles are added.
+        So, you may want to attack heavily defended ground targets. Each map has
+        heavily guarded ground targets. Why are they within just 20 to 30 km of the airbase?
+        Please don't ask me that question(^_^;) But, you can attack them. Some maps
+        also has the start position "CLOSE BY THE GROUND TARGETS". If you choose it,
+        you'll start flying several miles away from the ground targets. Otherwise,
+        please takeoff and search the targets by yourself. They are heavily guarded by
+        anti air artilaries and surface to air missiles. Attack them by your AGMs (anti
+        ground missiles) and machine guns!&nbsp;</p>
+        <p align="left">Please see also <a href="#CLOSEAIRSUPPORTMISSION">Close 
+        Air Support Mission</a>.</p>
+              <p>  </p>
+<p>  </p>
+                <h2><a name="COMPARAM"></a><u>Appendix D - Command Parameters</u></h2>
+                <p>The following command parameters (options) are available for
+                both Windows and Linux versions.</p>
+                <p>  -h&nbsp;<br>
+  -help</p>
+                <blockquote>
+                  <p>   Show help.</p>
+                </blockquote>
+                <p>-keymenu</p>
+                <blockquote>
+                  <p>   Use key menu.</p>
+                </blockquote>
+                <p>-replayrecord Filename</p>
+                <blockquote>
+                  <p>   Replay flight record.</p>
+                </blockquote>
+                <p>-freeflight Airplane Field Position</p>
+                <blockquote>
+                  <p>   Fly Free Flight.</p>
+                </blockquote>
+                <p>-flyyfs Filename</p>
+                <blockquote>
+                  <p>   Load .YFS and fly.</p>
+                </blockquote>
+                <p>  -endurance Airplane Field NWingmen WingmenLvl UseMissile</p>
+                <blockquote>
+                  <p>   Endurance Mode (15 minutes dogfight)<br>
+     NWingmen    : 0 to 2<br>
+     WingmenLvl  : 1 to 5<br>
+     UseMissile  : 0(not use) or 1(use)</p>
+                </blockquote>
+                <p>  -intercept Airplane Field Stealth Escort HeavyBomber Bomb NEnemy NWingmen</p>
+                <blockquote>
+                  <p>   Intercept Mission (15 minutes base defense)<br>
+     Stealth     : 0(not allow stealth) or 1(allow stealth)<br>
+     Escort      : 0(not allow fighter escort) or 1(allow fighter escort)<br>
+     Bomb        : 0(not allow bomb) or 1(allow bomb)<br>
+     NEnemy      : 1 to 5<br>
+     NWingmen    : 0 to 2</p>
+                </blockquote>
+                <p>  -server Username Fieldname</p>
+                <blockquote>
+                  <p>   Start server mode.&nbsp; You can omit fieldname.&nbsp; 
+                  If fieldname is omitted, the default field will be used.</p>
+                </blockquote>
+                <p>  -client Username ServerHostName</p>
+                <blockquote>
+                  <p>   Start client mode.</p>
+                </blockquote>
+                <p>-netport portNumber</p>
+                <blockquote>
+                  <p>   Specify port number (valid only when -server or -client
+                  is given.)</p>
+                </blockquote>
+                <p>-autoexit</p>
+                <blockquote>
+                  <p>   Exit after flight. (Ignores -keymenu.)</p>
+                </blockquote>
+                <p>-saveflight Filename</p>
+                <blockquote>
+                  <p>   Save after flight.</p>
+                </blockquote>
+                <p>-listairplane</p>
+                <blockquote>
+                  <p>   Show airplane list.</p>
+                </blockquote>
+                <p>-listfield</p>
+                <blockquote>
+                  <p>   Show field list.</p>
+                </blockquote>
+                <p>-liststartpos Fieldname</p>
+                <blockquote>
+                  <p>   Show start position list.</p>
+                </blockquote>
+                <p>-setdefaultconfig</p>
+                <blockquote>
+                  <p>   Set default configuration.</p>
+                </blockquote>
+                <p>-setdefaultnetconfig</p>
+                <blockquote>
+                  <p>   Set default network configuration.</p>
+                </blockquote>
+                <p>-setdefaultkeyassign</p>
+                <blockquote>
+                  <p>   Set default keyboard assignment.</p>
+                </blockquote>
+                <p>-setdefaultoption</p>
+                <blockquote>
+                  <p>   Set default option.</p>
+                </blockquote>
+                <p>
+<p>  </p>
+                <h2><a name="CONFIGFILES"></a><u>Appendix E - Configuration
+                Files</u></h2>
+                <p>Linux version does not have GUI dialogs for changing
+                configurations.&nbsp; So, you need to manually modify
+                configuration files.&nbsp; The explanations of the configuration
+                files are found in document/<a href="configfiles.txt">configfiles.txt</a></p>
+                <p>(*) GUI dialogs have been added to the Linux version in 
+                20090611 version.</p>
+                <p>If you screw up the configuration files, start the program
+                with the following four options:</p>
+                <blockquote>
+                <p>-setdefaultconfig</p>
+                <p>-setdefaultnetconfig</p>
+                <p>-setdefaultkeyassign</p>
+                <p>-setdefaultoption</p>
+                </blockquote>
+                <p>  </p>
+<p>  </p>
+        <center>
+        <p align="left"><font size="3">If you have any questions or comments,
+        please give me an E-Mail! You can reach me by the following address.</font></p>
+        <blockquote>
+            <p align="left"><img border="0" src="email.png" width="170" height="18"></p>
+        </blockquote>
+        </center>
+</body>
+</html>

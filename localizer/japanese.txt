@@ -1,0 +1,351 @@
+YSFLIGHT_LOCALIZATION_INFO_FILE
+$FGCOL 255
+$BGCOL 0
+$DEFDIR "C:/Program Files/YSFLIGHT.COM/YSFLIGHT"
+$DEFFONT "ＭＳ ゴシック"
+$DEFSIZE 12
+
+*Joystick Calibration Dialog
+language/joycalib_filemenu.png           #ファイル(F)
+language/joycalib_fileexitmenu.png       #終了(X)
+language/joycalib_calibmenu.png          #調整(C)
+language/joycalib_calibcalibmenu.png     #調整(C)
+language/joycalib_calibcalibhatmenu.png  #ハットスイッチの調整(H)
+language/joycalib_caliberasemenu.png     #調整情報の全消去(E)
+language/joycalib_axiscycle.png          #軸を可動範囲の両端に何度か動かしてから、スペースキーを押してください。
+language/joycalib_axisneutral.png        #軸を中央に戻して、スペースキーを押してください。
+language/joycalib_calib.png              #軸の調整
+language/joycalib_caliberase.png         #調整情報の全消去
+language/joycalib_calibhat.png           #ハットスイッチの調整
+language/joycalib_fileexit.png           #終了
+language/joycalib_hat0deg.png            #ハットスイッチを上に押してスペースキーを押してください。
+language/joycalib_hat180deg.png          #ハットスイッチを下に押してスペースキーを押してください。
+language/joycalib_hat270deg.png          #ハットスイッチを左に押してスペースキーを押してください。
+language/joycalib_hat90deg.png           #ハットスイッチを右に押してスペースキーを押してください。
+language/joycalib_hatneutral.png         #ハットスイッチを中立位置にしてスペースキーを押してください。
+language/joycalib_next.png               #次へ>>
+language/joycalib_stickcircle.png        #可動範囲全体を使って円を描くようにジョイスティックを動かしてください。
+language/joycalib_stickneutral.png       #ジョイスティックを中立位置に戻して、スペースキーを押してください。
+*Common
+language/common/cancel.png               #取り消し
+language/common/close.png                #閉じる
+language/common/delete.png               #削除
+language/common/english.png              #English(英語)
+language/common/field.png                #フィールド
+language/common/general.png              #一般
+language/common/language.png             #Japanese(日本語)
+language/common/ok.png                   #確定
+language/common/setdefault.png           #デフォルトに戻す
+language/common/startpos.png             #開始位置
+*Aircraft Selection Dialog
+language/airdlg/aircrafttab.png          #航空機
+language/airdlg/aircraft.png             #航空機選択
+language/airdlg/search.png               #検索
+language/airdlg/loadingtab.png           #搭載
+language/airdlg/aamshort.png             #短射程空対空ミサイル
+language/airdlg/aaamshort.png            #高機動短射程空対空ミサイル
+language/airdlg/aammid.png               #中射程空対空ミサイル
+language/airdlg/agm.png                  #空対地ミサイル
+language/airdlg/bomb250.png              #250ポンド爆弾
+language/airdlg/bomb500.png              #500ポンド爆弾
+language/airdlg/bomb500hd.png            #500ポンド高抵抗爆弾
+language/airdlg/flarepod.png             #チャフ・フレアポッド
+language/airdlg/fuel.png                 #燃料(%)
+language/airdlg/fueltank.png             #外部燃料タンク
+language/airdlg/rocket.png               #ロケット弾
+language/airdlg/smoke.png                #スモーク
+language/airdlg/smokecol.png             #スモークの色
+language/airdlg/categorytab.png          #カテゴリー
+language/airdlg/normal.png               #ノーマル
+language/airdlg/utility.png              #汎用
+language/airdlg/aerobatic.png            #アクロバット
+language/airdlg/trainer.png              #練習機
+language/airdlg/fighter.png              #戦闘機
+language/airdlg/attacker.png             #攻撃機
+language/airdlg/bomber.png               #爆撃機
+language/airdlg/ww2attacker.png          #第2次大戦攻撃機
+language/airdlg/ww2bomber.png            #第2次大戦爆撃機
+language/airdlg/ww2divebomber.png        #第2次大戦急降下爆撃機
+language/airdlg/ww2fighter.png           #第2次大戦戦闘機
+*Configuration dialog
+language/configdlg/default.png                 #デフォルト
+language/configdlg/environment.png             #環境
+language/configdlg/light.png                   #光源方向
+language/configdlg/aircraft.png                #航空機
+language/configdlg/gamerule.png                #ゲームルール
+language/configdlg/blackout.png                #ブラックアウト
+language/configdlg/midair.png                  #空中衝突判定
+language/configdlg/notailstrike.png            #しりもち事故でも爆発しない
+language/configdlg/canlandanywhere.png         #どこでも着陸可能
+language/configdlg/autorudder.png              #方向舵の自動調整
+language/configdlg/precision.png               #シミュレーション精度上げ
+language/configdlg/showhudalways.png           #常にヘッド・アップ・ディsプレイを使う
+language/configdlg/usesimplehud.png            #簡略ヘッド・アップ・ディsプレイを使う
+language/configdlg/dontuseinstpanel.png        #計器パネルを使わない
+language/configdlg/showplayernamealways.png    #プレイヤー名を常に表示
+language/configdlg/showjoystick.png            #操縦桿を表示
+language/configdlg/f8cameradelay.png           #F8視点の時間遅れ
+language/configdlg/minradaralt.png             #レーダーに映る最低高度
+language/configdlg/showias.png                 #対気速度をIASで表示
+language/configdlg/graphics.png                #描画設定
+language/configdlg/drawshadow.png              #影の表示
+language/configdlg/shadowofdeadplane.png       #墜落機/終了機の影も表示
+language/configdlg/drawordinance.png           #搭載武器の表示
+language/configdlg/drawcoarseweapon.png        #武器の表示を粗くする
+language/configdlg/horizongradation.png        #水平線のグラデーション表示
+language/configdlg/cloudtype.png               #雲のタイプ
+language/configdlg/drawlightalways.png         #日中でも灯火を表示する
+language/configdlg/airgraphquality.png         #飛行機の描画品質
+language/configdlg/smoketype.png               #スモークの描画タイプ
+language/configdlg/smokeremain.png             #スモークの残存時間(秒)
+language/configdlg/smokestep.png               #スモーク表示の単位ステップ数
+language/configdlg/drawsmokebyparticle.png     #パーティクルでスモークを描画
+language/configdlg/showfps.png                 #フレームレート表示
+language/configdlg/opengl.png                  #OpenGL
+language/configdlg/fog.png                     #霧
+language/configdlg/visibility.png              #視程(マイル)
+language/configdlg/zbuffquality.png            #Zバッファ品質
+language/configdlg/trspobj.png                 #半透明オブジェクト
+language/configdlg/trspsmoke.png               #半透明スモーク
+language/configdlg/trspvapor.png               #半透明ベイパー
+language/configdlg/reducepeephole.png          #のぞき穴効果減少
+language/configdlg/usedisplistcloud.png        #雲の描画にバッファリングを使う
+language/configdlg/usedisplistexplosion.png    #爆発の描画にバッファリングを使う
+language/configdlg/usedisplistweapon.png       #武器の描画にバッファリングを使う
+language/configdlg/groundtexture.png           #地上のテクスチャ
+language/configdlg/runwaylighttexture.png      #灯火のテクスチャ
+language/configdlg/useantialiasing.png         #アンチエイリアシング
+language/configdlg/antialiasingneedrestart.png #アンチエイリアシングを有効にするには\nプログラムを再起動する必要があります。
+
+
+language/contdlg/continue.png                  #コンティニュー(Y)
+language/contdlg/message.png                   #コンティニューしますか?
+language/contdlg/terminate.png                 #終了(ESC)
+language/deletefltdlg/delete.png               #削除(Y)
+language/deletefltdlg/message.png              #現在のフライトを削除しますか?
+language/deletefltdlg/notdelete.png            #削除しない(N)
+language/errmsg/createflt.png                  #まず、フライトを作成するか、読み込んでください。
+language/errmsg/nofltrecord.png                #飛行記録がありません。
+language/errmsg/noprevflt.png                  #直前のフライトが存在しないか、データが壊れています。
+language/exitdlg/backtomenu.png                #メニューに戻す(N)
+language/exitdlg/exit.png                      #終了(Y)
+language/exitdlg/message.png                   #プログラムを終了しますか?
+language/gamemsg/esconce.png                   #ESCをもう一度押すと終了します。
+language/gamemsg/esctwice.png                  #ESCを2回押すと終了します。
+language/maindlg/create.png                    #フライトの新規作成
+language/maindlg/flynow.png                    #飛行開始
+language/maindlg/open.png                      #飛行記録またはフライトの読み込み
+language/maindlg/playrecord.png                #飛行記録再生
+language/maindlg/retry.png                     #前回のフライトに再挑戦
+language/maindlg/save.png                      #飛行記録またはフライトの保存
+
+language/menu/fileMenu.png                     #ファイル(F)
+language/menu/file-Open.png                    #フライトまたは飛行記録を開く(O)
+language/menu/file-Save.png                    #フライトまたは飛行記録の保存(S)
+language/menu/file-OpenMission.png             #ミッションを開く(M)
+language/menu/file-OpenPrevFlight.png          #前回のフライトを開く(V)
+language/menu/file-Close.png                   #フライトまたは飛行記録を閉じる(C)
+language/menu/file-Exit.png                    #終了(X)
+
+language/menu/simulationMenu.png               #シミュレーション(S)
+language/menu/simulation-Fly.png               #飛行開始(F)
+language/menu/simulation-Retry.png             #前回のフライトに再挑戦(V)
+language/menu/simulation-Replay.png            #飛行記録再生(R)
+language/menu/simulation-Create.png            #フライトの新規作成(C)
+language/menu/simulation-DayNight.png          #日中/夜間の選択(D)
+language/menu/simulation-DisableGroundFire.png #地対空砲の禁止(G)
+language/menu/simulation-AirCombat.png         #空中戦の作成(B)
+language/menu/simulation-SelectAir.png         #飛行機選択(A)
+language/menu/simulation-SelectStp.png         #開始位置の選択(T)
+language/menu/simulation-Endurance.png         #15分間耐久空中戦(E)
+language/menu/simulation-Intercept.png         #基地防空ミッション(I)
+language/menu/simulation-CloseAirSupport.png   #近接支援ミッション(S)
+language/menu/simulation-LdgPractice.png       #着陸訓練(L)
+language/menu/simulation-Ldg-Level01.png       #レベル 1: Straight-In, Wind-Calm, Good Visibility (1)
+language/menu/simulation-Ldg-Level02.png       #レベル 2: Straight-In, Light-Wind, Good Visibility(2)
+language/menu/simulation-Ldg-Level03.png       #レベル 3: Dog-Leg, Wind-Calm, Good Visibility(3)
+language/menu/simulation-Ldg-Level04.png       #レベル 4: Base-Leg, Light-Wind, Good Visibility(4)
+language/menu/simulation-Ldg-Level05.png       #レベル 5: Base-Leg, Moderate-Wind, Good Visibility(5)
+language/menu/simulation-Ldg-Level06.png       #レベル 6: Base-Leg, Strong-Wind, Good Visibility(6)
+language/menu/simulation-Ldg-Level07.png       #レベル 7: Straight-In, Wind-Calm, Low Cloud(7)
+language/menu/simulation-Ldg-Level08.png       #レベル 8: Dog-Leg, Wind-Calm, Low Cloud(8)
+language/menu/simulation-Ldg-Level09.png       #レベル 9: Base-Leg, Wind-Calm, Low Cloud(9)
+language/menu/simulation-Ldg-Level10.png       #レベル10: Base-Leg, Light-Wind, Low Cloud(A)
+language/menu/simulation-Ldg-Level11.png       #レベル11: Base-Leg, Moderate-Wind, Low Cloud(B)
+language/menu/simulation-Ldg-Level12.png       #レベル12: Straigh-In, Wind-Calm, Low Visibility(C)
+language/menu/simulation-Ldg-Level13.png       #レベル13: Base-Leg, Wind-Calm, Low Visibility(D)
+language/menu/simulation-Ldg-Level14.png       #レベル14: Base-Leg, Moderate-Wind, Low Visibility(E)
+language/menu/simulation-Ldg-Level15.png       #レベル15: Base-Leg, Strong-Wind, Low Visibility+Low Cloud(F)
+
+language/menu/optionMenu.png                   #オプション(O)
+language/menu/option-Config.png                #設定(C)
+language/menu/option-Option.png                #オプション(O)
+language/menu/option-KeyAssign.png             #ジョイスティック/キー割り当て(A)
+language/menu/option-JoyCalib.png              #ジョイスティックの調整(J)
+
+language/menu/autoDemoMenu.png                           #オートデモ(D)
+language/menu/autoDemo-DogFight.png                      #格闘戦(D)
+language/menu/autoDemo-Ldg.png                           #着陸(L)
+language/menu/autoDemo-CarrierLdg.png                    #空母着艦(C)
+language/menu/autoDemo-Acro.png                          #アクロバット(A)
+language/menu/autoDemo-Acro-360AndLoop.png               #360アンド・ループ
+language/menu/autoDemo-Acro-BigBattleToShortDiaLoop.png  #ビッグ・バトル・トゥ・ショート・ダイヤモンド・ループ
+language/menu/autoDemo-Acro-BigHeart.png                 #ビッグ・ハート
+language/menu/autoDemo-Acro-BombBurstDownward4.png       #下向き空中開花(4機)
+language/menu/autoDemo-Acro-BombBurstDownward6.png       #下向き空中開花(6機)
+language/menu/autoDemo-Acro-BombBurstUpward4.png         #上向き空中開花(4機)
+language/menu/autoDemo-Acro-BombBurstUpward6.png         #上向き空中開花(6機)
+language/menu/autoDemo-Acro-BontonRoll.png               #ボントン・ロール
+language/menu/autoDemo-Acro-ChampaignSplit.png           #シャンペイン・スプリット
+language/menu/autoDemo-Acro-ChangeOverTurn.png           #チェンジ・オーバー・ターン
+language/menu/autoDemo-Acro-ContinuousRoll.png           #連続横転
+language/menu/autoDemo-Acro-CorkScrew.png                #コークスクリュー
+language/menu/autoDemo-Acro-CubanEight.png               #キューバン・エイト
+language/menu/autoDemo-Acro-DeltaLoop.png                #デルタ・ループ
+language/menu/autoDemo-Acro-DeltaLoopAndBonton.png       #デルタ・ループ・アンド・ボントン
+language/menu/autoDemo-Acro-DeltaRoll.png                #デルタ・ロール
+language/menu/autoDemo-Acro-Dia9ToSwan.png               #ダイヤモンド・ナイン・トゥ・スワン・ベンド
+language/menu/autoDemo-Acro-DiamondTakeOff.png           #ダイヤモンド・テイク・オフ
+language/menu/autoDemo-Acro-DoubleFarvel.png             #ダブル・ファーベル
+language/menu/autoDemo-Acro-FormBreak.png                #フォーメーション・ブレイク
+language/menu/autoDemo-Acro-LancasterTo5-4Split.png      #ランキャスター・トゥ・5-4 スプリット
+language/menu/autoDemo-Acro-LetterEight.png              #レター・エイト
+language/menu/autoDemo-Acro-LevelBreak.png               #水平ブレイク
+language/menu/autoDemo-Acro-LevelOpener.png              #水平空中開花
+language/menu/autoDemo-Acro-LineAbreastLoop.png          #ライン・アブレスト・ループ
+language/menu/autoDemo-Acro-LineAbreastRoll.png          #ライン・アブレスト・ロール
+language/menu/autoDemo-Acro-PitchUpBreak.png             #ピッチ・アップ・ブレイク
+language/menu/autoDemo-Acro-RainFall.png                 #レイン・フォール
+language/menu/autoDemo-Acro-RockWingClean.png            #ロック・ウイング(クリーン)
+language/menu/autoDemo-Acro-RockWingGearDown.png         #ロック・ウイング(ギア・ダウン)
+language/menu/autoDemo-Acro-RollBackToArrowhead.png      #ロール・バック・トゥ・アローヘッド
+language/menu/autoDemo-Acro-RollingCombatPitch.png       #ローリング・コンバット・ピッチ
+language/menu/autoDemo-Acro-RollOnTakeOffHalfCuban.png   #ロール・オン・テイクオフ・アンド・ハーフ・キューバン
+language/menu/autoDemo-Acro-SlowRoll.png                 #スロー・ロール
+language/menu/autoDemo-Acro-StarCross.png                #スター・クロス
+language/menu/autoDemo-Acro-SwanToApolloRoll.png         #スワン・トゥ・アポロ・ロール
+language/menu/autoDemo-Acro-TackCrossVertRoll.png        #タック・クロス・アンド・バーティカル・クライム・ロール
+language/menu/autoDemo-Acro-TightTurn.png                #急旋回
+language/menu/autoDemo-Acro-TrailToDiamondRoll.png       #トレイル・トゥ・ダイヤモンド・ロール
+language/menu/autoDemo-Acro-VixenBreak.png               #ヴィクセン・ブレイク
+
+language/menu/networkMenu.png                  #ネットワーク(N)
+language/menu/network-Server.png               #サーバー(S)
+language/menu/network-Client.png               #クライアント(C)
+language/menu/network-Config.png               #ネットワーク設定(O)
+
+language/menu/flightRecUtilMenu.png            #飛行記録ユーティリティ(U)
+language/menu/flightRecUtil-TimeInterval.png   #時間精度変更(T)
+language/menu/flightRecUtil-SpacePrecision.png #空間精度変更(S)
+language/menu/flightRecUtil-EditRecord.png     #飛行記録編集(E)
+
+language/menu/helpMenu.png                     #ヘルプ(H)
+language/menu/help-HelpEnglish.png             #英語ヘルプ(E)
+language/menu/help-DefKeyEnglish.png           #英語デフォルトキー/ジョイスティック割り当て表(N)
+language/menu/help-HelpJapanese.png            #日本語ヘルプ(J)
+language/menu/help-DefKeyJapanese.png          #日本語デフォルトキー/ジョイスティック割り当て表(P)
+language/menu/help-About.png                   #YSFLIGHTについて(A)
+
+language/misc/firststartrecordfailure.png      #初回機動の記録に失敗しました。システム管理者の人に一度\n機動してもらうか、インストールしたディレクトリへの書き\n込み権限を追加してもらってください。
+language/misc/initialized.png                  #設定を初期化しました。
+language/misc/testver.png                      #このプログラムはYSFLIGHT未テストバグだし用バージョンです。\n「未テスト」というだけに、正式版で実施するリリース前テスト\nを実施していません。ですので、多分たくさんバグが入っている\nと思います。安定したバージョンを使いたい方は、正式版をダウ\nンロードしてください。また、このバージョンを使用して、何か\n気づいた点などありましたら、作者(PEB01130@nifty.com)まで\nお知らせください。なるべく返事を書くようにしていますが、忙\nしくなってくると、メールの返事が2ヶ月以上遅れたりそのまま\n忘れてしまったりします。そうなったらごめんなさい(^_^;)
+
+*Server/Client dialog
+language/net/field.png                         #フィールド
+language/net/history.png                       #過去に利用したサーバーIPアドレスから選ぶ
+language/net/hostname.png                      #サーバーホスト名(IPアドレス)
+language/net/noairplane.png                    #このサーバーで利用可能な航空機データがインストールされて\nいません。航空機データの入手方法、インストール方法につい\nては、サーバー管理者にお問い合わせください。
+language/net/noscenery.png                     #このサーバーが使用中のマップがインストールされていま\nせん。マップデータの入手方法、インストール方法につい\nては、サーバー管理者にお問い合わせください。
+language/net/username.png                      #ユーザ名
+
+*Network-Configuration Dialog
+language/netconfig/general.png                 #一般
+language/netconfig/client.png                  #クライアント
+language/netconfig/server1.png                 #サーバー1
+language/netconfig/server2.png                 #サーバー2
+language/netconfig/server3.png                 #サーバー3
+language/netconfig/port.png                    #ポート番号
+language/netconfig/username.png                #デフォルトユーザー名
+language/netconfig/chatlog.png                 #チャットログを残す
+language/netconfig/defserveraddr.png           #デフォルトサーバーアドレス
+language/netconfig/defstp.png                  #デフォルト開始位置
+language/netconfig/defiff.png                  #デフォルトIFF
+language/netconfig/recordflt.png               #飛行を記録する
+language/netconfig/freemem.png                 #可能なときメモリを解放する
+language/netconfig/deffield.png                #デフォルトフィールド
+language/netconfig/configintercept.png         #迎撃ミッションの設定
+language/netconfig/disablechat.png             #チャット禁止
+language/netconfig/logontimeout.png            #ログインのタイムアウト
+language/netconfig/maxconn.png                 #単一IPからの最大接続数
+language/netconfig/svrreset.png                #一定時間ごとにサーバーをリセット
+language/netconfig/svrstop.png                 #一定回数リセットしたらサーバーを止める
+language/netconfig/welcomemsg.png              #ログオン時クライアントにメッセージを送る
+language/netconfig/groundfire.png              #地対空砲を有効にする
+language/netconfig/usemissile.png              #空対空/空対地ミサイルを使う
+language/netconfig/usegun.png                  #機銃/爆弾/ロケット弾を使う
+language/netconfig/radargunsight.png           #見越し照準の使用禁止
+language/netconfig/disable3rdairview.png       #自機以外視点禁止
+language/netconfig/showusername.png            #ユーザ名の表示
+language/netconfig/midair.png                  #空中衝突判定
+language/netconfig/blackout.png                #ブラックアウト
+language/netconfig/canlandanywhere.png         #どこでも着陸可能
+language/netconfig/notifyjoinleave.png         #ユーザの参加/離脱を通知する
+language/netconfig/minradaralt.png             #レーダーに映る最低高度
+language/netconfig/blockedip.png               #禁止IPアドレス
+language/netconfig/addblockedip.png            #新しい禁止IPアドレスを追加
+language/netconfig/delblockedip.png            #選択した禁止IPアドレスを削除
+language/netconfig/newblockedip.png            #新しい禁止IPアドレス
+
+language/netconsole/disablechat.png            #チャット禁止
+language/netconsole/lockserver.png             #サーバーロック
+language/netconsole/joinlock.png               #飛行開始ロック
+language/netconsole/selectair.png              #航空機選択
+language/netconsole/selectstp.png              #開始位置選択
+language/netconsole/join.png                   #飛行開始
+language/netconsole/observermode.png           #観戦モード
+language/netconsole/dispeluser.png             #ユーザー切断
+language/netconsole/listuser.png               #ユーザーリスト
+language/netconsole/whokilledme.png            #被撃墜記録表示
+language/netconsole/whomhaveikilled.png        #撃墜記録表示
+language/netconsole/eudnrance_jet.png          #15分耐久空中戦開始(JET)
+language/netconsole/endurance_ww2.png          #15分耐久空中戦開始(WW2)
+language/netconsole/intercept.png              #迎撃ミッション開始
+language/netconsole/closeairsupport.png        #近接支援ミッション開始
+language/netconsole/endserver.png              #サーバー終了
+language/netconsole/confirmendserver.png       #サーバー終了確認
+language/netconsole/reviveground.png           #地上物復活
+language/netconsole/confirmreviveground.png    #地上物復活確認
+language/netconsole/chat.png                   #チャット
+language/netconsole/send.png                   #送信
+language/netconsole/logout.png                 #ログアウト
+language/netconsole/confirmlogout.png          #ログアウト確認
+
+language/newfltdlg/selectair.png               #航空機選択
+language/newfltdlg/wingman.png                 #僚機
+language/newfltdlg/changewingman1.png          #僚機1変更
+language/newfltdlg/changewingman2.png          #僚機2変更
+language/newfltdlg/changewingman3.png          #僚機3変更
+language/newfltdlg/changewingman4.png          #僚機4変更
+language/newfltdlg/changewingman5.png          #僚機5変更
+language/newfltdlg/formation.png               #編隊
+language/newfltdlg/environment.png             #環境
+language/newfltdlg/day.png                     #日中
+language/newfltdlg/night.png                   #夜間
+language/newfltdlg/weather.png                 #天候
+language/newfltdlg/winddir.png                 #風向
+language/newfltdlg/windspd.png                 #風速(ノット)
+language/newfltdlg/flynow.png                  #今すぐ飛行開始
+language/newfltdlg/visibility.png              #視程(マイル)
+
+language/optiondlg/scrnmode.png                #画面モード
+language/optiondlg/rememberwndpos.png          #ウィンドウ位置とサイズを記憶する
+language/optiondlg/alwaysontop.png             #常に手前に表示
+language/optiondlg/fontsize.png                #フォントサイズ
+language/optiondlg/sound.png                   #効果音
+language/optiondlg/openingdemo.png             #起動時デモ
+language/optiondlg/usemappreview.png           #マッププレビューを使う
+language/optiondlg/usetaskbar.png              #最小化時タスクバーに入れる
+language/optiondlg/backpicture.png             #背景の写真を表示する
+language/optiondlg/d3dxsprite_issue.png        #使ってるGPUの問題で字がにじむ
+language/optiondlg/fontname.png                #フォント名
+language/optiondlg/fontsizewarning.png         #注意: 日本語環境では12ピクセル未満の\n      フォントサイズは無理されます。

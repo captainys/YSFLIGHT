@@ -1,0 +1,580 @@
+YSFLIGHT_LOCALIZATION_INFO_FILE
+
+*Needs to be encoded in UTF-8
+
+$LABEL "English"
+$FGCOL 255
+$BGCOL 0
+
+
+
++airdlg/smoke/samecolor                            #Same Color for All Smoke Generators
++assigndlg/setdefaultgamepad                       #Use Game Pad
++assigndlg/setdefaultkeyassign                     #Set Default Key-Assignment Only (Keep Mouse/Joystick Assignment)
++cfgdlg/ifvisibilityislessthan                     #If visibility is less than:
++cfgdlg/thismiles                                  #miles
++cfgdlg/use3dhud                                   #Use 3D HUD
++cfgdlg/usesimplehud                               #Use Simple HUD
++common/mission                                    #---Mission---
++common/wingman                                    #Wingman
++configdlg/phongShading                            #Phong Shading (OpenGL 2.0 only)
++dlg/autopilot/circle                              #Circle
++dlg/autopilot/disengage                           #Disengage Autopilot
++dlg/autopilot/fly_hdgbug                          #Fly Heading Bug
++dlg/autopilot/landing                             #Landing
++dlg/autopilot/straight_level                      #Straight and Level
++dlg/autopilot/takeoff                             #Take Off
++dlg/radiocomm/fueltruck/call                            #Call
++dlg/radiocomm/fueltruck/dismiss                         #Dismiss
++dlg/radiocomm/fueltruck/title                           #Talk to Fuel Truck
++dlg/radiocomm/formation/dontcall                  #Don't call.
++dlg/radiocomm/formation/spread                    #Spread
++dlg/radiocomm/formation/tighten                   #Tighten
++dlg/radiocomm/wingman_command/attack_ground       #Attack Ground Target
++dlg/radiocomm/wingman_command/break_and_attack    #Break and Attack
++dlg/radiocomm/wingman_command/cover_me            #Cover Me!
++dlg/radiocomm/wingman_command/dontsend            #Don't send a command.
++dlg/radiocomm/wingman_command/form_on_my_wing     #Form on My Wing
++dlg/radiocomm/wingman_command/hold                #Stay in Holding Pattern
++dlg/radiocomm/wingman_command/land_refuel_takeoff #Land, Refuel, and Take Off
++dlg/radiocomm/wingman_command/rtb                 #Return to Base
++dlg/radiocomm/wingman_command/title               #Command to Wingman
++dlg/radiocomm/target/all_in_formation              #All Aircrafts in the Formation
++dlg/radiocomm/target/allwingman                    #All Wingmen
++dlg/radiocomm/target/atc                           #Air Traffic Controller
++dlg/radiocomm/target/dontcall                      #Do not call anyone.
++dlg/radiocomm/target/fueltruck                     #Fuel Truck
++dlg/radiocomm/target/gunner                        #Gunner
++gamemsg/esctwice                                  #Press ESC Twice to Terminate the Simulation
++gamemsg/esconce                                   #Press ESC Once More to Quit
+
++errmsg/createflt                                  #Please create or open flight first
++errmsg/nofltrecord                                #There is no flight record.
++errmsg/noprevflt                                  #Previous Mission Data is not available or corrupted.
+
++errmsg/landingpracticenotavailable                #Landing Practice Mode is not available in this scenery.
+
++common/ok                                         #OK
++common/cancel                                     #Cancel
++common/close                                      #Close
++common/delete                                     #Delete
++common/field                                      #Field
++common/startpos                                   #StartPos
++common/setdefault                                 #Set Default
++common/english                                    #English
++common/autolanguage                               #Language Auto Select
++common/general                                    #General
++common/yes                                        #Yes
++common/no                                         #No
++common/error                                      #Error!
+
++aboutdlg/title                                    #About YS FLIGHT SIMULATOR
++aboutdlg/version                                  #Version
+
++maindlg/showconsole                               #Show Console
++menu/autodemo_acro_star_of_david                  #Star of David
++menu/file/recent                                  #Recent Files
++menu/learning/close                               #Close Training Data
++menu/learning/open                                #Open Training Data
++menu/learning/save                                #Save Training Data
++menu/sim/racingmode                               #Air Racing Mode
++misc/testver                                      #This program is an untested version of YSFLIGHT for debugging purpose,\ni.e., I haven't systematically tested this program.  Naturally, a lot\nof bugs must be included in this program.  If you'd like to use a little\nmore stable version, please download current latest official release\nversion.  If you notice a bug in this untested version, please E-Mail\nme (PEB01130@nifty.com).  I'm trying to reply as many as possible,\nbut sometimes (especially when I'm busy) you may receive my reply\nafter two or three months, or sometimes I just forget.  I apologize\nif you experience such delay (^_^;)\n
+
++misc/firststartrecordfailure                      #Failed to record the first launch of the program.\nPlease ask the system administrator to start this\nprogram once, or to give you write-access right\nof the YSFLIGHT install directory.\n
+
++misc/initialized                                  #The configuration has been initialized.
++misc/voteysflight                                 #The final-round voting of the Vector-Award competition is open through\nMarch 15.  It is a popularity voting that decides the most popular\nsoftware among all software programs hosted by Vector.\n\nVector is a Japanese company, and there is unfortunately no English \nversion of the voting page.  But, if you can read Japanese, please click\non the following link and vote for YSFLIGHT.  Thank you!\n
+
++airdlg/aircrafttab                                #Aircraft
++airdlg/loadingtab                                 #Loading
++airdlg/categorytab                                #Category
++airdlg/aircraft                                   #Aircraft
++airdlg/aamshort                                   #AAM(Short Range)
++airdlg/aaamshort                                  #A-AAM(Short Range)
++airdlg/aammid                                     #AAM(Mid Range)
++airdlg/agm                                        #AGM
++airdlg/bomb500                                    #BOM(500lb)
++airdlg/bomb250                                    #BOM(250lb)
++airdlg/bomb500hd                                  #BOM(500lb-HD)
++airdlg/rocket                                     #Rocket
++airdlg/flarepod                                   #Chaff/Flare Pod
++airdlg/fueltank                                   #FUEL TANK
++airdlg/fuel                                       #Fuel(%)
++airdlg/smoke                                      #Smoke
++airdlg/smokecol                                   #Smoke Color
++airdlg/search                                     #Search
++airdlg/normal                                     #Normal
++airdlg/utility                                    #Utility
++airdlg/aerobatic                                  #Category
++airdlg/fighter                                    #Fighter
++airdlg/attacker                                   #Attacker
++airdlg/trainer                                    #Trainer
++airdlg/bomber                                     #Bomber
++airdlg/ww2fighter                                 #WW2 Fighter
++airdlg/ww2attacker                                #WW2 Attacker
++airdlg/ww2bomber                                  #WW2 Bomber
++airdlg/ww2divebomber                              #WW2 Dive Bomber
+
++aircombatdlg/noplayerplane                        #Please select player airplane
+
++newfltdlg/createnewflight                         #=== Create New Flight ===
++newfltdlg/selectair                               #Change Player Airplane
++newfltdlg/changewingman1                          #Change Wingman 1
++newfltdlg/changewingman2                          #Change Wingman 2
++newfltdlg/changewingman3                          #Change Wingman 3
++newfltdlg/changewingman4                          #Change Wingman 4
++newfltdlg/changewingman5                          #Change Wingman 5
++newfltdlg/changewingman6                          #Change Wingman 6
++newfltdlg/changewingman7                          #Change Wingman 7
++newfltdlg/changewingman8                          #Change Wingman 8
++newfltdlg/changewingman9                          #Change Wingman 9
++newfltdlg/environment                             #Environment
++newfltdlg/specifyenvironment                      #Specify Environment
++newfltdlg/day                                     #Day
++newfltdlg/night                                   #Night
++newfltdlg/weather                                 #Weather
++newfltdlg/winddir                                 #Wind Dir
++newfltdlg/windspd                                 #Wind Speed(kt)
++newfltdlg/visibility                              #Visibility(mile)
++newfltdlg/overcast                                #Overcast Layers
++newfltdlg/overcastfloor                           #Floor
++newfltdlg/overcastthickness                       #Thickness
++newfltdlg/formation                               #Formation
++newfltdlg/flynow                                  #Fly Now
++newfltdlg/wingman                                 #Wingmen
++newfltdlg/nousablegndobj                          #No usable ground object in this field.
++newfltdlg/allowstealth                            #Stealth
++newfltdlg/allowbomb                               #Bomb
++newfltdlg/allowagm                                #Air-To-Ground Missile
++newfltdlg/allowheavybomber                        #Heavy Bomber
++newfltdlg/maxnumattacker                          #Max Number of Attackers
++newfltdlg/jet                                     #Jet
++newfltdlg/ww2                                     #WW2
++newfltdlg/addcomair                               #Add Computer Aircrafts
+
++resultdlg/missiongoal                             #Mission Goal
++resultdlg/success                                 #** MISSION ACCOMPLISHED! **
++resultdlg/failure                                 #MISSION FAILED.
++resultdlg/failure/kia                             #FAILURE: You are killed in action.
++resultdlg/failure/earlytermination                #FAILURE: You terminated the mission in the middle.
++resultdlg/failure/misseddestination               #FAILURE: You failed to land at the destination.
++resultdlg/failure/groundloss                      #FAILURE: Too many vehicles/facilities have been destroyed. (Survived=%d, Needed=%d)
++resultdlg/failure/failedtoprotect                 #FAILURE: Failed to protect %s
++resultdlg/failure/airstrike                       #FAILURE: Too few ground targets have been destroyed. (Destroyed=%d, Needed=%d)
++resultdlg/failure/failedtodestroy                 #FAILURE: Failed to destroy %s
++resultdlg/failure/failedtokill                    #FAILURE: Failed to kill %s
++resultdlg/failure/failedtokillall                 #FAILURE: Failed to kill all enemy aircrafts.
++resultdlg/failure/failedtoescort                  #FAILURE: Escorted aircraft %s has not landed.
+
++resultdlg/success/arriveddestination              #SUCCESS: You arrived at the destination.
++resultdlg/success/protected                       #SUCCESS: Successfully protected %s.
++resultdlg/success/groundsurvive                   #SUCCESS: %d vehicles/facilities survived.
++resultdlg/success/airstrike                       #SUCCESS: Destroyed %d ground targets.
++resultdlg/success/destroyed                       #SUCCESS: Destroyed %s
++resultdlg/success/killed                          #SUCCESS: Killed %s
++resultdlg/success/killedall                       #SUCCESS: Killed all enemy aircrafts.
++resultdlg/success/escorted                        #SUCCESS: Escorted aircraft %s has landed safely.
+
++resultdlg/summary                                 #Summary
++resultdlg/usedaircraft                            #Player flew: %s
++resultdlg/finalstate                              #Final State: %s
++resultdlg/facilities                              #Vehicle/Facilties
++resultdlg/alivedead                               #Survived:%d Destroyed:%d
++resultdlg/airtoairscore                           #Air-to-air Score: %d
++resultdlg/airtoairpenalty                         #Air-to-air Penalty: %d
++resultdlg/airtoairkill                            #Killed %d aircrafts
++resultdlg/noaircombat                             #No air combat
++resultdlg/airtogndscore                           #Air-to-gnd Score: %d
++resultdlg/airtogndpenalty                         #Air-to-gnd Penalty: %d
++resultdlg/airtogndkill                            #Killed %d ground targets
++resultdlg/noairstrike                             #No air strike
++resultdlg/totalscore                              #Total score: %d
+
++resultdlg/state/flying                            #Still flying, not landed
++resultdlg/state/landed                            #Landed
++resultdlg/state/landedstatic                      #Landed and safely stopped
++resultdlg/state/dead                              #Dead
++resultdlg/state/overrun                           #Overrun
++resultdlg/state/unknown                           #Unknown
+
++resultdlg/scoredtail                              #Score Detail
+
++resultdlg/landinganalysis                         #Landing Analysis
++resultdlg/verticalspeedattouchdown                #Vertical Speed at Touch Down
++resultdlg/crabangleattouchdown                    #Crab Angle at Touch Down
+
++nojoystickdlg/message                                #Joystick is not connected or configured.  If you would like to \nuse a KEYBOARD or a MOUSE as a joystick, go to\nOption -> Config Key/Mouse/Joystick Assignment, nand assign a \nkeyboard or a mouse to elevator and aileron.\n\n(The mouse is assigned to elevator and aileron temporarily.)
++nojoystickdlg/dontshowagain                          #Don't show this message again.
+
+
+
++gndtoairdlg/enemytab                              #Enemy
+
+
++contdlg/message                                   #CONTINUE FLIGHT?
++contdlg/continue                                  #CONTINUE (Y)
++contdlg/terminate                                 #TERMINATE (ESC)
+
++configdlg/default                                 #Defaults
++configdlg/gamerule                                #Game Rule
++configdlg/graphics                                #Graphics
++configdlg/opengl                                  #OpenGL
++common/setdefault                                 #Set Default
++configdlg/environment                             #Environment
++configdlg/light                                   #Light Direction
++configdlg/aircraft                                #Aircraft
++configdlg/blackout                                #Black Out
++configdlg/midair                                  #Mid Air Collision
++configdlg/notailstrike                            #No Tail Strike Accident
++configdlg/canlandanywhere                         #Can Land Anywhere (when slow enough)
++configdlg/autorudder                              #Rudder Auto Coordination
++configdlg/precision                               #Precise Simulation
++configdlg/showhudalways                           #Always Show HUD
++configdlg/dontuseinstpanel                        #Do not use Instrument Panel
++configdlg/showplayernamealways                    #Always Draw Player Name
++configdlg/showjoystick                            #Draw Virtual Joystick
++configdlg/f8cameradelay                           #F8 Camera Delay
++configdlg/minradaralt                             #Minimum Radar Altitude (ft)
++configdlg/showias                                 #Show IAS
++configdlg/drawshadow                              #Draw Shadow
++configdlg/shadowofdeadplane                       #Draw Shadow of Dead Airplane
++configdlg/drawordinance                           #Draw Ordinance
++configdlg/drawcoarseweapon                        #Draw Coarse Weapon
++configdlg/horizongradation                        #Horizon Gradation
++configdlg/cloudtype                               #Cloud
++configdlg/drawlightalways                         #Draw Lights in Daylight
++configdlg/airgraphquality                         #Airplane Graphics
++configdlg/smoketype                               #Smoke Type
++configdlg/smokeremain                             #Smoke Remain Time (seconds)
++configdlg/smokestep                               #Draw Smoke Every N Steps
++configdlg/fog                                     #Fog
++configdlg/visibility                              #Visibility (mile)
++configdlg/zbuffquality                            #Z-Buffer Quality
++configdlg/trspobj                                 #Trasnparent Object
++configdlg/trspsmoke                               #Trasnparent Smoke
++configdlg/trspvapor                               #Trasnparent Vapor
++configdlg/reducepeephole                          #Reduce Peep Hole Effect
++configdlg/usedisplistcloud                        #Use Display List for Drawing Cloud
++configdlg/usedisplistexplosion                    #Use Display List for Drawing Explosion
++configdlg/usedisplistweapon                       #Use Display List for Drawing Weapon
++configdlg/groundtexture                           #Use Ground Texture
++configdlg/runwaylighttexture                      #Use Runway Light Texture
++configdlg/showfps                                 #Show Frames Per Second
++configdlg/drawsmokebyparticle                     #Draw Burning Smoke by Particles
++configdlg/useantialiasing                         #Use Antialiasing
++configdlg/antialiasingneedrestart                 #You need to restart the program to have\nantialiasing option take effect.
++configdlg/troublefreq                             #Aircraft Trouble Frequency (times/hour)
++configdlg/reliability                             #Aircraft Reliability
+
+
++assigndlg/save                                    #Save
++assigndlg/load                                    #Load
++assigndlg/setdefault                              #Set Default
++assigndlg/setdefaultmouse                         #Set Mouse as Joystick
++assigndlg/setdefaultkeyboard                      #Set Keyboard as Joystick
++assigndlg/setprimaryjoystick                      #Set Default Keys and Buttons but My Primary Joystick is not Joystick #1
++assigndlg/axis                                    #Axis
++assigndlg/trigger                                 #Trigger
++assigndlg/keyboard                                #Keyboard
++assigndlg/axisfunc                                #Axis Function
++assigndlg/triggerfunc                             #Button Function
++assigndlg/keyfunc                                 #Key Function
++assigndlg/joystickaxis                            #Joystick Axis
++assigndlg/joystickbutton                          #Joystick Button
++assigndlg/key                                     #Key
++assigndlg/change                                  #Change
++assigndlg/elvdeadzone                             #Elevator Dead Zone (%)
++assigndlg/aildeadzone                             #Aileron Dead Zone (%)
++assigndlg/ruddeadzone                             #Rudder Dead Zone (%)
++assigndlg/usepov                                  #Use POV Hat Switch
++assigndlg/primariaxismessage                      #Select your primary-joystick ID below, or make \na complete circle with your primary joystick to \nlet the program identify your primary joystick.
+
+
++optiondlg/scrnmode                                #Screen Mode
++optiondlg/rememberwndpos                          #Rembmer Window Position and Size
++optiondlg/alwaysontop                             #Always On Top
++optiondlg/fontsize                                #Font Size
++optiondlg/fontsizewarning                         #
++optiondlg/langtype                                #Language Type
++optiondlg/langfile                                #Language File
++optiondlg/langfilebutton                          #Select Language File
++optiondlg/sound                                   #Sound
++optiondlg/openingdemo                             #Opening Demo
++optiondlg/usemappreview                           #Use Map Preview
++optiondlg/usetaskbar                              #Use Task Bar Icon
++optiondlg/backpicture                             #Show Background Picture
++optiondlg/d3dxsprite_issue                        #My GPU has issues with D3DXSprite
++optiondlg/direct3dsucks                           #My Direct 3D cannot draw fonts
+
++maindlg/create                                    #Create New Flight
++maindlg/retry                                     #Retry Previous Flight
++maindlg/open                                      #Load Flight
++maindlg/save                                      #Save Flight
++maindlg/flynow                                    #Fly Now!
++maindlg/playrecord                                #Play Record
+
++exitdlg/message                                   #Exit Program?
++exitdlg/exit                                      #Exit (Y)
++exitdlg/backtomenu                                #Back to Menu (N)
+
++deletefltdlg/message                              #Delete Current Flight?
++deletefltdlg/delete                               #Yes (Y)
++deletefltdlg/notdelete                            #No (N)
+
++stationarydlg/endflight                           #End Flight
++stationarydlg/confirmendflight                    #Confirm End Flight
++stationarydlg/supply                              #Re-supply
++stationarydlg/changevehicle                       #Change Vehicle
+
++firstdlg/1stline                                  #(This message is shown automatically when the program is launched \nfor the first time after the installation.)
++firstdlg/2ndline                                  #Thank you very much for downloading YS FLIGHT SIMULATOR. \nPlease also visit my Web site.  The URL is:
++firstdlg/3rdline                                  #You can also directly go to the download page by:
++firstdlg/4thline                                  #Enjoy YSFLIGHT!  Thank you!
++firstdlg/5thline                                  #Captain YS
+
++supportdlg/1stline                                #(This message is displayed automatically when you launch the program for the\nfirst time after the installation.\nAfter that, you can open this message by choosing "Help" -> "Please Support YSFLIGHT Project"
++supportdlg/2ndline                                #YSFLIGHT is free software, and, you do not have to pay for enjoying this program.\nHowever, it costs me some money to maintain this project.  So I really appreciate\nif you could support YSFLIGHT project with one of the following methods.
++supportdlg/3rdline                                #(1) Purchase a shareware program from:
++supportdlg/4thline-1                              #(2) When you purchase a book, PC software, a CD, or any product from Amazon.com, \nplease open Amazon.com web site by clicking a link on
++supportdlg/4thline-2                              # 
++supportdlg/4thline-3                              #    and place an order.  (Note: Any purchase counts as long as you open Amazon.com web site by clickng a link on my web site.
+
++supportdlg/jwordline-1                            #
++supportdlg/jwordline-2                            #
++supportdlg/installjword                           #
++supportdlg/explainjword                           #
+
++supportdlg/5thline-1                              #Please also visit sponsor sites linked from:
++supportdlg/5thline-2                              # 
++supportdlg/6thline                                #Thank you very much for supporting YSFLIGHT project.
+
++explainjword/line1                                #
++explainjword/line2                                #
++explainjword/line3                                #
++explainjword/line4                                #
++explainjword/line5                                #
++explainjword/url                                  #
+
+
++installjword/line1                                #The program detected that this Windows is not a Japanese version.  YSFLIGHT comes with \nan Internet Explorer plug-in called JWord, which works only on Japanese version Windows.\n\n
++installjword/line2                                #You can delete JWord installer to save disk space.  JWord plug-in may also be falsely\ndetected as a spy-ware by an anti-spy-ware program, although it is not considered a\nspy-ware.  By deleting the installer, you can avoid such a false alarm.\n
++installjword/line3                                #Deleting JWord installer does not limit any functionality of YSFLIGHT, and you can use\nall the functionalities of YSFLIGHT after deleting it.\n
++installjword/line4                                #Would you like to delete JWord plug-in installer now?
++installjword/line5                                #
++installjword/install                              #
++installjword/explainjword                         #
++installjword/dontinstall                          #
++installjword/yesdelete                            #Yes. Delete it.
++installjword/comment                              #
++installjword/firststart                           #
+
+
++net/username                                      #User Name
++net/field                                         #Field
++net/hostname                                      #Server Host Name (IP Address)
++net/hostport                                      #Server Port Number
++net/history                                       #Select Server from History
+
++net/noairplane                                    #This client has no airplane that can be used in this server.\nPlease contact the server administrator for more information.
++net/noscenery                                     #This client does not have a scenery used in this server.\nPlease contact the server administrator for more information.
++net/error/versionconflict                         #Network Protocol Version of the server\ndoes not match this client.\nPlease use the same version YSFLIGHT as\nthe server.
+
++netconfig/general                                 #General
++netconfig/client                                  #Client
++netconfig/server1                                 #Server1
++netconfig/server2                                 #Server2
++netconfig/server3                                 #Server3
++netconfig/port                                    #Network Port
++netconfig/username                                #User Name
++netconfig/chatlog                                 #Save Chat Log
++netconfig/defserveraddr                           #Default Host IP Address
++netconfig/defstp                                  #Default Starting Position
++netconfig/defiff                                  #Default IFF
++netconfig/recordflt                               #Record Flight
++netconfig/freemem                                 #Free Memory When Possible
++netconfig/deffield                                #Default Field
++netconfig/configintercept                         #Config Intercept Mission
++netconfig/disablechat                             #Disable Chat
++netconfig/logontimeout                            #Log-On Time Out
++netconfig/maxconn                                 #Max Connection from Single Address
++netconfig/svrreset                                #Reset Server Every:
++netconfig/svrstop                                 #Stop Server After ? Times:
++netconfig/welcomemsg                              #Send Welcome Message
++netconfig/groundfire                              #Enable Ground Fire
++netconfig/usemissile                              #Enable AAM/AGM
++netconfig/usegun                                  #Enable Gun/Bomb/Rocket
++netconfig/radargunsight                           #Disable Radar Gun Sight
++netconfig/disable3rdairview                       #Disable Third-Airplane View
++netconfig/notifyjoinleave                         #Notify Take Off/Leave
++netconfig/showusername                            #Show User Name
++netconfig/midair                                  #Mid-Air Collision
++netconfig/blackout                                #Black Out
++netconfig/canlandanywhere                         #Can Land Anywhere
++netconfig/minradaralt                             #Minimum Radar Alt
++netconfig/blockedip                               #Blocked IP Address
++netconfig/delblockedip                            #Delete Selected IP Address from List
++netconfig/newblockedip                            #New Blocked IP Address
++netconfig/addblockedip                            #Add New IP Address to List
+
++netconsole/selectair                              #Select Aircraft
++netconsole/selectstp                              #Select Starting Pos
++netconsole/join                                   #Join
++netconsole/observermode                           #Observer Mode
++netconsole/dispeluser                             #Dispel User
++netconsole/listuser                               #List User
++netconsole/whokilledme                            #Who killed me?
++netconsole/whomhaveikilled                        #Whom have I killed?
++netconsole/eudnrance_jet                          #Start Enducrance Mode (Jet)
++netconsole/endurance_ww2                          #Start Enducrance Mode (Ww2)
++netconsole/intercept                              #Start Intercept Mission
++netconsole/closeairsupport                        #Start Close Air Support
++netconsole/endserver                              #End Server
++netconsole/confirmendserver                       #Confirm End Server
++netconsole/reviveground                           #Revive Ground
++netconsole/confirmreviveground                    #Confirm Revive Ground
++netconsole/chat                                   #Chat
++netconsole/send                                   #Send
++netconsole/logout                                 #Log Out
++netconsole/confirmlogout                          #Confirm Log Out
++netconsole/disablechat                            #Disable Chat
++netconsole/lockserver                             #Lock Server
++netconsole/joinlock                               #Join Lock
+
++filedlg/ask_overwrite                             #File exists. Overwrite?
++filedlg/saved                                     #Saved.
++filedlg/cannotwrite                               #Cannot write file.
++filedlg/cannotload                                #Cannot read file.
+
++menu/fileMenu                                     #File
++menu/file-Open                                    #Open Flight
++menu/file-Save                                    #Save Flight
++menu/file-OpenMission                             #Open Mission
++menu/file-OpenPrevFlight                          #Open Previous Mission
++menu/file-Close                                   #Close Flight
++menu/file-Exit                                    #Exit
+
++menu/simulationMenu                               #Simulation
++menu/simulation-Fly                               #Fly
++menu/simulation-Retry                             #Retry Previous Flight
++menu/simulation-Replay                            #Replay Flight Record
++menu/simulation-Create                            #Create New Flight
++menu/simulation-DayNight                          #Select Day/Night
++menu/simulation-DisableGroundFire                 #Disable Ground Fire
++menu/simulation-AirCombat                         #Create Air Combat
++menu/simulation-SelectAir                         #Select Airplane
++menu/simulation-SelectStp                         #Select Starting Position
++menu/simulation-CreateInGnd                       #Create Simulation in Ground Object
++menu/simulation-LdgPractice                       #Landing Practice
++menu/simulation-Endurance                         #Fly Endurance Mode
++menu/simulation-Intercept                         #Fly Intercept Mission
++menu/simulation-CloseAirSupport                   #Fly Close Air Support Mission
++menu/simulation-AntiAirMission                    #Ground-To-Air Defense Mission
+
++menu/simulation-Ldg-Level01                       #LEVEL 1: Straight-In, Wind-Calm, Good Visibility
++menu/simulation-Ldg-Level02                       #LEVEL 2: Straight-In, Light-Wind, Good Visibility
++menu/simulation-Ldg-Level03                       #LEVEL 3: Dog-Leg, Wind-Calm, Good Visibility
++menu/simulation-Ldg-Level04                       #LEVEL 4: Base-Leg, Light-Wind, Good Visibility
++menu/simulation-Ldg-Level05                       #LEVEL 5: Base-Leg, Moderate-Wind, Good Visibility
++menu/simulation-Ldg-Level06                       #LEVEL 6: Base-Leg, Strong-Wind, Good Visibility
++menu/simulation-Ldg-Level07                       #LEVEL 7: Straight-In, Wind-Calm, Low Cloud
++menu/simulation-Ldg-Level08                       #LEVEL 8: Dog-Leg, Wind-Calm, Low Cloud
++menu/simulation-Ldg-Level09                       #LEVEL 9: Base-Leg, Wind-Calm, Low Cloud
++menu/simulation-Ldg-Level10                       #LEVEL10: Base-Leg, Light-Wind, Low Cloud
++menu/simulation-Ldg-Level11                       #LEVEL11: Base-Leg, Moderate-Wind, Low Cloud
++menu/simulation-Ldg-Level12                       #LEVEL12: Straigh-In, Wind-Calm, Low Visibility
++menu/simulation-Ldg-Level13                       #LEVEL13: Base-Leg, Wind-Calm, Low Visibility
++menu/simulation-Ldg-Level14                       #LEVEL14: Base-Leg, Moderate-Wind, Low Visibility
++menu/simulation-Ldg-Level15                       #LEVEL15: Base-Leg, Strong-Wind, Low Visibility+Low Cloud
+
++menu/optionMenu                                   #Option
++menu/option-Config                                #Config
++menu/option-Option                                #Option
++menu/option-KeyAssign                             #Joystick/Key Assignments
++menu/option-JoyCalib                              #Calibrate Joystick
+
++menu/autoDemoMenu                                 #Auto Demo
++menu/autoDemo-Acro                                #Aerobatics
++menu/autoDemo-DogFight                            #Dogfight
++menu/autoDemo-Ldg                                 #Landing
++menu/autoDemo-CarrierLdg                          #Carrier Landing
+
++menu/autoDemo-Acro-CorkScrew                      #Cork Screw
++menu/autoDemo-Acro-SlowRoll                       #Slow Roll
++menu/autoDemo-Acro-DeltaLoop                      #Delta Loop
++menu/autoDemo-Acro-DeltaRoll                      #Delta Roll
++menu/autoDemo-Acro-TightTurn                      #Tight Turn
++menu/autoDemo-Acro-360AndLoop                     #360 and Loop
++menu/autoDemo-Acro-BombBurstUpward4               #Bomb Burst Upward (4 ship)
++menu/autoDemo-Acro-BombBurstUpward6               #Bomb Burst Upward (6 ship)
++menu/autoDemo-Acro-ChangeOverTurn                 #Change Over Turn
++menu/autoDemo-Acro-TrailToDiamondRoll             #Trail to Diamond Roll
++menu/autoDemo-Acro-CubanEight                     #Cuban Eight
++menu/autoDemo-Acro-DeltaLoopAndBonton             #Delta Loop and Bonton
++menu/autoDemo-Acro-BontonRoll                     #Bontol Roll
++menu/autoDemo-Acro-BombBurstDownward4             #Bomb Burst Downward (4 ship)
++menu/autoDemo-Acro-BombBurstDownward6             #Bomb Burst Downward (6 ship)
++menu/autoDemo-Acro-RainFall                       #Rail Fall
++menu/autoDemo-Acro-RollingCombatPitch             #Rolling Combat Pitch
++menu/autoDemo-Acro-DiamondTakeOff                 #Diamond Take Off
++menu/autoDemo-Acro-ContinuousRoll                 #Continuous Roll
++menu/autoDemo-Acro-RollOnTakeOffHalfCuban         #Roll on Take Off and Half Cuban
++menu/autoDemo-Acro-TackCrossVertRoll              #Tack Cross and Vertical Climb Roll
++menu/autoDemo-Acro-BigHeart                       #Big Heart
++menu/autoDemo-Acro-LevelBreak                     #Level Break
++menu/autoDemo-Acro-RollBackToArrowhead            #Roll Back to Arrowhead
++menu/autoDemo-Acro-PitchUpBreak                   #Pitch Up Break
++menu/autoDemo-Acro-RockWingGearDown               #Rock Wing (Gear Down)
++menu/autoDemo-Acro-RockWingClean                  #Rock Wing (Clean)
++menu/autoDemo-Acro-LetterEight                    #Letter Eight
++menu/autoDemo-Acro-StarCross                      #Star Cross
++menu/autoDemo-Acro-LevelOpener                    #Level Opener
++menu/autoDemo-Acro-FormBreak                      #Formation Break
++menu/autoDemo-Acro-LineAbreastRoll                #Line Abreast Roll
++menu/autoDemo-Acro-LineAbreastLoop                #Line Abreast Loop
++menu/autoDemo-Acro-DoubleFarvel                   #Double Farvel
++menu/autoDemo-Acro-Dia9ToSwan                     #Diamond 9 to Swan Bend
++menu/autoDemo-Acro-SwanToApolloRoll               #Swan to Apollo Roll
++menu/autoDemo-Acro-LancasterTo5-4Split            #Lancaster to 5-4 Split
++menu/autoDemo-Acro-ChampaignSplit                 #Champaign Split
++menu/autoDemo-Acro-VixenBreak                     #Vixen Break
++menu/autoDemo-Acro-BigBattleToShortDiaLoop        #Big Battle to Short Diamond Loop
+
++menu/networkMenu                                  #Network
++menu/network-Server                               #Server
++menu/network-Client                               #Client
++menu/network-Config                               #Network Option
+
++menu/flightRecUtilMenu                            #Flight Record Utility
++menu/flightRecUtil-TimeInterval                   #Set Time Interval
++menu/flightRecUtil-SpacePrecision                 #Set Space Precision
++menu/flightRecUtil-EditRecord                     #Edit Flight Record
+
++menu/helpMenu                                     #Help
++menu/help-HelpEnglish                             #Help - English
++menu/help-DefKeyEnglish                           #Default Key Strokes and Controls - English
++menu/help-HelpJapanese                            #Help - Japanese
++menu/help-DefKeyJapanese                          #Default Key Strokes and Controls - Japanese
++menu/help-About                                   #About YSFLIGHT
++menu/help-SupportYSFlight                         #Support YSFLIGHT Project
+
++menu/learning                                     #Machine Learning
++menu/learning/trainAutoPilot                      #Generate Training Data for Auto Pilot
+
+
++joycalib_calib                                    #Calibrate Axes
++joycalib_calibhat                                 #Calibrate Hat Switch
++joycalib_fileexit                                 #Exit
++joycalib_caliberase                               #Erase All Calibration Data
+
++joycalib_hatneutral                               #Release Hat Switch and Press SPACE key
++joycalib_hat0deg                                  #Push Hat Switch Forward (or Up) and Press SPACE key
++joycalib_hat90deg                                 #Push Hat Switch Right and Press SPACE key
++joycalib_hat180deg                                #Push Hat Switch Backward (or Down) and Press SPACE key
++joycalib_hat270deg                                #Push Hat Switch Left and Press SPACE key
+
++joycalib_axiscycle                                #Move Axis All the Way Up and Down Several Times and Press SPACE key
++joycalib_axisneutral                              #Center Axis and Press SPACE key
++joycalib_stickcircle                              #Make Complete Circle with the Stick Several Times and Press SPACE key
++joycalib_stickneutral                             #Center Joystick and Press SPACE key
++joycalib_next                                     #Next >>
+

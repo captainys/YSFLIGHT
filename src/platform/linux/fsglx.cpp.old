@@ -1,0 +1,997 @@
+// $Id: fsglx.cpp,v 1.22 2005/03/13 04:32:46 soji Exp $
+
+// in Linux, use jscal to calbrate joystick.
+
+#include <ysclass.h>
+#include "fs.h"
+#include "fswindow.h"
+#include "fsopengl.h"
+
+#include <sys/ioctl.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/poll.h>
+#include <sys/stat.h>
+#include <dirent.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include <GL/glx.h>
+
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
+#include <X11/keysym.h>
+#include <X11/keysymdef.h>
+#include <X11/Xatom.h>
+
+#include <unistd.h>
+
+
+const unsigned FS_NUM_XK=65536;
+const unsigned FsKeyBufferSize=1024;
+
+static int mapXKtoFSKEY[FS_NUM_XK];
+static int mapFSKEYtoXK[FSKEY_NUM_KEYCODE];
+static YSBOOL fsKeyPress[FSKEY_NUM_KEYCODE];
+
+static void FsXAddKeyMapping(int fskey,int vk);
+static void FsXCreateKeyMapping(void);
+
+static YsListAllocator <unsigned> *keyBufferAllocator=NULL;
+static YsListContainer <unsigned> *keyBuffer=NULL;
+
+
+static Window *ysXWndSelected=NULL;
+static YSBOOL ysXSubWndOpen[FsMaxNumSubWindow];  // <- Initialized in FsOpenWindow
+
+static Display *ysXDsp;
+static Window ysXWnd,ysXSubWnd[FsMaxNumSubWindow];
+static Colormap ysXCMap;
+static XVisualInfo *ysXVis;
+static const int ysXEventMask=(KeyPress|KeyRelease|ExposureMask|StructureNotifyMask);
+
+static GLXContext ysGlRC;
+static int ysGlxCfg[]={GLX_DOUBLEBUFFER,GLX_RGBA,GLX_DEPTH_SIZE,16,None};
+const int ysGlFontBitmapBase=1000;
+
+
+static int ysXWid,ysXHei;  // <- Set in FsOpenWindow.  Updated in FsPollDevice
+static int ysXSubWndWid[FsMaxNumSubWindow],ysXSubWndHei[FsMaxNumSubWindow];
+
+
+// MEMO: All the functions in fsdirectdraw.cpp must be moved in to this file.
+
+
+YSRESULT FsOpenWindow(int wid,int hei)
+{
+	return FsOpenWindow(0,0,wid,hei);
+}
+
+YSRESULT FsOpenWindow(int x0,int y0,int wid,int hei)
+{
+	const char *title="YSFLIGHT";
+
+	FsXCreateKeyMapping();
+
+	keyBufferAllocator=new YsListAllocator <unsigned> (FsKeyBufferSize);
+	keyBuffer=new YsListContainer <unsigned> (*keyBufferAllocator);
+
+	int n;
+	char **m,*def;
+	XSetWindowAttributes swa;
+	Font font;
+
+	ysXDsp=XOpenDisplay(NULL);
+	if(ysXDsp!=NULL)
+	{
+		if(glXQueryExtension(ysXDsp,NULL,NULL)!=0)
+		{
+			ysXVis=glXChooseVisual(ysXDsp,DefaultScreen(ysXDsp),ysGlxCfg);
+			if(ysXVis!=NULL)
+			{
+				ysXCMap=XCreateColormap(ysXDsp,RootWindow(ysXDsp,ysXVis->screen),ysXVis->visual,AllocNone);
+
+				ysGlRC=glXCreateContext(ysXDsp,ysXVis,None,GL_TRUE);
+				if(ysGlRC!=NULL)
+				{
+					swa.colormap=ysXCMap;
+					swa.border_pixel=0;
+					swa.event_mask=ysXEventMask;
+					ysXWnd=XCreateWindow(ysXDsp,RootWindow(ysXDsp,ysXVis->screen),
+					                  x0+wid/2,y0+hei/2,wid,hei,
+					                  0,
+							  ysXVis->depth,
+							  InputOutput,
+							  ysXVis->visual,
+					                  CWEventMask|CWBorderPixel|CWColormap,&swa);
+
+					ysXWndSelected=&ysXWnd;
+
+					ysXWid=wid;
+					ysXHei=hei;
+
+					XStoreName(ysXDsp,ysXWnd,title);
+					XSetIconName(ysXDsp,ysXWnd,title);
+					XMapWindow(ysXDsp,ysXWnd);
+
+					glXMakeCurrent(ysXDsp,ysXWnd,ysGlRC);
+
+					glEnable(GL_DEPTH_TEST);
+					glDepthFunc(GL_LEQUAL);
+					glShadeModel(GL_SMOOTH);
+
+					GLfloat dif[]={0.8F,0.8F,0.8F,1.0F};
+					GLfloat amb[]={0.4F,0.4F,0.4F,1.0F};
+					GLfloat spc[]={0.9F,0.9F,0.9F,1.0F};
+					GLfloat shininess[]={50.0,50.0,50.0,0.0};
+
+					glEnable(GL_LIGHTING);
+					glEnable(GL_LIGHT0);
+					glLightfv(GL_LIGHT0,GL_DIFFUSE,dif);
+					glLightfv(GL_LIGHT0,GL_SPECULAR,spc);
+					glMaterialfv(GL_FRONT|GL_BACK,GL_SHININESS,shininess);
+
+					glLightModelfv(GL_LIGHT_MODEL_AMBIENT,amb);
+					glEnable(GL_COLOR_MATERIAL);
+					glEnable(GL_NORMALIZE);
+
+					font=XLoadFont(ysXDsp,"6x10");  // "5x8" is also a possibility.
+					if(font==BadName || font==BadAlloc)
+					{
+						font=XLoadFont(ysXDsp,"7x13");
+					}
+					if(font==BadName || font==BadAlloc)
+					{
+						font=XLoadFont(ysXDsp,"8x13");
+					}
+					if(font==BadName || font==BadAlloc)
+					{
+						font=XLoadFont(ysXDsp,"9x15");
+					}
+					if(font==BadName || font==BadAlloc)
+					{
+						font=XLoadFont(ysXDsp,"-*-*-*-*-*-*-20-20-*-*-*-*-iso8859-1");
+					}
+					glXUseXFont(font,0,255,ysGlFontBitmapBase);
+					glListBase(ysGlFontBitmapBase);
+				}
+				else
+				{
+					fprintf(stderr,"Cannot create OpenGL context.\n");
+					exit(1);
+				}
+			}
+			else
+			{
+				fprintf(stderr,"Double buffer not supported?\n");
+				exit(1);
+			}
+		}
+		else
+		{
+			fprintf(stderr,"This system doesn't support OpenGL.\n");
+			exit(1);
+		}
+	}
+	else
+	{
+		fprintf(stderr,"Cannot Open Display.\n");
+		exit(1);
+	}
+
+	int i;
+	for(i=0; i<FsMaxNumSubWindow; i++)
+	{
+		ysXSubWndOpen[i]=YSFALSE;
+	}
+
+	return YSOK;
+}
+
+void FsCloseWindow(void)
+{
+	delete keyBuffer;
+	delete keyBufferAllocator;
+	XCloseDisplay(ysXDsp);
+}
+
+static void FsGetSubWindowLocationAndSize(int &x0,int &y0,int &wid,int &hei,int subWindowId)
+{
+	wid=ysXWid*22/100;
+	hei=wid;
+	if(subWindowId==0)
+	{
+		x0=0;
+		y0=ysXHei-hei;
+	}
+	else
+	{
+		x0=ysXWid-wid;
+		y0=ysXHei-hei;
+	}
+}
+
+YSRESULT FsOpenSubWindow(int subWindowId)        // Child window of the main window
+{
+	if(0<=subWindowId && subWindowId<FsMaxNumSubWindow && ysXSubWndOpen[subWindowId]!=YSTRUE)
+	{
+		int x0,y0,wid,hei;
+		FsGetSubWindowLocationAndSize(x0,y0,wid,hei,subWindowId);
+
+		XSetWindowAttributes swa;
+		swa.colormap=ysXCMap;
+		swa.border_pixel=0;
+		swa.event_mask=ysXEventMask;
+		ysXSubWnd[subWindowId]=XCreateWindow(ysXDsp,ysXWnd,
+		                  x0,y0,wid,hei,
+		                  0,
+		                  CopyFromParent,
+		                  CopyFromParent,
+		                  CopyFromParent,
+		                  CWEventMask|CWBorderPixel|CWColormap,&swa);
+		XMapWindow(ysXDsp,ysXSubWnd[subWindowId]);
+
+		ysXSubWndOpen[subWindowId]=YSTRUE;
+		ysXSubWndWid[subWindowId]=wid;
+		ysXSubWndHei[subWindowId]=hei;
+
+		return YSOK;
+	}
+	return YSERR;
+}
+
+YSBOOL FsIsMainWindowActive(void)
+{
+	if(ysXWndSelected==&ysXWnd)
+	{
+		return YSTRUE;
+	}
+	else
+	{
+		return YSFALSE;
+	}
+}
+
+YSBOOL FsIsSubWindowOpen(int subWindowId)
+{
+	return ysXSubWndOpen[subWindowId];
+}
+
+// YSRESULT FsOpenSiblingWindow(int sibWindowId)  // Overlapped window
+
+YSRESULT FsCloseSubWindow(int subWindowId)
+{
+	if(ysXSubWndOpen[subWindowId]==YSTRUE)
+	{
+		if(ysXWndSelected==&ysXSubWnd[subWindowId])
+		{
+			glXMakeCurrent(ysXDsp,ysXWnd,ysGlRC);
+			ysXWndSelected=&ysXWnd;
+		}
+		XDestroyWindow(ysXDsp,ysXSubWnd[subWindowId]);
+		ysXSubWndOpen[subWindowId]=YSFALSE;
+		return YSOK;
+	}
+	return YSERR;
+}
+
+// YSRESULT FsCloseSiblingWindow(int sibWindowId)
+
+YSRESULT FsSelectMainWindow(void)
+{
+	glXMakeCurrent(ysXDsp,ysXWnd,ysGlRC);
+	ysXWndSelected=&ysXWnd;
+	glViewport(0,0,ysXWid,ysXHei);
+	return YSOK;
+}
+
+YSRESULT FsSelectSubWindow(int subWindowId)
+{
+	if(ysXSubWndOpen[subWindowId]==YSTRUE)
+	{
+		glXMakeCurrent(ysXDsp,ysXSubWnd[subWindowId],ysGlRC);
+		ysXWndSelected=&ysXSubWnd[subWindowId];
+		glViewport(0,0,ysXSubWndWid[subWindowId],ysXSubWndHei[subWindowId]);
+		return YSOK;
+	}
+	return YSERR;
+}
+
+// YSRESULT FsSelectSiblingWindow(int sibWindowId)
+
+void FsDisableMenu(void)
+{
+}
+
+void FsEnableMenu(void)
+{
+}
+
+void FsSetOnPaintCallback(class FsOnPaintCallback *callback)
+{
+}
+
+void FsPollDevice(void)
+{
+	int i,fsKey;
+	char tmp[256];
+	KeySym ks;
+	XComposeStatus stat;
+	XEvent ev;
+
+	while(XCheckWindowEvent(ysXDsp,ysXWnd,KeyPressMask|KeyReleaseMask,&ev)==True)
+	{
+		XLookupString((XKeyEvent *)&ev,tmp,256,&ks,&stat);
+		if(XK_a<=ks && ks<=XK_z)
+		{
+			ks=ks+XK_A-XK_a;
+		}
+		if(ks==XK_Alt_R)
+		{
+			ks=XK_Alt_L;
+		}
+		if(ks==XK_Shift_R)
+		{
+			ks=XK_Shift_L;
+		}
+		if(ks==XK_Control_R)
+		{
+			ks=XK_Control_L;
+		}
+
+		if(0<=ks && ks<FS_NUM_XK)
+		{
+			fsKey=mapXKtoFSKEY[ks];
+			if(ev.type==KeyPress)
+			{
+				YsListItem <unsigned> *newKeyPress;
+				fsKeyPress[fsKey]=YSTRUE;
+				newKeyPress=keyBuffer->Create();
+				newKeyPress->dat=fsKey;
+			}
+			else
+			{
+				fsKeyPress[fsKey]=YSFALSE;
+			}
+		}
+	}
+
+	if(XCheckTypedWindowEvent(ysXDsp,ysXWnd,ConfigureNotify,&ev)==True)
+	{
+		ysXWid=ev.xconfigure.width;
+		ysXHei=ev.xconfigure.height;
+		glViewport(0,0,ysXWid,ysXHei);
+	}
+
+	if(XCheckTypedWindowEvent(ysXDsp,ysXWnd,DestroyNotify,&ev)==True)
+	{
+		exit(1);
+	}
+}
+
+int FsInkey(void)
+{
+	if(keyBuffer!=NULL && keyBuffer->GetN()>0)
+	{
+		int fskey;
+		YsListItem <unsigned> *topItem;
+		topItem=keyBuffer->SeekTop();
+
+		fskey=topItem->dat;
+
+		keyBuffer->Delete(topItem);
+		return fskey;
+	}
+	return FSKEY_NULL;
+}
+
+void FsMouse(YSBOOL &lb,YSBOOL &mb,YSBOOL &rb,int &mx,int &my)
+{
+	Window r,c;
+	int xInRoot,yInRoot;
+	unsigned int mask;
+
+	XQueryPointer(ysXDsp,ysXWnd,&r,&c,&xInRoot,&yInRoot,&mx,&my,&mask);
+	lb=((mask & Button1Mask) ? YSTRUE : YSFALSE);
+	mb=((mask & Button2Mask) ? YSTRUE : YSFALSE);
+	rb=((mask & Button3Mask) ? YSTRUE : YSFALSE);
+}
+
+YSBOOL FsKeyState(int fskey)
+{
+	return fsKeyPress[fskey];
+}
+
+void FsGetWindowSize(int &wid,int &hei)
+{
+	// Window root_r;
+	// int x_r,y_r;
+	// unsigned wid_r,hei_r,border_wid_r,depth_r;
+	// XGetGeometry(ysXDsp,ysXWnd,&root_r,&x_r,&y_r,&wid_r,&hei_r,&border_wid_r,&depth_r);
+	// wid=wid_r;
+	// hei=hei_r;
+
+	if(ysXWndSelected==&ysXWnd)
+	{
+		wid=ysXWid;
+		hei=ysXHei;
+		return;
+	}
+	else
+	{
+		int i;
+		for(i=0; i<FsMaxNumSubWindow; i++)
+		{
+			if(ysXWndSelected==&ysXSubWnd[i])
+			{
+				wid=ysXSubWndWid[i];
+				hei=ysXSubWndHei[i];
+				return;
+			}
+		}
+	}
+}
+
+void FsSwapBuffers(void)
+{
+	glFlush();
+	glXSwapBuffers(ysXDsp,*ysXWndSelected);
+}
+
+void FsHidePartOfScreenForSharewareMessage(void)
+{
+}
+
+void FsMessageBox(const char msg[],const char title[])
+{
+	double nextDrawTime;
+	nextDrawTime=0.0;
+
+	FsPollDevice();
+	while(FsInkey()!=FSKEY_NULL)
+	{
+		FsPollDevice();
+	}
+
+	while(1)
+	{
+		FsPollDevice();
+		if(FsInkey()!=FSKEY_NULL)
+		{
+			break;
+		}
+
+		if(nextDrawTime<YsTolerance)
+		{
+			int y,l;
+			const char *ptr;
+			char str[256];
+
+			FsClearScreenAndZBuffer(YsBlue());
+			FsSet2DDrawing();
+
+			y=32;
+			l=0;
+			ptr=msg;
+			while((*ptr)!=0)
+			{
+			    if((*ptr)!=0x0a)
+			    {
+			        str[l++]=*ptr;
+			    }
+				ptr++;
+				if((*ptr)=='\n' || (*ptr)==0 || l==254)
+				{
+					str[l]=0;
+					FsDrawString(0,y,str,YsWhite());
+					l=0;
+					y+=20;
+
+				}
+			}
+
+			YsColor blink;
+			blink.SetIntRGB(rand()%256,rand()%256,rand()%256);
+			FsDrawString(0,y,"<< Press Key To Continue >>",blink);
+
+			FsSwapBuffers();
+
+			nextDrawTime=0.2;
+		}
+
+		FsSleep(100);
+		nextDrawTime-=0.1;
+	}
+}
+
+YSBOOL FsYesNoDialog(const char msg[],char title[])
+{
+	return YSFALSE;
+}
+
+void FsLaunchCommand(const char cmdline[])
+{
+}
+
+void FsSleep(int ms)
+{
+	fd_set set;
+	struct timeval wait;
+	wait.tv_sec=ms/1000;
+	wait.tv_usec=(ms%1000)*1000;
+	FD_ZERO(&set);
+	select(0,&set,NULL,NULL,&wait);
+}
+
+static void FsXCreateKeyMapping(void)
+{
+	int i;
+	for(i=0; i<FS_NUM_XK; i++)
+	{
+		mapXKtoFSKEY[i]=0;
+	}
+	for(i=0; i<FSKEY_NUM_KEYCODE; i++)
+	{
+		mapFSKEYtoXK[i]=0;
+	}
+	for(i=0; i<FSKEY_NUM_KEYCODE; i++)
+	{
+		fsKeyPress[i]=YSFALSE;
+	}
+	FsXAddKeyMapping(FSKEY_SPACE,               XK_space);
+	FsXAddKeyMapping(FSKEY_0,                   XK_0);
+	FsXAddKeyMapping(FSKEY_1,                   XK_1);
+	FsXAddKeyMapping(FSKEY_2,                   XK_2);
+	FsXAddKeyMapping(FSKEY_3,                   XK_3);
+	FsXAddKeyMapping(FSKEY_4,                   XK_4);
+	FsXAddKeyMapping(FSKEY_5,                   XK_5);
+	FsXAddKeyMapping(FSKEY_6,                   XK_6);
+	FsXAddKeyMapping(FSKEY_7,                   XK_7);
+	FsXAddKeyMapping(FSKEY_8,                   XK_8);
+	FsXAddKeyMapping(FSKEY_9,                   XK_9);
+	FsXAddKeyMapping(FSKEY_A,                   XK_A);
+	FsXAddKeyMapping(FSKEY_B,                   XK_B);
+	FsXAddKeyMapping(FSKEY_C,                   XK_C);
+	FsXAddKeyMapping(FSKEY_D,                   XK_D);
+	FsXAddKeyMapping(FSKEY_E,                   XK_E);
+	FsXAddKeyMapping(FSKEY_F,                   XK_F);
+	FsXAddKeyMapping(FSKEY_G,                   XK_G);
+	FsXAddKeyMapping(FSKEY_H,                   XK_H);
+	FsXAddKeyMapping(FSKEY_I,                   XK_I);
+	FsXAddKeyMapping(FSKEY_J,                   XK_J);
+	FsXAddKeyMapping(FSKEY_K,                   XK_K);
+	FsXAddKeyMapping(FSKEY_L,                   XK_L);
+	FsXAddKeyMapping(FSKEY_M,                   XK_M);
+	FsXAddKeyMapping(FSKEY_N,                   XK_N);
+	FsXAddKeyMapping(FSKEY_O,                   XK_O);
+	FsXAddKeyMapping(FSKEY_P,                   XK_P);
+	FsXAddKeyMapping(FSKEY_Q,                   XK_Q);
+	FsXAddKeyMapping(FSKEY_R,                   XK_R);
+	FsXAddKeyMapping(FSKEY_S,                   XK_S);
+	FsXAddKeyMapping(FSKEY_T,                   XK_T);
+	FsXAddKeyMapping(FSKEY_U,                   XK_U);
+	FsXAddKeyMapping(FSKEY_V,                   XK_V);
+	FsXAddKeyMapping(FSKEY_W,                   XK_W);
+	FsXAddKeyMapping(FSKEY_X,                   XK_X);
+	FsXAddKeyMapping(FSKEY_Y,                   XK_Y);
+	FsXAddKeyMapping(FSKEY_Z,                   XK_Z);
+	FsXAddKeyMapping(FSKEY_ESC,                 XK_Escape);
+	FsXAddKeyMapping(FSKEY_F1,                  XK_F1);
+	FsXAddKeyMapping(FSKEY_F2,                  XK_F2);
+	FsXAddKeyMapping(FSKEY_F3,                  XK_F3);
+	FsXAddKeyMapping(FSKEY_F4,                  XK_F4);
+	FsXAddKeyMapping(FSKEY_F5,                  XK_F5);
+	FsXAddKeyMapping(FSKEY_F6,                  XK_F6);
+	FsXAddKeyMapping(FSKEY_F7,                  XK_F7);
+	FsXAddKeyMapping(FSKEY_F8,                  XK_F8);
+	FsXAddKeyMapping(FSKEY_F9,                  XK_F9);
+	FsXAddKeyMapping(FSKEY_F10,                 XK_F10);
+	FsXAddKeyMapping(FSKEY_F11,                 XK_F11);
+	FsXAddKeyMapping(FSKEY_F12,                 XK_F12);
+	FsXAddKeyMapping(FSKEY_PRINTSCRN,           0);
+	FsXAddKeyMapping(FSKEY_SCROLLLOCK,          0);
+	FsXAddKeyMapping(FSKEY_PAUSEBREAK,          XK_Cancel);
+	FsXAddKeyMapping(FSKEY_TILDA,               0);
+	FsXAddKeyMapping(FSKEY_MINUS,               XK_minus);
+	FsXAddKeyMapping(FSKEY_PLUS,                XK_plus);
+	FsXAddKeyMapping(FSKEY_BS,                  XK_BackSpace);
+	FsXAddKeyMapping(FSKEY_TAB,                 XK_Tab);
+	FsXAddKeyMapping(FSKEY_LBRACKET,            XK_bracketleft);
+	FsXAddKeyMapping(FSKEY_RBRACKET,            XK_bracketright);
+	FsXAddKeyMapping(FSKEY_BACKSLASH,           XK_backslash);
+	FsXAddKeyMapping(FSKEY_CAPSLOCK,            0);
+	FsXAddKeyMapping(FSKEY_SEMICOLON,           0);
+	FsXAddKeyMapping(FSKEY_SINGLEQUOTE,         0);
+	FsXAddKeyMapping(FSKEY_ENTER,               XK_Return);
+	FsXAddKeyMapping(FSKEY_SHIFT,               XK_Shift_L);
+	FsXAddKeyMapping(FSKEY_COMMA,               XK_comma);
+	FsXAddKeyMapping(FSKEY_DOT,                 XK_period);
+	FsXAddKeyMapping(FSKEY_SLASH,               XK_slash);
+	FsXAddKeyMapping(FSKEY_CTRL,                XK_Control_L);
+	FsXAddKeyMapping(FSKEY_ALT,                 XK_Alt_L);
+	FsXAddKeyMapping(FSKEY_INS,                 XK_Insert);
+	FsXAddKeyMapping(FSKEY_DEL,                 XK_Delete);
+	FsXAddKeyMapping(FSKEY_HOME,                XK_Home);
+	FsXAddKeyMapping(FSKEY_END,                 XK_End);
+	FsXAddKeyMapping(FSKEY_PAGEUP,              XK_Page_Up);
+	FsXAddKeyMapping(FSKEY_PAGEDOWN,            XK_Page_Down);
+	FsXAddKeyMapping(FSKEY_UP,                  XK_Up);
+	FsXAddKeyMapping(FSKEY_DOWN,                XK_Down);
+	FsXAddKeyMapping(FSKEY_LEFT,                XK_Left);
+	FsXAddKeyMapping(FSKEY_RIGHT,               XK_Right);
+	FsXAddKeyMapping(FSKEY_NUMLOCK,             XK_Num_Lock);
+	FsXAddKeyMapping(FSKEY_TEN0,                XK_KP_0);
+	FsXAddKeyMapping(FSKEY_TEN1,                XK_KP_1);
+	FsXAddKeyMapping(FSKEY_TEN2,                XK_KP_2);
+	FsXAddKeyMapping(FSKEY_TEN3,                XK_KP_3);
+	FsXAddKeyMapping(FSKEY_TEN4,                XK_KP_4);
+	FsXAddKeyMapping(FSKEY_TEN5,                XK_KP_5);
+	FsXAddKeyMapping(FSKEY_TEN6,                XK_KP_6);
+	FsXAddKeyMapping(FSKEY_TEN7,                XK_KP_7);
+	FsXAddKeyMapping(FSKEY_TEN8,                XK_KP_8);
+	FsXAddKeyMapping(FSKEY_TEN9,                XK_KP_9);
+	FsXAddKeyMapping(FSKEY_TENDOT,              XK_KP_Decimal);
+	FsXAddKeyMapping(FSKEY_TENSLASH,            XK_KP_Divide);
+	FsXAddKeyMapping(FSKEY_TENSTAR,             XK_KP_Multiply);
+	FsXAddKeyMapping(FSKEY_TENMINUS,            XK_KP_Subtract);
+	FsXAddKeyMapping(FSKEY_TENPLUS,             XK_KP_Add);
+	FsXAddKeyMapping(FSKEY_TENENTER,            XK_KP_Enter);
+}
+
+static void FsXAddKeyMapping(int fskey,int vk)
+{
+	if(fskey<0 || FSKEY_NUM_KEYCODE<=fskey)
+	{
+		fprintf(stderr,"FSKEY is out of range\n");
+		return;
+	}
+	if(vk<0 || FS_NUM_XK<=vk)
+	{
+		fprintf(stderr,"XK is out of range\n");
+		return;
+	}
+
+	mapXKtoFSKEY[vk]=fskey;
+	mapFSKEYtoXK[fskey]=vk;
+}
+
+
+
+////////////////////////////////////////////////////////////
+// Below section beals with DirectDraw.
+
+void FsSetFullScreen(int wid,int hei,int bpp)
+{
+}
+
+void FsSetNormalWindow(void)
+{
+}
+
+void FsSetMaximize(void)
+{
+}
+
+void FsSaveWindowSize(const char fn[])
+{
+}
+
+void FsLoadWindowSize(const char fn[])
+{
+}
+
+// Above section deals with DirectDraw
+////////////////////////////////////////////////////////////
+
+class JoyCaps
+{
+public:
+  YSBOOL exist;
+  YSBOOL axs[FsMaxNumJoyAxis];
+};
+
+static JoyCaps caps[FsMaxNumJoystick];
+static YSBOOL firstJoyRead=YSTRUE;
+
+const int JoyButtonRead=1;
+const int JoyAxisRead=2;
+
+struct Joy
+{
+  unsigned int tm;
+  short v;
+  unsigned char tp;
+  unsigned char n;
+};
+
+int joyFd[FsMaxNumJoystick];  // must be closed somewhere....
+FsJoystick joyValue[FsMaxNumJoystick];
+// Initialized in FsCheckJoyCaps
+// Updated in FsUpdateJoy
+
+static void FsCheckJoyCaps(void)
+{
+	int i,j;
+	struct Joy js;
+
+	if(firstJoyRead==YSTRUE)
+	{
+		printf("Checking Joy Caps.\n");
+		firstJoyRead=YSFALSE;
+		for(i=0; i<FsMaxNumJoystick; i++)
+		{
+			caps[i].exist=YSFALSE;
+			for(j=0; j<FsMaxNumJoyAxis; j++)
+			{
+				caps[i].axs[j]=YSFALSE;
+				joyValue[i].axs[j]=0.0;
+			}
+			for(j=0; j<FsMaxNumJoyTrig; j++)
+			{
+				joyValue[i].trg[j]=YSFALSE;
+			}
+			joyValue[i].pov=YSFALSE;
+			joyValue[i].povAngle=0.0;
+
+
+			char fn[256];
+			sprintf(fn,"/dev/js%d",i);
+			joyFd[i]=open(fn,O_RDONLY);
+
+			if(joyFd[i]>=0)
+			{
+				caps[i].exist=YSTRUE;
+				while(1)
+				{
+					struct pollfd pfd;
+					pfd.fd=joyFd[i];
+					pfd.events=POLLIN|POLLPRI;
+					if(poll(&pfd,1,0)<=0)
+					{
+						break;
+					}
+
+					if(read(joyFd[i],&js,sizeof(struct Joy))==sizeof(struct Joy))
+					{
+						if((js.tp&JoyButtonRead) && js.n<FsMaxNumJoyTrig)
+						{
+							joyValue[i].trg[js.n]=(YSBOOL)js.v;
+						}
+						if((js.tp&JoyAxisRead) && js.n<FsMaxNumJoyAxis)
+						{
+							caps[i].axs[js.n]=YSTRUE;
+							joyValue[i].axs[js.n]=((double)js.v+32768.0)/65536.0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+static YSRESULT FsUpdateJoystick(int joyId)
+{
+	if(0<=joyId && joyId<FsMaxNumJoystick && caps[joyId].exist==YSTRUE && joyFd[joyId]>=0)
+	{
+		int j,n;
+		struct Joy js;
+
+		while(1)
+		{
+			struct pollfd pfd;
+			pfd.fd=joyFd[joyId];
+			pfd.events=POLLIN|POLLPRI;
+			if(poll(&pfd,1,0)<=0)
+			{
+				break;
+			}
+
+			if(read(joyFd[joyId],&js,sizeof(struct Joy))==sizeof(struct Joy))
+			{
+				if((js.tp&JoyButtonRead) && js.n<FsMaxNumJoyTrig)
+				{
+					joyValue[joyId].trg[js.n]=(YSBOOL)js.v;
+				}
+				else if((js.tp&JoyAxisRead) && js.n<FsMaxNumJoyAxis)
+				{
+					joyValue[joyId].axs[js.n]=((double)js.v+32768.0)/65536.0;
+				}
+			}
+		}
+		return YSOK;
+	}
+	return YSERR;
+}
+
+
+YSRESULT FsLinuxReadJoystick(FsJoystick &joy,int joyId)
+{
+	FsCheckJoyCaps();
+	if(FsUpdateJoystick(joyId)==YSOK)
+	{
+		joy=joyValue[joyId];
+		return YSOK;
+	}
+	return YSERR;
+}
+
+YSBOOL FsIsJoystickAxisAvailable(int joyId,int joyAxs)
+{
+	FsCheckJoyCaps();
+	if(joyId==FsMouseJoyId)
+	{
+		if(joyAxs==0 || joyAxs==1)
+		{
+			return YSTRUE;
+		}
+		else
+		{
+			return YSFALSE;
+		}
+	}
+	else if(0<=joyId && joyId<FsMaxNumJoystick &&
+	        0<=joyAxs && joyAxs<FsMaxNumJoyAxis)
+	{
+		return caps[joyId].axs[joyAxs];
+	}
+	return YSFALSE;
+}
+
+YSRESULT FsPollJoystick(FsJoystick &joy,int joyId)
+{
+	int i;
+
+	for(i=0; i<FsMaxNumJoyAxis; i++)
+	{
+		joy.axs[i]=-1.0;
+	}
+	for(i=0; i<FsMaxNumJoyTrig; i++)
+	{
+		joy.trg[i]=YSFALSE;
+	}
+	joy.pov=YSFALSE;
+	joy.povAngle=0.0;
+
+	if(joyId==FsMouseJoyId)
+	{
+		int wid,hei,mx,my;
+		YSBOOL lb,mb,rb;
+		FsMouse(lb,mb,rb,mx,my);
+		FsGetWindowSize(wid,hei);
+		joy.axs[0]=(double)mx/(double)wid;
+		joy.axs[1]=(double)my/(double)hei;
+		joy.trg[0]=lb;
+		joy.trg[1]=rb;
+		joy.trg[2]=mb;
+		return YSOK;
+	}
+	else if(FsLinuxReadJoystick(joy,joyId)==YSOK)
+	{
+		return YSOK;
+	}
+
+	return YSERR;
+}
+
+
+////////////////////////////////////////////////////////////
+
+// ex FsFindFileList(filelist,"aircraft","air","lst");
+YSRESULT FsFindFileList(YsArray <YsString> &filelist,const char dir[],const char prefix[],const char ext[])
+{
+	int i;
+	long hdl;
+	unsigned attrib;
+	YsString fn,tst,fulDir,uPrefix,uExt;
+	DIR *dp;
+	struct dirent *dr;
+
+
+	uPrefix.Set(prefix);
+	uPrefix.Uncapitalize();
+	uExt.Set(ext);
+	uExt.Uncapitalize();
+
+	if((dp=opendir(dir))==NULL)
+	{
+		return YSERR;
+	}
+
+	filelist.Set(0,NULL);
+
+	hdl=-1;
+	while((dr=readdir(dp))!=NULL)
+	{
+		if(dr->d_ino!=0 && dr->d_name[0]!='.')
+		{
+			struct stat st;
+
+			fn.Set(dir);
+			fn.Append("/");
+			fn.Append(dr->d_name);
+
+			stat(fn,&st);
+			if((st.st_mode&S_IFMT)==S_IFDIR)
+			{
+			}
+			else
+			{
+				fn.Set(dr->d_name);
+
+				tst.Set(dr->d_name);
+				tst.Uncapitalize();
+				if(strncmp(tst,uPrefix,uPrefix.Strlen())==0 &&
+				strcmp(tst.GetArray()+tst.Strlen()-uExt.Strlen(),uExt)==0)
+				{
+					filelist.Append(fn);
+				}
+			}
+		}
+	}
+
+	return YSOK;
+}
+
+YSRESULT FsFindFileDirList(YsArray <YsString> &filelist,YsArray <YsString> &dirlist,const char dir[],const char ext[])
+{
+	int i;
+	long hdl;
+	unsigned attrib;
+	YsString fn,tst,fulDir,uPrefix,uExt;
+	DIR *dp;
+	struct dirent *dr;
+
+
+	uPrefix.Set(prefix);
+	uPrefix.Uncapitalize();
+	uExt.Set(ext);
+	uExt.Uncapitalize();
+
+	if((dp=opendir(dir))==NULL)
+	{
+		return YSERR;
+	}
+
+	filelist.Set(0,NULL);
+
+	hdl=-1;
+	while((dr=readdir(dp))!=NULL)
+	{
+		if(dr->d_ino!=0 && dr->d_name[0]!='.')
+		{
+			struct stat st;
+
+			fn.Set(dir);
+			fn.Append("/");
+			fn.Append(dr->d_name);
+
+			stat(fn,&st);
+			if((st.st_mode&S_IFMT)==S_IFDIR)
+			{
+				fn.Set(dr->d_name);
+				dirlist.Append(fn);
+			}
+			else
+			{
+				fn.Set(dr->d_name);
+
+				tst.Set(dr->d_name);
+				tst.Uncapitalize();
+				if(strncmp(tst,uPrefix,uPrefix.Strlen())==0 &&
+				   strcmp(tst.GetArray()+tst.Strlen()-uExt.Strlen(),uExt)==0)
+				{
+					filelist.Append(fn);
+				}
+			}
+		}
+	}
+
+	return YSOK;
+}
+

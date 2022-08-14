@@ -1,0 +1,99 @@
+// $Id: fsairsound.cpp,v 1.2 2004/12/22 05:43:39 soji Exp $
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+#include <ysclass.h>
+#include "fs.h"
+
+#include "yswavfile.h"
+#include "ysoss.h"
+
+
+////////////////////////////////////////////////////////////
+
+
+class FsWaveSound : public YsWavFile
+{
+};
+
+
+////////////////////////////////////////////////////////////
+
+static YsOssWavPlayer wavPlayer;
+
+FsAirSound::FsAirSound()
+{
+	snd=new FsWaveSound [FSSND_NONE];
+
+	snd[FSSND_DAMAGE].LoadWav("sound/damage.wav");
+	snd[FSSND_GUN].LoadWav("sound/gun.wav");
+	snd[FSSND_MISSILE].LoadWav("sound/missile.wav");
+	snd[FSSND_BANG].LoadWav("sound/bang.wav");
+	snd[FSSND_BLAST].LoadWav("sound/blast.wav");
+	snd[FSSND_ENGINELOW].LoadWav("sound/enginelow.wav");
+	snd[FSSND_ENGINEMID].LoadWav("sound/enginemid.wav");
+	snd[FSSND_ENGINEHIGH].LoadWav("sound/enginehigh.wav");
+	snd[FSSND_ENGINEMAX].LoadWav("sound/enginemax.wav");
+	snd[FSSND_BURNER].LoadWav("sound/burner.wav");
+	snd[FSSND_TOUCHDWN].LoadWav("sound/touchdwn.wav");
+	snd[FSSND_ENGINE].LoadWav("sound/engine.wav");
+	snd[FSSND_HIT].LoadWav("sound/hit.wav");
+	snd[FSSND_WARNING].LoadWav("sound/warning.wav");
+	snd[FSSND_BLAST2].LoadWav("sound/blast2.wav");
+	snd[FSSND_RETRACTLDG].LoadWav("sound/retractldg.wav");
+	snd[FSSND_EXTENDLDG].LoadWav("sound/extendldg.wav");
+	snd[FSSND_PROPLOW].LoadWav("sound/proplow.wav");
+	snd[FSSND_PROPMID].LoadWav("sound/propmid.wav");
+	snd[FSSND_PROPHIGH].LoadWav("sound/prophigh.wav");
+	snd[FSSND_PROPMAX].LoadWav("sound/propmax.wav");
+	snd[FSSND_BOMBSAWAY].LoadWav("sound/bombsaway.wav");
+	snd[FSSND_ROCKET].LoadWav("sound/rocket.wav");
+
+	environ=FSSND_NONE;
+	oneshot=FSSND_NONE;
+}
+
+FsAirSound::~FsAirSound()
+{
+	delete [] snd;
+}
+
+void FsAirSound::PlayEnviron(int s)
+{
+	if(this!=NULL)
+	{
+	}
+}
+
+void FsAirSound::PlayOneShot(int s)
+{
+	if(this!=NULL)
+	{
+		if(0<=s && s<FSSND_NONE)
+		{
+			wavPlayer.Play(snd[s]);
+		}
+	}
+}
+
+void FsAirSound::KeepPlaying(void)
+{
+	if(this!=NULL)
+	{
+	}
+}
+
+void FsAirSound::Stop(void)
+{
+	if(this!=NULL)
+	{
+	}
+}
+
+
+////////////////////////////////////////////////////////////
+

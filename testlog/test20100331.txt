@@ -1,0 +1,325 @@
+Test List (Updated 2010/03/31)
+
+Do this list Before making installer (roughly)
+             After making installer
+             with Joystick only
+             with Joystick + Throttle + Rudder
+             without Joystick and Throttle
+
+
+
+Making installer
+  (1) Prepare files
+  (2) Make YSFLIGHTINSTALL.ZIP
+  (3) Make Self-Extractor -> Rename it to SETUP.EXE
+  (4) Make YSFLIGHT.ZIP with SETUP.EXE, README.TXT, JREADME.TXT, and EREADME.TXT
+
+
+
+Time stamp and size of executables
+fsmain.exe            
+fsmaino.exe           
+fsmaindx.exe          
+fsmainsvr.exe         
+ysflight (Linux)      
+ysflight (Mac)        
+
+YsflightForWindows.zip   
+YsflightForLinux.tar.gz  
+YsflightForMacOSX.zip    
+
+
+
+<<<<For Test Release>>>>
+OGL DIB D3D MAC LIN
+(X) (X) (X) ( ) ( ) Comment out #define CRASH_ON_ZERO_DIVISION_ERROR in fsmain.cpp
+( ) ( ) ( ) ( ) ( ) Remove "Concorde Fly-By" from menu
+(X) (X) (X) ( ) ( ) Comment out #define CRASHINVESTIGATION in fssimulation.cpp
+(X) (X) (X) ( ) ( ) Comment out #define CRASHINVESTIGATION in fsnetwork.cpp
+(X) (X) (X) ( ) ( ) const YSBOOL FsVerboseMode=YSFALSE; in fsnetwork.cpp
+(X) (X) (X) ( ) ( ) Comment out #define CRASHINVESTIGATION in fsautopilot.cpp
+(X) (X) (X) ( ) ( ) Comment out #define CRASHINVESTIGATION_MOVE
+(X) (X) (X) ( ) ( ) Comment out #define CRASHINVESTIGATION_MOVE_M6
+(X) (X) (X) ( ) ( ) Comment out #define CRASHINVESTIGATION_AUTOPILOT
+(X) (X) (X) ( ) ( ) Comment out #define YSOGLERRORCHECk in *gl.cpp
+(-) (-) (-) ( ) ( ) Deleted title01.bmp and later?
+(-) (-) (-) ( ) ( ) Show test version message.
+(X) (X) (X) ( ) ( ) fsmaino -prepareRelease
+
+
+
+<<<<Creating an installer>>>>
+OGL DIB D3D MAC LIN
+(-) (-) (-) ( ) ( ) Change background pictures
+(X) (X) (X) ( ) ( ) Updated help files?
+(X) (X) (X) ( ) ( ) Comment out #define TESTVERSION in fsmain.cpp
+(X) (X) (X) ( ) ( ) Comment out #define CRASH_ON_ZERO_DIVISION_ERROR in fsmain.cpp
+(X) (X) (X) ( ) ( ) Remove FILE *fsDebugOut from fsmain.cpp and other files.
+(X) (X) (X) ( ) ( ) Remove "Concorde Fly-By" from menu
+(X) (X) (X) ( ) ( ) Set Version Number in fsdef.h
+(X) (X) (X) ( ) ( ) Removed all test keys?  (FsNetwork -> BIKEY_X)
+(X) (X) (X) ( ) ( ) Install the newest ysclass.lib
+(-) ( ) (-) ( ) ( ) Install the newest impls32d.lib and impls32o.lib
+(X) (X) (X) (X) ( ) Does about dialog show the correct version number?
+(X) (X) (X) (X) ( ) Deleted Test Version Message?
+(X) (X) (X) ( ) ( ) const int FsVerbose=YSFALSE;  in fsnetwork.cpp
+(X) (X) (X) ( ) ( ) Comment out #define CRASHINVESTIGATION in fssimulation.cpp
+(X) (X) (X) ( ) ( ) Comment out #define CRASHINVESTIGATION in fsnetwork.cpp
+(X) (X) (X) ( ) ( ) Comment out #define CRASHINVESTIGATION in fsautopilot.cpp
+(X) (X) (X) ( ) ( ) Comment out #define CRASHINVESTIGATION_MOVE
+(X) (X) (X) ( ) ( ) Comment out #define CRASHINVESTIGATION_MOVE_M6
+(X) (X) (X) ( ) ( ) Comment out #define CRASHINVESTIGATION_AUTOPILOT
+(X) (X) (X) ( ) ( ) /SUBSYSTEM:WINDOWS
+(X) (X) (X) (X) (X) Rebuild
+(X) (X) (X) ( ) (X) fsmaino -prepareRelease -autoexit
+( ) ( ) ( ) ( ) ( ) Check revision date of help files
+( ) ( ) ( ) ( ) ( ) Check fonts of dialogs
+(X) (X) (X) ( ) (X) Make sure first startup identification file does not exist (20020510 or like that).
+(X) (X) (X) ( ) ( ) Make sure config\font.cfg does not exist.
+(X) (X) (X) ( ) (X) Make sure prevflight.dat does not exist.
+(X) (X) (X) ( ) ( ) Make sure fserr.txt does not exist.
+(X) (X) (X) ( ) (X) Make sure config/serveraddress.txt does not exist.
+(-) (-) (-) (-) ( ) Delete "language" directory from the standard package.
+(X) (X) (X) ( ) (X) Deleted irrelevant executables?  YFSUTIL.EXE and YFSUTILO.EXE?
+(X) (X) (X) ( ) ( ) Deleted all CVS folders?
+(X) (X) (X) (X) ( ) Write down time stamp and size of fsmain.exe, fsmaino.exe
+(X) (X) (X) ( ) ( ) Recheck: delete first startup identification file?  20020510 or like that.
+                    (fsmaino -setdefaultconfig may create a new one.)
+( ) ( ) ( ) ( ) ( ) Install Dir should be "C:\Program Files\YSFLIGHT.COM\YSFLIGHT"
+( ) ( ) ( ) ( ) ( ) Start menu shortcuts must show OpenGL and Non-OpenGL
+( ) ( ) ( )         Write down time stamp and size of ysflight.zip
+            ( ) ( ) Write down time stamp and size of ysflight.tar.gz
+(X) (X) (X) ( ) ( ) Bundled JWord Plug-in?
+( ) ( ) ( ) ( ) (X) ipblock.txt does not exist.
+
+
+
+<<<<After installation>>>>
+[General Installation Check]
+OGL DIB D3D MAC LIN
+( ) ( ) ( ) ( ) ( ) WinXP non-admin Install
+( ) ( ) ( ) ( ) ( ) WinXP admin Install
+( ) ( ) ( ) ( ) ( ) Check default installation directory is c:\Program Files\YSFLIGHT.COM\YSFLIGHT
+( ) ( ) ( ) ( )     Delete "My Documents\YSFLIGHT.COM\YSFLIGHT" and start the program.  Mission files must be there.
+( ) ( ) ( ) (X) ( ) Choose HELP (Japanese) from the menu
+( ) ( ) ( ) (X) ( ) Choose HELP (English) from the menu
+( ) ( ) ( ) ( ) ( ) Choose YSFLIGHT2000-Reset Setting from the menu
+( ) ( ) ( ) ( ) ( ) Start with -english option, and create flight, see joystick dialog, 
+(X) (X) (X) ( ) ( ) Make sure there's no CVS folder
+(X) (X) (X) ( ) ( ) Make sure there's no "gui" directory
+(X) (X) (X) ( ) ( ) Virus Scan
+
+
+
+[Menus]
+OGL DIB D3D MAC LIN
+( ) (X) (X) (X) (X) Try aerobatic demo -> Diamond Take-off with several different airplanes.
+( ) ( ) (X) ( )     Help -> Support YSFLIGHT (with SHIFT off) and test every button.  
+                    Make sure the link is to Jp page.
+( ) ( ) ( ) ( )     Help -> Support YSFLIGHT (with SHIFT on) and test every button.  
+                    Make sure the link is to En page.
+( ) (X) (X) (X) (X) Start the program select Simulation -> Replay Record.  Must show no-flight-record message
+( ) (X) (X) (X) (X) Start the program select Simulation -> Fly.  Must show no-flight message
+
+
+
+[Basic Flight]
+Do the following tests in one sequence
+OGL DIB D3D MAC LIN
+( ) (X) (X) ( ) (X) Turn off Opening Demo (Test uninitialized objects error is fixed.)
+( ) (X) (X) (X) (X) Create Flight with T-4 Blue Impulse, Load Smoke
+( ) (X) (X) (X) (X) Take Off
+( ) (X) (X) (X) (X) Open sub-windows.
+( ) (X) (X) (X) (X) Fly Maneuvers 
+( ) (X) (X) ( ) (X) Stall
+( ) (X) (X) (X) (X) Fly with trailing smoke
+( ) (X) (X) (X) (X) BS Key autopilot (On/Off and make sure the plane flies with no problem after turning off)
+( ) (X) (X) (X) (X) Landing
+( ) (-) (X) (X) (X) Sub-windows disappear when the flight is terminated.
+( ) (X) (X) (X) (X) Replay record.  Make sure smoke is correctly drawn.
+( ) (X) (X) (X) (X) Save record and exit.  Re-start the program, load the record and check it reproduces the flight
+                    correctly.
+( ) (X) (X) (X) (X) Overwrite a flight record.  Make sure it doesn't crash.
+
+
+[Weapon Loading and Record]
+Do the following tests in one sequence
+OGL DIB D3D MAC LIN
+( ) ( ) (X) ( ) ( ) Change default airplane to A-10A Thunderbolt in Config dialog.
+( ) ( ) (X) ( ) ( ) Create Flight.  Make sure A-10 is selected by default.
+( ) ( ) (X) ( ) ( ) Change loading to 2 AAMs, 4 AGMs, 5 500lb bombs, 6 250lb bombs, and 38 rockets, and
+                    choose Mid-air start position, and start flight.
+( ) ( ) (X) ( ) ( ) Shoot all the weapons
+( ) ( ) (X) ( ) ( ) Replay record.  Make sure weapons are coorectly recorded.
+( ) ( ) (X) ( ) ( ) Save record and exit.  Re-start the program, load the record and check it reproduces the weapons.
+
+
+
+[Air Combat]
+Do the following tests in one sequence
+OGL DIB D3D MAC LIN
+( ) (X) (X) (X) ( ) Change default airplane to F-15C Eagle in Config dialog.
+( ) (X) (X) (X) ( ) Create Air Combat.  Make sure F-15C Eagle is selected by default.
+( ) ( ) (X) (X) ( ) Choose Simulation -> Choose Airplane, and change loading to 2 AIM-9s and 4 AIM-120s
+( ) (X) (X) (X) ( ) Take off, and shoot all AIM-9s, and then AIM-120s.  Make sure AIM-120s locks on and tracks the
+                    target.
+( ) (X) (X) (X) ( ) Save flight record and exit.  Re-start the program, load the record and check the flight is reproduced.
+                    Make sure F-15C has 4 AIM-120s.  Make sure kill credits don't change.  Test F5 key also.
+
+
+
+[Carrier Operation]
+Do the folloiwng tests in one sequence {
+OGL DIB D3D MAC LIN
+(X) ( ) (X) (X) (X) Create a flight with Spitfire, starting from an aircraft carrier.
+(X) ( ) (X) (X) (X) Carrier Take Off
+(X) ( ) (X) (X) (X) Check instruments.
+( ) ( ) ( ) ( ) ( ) Carrier Touch & Go (Land without brake)
+( ) ( ) (X) ( ) (X) Carrier Touch & Go (Miss the wires)
+(X) ( ) (X) ( ) (X) Carrier Landing
+(X) ( ) (X) (X) (X) Replay record
+(X) ( ) ( ) ( ) (X) Save flight record and exit.  Re-start the program anc check the saved data.
+
+
+(X) ( ) (X) (X) (X) Drop off from the carrier flight deck
+(X) ( ) (X) (X) ( ) Crash into the carrier fuselage
+(X) ( ) (X) (X) ( ) Crash into the carrier bridge from the air
+(X) ( ) (X) (X) ( ) Crash into the carrier bridge from the flight deck
+
+
+
+[Instrument Panel]
+OGL DIB D3D MAC LIN
+(X) ( ) (X) (X) ( ) Create a flight with Concorde in Heathrow 27R
+(X) ( ) (X) (X) ( ) Fly one round of traffic pattern and check instruments.
+
+
+
+[Graphics]
+OGL DIB D3D MAC LIN
+(X) ( ) (X) ( ) ( ) Replay \YFS\UNDERBRIDGETEST.YFS, make sure the shadow of the airplane will not be drawn 
+                    if the airplane is underneath the bridge.  Test F-5 key as well.
+(X) ( ) (X) ( ) ( ) Take off in Pacific Atoll, fly to the bunkers, and make sure
+                    bunkers are visible (debug impls32?.lib, 2002/05/09)
+(X) ( ) ( ) ( ) ( ) Turn Off Transparency, Choose Archer, Eclipse, P-51, Spitfire, Fw190, and A6M5 and see
+                    propeller is not drawn as a solid circle.
+(X)         ( ) ( ) Turn on and off "Fog"
+(X)         ( ) ( ) Turn on and off "Improved Z-Buffering"
+( ) ( ) ( ) ( ) ( ) Turn on and off "Shadow of Dead Airplane"
+(X) ( ) ( ) ( ) ( ) Turn on and off "Draw ordinance"
+(X) ( ) ( ) ( ) ( ) Test full-screen mode
+
+
+
+[Add-On]
+OGL DIB D3D MAC LIN
+( ) ( ) (X) ( ) ( ) Install one extra pack (like O.C.P.) choose several airplanes.
+
+
+
+[Missions]
+OGL DIB D3D MAC LIN
+( ) ( ) (X) (X) (X) Load "FleetBattle1.yfs" and "FleetBattle2.yfs" and start the flight.
+                    Make sure the map is shown.
+( ) ( ) (X) ( ) (X) Ground Attack
+( ) ( ) ( ) ( ) (X) Save flight record of Ground attack and make sure it can load and play
+( ) ( ) (X) ( ) (X) Fly formation flights Blue Angels
+( ) ( ) (X) (X) ( ) Fly formation flights T-2 Blue Impulse
+( ) ( ) (X) ( ) ( ) Fly formation flights Thunderbirds
+(X) (X) ( ) (X) ( ) Choose Flight->Endurance mode, don't use missile, and
+                    make sure the user cannot load aam, bomb, and agm,
+                    but can load rockets.  Then take off and the configuration
+                    must be correctly reflected.
+(X) (X) ( ) (X) ( ) Choose Flight->Endurance mode, use missile, and
+                    make sure the user cannot load bombs and agms, but can
+                    load aams and rockets.  Then take off and the configuration
+                    must be correctly reflected.
+(X) (X) ( ) (X) ( ) Choose Flight->Intercept Mission mode,
+                    make sure the user cannot load agms and bombs, but can
+                    load bomb, aams and rockets.  Then take off and the configuration
+                    must be correctly reflected.
+(X) ( ) ( ) (X) ( ) Fly intercept mission, save data, make sure the record doesn't
+                    change before and after re-loading the datafile.
+(X) (X) ( ) (X) ( ) Change default airplane in the config dialog, and make
+                    sure the change is reflected in 
+                    Fly Endurance Mode, Fly Intercept Mission,
+                    Server mode and Client mode.
+OGL DIB D3D MAC LIN
+
+
+
+[Network]
+OGL DIB D3D MAC LIN
+( ) ( ) ( ) (X) ( ) Network Configuration -> Client -> Turn on Save Record
+( ) ( ) (X) (X) ( ) Network Configuration -> Server -> Turn on Free Memory when possible
+( ) ( ) (X) ( ) (X) Start Server
+(X) ( ) (X) ( ) (X) Connect Two Clients
+( ) ( ) (X) ( )     Press Alt+Space and keep the system menu open for at least 180 seconds.  Makes sure clients are
+                    not disconnected.
+(X) ( ) (X) (X) (X) Start Flying in the Clients
+(X) ( ) (X) (X) (X) In the clients, open sub windows.
+(X) ( ) (X) (X) (X) In the clients, Take off, Turn on Chat message input, and press Space.  Gun should not be fired.
+(X) ( ) (X) (X) (X) In the clients, Take off, Turn on Chat message input, and press H.  View should stay the same.
+(X) ( ) (X) (X) (X) In the server, open sub Windows.
+( ) ( ) (X) (X) (X) In the server, Take off, Turn on Chat message input, and press Space.  Gun should not be fired.
+( ) ( ) (X) (X) (X) In the server, Take off, Turn on Chat message input, and press H.  View should stay the same.
+( ) ( ) (X) (X) (X) Start Flying in the Server
+( ) ( ) (X) (X) (X) In the server, shoot down one of the client airplanes.  The client's sub window must
+                    close when the flight is terminated.
+( ) ( ) (X) (X) (X) In the client, shoot down server airplane.  Sub windows of the server must close
+                    when the flight is terminated.
+(X) ( ) (X) (X) (X) In the client, opn sub-windows
+(X) ( ) (X) (X) (X) In client mode, press window title bar for more than one second while flying, and check the
+                    ammo does not change.  This invokes SendQueryAirState which makes the server to re-send the
+                    state of the local airplans.
+(X) ( ) (X) (X) ( ) In the server, wait until airplanes are cleaned up (60 seconds idle), then press L to list users.
+                    Make sure the server doesn't crash.
+(X) ( ) (X) (X) ( ) In the client, wait until airplanes are cleaned up (60 seconds idle) in the server, then press 
+                    L to list users.  Make sure the server doesn't crash.
+(X) ( ) ( ) ( ) ( ) Save flight record of Network play and make sure it can load and play, and the username
+                    does not change.
+
+
+( ) (X) ( ) (X) (X) Turn off "Use Missile" on server.
+( ) ( ) ( ) (X) (X) Start Server by command parameter
+( ) ( ) ( ) ( ) ( ) Start Client by command parameter
+( ) ( ) ( ) (X) (X) Check Client cannot load missiles.
+
+
+( ) ( ) ( ) (X) (X) Turn on "Use Missile" on server.
+( ) ( ) ( ) ( ) ( ) Start Server with fsmaino -server Soji > log.txt and see there's no packet log
+( ) ( ) ( ) ( ) ( ) Start Client with fsmaino -client Soji localhost > log.txt and see there's no packet log
+( ) ( ) ( ) (X) ( ) In the server, choose an airplane and load AIM-120 and 250lb Bombs, and check they are really loaded.
+( ) ( ) ( ) (X) ( ) In the server, take off from the carrier and land on the carrier.
+( ) (X) ( ) (X) ( ) In the client, choose an airplane and load AIM-120 and 250lb Bombs, and check they are really loaded.
+( ) (X) ( ) (X) ( ) In the client, take off from the carrier and land on the carrier.
+
+
+( ) (X) (X) ( ) ( ) Limit Connection from Same IP to 1, and make sure a client can connect to the server, but
+                    two connections are not allowed.
+( ) (X) ( ) ( ) ( ) Limit Log On Time Out to 15 seconds, and make sure a client can connect to the server.
+OGL DIB D3D MAC LIN
+
+
+
+[Misc]
+OGL DIB D3D MAC LIN
+( ) ( ) ( ) ( ) (X) Choose mouse as throttle and see what happens.
+( ) ( ) ( ) ( ) ( ) On the ground, quit before stopping. Result must show just "Landed".
+( ) ( ) (X) ( ) ( ) Try all different fields
+( ) ( ) (X) ( ) ( ) Can Mig-21 takeoff?
+( ) (X) ( ) ( ) ( ) Can Mig-23 takeoff?
+( ) (X) ( ) ( ) ( ) Can B747 takeoff?
+( ) (X) ( ) ( ) ( ) Can B777 takeoff?
+( ) ( ) ( ) ( ) ( ) Make sure the flight record of this version cannot be loaded by the old version.
+( ) ( ) (X) ( ) ( ) Land out of runway -> Must considered as "Out of runway"
+( ) ( ) (X) ( ) ( ) Land at the bad attitude -> Must considered as "Crash"
+( ) ( ) ( ) ( ) ( ) Land at too high pitch -> Must considered as "Tail Strike"  (Use Mig-29)
+( ) ( ) ( ) ( ) ( ) Test all items in "Simulation" menu. (Airplane configuration)
+( ) ( ) (X) (X) (X) Vertical take off and landing by Harrier
+( ) ( ) (X) ( ) ( ) Vertical take off and landing by Harrier while applying back pressure
+( ) ( ) (X) ( ) ( ) Vertical take off and landing by Harrier while applying forward pressure
+( ) ( ) (X) (X) (X) Vertical take off and landing by UH60
+( ) ( ) (X) ( ) ( ) Vertical take off and landing by UH60 while applying back pressure
+( ) ( ) (X) ( ) ( ) Vertical take off and landing by UH60 while applying forward pressure
+( ) ( ) ( ) ( ) ( ) Test secret functions

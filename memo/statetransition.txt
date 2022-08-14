@@ -1,0 +1,15 @@
+
+
+
+Start Flying:
+1. GUI Mode
+     Create Fligh Dialog -> Mission Goal Dialog -> Joystick Warning (If necessary)
+
+2. Center Joystick Mode
+
+3. Flight Mode
+
+4. GUI Mode
+     Result Dialog
+
+5. Main Menu and Main Dialog

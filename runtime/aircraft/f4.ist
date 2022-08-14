@@ -1,0 +1,35 @@
+REM Instrument Panel Definitoin for Concorde
+REM Circular indicators,
+REM   ???????? x y radius
+REM Rectangular indicators
+REM   ???????? x1 y1 x2 y2
+REM   (x1<x2, y1<y2)
+
+PNLRANGE -0.30 -1.0 0.30 0.00
+
+ATTITUDE 0.0 -0.10 0.05
+HEADING_ 0.0 -0.21 0.05
+ALTITUDE 0.11 -0.09 0.04
+VERTICAL 0.11 -0.16 0.03
+AIRSPEED -0.11 -0.09 0.04
+TRNCOORD -0.11 -0.21 0.04
+
+FUEL____ 0.16 -0.21 0.18 -0.11
+THROTTLE 0.22 -0.16 0.03
+
+
+REM BRAKE___ -0.20 -0.38 -0.10 -0.26
+REM ATTITUDE 0.0 -0.30 0.08
+REM GEAR____  0.10 -0.38 0.20 -0.26
+
+
+REM AMMO____ 0.18 -0.62 0.10
+
+
+REM ILS_____ 0.31 -0.84 0.15
+REM GLOADING 0.30 -0.675 0.42 -0.385
+REM FLAP____ 0.48 -0.99 0.60 -0.69
+REM FUEL____ 0.63 -0.99 0.75 -0.69
+
+REM CROSHAIR 0.0 0.0 0.05
+

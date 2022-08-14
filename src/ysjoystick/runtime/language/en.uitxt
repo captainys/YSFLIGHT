@@ -1,0 +1,34 @@
+YSFLIGHT_LOCALIZATION_INFO_FILE
+
+*Needs to be encoded in UTF-8
+
+$LABEL "English"
+$FGCOL 255
+$BGCOL 0
+
+
++joycalib_filemenu                                 #File
++joycalib_fileexitmenu                             #Exit
++joycalib_calibmenu                                #Calibrate
++joycalib_calibcalibmenu                           #Calibrate
++joycalib_calibcalibhatmenu                        #Calibrate Hat Switch
++joycalib_caliberasemenu                           #Erase All Calibration Data
+
+
++joycalib_calib                                    #Calibrate Axes
++joycalib_calibhat                                 #Calibrate Hat Switch
++joycalib_fileexit                                 #Exit
++joycalib_caliberase                               #Erase All Calibration Data
+
++joycalib_hatneutral                               #Release Hat Switch and Press SPACE key
++joycalib_hat0deg                                  #Push Hat Switch Forward (or Up) and Press SPACE key
++joycalib_hat90deg                                 #Push Hat Switch Right and Press SPACE key
++joycalib_hat180deg                                #Push Hat Switch Backward (or Down) and Press SPACE key
++joycalib_hat270deg                                #Push Hat Switch Left and Press SPACE key
+
++joycalib_axiscycle                                #Move Axis All the Way Up and Down Several Times and Press SPACE key
++joycalib_axisneutral                              #Center Axis and Press SPACE key
++joycalib_stickcircle                              #Make Complete Circle with the Stick Several Times and Press SPACE key
++joycalib_stickneutral                             #Center Joystick and Press SPACE key
++joycalib_next                                     #Next >>
+

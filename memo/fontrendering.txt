@@ -1,0 +1,16 @@
+現状:
+
+FsUnicodeRenderer  UnicodeでYsBitmapに書き込み
+
+FsAsciiRendererr ASCIIコードでYsBitmapに書き込み 兼 直接レンダリング
+
+
+
+将来的:
+
+FsUnicodeRenderer  そのまま
+
+FsAsciiRenderer  直接レンダリング専用
+
+FsGui Library内Default Fixed ASCII rendererをそのまま使ってASCIIコード→YsBitmapに書き込み (FsGuiLib内からのみ使用)
+

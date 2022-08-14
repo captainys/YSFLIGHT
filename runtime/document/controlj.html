@@ -1,0 +1,640 @@
+<HTML>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta http-equiv="Content-Language" content="ja">
+<meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<TITLE>YS-FLIGHT SIMULATION SYSTEM 2000-CONTROL OF AIRPLANE</TITLE>
+<BODY>
+
+<H3>デフォルトキー/ジョイスティック/マウス操作 (2015/0<span lang="en-us">2</span>/0<span lang="en-us">8</span>更新)</H3>    
+
+
+<p>
+※2015/02/08の修正で、F6, F7, F8, 
+F9キーの機能が変更になりました。旧バージョンから引き継いで使用している場合は、旧バージョンのキー割り当てがそのまま有効になっているので、新バージョンと同様に使うためには、キー割り当てを変更してください。</p>
+<p>
+※旧バージョンで作成したキー/マウス/ジョイスティック割り当てファイルを読み込んだとき、新バージョンで新たに増えた機能はどのキーにも割り当てられていません。新しい機能を使いたい場合は、OptionメニューのKey/Mouse/Joystick 
+Assignmentsを選んで、新機能を適当なキーに割り当ててください。</p>          
+
+
+<p>※ '1'キーで射撃はできなくなりました。スペースキー、マウス左ボタン、またはジョイスティックのボタンを使ってください。
+なお、'1'キーはデフォルトで爆弾槽の開閉になりました。</p>          
+
+
+<p>※トリム操作が、INS/DELに変更になりました。</p> 
+
+
+<p>※WキーとSキーは、それぞれフラップ一段上げ、下げになりました。可変翼を手動で操作したい人は、可変翼操作の機能を適当なキーに割り当ててお使いください。</p> 
+
+
+<TABLE BORDER=3 width="100%" height="2661">
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="16"><B>操縦桿</B></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="13"><font size="2">Windowsが認識するジョイスティック、マウス、またはキーボード。(Optionメニュー→Config              
+      Flightで選択可能)</font></TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="16"><B>トリム</B></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><small><font size="2">Insert (Mac OSX用では↑キー)</font></small></TD><TD width="495" height="13"><SMALL>
+    <font size="2">トリムダウン</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><small><font size="2">Delete (Mac OSX用では↓キー)</font></small></TD><TD width="495" height="13"><SMALL>
+    <font size="2">トリムアップ</font></SMALL></TD>
+  </TR>
+
+
+
+  <tr>
+    <TD width="238" height="13"><small><font size="2">T</font></small></TD><TD width="495" height="13"><small>
+    <font size="2">操縦桿現在位置を元にトリム設定</font></small></TD>
+  </tr>
+
+
+
+  <tr>
+    <TD width="238" height="13"><font size="2">E</font></TD><TD width="495" height="13">
+    <font size="2">操縦桿感度上げ</font></TD>
+  </tr>
+
+
+
+  <tr>
+    <TD width="238" height="13"><font size="2">D</font></TD><TD width="495" height="13">
+    <font size="2">操縦桿感度下げ。高速飛行時のオーバーコントロール防止、編隊飛行時の微妙な操作のために操縦桿の感度を下げる。</font></TD>
+  </tr>
+
+
+
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="16"><B>エンジン</B></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">Q </font>  </SMALL></TD>
+    <TD width="495" height="13"><SMALL>
+    <font size="2">推力アップ</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">A </font>  </SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">推力ダウン</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">TAB</font></SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">アフターバーナー           
+      On/Off</font></SMALL></TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">Page Down</font></TD><TD width="495" height="13"><font size="2">垂直離陸位置にノズルを回転           
+      (可変ノズル装備機のみ)</font></TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">Page Up</font></TD><TD width="495" height="13"><font size="2">水平飛行位置にノズルを回転           
+      (可変ノズル装備機のみ)</font></TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD width="238" height="16"><font size="2">.</font></TD>
+    <TD width="495" height="16"><font size="2">逆噴射       
+      (逆噴射装備機のみ)</font></TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD width="733" height="16" colspan="2"><b>機銃回転 (現バージョンではAH-64のみ）</b></TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD width="238" height="14">マウス(ジョイスティック使用時)</TD>
+    <TD width="495" height="14">機銃の回転</TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD width="238" height="14">カーソルキー(マウス操縦桿時)</TD><TD width="495" height="14">
+    機銃の回転</TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="16"><B>ランディングギア,フラップ,ブレーキ,可変翼,ドア</B></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">G </font>  </SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">ランディングギアアップ/ダウン</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">F </font>  </SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">フラップアップ/ダウン</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">B </font>  </SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">エアブレーキ展開/収納,ホイールブレーキオン/オフ</font></SMALL></TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><small><font size="2">W</font></small></TD><TD width="495" height="13"><small>
+    <font size="2">フラップ一段階収納</font></small></TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><small><font size="2">S</font></small></TD><TD width="495" height="13"><small>
+    <font size="2">フラップ一段階展開</font></small></TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">&nbsp;;</font></TD><TD width="495" height="13">
+    <font size="2">ドア開閉</font></TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="16"><B>ラダー</B></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">Z </font>  </SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">左へ</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">X </font>  </SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">中立</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">C </font>  </SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">右へ</font></SMALL></TD>
+  </TR>
+
+
+
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="16"><B>トリガ</B></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">SPACE </font></TD><TD width="495" height="13">
+    <font size="2">射撃</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">1キー</font></TD><TD width="495" height="13">
+    <font size="2">爆弾槽ドア開閉</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">2キー </font></TD><TD width="495" height="13">
+    <font size="2">武装選択</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">3キー </font></TD><TD width="495" height="13">
+    <font size="2">レーダーOn/範囲選択</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">トリガ1</font></TD><TD width="495" height="13">
+    <font size="2">射撃</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">トリガ2</font></TD><TD width="495" height="13">
+    <font size="2">武装選択</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">トリガ3</font></TD><TD width="495" height="13">
+    <font size="2">レーダーOn/範囲選択</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">MOUSE LEFT BTN </font></TD><TD width="495" height="13">
+    <font size="2">射撃</font></TD>              
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">MOUSE RIGHT BTN </font></TD><TD width="495" height="13">
+    <font size="2">武装選択</font></TD>              
+  </TR>
+
+
+  <TR ALIGN=TOP>
+    <TD width="733" height="13" colspan="2"><b><span lang="ja">補給</span></b></TD>              
+  </TR>
+
+
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><font size="2">HOME</font></TD><TD width="495" height="13">
+    <font size="2">補給ダイアログ表示（補給車の近く、または空母上で停止中のみ）</font></TD>              
+  </TR>
+
+
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="16"><B>航法支援</B></TD>
+  </TR>
+
+
+  <tr>
+    <TD width="238" height="13"><small><font size="2">V</font></small></TD><TD width="495" height="13"><small>
+    <font size="2">進行方向表示マーカー              
+      On/Off</font></small></TD>
+  </tr>
+
+
+  <tr>
+    <TD width="238" height="13"><small><font size="2">9</font></small></TD><TD width="495" height="13"><small>
+    <font size="2">HUDの色の切り替え</font></small></TD>
+  </tr>
+
+
+  <tr>
+    <TD width="238" height="13"><small><font size="2">L</font></small></TD><TD width="495" height="13"><small>
+    <font size="2">VORステーション選択メニューを開く<br>
+    複数回押すことで、VOR1、VOR2、NDB (ADF)、ヘディングバグの選択メニューに切り替え<br>
+    OBSまたはヘディングバグの操作対象もLキーで選択</font></small></TD>
+  </tr>
+
+
+  <tr>
+    <TD width="238" height="13"><small><font size="2">7</font></small></TD><TD width="495" height="13"><small>
+    <font size="2">VOR OBSを左に回転<br>
+    対象のVORはLキーで選択</font></small></TD>
+  </tr>
+
+
+  <tr>
+    <TD width="238" height="13"><small><font size="2">8</font></small></TD><TD width="495" height="13"><small>
+    <font size="2">VOR OBSを右に回転<br>
+    対象のVORはLキーで選択</font></small></TD>
+  </tr>
+
+
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="16"><b>自動操縦</b></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+    <TD width="238" valign="top" height="215"><font size="2">BackSpace</font></TD>
+    <TD width="495" height="215"><font size="2">自動操縦メニューを開く (もう一度押すと自動操縦メニューを閉じる)。自動操縦メニューで選べる項目は次の通り。<br>          
+      </font> 
+      <blockquote>
+        <table border="0" width="441">
+          <tr>
+            <td width="137"><font size="2">Circle</font></td>
+            <td width="290"><font size="2">同じ位置でターンを続ける。</font></td>
+          </tr>
+          <tr>
+            <td width="137"><font size="2">Straight &amp; Level</font></td>          
+            <td width="290"><font size="2">直線飛行。</font></td>
+          </tr>
+          <tr>
+            <td width="137"><font size="2">Landing</font></td>
+            <td width="290"><font size="2">近くの空港に着陸する。なお、近くにILSを装備した2000m以上の滑走路長の空港が無い場合、風が強い場合は機能しない。</font></td>
+          </tr>
+          <tr>
+            <td width="137"><font size="2">Fly Heading Bug</font></td>
+            <td width="290"><font size="2">ヘディングバグの方向に機首を向ける。</font></td>
+          </tr>
+          <tr>
+            <td width="137"><font size="2">Exit autopilot</font></td>          
+            <td width="290"><font size="2">自動操縦の解除</font></td>
+          </tr>
+        </table>
+      </blockquote>
+      <p><font size="2">フォーメーションリーダーのときは、着陸の自動操縦の利用は避けた方が良い。</font></p>
+    </TD> 
+  </TR>
+
+
+  <TR ALIGN=TOP>
+    <TD width="733" colspan="2" height="16"><b>無線通信</b></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+    <TD width="238" valign="top" height="222"><font size="2">ENTER</font></TD>
+    <TD width="495" height="222"><font size="2">無線通信メニューを開く。(もう一度押すとメニューを閉じる)。無線通信メニューでは、まず送信先の機を選択し、次に指示を選択する。選択可能は指示は次の通り。 </font>
+      <blockquote>
+        <table border="0" width="439">
+          <tr>
+            <td width="136"><font size="2">Break and attack</font></td>          
+            <td width="289"><font size="2">編隊を解散して敵機を攻撃。</font></td>
+          </tr>
+          <tr>
+            <td width="136"><font size="2">Attack ground target</font></td>          
+            <td width="289"><font size="2">地上攻撃。</font></td>
+          </tr>
+          <tr>
+            <td width="136"><font size="2">Cover me</font></td>          
+            <td width="289"><font size="2">プレイヤー機を攻撃している敵機を攻撃。</font></td>
+          </tr>
+          <tr>
+            <td width="136"><font size="2">Form on my wing</font></td>          
+            <td width="289"><font size="2">編隊を組む。</font></td>
+          </tr>
+          <tr>
+            <td width="136"><font size="2">Return to base</font></td>          
+            <td width="289"><font size="2">近くの空港に着陸。</font></td>
+          </tr>
+          <tr>
+            <td width="136"><font size="2">Stay in holding pattern</font></td>          
+            <td width="289"><font size="2">上空待機。</font></td>
+          </tr>
+        </table>
+      </blockquote>
+      <p><font size="2">編隊を組むときは、僚機にForm on my wingの指示を出した上で、45～60度バンクでの旋回を、僚機が編隊の位置に来るまで続けるとよい。</font></p>          
+      <p><font size="2">なお、コンピュータ機に不適切な指示を出すと、事故の原因になる。(例:           
+      B747に編隊を解散して敵機を攻撃の支持を出した場合など)</font></p>
+    </TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+    <TD width="238" valign="top" height="97"><font size="2">F12<span lang="en-us"> 
+    (YSFLIGHT for MacOSX</span>では0キー)</font></TD>
+    <TD width="495" height="97"><font size="2">
+    ネット対戦で、チャットメッセージを送る。ただし、非常に低機能なチャットで、また漢字の利用もできないので、他のインスタントメッセージングサービスとの併用がお勧め。</font><p>
+    <font size="2">
+    また、キーボード配列が異なる言語間で違う影響で、一部の文字を直接タイプすることができません。'@'とか。仕方ないので、代わりに、直前にタイプした文字の文字コードを↑と↓キーで修正できるようにしました。例えば、'@'を出したいときは、SHIFT+'/'を押してから、↑を押してください。</font></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="16"><B>視点操作</B></TD>
+  </TR>
+  <TR ALIGN=TOP>
+  <TD width="238" height="26"><font size="2">F1 (*1)</font></TD><TD width="495" height="26"><font size="2">コクピット / 
+  機種毎特定視点 / 爆撃照準 (切り替え)<br>             
+    爆撃照準は爆弾の残弾がある場合のみ可能。</font></TD>
+  </TR>
+
+  <TR ALIGN=TOP>
+  <TD width="238" height="13"><font size="2">F2 (*1)</font></TD>
+  <TD width="495" height="13"><font size="2">外部/固定/移動,プレイヤー機追従</font></TD>
+  </TR>
+
+  <TR ALIGN=TOP>
+  <TD width="238" height="13"><font size="2">F3 (*1)</font></TD>
+  <TD width="495" height="13"><font size="2">コンピュータ機からプレイヤー機</font></TD>
+  </TR>
+
+  <TR ALIGN=TOP>
+  <TD width="238" height="13"><font size="2">F4 (*1)</font></TD>
+  <TD width="495" height="13"><font size="2">ミサイルカメラ</font></TD>
+  </TR>
+
+
+  <tr>
+  <TD valign="top" width="238" height="65"><font size="2">F7 (*1)</font></TD>
+  <TD width="495" height="65"><font size="2">機外視点<br>
+  F7キーを複数回押すと、角度固定モードまたは、機体に対する相対角度一定モードを切り替え。<br><span lang="ja">ハットスイッチ/視点操作キーを押すとカメラアングルが変化。</span><br>
+    目標機はF9キーで切り替え可能。</font></TD>
+  </tr>
+  <tr>
+  <TD valign="top" width="238" style="height: 28px"><font size="2">F8 (*2)</font></TD>
+  <TD width="495" style="height: 28px"><font size="2">ILS / 管制塔視点<br>
+  F8を複数回押すと、次のILS / 管制塔を切り替え。Shift+F8で前のILS / 管制塔に切り替え。<br>
+  <span lang="ja">目標機はF9キーで切り替え可能。</span></font></TD>
+  </tr>
+
+  <TR>
+  <TD valign=TOP width=238 height="13"><font size="2">F9 (*2)</font></TD>
+  <TD width=495 height="13"><font size="2">コンピュータ機からプレイヤー機視点、機外視点、ILS / 
+  管制塔視点で追跡する飛行機を切り替え。F9で次の目標機、Shift+F9で前の目標機。</font></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+  <TD width="238" height="52"><font size="2">F10 (*2)</font></TD>
+  <TD width="495" height="52"><font size="2">観戦用視点。観戦用視点では、操縦桿の前後左右でカメラアングルコントロール、武装発射ボタンで前進、武装選択ボタンで後退。F10キーを押すと、観戦用視点の位置は直前の視点位置から開始するので、まず、F1～F9キーで、観戦したい地点の近くに視点を移動してからF10キーを押すといい。</font></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+  <TD width="238" height="26"><font size="2">ジョイスティックの<BR>POVボタン</font></TD>
+  <TD width="495" height="26"><font size="2">視線切り替え(コクピットビュー時)<br>
+  カメラアングル変更(プレイヤー機追従視点 その1/その2)</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+  <TD width="238" height="13"><font size="2">U</font></TD><TD width="495" height="13">
+  <font size="2">前方</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+  <TD width="238" height="13"><font size="2">K</font></TD><TD width="495" height="13">
+  <font size="2">右</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+  <TD width="238" height="13"><font size="2">H</font></TD><TD width="495" height="13">
+  <font size="2">左</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+  <TD width="238" height="13"><font size="2">M</font></TD><TD width="495" height="13">
+  <font size="2">後方</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+  <TD width="238" height="13"><font size="2">J</font></TD><TD width="495" height="13">
+  <font size="2">上</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+  <TD width="238" height="13"><font size="2">N</font></TD><TD width="495" height="13">
+  <font size="2">下</font></TD>
+  </TR>
+  <TR ALIGN=TOP>
+  <TD width="238" height="16"></TD>
+  <TD width="495" height="16"><font size="2">(*)U,K,H,M,J,N キーのうちのいくつかを同時に押すことで             
+  斜めを見ることができます。</font></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+  <TD width="238" height="16"><font size="2">マウスホイール上</font></TD>
+  <TD width="495" height="16"><font size="2">表示拡大率増</font></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+  <TD width="238" height="16"><font size="2">マウスホイール下</font></TD>
+  <TD width="495" height="16"><font size="2">表示拡大率減</font></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="16"><b>サブウィンドウ</b></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+    <TD width="240" height="13"><font size="2">O</font></TD>
+    <TD width="524" height="13"><font size="2">サブウィンドウメニューを開く</font></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="16"><b>終了</b></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL>ESC </SMALL></TD><TD width="495" height="13"><SMALL>ESCキーを2回連続押すとシミュレーションを終了</SMALL></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+    <TD COLSPAN=2 width="739" height="29"><SMALL>
+      <B><font size="3">飛行記録再生</font></B><BR>
+      (* 巻き戻し/高速巻き戻し中は機関砲、ミサイル、爆発の表示が変に見えますが、             
+       これは仕様です)
+    </SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">Z</font></SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">高速巻き戻し</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">X</font></SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">巻き戻し</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">C</font></SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">再生</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">D</font></SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">一時停止</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">V</font></SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">高速再生</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">B</font></SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">超高速再生</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><small><font size="2">HOME</font></small></TD><TD width="495" height="13"><small>
+    <font size="2">飛行記録開始時刻に移動</font></small></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><small><font size="2">END</font></small></TD><TD width="495" height="13"><small>
+    <font size="2">飛行記録終了時刻に移動</font></small></TD>
+  </TR>
+  <TR ALIGN=TOP>
+    <TD width="238" height="13"><SMALL><font size="2">ESC </font> </SMALL></TD><TD width="495" height="13"><SMALL>
+    <font size="2">ESCキーを2回連続押すと飛行記録再生を終了</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+  <TD width="238" height="13"><SMALL><font size="2">F5 (*1)</font></SMALL></TD><TD width="495" height="13"><SMALL>
+  <font size="2">プレイヤー機切り替え</font></SMALL></TD>
+  </TR>
+  <TR ALIGN=TOP>
+  <TD COLSPAN=2 width="739" height="13"><SMALL><font size="2">その他、F1～F4の視点切り替えキーを使うことができます。</font></SMALL></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+  <TD COLSPAN=2 width="739" height="16"><b>飛行中の設定変更</b></TD>
+  </TR>
+
+
+  <TR ALIGN=TOP>
+  <TD width="240" height="355" valign="top"><font size="2">CTRL</font></TD>
+  <TD width="524" height="355" valign="top"><font size="2">
+  設定変更メニューを表示する。メニューの項目は次の通り。</font><blockquote>
+    <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+      <tr>
+        <td width="5%"><font size="2">キー</font></td>
+        <td><font size="2">機能</font></td>
+      </tr>
+      <tr>
+        <td width="15%"><font size="2">1</font></td>
+        <td width="84%"><font size="2">描画が高速になるようにグラフィックスの精度を変更する。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">2</font></td>
+        <td width="84%"><font size="2">デフォルトのグラフィックスの精度。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">3</font></td>
+        <td width="84%"><font size="2">&nbsp;グラフィックスの精度を高くする。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">A</font></td>
+        <td><font size="2">飛行機のグラフィックスの精度を切り替える。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">G</font></td>
+        <td width="84%"><font size="2">地上オブジェクトのグラフィックスの精度を切り替える。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">W</font></td>
+        <td width="84%"><font size="2">武器のグラフィックスの精度を切り替える。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">S</font></td>
+        <td width="84%"><font size="2">影のグラフィックスの精度を切り替える。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">D</font></td>
+        <td width="84%"><font size="2">墜落機の影の表示。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">L</font></td>
+        <td width="84%"><font size="2">滑走路灯を昼モードで表示するかしないかの切り替え。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">J</font></td>
+        <td width="84%"><font size="2">Virtual Joystick表示の切り替え。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">M</font></td>
+        <td width="84%"><font size="2">スモークの種類の切り替え。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">Z</font></td>
+        <td width="84%"><font size="2">Z-Buffer精度の切り替え。(OpenGLのみ)</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">T</font></td>
+        <td width="84%"><font size="2">半透明処理のオン/オフ。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">P</font></td>
+        <td width="84%"><font size="2">半透明処理によるのぞき穴発生削減機能のオン/オフ。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">H</font></td>
+        <td width="84%"><font size="2">計器パネル使用のオン/オフ。計器パネルを使用しないことにすると、常にHead Up 
+        Displayになります。</font></td>
+      </tr>
+      <tr>
+        <td width="16%"><font size="2">Enter</font></td>
+        <td width="84%"><font size="2">メニューを閉じる。</font></td>
+      </tr>
+    </table>
+  </blockquote>
+  <p><font size="2">
+  飛行中の設定変更は一時的で、飛行を終了するまでのみ（ネット対戦中はネット対戦モードを終了するまでのみ）有効。たとえば、ネット対戦で飛び立ってみたら、予想より参加者が多くて描画スピードが遅くなくなった場合など、この機能を使って描画精度を下げてスピードをあげることができる。</font></TD>
+  </TR>
+
+
+</TABLE>
+
+<p>(*1) Mac OSXでは、「Fn」キーとファンクションキーを同時に押す。</p>
+<p>(*2) Mac OSXでは、F8～F10キーは使用不可のため、この機能を使うためには、キー割り当ての設定で、他のキーを割り当てる必要がある。</p>
+
+</BODY>
+</HTML>

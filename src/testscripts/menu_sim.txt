@@ -1,0 +1,383 @@
+REM Check Simulation Menu items won't crash.
+REM Coverage:
+REM   sim/create
+REM   sim/aircomb
+REM   sim/retry
+REM   sim/replay
+REM   sim/endurance
+REM   sim/cas
+REM   sim/intercept
+
+
+
+REM No space between GUI and : and following command.
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+
+
+REM Get out of demo mode.
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Simulation -> Create Flight
+GUI:CLICK $mainMenu sim/create
+WAITFOR:MODAL
+GUI:CLICK $activeModalDialog ok
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Air Combat -> Fly
+
+GUI:CLICK $mainMenu sim/aircomb
+
+REM Delete current flight?
+WAITFOR:MODAL
+GUI:CLICK $activeModalDialog ok
+
+REM Air-Combat Dialog
+WAITFOR:MODAL
+GUI:CLICK $activeModalDialog flynow
+
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+ASSERT:FINALSTATE FLYING
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Sim -> Previous
+REM Delete Current Flight?
+REM Joystick warning (maybe)
+REM Center Joystick
+REM Flying
+REM ESC
+REM ESC
+REM ESC
+REM Result Dialog
+GUI:CLICK $mainMenu sim/retry
+
+REM Delete current flight?
+WAITFOR:MODAL
+GUI:CLICK $activeModalDialog ok
+
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+ASSERT:FINALSTATE FLYING
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+REM Create Flight DIalog
+GUI:SELECT $activeModalDialog airList T-2_BLUEIMPULSE
+GUI:SELECT $activeModalDialog fieldList NORTH_KYUSYU
+GUI:SELECT $activeModalDialog playerStpList NAGASAKI_RW32
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+ASSERT:FINALSTATE GROUNDSTATIC
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Sim->Replay
+REM Flying
+REM Result
+GUI:CLICK $mainMenu sim/replay
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+WAITFOR:REPLAY
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+ASSERT:FINALSTATE GROUNDSTATIC
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Sim->Endurance Mode
+REM Delete current flight?
+REM Endurance Mode Dialog
+REM Joystick warning (maybe)
+REM Center Joystick
+REM Flying
+REM Result
+GUI:CLICK $mainMenu sim/endurance
+WAITFOR:MODAL
+
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+REM:Endurance Mode dialog
+GUI:CLICK $activeModalDialog ok
+
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+
+WAITFOR:FLYING
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Sim->
+REM Delete current flight?
+REM Endurance Mode Dialog
+REM Joystick warning (maybe)
+REM Center Joystick
+REM Flying
+REM Result
+GUI:CLICK $mainMenu sim/cas
+WAITFOR:MODAL
+
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+REM:Close-Air Support dialog
+GUI:CLICK $activeModalDialog ok
+
+REM:Mission-Goal dialog
+GUI:CLICK $activeModalDialog ok
+
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+
+WAITFOR:FLYING
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Sim->
+REM Delete current flight?
+REM Endurance Mode Dialog
+REM Joystick warning (maybe)
+REM Center Joystick
+REM Flying
+REM Result
+GUI:CLICK $mainMenu sim/intercept
+WAITFOR:MODAL
+
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+REM:Endurance Mode dialog
+GUI:CLICK $activeModalDialog ok
+
+REM:Mission-Goal dialog
+GUI:CLICK $activeModalDialog ok
+
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+
+WAITFOR:FLYING
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/racing
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM File -> Exit
+
+GUI:CLICK $mainMenu file/exit
+
+WAITFOR:MODAL
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+REM Really exit?
+GUI:CLICK $activeModalDialog ok

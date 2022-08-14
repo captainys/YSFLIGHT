@@ -1,0 +1,13 @@
+( ) FSSLOT_newweaponname in fsairplanproperty.h, FsAirplaneProperty::WeaponTypeToSlotBit
+( ) Network Encode (FsEncodeWeaponRecord in fsweapon.cpp)
+( ) Network Decode (FsDecodeWeaponRecord in fsweapon.cpp)
+( ) Radar (FsHorizontalRadar::Draw in fsnavaid.cpp)
+( ) Viewpoint (FsWeaponHolder::FindFirstMissilePositionThatIsReallyGuided, FindOldestMissilePosition,
+    FindNewestMissilePosition)
+( ) Check useAAM in FsSimulation::PrepareRunSimulation
+( ) FsWeapon::Draw in fsweaponbi.cpp
+( ) FsWeapon::Draw in fsweapongl.cpp
+( ) FsAirplaneProperty::UnloadGuidedAAM, UnloadGuidedAGM, UnloadUnguidedWeapon
+( ) FsSocketServer::SendAddAirplane
+( ) FsSocketServer::BroadcastWeaponConfig
+( ) FsProperty::FireWeapon

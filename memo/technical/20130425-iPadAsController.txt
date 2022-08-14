@@ -1,0 +1,48 @@
+2013/04/25
+
+
+Svr -> Cli
+
+FSCTLCMD_HASAFTERBURNER   <true/false>
+FSCTLCMD_INSTRUMENT_V1
+   <altitude>
+   <indicated airspeed>
+   <
+
+FSCTLCMD_NAV_V1 <nav index (0,1, or 2)> <OBS> <lateral indication> <vertical indication>
+
+
+FSCTLCMD_AMMO
+   
+
+
+FSCTLCMD_RADARECHO
+   
+
+
+
+Cli -> Svr
+FSCTLCMD_LOGIN_V1     <Password>
+
+FSCTLCMD_GEAR         <gear position>
+FSCTLCMD_BRAKE        <gear position>
+FSCTLCMD_SPOILER      <gear position>
+FSCTLCMD_AFTERBURNER  <true/false>
+FSCTLCMD_THROTTLE     <throttle position>
+FSCTLCMD_FLAPS        <flaps position>
+FSCTLCMD_VGW          <vgw position>
+FSCTLCMD_NOZZLE       <nozzle position>
+FSCTLCMD_REVERSER     <thrust reverser position>
+FSCTLCMD_BOMBBAYDOOR  <bomb-bay door position>
+FSCTLCMD_DOOR         <door position>
+FSCTLCMD_ELEVATOR     <elevator position>
+FSCTLCMD_ELEVTRIM     <elevator position>
+FSCTLCMD_AILERON      <aileron position>
+FSCTLCMD_RUDDER       <rudder position>
+
+FSCTLCMD_FIREWEAPONBTN  <true/false>
+FSCTLCMD_CYCLEWEAPONBTN <true/false>
+
+FSCTLCMD_POV_HEADING    <heading offset>
+FSCTLCMD_POV_PITCH      <pitch offset>
+

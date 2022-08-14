@@ -1,0 +1,175 @@
+aircraft/a4.dat aircraft/a4f.dnm aircraft/a4coll.srf aircraft/a4cockpit.srf aircraft/a4fcoarse.dnm
+
+aircraft/a6.dat aircraft/a6.dnm aircraft/a6coll.srf aircraft/a6cockpit.srf aircraft/a6coarse.dnm
+
+aircraft/a6m5.dat aircraft/a6m5.dnm aircraft/a6m5_coll.srf aircraft/a6m5_cockpit.srf aircraft/a6m5_coarse.dnm
+
+aircraft/a10.dat aircraft/a10.dnm aircraft/a10coll.srf aircraft/a10cockpit.srf aircraft/a10coarse.dnm
+
+aircraft/ah1.dat aircraft/ah1.dnm aircraft/ah1coll.srf aircraft/ah1cockpit.srf
+
+aircraft/ah64.dat aircraft/ah64.dnm aircraft/ah64coll.srf aircraft/ah64cockpit.srf
+
+aircraft/a300.dat aircraft/a300.dnm aircraft/a300coll.srf aircraft/a300cockpit.srf
+
+aircraft/a320.dat aircraft/a320.dnm aircraft/a320coll.srf aircraft/a320cockpit.srf
+
+aircraft/alphajet.dat aircraft/alphajet.dnm aircraft/alphajet_coll.srf aircraft/alphajet_cockpit.srf aircraft/alphajet_coarse.dnm
+
+aircraft/amx.dat aircraft/amx.dnm aircraft/amx_coll.srf aircraft/amx_cockpit.srf aircraft/amx_coarse.dnm
+
+aircraft/av8b.dat aircraft/av8b.dnm aircraft/av8b_coll.srf aircraft/av8b_cockpit.srf aircraft/av8b_coarse.dnm
+
+aircraft/b2.dat aircraft/b2.dnm aircraft/b2coll.srf aircraft/b2cockpit.srf aircraft/b2_coarse.dnm
+
+aircraft/b29.dat aircraft/b29.dnm aircraft/b29_coll.srf aircraft/b29_cockpit.srf aircraft/b29_coarse.dnm
+
+aircraft/b52.dat aircraft/b52.dnm aircraft/b52coll.srf aircraft/b52cockpit.srf aircraft/b52_coarse.dnm
+
+aircraft/b737.dat aircraft/b737.dnm aircraft/b737coll.srf aircraft/b737cockpit.srf
+
+aircraft/b747.dat aircraft/b747.dnm aircraft/b747coll.srf aircraft/b747cockpit.srf aircraft/b747coarse.dnm
+
+aircraft/b767.dat aircraft/b767.dnm aircraft/b767coll.srf aircraft/b767cockpit.srf aircraft/b767_coarse.dnm
+
+aircraft/b777.dat aircraft/b777.dnm aircraft/b777coll.srf aircraft/b777cockpit.srf aircraft/b777coarse.dnm
+
+aircraft/cessna172r.dat aircraft/cessna172r.dnm aircraft/cessna172_collision.srf aircraft/cessna172_cockpit.srf
+
+aircraft/c130.dat aircraft/c130.dnm aircraft/c130coll.srf aircraft/c130cockpit.srf aircraft/c130_coarse.dnm
+
+aircraft/concorde.dat aircraft/concorde.dnm aircraft/concordecoll.srf aircraft/concordecockpit.srf aircraft/concorde_coarse.dnm
+
+aircraft/draken.dat aircraft/draken.dnm aircraft/draken_coll.srf aircraft/draken_cockpit.srf aircraft/draken_coarse.dnm
+
+aircraft/ea6b.dat aircraft/ea6b.dnm aircraft/ea6bcoll.srf aircraft/ea6bcockpit.srf aircraft/ea6bcoarse.dnm
+
+aircraft/eclipse.dat aircraft/eclipse.dnm aircraft/eclipse_coll.srf aircraft/eclipse_cockpit.srf
+
+aircraft/eurofighter.dat aircraft/eurofighter.dnm aircraft/eurofighter_coll.srf aircraft/eurofighter_cockpit.srf aircraft/eurofighter_coarse.dnm
+
+aircraft/e2c.dat aircraft/e2c.dnm aircraft/e2ccoll.srf aircraft/e2ccockpit.srf
+
+aircraft/f1.dat aircraft/f1.dnm aircraft/f1t2coll.srf aircraft/t2cockpit.srf
+
+aircraft/f2.dat aircraft/f2.dnm aircraft/f2coll.srf aircraft/f2cockpit.srf
+
+aircraft/f4ej.dat aircraft/f4ej.dnm aircraft/f4coll.srf aircraft/f4cockpit.srf aircraft/f4ej_coarse.dnm
+
+aircraft/f4e.dat aircraft/f4.dnm aircraft/f4coll.srf aircraft/f4cockpit.srf aircraft/f4_coarse.dnm
+
+aircraft/f5.dat aircraft/f5.dnm aircraft/f5coll.srf aircraft/f5cockpit.srf
+
+aircraft/f14.dat aircraft/f14.dnm aircraft/f14coll.srf aircraft/f14cockpit.srf
+
+aircraft/f15.dat aircraft/f15.dnm aircraft/f15coll.srf aircraft/f15cockpit.srf aircraft/f15coarse.dnm
+
+aircraft/f15d.dat aircraft/f15d.dnm aircraft/f15coll.srf aircraft/f15dcockpit.srf aircraft/f15dcoarse.dnm
+
+aircraft/f15dj.dat aircraft/f15dj.dnm aircraft/f15coll.srf aircraft/f15dcockpit.srf aircraft/f15jcoarse.dnm
+
+aircraft/f15dj_madara.dat aircraft/f15dj_madara.dnm aircraft/f15coll.srf aircraft/f15dcockpit.srf aircraft/f15djmadaracoarse.dnm
+
+aircraft/f15dj_chairo.dat aircraft/f15dj_chairo.dnm aircraft/f15coll.srf aircraft/f15dcockpit.srf aircraft/f15djchairocoarse.dnm
+
+aircraft/f15dj_kuro.dat aircraft/f15dj_kuro.dnm aircraft/f15coll.srf aircraft/f15dcockpit.srf aircraft/f15djkurocoarse.dnm
+
+aircraft/f15dj_midori.dat aircraft/f15dj_midori.dnm aircraft/f15coll.srf aircraft/f15dcockpit.srf aircraft/f15djmidoricoarse.dnm
+
+aircraft/f15dj_nakaao.dat aircraft/f15dj_nakaao.dnm aircraft/f15coll.srf aircraft/f15dcockpit.srf aircraft/f15djnakaaocoarse.dnm
+
+aircraft/f15dj_sotoao.dat aircraft/f15dj_sotoao.dnm aircraft/f15coll.srf aircraft/f15dcockpit.srf aircraft/f15djsotoaocoarse.dnm
+
+aircraft/f15dj_sotomidori.dat aircraft/f15dj_sotomidori.dnm aircraft/f15coll.srf aircraft/f15dcockpit.srf aircraft/f15djsotomidoricoarse.dnm
+
+aircraft/f15j.dat aircraft/f15j.dnm aircraft/f15coll.srf aircraft/f15cockpit.srf aircraft/f15jcoarse.dnm
+
+aircraft/f16.dat aircraft/f16.dnm aircraft/f16coll.srf aircraft/f16cockpit.srf aircraft/f16_coarse.dnm
+
+aircraft/thunder.dat aircraft/thunder.dnm aircraft/f16coll.srf aircraft/f16cockpit.srf aircraft/thunder_coarse.dnm
+
+aircraft/f18.dat aircraft/f18.dnm aircraft/f18coll.srf aircraft/f18cockpit.srf aircraft/f18_coarse.dnm
+
+aircraft/f18e.dat aircraft/f18e.dnm aircraft/f18e_coll.srf aircraft/f18e_cockpit.srf aircraft/f18e_coarse.dnm
+
+aircraft/angels.dat aircraft/angels.dnm aircraft/f18coll.srf aircraft/f18cockpit.srf aircraft/angels_coarse.dnm
+
+aircraft/f22.dat aircraft/f22.dnm aircraft/f22coll.srf aircraft/f22cockpit.srf aircraft/f22_coarse.dnm
+
+aircraft/f86blue.dat aircraft/f86blue.dnm aircraft/f86coll.srf aircraft/f86cockpit.srf
+
+aircraft/f100d.dat aircraft/f100d.dnm aircraft/f100d_coll.srf aircraft/f100d_cockpit.srf aircraft/f100d_coarse.dnm
+
+aircraft/f104.dat aircraft/f104.dnm aircraft/f104coll.srf aircraft/f104cockpit.srf
+
+aircraft/f117a.dat aircraft/f117a.dnm aircraft/f117acoll.srf aircraft/f117cockpit.srf aircraft/f117acoarse.dnm
+
+aircraft/fw190.dat aircraft/fw190.dnm aircraft/fw190_coll.srf aircraft/fw190_cockpit.srf aircraft/fw190_coarse.dnm
+
+aircraft/gripen.dat aircraft/gripen.dnm aircraft/gripen_coll.srf aircraft/gripen_cockpit.srf aircraft/gripen_coarse.dnm
+
+aircraft/g4m.dat aircraft/g4m.dnm aircraft/g4m_coll.srf aircraft/g4m_cockpit.srf aircraft/g4m_coarse.dnm
+
+aircraft/hawk.dat aircraft/hawk.dnm aircraft/hawk_coll.srf aircraft/hawk_cockpit.srf aircraft/hawk_coarse.dnm
+
+aircraft/hurricane.dat aircraft/hurricane.dnm aircraft/hurricane_coll.srf aircraft/hurricane_cockpit.srf aircraft/hurricane_coarse.dnm
+
+aircraft/redarrows.dat aircraft/redarrows.dnm aircraft/hawk_coll.srf aircraft/hawk_cockpit.srf aircraft/redarrows_coarse.dnm
+
+aircraft/kfir.dat aircraft/kfir.dnm aircraft/kfircoll.srf aircraft/kfircockpit.srf
+
+aircraft/lancaster.dat aircraft/lancaster.dnm aircraft/lancaster_coll.srf aircraft/lancaster_cockpit.srf aircraft/lancaster_coarse.dnm
+
+aircraft/mu2.dat aircraft/mu2.dnm aircraft/mu2coll.srf aircraft/mu2cockpit.srf
+
+aircraft/mig15.dat aircraft/mig15.dnm aircraft/mig15_coll.srf aircraft/mig15_cockpit.srf aircraft/mig15_coarse.dnm
+
+aircraft/mig21.dat aircraft/mig21.dnm aircraft/mig21coll.srf aircraft/mig21cockpit.srf aircraft/mig21_coarse.dnm
+
+aircraft/mig23.dat aircraft/mig23.dnm aircraft/mig23coll.srf aircraft/mig23cockpit.srf
+
+aircraft/mig29.dat aircraft/mig29.dnm aircraft/mig29coll.srf aircraft/mig29cockpit.srf aircraft/mig29_coarse.dnm
+
+aircraft/mrg2000.dat aircraft/mrg2000.dnm aircraft/mrg2000coll.srf aircraft/mrg2000cockpit.srf aircraft/mrg2000_coarse.dnm
+
+aircraft/p51.dat aircraft/p51.dnm aircraft/p51coll.srf aircraft/p51cockpit.srf aircraft/p51coarse.dnm
+
+aircraft/archer.dat aircraft/archer.dnm aircraft/archer_coll.srf aircraft/archer_cockpit.srf
+
+aircraft/rafale.dat aircraft/rafale.dnm aircraft/rafalecoll.srf aircraft/rafalecockpit.srf aircraft/rafale_coarse.dnm
+
+aircraft/s3.dat aircraft/s3.dnm aircraft/s3coll.srf aircraft/s3cockpit.srf
+
+aircraft/spitfire.dat aircraft/spitfire.dnm aircraft/spitfire_coll.srf aircraft/spitfire_cockpit.srf aircraft/spitfire_coarse.dnm
+
+aircraft/su22.dat aircraft/su22.dnm aircraft/su22coll.srf aircraft/su22cockpit.srf aircraft/su22coarse.dnm
+
+aircraft/su24.dat aircraft/su24.dnm aircraft/su24coll.srf aircraft/su24cockpit.srf aircraft/su24coarse.dnm
+
+aircraft/su25.dat aircraft/su25.dnm aircraft/su25coll.srf aircraft/su25cockpit.srf aircraft/su25coarse.dnm
+
+aircraft/su27.dat aircraft/su27.dnm aircraft/su27coll.srf aircraft/su27cockpit.srf aircraft/su27coarse.dnm
+
+aircraft/t2blue.dat aircraft/t2blue.dnm aircraft/f1t2coll.srf aircraft/t2cockpit.srf aircraft/t2bluecoarse.dnm
+
+aircraft/t4blue.dat aircraft/t4blue.dnm aircraft/t4coll.srf aircraft/t4cockpit.srf aircraft/t4blue_coarse.dnm
+
+aircraft/t400.dat aircraft/t400.dnm aircraft/t400coll.srf aircraft/t400cockpit.srf
+
+aircraft/tornado.dat aircraft/tornado.dnm aircraft/tornadocoll.srf aircraft/tornadocockpit.srf
+
+aircraft/tu160.dat aircraft/tu160.dnm aircraft/tu160coll.srf aircraft/tu160cockpit.srf
+
+aircraft/u125.dat aircraft/u125.dnm aircraft/u125coll.srf aircraft/u125cockpit.srf
+
+aircraft/u125a.dat aircraft/u125a.dnm aircraft/u125coll.srf aircraft/u125cockpit.srf
+
+aircraft/uh60.dat aircraft/uh60.dnm aircraft/uh60coll.srf aircraft/uh60cockpit.srf
+
+aircraft/uh60j.dat aircraft/uh60j.dnm aircraft/uh60coll.srf aircraft/uh60cockpit.srf
+
+aircraft/v107.dat aircraft/v107.dnm aircraft/v107coll.srf aircraft/v107cockpit.srf
+
+aircraft/viggen.dat aircraft/viggen.dnm aircraft/viggencoll.srf aircraft/viggencockpit.srf
+
+aircraft/ys11.dat aircraft/ys11.dnm aircraft/ys11coll.srf aircraft/ys11cockpit.srf

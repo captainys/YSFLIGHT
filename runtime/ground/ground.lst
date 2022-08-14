@@ -1,0 +1,108 @@
+ground/alert.dat ground/alert.srf ground/alert.srf
+ground/aspam.dat ground/aspam.srf ground/aspam.srf
+ground/atsugi_tower.dat ground/atsugi_tower.srf ground/atsugi_tower.srf
+ground/bigben.dat ground/bigben.srf ground/bigben.srf "" ground/bigben.srf
+ground/box1000x1000x1000.dat ground/box1000x1000x1000.srf ground/box1000x1000x1000.srf
+ground/build01.dat ground/build01.srf ground/build01.srf
+ground/build11.dat ground/build11.srf ground/build11_coarse.srf "" ground/build11_coarse.srf
+ground/castle.dat ground/castle.srf ground/castle.srf
+ground/cave_base_coll.dat ground/cave_base_coll.srf ground/cave_base_coll.srf
+ground/cieling1.dat ground/cieling1.srf ground/cieling1.srf
+ground/elephant.dat ground/elephant.srf ground/elephant.srf "" ground/elephant_coarse.srf
+ground/floatingbase1.dat ground/floatingbase1.srf ground/floatingbase1_coll.srf
+ground/floatingbase2.dat ground/floatingbase2.srf ground/floatingbase2.srf
+ground/fueltruck.dat ground/fueltruck.srf ground/fueltruck_coll.srf ground/fueltruck_cockpit.srf
+ground/fueltruck_white.dat ground/fueltruck_white.srf ground/fueltruck_white_coll.srf ground/fueltruck_cockpit.srf
+ground/groundtarget1.dat ground/groundtarget1.srf ground/groundtarget1.srf
+ground/groundtarget2.dat ground/groundtarget2.srf ground/groundtarget2.srf
+ground/hangar1.dat ground/hangar1.srf ground/hangar1.srf "" ground/hangar1_coarse.srf
+ground/hangar3.dat ground/hangar3.srf ground/hangar3.srf "" ground/hangar3_coarse.srf
+ground/hanger.dat ground/hanger.srf ground/hanger.srf "" ground/hanger_coarse.srf
+ground/hanger1.dat ground/hanger1.srf ground/hanger1.srf "" ground/hangar1_coarse.srf
+ground/hanger4.dat ground/hanger4.srf ground/hanger4.srf
+ground/hg01.dat ground/hg01.srf ground/hg01.srf "" ground/hg01_coarse.srf
+ground/hg02.dat ground/hg02.srf ground/hg02.srf "" ground/hg02_coarse.srf
+ground/hg03.dat ground/hg03.srf ground/hg03.srf "" ground/hg03_coarse.srf
+ground/hg04.dat ground/hg04.srf ground/hg04.srf "" ground/hg04_coarse.srf
+ground/hg05.dat ground/hg05.srf ground/hg05.srf "" ground/hg05_coarse.srf
+ground/hg06.dat ground/hg06.srf ground/hg06.srf "" ground/hg06_coarse.srf
+ground/hg07.dat ground/hg07.srf ground/hg07.srf "" ground/hg07_coarse.srf
+ground/londontower.dat ground/londontower.srf ground/londontower.srf "" ground/londontower.srf
+ground/papi_left.dat ground/papi_left.dnm ground/papi_coll.srf "" ground/papi_left_coarse.dnm
+ground/papi_right.dat ground/papi_right.dnm ground/papi_coll.srf "" ground/papi_right_coarse.dnm
+ground/palace.dat ground/palace.srf ground/palace.srf "" ground/palace.srf
+ground/sfc.dat ground/sfc.srf ground/sfc.srf
+ground/sfc_alpha.dat ground/sfc_alpha.srf ground/sfc_alpha.srf
+ground/sfc_club.dat ground/sfc_club.srf ground/sfc_club.srf
+ground/sfc_gamma.dat ground/sfc_gamma.srf ground/sfc_gamma.srf "" ground/sfc_gamma_coarse.srf
+ground/sfc_lambda.dat ground/sfc_lambda.srf ground/sfc_lambda.srf
+ground/sfc_media.dat ground/sfc_media.srf ground/sfc_media.srf
+ground/sfc_o1.dat ground/sfc_o1.srf ground/sfc_o1.srf
+ground/sfc_o2.dat ground/sfc_o2.srf ground/sfc_o2.srf
+ground/sfc_omega.dat ground/sfc_omega.srf ground/sfc_omega.srf
+ground/sfc_sigma.dat ground/sfc_sigma.srf ground/sfc_sigma.srf
+ground/sfc_tau.dat ground/sfc_tau.srf ground/sfc_tau.srf
+ground/shop.dat ground/shop.srf ground/shop.srf
+ground/shopping1.dat ground/shopping1.srf ground/shopping1.srf
+ground/shopping2.dat ground/shopping2.srf ground/shopping2.srf
+ground/station.dat ground/station.srf ground/station.srf
+ground/terminal.dat ground/terminal.srf ground/terminal.srf
+ground/terminal_short.dat ground/terminal_short.srf ground/terminal_short.srf
+ground/tower.dat ground/tower.srf ground/tower.srf
+ground/tower1.dat ground/tower1.srf ground/tower1.srf
+ground/tower2.dat ground/tower2.srf ground/tower2.srf
+ground/tower3.dat ground/tower3.srf ground/tower3.srf
+ground/tracker.dat ground/tracker.dnm ground/tracker_coll.srf
+ground/bridge1.dat ground/bridge1.srf ground/bridge1_coll.srf "" ground/bridge1_coarse.srf
+ground/bridge2.dat ground/bridge2.srf ground/bridge2_coll.srf "" ground/bridge2_coarse.srf
+ground/bridge3.dat ground/bridge3.srf ground/bridge3_coll.srf "" ground/bridge3_coarse.srf
+ground/hangar2.dat ground/hangar2.srf ground/hangar2.srf
+ground/aaa.dat ground/aaa.dnm ground/aaacoll.srf "" ground/aaa_coarse.dnm
+ground/sam.dat ground/sam.dnm ground/sambase.srf "" ground/sam_coarse.dnm
+ground/carrier.dat ground/carrier_visual.dnm ground/carrier_coll.srf
+ground/invincible.dat ground/invincible.srf ground/invincible_coll.srf "" ground/invincible_coarse.srf
+ground/burke.dat ground/burke.dnm ground/burke_coll.srf "" ground/burke_coarse.srf
+ground/udaloy.dat ground/udaloy.dnm ground/udaloy_coll.srf "" ground/udaloy_coarse.srf
+ground/containership-l.dat ground/containership-l.srf ground/containership-l.srf "" ground/containership-l.srf
+ground/pirate.dat ground/pirate.srf ground/pirate.srf "" ground/pirate.srf
+ground/ils.dat ground/ils_visual.srf ground/ils_coll.srf
+ground/test.dat ground/test.srf ground/test.srf
+ground/tree1.dat ground/tree1.srf ground/tree1.srf
+ground/tree2.dat ground/tree2.srf ground/tree2.srf
+ground/trees_200m_10m.dat ground/trees_200m_10m_80_vis.srf ground/trees_200m_10m_80_coll.srf
+ground/trees_400m_20m.dat ground/trees_400m_20m_80_vis.srf ground/trees_400m_20m_80_coll.srf
+ground/tunnel1.dat ground/tunnel1.srf ground/tunnel1.srf
+ground/tunnel2.dat ground/tunnel2.srf ground/tunnel2.srf
+ground/tunnel3.dat ground/tunnel3.srf ground/tunnel3.srf
+ground/tunnel4.dat ground/tunnel4.srf ground/tunnel4.srf
+ground/tunnel5.dat ground/tunnel5.srf ground/tunnel5.srf
+ground/build15.dat ground/build15.srf ground/build15_coarse.srf ground/build15_coarse.srf
+ground/build10w.dat ground/build10w.srf ground/build10w.srf ground/build10w.srf
+ground/build30.dat ground/build30.srf ground/build30.srf
+ground/build60.dat ground/build60.srf ground/build60.srf
+ground/build90.dat ground/build90.srf ground/build90.srf
+ground/cave_base.dat ground/cave_base.srf ground/cave_base_coll.srf
+ground/island_base.dat ground/island_base.srf ground/island_base.srf
+ground/pwrplant.dat ground/pwrplant.srf ground/pwrplant_coll.srf
+ground/reactor.dat ground/reactor.srf ground/reactor.srf
+ground/plant.dat ground/plant.srf ground/plant_coll.srf
+ground/m1a1.dat ground/m1a1.dnm ground/m1a1coll.srf "" ground/m1a1_coarse.dnm
+ground/m60.dat ground/m60.dnm ground/m60coll.srf "" ground/m60_coarse.dnm
+ground/t80.dat ground/t80.dnm ground/t80coll.srf "" ground/t80_coarse.dnm
+ground/t64.dat ground/t64.dnm ground/t64coll.srf "" ground/t64_coarse.dnm
+ground/radar.dat ground/radar.srf ground/radar_coll.srf "" ground/radar_coarse.srf
+ground/radarbase.dat ground/radarbase.srf ground/radarbase.srf "" ground/radarbase_coarse.srf
+ground/wall1.dat ground/wall1.srf ground/wall1.srf
+ground/windmillbase.dat ground/windmillbase.srf ground/windmillbase.srf
+ground/windmillblade.dat ground/windmillblade.srf ground/windmillblade.srf
+ground/truck.dat ground/truck.srf ground/truck.srf "" ground/truck_coarse.srf
+ground/bus_1.dat ground/bus_1.srf ground/bus_1.srf "" ground/bus_1_coarse.srf
+ground/vasi.dat ground/vasi.dnm ground/vasi_coll.srf "" ground/vasi_coarse.dnm
+ground/vor.dat ground/vor.srf ground/vor_coarse.srf "" ground/vor_coarse.srf
+ground/vordme.dat ground/vor.srf ground/vor_coarse.srf "" ground/vor_coarse.srf
+ground/ndb.dat ground/ndb.srf ground/ndb.srf "" ground/ndb.srf
+ground/gateguard_concorde.dat ground/gateguard_concorde.srf ground/gateguard_concorde_coll.srf "" ground/gateguard_concorde.srf 
+ground/jeep.dat ground/jeep.dnm ground/jeep_coll.srf ground/jeep_cabin.srf ground/jeep_coarse.dnm
+ground/elvrw1000x60.dat ground/elvrw1000x60.srf ground/elvrw1000x60_coll.srf "" ground/elvrw1000x60_coll.srf
+ground/gepard.dat ground/gepard.dnm ground/gepard_coll.srf "" ground/gepard_coarse.dnm
+ground/fixed_checkpoint_500ft.dat ground/fixed_checkpoint_500ft.dnm ground/fixed_checkpoint_500ft.srf

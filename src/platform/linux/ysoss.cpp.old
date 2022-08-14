@@ -1,0 +1,160 @@
+// g++ oss.cpp yswavfile.cpp -DTESTER -I../ysclass -L../ysclass -lysclass
+
+
+#include <sys/ioctl.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/soundcard.h>
+
+#include <time.h>
+
+#include <ysclass.h>
+#include "yswavfile.h"
+#include "ysoss.h"
+
+
+YsOssWavPlayer::YsOssWavPlayer()
+{
+  wavPlayFd=-1;
+}
+
+YsOssWavPlayer::~YsOssWavPlayer()
+{
+  Close();
+}
+
+void YsOssWavPlayer::Open(void)
+{
+  if(wavPlayFd<0)
+    {
+      wavPlayFd=open("/dev/dsp",O_WRONLY,0);
+    }
+}
+
+void YsOssWavPlayer::Close(void)
+{
+  if(wavPlayFd>=0)
+    {
+      close(wavPlayFd);
+      wavPlayFd=-1;
+    }
+}
+
+
+YSRESULT YsOssWavPlayer::Play(YsWavFile &wavFile)
+{
+  Open();
+
+  if(wavPlayFd>=0)
+    {
+      int zero,sndFmt,sndFmtCheck,nChannel,speed;
+
+
+      zero=0;
+      if(wavFile.bit==16)
+	{
+	  sndFmt=(wavFile.isSigned==YSTRUE ? AFMT_S16_LE : AFMT_U16_LE);
+	}
+      else if(wavFile.bit==8)
+	{
+	  sndFmt=(wavFile.isSigned==YSTRUE ? AFMT_S8 : AFMT_U8);
+	}
+      sndFmtCheck=sndFmt;
+
+      ioctl(wavPlayFd,SNDCTL_DSP_RESET,&zero);
+      ioctl(wavPlayFd,SNDCTL_DSP_SETFMT,&sndFmt);
+      if(sndFmtCheck!=sndFmt)
+	{
+	  printf("Requested %d  Available %d\n",sndFmtCheck,sndFmt);
+	  if(sndFmt==AFMT_S16_LE)
+	    {
+	      wavFile.ConvertTo16Bit();
+	      wavFile.ConvertToSigned();
+	    }
+	  else if(sndFmt==AFMT_S8)
+	    {
+	      wavFile.ConvertTo8Bit();
+	      wavFile.ConvertToSigned();
+	    }
+	  else if(sndFmt==AFMT_U16_LE)
+	    {
+	      wavFile.ConvertTo16Bit();
+	      wavFile.ConvertToUnsigned();
+	    }
+	  else if(sndFmt==AFMT_U8)
+	    {
+	      wavFile.ConvertTo8Bit();
+	      wavFile.ConvertToUnsigned();
+	    }
+	  else
+	    {
+	      printf("The device does not support the format.\n");
+	      return YSERR;
+	    }
+	}
+
+      nChannel=(wavFile.stereo==YSTRUE ? 2 : 1);
+      printf("nChannel Requested %d\n",nChannel);
+      ioctl(wavPlayFd,SNDCTL_DSP_CHANNELS,&nChannel);
+      printf("nChannel Actual %d\n",nChannel);
+      if(nChannel==2)
+	{
+	  wavFile.ConvertToStereo();
+	}
+
+      speed=wavFile.rate;
+      printf("Requested Speed %d\n",speed);
+      ioctl(wavPlayFd,SNDCTL_DSP_SPEED,&speed);
+      printf("Actual Speed %d\n",speed);
+      if(speed<wavFile.rate*9/10 || wavFile.rate*11/10<speed)
+	{
+	  wavFile.Resample(speed);
+	}
+
+
+      audio_buf_info info;
+      ioctl(wavPlayFd,SNDCTL_DSP_GETOSPACE,&info);
+      printf("fragments %d\n",info.fragments);
+      printf("fragsize %d\n",info.fragsize);
+      printf("bytes %d\n",info.bytes);
+      printf("Wav bytes %d\n",wavFile.sizeInBytes);
+
+      unsigned writeByte;
+      writeByte=YsSmaller(info.bytes,wavFile.sizeInBytes);
+      write(wavPlayFd,wavFile.dat,writeByte);
+
+
+
+      //      unsigned t;
+      //      t=time(NULL)+2;
+      //      while(time(NULL)<t)
+      //	{
+      //	  ioctl(wavPlayFd,SNDCTL_DSP_GETOSPACE,&info);
+      //	  printf("Available %d  Max %d\n",info.bytes,info.fragments*info.fragsize);
+      //	}
+
+
+      return YSOK;
+    }
+  else
+    {
+      printf("Could not open the audio device.\n");
+      return YSERR;
+    }
+}
+
+
+#ifdef TESTER
+
+int main(int ac,char *av[])
+{
+  YsWavFile wavFile;
+  YsOssWavPlayer player;
+  wavFile.LoadWav(av[1]);
+
+  player.Play(wavFile);
+
+  return 0;
+}
+
+#endif

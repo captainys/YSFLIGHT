@@ -1,0 +1,16 @@
+Adding a new key function
+(1) fscontrol.h
+  Add enum FSBUTTONFUNCTION
+
+(2) fscontrol.cpp
+  Add struct FsButtonFunctionString
+
+(3) fscontrol.cpp
+  Add void FsControlAssignment::SetDefaultKeyAssign(void)
+
+
+(4) Writing a functionality in
+  FsControl::ProcessButtonFunction (called from FsSimulation::SimProcessButtonFunction(FSBUTTONFUNCTION fnc))
+
+
+(5) Add description in control.html and controlj.html

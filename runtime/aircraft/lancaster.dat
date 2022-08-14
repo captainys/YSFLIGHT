@@ -1,0 +1,148 @@
+IDENTIFY "LANCASTER"
+CATEGORY WW2BOMBER
+AFTBURNR FALSE               #HAVE AFTERBURNER?
+THRAFTBN 0.0t                #THRUST WITH AFTERBURNER
+PROPELLR 6000HP              #THRUST AT MILITARY POWER
+PROPVMIN 250kt
+THRSTREV 0.2                 #EFFICIENCY OF THRUST REVERSER
+WEIGHCLN 37000lb             #WEIGHT CLEAN
+WEIGFUEL 13000lb             #WEIGHT OF FUEL
+WEIGLOAD 20000lb             #WEIGHT OF PAYLOAD
+FUELABRN 0.0kg               #FUEL CONSUMPTION WHEN USING AFTERBURNER
+FUELMILI 0.4kg               #FUEL CONSUMPTION AT MILITARY POWER
+
+COCKPITP -0.30m  1.60m  7.37m  #COCKPIT POSITION
+EXCAMERA "CO-PILOT" 0.30m  1.60m  7.37m 0deg 0deg 0deg INSIDE
+EXCAMERA "BOMBBAY" 0.0m -0.51m 4.11m 0deg -90deg 0deg CABIN
+INSTPANL
+LEFTGEAR -3.41m -2.87m 4.01m  #LEFT LANDING GEAR POSITION
+RIGHGEAR  3.41m -2.87m 4.01m  #RIGHT LANDING GEAR POSITION
+WHELGEAR  0.0m -1.56m -7.79m  #WHEEL POSITION
+ARRESTER  0.0m -1.56m -7.79m
+MACHNGUN 0.0m 0.0m 0.0m  #MACHINE GUN POSITION
+GUNINTVL 0.00
+GUNDIREC  0.0m 0.0m -1.0m     #MACHINE GUN DIRECTION
+SMOKEGEN  0.0m -1.56m -7.79m  #SMOKE GENERATOR POSITION
+VAPORPO0 -15.03m  -1.55m -2.01m  #VAPOR POSITION (Wings Swept back)
+VAPORPO1 -15.03m  -1.55m -2.01m  #VAPOR POSITION (Wings Spread)
+HTRADIUS 16.0m                #OUTSIDE SPHERE RADIUS
+
+
+STRENGTH 11
+
+CRITAOAP  20deg               #CRITICAL AOA POSITIVE
+CRITAOAM -15deg               #CRITICAL AOA NEGATIVE
+
+CRITSPED 500km/h              #CRITICAL SPEED
+MAXSPEED 462km/h              #MAXIMUM SPEED
+
+HASSPOIL FALSE                #HAS SPOILER?
+RETRGEAR TRUE                 #HAS RETRACTABLE LANDING GEAR?
+VARGEOMW FALSE                #HAS VARIABLE GEOMETRY WING?
+
+CLVARGEO 0.0                  #EFFECT OF VARIABLE GEOMETRY WING FOR Cl
+CDVARGEO 0.0                  #EFFECT OF VARIABLE GEOMETRY WING FOR Cd
+CLBYFLAP 0.2                  #EFFECT OF FLAP FOR Cl
+CDBYFLAP 0.4                  #EFFECT OF FLAP FOR Cd
+CDBYGEAR 0.5                  #EFFECT OF GEAR FOR Cd
+CDSPOILR 0.0                  #EFFECT OF SPOILER FOR Cd
+
+WINGAREA 120m^2                #WING AREA
+
+MXIPTAOA 23.0deg              #MAX INPUT AOA
+MXIPTSSA 5.0deg               #MAX INPUT SSA
+MXIPTROL 30deg             #MAX INPUT ROLL
+
+REM CPITMANE corresponds to Spring Constant K
+REM CPITSTAB corresponds to Damper Constant B
+REM To be critically damped, B=2*sqrt(K)
+REM 2% Settling Time=??
+
+MANESPD1 55kt                 #MINIMUM MANEUVABLE SPEED
+MANESPD2 100kt                #FULLY MANEUVABLE SPEED
+CPITMANE 4.0                  #PITCH MANEUVERBILITY CONSTANT
+CPITSTAB 12.0                  #PITCH STABILITY CONSTANT
+CYAWMANE 5.0                  #YAW MANEUVABILITY CONSTANT
+CYAWSTAB 3.0                  #YAW STABILITY CONSTANT
+CROLLMAN 1.7                  #ROLL MANEUVABILITY CONSTANT
+
+CTLLDGEA TRUE                 #CONTROL LANDINGGEAR
+CTLBRAKE FALSE                #CONTROL BRAKE
+CTLSPOIL 0.0                  #CONTROL SPOILER
+CTLABRNR FALSE                #CONTROL AFTERBURNER
+CTLTHROT 0.0                  #CONTROL THRUST
+CTLIFLAP 0.0                  #CONTROL FLAP
+CTLINVGW 1.0                  #CONTROL VARIABLE GEOMETRY WING
+CTLATVGW TRUE                 #CONTROL AUTO VARIABLE GEOMETRY WING
+VGWSPED1 40kt
+VGWSPED2 150kt
+
+POSITION 0m 3ft 0m            #POSITION
+ATTITUDE 45deg 0deg 0deg      #ATTITUDE
+INITFUEL 75%                   #INITIAL FUEL
+INITLOAD 0.0t                 #INITIAL PAYLOAD
+INITSPED 0.0MACH              #INITIAL SPEED
+
+REM Slots must come before Inits.
+HRDPOINT 0.0m -0.51m  7.15m $INTERNAL B250*4
+HRDPOINT 0.0m -0.51m  5.63m $INTERNAL B250*4
+HRDPOINT 0.0m -0.51m  4.11m $INTERNAL B250*4
+HRDPOINT 0.0m -0.51m  2.60m $INTERNAL B250*4
+HRDPOINT 0.0m -0.51m  1.08m $INTERNAL B250*4
+HRDPOINT 0.0m -0.51m -0.44m $INTERNAL B250*4
+BOMINBAY TRUE                 #Bombs in Bomb Bay?
+BMBAYRCS 1.0                  #Effect on Bomb Bay Opening on Radar Cross Section
+
+INITIGUN 0                    #INITIAL GUN
+INITIAAM 0                    #INITIAL AAM
+INITIAGM 0                    #INITIAL AGM
+LOADWEPN B250 24              #INITIAL BOMB
+WEAPONCH B25
+
+NMTURRET 3
+
+TURRETPO 0 0m 1.88m -3.152m 0deg 0deg 0deg      # Number x y z h p b
+TURRETPT 0 5deg 80deg 5deg                  # Number MinPitch MaxPitch NeutralPitch
+TURRETHD 0 -180deg 180deg 0deg               # Number MinHdg MaxHdg NeutralHdg
+TURRETAM 0 5000                              # Ammo
+TURRETIV 0 0.2sec                            # Number ShootingInterval
+TURRETNM 0 Turret1                           # DNM Node Name
+TURRETAR 0                                   # Anti Air Capable
+TURRETCT 0 GUNNER                            # Controlled by PILOT or GUNNER
+TURRETRG 0 1500m
+
+TURRETPO 1 0m 0.82m 8.96m 0deg 0deg 0deg     # Number x y z h p b
+TURRETPT 1 -60deg 80deg 0deg                   # Number MinPitch MaxPitch NeutralPitch
+TURRETHD 1 -160deg 160deg 0deg               # Number MinHdg MaxHdg NeutralHdg
+TURRETAM 1 5000                              # Ammo
+TURRETIV 1 0.2sec                            # Number ShootingInterval
+TURRETNM 1 Turret2                           # DNM Node Name
+TURRETAR 1                                   # Anti Air Capable
+TURRETCT 1 GUNNER                            # Controlled by PILOT or GUNNER
+TURRETRG 1 1500m
+
+TURRETPO 2 0m 0.62m -9.77m 180deg 0deg 0deg      # Number x y z h p b
+TURRETPT 2 -60deg 90deg 0deg                  # Number MinPitch MaxPitch NeutralPitch
+TURRETHD 2 -80deg 80deg 0deg               # Number MinHdg MaxHdg NeutralHdg
+TURRETAM 2 5000                              # Ammo
+TURRETIV 2 0.2sec                            # Number ShootingInterval
+TURRETNM 2 Turret3                           # DNM Node Name
+TURRETAR 2                                   # Anti Air Capable
+TURRETCT 2 GUNNER                            # Controlled by PILOT or GUNNER
+TURRETRG 2 1500m
+
+
+
+REM ClZero,CdZero is fixed by Cruising condition
+REFVCRUS 188kt                #CRUISING SPEED
+REFACRUS 20000ft              #CRUISING ALTITUDE
+REFTCRUS 0.8                  #CRUISING THROTTLE SETTING
+
+REM ClSlope,CdConst is fixed by Landing condition
+REFVLAND 90kt                 #LANDING SPEED
+REFAOALD 8deg                 #LANDING AOA
+REFLNRWY 1800m                #RUNWAY REQUIRED TO STOP
+REFTHRLD 0.8                  #LANDING THROTTLE SETTING
+
+
+AUTOCALC

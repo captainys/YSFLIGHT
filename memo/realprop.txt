@@ -1,0 +1,32 @@
+For fixed-pitch propeller
+
+MIN and MAX pitch must be set equal.  Pitch is the propeller average AOA at zero speed.
+
+Propeller AOA, is the function of RPM and airspeed.  If the center of force is Rm away from the axis, 
+
+  Velocity of the propeller is R*w.  
+  T rpm-> T/60 rotation per second
+  w=2*PI*T/60
+  Vprop=2*PI*T*R/60
+
+  K kt-> Vair=0.51*Km/s
+
+Angle at which the blade slice through the air will be:
+
+  Pangle=atan(Vair/Vprop)
+
+
+1300RPM, 100kt, R=0.6m, MAX pitc=20deg
+    -> Vprop=81m/s, Vair=51m/s, Pangle=32.1deg, AOA=-12
+2000RPM, 110kt, R=0.6m, MAX pitc=20deg
+    -> Vprop=125m/s, Vair=56m/s, Pangle=24.1deg, AOA=-4
+2400RPM, 110kt, R=0.6m, MAX pitch=20deg
+    -> Vprop=150m/s, Vair=56m/s, Pangle=20.4deg, AOA=-0.4
+
+
+
+.... Engine brake!  It must be.  If, RPM is too high for the throttle setting, the engine must be producing the dumping force.
+
+Cessna 172: Engine Brake is equilibrium at (Guess) 30% power, 110kt -> 1500RPM
+
+

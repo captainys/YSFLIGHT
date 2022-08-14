@@ -1,0 +1,8 @@
+This file prevents accidental in-source build from this directory.
+
+What's horrible about cmake is if I accidentally type cmake where CMakeLists.txt exists, cmake happily considers it as an in-source build, and contaminate the directory with the build-related files.  There seems to be no way of preventing accidental massive file contamination.  Just one mistake is enough.  It's as bad as accidental "rm -r *", because a lot of "rm -r something" follows to de-contaminate the source directory.
+
+However, cmake needs to create a directory called CMakeFiles to set up build-related files.  It stops after creating CMakeCache.txt.
+
+Probably, creating a directory called CMakeCache.txt is also as effective.
+

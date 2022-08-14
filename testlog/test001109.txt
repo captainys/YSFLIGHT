@@ -1,0 +1,59 @@
+Test List
+
+Do this list with Joystick only
+             with Joystick + Throttle + Rudder
+             without Joystick and Throttle
+
+OGL DIB
+(X) (X) Rebuild
+(X) (X) Set Config to the default?
+( ) (X) Choose mouse as throttle and see what happens.
+( ) (X) Take Off
+( ) (X) Fly Maneuvers
+( ) (X) Stall
+( ) (X) Fly Below Bridges
+( ) (X) Landing
+( ) (X) Ground Attack
+( ) (X) Air to Air Combat
+( ) (X) Carrier Take Off
+( ) (X) Drop off from the carrier flight deck
+( ) (X) Carrier Landing
+( ) (X) Carrier Touch & Go (Land without brake)
+( ) (X) Carrier Touch & Go (Miss the wires)
+( ) (X) Crash into the carrier fuselage
+( ) ( ) Crash into the carrier bridge from the air
+( ) ( ) Crash into the carrier bridge from the flight deck
+( ) ( ) Try all different fields
+( ) ( ) Play dogfight, Replay simulation through the game, Make sure kill credit doesn't change
+( ) ( ) Can Mig-23 takeoff?
+( ) ( ) Can Mig-21 takeoff?
+( ) ( ) Can B747 takeorr?
+( ) ( ) Can B777 takeorr?
+( ) ( ) Can Concorde takeorr?
+( ) ( ) Turn on sound
+( ) ( ) Score Consistency
+( ) ( ) On the ground, quit before stopping. Result must show just "Landed".
+( ) ( ) Create Flight Record by the old version, make sure they play with no problem in the new version.
+( ) ( ) Land out of runway -> Must considered as "Out of runway"
+( ) ( ) Land at the bad attitude -> Must considered as "Crash"
+( ) ( ) Land at too high pitch -> Must considered as "Tail Strike"
+( ) ( ) Network Play play server, shot down and attack objects in the client
+( ) ( ) Network Play play client, shot down and attack objects in the server
+( ) ( ) Network Option USEMISSILE
+( ) ( ) Network Option DEFAULTHST
+( ) ( ) Network Option DEFAULTUSR
+( ) ( ) Network Option RECORDCLNT
+( ) ( ) Network Option RECORDSRVR
+( ) ( ) Network Option DEFLTFIELD
+( ) ( ) Network Option DFAIRPLANE
+( ) ( ) Network Option DFSTPOSSVR
+( ) ( ) Network Option DFSTPOSCLI
+( ) ( ) Network Option DEFIFFSRVR
+( ) ( ) Network Option DEFIFFCLNT
+(X) (X) Removed all test keys?
+( ) ( ) Fly formation flights Blue Angels
+( ) (X) Fly formation flights T-4 Blue Impulse
+( ) ( ) Fly formation flights T-2 Blue Impulse
+( ) ( ) Fly formation flights Thunderbirds
+(X) (X) Virus Scan
+( ) ( ) BS Key autopilot

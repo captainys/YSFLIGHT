@@ -1,0 +1,18 @@
+RACING_VALLEY "scenery/race_valley.fld" "scenery/race_valley.stp" "" AIRRACE
+RACING_DESERT "scenery/race_desert.fld" "scenery/race_desert.stp" "" AIRRACE
+ATSUGI_AIRBASE scenery/atsugi.fld scenery/atsugi.stp
+CRESCENT_ISLAND scenery/crescent.fld scenery/crescent.stp
+HAWAII scenery/hawaii.fld scenery/hawaii.stp
+ISLAND_GOURD scenery/gourd.fld scenery/gourd.stp scenery/gourd.yfs
+MATSUSHIMA_AIRBASE scenery/yamoto.fld scenery/yamoto.stp
+NAHA_AIRPORT scenery/naha.fld scenery/naha.stp
+NEWTA_AIRBASE scenery/newta.fld scenery/newta.stp
+PACIFIC_ATOLL scenery/atoll.fld scenery/atoll.stp
+SMALL_MAP scenery/small.fld scenery/small.stp scenery/small.yfs
+TOHOKU scenery/tohoku.fld scenery/tohoku.stp
+AOMORI scenery/aomori.fld scenery/aomori.stp
+NORTH_KYUSYU scenery/n-kyusyu.fld scenery/n-kyusyu.stp
+AIRSTRIKE_CHALLENGE scenery/airstrike.fld scenery/airstrike.stp
+HEATHROW scenery/heathrow.fld scenery/heathrow.stp
+SLAPSTICK scenery/slapstick.fld scenery/slapstick.stp
+OCEAN scenery/ocean.fld scenery/ocean.stp

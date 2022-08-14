@@ -1,0 +1,129 @@
+IDENTIFY "CESSNA_172R"
+CATEGORY NORMAL
+AFTBURNR FALSE                #HAVE AFTERBURNER?
+PROPELLR 180HP                #PROPELLER ENGINE
+PROPVMIN 120kt
+WEIGHCLN  630kg               #WEIGHT CLEAN
+WEIGFUEL  200kg               #WEIGHT OF FUEL
+WEIGLOAD  300kg               #WEIGHT OF PAYLOAD
+FUELABRN 0.0kg                #FUEL CONSUMPTION WHEN USING AFTERBURNER
+FUELMILI 0.015kg              #FUEL CONSUMPTION AT MILITARY POWER
+
+
+
+NREALPRP 1                            # Number of (realistic) propeller engines
+REALPROP 0 NBLADE         2           # 1 argument.  Number of blades.
+REALPROP 0 AREAPERBLADE   0.25m^2     # 1 argument.  Blade area.
+REALPROP 0 CL 0deg 0.2 15deg 1.2      # 4 argument.  cl1 AOA1 cl2 AOA2   (Approximated by a linear function)
+REALPROP 0 CD -5deg 0.01 20deg 0.4   # 4 argument.  minCd AOAminCd cd1 AOA1 (Approximated by a quadratic function)
+REALPROP 0 PITCHCHGRATE   0deg        # 1 argument.  Maximum angular velocity that the blade can change pitch.  (per sec)
+REALPROP 0 MINPITCH       19deg       # 1 argument.  Minimum propeller pitch.
+REALPROP 0 MAXPITCH       19deg       # 1 argument.  Maximum propeller pitch.
+REALPROP 0 KGOVERNER      0.05        # 1 argument.  Governer const.  Defines the reaction speed of the propeller governer.
+REALPROP 0 GRAVITYCENTER  0.6m        # 1 argument.  Distance from the rotation axis
+REALPROP 0 LIFTCENTER     0.6m        # 1 argument.  Distance from the rotation axis
+REALPROP 0 WEIGHTPERBLADE 10kg        # 1 argument.  The weight of one blade.
+REALPROP 0 CLOCKWISE      0           # 1 argument.  This engine rotates clockwise. Argument is the zero-based blade index.
+REALPROP 0 MAXPOWER       160HP       # 1 argument.  Maximum horse power or J/s
+REALPROP 0 IDLEPOWER      8HP         # 1 argument.  Idling horse power or J/s
+REALPROP 0 SNDRPMRANGE    700 2600    # 2 arguments. RPM Range for sound effect
+REALPROP 0 ENGBRKTRQRPM   10          # 1 argment.   Torque (Nm) from engine brake per excess RPM. (Nm)
+REALPROP 0 ENGBRK0THRRPM  700         # 1 argument.  RPM at which the engine brake kicks in at zero throttle.
+REALPROP 0 ENGBRKMAXTHRRPM 2500       # 1 argument.  RPM at which the engine brake kicks in at max throttle.
+
+
+TIREFRIC 0.09                #TIRE FRICTION COEFFICIENT
+
+
+
+COCKPITP -0.23m 0.60m 1.72m  #COCKPIT POSITION
+EXCAMERA "CO-PILOT" 0.23m 0.56m 1.69m 0deg 0deg 0deg INSIDE
+EXCAMERA "INSTRUMENT" -0.23m 0.25m 1.69m 0deg 0deg 0deg INSIDE
+INITZOOM 1.7
+INSTPANL aircraft/cessna172r.ist
+ISPNLPOS -0.23m 0.55m 2.33m
+ISPNLSCL 0.38
+SCRNCNTR 0.0 0.3
+LEFTGEAR -1.28m -1.08m  1.25m  #LEFT LANDING GEAR POSITION
+RIGHGEAR  1.28m -1.08m  1.25m  #RIGHT LANDING GEAR POSITION
+WHELGEAR  0.0m -1.19m  2.96m  #WHEEL POSITION
+ARRESTER  0.0m -0.80m -3.34m
+MACHNGUN  0.00m  0.00m  0.00m  #MACHINE GUN POSITION
+SMOKEGEN  -0.42m -0.57m -3.30m  #SMOKE GENERATOR POSITION
+VAPORPO0 0.42m -0.56m -3.31m  #VAPOR POSITION (Wings Swept Back or no-VGW)
+VAPORPO1 0.42m -0.56m -3.31m  #VAPOR POSITION (Wings Swept Back or no-VGW)
+HTRADIUS  6.0m                #OUTSIDE SPHERE RADIUS
+
+
+STRENGTH 5
+
+CRITAOAP  15deg               #CRITICAL AOA POSITIVE
+CRITAOAM -5deg                #CRITICAL AOA NEGATIVE
+
+CRITSPED 250km/h              #CRITICAL SPEED
+MAXSPEED 250km/h              #MAXIMUM SPEED
+
+HASSPOIL FALSE                #HAS SPOILER?
+RETRGEAR FALSE                #HAS RETRACTABLE LANDING GEAR?
+VARGEOMW FALSE                #HAS VARIABLE GEOMETRY WING?
+
+CLVARGEO 0.0                  #EFFECT OF VARIABLE GEOMETRY WING FOR Cl
+CDVARGEO 0.0                  #EFFECT OF VARIABLE GEOMETRY WING FOR Cd
+CLBYFLAP 0.4                  #EFFECT OF FLAP FOR Cl
+CDBYFLAP 0.8                  #EFFECT OF FLAP FOR Cd
+CDBYGEAR 0.0                  #EFFECT OF GEAR FOR Cd
+CDSPOILR 0.0                  #EFFECT OF SPOILER FOR Cd
+
+WINGAREA 20m^2                #WING AREA
+
+MXIPTAOA 18.0deg              #MAX INPUT AOA
+MXIPTSSA 8.0deg               #MAX INPUT SSA
+MXIPTROL 40.0deg              #MAX INPUT ROLL
+
+REM CPITMANE corresponds to Spring Constant K
+REM CPITSTAB corresponds to Damper Constant B
+REM To be critically damped, B=2*sqrt(K)
+REM 2% Settling Time=??
+
+MANESPD1 30kt                 #MINIMUM MANEUVABLE SPEED
+MANESPD2 55kt                 #FULLY MANEUVABLE SPEED
+CPITMANE 6.0                  #PITCH MANEUVERBILITY CONSTANT
+CPITSTAB 2.0                  #PITCH STABILITY CONSTANT
+CYAWMANE 3.0                  #YAW MANEUVABILITY CONSTANT
+CYAWSTAB 3.0                  #YAW STABILITY CONSTANT
+CROLLMAN 3.0                  #ROLL MANEUVABILITY CONSTANT
+
+CTLLDGEA TRUE                 #CONTROL LANDINGGEAR
+CTLBRAKE FALSE                #CONTROL BRAKE
+CTLSPOIL 0.0                  #CONTROL SPOILER
+CTLABRNR FALSE                #CONTROL AFTERBURNER
+CTLTHROT 0.0                  #CONTROL THRUST
+CTLIFLAP 0.0                  #CONTROL FLAP
+CTLINVGW 0.0                  #CONTROL VARIABLE GEOMETRY WING
+CTLATVGW FALSE                #CONTROL AUTO VARIABLE GEOMETRY WING
+
+POSITION 0m 3ft 0m           #POSITION
+ATTITUDE 45deg 0deg 0deg      #ATTITUDE
+INITFUEL 75%                  #INITIAL FUEL
+INITLOAD 0.0t                 #INITIAL PAYLOAD
+INITSPED 0.0MACH              #INITIAL SPEED
+
+REM Slots must come before Inits.
+
+INITIGUN 0                    #INITIAL GUN
+INITIAAM 0                    #INITIAL AAM
+INITIAGM 0                    #INITIAL AGM
+GUNSIGHT FALSE
+
+REM ClZero,CdZero is fixed by Cruising condition
+REFVCRUS 200km/h              #CRUISING SPEED
+REFACRUS 8000ft              #CRUISING ALTITUDE
+REFTCRUS 0.90                 #CRUISING THROTTLE SETTING
+
+REM ClSlope,CdConst is fixed by Landing condition
+REFVLAND 50kt                 #LANDING SPEED
+REFAOALD 13deg                 #LANDING AOA
+REFLNRWY 300m                 #RUNWAY REQUIRED TO STOP
+REFTHRLD 0.3                 #LANDING THROTTLE SETTING
+
+AUTOCALC

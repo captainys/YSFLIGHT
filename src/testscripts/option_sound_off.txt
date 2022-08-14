@@ -1,0 +1,29 @@
+REM No space between GUI and : and following command.
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+
+
+REM Get out of demo mode.
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+
+
+GUI:CLICK $mainMenu option/option
+GUI:UNCHECK $activeModalDialog sound
+GUI:CLICK $activeModalDialog ok
+
+
+REM File -> Exit
+
+GUI:CLICK $mainMenu file/exit
+
+WAITFOR:MODAL
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+REM Really exit?
+GUI:CLICK $activeModalDialog ok

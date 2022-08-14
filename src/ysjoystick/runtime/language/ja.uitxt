@@ -1,0 +1,34 @@
+YSFLIGHT_LOCALIZATION_INFO_FILE
+
+*Needs to be encoded in UTF-8
+
+$LABEL "Japanese"
+$FGCOL 255
+$BGCOL 0
+
+
+
++joycalib_filemenu                                 #ファイル
++joycalib_fileexitmenu                             #終了
++joycalib_calibmenu                                #調整
++joycalib_calibcalibmenu                           #調整
++joycalib_calibcalibhatmenu                        #ハットスイッチの調整
++joycalib_caliberasemenu                           #調整情報の全消去
+
++joycalib_calib                                    #軸の調整
++joycalib_calibhat                                 #ハットスイッチの調整
++joycalib_fileexit                                 #終了
++joycalib_caliberase                               #調整情報の全消去
+
++joycalib_hatneutral                               #ハットスイッチを中立位置にしてスペースキーを押してください。
++joycalib_hat0deg                                  #ハットスイッチを上に押してスペースキーを押してください。
++joycalib_hat90deg                                 #ハットスイッチを右に押してスペースキーを押してください。
++joycalib_hat180deg                                #ハットスイッチを下に押してスペースキーを押してください。
++joycalib_hat270deg                                #ハットスイッチを左に押してスペースキーを押してください。
+
++joycalib_axiscycle                                #軸を可動範囲の両端に何度か動かしてから、スペースキーを押してください。
++joycalib_axisneutral                              #軸を中央に戻して、スペースキーを押してください。
++joycalib_stickcircle                              #可動範囲全体を使って円を描くようにジョイスティックを動かしてください。
++joycalib_stickneutral                             #ジョイスティックを中立位置に戻して、スペースキーを押してください。
++joycalib_next                                     #次へ>>
+

@@ -1,0 +1,92 @@
+REM No space between GUI and : and following command.
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+
+
+REM Get out of demo mode.
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu network/client
+WAITFOR:MODAL
+GUI:CLICK noJoystickDialog ok
+
+GUI:CLICK $activeModalDialog username
+GUI:TYPE "Client3"
+GUI:CLICK $activeModalDialog hostname
+GUI:TYPE "localhost"
+GUI:CLICK $activeModalDialog port
+GUI:TYPE "7915"
+GUI:CLICK $activeModalDialog ok
+WAITFOR:NO_MODAL
+
+WAITFOR:NET_READY
+
+
+GUI:CLICK $activeModalDialog selectStp
+SLEEP:200
+GUI:SELECT $activeModalDialog startPosList "SOUTH10000_01"
+GUI:CLICK $activeModalDialog ok
+SLEEP:200
+
+GUI:CLICK $activeModalDialog join
+
+
+WAITFOR:FLYING
+FLIGHTCMD:AUTOPILOT $PLAYER LANDING
+
+
+SLEEP:10000
+
+
+
+RAWKEY:ESC
+SLEEP:200
+RAWKEY:ESC
+SLEEP:200
+
+
+WAITFOR:NOT_FLYING
+RAWKEY:ESC
+SLEEP:200
+RAWKEY:ESC
+SLEEP:200
+
+
+
+WAITFOR:GUI
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM File -> Exit
+
+GUI:CLICK $mainMenu file/exit
+
+WAITFOR:MODAL
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+REM Really exit?
+GUI:CLICK $activeModalDialog ok

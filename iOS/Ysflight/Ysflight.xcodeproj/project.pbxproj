@@ -1,0 +1,906 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F339386720D3627D00A8C631 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F339386620D3627D00A8C631 /* AppDelegate.m */; };
+		F339386A20D3627D00A8C631 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F339386920D3627D00A8C631 /* ViewController.m */; };
+		F339386D20D3627D00A8C631 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F339386B20D3627D00A8C631 /* Main.storyboard */; };
+		F339387020D3627D00A8C631 /* Ysflight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F339386E20D3627D00A8C631 /* Ysflight.xcdatamodeld */; };
+		F339387220D3627D00A8C631 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F339387120D3627D00A8C631 /* Assets.xcassets */; };
+		F339387520D3627D00A8C631 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F339387320D3627D00A8C631 /* LaunchScreen.storyboard */; };
+		F339390520D363D400A8C631 /* libfsgui3d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938B420D3637300A8C631 /* libfsgui3d.a */; };
+		F339390620D363D400A8C631 /* libfsguifiledialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938CA20D3637500A8C631 /* libfsguifiledialog.a */; };
+		F339390720D363D400A8C631 /* libfsguilib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F339389B20D3637200A8C631 /* libfsguilib.a */; };
+		F339390820D363D400A8C631 /* libfslazywindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938E720D3637700A8C631 /* libfslazywindow.a */; };
+		F339390920D363D400A8C631 /* libfssimplewindow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938ED20D3637700A8C631 /* libfssimplewindow.a */; };
+		F339390A20D363D400A8C631 /* libgeblkernel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938F620D3638300A8C631 /* libgeblkernel.a */; };
+		F339390B20D363D400A8C631 /* libgeblutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938FD20D3638300A8C631 /* libgeblutil.a */; };
+		F339390C20D363D400A8C631 /* libysbitmap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F339388320D3637100A8C631 /* libysbitmap.a */; };
+		F339390D20D363D400A8C631 /* libysbitmapfont.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938D020D3637500A8C631 /* libysbitmapfont.a */; };
+		F339390E20D363D400A8C631 /* libysbitmaputil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938C320D3637400A8C631 /* libysbitmaputil.a */; };
+		F339390F20D363D400A8C631 /* libysclass.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938A720D3637200A8C631 /* libysclass.a */; };
+		F339391020D363D400A8C631 /* libysclass11.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938BB20D3637400A8C631 /* libysclass11.a */; };
+		F339391120D363D400A8C631 /* libysfontrenderer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938A120D3637200A8C631 /* libysfontrenderer.a */; };
+		F339391220D363D400A8C631 /* libysgl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938AD20D3637300A8C631 /* libysgl.a */; };
+		F339391320D363D400A8C631 /* libysglcpp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938E020D3637600A8C631 /* libysglcpp.a */; };
+		F339391420D363D400A8C631 /* libYsJoystick.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F339390320D363B300A8C631 /* libYsJoystick.a */; };
+		F339391520D363D400A8C631 /* libysport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F339388A20D3637100A8C631 /* libysport.a */; };
+		F339391620D363D400A8C631 /* libyssystemfont.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F33938D620D3637600A8C631 /* libyssystemfont.a */; };
+		F3BB389F20D37250000D03D3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3BB389E20D37250000D03D3 /* main.cpp */; };
+		F3BB38A120D372D9000D03D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BB38A020D372D9000D03D3 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F339388220D3637100A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F339387E20D3637100A8C631 /* ysbitmap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3BD0F321C07DB51006B1C96;
+			remoteInfo = ysbitmap;
+		};
+		F339388920D3637100A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F339388420D3637100A8C631 /* ysport.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3C403891C08075D0000C02C;
+			remoteInfo = ysport;
+		};
+		F339389A20D3637200A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F339388B20D3637100A8C631 /* fsguilib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3BD0EC61C07DA40006B1C96;
+			remoteInfo = fsguilib;
+		};
+		F33938A020D3637200A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F339389C20D3637200A8C631 /* ysfontrenderer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3BD0F761C07DCA8006B1C96;
+			remoteInfo = ysfontrenderer;
+		};
+		F33938A620D3637200A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938A220D3637200A8C631 /* ysclass.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F35B507B1C02CECF004E6B0A;
+			remoteInfo = ysclass;
+		};
+		F33938AC20D3637300A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938A820D3637200A8C631 /* ysgl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F35B4FF61C02C0FC004E6B0A;
+			remoteInfo = ysgl;
+		};
+		F33938B320D3637300A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938AE20D3637300A8C631 /* fsgui3d.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3BD0FCA1C07DF2D006B1C96;
+			remoteInfo = fsgui3d;
+		};
+		F33938BA20D3637400A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938B520D3637300A8C631 /* ysclass11.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F31432D91C08295A00E914E9;
+			remoteInfo = ysclass11;
+		};
+		F33938C220D3637400A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938BC20D3637400A8C631 /* ysbitmaputil.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3377F661C0B6AA500C861ED;
+			remoteInfo = ysbitmaputil;
+		};
+		F33938C920D3637500A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938C420D3637400A8C631 /* fsguifiledialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F314343C1C09518C00E914E9;
+			remoteInfo = fsguifiledialog;
+		};
+		F33938CF20D3637500A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938CB20D3637500A8C631 /* ysbitmapfont.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3B243D01C03F993002B652F;
+			remoteInfo = ysbitmapfont;
+		};
+		F33938D520D3637600A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938D120D3637500A8C631 /* yssystemfont.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3BD0C271C053143006B1C96;
+			remoteInfo = yssystemfont;
+		};
+		F33938DF20D3637600A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938D720D3637600A8C631 /* ysglcpp.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3B243891C03F374002B652F;
+			remoteInfo = ysglcpp;
+		};
+		F33938E620D3637700A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938E120D3637600A8C631 /* fslazywindow.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3B243421C03EDF6002B652F;
+			remoteInfo = fslazywindow;
+		};
+		F33938EC20D3637700A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938E820D3637700A8C631 /* fssimplewindow.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3B243231C03DCA6002B652F;
+			remoteInfo = fssimplewindow;
+		};
+		F33938F520D3638300A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938EE20D3638200A8C631 /* geblkernel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F314328B1C08288300E914E9;
+			remoteInfo = geblkernel;
+		};
+		F33938FC20D3638300A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938F720D3638300A8C631 /* geblutil.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F314330C1C082ABE00E914E9;
+			remoteInfo = geblutil;
+		};
+		F339390220D363B300A8C631 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F33938FE20D363B300A8C631 /* YsJoystick.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F35B2F3C20D3261E00DFB453;
+			remoteInfo = YsJoystick;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F339386220D3627D00A8C631 /* Ysflight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ysflight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F339386520D3627D00A8C631 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F339386620D3627D00A8C631 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F339386820D3627D00A8C631 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F339386920D3627D00A8C631 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F339386C20D3627D00A8C631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F339386F20D3627D00A8C631 /* Ysflight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ysflight.xcdatamodel; sourceTree = "<group>"; };
+		F339387120D3627D00A8C631 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F339387420D3627D00A8C631 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F339387620D3627D00A8C631 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F339387E20D3637100A8C631 /* ysbitmap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ysbitmap.xcodeproj; path = ../../../../../../public/iOS/ysbitmap.xcodeproj; sourceTree = "<group>"; };
+		F339388420D3637100A8C631 /* ysport.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ysport.xcodeproj; path = ../../../../../../public/iOS/ysport.xcodeproj; sourceTree = "<group>"; };
+		F339388B20D3637100A8C631 /* fsguilib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = fsguilib.xcodeproj; path = ../../../../../../public/iOS/fsguilib.xcodeproj; sourceTree = "<group>"; };
+		F339389C20D3637200A8C631 /* ysfontrenderer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ysfontrenderer.xcodeproj; path = ../../../../../../public/iOS/ysfontrenderer.xcodeproj; sourceTree = "<group>"; };
+		F33938A220D3637200A8C631 /* ysclass.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ysclass.xcodeproj; path = ../../../../../../public/iOS/ysclass.xcodeproj; sourceTree = "<group>"; };
+		F33938A820D3637200A8C631 /* ysgl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ysgl.xcodeproj; path = ../../../../../../public/iOS/ysgl.xcodeproj; sourceTree = "<group>"; };
+		F33938AE20D3637300A8C631 /* fsgui3d.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = fsgui3d.xcodeproj; path = ../../../../../../public/iOS/fsgui3d.xcodeproj; sourceTree = "<group>"; };
+		F33938B520D3637300A8C631 /* ysclass11.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ysclass11.xcodeproj; path = ../../../../../../public/iOS/ysclass11.xcodeproj; sourceTree = "<group>"; };
+		F33938BC20D3637400A8C631 /* ysbitmaputil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ysbitmaputil.xcodeproj; path = ../../../../../../public/iOS/ysbitmaputil.xcodeproj; sourceTree = "<group>"; };
+		F33938C420D3637400A8C631 /* fsguifiledialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = fsguifiledialog.xcodeproj; path = ../../../../../../public/iOS/fsguifiledialog.xcodeproj; sourceTree = "<group>"; };
+		F33938CB20D3637500A8C631 /* ysbitmapfont.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ysbitmapfont.xcodeproj; path = ../../../../../../public/iOS/ysbitmapfont.xcodeproj; sourceTree = "<group>"; };
+		F33938D120D3637500A8C631 /* yssystemfont.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = yssystemfont.xcodeproj; path = ../../../../../../public/iOS/yssystemfont.xcodeproj; sourceTree = "<group>"; };
+		F33938D720D3637600A8C631 /* ysglcpp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ysglcpp.xcodeproj; path = ../../../../../../public/iOS/ysglcpp.xcodeproj; sourceTree = "<group>"; };
+		F33938E120D3637600A8C631 /* fslazywindow.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = fslazywindow.xcodeproj; path = ../../../../../../public/iOS/fslazywindow.xcodeproj; sourceTree = "<group>"; };
+		F33938E820D3637700A8C631 /* fssimplewindow.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = fssimplewindow.xcodeproj; path = ../../../../../../public/iOS/fssimplewindow.xcodeproj; sourceTree = "<group>"; };
+		F33938EE20D3638200A8C631 /* geblkernel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = geblkernel.xcodeproj; path = ../../../../../../public/iOS/ysgebl/geblkernel.xcodeproj; sourceTree = "<group>"; };
+		F33938F720D3638300A8C631 /* geblutil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = geblutil.xcodeproj; path = ../../../../../../public/iOS/ysgebl/geblutil.xcodeproj; sourceTree = "<group>"; };
+		F33938FE20D363B300A8C631 /* YsJoystick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YsJoystick.xcodeproj; path = ../../../../ysjoystick/iOS/YsJoystick/YsJoystick.xcodeproj; sourceTree = "<group>"; };
+		F3BB389E20D37250000D03D3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = "../../../../../../public/src/fslazywindow/samples/sample00-bouncingBall/main.cpp"; sourceTree = "<group>"; };
+		F3BB38A020D372D9000D03D3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F339385F20D3627D00A8C631 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F339390520D363D400A8C631 /* libfsgui3d.a in Frameworks */,
+				F339390620D363D400A8C631 /* libfsguifiledialog.a in Frameworks */,
+				F339390720D363D400A8C631 /* libfsguilib.a in Frameworks */,
+				F339390820D363D400A8C631 /* libfslazywindow.a in Frameworks */,
+				F339390920D363D400A8C631 /* libfssimplewindow.a in Frameworks */,
+				F339390A20D363D400A8C631 /* libgeblkernel.a in Frameworks */,
+				F339390B20D363D400A8C631 /* libgeblutil.a in Frameworks */,
+				F339390C20D363D400A8C631 /* libysbitmap.a in Frameworks */,
+				F339390D20D363D400A8C631 /* libysbitmapfont.a in Frameworks */,
+				F339390E20D363D400A8C631 /* libysbitmaputil.a in Frameworks */,
+				F339390F20D363D400A8C631 /* libysclass.a in Frameworks */,
+				F339391020D363D400A8C631 /* libysclass11.a in Frameworks */,
+				F339391120D363D400A8C631 /* libysfontrenderer.a in Frameworks */,
+				F339391220D363D400A8C631 /* libysgl.a in Frameworks */,
+				F339391320D363D400A8C631 /* libysglcpp.a in Frameworks */,
+				F339391420D363D400A8C631 /* libYsJoystick.a in Frameworks */,
+				F339391520D363D400A8C631 /* libysport.a in Frameworks */,
+				F339391620D363D400A8C631 /* libyssystemfont.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F339385920D3627D00A8C631 = {
+			isa = PBXGroup;
+			children = (
+				F339386420D3627D00A8C631 /* Ysflight */,
+				F339386320D3627D00A8C631 /* Products */,
+				F339390420D363D400A8C631 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F339386320D3627D00A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F339386220D3627D00A8C631 /* Ysflight.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F339386420D3627D00A8C631 /* Ysflight */ = {
+			isa = PBXGroup;
+			children = (
+				F33938A820D3637200A8C631 /* ysgl.xcodeproj */,
+				F33938FE20D363B300A8C631 /* YsJoystick.xcodeproj */,
+				F33938EE20D3638200A8C631 /* geblkernel.xcodeproj */,
+				F33938F720D3638300A8C631 /* geblutil.xcodeproj */,
+				F33938AE20D3637300A8C631 /* fsgui3d.xcodeproj */,
+				F33938C420D3637400A8C631 /* fsguifiledialog.xcodeproj */,
+				F339388B20D3637100A8C631 /* fsguilib.xcodeproj */,
+				F33938E120D3637600A8C631 /* fslazywindow.xcodeproj */,
+				F33938E820D3637700A8C631 /* fssimplewindow.xcodeproj */,
+				F339387E20D3637100A8C631 /* ysbitmap.xcodeproj */,
+				F33938CB20D3637500A8C631 /* ysbitmapfont.xcodeproj */,
+				F33938BC20D3637400A8C631 /* ysbitmaputil.xcodeproj */,
+				F33938A220D3637200A8C631 /* ysclass.xcodeproj */,
+				F33938B520D3637300A8C631 /* ysclass11.xcodeproj */,
+				F339389C20D3637200A8C631 /* ysfontrenderer.xcodeproj */,
+				F33938D720D3637600A8C631 /* ysglcpp.xcodeproj */,
+				F339388420D3637100A8C631 /* ysport.xcodeproj */,
+				F33938D120D3637500A8C631 /* yssystemfont.xcodeproj */,
+				F339386520D3627D00A8C631 /* AppDelegate.h */,
+				F339386620D3627D00A8C631 /* AppDelegate.m */,
+				F339386820D3627D00A8C631 /* ViewController.h */,
+				F339386920D3627D00A8C631 /* ViewController.m */,
+				F3BB38A020D372D9000D03D3 /* main.m */,
+				F3BB389E20D37250000D03D3 /* main.cpp */,
+				F339386B20D3627D00A8C631 /* Main.storyboard */,
+				F339387120D3627D00A8C631 /* Assets.xcassets */,
+				F339387320D3627D00A8C631 /* LaunchScreen.storyboard */,
+				F339387620D3627D00A8C631 /* Info.plist */,
+				F339386E20D3627D00A8C631 /* Ysflight.xcdatamodeld */,
+			);
+			path = Ysflight;
+			sourceTree = "<group>";
+		};
+		F339387F20D3637100A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F339388320D3637100A8C631 /* libysbitmap.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F339388520D3637100A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F339388A20D3637100A8C631 /* libysport.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F339388C20D3637100A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F339389B20D3637200A8C631 /* libfsguilib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F339389D20D3637200A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938A120D3637200A8C631 /* libysfontrenderer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938A320D3637200A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938A720D3637200A8C631 /* libysclass.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938A920D3637200A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938AD20D3637300A8C631 /* libysgl.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938AF20D3637300A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938B420D3637300A8C631 /* libfsgui3d.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938B620D3637300A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938BB20D3637400A8C631 /* libysclass11.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938BD20D3637400A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938C320D3637400A8C631 /* libysbitmaputil.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938C520D3637400A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938CA20D3637500A8C631 /* libfsguifiledialog.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938CC20D3637500A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938D020D3637500A8C631 /* libysbitmapfont.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938D220D3637500A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938D620D3637600A8C631 /* libyssystemfont.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938D820D3637600A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938E020D3637600A8C631 /* libysglcpp.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938E220D3637600A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938E720D3637700A8C631 /* libfslazywindow.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938E920D3637700A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938ED20D3637700A8C631 /* libfssimplewindow.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938EF20D3638200A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938F620D3638300A8C631 /* libgeblkernel.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938F820D3638300A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F33938FD20D3638300A8C631 /* libgeblutil.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F33938FF20D363B300A8C631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F339390320D363B300A8C631 /* libYsJoystick.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F339390420D363D400A8C631 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F339386120D3627D00A8C631 /* Ysflight */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F339387B20D3627D00A8C631 /* Build configuration list for PBXNativeTarget "Ysflight" */;
+			buildPhases = (
+				F339385E20D3627D00A8C631 /* Sources */,
+				F339385F20D3627D00A8C631 /* Frameworks */,
+				F339386020D3627D00A8C631 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ysflight;
+			productName = Ysflight;
+			productReference = F339386220D3627D00A8C631 /* Ysflight.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F339385A20D3627D00A8C631 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = ysflight.com;
+				TargetAttributes = {
+					F339386120D3627D00A8C631 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F339385D20D3627D00A8C631 /* Build configuration list for PBXProject "Ysflight" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F339385920D3627D00A8C631;
+			productRefGroup = F339386320D3627D00A8C631 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F33938AF20D3637300A8C631 /* Products */;
+					ProjectRef = F33938AE20D3637300A8C631 /* fsgui3d.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938C520D3637400A8C631 /* Products */;
+					ProjectRef = F33938C420D3637400A8C631 /* fsguifiledialog.xcodeproj */;
+				},
+				{
+					ProductGroup = F339388C20D3637100A8C631 /* Products */;
+					ProjectRef = F339388B20D3637100A8C631 /* fsguilib.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938E220D3637600A8C631 /* Products */;
+					ProjectRef = F33938E120D3637600A8C631 /* fslazywindow.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938E920D3637700A8C631 /* Products */;
+					ProjectRef = F33938E820D3637700A8C631 /* fssimplewindow.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938EF20D3638200A8C631 /* Products */;
+					ProjectRef = F33938EE20D3638200A8C631 /* geblkernel.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938F820D3638300A8C631 /* Products */;
+					ProjectRef = F33938F720D3638300A8C631 /* geblutil.xcodeproj */;
+				},
+				{
+					ProductGroup = F339387F20D3637100A8C631 /* Products */;
+					ProjectRef = F339387E20D3637100A8C631 /* ysbitmap.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938CC20D3637500A8C631 /* Products */;
+					ProjectRef = F33938CB20D3637500A8C631 /* ysbitmapfont.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938BD20D3637400A8C631 /* Products */;
+					ProjectRef = F33938BC20D3637400A8C631 /* ysbitmaputil.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938A320D3637200A8C631 /* Products */;
+					ProjectRef = F33938A220D3637200A8C631 /* ysclass.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938B620D3637300A8C631 /* Products */;
+					ProjectRef = F33938B520D3637300A8C631 /* ysclass11.xcodeproj */;
+				},
+				{
+					ProductGroup = F339389D20D3637200A8C631 /* Products */;
+					ProjectRef = F339389C20D3637200A8C631 /* ysfontrenderer.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938A920D3637200A8C631 /* Products */;
+					ProjectRef = F33938A820D3637200A8C631 /* ysgl.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938D820D3637600A8C631 /* Products */;
+					ProjectRef = F33938D720D3637600A8C631 /* ysglcpp.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938FF20D363B300A8C631 /* Products */;
+					ProjectRef = F33938FE20D363B300A8C631 /* YsJoystick.xcodeproj */;
+				},
+				{
+					ProductGroup = F339388520D3637100A8C631 /* Products */;
+					ProjectRef = F339388420D3637100A8C631 /* ysport.xcodeproj */;
+				},
+				{
+					ProductGroup = F33938D220D3637500A8C631 /* Products */;
+					ProjectRef = F33938D120D3637500A8C631 /* yssystemfont.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				F339386120D3627D00A8C631 /* Ysflight */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F339388320D3637100A8C631 /* libysbitmap.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libysbitmap.a;
+			remoteRef = F339388220D3637100A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F339388A20D3637100A8C631 /* libysport.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libysport.a;
+			remoteRef = F339388920D3637100A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F339389B20D3637200A8C631 /* libfsguilib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfsguilib.a;
+			remoteRef = F339389A20D3637200A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938A120D3637200A8C631 /* libysfontrenderer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libysfontrenderer.a;
+			remoteRef = F33938A020D3637200A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938A720D3637200A8C631 /* libysclass.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libysclass.a;
+			remoteRef = F33938A620D3637200A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938AD20D3637300A8C631 /* libysgl.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libysgl.a;
+			remoteRef = F33938AC20D3637300A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938B420D3637300A8C631 /* libfsgui3d.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfsgui3d.a;
+			remoteRef = F33938B320D3637300A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938BB20D3637400A8C631 /* libysclass11.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libysclass11.a;
+			remoteRef = F33938BA20D3637400A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938C320D3637400A8C631 /* libysbitmaputil.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libysbitmaputil.a;
+			remoteRef = F33938C220D3637400A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938CA20D3637500A8C631 /* libfsguifiledialog.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfsguifiledialog.a;
+			remoteRef = F33938C920D3637500A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938D020D3637500A8C631 /* libysbitmapfont.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libysbitmapfont.a;
+			remoteRef = F33938CF20D3637500A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938D620D3637600A8C631 /* libyssystemfont.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libyssystemfont.a;
+			remoteRef = F33938D520D3637600A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938E020D3637600A8C631 /* libysglcpp.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libysglcpp.a;
+			remoteRef = F33938DF20D3637600A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938E720D3637700A8C631 /* libfslazywindow.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfslazywindow.a;
+			remoteRef = F33938E620D3637700A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938ED20D3637700A8C631 /* libfssimplewindow.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfssimplewindow.a;
+			remoteRef = F33938EC20D3637700A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938F620D3638300A8C631 /* libgeblkernel.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgeblkernel.a;
+			remoteRef = F33938F520D3638300A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F33938FD20D3638300A8C631 /* libgeblutil.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgeblutil.a;
+			remoteRef = F33938FC20D3638300A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F339390320D363B300A8C631 /* libYsJoystick.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libYsJoystick.a;
+			remoteRef = F339390220D363B300A8C631 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F339386020D3627D00A8C631 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F339387520D3627D00A8C631 /* LaunchScreen.storyboard in Resources */,
+				F339387220D3627D00A8C631 /* Assets.xcassets in Resources */,
+				F339386D20D3627D00A8C631 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F339385E20D3627D00A8C631 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3BB38A120D372D9000D03D3 /* main.m in Sources */,
+				F339386A20D3627D00A8C631 /* ViewController.m in Sources */,
+				F339387020D3627D00A8C631 /* Ysflight.xcdatamodeld in Sources */,
+				F3BB389F20D37250000D03D3 /* main.cpp in Sources */,
+				F339386720D3627D00A8C631 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F339386B20D3627D00A8C631 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F339386C20D3627D00A8C631 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F339387320D3627D00A8C631 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F339387420D3627D00A8C631 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F339387920D3627D00A8C631 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F339387A20D3627D00A8C631 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F339387C20D3627D00A8C631 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AT3TQDS4JQ;
+				INFOPLIST_FILE = Ysflight/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ysflight.com.Ysflight;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F339387D20D3627D00A8C631 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AT3TQDS4JQ;
+				INFOPLIST_FILE = Ysflight/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ysflight.com.Ysflight;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F339385D20D3627D00A8C631 /* Build configuration list for PBXProject "Ysflight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F339387920D3627D00A8C631 /* Debug */,
+				F339387A20D3627D00A8C631 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F339387B20D3627D00A8C631 /* Build configuration list for PBXNativeTarget "Ysflight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F339387C20D3627D00A8C631 /* Debug */,
+				F339387D20D3627D00A8C631 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F339386E20D3627D00A8C631 /* Ysflight.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F339386F20D3627D00A8C631 /* Ysflight.xcdatamodel */,
+			);
+			currentVersion = F339386F20D3627D00A8C631 /* Ysflight.xcdatamodel */;
+			path = Ysflight.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F339385A20D3627D00A8C631 /* Project object */;
+}

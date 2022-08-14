@@ -1,0 +1,18 @@
+#ifndef YSOSS_IS_INCLUDED
+#define YSOSS_IS_INCLUDED
+/* { */
+
+class YsOssWavPlayer
+{
+public:
+  YsOssWavPlayer();
+  ~YsOssWavPlayer();
+  void Open(void);
+  void Close(void);
+  YSRESULT Play(YsWavFile &wavFile);
+
+  int wavPlayFd;
+};
+
+/* } */
+#endif

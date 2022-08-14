@@ -1,0 +1,112 @@
+# Save .YFS as Unicode file name
+
+
+
+
+
+REM No space between GUI and : and following command.
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+
+
+REM Get out of demo mode.
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+# This creates a flight.  Next sim/create will always ask "Delete current flight?"
+REM Simulation -> Create Flight
+GUI:CLICK $mainMenu sim/create
+WAITFOR:MODAL
+GUI:CLICK $activeModalDialog ok
+WAITFOR:NO_MODAL
+
+
+
+
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu option/config
+WAITFOR:MODAL
+
+GUI:SELECT $activeModalDialog aircraft A-10A_THUNDERBOLT2
+
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+GUI:SELECT $activeModalDialog fieldList NORTH_KYUSYU
+GUI:SELECT $activeModalDialog playerStpList "SOUTH10000_03"
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu option/config
+WAITFOR:MODAL
+
+GUI:SELECT $activeModalDialog aircraft F-18E_SUPERHORNET
+
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+FILE:SAVE "~/テ ス ト YS FLIGHT/日 本 語.yfs"
+
+REM File -> Exit
+
+GUI:CLICK $mainMenu file/exit
+
+WAITFOR:MODAL
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+REM Really exit?
+GUI:CLICK $activeModalDialog ok

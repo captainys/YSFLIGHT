@@ -1,0 +1,21 @@
+SETLOCAL
+
+cd %~dp0
+
+SET PARTICLE_FILE=..\..\runtime\misc\particle.png
+
+
+
+c:\ysbin\build64\exe\Release\ysmakebmptile %PARTICLE_FILE% 1024 1024 pattern1.png pattern2.png pattern3.png pattern4.png empty.png empty.png empty.png empty.png empty.png empty.png empty.png empty.png empty.png empty.png empty.png empty.png
+
+c:\ysbin\build64\exe\Release\ysresizebmp %PARTICLE_FILE% %PARTICLE_FILE% 512 512
+
+c:\ysbin\build64\exe\Release\ysmakeblackwhite %PARTICLE_FILE% %PARTICLE_FILE% 128 128 128
+
+c:\ysbin\build64\exe\Release\ysmakewhitetransparent %PARTICLE_FILE% %PARTICLE_FILE%
+
+c:\ysbin\build64\exe\Release\ysnegatebmp %PARTICLE_FILE% %PARTICLE_FILE%
+
+
+
+ENDLOCAL

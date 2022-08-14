@@ -1,0 +1,23 @@
+Test List
+OGL DIB
+(X) (X) Take Off
+(X) ( ) Fly Maneuvers
+(X) ( ) Stall
+(X) ( ) Fly Below Bridges
+(X) (X) Landing
+(X) (X) Ground Attack
+( ) (X) Air to Air Combat
+(X) (X) Carrier Take Off
+( ) ( ) Drop off from the carrier flight deck
+(X) (X) Carrier Landing
+( ) (X) Carrier Touch & Go (Land without brake)
+( ) (X) Carrier Touch & Go (Miss the wires)
+( ) ( ) Crash into the carrier fuselage
+( ) (X) Crash into the carrier bridge from the air
+( ) (X) Crash into the carrier bridge from the flight deck
+(X) (X) Play dogfight, Replay simulation through the game, Make sure kill credit doesn't change
+( ) ( ) Can Mig-23 takeoff?
+(X) (X) Turn on sound
+( ) ( ) Score Consistency
+(X) ( ) On the ground, quit before stopping. Result must show just "Landed".
+( ) ( ) Create Flight Record by the old version, make sure they play with no problem in the new version.

@@ -1,0 +1,631 @@
+#ifndef FSTEXTRESOURCE_IS_INCLUDED
+#define FSTEXTRESOURCE_IS_INCLUDED
+/* { */
+
+#include <ysclass.h>
+
+
+
+extern YsTextResource fsTextResource;
+
+inline const wchar_t *FsGetTextResource(const char *key,const wchar_t *alternative)
+{
+	const wchar_t *primary=fsTextResource.FindWString(key);
+	if(NULL!=primary)
+	{
+		return primary;
+	}
+	return alternative;
+}
+
+
+#define FSGAMEMSG_ESCTWICETOEND                           FsGetTextResource("gamemsg/esctwice",L"Press ESC Twice to Terminate the Simulation")
+#define FSGAMEMSG_ESCONCETOEND                            FsGetTextResource("gamemsg/esconce",L"Press ESC Once More to Quit")
+
+#define FSERRMSG_NEEDCREATEFLIGHT                         FsGetTextResource("errmsg/createflt",L"Please create or open flight first")
+#define FSERRMSG_NOFLTRECORD                              FsGetTextResource("errmsg/nofltrecord",L"There is no flight record.")
+#define FSERRMSG_NOPREVFLIGHT                             FsGetTextResource("errmsg/noprevflt",L"Previous Mission Data is not available or corrupted.")
+#define FSERRMSG_LANDINGPRACTICE_NOTAVAILABL              FsGetTextResource("errmsg/landingpracticenotavailable",L"Landing Practice Mode is not available in this Scenery.")
+
+#define FSGUI_AIRDLG_SMOKE_SAMECOLOR                      FsGetTextResource("airdlg/smoke/samecolor",L"Same Color for All Smoke Generators")
+#define FSGUI_ASSIGNDLG_SETDEFAULTGAMEPAD                 FsGetTextResource("assigndlg/setdefaultgamepad",L"Use Game Pad")
+#define FSGUI_ASSIGNDLG_SETDEFAULTKEYASSIGN               FsGetTextResource("assigndlg/setdefaultkeyassign",L"Set Default Key-Assignment Only (Keep Mouse/Joystick Assignment)")
+#define FSGUI_CFGDLG_IFVISIBILITYISLESSTHAN               FsGetTextResource("cfgdlg/ifvisibilityislessthan",L"If visibility is less than:")
+#define FSGUI_CFGDLG_THISMILES                            FsGetTextResource("cfgdlg/thismiles",L"miles")
+#define FSGUI_CFGDLG_USE3DHUD                             FsGetTextResource("cfgdlg/use3dhud",L"Use 3D HUD")
+#define FSGUI_CFGDLG_USESIMPLEHUD                         FsGetTextResource("cfgdlg/usesimplehud",L"Use Simple HUD")
+#define FSGUI_COMMON_MISSION                              FsGetTextResource("common/mission",L"Mission")
+#define FSGUI_COMMON_OK                                   FsGetTextResource("common/ok",L"OK")
+#define FSGUI_COMMON_CANCEL                               FsGetTextResource("common/cancel",L"Cancel")
+#define FSGUI_COMMON_CLOSE                                FsGetTextResource("common/close",L"Close")
+#define FSGUI_COMMON_DELETE                               FsGetTextResource("common/delete",L"Delete")
+#define FSGUI_COMMON_FIELD                                FsGetTextResource("common/field",L"Field")
+#define FSGUI_COMMON_STP                                  FsGetTextResource("common/startpos",L"StartPos")
+#define FSGUI_COMMON_SETDEFAULT                           FsGetTextResource("common/setdefault",L"Set Default")
+#define FSGUI_COMMON_ENGLISH                              FsGetTextResource("common/english",L"English")
+#define FSGUI_COMMON_AUTOLANGUAGE                         FsGetTextResource("common/autolanguage",L"Language Auto Select")
+#define FSGUI_COMMON_GENERAL                              FsGetTextResource("common/general",L"General")
+#define FSGUI_COMMON_WINGMAN                              FsGetTextResource("common/wingman",L"Wingman")
+#define FSGUI_COMMON_YES                                  FsGetTextResource("common/yes",L"Yes")
+#define FSGUI_COMMON_NO                                   FsGetTextResource("common/no",L"No")
+#define FSGUI_COMMON_ERROR                                FsGetTextResource("common/error",L"Error!")
+
+#define FSGUI_CONFIGDLG_PHONGSHADING                      FsGetTextResource("configdlg/phongShading",L"Phong Shading (OpenGL 2.0 only)")
+#define FSGUI_DLG_AUTOPILOT_CIRCLE                        FsGetTextResource("dlg/autopilot/circle",L"Circle")
+#define FSGUI_DLG_AUTOPILOT_DISENGAGE                     FsGetTextResource("dlg/autopilot/disengage",L"Disengage Autopilot")
+#define FSGUI_DLG_AUTOPILOT_FLY_HDGBUG                    FsGetTextResource("dlg/autopilot/fly_hdgbug",L"Fly Heading Bug")
+#define FSGUI_DLG_AUTOPILOT_LANDING                       FsGetTextResource("dlg/autopilot/landing",L"Landing")
+#define FSGUI_DLG_AUTOPILOT_STRAIGHT_LEVEL                FsGetTextResource("dlg/autopilot/straight_level",L"Straight and Level")
+#define FSGUI_DLG_AUTOPILOT_TAKEOFF                       FsGetTextResource("dlg/autopilot/takeoff",L"Take Off")
+#define FSGUI_DLG_RADIOCOMM_TARGET_ALLWINGMAN             FsGetTextResource("dlg/radiocomm/target/allwingman",L"All Wingmen")
+#define FSGUI_DLG_RADIOCOMM_TARGET_ALL_IN_FORMATION       FsGetTextResource("dlg/radiocomm/target/all_in_formation",L"All Aircrafts in the Formation")
+#define FSGUI_DLG_RADIOCOMM_TARGET_ATC                    FsGetTextResource("dlg/radiocomm/target/atc",L"Air Traffic Controller")
+#define FSGUI_DLG_RADIOCOMM_TARGET_DONTCALL               FsGetTextResource("dlg/radiocomm/target/dontcall",L"Do not call anyone.")
+#define FSGUI_DLG_RADIOCOMM_TARGET_FUELTRUCK              FsGetTextResource("dlg/radiocomm/target/fueltruck",L"Fuel Truck")
+#define FSGUI_DLG_RADIOCOMM_TARGET_GUNNER                 FsGetTextResource("dlg/radiocomm/target/gunner",L"Gunner")
+#define FSGUI_DLG_RADIOCOMM_FORMATION_DONTCALL            FsGetTextResource("dlg/radiocomm/formation/dontcall",L"Don't call.")
+#define FSGUI_DLG_RADIOCOMM_FORMATION_SPREAD              FsGetTextResource("dlg/radiocomm/formation/spread",L"Spread")
+#define FSGUI_DLG_RADIOCOMM_FORMATION_TIGHTEN             FsGetTextResource("dlg/radiocomm/formation/tighten",L"Tighten")
+#define FSGUI_DLG_RADIOCOMM_FUELTRUCK_CALL                FsGetTextResource("dlg/radiocomm/fueltruck/call",L"Call")
+#define FSGUI_DLG_RADIOCOMM_FUELTRUCK_DISMISS             FsGetTextResource("dlg/radiocomm/fueltruck/dismiss",L"Dismiss")
+#define FSGUI_DLG_RADIOCOMM_FUELTRUCK_TITLE               FsGetTextResource("dlg/radiocomm/fueltruck/title",L"Talk to Fuel Truck")
+#define FSGUI_DLG_RADIOCOMM_WINGMAN_COMMAND_ATTACK_GROUND FsGetTextResource("dlg/radiocomm/wingman_command/attack_ground",L"Attack Ground Target")
+#define FSGUI_DLG_RADIOCOMM_WINGMAN_COMMAND_BREAK_AND_ATTACK FsGetTextResource("dlg/radiocomm/wingman_command/break_and_attack",L"Break and Attack")
+#define FSGUI_DLG_RADIOCOMM_WINGMAN_COMMAND_COVER_ME      FsGetTextResource("dlg/radiocomm/wingman_command/cover_me",L"Cover Me!")
+#define FSGUI_DLG_RADIOCOMM_WINGMAN_COMMAND_DONTSEND      FsGetTextResource("dlg/radiocomm/wingman_command/dontsend",L"Don't send a command.")
+#define FSGUI_DLG_RADIOCOMM_WINGMAN_COMMAND_FORM_ON_MY_WING FsGetTextResource("dlg/radiocomm/wingman_command/form_on_my_wing",L"Form on My Wing")
+#define FSGUI_DLG_RADIOCOMM_WINGMAN_COMMAND_HOLD          FsGetTextResource("dlg/radiocomm/wingman_command/hold",L"Stay in Holding Pattern")
+#define FSGUI_DLG_RADIOCOMM_WINGMAN_COMMAND_LAND_REFUEL_TAKEOFF FsGetTextResource("dlg/radiocomm/wingman_command/land_refuel_takeoff",L"Land, Refuel, and Take Off")
+#define FSGUI_DLG_RADIOCOMM_WINGMAN_COMMAND_RTB           FsGetTextResource("dlg/radiocomm/wingman_command/rtb",L"Return to Base")
+#define FSGUI_DLG_RADIOCOMM_WINGMAN_COMMAND_TITLE         FsGetTextResource("dlg/radiocomm/wingman_command/title",L"Command to Wingman")
+#define FSGUI_MAINDLG_SHOWCONSOLE                         FsGetTextResource("maindlg/showconsole",L"Show Console")
+#define FSGUI_MENU_AUTODEMO_ACRO_STAR_OF_DAVID            FsGetTextResource("menu/autodemo_acro_star_of_david",L"Star of David")
+#define FSGUI_MENU_FILE_RECENT                            FsGetTextResource("menu/file/recent",L"Recent Files")
+#define FSGUI_MENU_LEARNING_CLOSE                         FsGetTextResource("menu/learning/close",L"Close Training Data")
+#define FSGUI_MENU_LEARNING_OPEN                          FsGetTextResource("menu/learning/open",L"Open Training Data")
+#define FSGUI_MENU_LEARNING_SAVE                          FsGetTextResource("menu/learning/save",L"Save Training Data")
+#define FSGUI_MENU_SIM_RACINGMODE                         FsGetTextResource("menu/sim/racingmode",L"Air Racing Mode")
+#define FSGUI_MISC_TESTVERSION                            FsGetTextResource("misc/testver", \
+			L"This program is an untested version of YSFLIGHT for debugging purpose,\n"   \
+			L"i.e., I haven't systematically tested this program.  Naturally, a lot\n"    \
+			L"of bugs must be included in this program.  If you'd like to use a little\n" \
+			L"more stable version, please download current latest official release\n" \
+			L"version.  If you notice a bug in this untested version, please E-Mail\n" \
+			L"me (PEB01130@nifty.com).  I'm trying to reply as many as possible,\n" \
+			L"but sometimes (especially when I'm busy) you may receive my reply\n" \
+			L"after two or three months, or sometimes I just forget.  I apologize\n" \
+			L"if you experience such delay (^_^;)\n")
+#define FSGUI_MISC_FIRSTSTARTRECORDFAILURE                FsGetTextResource("misc/firststartrecordfailure", \
+			L"Failed to record the first launch of the program.\n" \
+			L"Please ask the system administrator to start this\n" \
+			L"program once, or to give you write-access right\n" \
+			L"of the YSFLIGHT install directory.\n")
+#define FSGUI_MISC_INITIALIZED                            FsGetTextResource("misc/initialized",L"The configuration has been initialized.")
+#define FSGUI_NEWFLTDLG_CREATENEWFLIGHT                   FsGetTextResource("newfltdlg/createnewflight",L"=== Create New Flight ===")
+#define FSGUI_VOTEYSFLIGHTDLG_MESSAGE                     FsGetTextResource("misc/voteysflight", \
+			L"The final-round voting of the Vector-Award competition is open through\n" \
+			L"March 15.  It is a popularity voting that decides the most popular\n"  \
+			L"software among all software programs hosted by Vector.\n" \
+			L" \n" \
+			L"Vector is a Japanese company, and there is unfortunately no English \n" \
+			L"version of the voting page.  But, if you can read Japanese, please click\n" \
+			L"on the following link and vote for YSFLIGHT.  Thank you!\n")
+
+#define FSGUI_ABOUTDLG_TITLE                              FsGetTextResource("aboutdlg/title",L"About YS FLIGHT SIMULATOR")
+#define FSGUI_ABOUTDLG_VERSION                            FsGetTextResource("aboutdlg/version",L"VERSION")
+
+#define FSGUI_AIRDLG_AIRCRAFTTAB                          FsGetTextResource("airdlg/aircrafttab",L"Aircraft")
+#define FSGUI_AIRDLG_LOADINGTAB                           FsGetTextResource("airdlg/loadingtab",L"Loading")
+#define FSGUI_AIRDLG_CATEGORYTAB                          FsGetTextResource("airdlg/categorytab",L"Category")
+#define FSGUI_AIRDLG_AIRCRAFT                             FsGetTextResource("airdlg/aircraft",L"Aircraft")
+#define FSGUI_AIRDLG_AAMSHORT                             FsGetTextResource("airdlg/aamshort",L"AAM(Short Range)")
+#define FSGUI_AIRDLG_AAAMSHORT                            FsGetTextResource("airdlg/aaamshort",L"A-AAM(Short Range)")
+#define FSGUI_AIRDLG_AAMMID                               FsGetTextResource("airdlg/aammid",L"AAM(Mid Range)")
+#define FSGUI_AIRDLG_AGM                                  FsGetTextResource("airdlg/agm",L"AGM")
+#define FSGUI_AIRDLG_BOMB500                              FsGetTextResource("airdlg/bomb500",L"BOM(500lb)")
+#define FSGUI_AIRDLG_BOMB250                              FsGetTextResource("airdlg/bomb250",L"BOM(250lb)")
+#define FSGUI_AIRDLG_BOM500HD                             FsGetTextResource("airdlg/bomb500hd",L"BOM(500lb-HD)")
+#define FSGUI_AIRDLG_ROCKET                               FsGetTextResource("airdlg/rocket",L"Rocket")
+#define FSGUI_AIRDLG_FLAREPOD                             FsGetTextResource("airdlg/flarepod",L"Chaff/Flare Pod")
+#define FSGUI_AIRDLG_FUELTANK                             FsGetTextResource("airdlg/fueltank",L"FUEL TANK")
+#define FSGUI_AIRDLG_FUEL                                 FsGetTextResource("airdlg/fuel",L"Fuel(%)")
+#define FSGUI_AIRDLG_SMOKE                                FsGetTextResource("airdlg/smoke",L"Smoke")
+#define FSGUI_AIRDLG_SMOKCOL                              FsGetTextResource("airdlg/smokecol",L"Smoke Color")
+#define FSGUI_AIRDLG_SEARCH                               FsGetTextResource("airdlg/search",L"Search")
+#define FSGUI_AIRDLG_NORMAL                               FsGetTextResource("airdlg/normal",L"Normal")
+#define FSGUI_AIRDLG_UTILITY                              FsGetTextResource("airdlg/utility",L"Utility")
+#define FSGUI_AIRDLG_AEROBATIC                            FsGetTextResource("airdlg/aerobatic",L"Aerobatic")
+#define FSGUI_AIRDLG_FIGHTER                              FsGetTextResource("airdlg/fighter",L"Fighter")
+#define FSGUI_AIRDLG_ATTACKER                             FsGetTextResource("airdlg/attacker",L"Attacker")
+#define FSGUI_AIRDLG_TRAINER                              FsGetTextResource("airdlg/trainer",L"Trainer")
+#define FSGUI_AIRDLG_BOMBER                               FsGetTextResource("airdlg/bomber",L"Bomber")
+#define FSGUI_AIRDLG_WW2FIGHTER                           FsGetTextResource("airdlg/ww2fighter",L"WW2 Fighter")
+#define FSGUI_AIRDLG_WW2ATTACKER                          FsGetTextResource("airdlg/ww2attacker",L"WW2 Attacker")
+#define FSGUI_AIRDLG_WW2BOMBER                            FsGetTextResource("airdlg/ww2bomber",L"WW2 Bomber")
+#define FSGUI_AIRDLG_WW2DIVEBOMBER                        FsGetTextResource("airdlg/ww2divebomber",L"WW2 Dive Bomber")
+
+#define FSGUI_AIRCOMBATDLG_MSG_NOPLAYER                   FsGetTextResource("aircombatdlg/noplayerplane",L"Please select player airplane.")
+
+#define FSGUI_NEWFLTDLG_SELAIR                            FsGetTextResource("newfltdlg/selectair",L"Change Player Airplane")
+#define FSGUI_NEWFLTDLG_CHGWINGMANSRC                     "newfltdlg/changewingman%d"
+#define FSGUI_NEWFLTDLG_ENVIRON                           FsGetTextResource("newfltdlg/environment",L"Environment")
+#define FSGUI_NEWFLTDLG_SPECIFYENVIRON                    FsGetTextResource("newfltdlg/specifyenvironment",L"Specify Environment")
+#define FSGUI_NEWFLTDLG_DAY                               FsGetTextResource("newfltdlg/day",L"Day")
+#define FSGUI_NEWFLTDLG_NIGHT                             FsGetTextResource("newfltdlg/night",L"Night")
+#define FSGUI_NEWFLTDLG_WEATHER                           FsGetTextResource("newfltdlg/weather",L"Weather")
+#define FSGUI_NEWFLTDLG_WINDDIR                           FsGetTextResource("newfltdlg/winddir",L"Wind Dir")
+#define FSGUI_NEWFLTDLG_WINDSPD                           FsGetTextResource("newfltdlg/windspd",L"Wind Speed(kt)")
+#define FSGUI_NEWFLTDLG_VISIBILITY                        FsGetTextResource("newfltdlg/visibility",L"Visibility(mile)")
+#define FSGUI_NEWFLTDLG_OVERCASTLAYER                     FsGetTextResource("newfltdlg/overcast",L"Overcast Layer")
+#define FSGUI_NEWFLTDLG_OVERCASTFLOOR                     FsGetTextResource("newfltdlg/overcastfloor",L"Floor")
+#define FSGUI_NEWFLTDLG_OVERCASTTHICKNESS                 FsGetTextResource("newfltdlg/overcastthickness",L"Thickness")
+#define FSGUI_NEWFLTDLG_ADDCOMPUTERAIRCRAFT               FsGetTextResource("newfltdlg/addcomair",L"Add Computer Aircrafts")
+
+#define FSGUI_NEWFLTDLG_FORMATION                         FsGetTextResource("newfltdlg/formation",L"Formation")
+#define FSGUI_NEWFLTDLG_FLYNOW                            FsGetTextResource("newfltdlg/flynow",L"Fly Now")
+#define FSGUI_NEWFLTDLG_WINGMAN                           FsGetTextResource("newfltdlg/wingman",L"Wingmen")
+#define FSGUI_NEWFLTDLG_NOUSABLEGNDOBJ                    FsGetTextResource("newfltdlg/nousablegndobj",L"No usable ground object is in this map.")
+
+#define FSGUI_NEWFLTDLG_ALLOWSTEALTH                      FsGetTextResource("newfltdlg/allowstealth",L"Allow Stealth")
+#define FSGUI_NEWFLTDLG_ALLOWBOMB                         FsGetTextResource("newfltdlg/allowbomb",L"Allow Bomb")
+#define FSGUI_NEWFLTDLG_ALLOWAGM                          FsGetTextResource("newfltdlg/allowagm",L"Allow AGM")
+#define FSGUI_NEWFLTDLG_ALLOWHEAVYBOMBER                  FsGetTextResource("newfltdlg/allowheavybomber",L"Allow Heavy Bomber")
+#define FSGUI_NEWFLTDLG_MAXNUMATTACKER                    FsGetTextResource("newfltdlg/maxnumattacker",L"Max Number of Attackers")
+#define FSGUI_NEWFLTDLG_JET                               FsGetTextResource("newfltdlg/jet",L"Jet")
+#define FSGUI_NEWFLTDLG_WW2                               FsGetTextResource("newfltdlg/ww2",L"Ww2")
+
+
+#define FSGUI_RESULTDLG_MISSIONGOAL                       FsGetTextResource("resultdlg/missiongoal",L"Mission Goal")
+#define FSGUI_RESULTDLG_SUCCESS                           FsGetTextResource("resultdlg/success",L"SUCCESS!")
+#define FSGUI_RESULTDLG_FAILURE                           FsGetTextResource("resultdlg/failure"                     ,L"MISSION FAILED.")
+#define FSGUI_RESULTDLG_FAILURE_KIA                       FsGetTextResource("resultdlg/failure/kia"                 ,L"FAILURE: You are killed in action.")
+#define FSGUI_RESULTDLG_FAILURE_EARLYTERMINATION          FsGetTextResource("resultdlg/failure/earlytermination"    ,L"FAILURE: You terminated the mission in the middle.")
+#define FSGUI_RESULTDLG_FAILURE_MISSEDDESTINATION         FsGetTextResource("resultdlg/failure/misseddestination"   ,L"FAILURE: You failed to land at the destination.")
+#define FSGUI_RESULTDLG_FAILURE_GROUNDLOSS                FsGetTextResource("resultdlg/failure/groundloss"          ,L"FAILURE: Too many vehicles/facilities have been destroyed. (Survived=%d, Needed=%d)")
+#define FSGUI_RESULTDLG_FAILURE_FAILEDPROTECTION          FsGetTextResource("resultdlg/failure/failedtoprotect"     ,L"FAILURE: %s has been destroyed.")
+#define FSGUI_RESULTDLG_FAILURE_AIRSTRIKEFAILURE          FsGetTextResource("resultdlg/failure/airstrike"           ,L"FAILURE: Too few ground targets have been destroyed. (Destroyed=%d, Needed=%d)")
+#define FSGUI_RESULTDLG_FAILURE_FAILEDTODESTROY           FsGetTextResource("resultdlg/failure/failedtodestroy"     ,L"FAILURE: Failed to destroy %s")
+#define FSGUI_RESULTDLG_FAILURE_FAILEDTOKILLAIR           FsGetTextResource("resultdlg/failure/failedtokill"        ,L"FAILURE: Failed to kill %s")
+#define FSGUI_RESULTDLG_FAILURE_FAILEDTOKILLALLAIR        FsGetTextResource("resultdlg/failure/failedtokillall"     ,L"FAILURE: Failed to kill all enemy aircrafts.")
+#define FSGUI_RESULTDLG_FAILURE_FAILEDESCORT              FsGetTextResource("resultdlg/failure/failedtoescort"      ,L"FAILURE: %s has not landed.")
+
+#define FSGUI_RESULTDLG_SUCCESS_ARRIVED                   FsGetTextResource("resultdlg/success/arriveddestination"  ,L"SUCCESS: You landed at the destination.")
+#define FSGUI_RESULTDLG_SUCCESS_PROTECTED                 FsGetTextResource("resultdlg/success/protected"           ,L"SUCCESS: %s has survived.")
+#define FSGUI_RESULTDLG_SUCCEED_GROUNDSURVIVED            FsGetTextResource("resultdlg/success/groundsurvive"       ,L"SUCCESS: %d vehicles/facilities survived.")
+#define FSGUI_RESULTDLG_SUCCESS_AIRSTRIKE                 FsGetTextResource("resultdlg/success/airstrike"           ,L"SUCCESS: %d ground targets have been destroyed.")
+#define FSGUI_RESULTDLG_SUCCESS_DESTROYED                 FsGetTextResource("resultdlg/success/destroyed"           ,L"SUCCESS: %s has been destroyed")
+#define FSGUI_RESULTDLG_SUCCESS_AIRKILL                   FsGetTextResource("resultdlg/success/killed"              ,L"SUCCESS: %s has been killed")
+#define FSGUI_RESULTDLG_SUCCESS_AIRKILLALL                FsGetTextResource("resultdlg/success/killedall"           ,L"SUCCESS: All enemy aircrafts hav been killed.")
+#define FSGUI_RESULTDLG_SUCCESS_ESCORTED                  FsGetTextResource("resultdlg/success/escorted"            ,L"SUCCESS: %s has landed safely.")
+
+#define FSGUI_RESULTDLG_SUMMARY                           FsGetTextResource("resultdlg/summary",L"Summary")
+#define FSGUI_RESULTDLG_USEDAIRCRAFT                      FsGetTextResource("resultdlg/usedaircraft",L"Player flew: %s")
+#define FSGUI_RESULTDLG_FINALSTATE                        FsGetTextResource("resultdlg/finalstate",L"Final State: %s")
+#define FSGUI_RESULTDLG_FACILITIES                        FsGetTextResource("resultdlg/facilities",L"Vehicles/Facilities")
+#define FSGUI_RESULTDLG_ALIVEDEAD                         FsGetTextResource("resultdlg/alivedead",L"Alive:%d Destroyed:%d")
+#define FSGUI_RESULTDLG_AIRTOAIRSCORE                     FsGetTextResource("resultdlg/airtoairscore",L"Air-to-air Score: %d")
+#define FSGUI_RESULTDLG_AIRTOAIRPENALTY                   FsGetTextResource("resultdlg/airtoairpenalty",L"Air-to-air Penalty: %d")
+#define FSGUI_RESULTDLG_AIRTOAIRKILL                      FsGetTextResource("resultdlg/airtoairkill",L"Killed %d aircrafts")
+#define FSGUI_RESULTDLG_NOAIRCOMBAT                       FsGetTextResource("resultdlg/noaircombat",L"No air combat")
+#define FSGUI_RESULTDLG_AIRTOGNDSCORE                     FsGetTextResource("resultdlg/airtogndscore",L"Air-to-ground Score: %d")
+#define FSGUI_RESULTDLG_AIRTOGNDPENALTY                   FsGetTextResource("resultdlg/airtogndpenalty",L"Air-to-ground Penalty: %d")
+#define FSGUI_RESULTDLG_AIRTOGNDKILL                      FsGetTextResource("resultdlg/airtogndkill",L"Killed %d ground targets")
+#define FSGUI_RESULTDLG_NOAIRSTRIKE                       FsGetTextResource("resultdlg/noairstrike",L"No air strike")
+#define FSGUI_RESULTDLG_TOTALSCORE                        FsGetTextResource("resultdlg/totalscore",L"Total score: %d")
+
+#define FSGUI_RESULTDLG_FINALSTATE_FLYING                 FsGetTextResource("resultdlg/state/flying",L"Still flying, not landed")
+#define FSGUI_RESULTDLG_FINALSTATE_LANDED                 FsGetTextResource("resultdlg/state/landed",L"Landed")
+#define FSGUI_RESULTDLG_FINALSTATE_LANDEDSTATIC           FsGetTextResource("resultdlg/state/landedstatic",L"Landed and safely stopped")
+#define FSGUI_RESULTDLG_FINALSTATE_DEAD                   FsGetTextResource("resultdlg/state/dead",L"Dead")
+#define FSGUI_RESULTDLG_FINALSTATE_OVERRUN                FsGetTextResource("resultdlg/state/overrun",L"Overrun")
+#define FSGUI_RESULTDLG_FINALSTATE_UNKNOWN                FsGetTextResource("resultdlg/state/unknown",L"Unknown")
+
+#define FSGUI_RESULTDLG_SCOREDETAIL                       FsGetTextResource("resultdlg/scoredtail",L"Score Detail")
+
+#define FSGUI_RESULTDLG_LANDINGANALYSIS                   FsGetTextResource("resultdlg/landinganalysis",L"Landing Analysis")
+
+#define FSGUI_RESULTDLG_VERTICALSPEEDATTOUCHDOWN          FsGetTextResource("resultdlg/verticalspeedattouchdown",L"Vertical Speed at Touch Down")
+#define FSGUI_RESULTDLG_CRABANGLEATTOUCHDOWN              FsGetTextResource("resultdlg/crabangleattouchdown",L"Crab Angle at Touch Down")
+
+
+#define FSGUI_GNDTOAIRDLG_ENEMYTAB                        FsGetTextResource("gndtoairdlg/enemytab",L"Enemy")
+
+#define FSGUI_FILEDLG_ASK_OVERWRITE                       FsGetTextResource("filedlg/ask_overwrite",L"File Exists. Overwrite?")
+#define FSGUI_FILEDLG_SAVED                               FsGetTextResource("filedlg/saved",L"Saved.")
+#define FSGUI_FILEDLG_CANNOT_WRITE_FILE                   FsGetTextResource("filedlg/cannotwrite",L"Cannot Write File.")
+#define FSGUI_FILEDLG_CANNOT_LOAD_FILE                    FsGetTextResource("filedlg/cannotload",L"Cannot Load File.")
+
+#define FSGUI_CONT_MESSAGE                                FsGetTextResource("contdlg/message",L"CONTINUE FLIGHT?")
+#define FSGUI_CONT_CONTINUE                               FsGetTextResource("contdlg/continue",L"CONTINUE (Y)")
+#define FSGUI_CONT_TERMINATE                              FsGetTextResource("contdlg/terminate",L"TERMINATE (ESC)")
+
+#define FSGUI_CFGDLG_DEFAULT                              FsGetTextResource("configdlg/default",L"Defaults")
+#define FSGUI_CFGDLG_GAMERULE                             FsGetTextResource("configdlg/gamerule",L"Game Rule")
+#define FSGUI_CFGDLG_GRAPHICS                             FsGetTextResource("configdlg/graphics",L"Graphics")
+#define FSGUI_CFGDLG_OPENGL                               FsGetTextResource("configdlg/opengl",L"OpenGL")
+#define FSGUI_CFGDLG_SETDEFAULT                           FsGetTextResource("common/setdefault",L"Set Default")
+#define FSGUI_CFGDLG_ENVIRONMENT                          FsGetTextResource("configdlg/environment",L"Environment")
+#define FSGUI_CFGDLG_LIGHT                                FsGetTextResource("configdlg/light",L"Light Direction")
+#define FSGUI_CFGDLG_AIRCRAFT                             FsGetTextResource("configdlg/aircraft",L"Aircraft")
+#define FSGUI_CFGDLG_FIELD                                FsGetTextResource("common/field",L"Field")
+#define FSGUI_CFGDLG_STP                                  FsGetTextResource("common/startpos",L"Start Position")
+#define FSGUI_CFGDLG_BLACKOUT                             FsGetTextResource("configdlg/blackout",L"Black Out")
+#define FSGUI_CFGDLG_MIDAIR                               FsGetTextResource("configdlg/midair",L"Mid Air Collision")
+#define FSGUI_CFGDLG_NOTAILSTRIKE                         FsGetTextResource("configdlg/notailstrike",L"No Tail Strike Accident")
+#define FSGUI_CFGDLG_CANLANDANYWHERE                      FsGetTextResource("configdlg/canlandanywhere",L"Can Land Anywhere (when slow enough)")
+#define FSGUI_CFGDLG_AUTORUDDER                           FsGetTextResource("configdlg/autorudder",L"Rudder Auto Coordination")
+#define FSGUI_CFGDLG_PRECISION                            FsGetTextResource("configdlg/precision",L"Precise Simulation")
+#define FSGUI_CFGDLG_SHOWHUDALWAYS                        FsGetTextResource("configdlg/showhudalways",L"Always Show HUD")
+#define FSGUI_CFGDLG_NOINSTPANEL                          FsGetTextResource("configdlg/dontuseinstpanel",L"Do not use Instrument Panel")
+#define FSGUI_CFGDLG_SHOWNAMEALWAYS                       FsGetTextResource("configdlg/showplayernamealways",L"Always Draw Player Name")
+#define FSGUI_CFGDLG_SHOWJOYSTICK                         FsGetTextResource("configdlg/showjoystick",L"Draw Virtual Joystick")
+#define FSGUI_CFGDLG_F8CAMERADELAY                        FsGetTextResource("configdlg/f8cameradelay",L"F8 Camera Delay")
+#define FSGUI_CFGDLG_MINRADARALT                          FsGetTextResource("configdlg/minradaralt",L"Minimum Radar Altitude (ft)")
+#define FSGUI_CFGDLG_SHOWIAS                              FsGetTextResource("configdlg/showias",L"Show IAS")
+#define FSGUI_CFGDLG_DRAWSHADOW                           FsGetTextResource("configdlg/drawshadow",L"Draw Shadow")
+#define FSGUI_CFGDLG_DEADPLNSHADOW                        FsGetTextResource("configdlg/shadowofdeadplane",L"Draw Shadow of Dead Airplane")
+#define FSGUI_CFGDLG_DRAWORDINANCE                        FsGetTextResource("configdlg/drawordinance",L"Draw Ordinance")
+#define FSGUI_CFGDLG_COARSEWEAPON                         FsGetTextResource("configdlg/drawcoarseweapon",L"Draw Coarse Weapon")
+#define FSGUI_CFGDLG_HORIZONGRAD                          FsGetTextResource("configdlg/horizongradation",L"Horizon Gradation")
+#define FSGUI_CFGDLG_CLOUDTYPE                            FsGetTextResource("configdlg/cloudtype",L"Cloud")
+#define FSGUI_CFGDLG_DRAWLIGHTALWAYS                      FsGetTextResource("configdlg/drawlightalways",L"Draw Lights in Daylight")
+#define FSGUI_CFGDLG_AIRGRAPHQUAL                         FsGetTextResource("configdlg/airgraphquality",L"Airplane Graphics")
+#define FSGUI_CFGDLG_SMOKETYPE                            FsGetTextResource("configdlg/smoketype",L"Smoke Type")
+#define FSGUI_CFGDLG_SMOKEREMAIN                          FsGetTextResource("configdlg/smokeremain",L"Smoke Remain Time (seconds)")
+#define FSGUI_CFGDLG_SMOKESTEP                            FsGetTextResource("configdlg/smokestep",L"Draw Smoke Every N Steps")
+#define FSGUI_CFGDLG_FOG                                  FsGetTextResource("configdlg/fog",L"Fog")
+#define FSGUI_CFGDLG_VISIBILITY                           FsGetTextResource("configdlg/visibility",L"Visibility (mile)")
+#define FSGUI_CFGDLG_ZBUFQUAL                             FsGetTextResource("configdlg/zbuffquality",L"Z-Buffer Quality")
+#define FSGUI_CFGDLG_TRSPOBJ                              FsGetTextResource("configdlg/trspobj",L"Transparent Object")
+#define FSGUI_CFGDLG_TRSPSMOKE                            FsGetTextResource("configdlg/trspsmoke",L"Transparent Smoke")
+#define FSGUI_CFGDLG_TRSPVAPOR                            FsGetTextResource("configdlg/trspvapor",L"Transparent Vapor")
+#define FSGUI_CFGDLG_REDUCEPEEPHOLE                       FsGetTextResource("configdlg/reducepeephole",L"Reduce Peep Hole Effect")
+#define FSGUI_CFGDLG_DISPLISTCLOUD                        FsGetTextResource("configdlg/usedisplistcloud",L"Use Display List for Drawing Cloud")
+#define FSGUI_CFGDLG_DISPLISTEXPLODE                      FsGetTextResource("configdlg/usedisplistexplosion",L"Use Display List for Drawing Explosion")
+#define FSGUI_CFGDLG_DISPLISTWEAPON                       FsGetTextResource("configdlg/usedisplistweapon",L"Use Display List for Drawing Weapon")
+#define FSGUI_CFGDLG_GNDTEXTURE                           FsGetTextResource("configdlg/groundtexture",L"Use Ground Texture")
+#define FSGUI_CFGDLG_RWLIGHTTEXTURE                       FsGetTextResource("configdlg/runwaylighttexture",L"Use Runway Light Texture")
+#define FSGUI_CFGDLG_SHOWFPS                              FsGetTextResource("configdlg/showfps",L"Show Frames Per Second")
+#define FSGUI_CFGDLG_SMKPARTICLE                          FsGetTextResource("configdlg/drawsmokebyparticle",L"Draw Burning Smoke by Particles")
+#define FSGUI_CFGDLG_ANTIALIASING                         FsGetTextResource("configdlg/useantialiasing",L"Use Antialiasing")
+#define FSGUI_CFGDLG_ANTIALIASNEEDRESTART                 FsGetTextResource("configdlg/antialiasingneedrestart",L"You need to restart the program to have\nantialiasing option take effect.")
+#define FSGUI_CFGDLG_TROUBLEREQUENCY                      FsGetTextResource("configdlg/troublefreq",L"Aircraft Trouble Frequency")
+#define FSGUI_CFGDLG_AIRCRAFTRELIABILITY                  FsGetTextResource("configdlg/reliability",L"Aircraft Reliability")
+
+
+
+#define FSGUI_ASSIGNDLG_SAVE                              FsGetTextResource("assigndlg/save",L"Save")
+#define FSGUI_ASSIGNDLG_LOAD                              FsGetTextResource("assigndlg/load",L"Load")
+#define FSGUI_ASSIGNDLG_SETDEFAULT                        FsGetTextResource("assigndlg/setdefault",L"Set Default")
+#define FSGUI_ASSIGNDLG_SETMOUSEASJOYSTICK                FsGetTextResource("assigndlg/setdefaultmouse",L"Set Mouse as Joystick")
+#define FSGUI_ASSIGNDLG_SETKEYBOARDASJOYSITKC             FsGetTextResource("assigndlg/setdefaultkeyboard",L"Set Keyboard as Joystick")
+#define FSGUI_ASSIGNDLG_SETDEFAULTWITHPRIMARYJOYSTICK     FsGetTextResource("assigndlg/setprimaryjoystick",L"Set Default Keys and Buttons but My Primary Joystick is not Joystick #1")
+#define FSGUI_ASSIGNDLG_AXIS                              FsGetTextResource("assigndlg/axis",L"Axis")
+#define FSGUI_ASSIGNDLG_TRIGGER                           FsGetTextResource("assigndlg/trigger",L"Trigger")
+#define FSGUI_ASSIGNDLG_KEYBOARD                          FsGetTextResource("assigndlg/keyboard",L"Keyboard")
+#define FSGUI_ASSIGNDLG_AXISFUNCTION                      FsGetTextResource("assigndlg/axisfunc",L"Axis Function")
+#define FSGUI_ASSIGNDLG_TRIGGERFUNCTION                   FsGetTextResource("assigndlg/triggerfunc",L"Trigger Function")
+#define FSGUI_ASSIGNDLG_KEYFUNCTION                       FsGetTextResource("assigndlg/keyfunc",L"Key Function")
+#define FSGUI_ASSIGNDLG_JOYSTICKAXIS                      FsGetTextResource("assigndlg/joystickaxis",L"Joystick Axis")
+#define FSGUI_ASSIGNDLG_JOYSTICKBUTTON                    FsGetTextResource("assigndlg/joystickbutton",L"Joystick Button")
+#define FSGUI_ASSIGNDLG_KEY                               FsGetTextResource("assigndlg/key",L"Key")
+#define FSGUI_ASSIGNDLG_CHANGE                            FsGetTextResource("assigndlg/change",L"Change")
+#define FSGUI_ASSIGNDLG_ELVDEADZONE                       FsGetTextResource("assigndlg/elvdeadzone",L"Elevator Dead Zone (%)")
+#define FSGUI_ASSIGNDLG_AILDEADZONE                       FsGetTextResource("assigndlg/aildeadzone",L"Aileron Dead Zone (%)")
+#define FSGUI_ASSIGNDLG_RUDDEADZONE                       FsGetTextResource("assigndlg/ruddeadzone",L"Rudder Dead Zone (%)")
+#define FSGUI_ASSIGNDLG_USEPOV                            FsGetTextResource("assigndlg/usepov",L"Use POV Hat Switch")
+#define FSGUI_ASSIGNDLG_PRIMARYAXISMESSAGE                FsGetTextResource("assigndlg/primariaxismessage",L"Select your primary-joystick ID below, or make \na complete circle with your primary joystick to \nlet the program identify your primary joystick.")
+
+
+#define FSGUI_NOJOYSTICK_MESSAGE                          FsGetTextResource("nojoystickdlg/message",L"Joystick is not connected or configured.  If you would like to \nuse a KEYBOARD or a MOUSE as a joystick, go to\nOption -> Config Key/Mouse/Joystick Assignment, nand assign a \nkeyboard or a mouse to elevator and aileron.\n\n(The mouse is assigned to elevator and aileron temporarily.)")
+#define FSGUI_NOJOYSTICK_DONTSHOWAGAIN                    FsGetTextResource("nojoystickdlg/dontshowagain",L"Don't show this message again.")
+
+
+#define FSGUI_OPTDLG_SCRNMODE                             FsGetTextResource("optiondlg/scrnmode",L"Screen Mode")
+#define FSGUI_OPTDLG_REMEMBERWNDPOS                       FsGetTextResource("optiondlg/rememberwndpos",L"Rembmer Window Position and Size")
+#define FSGUI_OPTDLG_ALWAYSONTOP                          FsGetTextResource("optiondlg/alwaysontop",L"Always On Top")
+#define FSGUI_OPTDLG_FONTSIZE                             FsGetTextResource("optiondlg/fontsize",L"Font Size")
+#define FSGUI_OPTDLG_FONTSIZEWARNING                      FsGetTextResource("optiondlg/fontsizewarning",L"")
+#define FSGUI_OPTDLG_LANGTYPE                             FsGetTextResource("optiondlg/langtype",L"Language")
+#define FSGUI_OPTDLG_LANGFILE                             FsGetTextResource("optiondlg/langfile",L"Language File:")
+#define FSGUI_OPTDLG_LANGFILEBUTTON                       FsGetTextResource("optiondlg/langfilebutton",L"Select Language File")
+#define FSGUI_OPTDLG_SOUND                                FsGetTextResource("optiondlg/sound",L"Sound")
+#define FSGUI_OPTDLG_OPENINGDEMO                          FsGetTextResource("optiondlg/openingdemo",L"Opening Demo")
+#define FSGUI_OPTDLG_USEMAPPREVIEW                        FsGetTextResource("optiondlg/usemappreview",L"Use Map Preview")
+#define FSGUI_OPTDLG_USETASKBAR                           FsGetTextResource("optiondlg/usetaskbar",L"Use Task Bar Icon")
+#define FSGUI_OPTDLG_BACPICTURE                           FsGetTextResource("optiondlg/backpicture",L"Show Background Picture")
+#define FSGUI_OPTDLG_INTELGPUISSUE                        FsGetTextResource("optiondlg/d3dxsprite_issue",L"My GPU has issues with D3DXSprite")
+#define FSGUI_OPTDLG_DIRECT3DSUCKS                        FsGetTextResource("optiondlg/direct3dsucks",L"My Direct 3D cannot draw wireframe fonts")
+
+#define FSGUI_MAINDLG_CREATE                              FsGetTextResource("maindlg/create",L"Create New Flight")
+#define FSGUI_MAINDLG_RETRY                               FsGetTextResource("maindlg/retry",L"Retry Previous Flight")
+#define FSGUI_MAINDLG_OPEN                                FsGetTextResource("maindlg/open",L"Load Flight")
+#define FSGUI_MAINDLG_SAVE                                FsGetTextResource("maindlg/save",L"Save Flight")
+#define FSGUI_MAINDLG_FLYNOW                              FsGetTextResource("maindlg/flynow",L"Fly Now!")
+#define FSGUI_MAINDLG_PLAYRECORD                          FsGetTextResource("maindlg/playrecord",L"Play Record")
+
+#define FSGUI_EXITDLG_MESSAGE                             FsGetTextResource("exitdlg/message",L"Exit Program?")
+#define FSGUI_EXITDLG_EXIT                                FsGetTextResource("exitdlg/exit",L"Exit (Y)")
+#define FSGUI_EXITDLG_BACKTOMENU                          FsGetTextResource("exitdlg/backtomenu",L"Back to Menu (N)")
+
+#define FSGUI_DELFLTDLG_MESSAGE                           FsGetTextResource("deletefltdlg/message",L"Delete Current Flight?")
+#define FSGUI_DELFLTDLG_DELETE                            FsGetTextResource("deletefltdlg/delete",L"Yes (Y)")
+#define FSGUI_DELFLTDLG_NODELETE                          FsGetTextResource("deletefltdlg/notdelete",L"No (N)")
+
+#define FSGUI_FIRSTDLG_1STLINE                            FsGetTextResource("firstdlg/1stline",L"(This message is shown automatically when the program is launched \nfor the first time after the installation.)")
+#define FSGUI_FIRSTDLG_2NDLINE                            FsGetTextResource("firstdlg/2ndline",L"Thank you very much for downloading YS FLIGHT SIMULATOR. \nPlease also visit my Web site.  The URL is:")
+#define FSGUI_FIRSTDLG_3RDLINE                            FsGetTextResource("firstdlg/3rdline",L"You can also directly go to the download page by:")
+#define FSGUI_FIRSTDLG_4THLINE                            FsGetTextResource("firstdlg/4thline",L"Enjoy YSFLIGHT!  Thank you!")
+#define FSGUI_FIRSTDLG_5THLINE                            FsGetTextResource("firstdlg/5thline",L"Captain YS")
+
+#define FSGUI_STATIONARYDLG_ENDFLIGHT                     FsGetTextResource("stationarydlg/endflight",       L"End Flight")
+#define FSGUI_STATIONARYDLG_CONFIRMENDFLIGHT              FsGetTextResource("stationarydlg/confirmendflight",L"Confirm End Flight")
+#define FSGUI_STATIONARYDLG_SUPPLY                        FsGetTextResource("stationarydlg/supply",          L"Re-supply")
+#define FSGUI_STATIONARYDLG_CHANGEVEHICLE                 FsGetTextResource("stationarydlg/changevehicle",   L"Change Vehicle")
+
+#define FSGUI_SUPPORTYSFLIGHTDLG_1STLINE                  FsGetTextResource("supportdlg/1stline",  \
+			L"(This message is displayed automatically when you launch the program for the \n"  \
+			L"first time after the installation.  After that, you can open this message by \n"  \
+			L"choosing \"Help\" -> \"Please Support YSFLIGHT Project\")")
+#define FSGUI_SUPPORTYSFLIGHTDLG_2NDLINE                  FsGetTextResource("supportdlg/2ndline",  \
+			L"YSFLIGHT is free software, and, you do not have to pay for enjoying this program. \n"  \
+			L"However, it costs me some money to maintain this project.  So I really appreciate \n"  \
+			L"if you could support YSFLIGHT project with one of the following methods.")
+#define FSGUI_SUPPORTYSFLIGHTDLG_3RDLINE                  FsGetTextResource("supportdlg/3rdline",  \
+			L"(1) Purchase a shareware program from:")
+
+#define FSGUI_SUPPORTYSFLIGHTDLG_4THLINE1                 FsGetTextResource("supportdlg/4thline-1",  \
+			L"(2) When you purchase a book, PC software, a CD, or any product from Amazon.com, \n"  \
+			L"    please open Amazon.com web site by clicking a link on")
+#define FSGUI_SUPPORTYSFLIGHTDLG_4THLINE2                 FsGetTextResource("supportdlg/4thline-2",  \
+			L"")
+#define FSGUI_SUPPORTYSFLIGHTDLG_4THLINE3                 FsGetTextResource("supportdlg/4thline-3",  \
+			L"    and place an order.  (Note: Any purchase counts as long as you open Amazon.com \n"  \
+			L"    web site by clickng a link on my web site.)")
+
+
+#ifdef _WIN32
+#define FSGUI_SUPPORTYSFLIGHTDLG_JWORDLINE1               FsGetTextResource("supportdlg/jwordline-1",L"")
+#define FSGUI_SUPPORTYSFLIGHTDLG_JWORDLINE2               FsGetTextResource("supportdlg/jwordline-2",L"")
+#define FSGUI_SUPPORTYSFLIGHTDLG_INSTALLJWORD             FsGetTextResource("supportdlg/installjword",L"")
+#define FSGUI_SUPPORTYSFLIGHTDLG_EXPLAINJWORD             FsGetTextResource("supportdlg/explainjword",L"")
+
+#define FSGUI_EXPLAINJWORD_LINE1                          FsGetTextResource("explainjword/line1",L"")
+#define FSGUI_EXPLAINJWORD_LINE2                          FsGetTextResource("explainjword/line2",L"")
+#define FSGUI_EXPLAINJWORD_LINE3                          FsGetTextResource("explainjword/line3",L"")
+#define FSGUI_EXPLAINJWORD_LINE4                          FsGetTextResource("explainjword/line4",L"")
+#define FSGUI_EXPLAINJWORD_LINE5                          FsGetTextResource("explainjword/line5",L"")
+#define FSGUI_EXPLAINJWORD_URL                            FsGetTextResource("explainjword/url",L"")
+
+#define FSGUI_INSTALLJWORD_LINE1                          FsGetTextResource("installjword/line1",L"Install JWord Plug In?")
+#define FSGUI_INSTALLJWORD_LINE2                          FsGetTextResource("installjword/line2",L"")
+#define FSGUI_INSTALLJWORD_LINE3                          FsGetTextResource("installjword/line3",L"")
+#define FSGUI_INSTALLJWORD_LINE4                          FsGetTextResource("installjword/line4",L"")
+#define FSGUI_INSTALLJWORD_LINE5                          FsGetTextResource("installjword/line5",L"")
+#define FSGUI_INSTALLJWORD_INSTALL                        FsGetTextResource("installjword/install",L"Install")
+#define FSGUI_INSTALLJWORD_EXPLAIN                        FsGetTextResource("installjword/explainjword",L"")
+#define FSGUI_INSTALLJWORD_DELETE                         FsGetTextResource("installjword/yesdelete",L"Delete File")
+#define FSGUI_INSTALLJWORD_DONTINSTALL                    FsGetTextResource("installjword/dontinstall",L"Close")
+#define FSGUI_INSTALLJWORD_COMMENT                        FsGetTextResource("installjword/comment",L"")
+#define FSGUI_INSTALLJWORD_FIRSTSTART                     FsGetTextResource("installjword/firststart",L"")
+
+#endif
+
+
+#define FSGUI_SUPPORTYSFLIGHTDLG_5THLINE1                 FsGetTextResource("supportdlg/5thline-1",  \
+			L"Please also visit sponsor sites linked from:")
+#define FSGUI_SUPPORTYSFLIGHTDLG_5THLINE2                 FsGetTextResource("supportdlg/5thline-2",  \
+			L"")
+#define FSGUI_SUPPORTYSFLIGHTDLG_6THLINE                  FsGetTextResource("supportdlg/6thline",  \
+			L"Thank you very much for supporting YSFLIGHT project.")
+
+
+#define FSGUI_NET_USERNAME                                FsGetTextResource("net/username",L"Username")
+#define FSGUI_NET_FIELD                                   FsGetTextResource("net/field",L"Field")
+#define FSGUI_NET_HOSTNAME                                FsGetTextResource("net/hostname",L"Server Hostname (IP Address)")
+#define FSGUI_NET_HOSTPORT                                FsGetTextResource("net/hostport",L"Port")
+#define FSGUI_NET_HISTORY                                 FsGetTextResource("net/history",L"Select Server from History")
+
+#define FSGUI_NET_ERROR_NOAVAILABLEAIRPLANE               FsGetTextResource("net/noairplane",L"This client has no airplane that can be used in this server.\nPlease contact the server administrator for more information.")
+#define FSGUI_NET_ERROR_SCENERYNOTAVAILABLE               FsGetTextResource("net/noscenery",L"This client does not have a scenery used in this server.\nPlease contact the server administrator for more information.")
+#define FSGUI_NET_ERROR_VERSIONCONFLICT                   FsGetTextResource("net/versionconflict",L"Network Protocol Version of the server\ndoes not match this client.")
+
+#define FSGUI_NETCFG_GENERAL                              FsGetTextResource("netconfig/general",L"General")
+#define FSGUI_NETCFG_CLIENT                               FsGetTextResource("netconfig/client",L"Client")
+#define FSGUI_NETCFG_SERVER1                              FsGetTextResource("netconfig/server1",L"Server1")
+#define FSGUI_NETCFG_SERVER2                              FsGetTextResource("netconfig/server2",L"Server2")
+#define FSGUI_NETCFG_SERVER3                              FsGetTextResource("netconfig/server3",L"Server3")
+#define FSGUI_NETCFG_PORT                                 FsGetTextResource("netconfig/port",L"Network Port")
+#define FSGUI_NETCFG_USERNAME                             FsGetTextResource("netconfig/username",L"User Name")
+#define FSGUI_NETCFG_CHATLOG                              FsGetTextResource("netconfig/chatlog",L"Save Chat Log")
+#define FSGUI_NETCFG_DEFSVR                               FsGetTextResource("netconfig/defserveraddr",L"Default Host IP Address")
+#define FSGUI_NETCFG_DEFSTP                               FsGetTextResource("netconfig/defstp",L"Default Starting Position")
+#define FSGUI_NETCFG_DEFIFF                               FsGetTextResource("netconfig/defiff",L"Default IFF")
+#define FSGUI_NETCFG_RECFLT                               FsGetTextResource("netconfig/recordflt",L"Record Flight")
+#define FSGUI_NETCFG_FREEMEM                              FsGetTextResource("netconfig/freemem",L"Free Memory When Possible")
+#define FSGUI_NETCFG_DEFFLD                               FsGetTextResource("netconfig/deffield",L"Default Field")
+#define FSGUI_NETCFG_INTERCEPT                            FsGetTextResource("netconfig/configintercept",L"Config Intercept Mission")
+#define FSGUI_NETCFG_DISABLECHAT                          FsGetTextResource("netconfig/disablechat",L"Disable Chat")
+#define FSGUI_NETCFG_LOGONTIMEOUT                         FsGetTextResource("netconfig/logontimeout",L"Log-On Time Out")
+#define FSGUI_NETCFG_MAXCONN                              FsGetTextResource("netconfig/maxconn",L"Max Connection from Single Address")
+#define FSGUI_NETCFG_SVRRESET                             FsGetTextResource("netconfig/svrreset",L"Reset Server Every:")
+#define FSGUI_NETCFG_SVRSTOP                              FsGetTextResource("netconfig/svrstop",L"Stop Server After ? Times:")
+#define FSGUI_NETCFG_WELCOMEMSG                           FsGetTextResource("netconfig/welcomemsg",L"Send Welcome Message")
+#define FSGUI_NETCFG_GROUNDFIRE                           FsGetTextResource("netconfig/groundfire",L"Enable Ground Fire")
+#define FSGUI_NETCFG_USEMISSILE                           FsGetTextResource("netconfig/usemissile",L"Enable AAM/AGM")
+#define FSGUI_NETCFG_USEGUN                               FsGetTextResource("netconfig/usegun",L"Enable Gun/Bomb/Rocket")
+#define FSGUI_NETCFG_RADARGUNSIGHT                        FsGetTextResource("netconfig/radargunsight",L"Disable Radar Gun Sight")
+#define FSGUI_NETCFG_NO3RDPLANEVIEW                       FsGetTextResource("netconfig/disable3rdairview",L"Disable Third-Airplane View")
+#define FSGUI_NETCFG_NOTIFYJOINLEAVE                      FsGetTextResource("netconfig/notifyjoinleave",L"Notify Take Off/Leave")
+#define FSGUI_NETCFG_SHOWUSERNAME                         FsGetTextResource("netconfig/showusername",L"Show User Name")
+#define FSGUI_NETCFG_MIDAIR                               FsGetTextResource("netconfig/midair",L"Mid-Air Collision")
+#define FSGUI_NETCFG_BLACKOUT                             FsGetTextResource("netconfig/blackout",L"Black Out")
+#define FSGUI_NETCFG_CANLANDANYWHERE                      FsGetTextResource("netconfig/canlandanywhere",L"Can Land Anywhere")
+#define FSGUI_NETCFG_MINRADARALT                          FsGetTextResource("netconfig/minradaralt",L"Minimum Radar Alt")
+#define FSGUI_NETCFG_BLOCKEDIP                            FsGetTextResource("netconfig/blockedip",L"Blocked IP Address")
+#define FSGUI_NETCFG_DELETEBLOCKEDIP                      FsGetTextResource("netconfig/delblockedip",L"Delete Selected IP Address from List")
+#define FSGUI_NETCFG_NEWBLOCKEDIP                         FsGetTextResource("netconfig/newblockedip",L"New Blocked IP Address")
+#define FSGUI_NETCFG_ADDBLOCKEDIP                         FsGetTextResource("netconfig/addblockedip",L"Add New IP Address to List")
+
+#define FSGUI_NETCONSOLE_SELECTAIR                        FsGetTextResource("netconsole/selectair",L"Select Aircraft")
+#define FSGUI_NETCONSOLE_SELECTSTP                        FsGetTextResource("netconsole/selectstp",L"Select Starting Pos")
+#define FSGUI_NETCONSOLE_JOIN                             FsGetTextResource("netconsole/join",L"Join")
+#define FSGUI_NETCONSOLE_OBSERVERMODE                     FsGetTextResource("netconsole/observermode",L"Observer Mode")
+#define FSGUI_NETCONSOLE_DISPELUSER                       FsGetTextResource("netconsole/dispeluser",L"Dispel User")
+#define FSGUI_NETCONSOLE_LISTUSER                         FsGetTextResource("netconsole/listuser",L"List User")
+#define FSGUI_NETCONSOLE_WHOKILLEDME                      FsGetTextResource("netconsole/whokilledme",L"Who killed me?")
+#define FSGUI_NETCONSOLE_WHOMHAVEIKILLED                  FsGetTextResource("netconsole/whomhaveikilled",L"Whom have I killed?")
+#define FSGUI_NETCONSOLE_ENDURANCE_JET                    FsGetTextResource("netconsole/eudnrance_jet",L"Start Enducrance Mode (Jet)")
+#define FSGUI_NETCONSOLE_ENDURANCE_WW2                    FsGetTextResource("netconsole/endurance_ww2",L"Start Enducrance Mode (Ww2)")
+#define FSGUI_NETCONSOLE_INTERCEPT                        FsGetTextResource("netconsole/intercept",L"Start Intercept Mission")
+#define FSGUI_NETCONSOLE_CLOSEAIRSUPPORT                  FsGetTextResource("netconsole/closeairsupport",L"Start Close Air Support")
+#define FSGUI_NETCONSOLE_ENDSERVER                        FsGetTextResource("netconsole/endserver",L"End Server")
+#define FSGUI_NETCONSOLE_CONFIRMENDSERVER                 FsGetTextResource("netconsole/confirmendserver",L"Confirm End Server")
+#define FSGUI_NETCONSOLE_REVIVEGROUND                     FsGetTextResource("netconsole/reviveground",L"Revive Ground")
+#define FSGUI_NETCONSOLE_CONFIRMREVIVEGROUND              FsGetTextResource("netconsole/confirmreviveground",L"Confirm Revive Ground")
+#define FSGUI_NETCONSOLE_CHAT                             FsGetTextResource("netconsole/chat",L"Chat")
+#define FSGUI_NETCONSOLE_SEND                             FsGetTextResource("netconsole/send",L"Send")
+#define FSGUI_NETCONSOLE_LOGOUT                           FsGetTextResource("netconsole/logout",L"Log Out")
+#define FSGUI_NETCONSOLE_CONFIRMLOGOUT                    FsGetTextResource("netconsole/confirmlogout",L"Confirm Log Out")
+#define FSGUI_NETCONSOLE_DISABLECHAT                      FsGetTextResource("netconsole/disablechat",L"Disable Chat")
+#define FSGUI_NETCONSOLE_LOCKSERVER                       FsGetTextResource("netconsole/lockserver",L"Lock Server")
+#define FSGUI_NETCONSOLE_JOINLOCK                         FsGetTextResource("netconsole/joinlock",L"Join Lock")
+
+#define FSJC_BMP_CALIB_CALIBAXES                          FsGetTextResource("joycalib_calib",L"Calibrate Axes")
+#define FSJC_BMP_CALIB_CALIBHAT                           FsGetTextResource("joycalib_calibhat",L"Calibrate Hat Switch")
+#define FSJC_BMP_CALIB_EXIT                               FsGetTextResource("joycalib_fileexit",L"Exit")
+#define FSJC_BMP_CALIB_ERASE                              FsGetTextResource("joycalib_caliberase",L"Erase All Calibration Data")
+
+#define FSJC_BMP_CALIB_HATNEUTRAL                         FsGetTextResource("joycalib_hatneutral",L"Release Hat Switch and Press SPACE key")
+#define FSJC_BMP_CALIB_HAT0DEG                            FsGetTextResource("joycalib_hat0deg",L"Push Hat Switch Forward (or Up) and Press SPACE key")
+#define FSJC_BMP_CALIB_HAT90DEG                           FsGetTextResource("joycalib_hat90deg",L"Push Hat Switch Right and Press SPACE key")
+#define FSJC_BMP_CALIB_HAT180DEG                          FsGetTextResource("joycalib_hat180deg",L"Push Hat Switch Backward (or Down) and Press SPACE key")
+#define FSJC_BMP_CALIB_HAT270DEG                          FsGetTextResource("joycalib_hat270deg",L"Push Hat Switch Left and Press SPACE key")
+
+#define FSJC_BMP_CALIB_AXISCYCLE                          FsGetTextResource("joycalib_axiscycle",L"Move Axis All the Way Up and Down Several Times and Press SPACE key")
+#define FSJC_BMP_CALIB_AXISNEUTRAL                        FsGetTextResource("joycalib_axisneutral",L"Center Axis and Press SPACE key")
+#define FSJC_BMP_CALIB_STICKCIRCLE                        FsGetTextResource("joycalib_stickcircle",L"Make Complete Circle with the Stick Several Times and Press SPACE key")
+#define FSJC_BMP_CALIB_STICKNEUTRAL                       FsGetTextResource("joycalib_stickneutral",L"Center Joystick and Press SPACE key")
+#define FSJC_BMP_CALIB_NEXT                               FsGetTextResource("joycalib_next",L"Next >>")
+
+
+
+#define FSMENU_FILE                                       FsGetTextResource("menu/fileMenu",L"File(F)")
+#define FSMENU_FILE_OPEN                                  FsGetTextResource("menu/file-Open",L"Open Flight (O)")
+#define FSMENU_FILE_SAVE                                  FsGetTextResource("menu/file-Save",L"Save Flight (S)")
+#define FSMENU_FILE_OPENMISSION                           FsGetTextResource("menu/file-OpenMission",L"Open Mission (M)")
+#define FSMENU_FILE_OPENPREV                              FsGetTextResource("menu/file-OpenPrevFlight",L"Open Previous Mission (V)")
+#define FSMENU_FILE_CLOSE                                 FsGetTextResource("menu/file-Close",L"Close Flight (C)")
+#define FSMENU_FILE_EXIT                                  FsGetTextResource("menu/file-Exit",L"Exit (X)")
+
+#define FSMENU_SIM                                        FsGetTextResource("menu/simulationMenu",L"Simulation(S)")
+#define FSMENU_SIM_FLY                                    FsGetTextResource("menu/simulation-Fly",L"Fly (F)")
+#define FSMENU_SIM_RETRY                                  FsGetTextResource("menu/simulation-Retry",L"Retry Previous Flight (V)")
+#define FSMENU_SIM_REPLAY                                 FsGetTextResource("menu/simulation-Replay",L"Replay Flight Record (R)")
+#define FSMENU_SIM_CREATE                                 FsGetTextResource("menu/simulation-Create",L"Create New Flight (C)")
+#define FSMENU_SIM_DAYNIGHT                               FsGetTextResource("menu/simulation-DayNight",L"Select Day/Night (D)")
+#define FSMENU_SIM_DISABLEGNDFIRE                         FsGetTextResource("menu/simulation-DisableGroundFire",L"Disable Ground Fire (G)")
+#define FSMENU_SIM_AIRCOMBAT                              FsGetTextResource("menu/simulation-AirCombat",L"Create Air Combat (B)")
+#define FSMENU_SIM_SELECTAIR                              FsGetTextResource("menu/simulation-SelectAir",L"Select Airplane (A)")
+#define FSMENU_SIM_SELECTSTP                              FsGetTextResource("menu/simulation-SelectStp",L"Select Starting Position (T)")
+#define FSMENU_SIM_CREATEINGND                            FsGetTextResource("menu/simulation-CreateInGnd",L"Create Simulation in Ground Object(G)")
+#define FSMENU_SIM_LDGPRACTICE                            FsGetTextResource("menu/simulation-LdgPractice",L"Landing Practice (L)")
+#define FSMENU_SIM_ENDURANCE                              FsGetTextResource("menu/simulation-Endurance",L"Fly Endurance Mode (E)")
+#define FSMENU_SIM_INTERCEPT                              FsGetTextResource("menu/simulation-Intercept",L"Fly Intercept Mission (I)")
+#define FSMENU_SIM_CLOSEAIRSUPPORT                        FsGetTextResource("menu/simulation-CloseAirSupport",L"Fly Close Air Support Mission (S)")
+#define FSMENU_SIM_GROUNDTOAIRMISSION                     FsGetTextResource("menu/simulation-AntiAirMission",L"Ground-To-Air Defense Mission (A)")
+
+#define FSMENU_SIM_LDG_LEVEL01                            FsGetTextResource("menu/simulation-Ldg-Level01",L"LEVEL 1: Straight-In, Wind-Calm, Good Visibility (1)")
+#define FSMENU_SIM_LDG_LEVEL02                            FsGetTextResource("menu/simulation-Ldg-Level02",L"LEVEL 2: Straight-In, Light-Wind, Good Visibility(2)")
+#define FSMENU_SIM_LDG_LEVEL03                            FsGetTextResource("menu/simulation-Ldg-Level03",L"LEVEL 3: Dog-Leg, Wind-Calm, Good Visibility(3)")
+#define FSMENU_SIM_LDG_LEVEL04                            FsGetTextResource("menu/simulation-Ldg-Level04",L"LEVEL 4: Base-Leg, Light-Wind, Good Visibility(4)")
+#define FSMENU_SIM_LDG_LEVEL05                            FsGetTextResource("menu/simulation-Ldg-Level05",L"LEVEL 5: Base-Leg, Moderate-Wind, Good Visibility(5)")
+#define FSMENU_SIM_LDG_LEVEL06                            FsGetTextResource("menu/simulation-Ldg-Level06",L"LEVEL 6: Base-Leg, Strong-Wind, Good Visibility(6)")
+#define FSMENU_SIM_LDG_LEVEL07                            FsGetTextResource("menu/simulation-Ldg-Level07",L"LEVEL 7: Straight-In, Wind-Calm, Low Cloud(7)")
+#define FSMENU_SIM_LDG_LEVEL08                            FsGetTextResource("menu/simulation-Ldg-Level08",L"LEVEL 8: Dog-Leg, Wind-Calm, Low Cloud(8)")
+#define FSMENU_SIM_LDG_LEVEL09                            FsGetTextResource("menu/simulation-Ldg-Level09",L"LEVEL 9: Base-Leg, Wind-Calm, Low Cloud(9)")
+#define FSMENU_SIM_LDG_LEVEL10                            FsGetTextResource("menu/simulation-Ldg-Level10",L"LEVEL10: Base-Leg, Light-Wind, Low Cloud(A)")
+#define FSMENU_SIM_LDG_LEVEL11                            FsGetTextResource("menu/simulation-Ldg-Level11",L"LEVEL11: Base-Leg, Moderate-Wind, Low Cloud(B)")
+#define FSMENU_SIM_LDG_LEVEL12                            FsGetTextResource("menu/simulation-Ldg-Level12",L"LEVEL12: Straigh-In, Wind-Calm, Low Visibility(C)")
+#define FSMENU_SIM_LDG_LEVEL13                            FsGetTextResource("menu/simulation-Ldg-Level13",L"LEVEL13: Base-Leg, Wind-Calm, Low Visibility(D)")
+#define FSMENU_SIM_LDG_LEVEL14                            FsGetTextResource("menu/simulation-Ldg-Level14",L"LEVEL14: Base-Leg, Moderate-Wind, Low Visibility(E)")
+#define FSMENU_SIM_LDG_LEVEL15                            FsGetTextResource("menu/simulation-Ldg-Level15",L"LEVEL15: Base-Leg, Strong-Wind, Low Visibility+Low Cloud(F)")
+
+#define FSMENU_OPTION                                     FsGetTextResource("menu/optionMenu",L"Option(O)")
+#define FSMENU_OPTION_CONFIG                              FsGetTextResource("menu/option-Config",L"Config (C)")
+#define FSMENU_OPTION_OPTION                              FsGetTextResource("menu/option-Option",L"Option (O)")
+#define FSMENU_OPTION_KEYASSIGN                           FsGetTextResource("menu/option-KeyAssign",L"Joystick/Key Assignments (A)")
+#define FSMENU_OPTION_JOYCALIB                            FsGetTextResource("menu/option-JoyCalib",L"Calibrate Joystick(J)")
+
+#define FSMENU_AUTODEMO                                   FsGetTextResource("menu/autoDemoMenu",L"Auto Demo (D)")
+#define FSMENU_AUTODEMO_ACRO                              FsGetTextResource("menu/autoDemo-Acro",L"Aerobatics (A)")
+#define FSMENU_AUTODEMO_DOGFIGHT                          FsGetTextResource("menu/autoDemo-DogFight",L"Dogfight (D)")
+#define FSMENU_AUTODEMO_LDG                               FsGetTextResource("menu/autoDemo-Ldg",L"Landing (L)")
+#define FSMENU_AUTODEMO_CARRIERLDG                        FsGetTextResource("menu/autoDemo-CarrierLdg",L"Carrier Landing (C)")
+
+#define FSMENU_AUTODEMO_ACRO_CORKSCREW                    FsGetTextResource("menu/autoDemo-Acro-CorkScrew",L"Cork Screw")
+#define FSMENU_AUTODEMO_ACRO_SLOWROLL                     FsGetTextResource("menu/autoDemo-Acro-SlowRoll",L"Slow Roll")
+#define FSMENU_AUTODEMO_ACRO_DELTALOOP                    FsGetTextResource("menu/autoDemo-Acro-DeltaLoop",L"Delta Loop")
+#define FSMENU_AUTODEMO_ACRO_DELTAROLL                    FsGetTextResource("menu/autoDemo-Acro-DeltaRoll",L"Delta Roll")
+#define FSMENU_AUTODEMO_ACRO_TIGHTTURN                    FsGetTextResource("menu/autoDemo-Acro-TightTurn",L"Tight Turn")
+#define FSMENU_AUTODEMO_ACRO_360ANDLOOP                   FsGetTextResource("menu/autoDemo-Acro-360AndLoop",L"360 and Loop")
+#define FSMENU_AUTODEMO_ACRO_BOMBBURSTUPWARD4             FsGetTextResource("menu/autoDemo-Acro-BombBurstUpward4",L"Bomb Burst Upward (4 ship)")
+#define FSMENU_AUTODEMO_ACRO_BOMBBURSTUPWARD6             FsGetTextResource("menu/autoDemo-Acro-BombBurstUpward6",L"Bomb Burst Upward (6 ship)")
+#define FSMENU_AUTODEMO_ACRO_CHANGEOVERTURN               FsGetTextResource("menu/autoDemo-Acro-ChangeOverTurn",L"Change Over Turn")
+#define FSMENU_AUTODEMO_ACRO_TRAILTODIAMONDROLL           FsGetTextResource("menu/autoDemo-Acro-TrailToDiamondRoll",L"Trail to Diamond Roll")
+#define FSMENU_AUTODEMO_ACRO_CUBANEIGHT                   FsGetTextResource("menu/autoDemo-Acro-CubanEight",L"Cuban Eight")
+#define FSMENU_AUTODEMO_ACRO_DELTALOOPANDBONTON           FsGetTextResource("menu/autoDemo-Acro-DeltaLoopAndBonton",L"Delta Loop and Bonton")
+#define FSMENU_AUTODEMO_ACRO_BONTONROLL                   FsGetTextResource("menu/autoDemo-Acro-BontonRoll",L"Bontol Roll")
+#define FSMENU_AUTODEMO_ACRO_BOMBBURSTDOWNWARD4           FsGetTextResource("menu/autoDemo-Acro-BombBurstDownward4",L"Bomb Burst Downward (4 ship)")
+#define FSMENU_AUTODEMO_ACRO_BOMBBURSTDOWNWARD6           FsGetTextResource("menu/autoDemo-Acro-BombBurstDownward6",L"Bomb Burst Downward (6 ship)")
+#define FSMENU_AUTODEMO_ACRO_RAINFALL                     FsGetTextResource("menu/autoDemo-Acro-RainFall",L"Rail Fall")
+#define FSMENU_AUTODEMO_ACRO_ROLLINGCOMBATPITCH           FsGetTextResource("menu/autoDemo-Acro-RollingCombatPitch",L"Rolling Combat Pitch")
+#define FSMENU_AUTODEMO_ACRO_DIAMONDTAKEOFF               FsGetTextResource("menu/autoDemo-Acro-DiamondTakeOff",L"Diamond Take Off")
+#define FSMENU_AUTODEMO_ACRO_CONTINUOUSROLL               FsGetTextResource("menu/autoDemo-Acro-ContinuousRoll",L"Continuous Roll")
+#define FSMENU_AUTODEMO_ACRO_ROLLONTAKEOFFANDHALFCUBAN    FsGetTextResource("menu/autoDemo-Acro-RollOnTakeOffHalfCuban",L"Roll on Take Off and Half Cuban")
+#define FSMENU_AUTODEMO_ACRO_TACKCROSSANDVERTCLIMBROLL    FsGetTextResource("menu/autoDemo-Acro-TackCrossVertRoll",L"Tack Cross and Vertical Climb Roll")
+#define FSMENU_AUTODEMO_ACRO_BIGHEART                     FsGetTextResource("menu/autoDemo-Acro-BigHeart",L"Big Heart")
+#define FSMENU_AUTODEMO_ACRO_LEVELBREAK                   FsGetTextResource("menu/autoDemo-Acro-LevelBreak",L"Level Break")
+#define FSMENU_AUTODEMO_ACRO_ROLLBACKTOARROWHEAD          FsGetTextResource("menu/autoDemo-Acro-RollBackToArrowhead",L"Roll Back to Arrowhead")
+#define FSMENU_AUTODEMO_ACRO_PITCHUPBREAK                 FsGetTextResource("menu/autoDemo-Acro-PitchUpBreak",L"Pitch Up Break")
+#define FSMENU_AUTODEMO_ACRO_ROCKWINGGEARDOWN             FsGetTextResource("menu/autoDemo-Acro-RockWingGearDown",L"Rock Wing (Gear Down)")
+#define FSMENU_AUTODEMO_ACRO_ROCKWINGCLEAN                FsGetTextResource("menu/autoDemo-Acro-RockWingClean",L"Rock Wing (Clean)")
+#define FSMENU_AUTODEMO_ACRO_LETTEREIGHT                  FsGetTextResource("menu/autoDemo-Acro-LetterEight",L"Letter Eight")
+#define FSMENU_AUTODEMO_ACRO_STARCROSS                    FsGetTextResource("menu/autoDemo-Acro-StarCross",L"Star Cross")
+#define FSMENU_AUTODEMO_ACRO_LEVELOPENER                  FsGetTextResource("menu/autoDemo-Acro-LevelOpener",L"Level Opener")
+#define FSMENU_AUTODEMO_ACRO_FORMATIONBREAK               FsGetTextResource("menu/autoDemo-Acro-FormBreak",L"Formation Break")
+#define FSMENU_AUTODEMO_ACRO_LINEABREASTROLL              FsGetTextResource("menu/autoDemo-Acro-LineAbreastRoll",L"Line Abreast Roll")
+#define FSMENU_AUTODEMO_ACRO_LINEABREASTLOOP              FsGetTextResource("menu/autoDemo-Acro-LineAbreastLoop",L"Line Abreast Loop")
+#define FSMENU_AUTODEMO_ACRO_DOUBLEFARVEL                 FsGetTextResource("menu/autoDemo-Acro-DoubleFarvel",L"Double Farvel")
+#define FSMENU_AUTODEMO_ACRO_DIAMOND9TOSWAN               FsGetTextResource("menu/autoDemo-Acro-Dia9ToSwan",L"Diamond 9 to Swan Bend")
+#define FSMENU_AUTODEMO_ACRO_SWANTOAPOLLOROLL             FsGetTextResource("menu/autoDemo-Acro-SwanToApolloRoll",L"Swan to Apollo Roll")
+#define FSMENU_AUTODEMO_ACRO_LANCASTERTOFIVEFOURSPLIT     FsGetTextResource("menu/autoDemo-Acro-LancasterTo5-4Split",L"Lancaster to 5-4 Split")
+#define FSMENU_AUTODEMO_ACRO_CHAMPAIGNSPLIT               FsGetTextResource("menu/autoDemo-Acro-ChampaignSplit",L"Champaign Split")
+#define FSMENU_AUTODEMO_ACRO_VIXENBREAK                   FsGetTextResource("menu/autoDemo-Acro-VixenBreak",L"Vixen Break")
+#define FSMENU_AUTODEMO_ACRO_BIGBATTLETOSHORTDIAMONDLOOP  FsGetTextResource("menu/autoDemo-Acro-BigBattleToShortDiaLoop",L"Big Battle to Short Diamond Loop")
+
+#define FSMENU_NET                                        FsGetTextResource("menu/networkMenu",L"Network(N)")
+#define FSMENU_NET_SERVER                                 FsGetTextResource("menu/network-Server",L"Server (S)")
+#define FSMENU_NET_CLIENT                                 FsGetTextResource("menu/network-Client",L"Client (C)")
+#define FSMENU_NET_CONFIG                                 FsGetTextResource("menu/network-Config",L"Network Option (O)")
+
+#define FSMENU_FLTRECUTIL                                 FsGetTextResource("menu/flightRecUtilMenu",L"Flight Record Utility (U)")
+#define FSMENU_FLTRECUTIL_TIMEINTERVAL                    FsGetTextResource("menu/flightRecUtil-TimeInterval",L"Set Time Interval (T)")
+#define FSMENU_FLTRECUTIL_SPACEPRECISION                  FsGetTextResource("menu/flightRecUtil-SpacePrecision",L"Set Space Precision (S)")
+#define FSMENU_FLTRECUTIL_EDITRECORD                      FsGetTextResource("menu/flightRecUtil-EditRecord",L"Edit Flight Record (E)")
+
+#define FSMENU_HELP                                       FsGetTextResource("menu/helpMenu",L"Help(H)")
+#define FSMENU_HELP_HELPENGLISH                           FsGetTextResource("menu/help-HelpEnglish",L"Help - English (E)")
+#define FSMENU_HELP_DEFKEYENGLISH                         FsGetTextResource("menu/help-DefKeyEnglish",L"Default Key Strokes and Controls - (N)")
+#define FSMENU_HELP_HELPJAPANESE                          FsGetTextResource("menu/help-HelpJapanese",L"Help - Japanese (J)")
+#define FSMENU_HELP_DEFKEYJAPANESE                        FsGetTextResource("menu/help-DefKeyJapanese",L"Default Key Strokes and Controls - Japanese (P)")
+#define FSMENU_HELP_ABOUT                                 FsGetTextResource("menu/help-About",L"About YSFLIGHT (A)")
+#define FSMENU_HELP_SUPPORTYSFLIGHT                       FsGetTextResource("menu/help-SupportYSFlight",L"Support YSFLIGHT Project")
+
+#define FSMENU_LEARNING                                   FsGetTextResource("menu/learning",L"Learning")
+#define FSMENU_LEARNING_TRAINAUTOPILOT                    FsGetTextResource("menu/learning/trainAutoPilot",L"Train Auto Pilot")
+
+
+
+/* } */
+#endif

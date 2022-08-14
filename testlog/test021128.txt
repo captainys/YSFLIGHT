@@ -1,0 +1,144 @@
+Pre-installer test 2002/11/28
+for 20021205 version
+
+
+Do this list Before making installer (roughly)
+             After making installer
+             with Joystick only
+             with Joystick + Throttle + Rudder
+             without Joystick and Throttle
+
+
+
+OGL DIB
+(X) ( ) Does about dialog show the correct version number?
+(X) (X) Rebuild
+( ) ( ) Removed all test keys?  (FsNetwork -> BIKEY_X)
+(X) ( ) Set Config to the default?
+(-) (-) Removed first startup identification file?
+( ) ( ) Deleted config\font.cfg?
+(-) (-) Delete "Previous Flight" data.
+( ) ( ) Set NetConfig to the default?
+( ) ( ) Set Option to the default?
+( ) ( ) Turn on sound
+(-) (-) Win2000 non-admin Installer (Check folder, icon, choose all of them at least once)
+(-) (-) Win2000 admin Installer (Check folder, icon, choose all of them at least once)
+(-) (-) Win98 Installer (Check folder, icon, choose all of them at least once)
+(X) ( ) Test full-screen mode
+(X) ( ) Turn off Opening Demo, make sure can create a new flight, and fly
+(-) ( ) Deleted unnecessary batch files and fserr.txt?
+(X) (X) Deleted unnecessary executable?  YFSUTIL.EXE and YFSUTILO.EXE?
+(-) (-) Deleted installation marker file?  20020510 or like that.
+( ) (X) Choose mouse as throttle and see what happens.
+(X) ( ) Take Off (Gourd)
+(X) (X) Fly Maneuvers
+(X) ( ) Stall
+(X) ( ) Fly underneath bridges, make sure the shadow of the airplane will not be drawn if the
+        airplane is underneath the bridge.
+( ) (X) BS Key autopilot (On/Off and make sure the plane flies with no problem after turning off)
+( ) (X) Landing
+( ) (X) Save flight record of Takeoff/Landing and make sure it can load and play, and test F5 key also.
+(X) ( ) Ground Attack
+(X) ( ) Save flight record of Ground attack and make sure it can load and play, and test F5 key also.
+(X) ( ) Play dogfight, Replay simulation through the game, Make sure kill credit doesn't change
+( ) (X) Save flight record of Dogfight and make sure it can load and play
+(X) ( ) Carrier Take Off
+( ) ( ) Carrier Touch & Go (Land without brake)
+( ) ( ) Carrier Touch & Go (Miss the wires)
+(X) ( ) Carrier Landing
+(X) ( ) Save flight record of Carrier TO/LDG and make sure it can load and play, and test F5 key also.
+( ) (X) Drop off from the carrier flight deck
+( ) (X) Crash into the carrier fuselage
+( ) (X) Crash into the carrier bridge from the air
+( ) (X) Crash into the carrier bridge from the flight deck
+( ) (X) Try all different fields
+( ) (X) Can Mig-23 takeoff?
+( ) (X) Can Mig-21 takeoff?
+( ) (X) Can B747 takeoff?
+( ) (X) Can B777 takeoff?
+( ) (X) Can Concorde takeoff?
+(X) ( ) On the ground, quit before stopping. Result must show just "Landed".
+(X) ( ) Create Flight Record by the old version, make sure they play with no problem
+        in the new version, and test F5 key also.
+( ) ( ) Make sure the flight record of this version cannot be
+        loaded by the old version.
+( ) ( ) Land out of runway -> Must considered as "Out of runway"
+( ) ( ) Land at the bad attitude -> Must considered as "Crash"
+(X) ( ) Land at too high pitch -> Must considered as "Tail Strike"
+(X) ( ) Fly formation flights Blue Angels
+( ) ( ) Fly formation flights T-4 Blue Impulse
+(X) ( ) Fly formation flights T-2 Blue Impulse
+( ) (X) Fly formation flights Thunderbirds
+(X) ( ) Save flight record, terminate the program, load the record and make
+        sure the weapons are correctly recorded.
+( ) ( ) Create a flight, choose an airplane after creating it, see
+        the configuration is correct.
+( ) ( ) Test all items in "Simulation" menu. (Airplane configuration)
+( ) ( ) Choose Flight->Endurance mode, don't use missile, and
+        make sure the user cannot load aam, bomb, and agm,
+        but can load rockets.  Then take off and the configuration
+        must be correctly reflected.
+( ) ( ) Choose Flight->Endurance mode, use missile, and
+        make sure the user cannot load bombs and agms, but can
+        load aams and rockets.  Then take off and the configuration
+        must be correctly reflected.
+( ) ( ) Choose Flight->Intercept Mission mode,
+        make sure the user cannot load agms and bombs, but can
+        load bomb, aams and rockets.  Then take off and the configuration
+        must be correctly reflected.
+( )     Turn on and off "Fog"
+( )     Turn on and off "Improved Z-Buffering"
+( ) ( ) Turn on and off "Shadow of Dead Airplane"
+( ) ( ) Turn on and off "Draw ordinance"
+( ) ( ) Change default airplane in the config dialog, and make
+        sure the change is reflected in Create New Flight,
+        Create Air Combat, Fly Endurance Mode, Fly Intercept Mission,
+        Server mode and Client mode.
+
+( ) ( ) Network Play play server, shot down and attack objects in the client
+( ) ( ) Network Play play client, shot down and attack objects in the server
+( ) ( ) Network Option USEMISSILE
+( ) ( ) Network Option DEFAULTHST
+( ) ( ) Network Option DEFAULTUSR
+( ) ( ) Network Option RECORDCLNT
+( ) ( ) Network Option RECORDSRVR
+( ) ( ) Network Option DEFLTFIELD
+(-) (-) Network Option DFAIRPLANE
+( ) ( ) Network Option DFSTPOSSVR
+( ) ( ) Network Option DFSTPOSCLI
+( ) ( ) Network Option DEFIFFSRVR
+( ) ( ) Network Option DEFIFFCLNT
+( ) ( ) Save flight record of Network play and make sure it can load and play
+( ) ( ) Turn off "Use Missile" on server.  Log on to the server as
+        a client, and make sure the player cannot load missiles.
+        Then take off and the configuration must be correctly reflected.
+( ) ( ) Turn off "Use Missile" on server.  Start a server,
+        and make sure the player cannot load missiles.
+        Then take off and the configuration must be correctly reflected.
+( ) ( ) Fly intercept mission, save data, make sure the record doesn't
+        change before and after re-loading the datafile.
+( ) ( ) Start a server, connect two clients, fly several minutes,
+        and save the data.  Make sure the username doesn't change
+        after re-loading the datafile.
+( ) ( ) Log on to a server as a client, fly several minutes,
+        and save the data.  Make sure the username doesn't change
+        after re-loading the datafile.
+( ) ( ) Load flight records of old version and make sure they
+        are played correctly.
+( ) ( ) Take off from the carrier and land on the carrier in Server mode
+( ) ( ) Take off from the carrier and land on the carrier in Client mode
+
+( ) ( ) GAP Extra
+( ) ( ) TMP Extra
+
+( ) ( ) Start Server by command parameter
+( ) ( ) Start Client by command parameter
+
+( ) ( ) Virus Scan
+
+( ) ( ) Take off in Pacific Atoll, Turn on Radar (range 100) and make
+        sure ground grids do not disappear. (debug impls32o.lib, 2002/05/09)
+
+( ) ( ) Take off in Pacific Atoll, fly to the bunkers, and make sure
+        bunkers are visible (debug impls32?.lib, 2002/05/09)
+

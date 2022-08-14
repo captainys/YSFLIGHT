@@ -1,0 +1,54 @@
+YS LANDING FLIGHT SIMULATOR
+
+((*) means new features)
+
+
+Discussion
+  Allow continue? How about score?
+  Some hidden characters?
+  How about flight record?
+  Construction mode -> Allow user to create a crazy senario
+
+
+
+1. Scoring
+  See analysis
+
+
+
+2. Stages
+  Wind
+    zero, light, moderate, severe
+  Visivility
+    clear sky, cloudy(*), zero visibility(*)
+  Start position
+    final, downwind
+  Target
+    runway, aircraft carrier, secret base (cave dug in a mountain),
+    flying aircraft carrier
+    (* only runway has ideal approach path)
+  Fuel
+    Full -> Require more runway
+    10% -> Ideal
+    Empty -> No chance to go around
+
+  1. zero wind, clear sky, from final, runway
+  2. light wind, clear sky, from final, runway
+  3. light wind, cloudy, from final, runway
+  4.
+
+
+
+3. Self training mode
+
+
+
+4. Analysis
+  Touch down point -> check when the flight state changed from FLYING to GROUND
+  Excess speed -> If airspeed exceeded a limit during the flight subtract some point
+  Descent ratio (*)
+  Deviation from ideal approach path.
+    Problem : Cannot take the deviation when the pilot went around.
+  Heading vibration before touch down.
+  Touch down attitude Pitch and Bank
+

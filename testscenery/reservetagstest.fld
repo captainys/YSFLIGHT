@@ -1,0 +1,33 @@
+FIELD
+FLDVERSION 20150228
+FLDNAME RESERVETAGSTEST
+GNDSPECULAR FALSE
+DEFAREA NOAREA
+BASEELV 0.00m
+MAGVAR 0.00deg
+CANRESUME TRUE
+
+
+# This fld file is for testing that anything between APPROACH-ENDAPPROACH, AIRPORT-ENDAIRPORT, WEATHER-ENDWEATHER, SPECOBJ-ENDSPECOBJ are ignored by the 2015 spring version.  These tags will be used in the future expansion.
+
+
+APPROACH
+As of 20150311, enything here will be ignored.
+ENDAPPROACH
+
+AIRPORT
+As of 20150311, enything here will be ignored.
+ENDAIRPORT
+
+WEATHER
+As of 20150311, enything here will be ignored.
+ENDWEATHER
+
+SPECOBJ
+As of 20150311, enything here will be ignored.
+ENDSPECOBJ
+
+REM Commenting out this line must give an error  ABCDEFG012345
+
+GND 100 215 100
+SKY 23 106 189

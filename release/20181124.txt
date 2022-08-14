@@ -1,0 +1,18 @@
+YSFLIGHT 20181124
+- OpenGL 2.xでシャドウマップに対応。影が良くなった。
+- 雲とスモーク両方をパーティクルレンダリングするようにした。
+- OpenGL 1.1, Direct 3D9でもパーティクルレンダリングできるようにした。
+- エアレースモード。まだかなり原始的な実装だけどとりあえずチェックポイントをすべて巡回する時間をカウントするようにした。
+- アドオンを自動スクリプトでチェックするようにしたので、動かなくなってたアドオンとかもかなり動くようになったと思う。
+- Windows版でインストーラを使うの、むなしくなったのでやめた。。
+- ILS view (F6) and Tower View (F8)を分けた、というか前のバージョンに戻した。
+
+
+- Shadow mapping in OpenGL 2.x version.
+- Particle rendering for clouds and smokes.
+- Particle rendering support in OpenGL 1.1 and Direct3D9 executables.
+- Added Air-Racing mode.  Quite primitive, but it at least measures time to pass all check points for you.
+- Massively and automatically tested add-ons.  I hope the ones stopped working now works again.
+- Stopped using Windows installer.  I am tired of it.
+- SRF models in .FLD file.  Older preliminary implementation was checking bounding-box collision, but it now check polygon-by-polygon collision.
+- Separated ILS view and Tower view (I think I made it back to same as previous versions.)

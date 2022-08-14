@@ -1,0 +1,14 @@
+Adding a new axis function
+(1) fscontrol.h
+  Add enum FSAXISFUNCTION
+
+(2) fscontrol.cpp
+  Add struct FsAxisFunctionString
+  
+(3) fscontrol.cpp
+  Modify SetDefault
+
+(4) fscontrol.cpp
+  Add axis functionality in YSRESULT FsFlightControl::ReadControl
+
+(5) Add description in control.html and controlj.html

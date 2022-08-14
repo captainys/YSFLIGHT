@@ -1,0 +1,40 @@
+Independent
+  common
+  pathplanning
+
+
+(-> means depend on)
+
+Dependencies
+  util
+    common
+
+  dynamics
+    util
+
+  config
+    common
+    util
+
+  filename
+    common
+
+  externalconsole
+    common
+    util
+    socket
+
+  machinelearning
+    (CPP uses vehicle)
+
+
+
+
+  ui
+    Depends on everything
+
+  platform
+    Nightmare
+
+  graphics
+    Nealy dead

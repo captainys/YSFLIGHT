@@ -1,0 +1,37 @@
+REM Instrument Panel Definitoin for F-15DJ rear seat
+REM Circular indicators,
+REM   ???????? x y radius
+REM Rectangular indicators
+REM   ???????? x1 y1 x2 y2
+REM   (x1<x2, y1<y2)
+
+PNLRANGE -1.00 -1.0 1.00 -0.0
+
+ATTITUDE  0.0   0.0  0.15
+AIRSPEED -0.32  0.03 0.15
+ALTITUDE  0.32  0.03 0.15
+THROTTLE  0.55  0.07 0.08
+
+
+HSI_____  0.0  -0.32 0.15
+FUEL____  0.48 -0.33 0.58 -0.03
+SPOILER_  0.60 -0.33 0.70 -0.03
+FLAP____  0.72 -0.33 0.82 -0.03
+VERTICAL  0.3  -0.28 0.08
+
+GLOADING -0.45  -0.2  -0.35  -0.42
+GEAR____ -0.60  -0.32 -0.48  -0.2
+BRAKE___ -0.60  -0.46 -0.48  -0.34
+
+REM ADF_____ 0.412275 -1.166802 0.123
+REM ILS_____ -0.394021 -0.846935 0.123
+REM VOR_____ -0.404647 -1.157608 0.123
+REM TRNCOORD -0.718701 -0.846935 0.123
+
+
+SPEEDVFE 0kt
+SPEEDVNO 600kt
+SPEEDVNE 600kt
+SPEEDRNG 600kt
+SPEEDMCH TRUE
+SPEEDARC 360deg

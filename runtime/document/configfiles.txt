@@ -1,0 +1,410 @@
+Linux version does not have a nice dialog box for changing configuration.  Please modify configuration files manually.  The configuration files are located under config directory.
+
+
+[flight.cfg]
+SMOKETYPE Type
+  Type can be one of NOODLE, TOWEL, CIRCLE, or SOLIDh
+SMOKETIME 30.000000
+  Time (in seconds) that a smoke trail remains visible.
+SMOKESTEP 4
+  Resolution of a smoke trail.  A smaller number gives a better
+  smoke trail, but takes longer time to draw.
+DRWSHADOW TRUE/FALSE
+  Specify if the program draws shadows.
+HRIZNGRAD TRUE/FALSE
+  Specify if the program draws gradation near horizon.
+  This setting is ignored DRAWFOG__ is TRUE.
+DRAWCLOUD TRUE/FALSE
+  Specify if the program draws clouds.
+GBLACKOUT TRUE/FALSE
+  Specify if the prgram darkens when high positive G is applied and
+  reddens when high negative G is applied.
+ACCURATET TRUE/FALSE
+  If it is FALSE, the program does a kind of corner-cutting to
+  reduce computational time for calculating airplane dynamics.
+AUTORUDDR TRUE/FALSE
+  Enables/disasbles automatic-rudder coordinator.
+MIDAIRCOL TRUE/FALSE
+  Enables/disables mid air collision (actually, not necessarily
+  in mid air though.)
+SHADWDEAD TRUE/FALSE
+  Specify if the program draws shadows of dead airplanes.
+  This setting is ignored if DRWSHADOW is FALSE.
+DRAWORDIN TRUE/FALSE
+  Specify if the program draws weapons loaded on
+  airplanes.
+COARSEWPN TRUE/FALSE
+  Specify if the program draws coarse weapons.
+DRAWFOG__ TRUE/FALSE
+  Specify if the program draws fog.  If this setting is TRUE,
+  HRIZNGRAD is ignored.
+VISIBILIT 20000.00m
+  Specify the visibility.  You need to have unit (m) at the
+  end without separating by a space or a tab.
+ZBUFFQUAL 0,1,2, or 3
+  Specify the quality of Z-Buffering.
+  0:lowest but fastest
+  3:highest but slowest.
+DEFAIRPLN "F-16C_FIGHTINGFALCON"
+  Specify the default player airplane.
+HUDALWAYS FALSE
+  Specify if the program draws the head up display.
+JSCALIBRA FALSE
+  Specify if the program re-calibrates joystick at the startup.
+  Apparently, my calibration routine is not very good, and
+  shouldn't set this setting TRUE  :-P
+AIRLVODTL 0,1,2, or 3
+  Specify the quality of airplane graphics.
+  0:Default (use a coarse model when an airplane is far from the viewpoint)
+  1:Always high quality
+  2:Always coarse
+  3:Paper airplane
+GNDLVODTL 0,1, or 2
+  Specify the quality of ground object graphics.
+  0:Default (use a coarse model when an airplane is far from the viewpoint)
+  1:Always high quality
+  2:Always coarse
+DRWPLRNAM TRUE/FALSE
+  If it is FALSE, player name is visible only when the head up display
+  is visible.
+DRWLITDAY TRUE/FALSE
+  If it is FALSE, runway lights and city lights are invisible when
+  the environment is day.
+TRANSPARE TRUE/FALSE
+  If it is TRUE, afterburners and cockpit windows (planned) become
+  semi-transparent.
+TRSPVAPOR TRUE/FALSE
+  If it is TRUE, vapor trails are drawn semi-transparent.
+TRSPSMOKE TRUE/FALSE
+  If it is TRUE, smoke trails are drawn semi-transparent.
+LANDANWHR TRUE/TRUE
+  If it is TRUE, airplanes can land anywhere.  However, if the
+  speed exceeds 15kt and lands out of runway, airplane vibrate
+  violently and may end up with crashing.
+ENVIRONME DAY/NIGHT
+  Specify environment.
+DEFFIELD_ "ATSUGI_AIRBASE"
+  Specify the default field.
+DEFSTPOS_ "RW01_01"
+  Specify the default start position.
+JSWARNING TRUE/FALSE
+  If TRUE, the program shows the warning message "Joystick is not
+  connected or not configured" when a joystick axis is assigned to a
+  control function and joystick is not detected.
+TRSPLATER TRUE/FALSE
+  If TRUE, transparent polygons are drawn after all non-transparent
+  polygons.  It reduces the peep hole effect caused by a transparent
+  polygon.
+CAMERADLY TRUE/FALSE
+  If TRUE, the external airplane camera, initially F8 key is assigned,
+  will chase the airplane with some delay.
+
+
+
+[network.cfg]
+USEMISSILE TRUE/FALSE
+  Specify whether the server allows air to air missiles.
+SERVERWAIT TRUE/FALSE
+  (Not used now)
+DEFAULTHST ""
+  Specify the default host name in the client mode.
+PORTNUMBER 7915
+  Specify the default port number.
+DEFAULTUSR "USERNAME"
+  Specify the default user name.  If you use "USERNAME", the program
+  automatically gives you "Nameless."
+RECORDCLNT TRUE/FALSE
+  Specify whether the program takes flight record in the client mode.
+RECORDSRVR TRUE/FALSE
+  Specify whether the program takes flight record in the server mode.
+DEFLTFIELD "NEWTA_AIRBASE"
+  Specify the default field name in the server mode.
+DFSTPOSSVR "NORTH10000_01"
+  Specify the default start position in the server mode.
+DEFIFFSRVR 0,1,2, or 3
+  Specify the default IFF (identify friend or foe) code in the server mode.
+DEFIFFCLNT 0,1,2, or 3
+  Specify the default IFF code in the client mode.
+DFSTPOSCLI "SOUTH10000_01"
+  Specify the default start position in the client mode.
+GROUNDFIRE TRUE/FALSE
+  Specify whether the server allows ground to air fire.
+FREECLIENT TRUE/FALSE
+  Specify whether the program frees memory when possible in the client mode.
+  Actually, there are many problem reports including the server crash
+  problem when this setting is TRUE.  The cause of the server crash
+  is still unknown and I could not re-produce the same problem in
+  my environment.  I only could make some defensive modifications,
+  so, you may want to turn this setting off if you experience problems
+  during playing over network.
+FREESERVER TRUE/FALSE
+  Specify whether the program frees memory when possible in the server mode.
+  Actually, there are many problem reports including the server crash
+  problem when this setting is TRUE.  The cause of the server crash
+  is still unknown and I could not re-produce the same problem in
+  my environment.  I only could make some defensive modifications,
+  so, you may want to turn this setting off if you experience problems
+  during playing over network.
+SENDBLKOUT TRUE/FALSE
+  If it is TRUE, the server sends the "GBLACKOUT" setting of flight.cfg to
+  clients.  Otherwise, clients uses their own "GBLACKOUT" setting.
+SENDLDAWHR TRUE/FALSE
+  If it is TRUE, the server sends the "LANDANWHR" setting of flight.cfg to
+  clients.  Otherwise, clients uses their own "LANDANWHR" setting.
+SENDMIDAIR TRUE/FALSE
+  If it is TRUE, the server sends the "MIDAIRCOL" setting of flight.cfg to
+  clients.  Otherwise, clients uses their own "MIDAIRCOL" setting.
+NOGUNSIGHT TRUE/FALSE
+  If it is TRUE, all the clients connected to the server do not show lead
+  gun sight regardless the local configuration.
+SAMEVERSIN TRUE/FALSE
+  If it is TRUE, the server only accepts connection from clients of the
+  same YSFLIGHT version.
+SVRRESETTM Nmin
+  If other than 0min is specified, the server resets itself once every N
+  minutes.  Warning messages are sent to the clients 30, 15, 10, 5, and 1
+  minutes before resetting.
+ENTSVRAFTR M
+  If non zero minutes is specified for SVRRESETTM, the server will terminate
+  automatically after resetting M times.  By using SVRRESETTM and ENTSVRAFTR
+  together, you can set up a server that runs specific duration of time.
+  For example, if you set as:
+
+    SVRRESETTM 360min 
+    ENTSVRAFTR 9
+
+  The server runs 360 minutes times 9 = 3240 minutes, which corresponds to
+  54 hours.  If you set up a task scheduler so that it starts a server at
+  6pm every Friday with the following command line:
+
+    ysflight -server AutoServer -autoexit
+
+  The server starts at 6pm on Friday, and terminates 0am on Monday.
+
+
+
+[option.cfg]
+SCREENMOD 0
+  Ignored in Linux version.
+SOUND TRUE
+  Ignored in Linux version.
+OPENDEMO TRUE/FALSE
+  If it is true, the program shows opening dogfight demonstration.
+
+
+
+
+
+[ctlassign.cfg]
+Joystick Axis Assignment
+  AXS joyId joyAxs AxisFunction
+      or
+  AXS joyId joyAxs AxisFunction REV
+
+  joyId='M' means mouse
+  joyId must be 0<=joyId<=3
+  joyAxs must be 0<=joyAxs<=5
+  joyId=3 also means mouse, but it may change in the future versions.
+  "REV" at the end of line means reverse.
+
+Joystick Trigger Assignment
+  TRG joyId joyTrg ButtonFunction
+
+  joyTrg must be 0<=joyTrg<=7
+
+Keyboard Assignment
+  KEY keyCode ButtonFunction
+
+List of AxisFunctions
+  NULL             NULL
+  AILERON          Aileron
+  ELEVATOR         Elevator
+  THROTTLE         Throttle
+  RUDDER           Rudder
+  FLAP             Flap
+  LANDINGGEAR      Landing Gear
+  TRIM             Elevator Trim
+  NOZZLE           VTOL Nozzle Up/Down (Nose for Concorde)
+  VGW              Variable Geometry Wing
+  SPOILERBRAKE     AirBrake + Brake
+  SPOILER          AirBrake
+  BRAKE            Brake
+  POVX             X Axis of Point of View
+  POVY             Y Axis of Point of View
+
+List of ButtonFunctions
+  NULL             NULL
+  ELEVATORUP       Elevator Up
+  ELEVATORNEUTRAL  Elevator Neutral
+  ELEVATORDOWN     Elevator Down
+  AILERONLEFT      Aileron Left
+  AILERONNEUTRAL   Aileron Neutral
+  AILERONRIGHT     Aileron Right
+  RUDDERLEFT       Rudder Left
+  RUDDERCENTER     Rudder Center
+  RUDDERRIGHT      Rudder Right
+  TRIMUP           Elevator Trim Up
+  TRIMDOWN         Elevator Trim Down
+  AUTOTRIM         Auto Trim
+  THROTTLEUP       Throttle Add Power
+  THROTTLEDOWN     Throttle Reduce Power
+  THROTTLEMAX      Throttle Max
+  THROTTLEIDLE     Throttle Min (Idle)
+  AFTERBURNER      Afterburner
+  NOZZLEUP         Nozzle Up (Nose Up for Concorde)
+  NOZZLEDOWN       Nozzle Down (Nose Down for Concorde)
+  VGWEXTEND        Extend Variable Geometry Wing
+  VGWRETRACT       Retract Variable Geometry Wing
+  LANDINGGEAR      Landing Gear Extend/Retract
+  FLAP             Flap Up/Down
+  FLAPUP           Flap Up
+  FLAPDOWN         Flap Down
+  FLAPFULLUP       Flap Full Up
+  FLAPFULLDOWN     Flap Full Down
+  SPOILERBRAKE     Spoiler and Brake On/Off
+  SPOILER          Spoiler Extend/Retract
+  SPOILEREXTEND    Spoiler Extend
+  SPOILERRETRACT   Spoiler Retract
+  SPOILERHOLD      Spoiler On When Pressed
+  BRAKEONOFF       Brake On/Off
+  BRAKEHOLD        Brake On When Pressed
+  FIREWEAPON       Fire Selected Weapon
+  FIREGUN          Fire Machine Gun
+  FIREAAM          Fire AAM
+  FIREAGM          Fire AGM
+  FIREROCKET       Fire Rocket
+  DROPBOMB         Drop Bomb
+  DISPENSEFLARE    Dispense Flare
+  SMOKE            Smoke
+  SELECTWEAPON     Select Weapon
+  RADAR            Radar
+  RADARRANGEUP     Radar Range Up
+  RADARRANGEDOWN   Radar Range Down
+  ILS              ILS On/Off
+  VELOCITYINDICATOR Velocity Indicator On/Off
+  OPENAUTOPILOTMENU Open Autopilot Menu
+  OPENRADIOCOMMMENU Open Radio Comm Menu
+  COCKPITVIEW      Cockpit View
+  OUTSIDEPLAYERVIEW Outside Player View
+  COMPUTERAIRPLANEVIEW Computer Airplane View
+  WEAPONVIEW       Weapon View
+  ILSVIEW          ILS View
+  OUTSIDEPLAYERVIEW2 Outside Player View 2
+  OUTSIDEPLAYERVIEW3 Outside Player View 3
+  CONTROLTOWERVIEW Control Tower View
+  CHANGEAIRPLANE   Change Airplane in Replay Record Mode
+  LOOKFORWARD      Look Forward
+  LOOKRIGHT        Look Right
+  LOOKLEFT         Look Left
+  LOOKBACK         Look Back
+  LOOKUP           Look Up
+  LOOKDOWN         Look Down
+  REVERSETHRUST    Reverse Thrust
+  OPENSUBWINDOWMENU Open Sub-Window Menu
+  CHANGEHUDCOLOR   Change HUD Color
+  PAUSESIMULATION  Pause Simulation
+  GHOSTVIEW        Ghost View
+  OPENVORMENU      Select VOR
+  ROTATEVORLEFT    Rotate VOR to the Left
+  ROTATEVORRIGHT   Rotate VOR to the Right
+  BOMBBAYDOOR      Open/Close Bomb Bay Door
+  INFLIGHTCFG      In-Flight Config Change
+
+
+List of KeyCodes
+  SPACE            Space
+  0                0
+  1                1
+  2                2
+  3                3
+  4                4
+  5                5
+  6                6
+  7                7
+  8                8
+  9                9
+  A                A
+  B                B
+  C                C
+  D                D
+  E                E
+  F                F
+  G                G
+  H                H
+  I                I
+  J                J
+  K                K
+  L                L
+  M                M
+  N                N
+  O                O
+  P                P
+  Q                Q
+  R                R
+  S                S
+  T                T
+  U                U
+  V                V
+  W                W
+  X                X
+  Y                Y
+  Z                Z
+  ESC              Esc
+  F1               F1
+  F2               F2
+  F3               F3
+  F4               F4
+  F5               F5
+  F6               F6
+  F7               F7
+  F8               F8
+  F9               F9
+  F11              F11
+  F12              F12
+  CAPSLOCK         Caps Lock
+  SCROLLLOCK       Scroll Lock
+  PAUSEBREAK       Pause
+  BS               Backspace
+  TAB              Tab
+  ENTER            Enter
+  SHIFT            Shift
+  CTRL             Ctrl
+  INS              Insert
+  DEL              Delete
+  HOME             Home
+  END              End
+  PAGEUP           Page Up
+  PAGEDOWN         Page Down
+  UP               Up Arrow
+  DOWN             Down Arrow
+  LEFT             Left Arrow
+  RIGHT            Right Arrow
+  NUMLOCK          Num Lock
+  TILDA            ~
+  MINUS            -
+  PLUS             +
+  LBRACKET         [
+  RBRACKET         ]
+  BACKSLASH        \
+  SEMICOLON        ;
+  SINGLEQUOTE      '
+  COMMA            ,
+  DOT              .
+  SLASH            /
+  TEN0             0 (NUMPAD)
+  TEN1             1 (NUMPAD)
+  TEN2             2 (NUMPAD)
+  TEN3             3 (NUMPAD)
+  TEN4             4 (NUMPAD)
+  TEN5             5 (NUMPAD)
+  TEN6             6 (NUMPAD)
+  TEN7             7 (NUMPAD)
+  TEN8             8 (NUMPAD)
+  TEN9             9 (NUMPAD)
+  TENDOT           . (NUMPAD)
+  TENSLASH         / (NUMPAD)
+  TENSTAR          * (NUMPAD)
+  TENMINUS         - (NUMPAD)
+  TENPLUS          + (NUMPAD)
+
+

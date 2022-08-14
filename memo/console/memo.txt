@@ -1,0 +1,32 @@
+#include <signal.h>
+#include <stdio.h>
+#include <time.h>
+
+void CtrlCHandler(int);
+
+int main(void)
+{
+	time_t t0,tx;
+
+	signal(SIGINT,CtrlCHandler);
+
+	t0=time(NULL);
+	tx=t0;
+	while(time(NULL)-t0<10)
+	{
+		if(time(NULL)!=tx)
+		{
+			printf("%d\n",tx);
+			tx=time(NULL);
+		}
+	}
+
+	return 0;
+}
+
+void CtrlCHandler(int x)
+{
+	printf("!\n");
+	signal(SIGINT,CtrlCHandler);
+}
+

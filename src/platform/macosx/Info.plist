@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>YS-FLIGHT-SIMULATOR</string>
+	<key>CFBundleExecutable</key>
+	<string>ysflight</string>
+	<key>CFBundleIconFile</key>
+	<string>APPL.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.YSFLIGHT.YsFlightSimulator</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>20090611</string>
+	<key>CFBundleName</key>
+	<string>YS-FLIGHT-SIMULATOR</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>YSFS</string>
+	<key>CFBundleVersion</key>
+	<string>20090611</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>

@@ -1,0 +1,735 @@
+REM Check Simulation Menu items won't crash.
+REM Coverage:
+REM   RACING_VALLEY
+REM   RACING_DESERT
+REM   ATSUGI_AIRBASE
+REM   CRESCENT_ISLAND
+REM   HAWAII
+REM   ISLAND_GOURD
+REM   NAHA_AIRPORT
+REM   NEWTA_AIRPORT
+REM   PACIFIC_ATOLL
+REM   TOHOKU
+REM   AOMORI
+REM   NORTH_KYUSYU
+REM   AIRSTRIKE_CHALLENGE
+REM   HEATHROW
+REM   SLAPSTICK
+REM   OCEAN
+
+
+
+
+
+REM No space between GUI and : and following command.
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+
+
+REM Get out of demo mode.
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Simulation -> Create Flight
+GUI:CLICK $mainMenu sim/create
+WAITFOR:MODAL
+GUI:CLICK $activeModalDialog ok
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList RACING_VALLEY
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList RACING_DESERT
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList ATSUGI_AIRBASE
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList CRESCENT_ISLAND
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList HAWAII
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList ISLAND_GOURD
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList NAHA_AIRPORT
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList NEWTA_AIRBASE
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList PACIFIC_ATOLL
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList TOHOKU
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList AOMORI
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList NORTH_KYUSYU
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList AIRSTRIKE_CHALLENGE
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList HEATHROW
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList SLAPSTICK
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList SLAPSTICK
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+
+GUI:SELECT $activeModalDialog fieldList OCEAN
+
+GUI:CLICK $activeModalDialog playerStpList
+GUI:TYPE N
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM File -> Exit
+
+GUI:CLICK $mainMenu file/exit
+
+WAITFOR:MODAL
+REM Delete current flight?
+GUI:CLICK $activeModalDialog ok
+REM Really exit?
+GUI:CLICK $activeModalDialog ok

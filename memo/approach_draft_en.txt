@@ -1,0 +1,114 @@
+# Instrument Approach
+
+
+The fun of flying an airplane is of course flying freely like a bird, watching scenery 
+that you can never see from the ground.  In addition to that, landings are also a fun 
+thing to do.  I never get boredf of landing practice in Cessna 172.
+
+In addition to that, instrument approaches is also a huge fun.  In a bad weather, flying 
+an airplane according to the guidance from air traffic controllers may sound totally 
+opposite from flying freely like a bird over a magnificent view.  But, it's fun!  Really. 
+When you make a beautiful ILS approach, the satisfaction you get is something you can 
+never experience anywhere else.
+
+So, I wanted to add that aspect of fun in YSFLIGHT, and added a virtual air traffic controller
+sinde Spring 2012 version.  Although the implementation is primitive, the air traffic 
+controller will guide you through the bad weather to your destination.
+
+In the rest of the document, I assume you are able to fly in a bad weather.  You are 
+supposed to be able to maintain your heading, altitude, and air speed.  I may eventually 
+write how you can practice what's called attitude instrument flying, but you can also 
+find a lot of literature on the Internet.  Maybe you want to search for "attitude instrument
+flying".
+
+Also, I assume the default key binding.  If you customized the binding, please interpret 
+accordingly.
+
+Now, let's take off Misawa air base and shoot an ILS approach to Hachinohe air base!
+
+
+
+
+
+# Setting up the simulation
+Let's start YSFLIGHT and create a new flight.  Follow the instructions below.
+(1) Select [Simulation]->[Create New Flight] menu.
+(2) In [General] tab, select [AOMORI], and in [Starting Position] select [MISAWA_RW10].
+(3) You can pick whatever airplane you are comfortable with.  But, jet fighters may be
+    too fast for you until you are used to IFR flying.  Maybe a trainer airplane or a
+    propeller airplane is easier.  How about [T-4_BLUE_IMPULSE] or [HAWK_REDARROWS]?
+    These are nice trainers.
+(4) In [Environment] tab, create a bad weather.  Select 1 mile visibility, and turn on
+    the check box beside the cloud layer ceiling 800ft, 300ft thick.
+(5) Click on [Fly Now!] button.
+
+
+
+
+
+#Let's fly!
+
+In IFR flying, you are supposed to fly ahead of the airplane, means that you need to 
+configure radio frequencies, navigation equipments, etc., adequately before you need 
+to do.  So, let's set up ILS 07 approach in NAV 1.  Follow the instruction below.
+
+(1) Press L key to open NAV 1 sub menu.
+(2) Select ILS [07-HACHINOHE]
+
+Then, request approach to the air traffic controller.  In the real-world flying, you 
+need to file an IFR flight plan, getting a clearance frou clearance delivery or ground 
+controller, then get taxi clearance ...., but YSFLIGHT's air traffic control system is 
+not that sophisticated yet.  (Well, in the real world, you never start from the end 
+of the runway.)  Follow the instruction below.
+
+(1) Press Entery key to Radio-Communication menu.
+(2) Select [Air Traffic Controller]
+(3) Select [Request Approach]
+(4) Select [ILS 07-HACHINOHE]
+
+Then, you will see an instruction from the ATC.
+
+"Runway Heading, Climb maintain 1500, Cleared for Take Off."
+
+So, you are cleared for take off!  After take off, keep the same heading, and go up to
+1500ft.  At 800ft, you will go into the cloud.  And, when you reach 1500ft, you will get
+a new instruction like:
+
+"Turn right heading 195, Climb maintain 2000."
+
+Then turn right to heading 195, and you need to climb up to 2000ft.  In IFR condition,
+basically you may want to keep bank angle no greater than 20 degree.  In a real airplane,
+you are supposed to look at the turn coordinator and make a standard-rate turn (360 degrees 
+in 2 minutes), but in YSFLIGHT, some airplanes are not equipped with the turn coordinator.
+So, let's keep it a 20 degree bank turn.
+
+Eventually, you will see:
+
+"Reduce speed XXXkt"
+
+Then, deccelerate to the given speed and maintain it.  When you think you messed up,
+you can request to the ATC "Request New Vector" by pressing Enter key and select it 
+from the sub-menu.
+
+If you are able to follow the instruction well, you will hear:
+
+"Turn left (right) heading XXX, maintain YYYY, Intercept Localizer"
+"Cleared for ILS-07 HACHINOHE"
+
+Now, you are cleared for ILS approach.  Some moment after turning to the given heading,
+you will see the localizer needle (vertical needle) moving toward the center.  As soon 
+as you see the needle moving, start turn to the runway heading.  In this case, heading 
+070 because you are shooting an approach to runway 07.  At this time, reduce speed to 
+the final-approach speed, lower landing gear, lower flaps as needed.
+
+In the real-world flying, the ATC will tell you to contact tower around this time, but 
+again, YSFLIGHT's air-traffic controlling system is not that sophisticated yet.  From 
+this point, you are on your own.  Follow the ILS, and bring your airplane down to the
+runway in one piece.
+
+But, if you really messed up, you can "Declare Missed Approach" to the ATC by pressing 
+Enter key and select it from the sub-menu.  If you do so, the ATC will give you new 
+vector and guide you through the approach again.
+
+Good luck!
+

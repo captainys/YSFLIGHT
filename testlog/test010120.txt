@@ -1,0 +1,79 @@
+Test List
+
+Do this list with Joystick only
+             with Joystick + Throttle + Rudder
+             without Joystick and Throttle
+
+OGL DIB
+( ) ( ) Rebuild
+( ) ( ) Set Config to the default?
+( ) ( ) Deleted unnecessary batch files and fserr.txt?
+( ) ( ) Deleted unnecessary executable?  YFSUTIL.EXE and YFSUTILO.EXE?
+(X) (X) Choose mouse as throttle and see what happens.
+(X) (X) Take Off
+(X) (X) Fly Maneuvers
+(X) (X) Save flight record of Dogfight and make sure it can load and play
+(X) ( ) Save flight record of Ground attack and make sure it can load and play
+(X) ( ) Save flight record of Takeoff/Landing and make sure it can load and play
+(X) ( ) Save flight record of Carrier TO/LDG and make sure it can load and play
+( ) ( ) Save flight record of Network play and make sure it can load and play
+(X) ( ) Stall
+(X) (X) Fly Below Bridges
+(X) (X) Landing
+(X) ( ) Ground Attack
+(X) ( ) Air to Air Combat
+(X) ( ) Carrier Take Off
+(x) ( ) Drop off from the carrier flight deck
+(X) ( ) Carrier Landing
+( ) ( ) Carrier Touch & Go (Land without brake)
+(X) ( ) Carrier Touch & Go (Miss the wires)
+(X) ( ) Crash into the carrier fuselage
+( ) (X) Crash into the carrier bridge from the air
+( ) (X) Crash into the carrier bridge from the flight deck
+( ) (X) Try all different fields
+(X) ( ) Play dogfight, Replay simulation through the game, Make sure kill credit doesn't change
+( ) (X) Can Mig-23 takeoff?
+( ) (X) Can Mig-21 takeoff?
+( ) (X) Can B747 takeorr?
+( ) (X) Can B777 takeorr?
+( ) (X) Can Concorde takeorr?
+( ) ( ) Turn on sound
+( ) ( ) Score Consistency
+(X) (X) On the ground, quit before stopping. Result must show just "Landed".
+(X) ( ) Create Flight Record by the old version, make sure they play with no problem in the new version.
+(?) ( ) Land out of runway -> Must considered as "Out of runway"
+(?) ( ) Land at the bad attitude -> Must considered as "Crash"
+(?) ( ) Land at too high pitch -> Must considered as "Tail Strike"
+(X) (X) Network Play : play server, shot down and attack objects in the client
+(X) (X) Network Play : play client, shot down and attack objects in the server
+( ) ( ) Network Option USEMISSILE
+( ) ( ) Network Option DEFAULTHST
+( ) ( ) Network Option DEFAULTUSR
+( ) ( ) Network Option RECORDCLNT
+( ) ( ) Network Option RECORDSRVR
+( ) ( ) Network Option DEFLTFIELD
+( ) ( ) Network Option DFAIRPLANE
+( ) ( ) Network Option DFSTPOSSVR
+( ) ( ) Network Option DFSTPOSCLI
+( ) ( ) Network Option DEFIFFSRVR
+( ) ( ) Network Option DEFIFFCLNT
+(X) (X) Network Play : Use 2 clients, 1 of them log on 1 minute after another.  See everything works fine.
+(X) (X) Removed all test keys?
+(X) (X) Fly formation flights Blue Angels
+(X) ( ) Fly formation flights T-4 Blue Impulse
+(X) ( ) Fly formation flights T-2 Blue Impulse
+(X) (X) Fly formation flights Thunderbirds
+(X) (X) Virus Scan
+(X) (X) BS Key autopilot
+(X)     Fullscreen button, Minimize button
+( ) ( )
+
+(Unreproducable?)
+返信ありがとうございます。
+原因わかりました。
+
+ＮｅｗＦｌｉｇｈｔを選ぶ。　地上戦でやられる。　MenuでChooseAirPlaneで機種を選ぶ。
+Flyを選ぶ。前のミッションのリプレイ？がやられる。　　ゲーム終わる。
+という事でした。
+
+

@@ -1,0 +1,138 @@
+IDENTIFY "YS-11"
+CATEGORY NORMAL
+AFTBURNR FALSE                #HAVE AFTERBURNER?
+PROPELLR 6120HP               #PROPELLER ENGINE
+PROPVMIN 180kt
+
+
+NREALPRP 2                            # Number of (realistic) propeller engines
+REALPROP 0 NBLADE         4           # 1 argument.  Number of blades.
+REALPROP 0 AREAPERBLADE   0.640m^2    # 1 argument.  Blade area.  About 1.5m length times 0.2m width, roughly.
+REALPROP 0 CL 0deg 0.2 15deg 1.2      # 4 argument.  cl1 AOA1 cl2 AOA2   (Approximated by a linear function)
+REALPROP 0 CD -5deg 0.006 20deg 0.4   # 4 argument.  minCd AOAminCd cd1 AOA1 (Approximated by a quadratic function)
+REALPROP 0 PITCHCHGRATE  90deg        # 1 argument.  Maximum angular velocity that the blade can change pitch.  (per sec)
+REALPROP 0 MINPITCH        9deg       # 1 argument.  Minimum propeller pitch.
+REALPROP 0 MAXPITCH       60deg       # 1 argument.  Maximum propeller pitch.
+REALPROP 0 KGOVERNER      0.05        # 1 argument.  Governer const.  Defines the reaction speed of the propeller governer.
+REALPROP 0 GRAVITYCENTER  1.25m       # 1 argument.  Distance from the rotation axis  roughly 0.25m(spinner)+0.75m(prop)
+REALPROP 0 LIFTCENTER     1.25m      # 1 argument.  Distance from the rotation axis
+REALPROP 0 WEIGHTPERBLADE 30kg        # 1 argument.  The weight of one blade.  Probably something like this.
+REALPROP 0 CLOCKWISE      0           # 1 argument.  This engine rotates clockwise. Argument is the zero-based blade index.
+REALPROP 0 MAXPOWER       3060HP      # 1 argument.  Maximum horse power or J/s
+REALPROP 0 IDLEPOWER      30HP        # 1 argument.  Idling horse power or J/s
+REALPROP 0 RPMCTLRANGE    1000 3200   # 1 argument.  Range of RPM for prop-lever position.
+REALPROP 0 SNDRPMRANGE    700  2800
+
+REALPROP 1 NBLADE         4           # 1 argument.  Number of blades.
+REALPROP 1 AREAPERBLADE   0.790m^2    # 1 argument.  Blade area.  About 1.5m length times 0.2m width, roughly.
+REALPROP 1 CL 0deg 0.2 15deg 1.2      # 4 argument.  cl1 AOA1 cl2 AOA2   (Approximated by a linear function)
+REALPROP 1 CD -5deg 0.006 20deg 0.4   # 4 argument.  minCd AOAminCd cd1 AOA1 (Approximated by a quadratic function)
+REALPROP 1 PITCHCHGRATE  90deg        # 1 argument.  Maximum angular velocity that the blade can change pitch.  (per sec)
+REALPROP 1 MINPITCH        9deg       # 1 argument.  Minimum propeller pitch.
+REALPROP 1 MAXPITCH       60deg       # 1 argument.  Maximum propeller pitch.
+REALPROP 1 KGOVERNER      0.05        # 1 argument.  Governer const.  Defines the reaction speed of the propeller governer.
+REALPROP 1 GRAVITYCENTER  1.25m       # 1 argument.  Distance from the rotation axis  roughly 0.25m(spinner)+0.75m(prop)
+REALPROP 1 LIFTCENTER     1.25m      # 1 argument.  Distance from the rotation axis
+REALPROP 1 WEIGHTPERBLADE 30kg        # 1 argument.  The weight of one blade.  Probably something like this.
+REALPROP 1 CLOCKWISE      0           # 1 argument.  This engine rotates clockwise. Argument is the zero-based blade index.
+REALPROP 1 MAXPOWER       3060HP      # 1 argument.  Maximum horse power or J/s
+REALPROP 1 IDLEPOWER      30HP        # 1 argument.  Idling horse power or J/s
+REALPROP 1 RPMCTLRANGE    1000 3200   # 1 argument.  Range of RPM for prop-lever position.
+
+
+THRSTREV 0.2                 #EFFICIENCY OF THRUST REVERSER
+WEIGHCLN 15.0t                #WEIGHT CLEAN
+WEIGFUEL  5.0t                #WEIGHT OF FUEL
+WEIGLOAD  4.5t                #WEIGHT OF PAYLOAD
+FUELABRN 0.0kg                #FUEL CONSUMPTION WHEN USING AFTERBURNER
+FUELMILI 0.80kg               #FUEL CONSUMPTION AT MILITARY POWER
+
+COCKPITP -0.4m  1.22m  9.00m  #COCKPIT POSITION
+EXCAMERA "CO-PILOT" 0.4m  1.22m  9.00m 0deg 0deg 0deg INSIDE
+EXCAMERA "VTAIL" 0m 6.3m -11.3m 0deg 0deg 0deg OUTSIDE
+LEFTGEAR -4.5m -1.90m -0.82m  #LEFT LANDING GEAR POSITION
+RIGHGEAR  4.5m -1.90m -0.82m  #RIGHT LANDING GEAR POSITION
+WHELGEAR  0.0m -1.87m  8.67m  #WHEEL POSITION
+ARRESTER  0.0m -1.93m -10.74m
+MACHNGUN  0.0m  0.00m  0.00m  #MACHINE GUN POSITION
+SMOKEGEN -0.0m  1.41m -14.63m  #SMOKE GENERATOR POSITION
+VAPORPO0 15.9m  0.43m -1.72m  #VAPOR POSITION (Wings Swept Back or no-VGW)
+VAPORPO1 15.9m  0.43m -1.72m  #VAPOR POSITION (Wings Swept Back or no-VGW)
+HTRADIUS 16.0m                #OUTSIDE SPHERE RADIUS
+
+INSTPANL aircraft/ys11.ist
+ISPNLPOS -0.4m 1.22m 9.3m
+ISPNLSCL 0.34
+SCRNCNTR 0.0 0.16
+
+STRENGTH 5
+
+CRITAOAP  20deg               #CRITICAL AOA POSITIVE
+CRITAOAM -15deg               #CRITICAL AOA NEGATIVE
+
+CRITSPED 400km/h              #CRITICAL SPEED
+MAXSPEED 480km/h              #MAXIMUM SPEED
+
+HASSPOIL FALSE                #HAS SPOILER?
+RETRGEAR TRUE                 #HAS RETRACTABLE LANDING GEAR?
+VARGEOMW FALSE                #HAS VARIABLE GEOMETRY WING?
+
+CLVARGEO 0.0                  #EFFECT OF VARIABLE GEOMETRY WING FOR Cl
+CDVARGEO 0.0                  #EFFECT OF VARIABLE GEOMETRY WING FOR Cd
+CLBYFLAP 0.2                  #EFFECT OF FLAP FOR Cl
+CDBYFLAP 0.8                  #EFFECT OF FLAP FOR Cd
+CDBYGEAR 0.4                  #EFFECT OF GEAR FOR Cd
+CDSPOILR 0.0                  #EFFECT OF SPOILER FOR Cd
+
+WINGAREA 91m^2                #WING AREA
+
+MXIPTAOA 20.0deg              #MAX INPUT AOA
+MXIPTSSA 5.0deg               #MAX INPUT SSA
+MXIPTROL 60.0deg              #MAX INPUT ROLL
+
+REM CPITMANE corresponds to Spring Constant K
+REM CPITSTAB corresponds to Damper Constant B
+REM To be critically damped, B=2*sqrt(K)
+REM 2% Settling Time=??
+
+MANESPD1 60kt                 #MINIMUM MANEUVABLE SPEED
+MANESPD2 70kt                 #FULLY MANEUVABLE SPEED
+CPITMANE 4.0                  #PITCH MANEUVERBILITY CONSTANT
+CPITSTAB 12.0                  #PITCH STABILITY CONSTANT
+CYAWMANE 5.0                  #YAW MANEUVABILITY CONSTANT
+CYAWSTAB 3.0                  #YAW STABILITY CONSTANT
+CROLLMAN 1.5                  #ROLL MANEUVABILITY CONSTANT
+
+CTLLDGEA TRUE                 #CONTROL LANDINGGEAR
+CTLBRAKE FALSE                #CONTROL BRAKE
+CTLSPOIL 0.0                  #CONTROL SPOILER
+CTLABRNR FALSE                #CONTROL AFTERBURNER
+CTLTHROT 0.0                  #CONTROL THRUST
+CTLIFLAP 0.0                  #CONTROL FLAP
+CTLINVGW 0.0                  #CONTROL VARIABLE GEOMETRY WING
+CTLATVGW FALSE                #CONTROL AUTO VARIABLE GEOMETRY WING
+
+POSITION 0m 3ft 0m            #POSITION
+ATTITUDE 45deg 0deg 0deg      #ATTITUDE
+INITFUEL 75%                  #INITIAL FUEL
+INITLOAD 0.0t                 #INITIAL PAYLOAD
+INITSPED 0.0MACH              #INITIAL SPEED
+
+REM Slots must come before Inits.
+
+INITIGUN 0                    #INITIAL GUN
+INITIAAM 0                    #INITIAL AAM
+INITIAGM 0                    #INITIAL AGM
+
+REM ClZero,CdZero is fixed by Cruising condition
+REFVCRUS 470km/h              #CRUISING SPEED
+REFACRUS 18000ft              #CRUISING ALTITUDE
+REFTCRUS 0.85                 #CRUISING THROTTLE SETTING
+
+REM ClSlope,CdConst is fixed by Landing condition
+REFVLAND 100kt                 #LANDING SPEED
+REFAOALD 5deg                 #LANDING AOA
+REFLNRWY 1500m                #RUNWAY REQUIRED TO STOP
+REFTHRLD 0.8                  #LANDING THROTTLE SETTING
+
+AUTOCALC

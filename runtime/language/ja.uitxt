@@ -1,0 +1,585 @@
+YSFLIGHT_LOCALIZATION_INFO_FILE
+
+*Needs to be encoded in UTF-8
+
+$LABEL "Japanese"
+$FGCOL 255
+$BGCOL 0
+
+
+
++airdlg/smoke/samecolor                            #すべてのスモークを同じ色にする
++assigndlg/setdefaultgamepad                       #ゲームパッドを使う
++assigndlg/setdefaultkeyassign                     #マウスとジョイスティックの割り当てをそのままで、キーボードだけデフォルトにする
++cfgdlg/ifvisibilityislessthan                     #視程が
++cfgdlg/thismiles                                  #マイル以下の時
++common/mission                                    #---ミッション---
++common/wingman                                    #僚機
++dlg/autopilot/circle                              #現在地点上空で旋回待機
++dlg/autopilot/disengage                           #自動操縦解除
++dlg/autopilot/fly_hdgbug                          #ヘディング・バグに向かって飛行
++dlg/autopilot/landing                             #着陸
++dlg/autopilot/straight_level                      #水平直線飛行
++dlg/autopilot/takeoff                             #離陸
++dlg/radiocomm/formation/dontcall                  #やっぱり指示を出さない
++dlg/radiocomm/formation/spread                    #散開
++dlg/radiocomm/formation/tighten                   #密集
++dlg/radiocomm/fueltruck/call                            #補給を要請
++dlg/radiocomm/fueltruck/dismiss                         #所定位置に戻す
++dlg/radiocomm/fueltruck/title                           #補給車に指示
++dlg/radiocomm/wingman_command/attack_ground       #地上目標を攻撃せよ
++dlg/radiocomm/wingman_command/break_and_attack    #敵機を攻撃せよ
++dlg/radiocomm/wingman_command/cover_me            #援護求む
++dlg/radiocomm/wingman_command/dontsend            #(やっぱり無線交信しない)
++dlg/radiocomm/wingman_command/form_on_my_wing     #編隊を組め
++dlg/radiocomm/wingman_command/hold                #現在位置上空で旋回待機せよ
++dlg/radiocomm/wingman_command/land_refuel_takeoff #着陸・補給後再度出撃せよ
++dlg/radiocomm/wingman_command/rtb                 #基地に帰還せよ
++dlg/radiocomm/wingman_command/title               #僚機への指示
++dlg/radiocomm/target/all_in_formation              #編隊中の全機
++dlg/radiocomm/target/allwingman                    #全ての僚機
++dlg/radiocomm/target/atc                           #管制官
++dlg/radiocomm/target/dontcall                      #やっぱり無線交信しない
++dlg/radiocomm/target/fueltruck                     #補給車
++dlg/radiocomm/target/gunner                        #砲手
++gamemsg/esctwice                                  #ESCを2回押すと終了します。
++gamemsg/esconce                                   #ESCをもう一度押すと終了します。
+
++errmsg/createflt                                  #まず、フライトを作成するか、読み込んでください。
++errmsg/nofltrecord                                #飛行記録がありません。
++errmsg/noprevflt                                  #直前のフライトが存在しないか、データが壊れています。
++errmsg/landingpracticenotavailable                #このマップでは着陸訓練モードは使用できません。
+
++common/ok                                         #確定
++common/cancel                                     #取り消し
++common/close                                      #閉じる
++common/delete                                     #削除
++common/field                                      #フィールド
++common/startpos                                   #開始位置
++common/setdefault                                 #デフォルトに戻す
++common/english                                    #English(英語)
++common/autolanguage                               #Language Auto Select(言語自動選択)
++common/general                                    #一般
++common/yes                                        #Yes
++common/no                                         #No
++common/error                                      #エラー!
+
++aboutdlg/title                                    #YS FLIGHT SIMULATORについて
++aboutdlg/version                                  #バージョン
+
++menu/autodemo_acro_star_of_david                  #Star of David
++menu/file/recent                                  #最近使ったファイル
++menu/learning                                     #機械学習
++menu/learning/close                               #学習データ破棄
++menu/learning/open                                #学習データ読み込み
++menu/learning/save                                #学習データ保存
++menu/learning/trainAutoPilot                      #自動操縦トレーニングデータ作成
+
+
++menu/sim/racingmode                               #Air Racing Mode
++misc/testver                                      #このプログラムはYSFLIGHT未テストバグだし用バージョンです。\n「未テスト」というだけに、正式版で実施するリリース前テスト\nを実施していません。ですので、多分たくさんバグが入っている\nと思います。安定したバージョンを使いたい方は、正式版をダウ\nンロードしてください。また、このバージョンを使用して、何か\n気づいた点などありましたら、作者(PEB01130@nifty.com)まで\nお知らせください。なるべく返事を書くようにしていますが、忙\nしくなってくると、メールの返事が2ヶ月以上遅れたりそのまま\n忘れてしまったりします。そうなったらごめんなさい(^_^;)
+
++misc/firststartrecordfailure                      #初回機動の記録に失敗しました。システム管理者の人に一度\n機動してもらうか、インストールしたディレクトリへの書き\n込み権限を追加してもらってください。
+
++misc/initialized                                  #設定を初期化しました。
++misc/voteysflight                                 #The final-round voting of the Vector-Award competition is open through\nMarch 15.  It is a popularity voting that decides the most popular\nsoftware among all software programs hosted by Vector.\n\nVector is a Japanese company, and there is unfortunately no English \nversion of the voting page.  But, if you can read Japanese, please click\non the following link and vote for YSFLIGHT.  Thank you!\n
+
++airdlg/aircrafttab                                #航空機
++airdlg/loadingtab                                 #搭載
++airdlg/categorytab                                #カテゴリー
++airdlg/aircraft                                   #航空機選択
++airdlg/aamshort                                   #短射程空対空ミサイル
++airdlg/aaamshort                                  #高機動短射程空対空ミサイル
++airdlg/aammid                                     #中射程空対空ミサイル
++airdlg/agm                                        #空対地ミサイル
++airdlg/bomb500                                    #500ポンド爆弾
++airdlg/bomb250                                    #250ポンド爆弾
++airdlg/bomb500hd                                  #500ポンド高抵抗爆弾
++airdlg/rocket                                     #ロケット弾
++airdlg/flarepod                                   #チャフ・フレアポッド
++airdlg/fueltank                                   #外部燃料タンク
++airdlg/fuel                                       #燃料(%)
++airdlg/smoke                                      #スモーク
++airdlg/smokecol                                   #スモークの色
++airdlg/search                                     #検索
++airdlg/normal                                     #ノーマル
++airdlg/utility                                    #汎用
++airdlg/aerobatic                                  #アクロバット
++airdlg/fighter                                    #戦闘機
++airdlg/attacker                                   #攻撃機
++airdlg/trainer                                    #練習機
++airdlg/bomber                                     #爆撃機
++airdlg/ww2fighter                                 #第2次大戦戦闘機
++airdlg/ww2attacker                                #第2次大戦攻撃機
++airdlg/ww2bomber                                  #第2次大戦爆撃機
++airdlg/ww2divebomber                              #第2次大戦急降下爆撃機
+
++aircombatdlg/noplayerplane                        #使用する航空機を選択してください。
+
++newfltdlg/createnewflight                         #=== フライトの新規作成 ===
++newfltdlg/selectair                               #航空機選択
++newfltdlg/changewingman1                          #僚機1変更
++newfltdlg/changewingman2                          #僚機2変更
++newfltdlg/changewingman3                          #僚機3変更
++newfltdlg/changewingman4                          #僚機4変更
++newfltdlg/changewingman5                          #僚機5変更
++newfltdlg/changewingman6                          #Change Wingman 6
++newfltdlg/changewingman7                          #Change Wingman 7
++newfltdlg/changewingman8                          #Change Wingman 8
++newfltdlg/changewingman9                          #Change Wingman 9
++newfltdlg/environment                             #環境
++newfltdlg/specifyenvironment                      #環境を指定する
++newfltdlg/day                                     #日中
++newfltdlg/night                                   #夜間
++newfltdlg/weather                                 #天候
++newfltdlg/winddir                                 #風向
++newfltdlg/windspd                                 #風速(ノット)
++newfltdlg/visibility                              #視程(マイル)
++newfltdlg/overcast                                #雲のレイア
++newfltdlg/overcastfloor                           #雲底
++newfltdlg/overcastthickness                       #厚さ
++newfltdlg/formation                               #編隊
++newfltdlg/flynow                                  #今すぐ飛行開始
++newfltdlg/wingman                                 #僚機
++newfltdlg/nousablegndobj                          #このフィールドには使用可能な地上物が設定されていません。
++newfltdlg/addcomair                               #コンピュータ機を飛行させる
+
++newfltdlg/allowstealth                            #ステルス機
++newfltdlg/allowbomb                               #爆弾
++newfltdlg/allowagm                                #空対地ミサイル
++newfltdlg/allowheavybomber                        #重爆撃機
++newfltdlg/maxnumattacker                          #最大敵機数
++newfltdlg/jet                                     #ジェット機
++newfltdlg/ww2                                     #第二次大戦機
+
++resultdlg/missiongoal                             #作戦成否
++resultdlg/success                                 #** 作戦任務完了! **
++resultdlg/failure                                 #作戦失敗
++resultdlg/failure/kia                             #失敗理由: 作戦中に死亡
++resultdlg/failure/earlytermination                #失敗理由: 作戦終了前に中止
++resultdlg/failure/misseddestination               #失敗理由: 目的地到達に失敗
++resultdlg/failure/groundloss                      #失敗理由: 車両/施設の被害 (生存数=%d, 必要生存数=%d)
++resultdlg/failure/failedtoprotect                 #失敗理由: 護衛に失敗 %s
++resultdlg/failure/airstrike                       #失敗理由: 地上目標撃破数不足 (撃破数=%d, 必要数=%d)
++resultdlg/failure/failedtodestroy                 #失敗理由: 地上目標撃破失敗 %s
++resultdlg/failure/failedtokill                    #失敗理由: 撃墜に失敗 %s
++resultdlg/failure/failedtokillall                 #失敗理由: 全航空目標の破壊に失敗
++resultdlg/failure/failedtoescort                  #失敗理由: 護衛対象機 %s が目的地に未到着
+
++resultdlg/success/arriveddestination              #成功理由: 目的地に到達
++resultdlg/success/protected                       #成功理由: %s の護衛に成功
++resultdlg/success/groundsurvive                   #成功理由: 車両/施設 %d 個生存
++resultdlg/success/airstrike                       #成功理由: 地上目標撃破数 %d
++resultdlg/success/destroyed                       #成功理由: 地上目標 %s を撃破
++resultdlg/success/killed                          #成功理由: %s を撃墜
++resultdlg/success/killedall                       #成功理由: 全航空目標の撃墜に成功
++resultdlg/success/escorted                        #成功理由: 護衛対象機 %s が目的地に到着
+
++resultdlg/summary                                 #結果
++resultdlg/usedaircraft                            #使用航空機: %s
++resultdlg/finalstate                              #最終状態: %s
++resultdlg/facilities                              #車両/施設
++resultdlg/alivedead                               #生存:%d  破壊:%d
++resultdlg/airtoairscore                           #空対空スコア: %d
++resultdlg/airtoairpenalty                         #空対空ペナルティ: %d
++resultdlg/airtoairkill                            #撃墜航空機数: %d
++resultdlg/noaircombat                             #空対空戦闘無し
++resultdlg/airtogndscore                           #空対地スコア: %d
++resultdlg/airtogndpenalty                         #空対地ペナルティ: %d
++resultdlg/airtogndkill                            #破壊地上目標数: %d
++resultdlg/noairstrike                             #対地攻撃無し
++resultdlg/totalscore                              #総合得点: %d
+
++resultdlg/state/flying                            #飛行中
++resultdlg/state/landed                            #着陸
++resultdlg/state/landedstatic                      #着陸後安全に停止
++resultdlg/state/dead                              #死亡
++resultdlg/state/overrun                           #オーバーラン
++resultdlg/state/unknown                           #状態不明
+
++resultdlg/scoredtail                              #スコア詳細
+
++resultdlg/landinganalysis                         #着陸分析
++resultdlg/verticalspeedattouchdown                #接地時垂直速度
++resultdlg/crabangleattouchdown                    #接地時対地横滑り角
+
+
+
++nojoystickdlg/message                                #ジョイスティックが接続されていないか、正しく設定されていません。マウス\nまたはキーボードをジョイスティックとして使用するには、Optionメニューから\nConfig Key/Mouse/Joystick Assignmentを選び、操縦桿軸の割り当てを変更して\nください。\n\n(一時的にマウスを操縦桿に割り当てます。)
++nojoystickdlg/dontshowagain                          #次からこのメッセージを表示しない
+
+
+
++gndtoairdlg/enemytab                              #敵機
+
+
++contdlg/message                                   #コンティニューしますか?
++contdlg/continue                                  #コンティニュー(Y)
++contdlg/terminate                                 #終了(ESC)
+
++configdlg/phongShading                            #Phong Shading (OpenGL 2.0 only)
++configdlg/default                                 #デフォルト
++configdlg/gamerule                                #ゲームルール
++configdlg/graphics                                #描画設定
++configdlg/opengl                                  #OpenGL
++common/setdefault                                 #デフォルトに戻す
++configdlg/environment                             #環境
++configdlg/light                                   #光源方向
++configdlg/aircraft                                #航空機
++configdlg/blackout                                #ブラックアウト
++configdlg/midair                                  #空中衝突判定
++configdlg/notailstrike                            #しりもち事故でも爆発しない
++configdlg/canlandanywhere                         #どこでも着陸可能
++configdlg/autorudder                              #方向舵の自動調整
++configdlg/precision                               #シミュレーション精度上げ
++configdlg/showhudalways                           #常にヘッド・アップ・ディsプレイを使う
++configdlg/dontuseinstpanel                        #計器パネルを使わない
++configdlg/showplayernamealways                    #プレイヤー名を常に表示
++configdlg/showjoystick                            #操縦桿を表示
++configdlg/f8cameradelay                           #F8視点の時間遅れ
++configdlg/minradaralt                             #レーダーに映る最低高度
++configdlg/showias                                 #対気速度をIASで表示
++configdlg/drawshadow                              #影の表示
++configdlg/shadowofdeadplane                       #墜落機/終了機の影も表示
++configdlg/drawordinance                           #搭載武器の表示
++configdlg/drawcoarseweapon                        #武器の表示を粗くする
++configdlg/horizongradation                        #水平線のグラデーション表示
++configdlg/cloudtype                               #雲のタイプ
++configdlg/drawlightalways                         #日中でも灯火を表示する
++configdlg/airgraphquality                         #飛行機の描画品質
++configdlg/smoketype                               #スモークの描画タイプ
++configdlg/smokeremain                             #スモークの残存時間(秒)
++configdlg/smokestep                               #スモーク表示の単位ステップ数
++configdlg/fog                                     #霧
++configdlg/visibility                              #視程(マイル)
++configdlg/zbuffquality                            #Zバッファ品質
++configdlg/trspobj                                 #半透明オブジェクト
++configdlg/trspsmoke                               #半透明スモーク
++configdlg/trspvapor                               #半透明ベイパー
++configdlg/reducepeephole                          #のぞき穴効果減少
++configdlg/usedisplistcloud                        #雲の描画にバッファリングを使う
++configdlg/usedisplistexplosion                    #爆発の描画にバッファリングを使う
++configdlg/usedisplistweapon                       #武器の描画にバッファリングを使う
++configdlg/groundtexture                           #地上のテクスチャ
++configdlg/runwaylighttexture                      #灯火のテクスチャ
++configdlg/showfps                                 #フレームレート表示
++configdlg/drawsmokebyparticle                     #パーティクルでスモークを描画
++configdlg/useantialiasing                         #アンチエイリアシング
++configdlg/antialiasingneedrestart                 #アンチエイリアシングを有効にするには\nプログラムを再起動する必要があります。
++configdlg/troublefreq                             #航空機トラブル頻度(回/時間)
++configdlg/reliability                             #航空機信頼性
++cfgdlg/use3dhud                                   #3Dヘッドアップディスプレイ
++cfgdlg/usesimplehud                               #シンプルヘッドアップディスプレイ
+
+
++assigndlg/save                                    #保存
++assigndlg/load                                    #読込
++assigndlg/setdefault                              #デフォルト設定
++assigndlg/setdefaultmouse                         #マウスを操縦桿に使用
++assigndlg/setdefaultkeyboard                      #キーボードを操縦桿に使用
++assigndlg/setprimaryjoystick                      #メインジョイスティック番号を指定して、デフォルトキー・ボタン設定を使う
++assigndlg/axis                                    #軸
++assigndlg/trigger                                 #ボタン
++assigndlg/keyboard                                #キーボード
++assigndlg/axisfunc                                #軸機能
++assigndlg/triggerfunc                             #ボタン機能
++assigndlg/keyfunc                                 #キー機能
++assigndlg/joystickaxis                            #軸
++assigndlg/joystickbutton                          #ボタン
++assigndlg/key                                     #キー
++assigndlg/change                                  #変更
++assigndlg/elvdeadzone                             #エレベータの遊び (%)
++assigndlg/aildeadzone                             #エルロンの遊び (%)
++assigndlg/ruddeadzone                             #ラダーの遊び (%)
++assigndlg/usepov                                  #POVボタン(ハットスイッチ)を使う
++assigndlg/primariaxismessage                      #下のボックスでメインジョイスティック番号を指定するか、\nあるいは、ジョイスティックの操縦桿を大きく円を描くよ\nうに動かすことでメインジョイスティック番号を選ぶこと\nができます。
+
++optiondlg/scrnmode                                #画面モード
++optiondlg/rememberwndpos                          #ウィンドウ位置とサイズを記憶する
++optiondlg/alwaysontop                             #常に手前に表示
++optiondlg/fontsize                                #フォントサイズ
++optiondlg/fontsizewarning                         #注意: 日本語環境では12ピクセル未満の\n      フォントサイズは無視されます。
++optiondlg/langtype                                #使用言語
++optiondlg/langfile                                #言語ファイル
++optiondlg/langfilebutton                          #言語ファイル選択
++optiondlg/sound                                   #効果音
++optiondlg/openingdemo                             #起動時デモ
++optiondlg/usemappreview                           #マッププレビューを使う
++optiondlg/usetaskbar                              #最小化時タスクバーに入れる
++optiondlg/backpicture                             #背景の写真を表示する
++optiondlg/d3dxsprite_issue                        #使ってるGPUの問題で字がにじむ
++optiondlg/direct3dsucks                           #Direct3Dがフォントを表示できない
+
++maindlg/create                                    #フライトの新規作成
++maindlg/retry                                     #前回のフライトに再挑戦
++maindlg/open                                      #飛行記録またはフライトの読み込み
++maindlg/save                                      #飛行記録またはフライトの保存
++maindlg/flynow                                    #飛行開始
++maindlg/playrecord                                #飛行記録再生
++maindlg/showconsole                               #コンソール表示
+
++exitdlg/message                                   #プログラムを終了しますか?
++exitdlg/exit                                      #終了(Y)
++exitdlg/backtomenu                                #メニューに戻す(N)
+
++deletefltdlg/message                              #現在のフライトを削除しますか?
++deletefltdlg/delete                               #削除(Y)
++deletefltdlg/notdelete                            #削除しない(N)
+
++stationarydlg/endflight                           #終了
++stationarydlg/confirmendflight                    #終了確認
++stationarydlg/supply                              #補給
++stationarydlg/changevehicle                       #乗り換え
+
+
++firstdlg/1stline                                  #(このメッセージは、インストール後初回起動時に自動的に表示されます。)
++firstdlg/2ndline                                  #YSFLIGHTをダウンロードいただき、ありがとうございました。\n是非、YSFLIGHT.COMもご覧ください。\nURLは次の通りです:
++firstdlg/3rdline                                  #また、次のURLからダウンロードページに直接移動することもできます。:
++firstdlg/4thline                                  #今後ともYSFLIGHTをよろしくおねがいします!
++firstdlg/5thline                                  #山川機長
+
++supportdlg/1stline                                #(このメッセージは、インストール後初回起動時に自動的に表示されます。 \nその後は、Helpメニューから「Support YSFLIGHT Project」を選ぶことで表示できます。)
+
++supportdlg/2ndline                                #YSFLIGHTはフリーソフトで、無料でご利用いただくことができます。ですが、サイト維持や\n開発のために、若干の予算がかかっています。もしも、よろしければ、次のいずれかの方法\nで、YSFLIGHTの開発をサポートしていただけると、大変ありがたく思います。
+
++supportdlg/3rdline                                #(1) 次のURLからシェアウェアプログラムを購入する:
++supportdlg/4thline-1                              #(2) Amazon.co.jpから買い物するとき、次のリンク(YSFLIGHT.COM)上のリンクを使って発注する:
++supportdlg/4thline-2                              #
++supportdlg/jwordline-1                            #(3) 
++supportdlg/jwordline-2                            # 
++supportdlg/installjword                           #JWordプラグインをインストールする (無料)
++supportdlg/explainjword                           #JWordプラグインの説明
++supportdlg/4thline-3                              #
++supportdlg/5thline-1                              #また、
++supportdlg/5thline-2                              #からリンクしているスポンサーページもご覧ください。
++supportdlg/6thline                                #YSFLIGHTプロジェクトへのご協力を感謝いたします。
+
+
++explainjword/line1                                #J-Word Plug-inは、Internet Explorer等ブラウザ用Plug-inで、アドレスバーから\n直接日本語で検索を可能にします。また、JWordプラグインの利用は無料です。\n\n(以下「JWordプラグラインのご紹介」より抜粋)\n
++explainjword/line2                                #《JWordサービスとは？》\n
++explainjword/line3                                #JWordサービスとは、Internet Explorer等ブラウザに専用プラグインソフトをイン\nストールすることによって、アドレスバーや検索バー等から様々なジャンル検索を\n可能にする総合情報検索サービスです。\n
++explainjword/line4                                #ブラウザのアドレスバーは、元々英数字のURLを入力することで目的のサイトへアク\nセスできましたが、それを日本語で直接サイトにアクセスできるのが大きな特徴です。\n目的のサイトに簡単にアクセスできる環境を整えることが可能になります。\n
++explainjword/line5                                #◎JWord紹介ページ
++explainjword/url                                  #
+
+
++installjword/line1                                #JWordプラグインをインストールしますか？
++installjword/line2                                #
++installjword/line3                                #
++installjword/line4                                #
++installjword/line5                                #
++installjword/install                              #JWordプラグインをインストールする(無料)
++installjword/explainjword                         #JWordプラグインの説明
++installjword/dontinstall                          #           インストールしない          
++installjword/comment                              #注:JWordプラグインをインストールしなくてもYSFLIGHTの全機能を\n利用することができます。が、インストールしていただけると作者\nに若干の紹介料が入るので、とても感謝します。\n\n
++installjword/firststart                           #(このメッセージは初回起動時のみ表示されます。)
++installjword/yesdelete                            #
+
++net/username                                      #ユーザ名
++net/field                                         #フィールド
++net/hostname                                      #サーバーホスト名(IPアドレス)
++net/hostport                                      #サーバーポート番号
++net/history                                       #過去に利用したサーバーIPアドレスから選ぶ
+
++net/noairplane                                    #このサーバーで利用可能な航空機データがインストールされて\nいません。航空機データの入手方法、インストール方法につい\nては、サーバー管理者にお問い合わせください。
++net/noscenery                                     #このサーバーが使用中のマップがインストールされていま\nせん。マップデータの入手方法、インストール方法につい\nては、サーバー管理者にお問い合わせください。
+
++net/versionconflict                         #このクライアントのネットワークプロトコルバージョンが、サーバーと一致しません。\nサーバーとクライアントで同じバージョンのYSFLIGHTをご使用ください。
+
++netconfig/general                                 #一般
++netconfig/client                                  #クライアント
++netconfig/server1                                 #サーバー1
++netconfig/server2                                 #サーバー2
++netconfig/server3                                 #サーバー3
++netconfig/port                                    #ポート番号
++netconfig/username                                #デフォルトユーザー名
++netconfig/chatlog                                 #チャットログを残す
++netconfig/defserveraddr                           #デフォルトサーバーアドレス
++netconfig/defstp                                  #デフォルト開始位置
++netconfig/defiff                                  #デフォルトIFF
++netconfig/recordflt                               #飛行を記録する
++netconfig/freemem                                 #可能なときメモリを解放する
++netconfig/deffield                                #デフォルトフィールド
++netconfig/configintercept                         #迎撃ミッションの設定
++netconfig/disablechat                             #チャット禁止
++netconfig/logontimeout                            #ログインのタイムアウト
++netconfig/maxconn                                 #単一IPからの最大接続数
++netconfig/svrreset                                #一定時間ごとにサーバーをリセット
++netconfig/svrstop                                 #一定回数リセットしたらサーバーを止める
++netconfig/welcomemsg                              #ログオン時クライアントにメッセージを送る
++netconfig/groundfire                              #地対空砲を有効にする
++netconfig/usemissile                              #空対空/空対地ミサイルを使う
++netconfig/usegun                                  #機銃/爆弾/ロケット弾を使う
++netconfig/radargunsight                           #見越し照準の使用禁止
++netconfig/disable3rdairview                       #自機以外視点禁止
++netconfig/notifyjoinleave                         #ユーザの参加/離脱を通知する
++netconfig/showusername                            #ユーザ名の表示
++netconfig/midair                                  #空中衝突判定
++netconfig/blackout                                #ブラックアウト
++netconfig/canlandanywhere                         #どこでも着陸可能
++netconfig/minradaralt                             #レーダーに映る最低高度
++netconfig/blockedip                               #禁止IPアドレス
++netconfig/delblockedip                            #選択した禁止IPアドレスを削除
++netconfig/newblockedip                            #新しい禁止IPアドレス
++netconfig/addblockedip                            #新しい禁止IPアドレスを追加
+
++netconsole/selectair                              #航空機選択
++netconsole/selectstp                              #開始位置選択
++netconsole/join                                   #飛行開始
++netconsole/observermode                           #観戦モード
++netconsole/dispeluser                             #ユーザー切断
++netconsole/listuser                               #ユーザーリスト
++netconsole/whokilledme                            #被撃墜記録表示
++netconsole/whomhaveikilled                        #撃墜記録表示
++netconsole/eudnrance_jet                          #15分耐久空中戦開始(JET)
++netconsole/endurance_ww2                          #15分耐久空中戦開始(WW2)
++netconsole/intercept                              #迎撃ミッション開始
++netconsole/closeairsupport                        #近接支援ミッション開始
++netconsole/endserver                              #サーバー終了
++netconsole/confirmendserver                       #サーバー終了確認
++netconsole/reviveground                           #地上物復活
++netconsole/confirmreviveground                    #地上物復活確認
++netconsole/chat                                   #チャット
++netconsole/send                                   #送信
++netconsole/logout                                 #ログアウト
++netconsole/confirmlogout                          #ログアウト確認
++netconsole/disablechat                            #チャット禁止
++netconsole/lockserver                             #サーバーロック
++netconsole/joinlock                               #飛行開始ロック
+
++filedlg/ask_overwrite                             #ファイルを上書きしますか？
++filedlg/saved                                     #保存しました。
++filedlg/cannotwrite                               #書き込みできません。
++filedlg/cannotload                                #読み込みできません。
+
+
++menu/fileMenu                                     #ファイル
++menu/file-Open                                    #フライトまたは飛行記録を開く
++menu/file-Save                                    #フライトまたは飛行記録の保存
++menu/file-OpenMission                             #ミッションを開く
++menu/file-OpenPrevFlight                          #前回のフライトを開く
++menu/file-Close                                   #フライトまたは飛行記録を閉じる
++menu/file-Exit                                    #終了
+
++menu/simulationMenu                               #シミュレーション
++menu/simulation-Fly                               #飛行開始
++menu/simulation-Retry                             #前回のフライトに再挑戦
++menu/simulation-Replay                            #飛行記録再生
++menu/simulation-Create                            #フライトの新規作成
++menu/simulation-DayNight                          #日中/夜間の選択
++menu/simulation-DisableGroundFire                 #地対空砲の禁止
++menu/simulation-AirCombat                         #空中戦の作成
++menu/simulation-SelectAir                         #飛行機選択
++menu/simulation-SelectStp                         #開始位置の選択
++menu/simulation-LdgPractice                       #着陸訓練
++menu/simulation-CreateInGnd                       #シミュレーション(地上物)の作成
++menu/simulation-Endurance                         #15分間耐久空中戦
++menu/simulation-Intercept                         #基地防空ミッション
++menu/simulation-CloseAirSupport                   #近接支援ミッション
++menu/simulation-AntiAirMission                    #地対空基地防衛ミッション
+
++menu/simulation-Ldg-Level01                       #レベル 1: Straight-In, Wind-Calm, Good Visibility (1)
++menu/simulation-Ldg-Level02                       #レベル 2: Straight-In, Light-Wind, Good Visibility(2)
++menu/simulation-Ldg-Level03                       #レベル 3: Dog-Leg, Wind-Calm, Good Visibility(3)
++menu/simulation-Ldg-Level04                       #レベル 4: Base-Leg, Light-Wind, Good Visibility(4)
++menu/simulation-Ldg-Level05                       #レベル 5: Base-Leg, Moderate-Wind, Good Visibility(5)
++menu/simulation-Ldg-Level06                       #レベル 6: Base-Leg, Strong-Wind, Good Visibility(6)
++menu/simulation-Ldg-Level07                       #レベル 7: Straight-In, Wind-Calm, Low Cloud(7)
++menu/simulation-Ldg-Level08                       #レベル 8: Dog-Leg, Wind-Calm, Low Cloud(8)
++menu/simulation-Ldg-Level09                       #レベル 9: Base-Leg, Wind-Calm, Low Cloud(9)
++menu/simulation-Ldg-Level10                       #レベル10: Base-Leg, Light-Wind, Low Cloud(A)
++menu/simulation-Ldg-Level11                       #レベル11: Base-Leg, Moderate-Wind, Low Cloud(B)
++menu/simulation-Ldg-Level12                       #レベル12: Straigh-In, Wind-Calm, Low Visibility(C)
++menu/simulation-Ldg-Level13                       #レベル13: Base-Leg, Wind-Calm, Low Visibility(D)
++menu/simulation-Ldg-Level14                       #レベル14: Base-Leg, Moderate-Wind, Low Visibility(E)
++menu/simulation-Ldg-Level15                       #レベル15: Base-Leg, Strong-Wind, Low Visibility+Low Cloud(F)
+
++menu/optionMenu                                   #オプション
++menu/option-Config                                #設定
++menu/option-Option                                #オプション
++menu/option-KeyAssign                             #ジョイスティック/キー割り当て
++menu/option-JoyCalib                              #ジョイスティックの調整
+
++menu/autoDemoMenu                                 #オートデモ
++menu/autoDemo-Acro                                #アクロバット
++menu/autoDemo-DogFight                            #格闘戦
++menu/autoDemo-Ldg                                 #着陸
++menu/autoDemo-CarrierLdg                          #空母着艦
+
++menu/autoDemo-Acro-CorkScrew                      #コークスクリュー
++menu/autoDemo-Acro-SlowRoll                       #スロー・ロール
++menu/autoDemo-Acro-DeltaLoop                      #デルタ・ループ
++menu/autoDemo-Acro-DeltaRoll                      #デルタ・ロール
++menu/autoDemo-Acro-TightTurn                      #急旋回
++menu/autoDemo-Acro-360AndLoop                     #360アンド・ループ
++menu/autoDemo-Acro-BombBurstUpward4               #上向き空中開花(4機)
++menu/autoDemo-Acro-BombBurstUpward6               #上向き空中開花(6機)
++menu/autoDemo-Acro-ChangeOverTurn                 #チェンジ・オーバー・ターン
++menu/autoDemo-Acro-TrailToDiamondRoll             #トレイル・トゥ・ダイヤモンド・ロール
++menu/autoDemo-Acro-CubanEight                     #キューバン・エイト
++menu/autoDemo-Acro-DeltaLoopAndBonton             #デルタ・ループ・アンド・ボントン
++menu/autoDemo-Acro-BontonRoll                     #ボントン・ロール
++menu/autoDemo-Acro-BombBurstDownward4             #下向き空中開花(4機)
++menu/autoDemo-Acro-BombBurstDownward6             #下向き空中開花(6機)
++menu/autoDemo-Acro-RainFall                       #レイン・フォール
++menu/autoDemo-Acro-RollingCombatPitch             #ローリング・コンバット・ピッチ
++menu/autoDemo-Acro-DiamondTakeOff                 #ダイヤモンド・テイク・オフ
++menu/autoDemo-Acro-ContinuousRoll                 #連続横転
++menu/autoDemo-Acro-RollOnTakeOffHalfCuban         #ロール・オン・テイクオフ・アンド・ハーフ・キューバン
++menu/autoDemo-Acro-TackCrossVertRoll              #タック・クロス・アンド・バーティカル・クライム・ロール
++menu/autoDemo-Acro-BigHeart                       #ビッグ・ハート
++menu/autoDemo-Acro-LevelBreak                     #水平ブレイク
++menu/autoDemo-Acro-RollBackToArrowhead            #ロール・バック・トゥ・アローヘッド
++menu/autoDemo-Acro-PitchUpBreak                   #ピッチ・アップ・ブレイク
++menu/autoDemo-Acro-RockWingGearDown               #ロック・ウイング(ギア・ダウン)
++menu/autoDemo-Acro-RockWingClean                  #ロック・ウイング(クリーン)
++menu/autoDemo-Acro-LetterEight                    #レター・エイト
++menu/autoDemo-Acro-StarCross                      #スター・クロス
++menu/autoDemo-Acro-LevelOpener                    #水平空中開花
++menu/autoDemo-Acro-FormBreak                      #フォーメーション・ブレイク
++menu/autoDemo-Acro-LineAbreastRoll                #ライン・アブレスト・ロール
++menu/autoDemo-Acro-LineAbreastLoop                #ライン・アブレスト・ループ
++menu/autoDemo-Acro-DoubleFarvel                   #ダブル・ファーベル
++menu/autoDemo-Acro-Dia9ToSwan                     #ダイヤモンド・ナイン・トゥ・スワン・ベンド
++menu/autoDemo-Acro-SwanToApolloRoll               #スワン・トゥ・アポロ・ロール
++menu/autoDemo-Acro-LancasterTo5-4Split            #ランキャスター・トゥ・5-4 スプリット
++menu/autoDemo-Acro-ChampaignSplit                 #シャンペイン・スプリット
++menu/autoDemo-Acro-VixenBreak                     #ヴィクセン・ブレイク
++menu/autoDemo-Acro-BigBattleToShortDiaLoop        #ビッグ・バトル・トゥ・ショート・ダイヤモンド・ループ
+
++menu/networkMenu                                  #ネットワーク
++menu/network-Server                               #サーバー
++menu/network-Client                               #クライアント
++menu/network-Config                               #ネットワーク設定
+
++menu/flightRecUtilMenu                            #飛行記録ユーティリティ
++menu/flightRecUtil-TimeInterval                   #時間精度変更
++menu/flightRecUtil-SpacePrecision                 #空間精度変更
++menu/flightRecUtil-EditRecord                     #飛行記録編集
+
++menu/helpMenu                                     #ヘルプ
++menu/help-HelpEnglish                             #英語ヘルプ
++menu/help-DefKeyEnglish                           #英語デフォルトキー/ジョイスティック割り当て表
++menu/help-HelpJapanese                            #日本語ヘルプ
++menu/help-DefKeyJapanese                          #日本語デフォルトキー/ジョイスティック割り当て表
++menu/help-About                                   #YSFLIGHTについて
++menu/help-SupportYSFlight                         #Support YSFLIGHT Project
+
+
++joycalib_calib                                    #軸の調整
++joycalib_calibhat                                 #ハットスイッチの調整
++joycalib_fileexit                                 #終了
++joycalib_caliberase                               #調整情報の全消去
+
++joycalib_hatneutral                               #ハットスイッチを中立位置にしてスペースキーを押してください。
++joycalib_hat0deg                                  #ハットスイッチを上に押してスペースキーを押してください。
++joycalib_hat90deg                                 #ハットスイッチを右に押してスペースキーを押してください。
++joycalib_hat180deg                                #ハットスイッチを下に押してスペースキーを押してください。
++joycalib_hat270deg                                #ハットスイッチを左に押してスペースキーを押してください。
+
++joycalib_axiscycle                                #軸を可動範囲の両端に何度か動かしてから、スペースキーを押してください。
++joycalib_axisneutral                              #軸を中央に戻して、スペースキーを押してください。
++joycalib_stickcircle                              #可動範囲全体を使って円を描くようにジョイスティックを動かしてください。
++joycalib_stickneutral                             #ジョイスティックを中立位置に戻して、スペースキーを押してください。
++joycalib_next                                     #次へ>>
+

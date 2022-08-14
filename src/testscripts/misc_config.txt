@@ -1,0 +1,197 @@
+REM Turn on Draw Smoke by Particle and test with T-4 Steep turn, and then turn off and test, finally turn back on again.
+
+
+
+
+REM No space between GUI and : and following command.
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+
+
+REM Get out of demo mode.
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu option/config
+WAITFOR:MODAL
+GUI:UNCHECK $activeModalDialog blackOut
+GUI:UNCHECK $activeModalDialog midAirColl
+GUI:UNCHECK $activeModalDialog noTailStrike
+GUI:UNCHECK $activeModalDialog landAnywhere
+GUI:UNCHECK $activeModalDialog autoRudder
+GUI:UNCHECK $activeModalDialog alwaysHud
+GUI:CHECK $activeModalDialog simpleHud
+GUI:CHECK $activeModalDialog drawJoystick
+GUI:CHECK $activeModalDialog deadShadow
+GUI:CHECK $activeModalDialog drawShadow
+GUI:CHECK $activeModalDialog coarseWeapon
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+GUI:CLICK confirmDeleteDlg ok
+
+
+REM Aerobatic -> Steep Turn
+
+GUI:CLICK $mainMenu acro/steepTurn
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+
+
+GUI:CLICK $activeModalDialog playerAirBtn
+GUI:SELECT $activeModalDialog airList T-4_BLUEIMPULSE
+SLEEP:200
+
+#Get out of aircraft-selection
+GUI:CLICK $activeModalDialog ok
+
+#Start aerobatic demo
+GUI:CLICK $activeModalDialog ok
+
+
+
+WAITFOR:FLYING
+
+
+
+WAITFOR:GUI
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu option/config
+WAITFOR:MODAL
+GUI:CHECK $activeModalDialog blackOut
+GUI:CHECK $activeModalDialog midAirColl
+GUI:CHECK $activeModalDialog noTailStrike
+GUI:CHECK $activeModalDialog landAnywhere
+GUI:CHECK $activeModalDialog autoRudder
+GUI:CHECK $activeModalDialog alwaysHud
+GUI:CHECK $activeModalDialog 3dHud
+GUI:UNCHECK $activeModalDialog drawJoystick
+GUI:UNCHECK $activeModalDialog deadShadow
+GUI:UNCHECK $activeModalDialog drawShadow
+GUI:UNCHECK $activeModalDialog coarseWeapon
+GUI:CLICK $activeModalDialog ok
+
+
+
+GUI:CLICK confirmDeleteDlg ok
+
+
+REM Aerobatic -> Steep Turn
+
+GUI:CLICK $mainMenu acro/steepTurn
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+
+
+GUI:CLICK $activeModalDialog playerAirBtn
+GUI:SELECT $activeModalDialog airList T-4_BLUEIMPULSE
+SLEEP:200
+
+#Get out of aircraft-selection
+GUI:CLICK $activeModalDialog ok
+
+#Start aerobatic demo
+GUI:CLICK $activeModalDialog ok
+
+
+
+WAITFOR:FLYING
+
+
+
+WAITFOR:GUI
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu option/config
+WAITFOR:MODAL
+GUI:CLICK $activeModalDialog reset
+GUI:CLICK $activeModalDialog ok
+
+
+
+GUI:CLICK confirmDeleteDlg ok
+
+
+REM Aerobatic -> Steep Turn
+
+GUI:CLICK $mainMenu acro/steepTurn
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+
+
+GUI:CLICK $activeModalDialog playerAirBtn
+GUI:SELECT $activeModalDialog airList T-4_BLUEIMPULSE
+SLEEP:200
+
+#Get out of aircraft-selection
+GUI:CLICK $activeModalDialog ok
+
+#Start aerobatic demo
+GUI:CLICK $activeModalDialog ok
+
+
+
+WAITFOR:FLYING
+
+
+
+WAITFOR:GUI
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM File -> Exit
+
+GUI:CLICK $mainMenu file/exit
+
+WAITFOR:MODAL
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+REM Really exit?
+GUI:CLICK $activeModalDialog ok

@@ -1,0 +1,215 @@
+Test List (2005/03/30)
+
+Do this list Before making installer (roughly)
+             After making installer
+             with Joystick only
+             with Joystick + Throttle + Rudder
+             without Joystick and Throttle
+
+
+
+Time stamp and size of executables
+fsmain.exe            2,621,483 2005/04/02 12:39
+fsmaino.exe           2,383,916 2005/04/02 12:39
+ysflight              3,281,712 2005/04/08 22:10
+
+ysflight.zip          8,671,199 2005/04/02 13:32
+ysflight.tar.gz       
+
+
+[For Test Release]
+( ) ( ) ( ) Comment out #define CRASHINVESTIGATION in fssimulation.cpp
+( ) ( ) ( ) Comment out #define CRASHINVESTIGATION in fsnetwork.cpp
+( ) ( ) ( ) Deleted title01.bmp and later?
+( ) ( ) ( ) Show test version message.
+( ) ( ) ( ) fsmaino -prepareRelease
+
+
+[Creating an installer]
+OGL DIB LIN
+(X) (X) ( ) Removed all test keys?  (FsNetwork -> BIKEY_X)
+(X) (X) ( ) Install the newest ysclass.lib
+(X) (X) ( ) Install the newest impls32d.lib and impls32o.lib
+(X) (X) ( ) Does about dialog show the correct version number?
+(X) (X) (X) Deleted Test Version Message?
+(X) (X) ( ) const int FsVerbose=YSFALSE;  in fsnetwork.cpp
+(X) (X) ( ) Comment out #define CRASHINVESTIGATION in fssimulation.cpp
+(X) (X) ( ) Comment out #define CRASHINVESTIGATION in fsnetwork.cpp
+(X) (X) ( ) /SUBSYSTEM:WINDOWS
+(X) (X) (X) Rebuild
+(X) (X) (X) fsmaino -prepareRelease -autoexit
+(X) (X) (X) Deleted config/prevwindowsize.cfg?
+(X) (X) ( ) Check revision date of help files
+(X) (X) ( ) Check fonts of dialogs
+(X) (X) (X) Make sure first startup identification file does not exist (20020510 or like that).
+(X) (X) (X) Make sure config\font.cfg does not exist.
+(X) (X) (X) Make sure prevflight.dat does not exist.
+(X) (X) (X) Make sure fserr.txt does not exist.
+(X) (X) (X) Deleted irrelevant executables?  YFSUTIL.EXE and YFSUTILO.EXE?
+(X) (X) (X) Deleted all CVS folders?
+(X) (X) (X) Write down time stamp and size of fsmain.exe, fsmaino.exe
+(X) (X) (X) Recheck: delete first startup identification file?  20020510 or like that.
+            (fsmaino -setdefaultconfig may create a new one.)
+(X) (X) ( ) Install Dir should be "C:\Program Files\YSFLIGHT.COM\YSFLIGHT"
+(X) (X) ( ) Start menu shortcuts must show OpenGL and Non-OpenGL
+(X) (X)     Write down time stamp and size of ysflight.zip
+        (X) Write down time stamp and size of ysflight.tar.gz
+(X) (X) ( ) Bundled JWord Plug-in?
+
+[After installation]
+OGL DIB LIN
+( ) ( ) ( ) Win2000 non-admin Install (Check folder, icon, choose all of them at least once)
+(X) (X) ( ) Win2000 admin Install (Check folder, icon, choose all of them at least once)
+( ) ( ) ( ) Win98 Install (Check folder, icon, choose all of them at least once)
+(X) (X) ( ) WinXP non-admin Install
+(X) (X) ( ) WinXP admin Install
+(X) (X) ( ) Check default installation directory is c:\Program Files\YSFLIGHT.COM\YSFLIGHT
+( ) ( ) ( ) Start with -english option, and create flight, see joystick dialog, 
+(X) (X)     Help -> Support YSFLIGHT (with SHIFT off) and test every button.  Make sure the link is to Jp page.
+( ) ( )     Help -> Support YSFLIGHT (with SHIFT on) and test every button.  Make sure the link is to En page.
+(X) (X) ( ) Make sure there's no CVS folder
+(X) (X) ( ) Test full-screen mode
+(X) (X) ( ) Turn off Opening Demo, make sure can create a new flight, and fly
+(X) ( ) ( ) Choose mouse as throttle and see what happens.
+(X) (X) ( ) Start flying, open a sub-window, and terminate the flight.  Sub window must disappear.
+(X) (X) ( ) Fly with an airplane with instrument panel, check airspeed indicator
+(X) (X) ( ) Fly with an airplane with instrument panel, check airspeed indicator on carrier
+(X) (X) ( ) Fly with an airplane with instrument panel, check attitude indicator
+(X) (X) ( ) Fly with an airplane with instrument panel, check altitude indicator
+(X) (X) ( ) Fly with an airplane with instrument panel, check other indicators
+(X) (X) (X) Take Off (Gourd)
+(X) (X) ( ) Fly Maneuvers
+(X) (X) ( ) Stall
+(X) (X) ( ) Replay \YFS\UNDERBRIDGETEST.YFS, make sure the shadow of the airplane will not be drawn if the
+            airplane is underneath the bridge.
+(X) (X) ( ) BS Key autopilot (On/Off and make sure the plane flies with no problem after turning off)
+(X) (X) (X) Landing
+(X) (X) ( ) Save flight record of Takeoff/Landing and make sure it can load and play, and test F5 key also.
+(X) ( ) ( ) On the ground, quit before stopping. Result must show just "Landed".
+(X) (X) (X) Ground Attack
+(X) ( ) ( ) Save flight record of Ground attack and make sure it can load and play, and test F5 key also.
+(X) ( ) ( ) Play dogfight, Replay simulation through the game, Make sure kill credit doesn't change
+(X) ( ) ( ) Save flight record of Dogfight and make sure it can load and play
+(X) (X) (X) Carrier Take Off
+(X) ( ) ( ) Carrier Touch & Go (Land without brake)
+(X) ( ) (X) Carrier Touch & Go (Miss the wires)
+(X) (X) (X) Carrier Landing
+(X) (X) (X) Save flight record of Carrier TO/LDG and make sure it can load and play, and test F5 key also.
+(X) ( ) ( ) Drop off from the carrier flight deck
+(X) ( ) ( ) Crash into the carrier fuselage
+(X) ( ) ( ) Crash into the carrier bridge from the air
+(X) ( ) ( ) Crash into the carrier bridge from the flight deck
+(X) ( ) ( ) Try all different fields
+(X) ( ) ( ) Can Mig-21 takeoff?
+(X) ( ) ( ) Can Mig-23 takeoff?
+(X) ( ) ( ) Can B747 takeoff?
+(X) ( ) ( ) Can B777 takeoff?
+(X) (X) ( ) Can Concorde takeoff?
+(X) ( ) ( ) Create Flight Record by the old version, make sure they play with no problem
+            in the new version, and test F5 key also.
+(X) ( ) ( ) Make sure the flight record of this version cannot be loaded by the old version.
+( ) ( ) ( ) Land out of runway -> Must considered as "Out of runway"
+( ) ( ) ( ) Land at the bad attitude -> Must considered as "Crash"
+(X) ( ) ( ) Land at too high pitch -> Must considered as "Tail Strike"  (Use Mig-29)
+(X) ( ) ( ) Fly formation flights Blue Angels
+( ) (X) ( ) Fly formation flights T-4 Blue Impulse
+( ) ( ) (X) Fly formation flights T-2 Blue Impulse
+( ) (X) ( ) Fly formation flights Thunderbirds
+(X) ( ) ( ) Save flight record, terminate the program, load the record and make sure the weapons are correctly recorded.
+(X) ( ) ( ) Save flight record, terminate the program, load the record and make sure 250bombs are correctly recorded.
+(X) ( ) ( ) Save flight record, terminate the program, load the record and make sure AIM120s are correctly recorded.
+( ) ( ) ( ) Create a flight, choose an airplane after creating it, see
+            the configuration is correct.
+( ) ( ) ( ) Test all items in "Simulation" menu. (Airplane configuration)
+(X) (X) ( ) Choose Flight->Endurance mode, don't use missile, and
+            make sure the user cannot load aam, bomb, and agm,
+            but can load rockets.  Then take off and the configuration
+            must be correctly reflected.
+(X) (X) ( ) Choose Flight->Endurance mode, use missile, and
+            make sure the user cannot load bombs and agms, but can
+            load aams and rockets.  Then take off and the configuration
+            must be correctly reflected.
+( ) (X) ( ) Choose Flight->Intercept Mission mode,
+            make sure the user cannot load agms and bombs, but can
+            load bomb, aams and rockets.  Then take off and the configuration
+            must be correctly reflected.
+( ) ( ) ( ) Fly intercept mission, save data, make sure the record doesn't
+            change before and after re-loading the datafile.
+( )     ( ) Turn on and off "Fog"
+( )     ( ) Turn on and off "Improved Z-Buffering"
+( ) (X) ( ) Turn on and off "Shadow of Dead Airplane"
+( ) (X) ( ) Turn on and off "Draw ordinance"
+( ) (X) ( ) Change default airplane in the config dialog, and make
+            sure the change is reflected in Create New Flight,
+            Create Air Combat, Fly Endurance Mode, Fly Intercept Mission,
+            Server mode and Client mode.
+(X) ( ) (X) Vertical take off and landing by Harrier
+(X) ( ) ( ) Vertical take off and landing by Harrier while applying back pressure
+(X) ( ) ( ) Vertical take off and landing by Harrier while applying forward pressure
+( ) (X) ( ) Vertical take off and landing by UH60
+( ) (X) ( ) Vertical take off and landing by UH60 while applying back pressure
+( ) (X) ( ) Vertical take off and landing by UH60 while applying forward pressure
+( ) ( ) ( ) Test secret functions
+
+(X) ( ) ( ) Load AIM-120 and start.  Check AIM-120 can be locked on and shot after using up AIM-9
+(X) ( ) ( ) After testing AIM-120, retry previous mission and check AIM-120 is loaded.
+(X) ( ) ( ) Load 250lb Bomb, and see it is correctly loaded.
+(X) ( ) ( ) After testing 250lb Bomb, retry previous mission and check 250lb Bomb is loaded.
+(X) ( ) ( ) Load AIM-120 and save.  Close the program and load the file to see AIM-120 is loaded.
+(X) ( ) ( ) Load 250lb Bomb and save.  Close the program and load the file to see 250lb Bomb is loaded.
+
+(X) (X) ( ) Turn Off Transparency, Choose Archer, Eclipse, P-51, Spitfire, Fw190, and A6M5 and see
+            propeller is not drawn as a solid circle.
+
+( ) (X) ( ) Network Play play server, shot down and attack objects in the client
+( ) (X) ( ) Network Play play client, shot down and attack objects in the server
+( ) (X) ( ) Start flying, open a sub-window, and terminate the flight in server mode.  Sub window must disappear.
+( ) (X) ( ) Start flying, open a sub-window, and terminate the flight in client mode.  Sub window must disappear.
+( ) (X) ( ) Save flight record of Network play and make sure it can load and play
+( ) (X) ( ) Turn off "Use Missile" on server.  Log on to the server as
+            a client, and make sure the player cannot load missiles.
+             Then take off and the configuration must be correctly reflected.
+( ) (X) ( ) Turn off "Use Missile" on server.  Start a server,
+            and make sure the player cannot load missiles.
+            Then take off and the configuration must be correctly reflected.
+( ) ( ) ( ) Start a server, connect two clients, fly several minutes,
+            and save the data.  Make sure the username doesn't change
+            after re-loading the datafile.
+( ) ( ) ( ) Log on to a server as a client, fly several minutes,
+            and save the data.  Make sure the username doesn't change
+            after re-loading the datafile.
+( ) ( ) ( ) Take off from the carrier and land on the carrier in Server mode
+(X) ( ) ( ) Take off from the carrier and land on the carrier in Client mode
+
+( ) ( ) ( ) GAP Extra
+( ) ( ) ( ) TMP Extra
+
+(X) ( ) (X) Start Server by command parameter
+(X) ( ) (X) Start Client by command parameter
+
+(X) (X) ( ) Virus Scan
+
+(X)     ( ) Take off in Pacific Atoll, Turn on Radar (range 100) and make
+            sure ground grids do not disappear. (debug impls32o.lib, 2002/05/09)
+
+(X) ( ) ( ) Take off in Pacific Atoll, fly to the bunkers, and make sure
+            bunkers are visible (debug impls32?.lib, 2002/05/09)
+
+( ) ( ) (X) Start Server with fsmaino -server Soji > log.txt and see there's no packet log
+( ) (X) (X) Start Client with fsmaino -client Soji localhost > log.txt and see there's no packet log
+
+(X) (X) ( ) Install one extra pack (like O.C.P.) choose several airplanes.
+
+(X) ( ) ( ) Start a server, join, terminate and wait until airplanes are cleaned up (60 seconds idle),
+            then press L to list users.
+(X) ( ) ( ) Start a server, join, terminate and wait until airplanes are cleaned up (60 seconds idle),
+            then press L to list users on the client.
+
+( ) (X) ( ) Start a server, choose an airplane and load AIM-120, and check AIM-120 is really loaded.
+( ) (X) ( ) Start a client, choose an airplane and load AIM-120, and check AIM-120 is really loaded.
+
+( ) (X) ( ) Start a server, choose an airplane and load 250lb Bomb, and check 250lb Bomb is really loaded.
+( ) (X) ( ) Start a client, choose an airplane and load 250lb Bomb, and check 250lb Bomb is really loaded.
+
+( ) (X) ( ) Start a server, Take off, Turn on Chat message input, and press Space.  Gun should not be fired.
+( ) (X) ( ) Start a server, Take off, Turn on Chat message input, and press H.  View should stay the same.

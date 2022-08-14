@@ -1,0 +1,1407 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta http-equiv="Content-Language" content="ja">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>YSFLIGHT PILOT'S MANUAL</title>
+</head>
+
+<body topmargin="16" leftmargin="16">
+
+          <p align="left"><font size="5">YS FLIGHT SIMULATOR<br>                                         
+          PILOT'S MANUAL&nbsp;<br>                                        
+          REVISION 20<span lang="en-us">13</span>/0<span lang="en-us">8</span>/<span lang="en-us">09</span></font></p>                             
+
+          <p align="left">  </p>                             
+          <table border="3" width="100%" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+            <tr>
+              <td>      
+<p align="left"><b>YSFLIGHT Family:</b></p>                                        
+<ul>      
+  <li>      
+    <p align="left">YS FLIGHT SIMULATOR (フリー)</li>       
+  <li>      
+    <p align="left"><a href="http://homepage3.nifty.com/ysflight/aircraftsoft/aircraftsoftj.html#ACROSCSV">日米アクロバットスクリーンセーバー</a> 
+    (1500円。試用無料)</li>      
+  <li>      
+    <p align="left"><a href="http://homepage3.nifty.com/ysflight/aircraftsoft/aircraftsoftj.html#DFSCSV">3D Dogfight Screensaver</a> 
+    (1500円。試用無料)</li>       
+  <li>      
+    <p align="left"><a href="http://homepage3.nifty.com/ysflight/aircraftsoft/aircraftsoftj.html#LDGSCSV">3D 
+    Landing Screensaver</a> (1500円。試用無料)</li>       
+  <li>      
+    <p align="left">
+    <a href="http://homepage3.nifty.com/ysflight/aircraftsoft/aircraftsoftj.html#CONCORDESCSVDX">
+    コンコルドスクリーンセーバーDelux</a> (フリー)</li>       
+  <li>      
+    <p align="left">
+    <a href="http://homepage3.nifty.com/ysflight/aircraftsoft/aircraftsoftj.html#SCNEDIT">
+    YSFLIGHTシーナリーエディタ</a> (1500円。試用無料)</li>      
+</ul>      
+<p align="left"><a href="http://download.jp.ysflight.com">YSFLIGHT.COM - 飛行機ソフトのコーナー</a>からダウンロードできます。&nbsp;<br>          
+</p>      
+<p align="left">なお、飛行機ソフトのコーナーにはシェアウェアのスクリーンセーバーなども置いてあります。YSFLIGHTはフリーですが、
+おかげさまで、前ほど作者の財政は窮乏していませんが、1500円ぐらいカンパしてもいいぜ！という方は、ひとつ買ってください。      
+</p>      
+              </td>
+            </tr>
+          </table>
+
+          <p align="left">  </p>                             
+       
+<p align="left"><i><img border="0" src="opengl_concorde.png" align="right" width="407" height="193"><font size="5">CONTENTS</font></i></p>      
+<ul>      
+  <li>      
+    <a href="#Introduction">はじめに</a></li>      
+  <li>      
+    <a href="#SYSREQ">必要システム</a></li>      
+  <li>      
+    <a href="#LAUNCH">プログラムの起動</a></li>      
+  <li>      
+    <a href="#TERMINATE">プログラムの終了</a></li>       
+  <li>       
+    <a href="#INSTANTFLIGHT">まず飛んでみる</a></li>       
+  <li>       
+    <a href="#IFSLOW">プログラムが遅いと感じたら....</a></li>       
+  <li>       
+    <a href="#CONFIGDLG">シミュレーション設定ダイアログ</a></li>       
+  <li>       
+    <a href="#OPTIONDLG">オプションダイアログ</a></li>       
+  <li>       
+    <a href="#PREPARETOFLY">シミュレーション開始</a><br>
+    - <a href="#FREEFLIGHT">フリーフライト</a><br>                    
+    - <a href="#DOGFIGHT">エア・コンバット</a><br>                    
+    - <a href="#INSTANTDOGFIGHT">インスタント・ドッグファイト</a><br>                    
+    - <a href="#INTERCEPTMISSION">迎撃ミッション</a><br>
+    - <a href="#CLOSEAIRSUPPORTMISSION">近接支援ミッション</a><a href="#INTERCEPTMISSION"><br>         
+    </a>- <a href="#CONFIGENVIRONMENT"> 昼/夜、霧、風の設定</a>&nbsp;<a href="#PREVMISSION"><br>        
+    - 前回のミッションを再度トライする</a></li>                    
+  <li>       
+    <a href="#HOWTOCONTROL">操縦方法(キーボード、マウス、ジョイスティック)</a></li>       
+  <li>       
+    <a href="#HUD">計器の見方</a></li>       
+  <li>       
+    <a href="#IFR">計器飛行</a></li>       
+  <li>       
+    <a href="#WEAPONS">武装</a></li>       
+  <li>       
+    <a href="#RADARNAVAID">航法支援設備(VOR, ADF)、計器着陸装置(ILS)、レーダー</a></li>       
+  <li>       
+    <a href="#FUELAMMOSUPPLY">燃料・武器の補給</a></li>       
+  <li>       
+    <a href="#NETWORK">ネットワーク対戦</a></li>       
+  <li>       
+    <a href="#YFSUTIL">フライト・レコード・ユーティリティ</a></li>       
+  <li>       
+    <a href="#GROUNDVEHICLE">地上物の操作</a><br>
+    - <a href="#GROUNDVEHICLECONTROL">操作方法</a><br>
+    - 地対空防空ミッション</li>       
+  <li>       
+    <a href="#PROGRAMMING">3Dグラフィクスプログラミングに興味のある人へ</a></li>       
+  <li>       
+    <a href="#CONTACT">連絡先</a></li>       
+  <li>       
+    <a href="#APPENDIX-A">Appendix A - 開始位置の表記について</a></li>                                       
+  <li>      
+    <a href="#APPENDIX-B">Appendix B - 例題ミッションについて</a></li>                                       
+  <li>      
+    <a href="#APPENDIX-C">Appendix C - 地上攻撃ミッションについて</a></li>                                       
+  <li>      
+    <a href="#COMPARAM">Appendix D - コマンドパラメータについて</a></li>                             
+  <li>      
+    <a href="#CONFIGFILES">Appendix E - 設定ファイルについて</a></li>                             
+</ul>      
+<p align="left">  </p>      
+<p align="left">Windows XP Service Pack <span lang="en-us">3</span>で、ネット対戦を利用したい場合は、<a href="xpsp2j.html">こちら</a>もご参照ください。</p>       
+<p align="left">  </p>      
+<p align="left">(*)YSFLIGHTサポートページも同時にご参照ください。サポートページには、&nbsp;</p>      
+<blockquote>     
+  <p align="left"><a href="http://www.ysflight.com">http://www.ysflight.com</a></p>      
+</blockquote>     
+<p align="left">からリンクしています。</p>      
+
+          <p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+<h2 align="left"><a name="Introduction"></a><u>はじめに</u></h2>     
+<p align="left">
+<img border="0" src="opengl_f22.png" align="right" width="328" height="256">このプログラムはフライトシミュレータです。このプログラムでは、次の飛行ができます。&nbsp;</p>     
+<ul>     
+  <li>     
+    <p align="left">離陸と着陸</li>     
+  <li>     
+    <p align="left">コンピュータ機との格闘戦</li>     
+  <li>     
+    <p align="left">地上攻撃(地対空砲付き)</li>     
+  <li>     
+    <p align="left">地上攻撃に対する迎撃戦</li>     
+  <li>     
+    <p align="left">アクロバットチームの編隊長</li>     
+  <li>     
+    <p align="left">スモークをひいて空に模様を描く</li>     
+  <li>     
+    <p align="left">ネットワーク対戦</li>     
+</ul>     
+<p align="left">また、30機種以上の飛行機の中から操縦する機体を選ぶことができます。                                       
+他のフライトシミュレータプログラムと同じように、飛行中にコクピット以外の視点から飛行機を見ることもできます。外から自分の操縦する飛行機を見るモードでは、操縦に合わせてランディングギアが上下したり、アフターバーナーの炎が点火したり、可変翼を持った機体では、翼が前後に動く様子を見ることができます。また、プロペラ機を操縦しているときは、プロペラが回っている様子を見ることができます。<br clear="all">
+<br clear="all">     
+</p>     
+<h2 align="left"><u><a name="SYSREQ"></a>必要システム</u></h2>      
+<p align="left">&nbsp;このプログラムを実行するには、次の環境が必要です。&nbsp;</p>                                      
+<ul>     
+  <li>     
+    <p align="left">Windows XP SP<span lang="en-us">3</span>, Windows 7,<span lang="en-us"> 
+    Windows 8,</span> Linux, Mac OS 10.6.x<span lang="en-us"> or higher</span></li>                                    
+  <li>     
+    <p align="left">Pentium 1.2GHz以上.&nbsp;</li>                                     
+  <li>     
+    <p align="left"><span lang="en-us">20MB</span>程度の空きメモリ</li>                                    
+  <li>     
+    <p align="left">DirectX 9.0以上&nbsp; または OpenGL 1.2以上</li>                                      
+</ul>     
+<p align="left">Windows XP Service Pack 3で、ネット対戦を利用したい場合は、<a href="xpsp2j.html">こちら</a>もご参照ください。</p>       
+<p align="left">また、次のデバイスは、必要ではありませんが、推奨します。&nbsp;</p>     
+<ul>     
+  <li>     
+    <p align="left">ジョイスティック。POVコントロールがあればより良い。スロットルレバーがあるとなお良い。ラダーペダルまであったらもっと良い (^_^;)&nbsp;</li>                                      
+  <li>     
+    <p align="left">なお、ジョイスティックは3本まで対応しています。USB接続になって、操縦桿とスロットルとラダーペダルが別になってしまったような場合でも正しく設定すれば全部使えます。</li>                            
+</ul>     
+<p align="left"><br clear="all">             
+</p>     
+<h2 align="left"><u><a name="LAUNCH"></a>プログラムの起動</u></h2>      
+<p align="left"><b>[WINDOWS]</b></p>      
+<p align="left"> プログラムグループ、&nbsp;</p>      
+<blockquote>     
+  <p align="left"><b>スタートメニュー -&gt; プログラム -&gt; YS FLIGHT SIMULATOR&nbsp;</b></p>                                       
+</blockquote>     
+<p align="left">から、次のどちらか一方を選んで実行してください。&nbsp;なお、SHIFTキーを押しながら起動すると、必ずウィンドウで(フルスクリーンじゃなく)起動します。詳しくは<a href="#OPTIONDLG">Option 
+Dialog</a>を参照してください。</p>      
+<table border="2" height="208">     
+  <tr>     
+    <td height="37"><b>YSFLIGHT OpenGL 2.0</b></td>                         
+    <td height="37">    OpenGL 2.0: グラフィックスは最高画質ですが、ある程度以上のディスプレイアダプタが必要です。</td>     
+  </tr>     
+  <tr>     
+    <td><b>YSFLIGHT OpenGL 1.x</b></td>                         
+    <td>    OpenGL 1.x: PCのディスプレイアダプタがOpenGLアクセラレータを装備している場合はこちらの方が一般的に高速に動作します。</td>     
+  </tr>     
+  <tr>     
+    <td><b>YSFLIGHT Direct3D</b></td>                         
+    <td>    Direct3D<span lang="ja">9: 
+    ディスプレイアダプタのベンダーには無責任なところがあるようで、Direct 
+    3Dは高速に描画できるのに、OpenGLはうまく表示できなかったり高速描画できなかったりするディスプレイアダプタが結構あるようです。不幸にしてそういうのに当たってしまったら、Direct 
+    3Dバージョンを使ってみてください。</span></td>     
+  </tr>     
+  <tr>     
+    <td height="32"><b>YSFLIGHT Console Server</b></td>                            
+    <td height="32">    ネットワーク対戦のサーバー専用プログラムです。このプログラム自体で飛行はできません。</td>                 
+  </tr>      
+</table>      
+<p align="left">もしも、どちらのプログラムを使えばいいのかわからない場合は、とりあえず、それぞれ使ってみて使い心地のいい方をご利用ください。</p>     
+<p align="left">  </p>     
+<p align="left"><b><span lang="en-us">[Mac]</span></b></p>     
+<p align="left">ファイルを展開すると、バンドル「ysflight」ができるので、これをダブルクリックしてください。</p>     
+<p align="left">  </p>     
+<p align="left"><b>[Linux]</b>     
+</p>     
+<p align="left">ファイルを展開したディレクトリに移動して、     
+</p>     
+<p align="left">&nbsp; % ysflight2              
+</p>     
+<p align="left">とタイプしてください。(% はプロンプトのつもりなので実際にタイプするのはysflightだけです。)なお、これで起動できない場合は、</p>     
+<p align="left">&nbsp; % ./ysflight2</p>     
+<p align="left">のようにタイプしないと起動しないことがあるようです。(pathに . が入っていない場合) 
+ysflight2はOpenGL2.0対応版ですが、もしも、お使いの環境がOpenGL 2.0に対応していないようでしたら、代わりに ysflight 
+とタイプしてください。</p>     
+<p align="left">また、サーバー専用バージョンを、</p>     
+<p align="left">&nbsp; % ./ysflight-consvr</p>     
+<p align="left">
+とタイプして起動することができます。コンソールのウィンドウサイズを最低25行以上にしておいてください。そうでないと表示が崩れます。</p>     
+<p align="left">なお、<a href="#COMPARAM">コマンドパラメータ</a>も参照してください。Linux版にはNon-OpenGL版はありません。なので、OpenGLを加速できないグラフィックスボード/チップではほとんど使い物にならないと思います。<br clear="all">     
+</p>     
+
+          <p align="left">  </p>                             
+<h2 align="left"><u><a name="TERMINATE"></a>  プログラムの終了</u></h2>                                     
+<p align="left"> <b>File-&gt;Exit</b>  を選ぶとプログラムを終了します。&nbsp;</p>                                      
+
+          <p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+<h2 align="left"><u><a name="INSTANTFLIGHT"></a>まず飛んでみる</u></h2>      
+<p align="left">さて、面倒なこまかい説明に行く前に、とりあえず飛んでみたい人は飛んで見ましょう。次の手順に従ってください。&nbsp;</p>              
+<ol>      
+  <li>      
+    <p align="left">プログラムを起動する。</li>     
+  <li>     
+    <p align="left">ESCキーを押してデモンストレーションを終了する。</li>     
+  <li>     
+    <p align="left"><b>シミュレーション(S) -&gt; フライトの新規作成(C)</b><span lang="ja">を選ぶ。</span></li>     
+  <li>     
+    <p align="left">&quot;Create New Flight&quot;ダイアログで、&quot;<b>今すぐ飛行開始</b>&quot;をクリック。<br>
+    <img border="0" src="flynowButtonJ.png" width="403" height="419"></li>     
+  <li>     
+    <p align="left">      
+    <b>&quot;Joystick is not connected or configured&quot;</b><br>       
+    というメッセージが出るかもしれません。これは、ジョイスティックを    接続していない、あるいは、ジョイスティックを設定していない場合に出ます。もしも、ジョイスティックを接続しているのであれば、&nbsp;<br>                                      
+    <b>スタートメニュー→設定→コントロールパネル→ジョイスティック</b><br>     
+    を選んで、設定したあとでもう一度やりなおしてみてください。もしも、ジョイスティックを持っていなくて、上のメッセージを表示したくない場合は、                                       
+    <a href="#CONFIGDLG">シミュレーション設定ダイアログ</a>に行って、ジョイスティックの割り当てをすべてオフにしてください。    (あるいはジョイスティックを買ってしまいましょう。(^_^;))</li>                                        
+  <li>       
+    <p align="left">ジョイスティックを中立位置にしてください。もしも、外付けジョイスティックを持っていない場合は、マウスを操縦桿として使わなくてはなりません。この画面で、マウスを動かすとバーチャル操縦桿がマウスの動きに合わせて動くので、マウスの動きと操縦桿の動きの対応をおぼえてください。</li>       
+  <li>       
+    <p align="left">    ジョイスティックを中立位置にしたら、トリガボタン、マウスボタンあるいはスペースキーを押すとフィールドに出ます。<br>       
+    <img border="0" src="joystick.png" width="391" height="357">&nbsp;</li>      
+  <li>      
+    <p align="left">フィールドに出ます。<br>       
+    <img border="0" src="takeoff.png" width="601" height="440"></li>      
+</ol>      
+<p align="left">この時点で飛行準備完了です。操縦操作の詳細はここでは説明しません。皆さんがすでに飛び方を知っていることを期待してるんですが(^_^;)飛び方について、                                       
+<a href="http://member.nifty.ne.jp/ysdynamics/acro/acroj.html">Flight Simulator Formation Aerobatic 98(航空自衛隊協力)       
+</a>なる本に書きましたので、よかったら買って読んでみてください。         
+<strike>                              
+このページからオンライン販売で購入できます。&nbsp;</strike>多分もう売ってないと思います。すんません(^_^;)</p>     
+<p align="left">ここでTABキーを押すとアフターバーナーを点火します。120ktぐらいになったら少しずつ操縦桿をひいて(マウスを下に動かす)飛行機を離陸させてください。</p>     
+          <blockquote>
+<p align="left"><img border="0" src="120kt.png" width="601" height="440"></p>     
+          </blockquote>
+<p align="left">
+なお、速度が十分に上がらないうちに操縦桿を引くと、しりもち事故の原因になったり、大きな飛行機だと空気抵抗が大きくなって滑走路を使い切る前に離陸に必要な速度に達することができなくなったりします。キー操作などについては、                                       
+<a href="#HOWTOCONTROL">操縦方法</a>を参照してください。&nbsp;</p>     
+
+          <p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+<h2 align="left"><u><a name="IFSLOW"></a>  プログラムが遅いと感じたら...</u></h2>                                     
+<p align="left">
+<img border="0" src="opengl_f18e.png" align="right" width="426" height="279">このプログラムは、少なくとも3年前のPCで快適に動くことを目標に作っています。実際、作者は2008年物のMacBook 
+Proで開発とテストをしています。ですが、それでも快適に動作しない場合は、いくつかの視覚効果をオフにするか、あるいは解像度を下げることで、スピードをあげることができる場合があります。</p>              
+<p align="left">まず、Windows版での話ですが、インストールパッケージは、&quot;OpenGL 2.0&quot;, &quot;OpenGL 
+1.x&quot;, &quot;Direct 
+3D&quot;の三種類の実行ファイルを含みます。それぞれの実行ファイルは、スタートメニューからひとつを選ぶことができます。</p>                                     
+<p align="left">
+最近のPCは、ほとんど3次元グラフィックスのアクセラレーションに対応しています。もしも、搭載しているグラフィックスアクセラレータが十分なパフォーマンスを持っていれば、OpenGL 
+2.0用を使うことで、十分なパフォーマンスと画質を両立できます。ですが、ベンダーによって、OpenGLドライバの実装がいい加減な場合があって、その場合、正常に動作しなかったり画面が崩れたりする場合があります。その場合、Direct3D用を使ってみてください。逆の場合もあって、OpenGL用が正常に動作するにもかかわらずDirect3D用が動作しない場合もあります。また、OpenGLの2.0以降に対応していない場合、OpenGL 
+1.x用のみ正常に動作することもありえます。プログラム側でもチェックを入れていますが、ドライバがOpenGL 
+2.0以降に対応しているという情報を返すにもかかわらず実は未対応という例が多くあるようです。</p>                                     
+<p align="left">Linux版には、&quot;CPU Rendered&quot;, &quot;Direct 
+3D&quot;版はありません。なので、お使いのシステムのX-WindowでOpenGLが使えるようになっていることを確認してください。一からLinuxをインストールした場合だと、多分デフォルトではOpenGLドライバは入っていません。デフォルトでOpenGLドライバが入っていない場合、非常に苦痛なプロセスを経て、OpenGLドライバをインストールしないとYSFLIGHTは動作しません。（少なくとも、僕はLinux<span lang="ja">のシステム管理がよくわかってるわけじゃないので</span>、最初はわけがわからず非常に苦痛だった。）ですが、OpenGLドライバのインストールに成功すると、（そして、ディスプレイドライバが3次元グラフィックスのアクセラレーションに対応していれば）YSFLIGHTを快適に利用することができます。</p>                                     
+<p align="left">また、フィールドの選択もプログラムの実行速度に関係します。ほとんどのフィールドには、多くの地上オブジェクトがありますが、PCがあまり高速ではない場合、地上オブジェクトの処理に時間がかかって、プログラムの実行速度が遅くなります。ですが、エアフィールド&quot;SMALL_MAP&quot;を選ぶと、あまり多く地上オブジェクトが無いので、地上オブジェクト処理による実行速度の低下はありません。空中戦に出る場合などは、地上オブジェクトはあまり気にならないと思うので、このフィールドを選んでみるといいと思います。これに対して、&nbsp;2001/07/18バージョンで新たに追加したTOHOKUは、空港が6個もあったりして非常に重いです。TOHOKUマップで快適に飛ぶには、PenIII                               
+450MHz＋高速なグラフィックスカードが必要です。多分、NORTH_KYUSYUが標準でついてくるマップの中でもっとも重いです。NORTH_KYUSYUを快適に使うには、結構いいPCのシステムがいると思います。</p>     
+<p align="left">それでも遅いと思ったら、 <a href="#CONFIGDLG">シミュレーション設定ダイアログ</a>に行って、いくつかの効果をオフにする必要があります。<b>Option-&gt;Config</b>を選んで、"Draw Fast"ボタンを押して見てください。こうすると、自動的に高速描画に適した設定になります。他にもオフにできる項目はありますが、あんまりお勧めしません。(詳細については<a href="#CONFIGDLG">「シミュレーション設定ダイアログ」</a>を参照してください。)&nbsp;</p>                                      
+<p align="left">それでもまだ遅い場合は、解像度を下げる方法があります。<a href="#OPTIONDLG">オプションダイアログ</a>に行って、解像度を下げて見てください。&nbsp;</p>     
+<p align="left">WindowsNT上でこのプログラムを実行している場合、飛行中しばしば短い時間一時停止するように感じるかもしれません。多くの場合、スロットルセッティングを変えたり、機関砲を発射/発射停止したりした場合に発生します。この場合、<a href="#OPTIONDLG">オプションダイアログ</a>に行って、サウンドをオフにしてみてください。この一時停止の問題は、WindowsNTのWAV再生機能の問題です。&nbsp;</p>     
+
+          <p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+<h2 align="left"><u><a name="CONFIGDLG"></a>シミュレーション設定ダイアログ</u></h2> 
+<p align="left">&nbsp;シミュレーション設定ダイアログでは、ジョイスティックの割り当て、スモーク、その他の効果について設定できます。</p>
+<p align="left"><b>[デフォルト<span lang="ja">タブ]</span></b></p>
+<p align="left"><img border="0" src="configdlg1j.png" width="324" height="487"></p>
+<p align="left">  <b>環境<br>
+</b>DAY(昼)かNIGHT(夜)を選びます。</p>                               
+<p align="left">  <b>光源方向</b><br>
+どの方向から光が当たるかを指定します。</p>                               
+<p align="left"><b>航空機</b><br> 
+頻繁に使用する飛行機の種類を指定します。ここで選んだ飛行機が、Create                             
+New FlightやFly Endurance Modeの飛行機選択画面で最初に選ばれています。</p>                                      
+<p><b>フィールド<br>
+</b>デフォルトのフィールドを指定します。                             
+      <p><b>開始位置<br>
+      </b>デフォルトの飛行開始位置を指定します。<p>  <p align="left">
+<b><span lang="ja">[ゲームルールタブ]</span></b></p>          
+<p align="left"><img border="0" src="configdlg2j.png" width="324" height="487"></p>          
+<p align="left"><b>ブラックアウト<br> 
+</b>  このチェックボックスがオンだと、高いGがかかったときにブラックアウトします。</p>          
+<p align="left"><b>空中衝突判定<br>   
+</b>  このチェックボックスがオンだと、飛行機同士の空中衝突を判定します。オフだと判定しません。&nbsp;</p>          
+<p align="left"><b>しりもち事故でも自爆しない</b><br>
+このチェックボックスがオンだと、離着陸時に機体後部を地面についても爆発しません。</p>          
+<p align="left"><b>どこでも着陸可能<br>
+</b>このボックスがオンだと文字通りどこでも着陸できるようになりますが、スピードが20kt以下じゃないと揺れてひっくり返ってしまうので、事実上ヘリコプターとVTOL機以外はどこでも着陸できません。</p>          
+<p align="left"><b>方向舵の自動調整<br>  
+</b>  このチェックボックスがオンだと、方向舵を自動調整して、横滑りをゼロにします。飛行機は、旋回するとき、横滑りがゼロになるように方向舵をコントロールします。でも、これをキーボードでやるのは面倒なので、(多分、多くのフライトシミュレータパイロットの皆さんは、スロットルまでは持っててもラダーペダルまでは持ってないと思うので)、自動調節にすることができます。</p>          
+<p align="left"><b>シミュレーション精度上げ<br> 
+</b>  このチェックボックスがオンだと、プログラムは航空力学計算を20分の1秒ごとに計算します。このチェックボックスがオフだと、一度画面を再描画するたびに一度計算します。画面の再描画は普通20分の1秒よりも長い時間がかかるので、このチェックボックスをオフにすると精度は落ちます。このボックスは、よっぽど速度が欲しい場合以外はオンにしておくことをお勧めします。</p>          
+<p align="left"><b>常にヘッド･アップ･ディスプレイを使う<br> 
+</b>このチェックボックスがオンだと、機外視点時もHUDを表示します。</p>          
+<p align="left"><b>簡略ヘッドアップディスプレイを使う</b><br>
+このチェックボックスをオンにすることで、簡略ヘッドアップディスプレイを使うことができます。解像度が低い環境などで、標準ヘッドアップディスプレイの表示が小さくて読みにくい場合は、簡略ヘッドアップディスプレイの方が読みやすい場合があります。</p>          
+<p align="left"><b>計器パネルを表示しない<br>
+</b>このチェックボックスがオンだと、計器パネルが設定してある機種でもHead Up Displayを表示します。</p>          
+<p align="left"><b>プレイヤー名を常に表示<br>
+</b>このボックスがオンだと、コクピットで正面を見ていなくても、プレイヤー名を画面に表示します。</p>          
+<p align="left"><span lang="ja"><b>操縦桿を表示<br>
+</b>このボックスがオンだと、ゲーム中、ジョイスティックのグラフィックスを表示します。</span></p>          
+<p align="left"><b>F8視点の時間遅れ<br>
+</b>機外カメラ（デフォルトでF8キー）の時間遅れ効果のオン/オフを指定します。このチェックボックスがオンだと、カメラが少し遅れて機体についていきます。</p>          
+<p align="left"><b>レーダーに映る最低高度<br>
+</b>高度XXXX以下で、プレイヤー機から遠い機体はレーダーに表示しません。（単位はフィート）</p>      
+<p align="left"><b>指示対気速度表示<br>
+</b>計器に表示する気速を、指示対気速度(IAS)にするか、真対気速度(TAS)にするかを選びます。チェックボックスがオンだとIAS表示になります。本物の飛行機の計器にはIASが表示されるので、デフォルトではオンになっています。</p>      
+<p align="left">  </p>      
+<p align="left"><b><span lang="ja">[Graphicsタブ]</span></b></p>      
+<p align="left"><img border="0" src="configdlg3j.png" width="322" height="485"></p>      
+<p align="left"><b>影の表示<br>  
+</b>  このチェックボックスがオンだと、飛行機が低空にいるとき、精密な影を描きます。このチェックボックスをオフにしても影は描画しますが、すごい粗い影になっちゃいます。</p>          
+<p align="left"><b>墜落機/終了機の影も表示<br>
+</b>このチェックボックスがオンだと、撃墜された、あるいは墜落した飛行機の影を描きます。（残骸のつもりなんですが....）。が、ネットワークモードでサーバーをしていると、影がいっぱいになってしまう、という問題が起こるようなので（まさかそんなに長い時間ネットワーク対戦する人がいるとは思わなかった）、オン/オフを設定できるようにしました。</p>          
+<p align="left"><b>搭載武器の表示<br>
+</b>このチェックボックスがオンだと、飛行機に搭載している武装を描きます。</p>          
+<p align="left"><b>武器の表示を粗くする</b><br>
+このチェックボックスがオンだと、武器を粗く表示します。多数の武器が同時に描画されるような場合は、スピードが向上します。</p>          
+<p align="left"><b>水平線のグラデーション表示<br>  
+</b>  このチェックボックスがオンだと、水平線のグラデーションを描きます。オフにした方が速いですが、オンの方がもちろん見栄えがいいです。</p>          
+<p align="left"><b>雲のタイプ<br>  
+</b>  <span lang="ja">「Solid Smoke」を選ぶと質感のある雲を描き、「Flat Smoke」を選ぶと平たい雲を描きます。</span></p>          
+<p align="left"><b>日中でも灯火を表示する<br>
+</b>このボックスがオンだと、昼間モードでも滑走路灯と街灯を表示します。</p>          
+<p align="left"><b>飛行機の描画精度<br>
+</b>Automatic :         
+遠くの飛行機は粗く、近くの飛行機は細かく表示します。<br>
+Always High Quality :         
+距離にかかわらず細かく表示します。(高速なPCが必要)<br>
+Always Coarse : 距離にかかわらず粗く表示します。(PCが遅いときこうするとスピードが上がる)</p>                                       
+<p align="left"><b>スモークの描画タイプ、スモークの残存時間<br>
+</b>スモークのタイプ、持続時間と解像度を設定します。</p>      
+<p align="left">スモークタイプは、TOWEL,SOLID,CIRDLE,NOODLEの中から選びます。TOWELを選ぶと、なが～いタオルのようなスモークを引きます(別名いったんもめんスモーク)。SOLIDを選ぶと、よりスモークっぽいスモークになりますが、描画は遅くなります。NOODLEを選ぶと、なが～いソウメンのようなスモークになります。描画は速いですがちょっとみじめです(^_^;)CIRCLEは、一応作ってみたんですが、速くも無いし見栄えもしないので、使わない方がいいと思います。</p>       
+<p align="left">Remain ?? seconds というのはスモーク持続時間です。</p>                                        
+<p align="left">  <b>スモーク表示の単位ステップ数</b></p>                                        
+<p align="left">  スモーク描画の解像度を指定します。小さい値を指定するほど高い精度で描画しますが、やっぱり重くなります。初期状態では4ステップになっています。</p>                                        
+<p align="left">  </p>          
+<p align="left"><b><span lang="ja">[OpenGLタブ]</span></b></p>          
+<p align="left"><img border="0" src="configdlg4j.png" width="322" height="485"></p>          
+<p align="left"><b>霧<br>
+</b>このチェックボックスがオンだと、霧を表示して、少しリアリスティックになります。OpenGL版のみ有効です。が、OpenGLが速いグラフィックスカード(さらに霧が速く描けるやつ)でないと、遅くなります。</p>          
+<p align="left"><b>Zバッファ品質<br> 
+</b>OpenGLのZ-Bufferingの解像度を指定します。LOWを選ぶとスピードは上がりますが、本来他のオブジェクトの陰で見えないはずのものが見えたりします。HIGH,         
+VERY HIGH, SUPER HIGHの順に解像度が高くなり、正しくグラフィックスを描画するようになりますが、OpenGLが速いグラフィックスカードでないと、遅くなります。なお、OpenGL版でのみ有効です。</p>                  
+<p align="left"><b>半透明オブジェクト<br>
+</b>このボックスをチェックすると、オブジェクトを半透明で描画するようになります。OpenGL版でのみ有効です。</p>          
+<p align="left"><b>半透明スモーク<br>
+</b>このボックスをチェックすると、スモークを半透明で描画するようになります。OpenGL版でのみ有効です。</p>          
+<p align="left"><b>半透明ベイパー<br>
+</b>このボックスをチェックすると、翼端ベーパーを半透明で描画するようになります。OpenGL版でのみ有効です。</p>          
+<p align="left"><b>のぞき穴効果減少</b><br>
+半透明処理によって、たまに、壁にさえぎられて見えないはずのものが、透けて見えるのぞき穴現象が発生することがあります。この現象を完全に除去するのはちょっと難しいのですが、ある程度減らすことはできます。このチェックボックスをオンにすると、プログラムは、のぞき穴現象を減らす努力をします。が、若干計算時間を余計に食います。オンのときとオフのときの違いは次の通りです。</p>          
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+  <tr>
+    <td width="50%" valign="top">
+    <img border="0" src="peephole1.png" align="texttop" width="391" height="268"></td>
+    <td width="50%" valign="top">
+    ←チェックボックスオフのとき。本当は、格納庫の向こうで見えないはずの地平線が、プロペラに透けて見えてしまっている。</td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+    <img border="0" src="peephole2.png" align="texttop" width="391" height="268"></td>
+    <td width="50%" valign="top">←チェックボックスがオンのとき。</td>
+  </tr>
+</table>
+<p align="left"><span lang="ja"><b>雲の描画にバッファリングを使う</b><br>
+このボックスがオンだと、雲を描画するとき、OpenGLの「ディスプレイリスト」機能を使います。グラフィックスカードがじゅうぶんなメモリを搭載している場合
+、このボックスをチェックしておいた方が描画が高速になります。</span></p>          
+<p align="left"><span lang="ja"><b>武器の描画にバッファリングを使う</b><br>
+このボックスがオンだと、武器を描画するとき、OpenGLのディスプレイリスト機能を使います。</span></p>          
+<p align="left"><span lang="ja"><b>爆発の描画にバッファリングを使う</b><br>
+このボックスがオンだと、爆発を描画するとき、OpenGLのディスプレイリスト機能を使います。</span></p>          
+<p align="left"><b>地上のテクスチャ</b><br>
+このチェックボックスがオンだと、地上のポリゴンにテクスチャマッピングを使って濃淡をつけます。</p>          
+<p align="left"><b>灯火のテクスチャ</b><br>
+このチェックボックスがオンだと、滑走路灯の表ににテクスチャを使用します。</p>          
+      <p>  <p align="left">
+          <img border="0" src="concorde_cockpit.png" width="629" height="475"></p>                             
+<h2 align="left"><u><a name="OPTIONDLG"></a>  オプションダイアログ</u></h2>                                     
+<p align="left">
+<img border="0" src="optiondlgj.png" width="335" height="521" align="right">オプションダイアログでは、プログラムの設定変更ができます。ダイアログを開くには、</p>                                      
+<p align="left">
+&nbsp;&nbsp;&nbsp; Option→Option</p>                                      
+<p align="left">
+を選んでください。</p>                                      
+<p align="left">
+<b>画面モード:</b> 普通のウィンドウ(Normal Window)、最大化(Maximize)、または、フルスクリーン解像度を選ぶことができます。</p>                                      
+<p align="left">
+<b>ウィンドウ位置とサイズを記憶する: </b>
+チェックすると、プログラム終了時のウィンドウ位置とサイズを記憶して、次回起動時に同じ位置にウィンドウを表示します。</p>                                      
+<p align="left">
+<b>常に手前に表示:</b> 他のウィンドウよりYSFLIGHTのウィンドウを常に手前に表示します。</p>                                      
+<p align="left">
+<b>フォントサイズ:</b> フォントの縦の大きさを指定します。</p>                                      
+<p align="left">
+<b>使用言語:</b> 自動選択 (AUTOMATIC)、英語 (FORCE ENGLISH)、言語ファイルを選択 (SELECT LANGUAGE 
+FILE)からひとつを選ぶことができます。言語ファイルを選択にすると、外部の言語ファイルを指定して使うことができます。</p>                                      
+<p align="left">
+<b>言語ファイルを選択:</b> 外部の言語ファイルを指定します。</p>                                      
+<p align="left">
+<b>効果音:</b> 効果音のon/offを指定できます。</p>                                      
+<p align="left">
+<b>起動時デモ:</b> 起動時デモのon/offを指定できます。</p>                                      
+<p align="left">
+<b>マッププレビューを使う:</b> マッププレビューのon/offを指定できます。</p>                                      
+<p align="left">
+<b>最小化時タスクバーに入れる:</b> これをチェックすると、最小化したときタスクバーに格納します。</p>                                      
+<p align="left">
+<b>背景の写真を表示する:</b> 背景の写真のon/offを指定できます。</p>                                      
+<p align="left">
+<b>使ってるGPUの問題で字がにじむ:</b> Direct 3Dの問題で、フォントがにじんでしまう場合、これをチェックすると直るかもしれません。</p>                                      
+<p align="left">
+<b>Direct 3Dがフォントを表示できない:</b> Direct 
+3Dは本当に悪いAPIで、フォントを正常に表示できなくなる場合があります。その場合、これをチェックすると直るかもしれません。</p>                                      
+<p align="left">&quot;Remember Window Position and Size&quot;のオプションは、ScreenmodeがNormal 
+Windowのときのみ有効で、オンに設定するとプログラム終了時のウィンドウサイズと位置を記憶して、次回起動時に記憶した位置とサイズを復元します。</p>                                      
+<p align="left">YSFLIGHTの最新バージョンでは、メニューやダイアログをWindowsに依存せずに、すべて独自のプログラムで表示するようにしたのですが、それが原因でOpenGL版でマップ選択時、表示が崩れることがあるようです。その場合、Use 
+Map Previewをオフにすると崩れないことがあるようです。その現象が発生するようでしたら、試してみてください。</p>                                      
+<p align="left">最近OpenGLバージョンでも解像度を指定できるようになりましたが、OpenGLバージョンでNORMAL                          
+WINDOW以外の解像度を選ぶと、ビデオカードによっては正しく動作しないようです。もしも、いったんNORMAL                          
+WINDOW以外の解像度を選んでしまってOpenGLバージョンが起動しなくなった場合は、次のいずれかの方法でふたたび起動できるようになります。</p>     
+<p align="left">(1) SHIFTキーを押しながら起動すると必ずNORMAL                          
+WINDOWで起動するので、SHIFTキーを押しながら起動して、オプションをNORMAL                          
+WINDOWに設定しなおす。</p>     
+<p align="left">(2) それで直らなかったら、スタートメニューのプログラムの&quot;YS FLIGHT SIMULATION SYSTEM 
+2000&quot;の&quot;YSFLIGHT --- RESET SETTING&quot;を選んで、設定を初期値に戻す。</p>     
+<p align="left">(3) それでも直らなかったら、CPU-Renderedバージョンを起動してオプションをNORMAL WINDOWに設定しなおす。</p>     
+<p align="left">(4) それでもだめだったらYSFLIGHTを再インストールする。</p>                              
+<p align="left">上記の3点が全部だめだった場合は、ビデオカードのドライバか何かに問題があるんじゃないかと思います。</p>     
+
+<p align="left">なお、Intelの古いGPUで、Direct 
+3D使用時、ビットマップがにじんで、字が読みづらくなる問題があるようです。その現象が発生すると、簡略ヘッドアップディスプレイの文字が非常に読みづらくなります。その問題が発生したときは、「GPUの問題で字がにじんで読みにくい」をチェックすると、フォントの表示位置がずれる問題が発生しますが、にじむ問題は出なくなると思います。。</p>     
+
+<p align="left">  </p>     
+
+          <p align="left">  </p>                             
+              <h2><a name="CONTROLASSIGNMENT"></a><u>
+              キーボード・マウス・ジョイスティックの割り当てを変更する</u>&nbsp;&nbsp;&nbsp; </h2>
+              <p>
+              <img border="0" src="ctlassignj.png" align="right" width="521" height="462"></p>
+              <p>YSFLIGHTでは、各機能へのキー/マウス/ジョイスティックの割り当てを変更することができます。それには、<br>
+  </p>
+              <p>&nbsp;&nbsp;&nbsp; Option → Config Key/Mouse/Joystick 
+              Assignment</p>
+              <p>を選んでください。右のようなダイアログが出ます。</p>
+              <p>ここで、例えば、スロットルをジョイスティック2の軸3に割り当てたい場合、Joystick/Mouse 
+              AxesのリストでThrottleを選び、&quot;Change&quot;ボタンをクリックしてください。次に、ダイアログからJOYSTICK 2 
+              AXIS 3を選び（反転する必要があればReverseをチェックして)OKボタンをクリックしてください。</p>
+              <p>なお、Saveボタンをクリックすると、このダイアログの設定内容をファイルに保存することができます。セーブした設定内容は、YSFLIGHTを再インストールしたり、新バージョンをインストールしたときなど、Loadボタンで読み込むことができます。<b><u>ただし、旧バージョンで保存した割り当てはを新バージョンで読み込んだとき、新バージョンの新機能にキー、ボタン、軸が割り当てられません。</u></b>ですので、その場合は、読み込んだ後で新機能にキーまたは軸を割り当ててください。</p>
+              <p>割り当てを初期状態に戻すには、Defaultボタンをクリックしてください。<p>
+          もしも、操縦桿として使いたいジョイスティックが、ジョイスティック#1としてシステムに認識されていない場合、軸をひとつずつ設定しなおす代わりに、「メインジョイスティック番号を指定して、デフォルトキー・ボタン設定を使う」をクリックして、操縦桿として使いたいジョイスティックを一周円を描くように動かしてください。<p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+<h2 align="left"><u><a name="PREPARETOFLY"></a>      
+ シミュレーション開始</u></h2>                                     
+<p align="left">このシミュレータでは次の4種類の飛行を選ぶことができます。</p>     
+<blockquote>
+  <ul>
+    <li>
+      <p align="left"><a href="#FREEFLIGHT">フリーフライト</a></li>
+    <li>
+      <p align="left"><a href="#DOGFIGHT">空中戦</a></li>
+    <li>
+      <p align="left"><a href="#INSTANTDOGFIGHT">インスタント・ドッグファイト</a></li>
+    <li>
+      <p align="left"><a href="#INTERCEPTMISSION">迎撃ミッション(基地防空ミッション)</a></li>
+  </ul>
+</blockquote>
+<p align="left"><b><font size="4"><u><a name="FREEFLIGHT"></a></u>フリーフライト</font></b></p>      
+<p align="left">フリーフライトモードでは、自由に飛びまわって飛行の練習をすることができます。フリーフライトモードを開始するには、<b>Simulation 
+-&gt; Create New Flight</b>を選んでください。次のダイアログが開きます。</p>     
+<p align="left">
+<img border="0" src="newflightdlgj-tab1.png" width="654" height="417"></p>     
+            <p align="left"><b>フィールド&nbsp; </b>使用するマップ（シーナリ）を選びます。<p align="left">
+          <b>Search</b>&nbsp; キーワードでマップを探すことができます。複数キーワードをスペースで区切ってタイプすることもできます。<p align="left">
+          <b>飛行機変更&nbsp; </b>このボタンを押して、使用する航空機を選ぶことができます。<a href="#SELECTAIR">航空機選択</a>も参照してください。<p align="left">
+          <b>開始位置&nbsp; </b>マップ内での開始位置を選びます。<p align="left">
+          <b>確定&nbsp; </b>このボタンを押すと、新しいフライトを作成して、メインメニューに戻ります。その後<b>Simulation 
+          -&gt; Fly</b>を選ぶことで飛行を開始することができます。メインメニューに戻ると、他に、作成したフライトをファイルに保存しておいて、後から読み込んで同じ条件で飛行することができます。が、すぐに飛行を開始したいときは、&quot;Fly 
+          Now&quot;ボタンを押してください。<p align="left"><b>取り消し&nbsp; </b>新しいフライトを作らずにメインメニューに戻ります。<p align="left">
+          <b>今すぐ飛行開始&nbsp; </b>飛行を開始します。<p align="left">
+  </p>     
+<p align="left">
+<img border="0" src="newflightdlgj-tab2.png" width="654" height="417"></p>     
+            <p align="left">
+          <b>僚機X変更</b>&nbsp;
+          自分の他に、最大５機までの僚機を登場させることができます。このボタンで、僚機の機種を選ぶことができます。<p align="left">
+          <b>削除</b>&nbsp; 僚機を削除します。<p align="left"><b>開始位置</b>&nbsp; 僚機の開始位置を選びます。<p align="left">
+  </p>     
+<p align="left">
+<img border="0" src="newflightdlgj-tab3.png" width="654" height="417"></p>     
+            <p align="left"><b>編隊&nbsp; </b>
+            僚機を選んだ上で、このフォーメーションを選ぶと、僚機は自機について、指定のフォーメーションを作るように飛行します。</p>
+<p align="left">
+  </p>     
+<p align="left">
+<img border="0" src="newflightdlgj-tab4.png" width="654" height="417"></p>     
+            <p align="left"><b>日中/夜間&nbsp; </b>日中か夜間の選択です。<p align="left"><b>風向&nbsp; </b>風向を選びます。<p align="left">
+          <b>風速&nbsp; </b>風速を指定します。<p align="left"><b>視程&nbsp; </b>視界の指定をします。<p align="left"><b><a name="SELECTAIR"></a>
+          <font size="4">飛行機選択</font></b></p>     
+    <p align="left"> 
+    航空機の選択が必要なとき、次のダイアログが開きます。このダイアログを使って、機種、武装、スモーク、燃料などを指定することができます。なお、画面の背景部分でマウスの左ボタンを押して、そのままボタンを押したままマウスを移動することで、飛行機の表示アングルを変更することができます。<p align="left">
+          <img border="0" src="selectair_airtabj.png" width="776" height="574"></p>     
+          <blockquote>
+            <p align="left"><b>航空機&nbsp; </b>航空機の種類を選びます。</p>     
+            <p align="left"><b>航空機検索</b>&nbsp; 
+            キーワードで航空機の種類を検索できます。キーワードはスペースで区切って複数入力可能です。例えば、「F 
+            18」とタイプすると、飛行機の種類に&quot;F&quot;と&quot;18&quot;を含む飛行機が航空機のリストに表示されます。</p>     
+          </blockquote>
+          <p align="left">
+          <img border="0" src="selectair_loadtabj.png" width="776" height="574"></p>     
+          <blockquote>
+            <p align="left"><b>短射程空対空ミサイル</b>&nbsp; 
+            機動性の高い、格闘戦用ミサイルです。発射後、ロックオンを維持しなくても、目標に向かって行きますが、いったん目標を見失うと、そのまま真っ直ぐ飛んでいってしまいます。</p>     
+            <p align="left"><b>高機動空対空ミサイル</b>&nbsp; 
+            機動性の高い、格闘戦用ミサイルです。短射程空対空ミサイルと違って、いったん目標を見失っても、発射母機が目標をロックオンし続けていれば、再度目標に向かいます。</p>     
+            <p align="left"><b>中射程空対空ミサイル</b>&nbsp; 
+            中射程ミサイルです。格闘戦用ミサイルよりは機動性が落ちますが、いったん目標を見失っても、発射母機が目標をロックオンし続けていれば、再度目標に向かって飛んでいくので、遠くから狙うと、しつこく相手を追尾していきます。</p>     
+            <p align="left"><b>空対地ミサイル</b>&nbsp; 地上攻撃用ミサイルです。</p>     
+            <p align="left"><b>ロケット弾</b>&nbsp; 
+            ロケット弾です。狙うのが難しいですが、命中すると機関砲よりは破壊力があります。</p>     
+            <p align="left"><b>チャフ・フレアポッド</b>&nbsp; 
+            ミサイル回避に使うチャフ・フレアを通常より多く搭載できるポッドです。</p>     
+            <p align="left"><b>500ポンド爆弾</b>&nbsp; 
+            中型の爆弾です。破壊力がありますが、低空で投下すると自機が爆発に巻き込まれる危険があります。</p>     
+            <p align="left"><b>250ポンド爆弾</b>&nbsp; 
+            小型の爆弾です。破壊力は小さいですが、直接命中すると戦車ぐらい破壊できます。低空で投下すると自機が爆発に巻き込まれる危険があります。</p>     
+            <p align="left"><b>500ポンド高抵抗爆弾</b>&nbsp; 
+            中型の爆弾で、投下すると空気抵抗を増す翼が開いて、自機より後方に落下します。低空爆撃に適しています。</p>     
+            <p align="left"><b>外部燃料タンク</b>&nbsp; 
+            燃料を多く搭載することができます。空になったり、機動性を増す必要が発生したとき、投下することができます。</p>     
+            <p align="left"><b>燃料</b>&nbsp; 燃料搭載量をパーセントで指定します。</p>     
+            <p align="left"><b>スモーク</b>&nbsp; チェックするとスモークオイルを搭載します。</p>     
+            <p align="left"><b>スモークカラー</b>&nbsp; スモークの色を選ぶことができます。</p>     
+          </blockquote>
+          <p align="left">
+          <img border="0" src="selectair_cattabj.png" width="776" height="574"></p>     
+          <blockquote>
+            <p align="left"><b>カテゴリー</b>&nbsp; 航空機の種類を選んで、選択範囲を狭めることができます。</p>     
+          </blockquote>
+<p align="left">  </p>     
+<p align="left">  </p>     
+<p align="left">  </p>     
+<p align="left"><b><u><a name="DOGFIGHT"></a></u>空中戦</b></p>      
+<p align="left">&quot;<b>Simulation -&gt; Create Air Combat</b>&quot;を選んで、空中戦ミッションを作成することができます。次のダイアログが出るので、フィールド、使用機、味方機、敵機、自機以外のレベルなどを選択してください。&quot;OK&quot;ボタンを押すと、メインメニューに戻るので、ミッションを保存したりできます。すぐにミッションを開始するには、&quot;Fly 
+Now&quot;ボタンを押してください。&quot;Use 
+Missile&quot;をオフにすると、空対空ミサイルの使用を禁止するので、機関砲による格闘戦になります。その場合でも、ロケット弾も使えますが、なかなか当たりません。</p>     
+<p align="left">     
+    <img border="0" src="aircombatdlg.png" width="753" height="329"></p>     
+    <p align="left">  <p align="left">  <p align="left"><a name="INSTANTDOGFIGHT"></a>  <b>インスタント・ドッグファイト</b>                                     
+<p align="left">このモードでは、相手機を撃墜すると、自動的に新しい敵機が発生します。</p>      
+<p align="left">空中戦は15分に限定で、これを過ぎると新しい敵機は発生しません。この15分を生き残って、最後に残った敵機を撃墜できれば、はじめて着陸して生還するチャンスができます。</p>      
+<p align="left">インスタント・ドッグファイトモードを使うには、<b>"Simulation"</b>メニューの、<b>"Fly Endurance Mode"</b>を選んでください。</p>         
+      <p>          
+      <p>          
+      <p><b><a name="INTERCEPTMISSION"></a>迎撃ミッション</b><p>迎撃ミッション（基地防空ミッション)では。僚機とともに飛び立って、基地を攻撃に来る飛行機を撃墜して防衛してください。</p>
+                  <p>迎撃ミッションを飛ぶには、<b>&quot;Simulation&quot;</b>メニューの、<b>&quot;Intercept  
+                  Mission&quot;</b>を選んでください。
+                  <p>  <p><a name="CLOSEAIRSUPPORTMISSION"></a><b>近接支援ミッション</b><p>
+近接支援ミッションでは、基地に攻めてくる地上部隊を空から撃破してください。どこから攻めてくるのかはマップによって違います。レーダーをうまく使って探してください。なお、一部のマップでは近接支援ミッションは利用できません。<p>
+近接支援ミッションを開始するには、<b>&quot;Simulation&quot;</b>メニューの<b>&quot;Close Air Support Mission&quot;</b>を選んでください。<p>  
+                  <p><a name="CONFIGENVIRONMENT"></a><b>昼/夜、霧、風の設定</b><p>昼/夜、霧、風を設定するには、<a href="#FREEFLIGHT">Create 
+New Flight</a>または<a href="#DOGFIGHT">Create Air Combat</a>でフライトを作成してから<b>&quot;Simulation&quot;</b>メニューの<b>&quot;Fly&quot;</b>を選ぶ前に、<b>&quot;Simulation&quot;</b>メニューの<b>&quot;Set 
+Environment&quot;</b>を選んでください。または、<a href="#CONFIGDLG">設定Dialog</a>で昼/夜を切り替えることもできます。(<b>&quot;Simulation&quot;</b>-&gt;<b>&quot;Set 
+Environment&quot;</b>の方が優先)
+                  <p>       
+    <p align="left"><a name="PREVMISSION"></a><b>前回のミッションを再度トライする</b>     
+    <p align="left">前回飛行したミッションに再トライする場合は、&quot;<b>Simulation</b>&quot;メニューの&quot;<b>Retry 
+    Previous Mission</b>&quot;を選んでください。     
+    <p align="left">       
+    <p align="left">       
+    <h2 align="left"><u><a name="HOWTOCONTROL"></a>       
+ 操縦方法(キーボード、マウス、ジョイスティック)</u></h2>                                     
+<p align="left">     
+<font size="4">多分、操縦方法だけプリントアウトしたい人もいると思ったので、ページを分けました。&nbsp;</font></p>      
+<p align="left"><font size="4"><a href="controlj.html"><b>[ここをクリックしてください]</b></a></font>      
+</p>      
+<p align="left"><font size="4">なお、</font><b><font size="6">キーボード</font>でエレベータとエルロンをコントロールすることは<font size="6">可能です</font></b><font size="4">。<a href="#CONTROLASSIGNMENT">キー/マウス/ジョイスティックの割り当てを変更する</a>を参照してください。</font><br>      
+</p>      
+
+          <p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+                  <h2><u><a name="HUD"></a>計器の読み方</u></h2>
+                  <h2>Head Up Display使用機の場合</h2>
+                  <p><b>標準ヘッドアップディスプレイ</b></p>
+                  <p><img border="0" src="3dhud.png" width="628" height="516"></p>
+                  <p>(1) 武装の残量を表示します。<br>
+                  (2) バンク各を表示します。<br>
+                  (3) 対気速度をノット(1kt=1.8km/h)で表示します。<br>
+                  (4) 高度を表示します。<br>
+                  (5) 上昇/降下率を表示します。(feet/minute)<br>
+                  (6) 機の姿勢を表示します。0のラインが地平線です。<br>
+                  (7) マッハ数（音速に対する相対速度) と過重(G)を表示します。<br>
+                  (8) 
+                  速度ベクトルを表示します。VキーでOn/Offができます。着陸のとき、この表示を接地点のちょっと先に合わせて降りていくと、うまく接地できますが、「俺はそんなものには頼らねえ！」という人のために、Vキーを押さない限り表示が出ないようになってます(^_^;)
+                  <br>
+                  (9) エンジン出力を表示します。<br>
+                  (10) 燃料残量を表示します。<br>
+                  (11) 舵の状態を表示します。<br>
+                  (12) 機首方位を表示します。<br>
+                  (13) 着陸装置、ブレーキ、フラップ、スポイラー（エアブレーキ）の状態を表示します。</p>
+                  <p>  </p>
+                  <p><b>簡略ヘッドアップディスプレイ</b></p>
+                  <p>解像度が低い環境など、標準ヘッドアップディスプレイでは文字が読みにくい場合があります。そのような場合は、<a href="#CONFIGDLG">設定ダイアログ</a>のゲームルールタブで「簡略ヘッドアップディスプレイを使う」をオンにすることで、低解像度でも読みやすいヘッドアップディスプレイを選択することができます。</p>
+                  <p><img border="0" src="hud.png" width="551" height="396"><br>
+                  (1) 武装/装備を表示します。<font face="Arial">&gt;&gt; &lt;&lt;</font>で選択した武器を表示しています。<br>                       
+                  (2) 横の傾き(バンク角)を表示します。<br>                      
+                  (3) 上昇/降下率を表示します。(x100 feet/minute)<br>                      
+                  (4) 方位を表示します。<br>                       
+                  (5) 速度をノット(1kt=1.8km/h)で表示します。<br>                       
+                  (6)                        
+                  機の姿勢を表示します。0のラインが地平線です。<br>
+                  (7) 高度をフィート(1ft=0.3m)で表示します。<br>                       
+                  (8) 音速に対するスピード(M)を表示します。<br>                       
+                  (9) 過重(G)を表示します。<br>                      
+                  (10) スロットルセッティングを表示します。<br>                       
+                  (11) 速度ベクトルを表示します。VキーでOn/Offができます。着陸のとき、この表示を接地点のちょっと先に合わせて降りていくと、うまく接地できますが、「俺はそんなものには頼らねえ！」という人のために、Vキーを押さない限り表示が出ないようになってます(^_^;)<br>                      
+                  (12) ランディングギア/車輪ブレーキ/フラップ/エアブレーキの状態を表示します。<br>                       
+                  (13) 舵の状態を表示します。<br>                       
+                  (14) 燃料残量を表示します。<br>                       
+                  <h2>計器パネルの場合</h2>
+                  <p>
+                  (* 計器の配置は機首により異なります。)<p>
+                  <img border="0" src="instpanel.png" width="594" height="216"><p>
+                  (1) <span lang="ja">速度計<br>
+                  (2) 姿勢表示計<br>
+                  (3) 高度計<br>
+                  (4) ILS<br>
+                  (5) フラップ表示<br>
+                  (6) 燃料残量<br>
+                  (7) ブレーキ表示<br>
+                  (8) ターン・コーディネータ<br>
+                  (9) ヘディング・インディケータ （方位）<br>
+                  (10) 垂直速度計<br>
+                  (11) VOR<br>
+                  (12) エンジン出力</span><p>  <p>  <p><a name="IFR"></a><u><b>
+          <font size="5">計器飛行</font></b></u><p>
+          2012/07/01バージョンから、管制官の指示に従って目的地まで飛行する計器飛行ができるようになりました。詳しくは、次のURLを参照してください。<blockquote>
+            <p><a href="http://ifr.jp.ysflight.com">http://ifr.jp.ysflight.com</a></blockquote>
+          <p align="left">  </p>                             
+          <p align="left">  </p>                             
+<h2 align="left"><u><a name="WEAPONS"></a>  武装</u></h2>                                     
+<p align="left">2000/07/03リリースバージョンから、武器の使い方が変わりました。2キーまたはジョイスティックのボタン2で武装選択、1キー,スペースキーまたはジョイスティックのボタン1で発射です。</p>      
+<p align="left">YSFLIGHT2000では4種類の武器(と、スモーク)を利用できます。</p>      
+<table border="1">     
+  <tr>     
+    <td>      GUN</td>     
+    <td>      機関砲です。誘導性はありません。また、巨大な目標(空母,橋など)に対しては無効です(ただし、A-10A      Thunderbolt 2に搭載の機関砲は効果あります)。</td>                                       
+  </tr>      
+  <tr>      
+    <td>      AAM&nbsp;</td>      
+    <td>      空対空ミサイルです。空中目標に向かって誘導されて行きます。全方位から発射可能ですが、目標の背後から発射したときがもっとも命中可能性が高いです。</td>      
+  </tr>      
+  <tr>      
+    <td>      A-AAM</td>      
+    <td>      
+    空対空ミサイルです。AAMと同様、空中目標に向かって誘導されますが、一度目標を見失ったとしても、発射母機が目標のロックオンを維持していれば、再度目標に向かって行きます。</td>      
+  </tr>      
+  <tr>      
+    <td>      AGM&nbsp;</td>      
+    <td>      空対地ミサイルです。地上目標に向かって誘導されていきます。</td>     
+  </tr>     
+  <tr>     
+    <td>      RKT</td>     
+    <td>      ロケット弾です。まっすぐ飛んでいきます。</td>     
+  </tr>     
+  <tr>     
+    <td>      FLR</td>     
+    <td>      ミサイルを避けるためのフレアです。ミサイルを撃たれたら、フレアを射出して、高G旋回すると回避することができます。</td>     
+  </tr>     
+  <tr>     
+    <td>      BOM&nbsp;</td>     
+    <td>      500ポンド自由落下爆弾、250ポンド自由落下爆弾、500lb高抵抗爆弾の三種類の爆弾があります。たくさん積んでるとB-2など重くてなかなか上昇しません。誘導性はありません。目標を直撃したときがもっとも効果がありますが、そうでなくても近くに落ちたら目標を破壊することができます。
+    なお、高抵抗爆弾には照準が出ません。</td>     
+  </tr>     
+  <tr>     
+    <td>      SMOKE</td>     
+    <td>      武器ではないですが、武器と同様に操作することができます。</td>     
+  </tr>     
+  <tr>     
+    <td>      FUEL</td>     
+    <td>      外部燃料タンクです。緊急に機体を軽くする必要がある場合など、投下できます。</td>     
+  </tr>     
+</table>     
+<p align="left">利用可能な武器は飛行機の種類によって異なります。</p>      
+
+          <p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+<h2 align="left"><u><a name="RADARNAVAID"></a>   航法支援設備(VOR, ADF)、計器着陸装置 (ILS)、レーダー</u></h2>                                    
+<p align="left">YSFLIGHTでは、VORとADFの二種類の航法計器を利用することができます。</p>     
+<p align="left">VOR<span lang="ja">は、あるVORステーションを通る直線の飛行経路を仮定して、自分の飛行機から見てその飛行経路の左右のずれを表示する計器です。また、ステーションが自分から見て前後どちら側にあるのかも知ることができます。YSFLIGHTの飛行機の多くはVORの受信機を二台積んでいて、区別するためにNAV1, 
+NAV2と呼びます。</span></p>     
+<p align="left"><span lang="ja">VORを利用するためには、まずステーションを選択し、続いて直線の飛行経路の方位（OBS）を設定します。設定対象のVORを指定するには、Lキーを使います。一度Lキーを押すと、NAV1ステーション選択メニューが表示されます。もう一度Lキーを押すと、NAV2、さらにもう一度押すとNDBステーションの選択メニューに切り替わります。NDBはADFの説明のところであらためて説明します。ステーション選択メニューで、一ページにステーションの表示が入りきらない場合は、9キーで次のページを表示することができます。</span>ステーションを選択した後、続いてOBSを設定します。OBSは7キーと8キーで変更することができます。</p>     
+<p align="left">VORの読み方は次の通りです。自機をOBSが指すヘディングに向けたと仮定します。そのとき、VORの針は、自機から見てVORが左右どちらにあるのかを表示します。例えば、下の図のNAV1の針は左側にあるので、自機のヘディングを360に向けたとき、VORステーションは右側にあるということになります。また、OBSの横の表示が▲または「TO」のとき、VORステーションは、自機から見て前方に、▼または「FR]のときは、後方にあることになります。</p>     
+<table border="0" cellspacing="1" width="432" id="AutoNumber1">
+  <tr>
+    <td width="33%"><img border="0" src="nav1.png" width="143" height="144"></td>
+    <td width="33%"><img border="0" src="nav2.png" width="143" height="144"></td>
+    <td width="34%"><img border="0" src="adf.png" width="143" height="144"></td>
+  </tr>
+  <tr>
+    <td width="33%">NAV1</td>
+    <td width="33%">NAV2</td>
+    <td width="34%">ADF</td>
+  </tr>
+</table>
+<p align="left">VORの使い方を最初に勉強したときは、なんとややこしい計器だろう、と、思ったものでしたが、ステーション上空に到達したいだけであれば割と簡単な使い方があります。まず、ステーションを選択して、7キーまたは8キーで、針が中央でTO/FR表示が「TO」または▲になるまでOBSをまわしてください。針が中央でTO/FR表示が「TO」または▲になったOBSの方向にステーションがあるので、そっちに飛んでいけばいずれステーションの上に到達します。</p>      
+<p align="left">また、NAV1は計器着陸装置(ILS)も兼ねています。NAV2もILSに合わせることができますが、縦のガイダンス（グライド・スロープ）の表示が出ません。NAV1のステーション選択画面でILSを選ぶと、VORには理想的な自機から見た着陸進入コースのズレを表示します。ILSを選択した状態では、OBSは表示に関係ありません。ILSは着陸進入コースの上下のズレも表示します。NAV1の横の針が、グライド・スロープと言って、自機から見た着陸進入コースの上下のズレです。基本的に、着陸コースに乗ったら、あとは、針を追いかけるつもりで操縦することで、滑走路にまっすぐ下りていくことができます。</p>      
+<p align="left">また、ヘッド・アップ・ディスプレイのある機体では、下のようにヘッド・アップ・ディスプレイ上にもILSを表示します。</p>      
+<p align="left"><img border="0" src="ils.png" width="234" height="182"><br>     
+簡単に言うと、ILSは自分の機がどちらに進むべきかを表示していると考えることができるので、ILSの線が見える方に機を持って行くように操縦すれば、うまく滑走路に滑り込むことができます。なお、機が滑走路の方を向いているのが前提なので、滑走路と反対側に向かって飛んでいるときはILSを参照しながら飛んでもただ上に上っていくだけです(^_^;)</p>      
+<p align="left">  </p>                                     
+<p align="left">また、ADFはもっと単純で、NDBステーションを選ぶと、自分から見てNDBステーションがどちらにあるのかを表示します。針が真上を向くように維持していれば、そのうちADFステーションの真上に着きます。実機では、このADFはふらふら揺れる上に精度が悪いので、結構使うには苦労しますが、YSFLIGHTのADFは非常に安定しているので結構使えます(^_^;)</p>                                     
+<p align="left">  </p>                                     
+<p align="left">3キーまたはジョイスティックのボタン3を押すことで、レーダーを、OFF                                       
+→ 5 miles → 10 miles → 50 miles の順に切り替えることができます。</p>                                       
+<p align="left">レーダーには、対空モード、対地モード、爆撃モードの3種類のモードがあります。モードは武装を選択すると自動的に切り替わります。</p>      
+<div align="left">      
+  <table border="0">      
+    <tr>      
+      <td><img border="0" src="radar_aam.png" width="127" height="128"></td>      
+      <td><img border="0" src="radar_agm.png" width="127" height="128"></td>      
+      <td><img border="0" src="radar_bomb.png" width="127" height="127"></td>      
+    </tr>      
+    <tr>      
+      <td align="center">(対空モード)</td>     
+      <td align="center">(対地モード)</td>     
+      <td align="center">(爆撃モード)</td>     
+    </tr>     
+  </table>     
+</div>     
+<p align="left">対空モードでは、Xマークが地上物、■マークが飛行機を表します。白のマークは味方、緑のマークは敵を表します。■から突き出ている短い線は飛行機が飛んでいる方向を示します。</p>      
+<p align="left">対地モードは、対空モードとほぼ同じですが、飛行機の前にあるオブジェクトがより多く見えるようになっています。</p>      
+<p align="left">爆撃モードでは、○で爆弾の予想着弾点を示します。この○を参照しながら、B-2やTu-144で絨毯爆撃(１機なので絨毯というよりは直線的ですが....)することができます。</p>      
+<p align="left">  </p>      
+<p align="left">  </p>      
+<p align="left"><a name="FUELAMMOSUPPLY"></a><u><b><font size="5">燃料・武器補給</font></b></u></p>      
+<p align="left">
+空母上または補給トラックの近くで完全に停止してHOMEキーを押すことで、燃料や武器を補給することができます。下のダイアログで、武器、燃料の分量を選んで、OKを押してください。なお、メインメニューで、<b>&quot;Option 
+-&gt; Change Key/Joystick Assignment&quot;</b>を選ぶことで、HOMEキー以外にこの機能を割り当てることもできます。</p>      
+<p align="left"><img border="0" src="supplydlg.png" width="731" height="570"></p>      
+<p align="left">  </p>      
+          <center>       
+       
+<h2 align="left"><u><a name="NETWORK"></a>  ネットワーク対戦</u></h2>                                     
+<p align="left"><b><font size="5"><span style="background-color: #FF0000">注意</span>:  
+Windows XP Service Pack 2で、ネット対戦を利用したい場合は、YSFLIGHTに対するWindows  
+Firewallによるブロックを解除する必要があります。詳しくは<a href="xpsp2j.html">こちら</a>をご参照ください。</font></b></p>      
+<p align="left">  </p>      
+<p align="left">20001125リリースバージョンから、ネットワーク対戦機能がつきました。複数人のプレーヤーが共通のエアスペースを飛行して、お互いに格闘戦をしたり、あるいは、強固に防衛された地上目標に攻撃したりすることができます。高速な回線があれば、6人で飛んで編隊アクロを実施することも不可能では無いと思います。そんなにテストプレイヤーがいないので、こちらでは何人まで大丈夫か実験はしていませんが。。。。一応17人まで同時にプレイできるように作ったつもりです。</p>      
+<p align="left">20021205バージョンから、ネット対戦でEndurance ModeとIntercept                  
+Missionができるようになりました。これを使うとコンピュータ機を相手に共同で空中戦や基地防空ミッションに出ることができます。サーバーメニューでEキーでEndurance                  
+Mode、 BキーでIntercept Missionを開始します。Tキーで中止です。(なお、Tキーを押してもすでに飛行中のコンピュータ機は消えないので、がんばって撃墜してください)</p>                       
+<p align="left">ネットワークプレイでは、自分の飛行機に弾丸が命中していないように見えても、相手機の画面ではばっちり弾丸が自機に命中している場合があります。これは、どんなに速いネットワークでも位置の伝達の遅延が発生するためで、防ぎようがありません。プログラムを頭良くして遅延時間を見こんで相手の未来予測位置を表示するようにプログラムを書けば、ある程度はなんとかなるんですが、そこまで手間かける気になりません(^_^;)そこで、YSFLIGHTでは、弾丸の命中のルールを次のようにしました。</p>      
+<blockquote>     
+  <p align="left"><b>弾丸を発射したユーザがいるPC上か、あるいは被弾したユーザがいるPC上かどちらかで弾丸が命中した場合、本当に命中したことにする。</b></p>      
+</blockquote>     
+<p align="left">要するに、発射した機側か、被弾した機側かどっちか一方のPCで命中してれば命中したことになります。</p>      
+<p align="left">したがって、相手が発射している弾丸が自分の機の後ろをすり抜けているように見えても油断しないで回避するように努力してください。ひょっとすると命中したことになってるかもしれません。仮に0.1秒の遅延が発生しているとすると、自分の機体が200m/sぐらいで飛んでいるならば、相手機の弾丸が20mぐらい後方にはずれているように見えても実は命中してしまっているでしょう。あと、これは楽しむゲームですので、「今のは命中してなかった!!!!」とか言って喧嘩を始めないようにしましょう。</p>      
+<p align="left">遠隔地のプレイヤー同士で飛行する場合は、飛行中、相手のプレイヤーとチャットしたい場合があるかもしれません。しかし、YSFLIGHT2000にはチャット機能はありません。そこで、YSFLIGHT2000のウィンドウの脇に他のチャットプログラムを起動して利用することができます。しかし、チャットプログラムを利用している最中は飛行機のコントロールができません。チャット中の墜落事故を防止するために、自動操縦装置を利用することができます。BSキーを一度押すと、飛行機は上空待機パターンを飛行します。もういちどBSキーを押すと上空待機を解除します。</p>     
+<p align="left"><b>ただし、音声チャットプログラムとYSFLIGHT2000を同時に利用することはお勧めしません。こちらの実験では、音声チャットプログラムとYSFLIGHT2000を同時に起動すると、Windowsごとフリーズしてしまうことを確認しています。この問題について、YSFLIGHT2000の効果音をオフにする以外の有効な対策はまだわかっていません。かりに、効果音をオフにしてYSFLIGHT2000を無事起動したとしても、音声の転送にかかるネットワークの負荷が大きすぎてまともなネットワーク対戦になりません。</b></p>    
+</center>   
+          <p align="left"><img border="0" src="serverclient.png" align="right" width="227" height="189">ネットワークプレイでは、右の図のように、一台のコンピュータがサーバーとして動作しなくてはなりません。他のコンピュータはクライアントとしてサーバーに接続してプレイします。</p>   
+          <p align="left">プレイヤーはサーバーPCを使っていてももクライアントPCを使っていても同様にネットワーク対戦に参加することができます。</p>   
+          <p align="left">サーバーを起動するには、NetworkメニューのServerを選びます。ログイン名をタイプするとサーバーが起動します。クライアントとしてサーバーにアクセスするには、NetworkメニューのClientを選び、次に接続先ホスト名(インターネット上のアドレス)をタイプするとサーバーにログインできます。</p>   
+          <p align="left">接続先ホスト名は、Server起動時にServerメニューの下に次のように表示されます。このアドレスを友達に電話なりchat                 
+          programなり、適当な方法で伝えるといいでしょう。</p>   
+          <blockquote>
+          <p align="left"><img border="0" src="hostname.png" width="353" height="332"></p>   
+          </blockquote>
+          <p align="left">ただし、サーバーになるPCが複数のネットワークコネクションを持っている場合や、IPアドレスを他のPCと共有している場合(例:ダイヤルアップルータを使っている場合など)、このアドレスでは接続できない場合があります。その場合、正しいアドレスはネットワーク管理者の人に問い合わせてください。なお、環境によってはサーバーになれない場合もあります。ホスト名の問い合わせのメールが僕にたくさん届いて困っているので、そういうメールはすべて無視します。</p>   
+          <blockquote>
+            <p align="left"><b>注意: ClientのYSFLIGHTバージョンがServerのバージョンと異なる場合、次のようなメッセージが出て、接続を拒否される場合があります。<br>                
+            <img border="0" src="versionconflict.png" width="344" height="87"><br>
+            この場合、ServerとClientを最新版YSFLIGHTに更新してからやりなおしてください。<br>
+            (* なお、20021205バージョン以降では、ネット越しの飛行機の動きをスムーズにする機能がついていますが、ServerかClientのどちらかが20021205バージョンよりも古いバージョンを利用している場合、この機能は働きません。)</b></p>                     
+          </blockquote>
+          <p align="left">これで接続完了です。</p>   
+          <p align="left">
+          サーバー（コンソールサーバーを除く）を起動すると、右上にサーバーダイアログが出ます。このダイアログを使って、サーバーの操作（航空機選択、開始位置選択、IFF指定、飛行開始など、または、ミッションの開始）ができます。</p>   
+          <blockquote>
+          <p align="left">
+          <img border="0" src="serverdlgj.png" width="399" height="372"><br>
+          <b>サーバーダイアログ</b></p>   
+          </blockquote>
+          <p align="left">
+          クライアントがサーバーにログオンすると、右上にクライアントダイアログが出ます。このダイアログを使って、クライアントの操作（航空機選択、開始位置選択、IFF指定、飛行開始など）ができます。</p>   
+          <blockquote>
+          <p align="left">
+          <img border="0" src="clientdlgj.png" width="399" height="256"><br>
+          <b>クライアントダイアログ</b></p>   
+          </blockquote>
+          <p align="left">または、ショートカットキーでも操作可能です。それぞれのキーの意味は次の通りです。</p>   
+          <center>    
+    
+<div align="left">
+    
+<table border="1">   
+  <tr>   
+    <td>A</td>   
+    <td>飛行機の選択</td>   
+  </tr>   
+  <tr>   
+    <td>S</td>   
+    <td>開始位置の選択</td>   
+  </tr>   
+  <tr>   
+    <td>J</td>   
+    <td>飛行開始</td>   
+  </tr>   
+  <tr>   
+    <td>L</td>   
+    <td>ユーザ一覧を表示する(クライアントは飛行中のユーザ一覧のみ)</td>   
+  </tr>   
+  <tr>   
+    <td>D</td>   
+    <td>ユーザを選んで強制切断する。(サーバ－のみ)</td>   
+  </tr>   
+  <tr>   
+    <td>C</td>   
+    <td>サーバーをロックして、以後のログオンを禁止する。ふたたびCキーを押すことで解除。(サーバーのみ)</td>   
+  </tr>   
+  <tr>   
+    <td>E</td>   
+    <td>Endurance Mode開始(サーバーのみ)</td>                    
+  </tr>   
+  <tr>   
+    <td>B</td>   
+    <td>Intercept Mission開始(サーバーのみ)</td>                    
+  </tr>   
+  <tr>   
+    <td>P</td>   
+    <td>近接支援ミッションを開始（サーバーのみ）</td>                    
+  </tr>   
+  <tr>   
+    <td>T</td>   
+    <td>Endurance ModeまたはIntercept Missionを中止する。</td>                    
+  </tr>   
+  <tr>   
+    <td>F12</td>   
+    <td>チャットメッセージをタイプして送信する。</td>   
+  </tr>   
+  <tr>   
+    <td>ESC</td>   
+    <td>サーバーまたはクライアントを終了する</td>   
+  </tr>   
+  <tr>   
+    <td>1,2,3,4</td>   
+    <td>    IFF(敵味方識別装置)の選択。同じIFFを持った航空機をミサイルでロックオンすることはできません。</td>   
+  </tr>   
+</table>   
+</div>
+</center>   
+          <p align="left">なお、飛行機や飛行開始位置の選択は、カーソルキーの↑↓で移動、改行キーかスペースキーで決定です。SHIFTキーを押しながら↑↓キーを押すと、より速く移動します。ESCキーを押しても選択されてしまうので注意してください（取り消しにならない）。</p>   
+          <p align="left">また、複数人でプレイする場合は、同じ場所から同時に出ていきなり空中衝突してしまわないように注意してください。</p>   
+          <p align="left">このネットワーク対戦機能は、電話回線で接続して遠隔地でプレイすることはあまり想定していなくて、同じ部屋の中で10Base-T以上のスピードで接続したPCがたくさんあって、お互い声で話ができるところでプレイするようなことを考えてます。ですので、チャット機能はついてません。どうしてもチャットしたい場合は、YSFLIGHTと同時に別のチャットプログラムを起動して、そちらをご利用ください。</p>   
+          <p align="left">また、NetworkメニューのNetwork Optionで、ネットワーク対戦機能の設定を変更することができます。NetworkメニューのNetwork Optionを選ぶと、次のダイアログが開きます。それぞれの項目の意味は次の通りです。</p>                                       
+          <p align="left">(*                             
+          なお、ネットワーク対戦モードのデフォルトの飛行機の選択は、<a href="#CONFIGDLG">Config 
+          Dialog</a>に統合しました)</p>      
+          <center>       
+       
+<div align="left">
+       
+<table border="2" width="719" height="400">      
+  <tr>      
+    <td colspan="2" width="704" height="19">
+    <p align="left"><b>General</b></p>
+    <p align="left">
+    <img border="0" src="netconfig_genj.png" width="447" height="385"></td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="38"><b>ポート番号</b></td>      
+    <td width="547" height="38">      ネットワークポート番号を指定します。デフォルトは7915です。この番号がサーバーと合ってないとクライアントは接続できません。</td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="38"><b>デフォルトユーザ名</b></td>      
+    <td width="547" height="38">      デフォルトのユーザ名を指定します。
+    なお、ここをUSERNAMEのままにしておくと、ネット対戦で&quot;nameless&quot;になってしまうので、設定しておきましょう。</td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="38"><b>チャットログを残す</b></td>      
+    <td width="547" height="38">      このボックスをチェックすると、チャットのログを&quot;My Documents\YSFLIGHT.COM\YSFLIGHT\netchatlog&quot;に保存します。</td>      
+  </tr>      
+  <tr>
+    <td width="698" height="32" colspan="2"><b>Client</b><p>
+    <img border="0" src="netconfig_clij.png" width="447" height="385"></td>                      
+  </tr>
+  <tr>
+    <td width="151" height="32"><b>デフォルトサーバーアドレス</b></td>                      
+    <td width="547" height="32">      デフォルトで接続するホスト名を指定します。ここで指定したホスト名が<b>Network 
+      -&gt; Client</b>を選んだときに出る接続先指定ダイアログに最初に出ます。</td>           
+  </tr>
+  <tr>
+    <td width="151" height="32"><b>デフォルト開始位置</b></td>                      
+    <td width="547" height="32">      
+    クライアントとして参加する場合のデフォルトの開始位置を指定します。</td>           
+  </tr>
+  <tr>
+    <td width="151" height="32"><b>デフォルトIFF</b></td>                      
+    <td width="547" height="32">      クライアントとして参加する場合のデフォルトのIFF(敵味方識別装置)を指定します。</td>           
+  </tr>
+  <tr>
+    <td width="151" height="31"><b>飛行を記録する</b></td>                      
+    <td width="547" height="31">      このチェックをオンにすると、クライアントとして参加したとき飛行を記録します。オフになっていると飛行記録は残りません。</td>           
+  </tr>
+  <tr>      
+    <td width="698" height="38" colspan="2"><b>Server1</b><p>
+    <img border="0" src="netconfig_svr1j.png" width="447" height="385"></td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="38"><b>デフォルトフィールド</b></td>      
+    <td width="547" height="38">      ネットワークプレイで使用するフィールドを指定します。この設定は、サーバーとしてPCを利用するときのみ有効です。飛行するフィールドの決定権はサーバー側にあり、クライアントはフィールドを途中から変更することはできません。(できたら大変ですよね(^_^;)飛んでる途中でいきなり目の前の景色が変わったりして(^_^;))</td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="38"><b>デフォルト開始位置</b></td>      
+    <td width="547" height="38">      サーバーとしてPCを利用するときの、デフォルトの飛行開始位置を指定します。飛行開始位置はサーバーを起動後に[S]キーで変更することもできます。</td>      
+  </tr>      
+  <tr>
+    <td width="151" height="38">      <b>迎撃ミッション設定</b></td>      
+    <td width="547" height="38">      ネット対戦でIntercept Missionを実行する場合の条件を設定します。</td>      
+  </tr>
+  <tr>      
+    <td width="151" height="38"><b>飛行を記録する</b></td>      
+    <td width="547" height="38">      このチェックボックスをオンにすると、サーバーとしてPCを利用するとき、飛行を記録します。デフォルトではオフです。(オフでは飛行記録は残りません)</td>      
+  </tr>      
+  <tr>
+    <td width="151" height="38">      <b>可能なときメモリを解放する</b></td>      
+    <td width="547" height="38">      
+    このチェックボックスがオンだと、一定時間何も活動が無い場合メモリをある程度解放します。長時間サーバーを実行する場合などはオンにしておくといいです。</td>      
+  </tr>
+  <tr>
+    <td width="151" height="38">      <b>チャット禁止</b></td>      
+    <td width="547" height="38">      ユーザ同士のテキストメッセージの送受信を禁止します。</td>      
+  </tr>
+  <tr>
+    <td width="151" height="38">      <b>ログインのタイムアウト</b></td>      
+    <td width="547" height="38">      
+    クライアントがサーバーに接続してから、指定時間以内にログオンリクエストを送信しなかった場合、クライアントを切断します。</td>      
+  </tr>
+  <tr>
+    <td width="151" height="38">      <b>単一IPからの最大接続数</b></td>      
+    <td width="547" height="38">      同一のIPアドレスからの接続数を制限します。</td>      
+  </tr>
+  <tr>
+    <td width="151" height="19"><b>一定時間ごとにサーバーをリセット</b></td>      
+    <td width="547" height="19">      一定時間ごとにサーバーをリセットする場合、ここに時間を指定します。</td>      
+  </tr>
+  <tr>
+    <td width="151" height="19">      <b>一定回数リセットしたらサーバーを止める</b></td>                                       
+    <td width="547" height="19">      Reset 
+    ServerでNever以外を選んだ上で、このオプションで回数を指定すると、指定回数だけサーバーをリセット後、自動的にサーバーが終了します。<p>
+    Reset ServerとStop Server After 
+    Resettingを使うと、例えば週末だけ自動的にサーバーを起動するような使い方ができます。Reset Serverに6時間を指定し、Stop 
+    Server After Resettingに9 
+    times(9回)と指定すると、合計54時間サーバーが動く計算になります。なので、二日と6時間動きつづけることになります。あとは、これを、金曜日の午後6時に起動して、サーバーが終わると同時にプログラムが終了するようにすればいいのです。例えば、タスクスケジューラを使って、</p>
+    <p>&nbsp;&nbsp;&nbsp; fsmaino -server AutoServer -autoexit</p>
+    <p>と起動するように仕掛ければいいでしょう。</td>      
+  </tr>
+  <tr>      
+    <td width="698" height="19" colspan="2">      <b>Server2</b><p>
+    <img border="0" src="netconfig_svr2j.png" width="447" height="385"></td>                                       
+  </tr>      
+  <tr>
+    <td width="151" height="38"><b>デフォルトIFF</b></td>      
+    <td width="547" height="38">      サーバーとしてPCを利用するときの、IFF(敵味方識別装置)のデフォルト値を指定します。</td>      
+  </tr>
+  <tr>      
+    <td width="151" height="19" valign="top">      <b>地対空砲を有効にする</b></td>                                       
+    <td width="547" height="19" valign="top">      このチェックボックスをオンにするとネット対戦で地対空砲を有効にします。</td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="19" valign="top">      <b>空対空・空対地ミサイルを使う</b></td>                                       
+    <td width="547" height="19" valign="top">      ネットワーク対戦でAAMとAGMを利用するかしないかを指定します。</td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="19" valign="top">      <b>機銃/爆弾/ロケット弾を使う</b></td>                                       
+    <td width="547" height="19" valign="top">      ネットワーク対戦で機関砲、爆弾、ロケット弾を使用する/しないを指定します。</td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="19" valign="top">      <b>見越し照準の使用禁止</b></td>                                       
+    <td width="547" height="19" valign="top">      このオプションがオンだと、クライアント上の設定にかかわらず、全クライアントで見越し照準が使えなくなります。</td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="19" valign="top">      <b>自機以外視点禁止</b></td>                                       
+    <td width="547" height="19" valign="top">      <span lang="ja">
+    このオプションがオンだと、ネット対戦中に、F3キーなどで他の機体を見ることを禁止します。</span></td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="19" valign="top">      <b>ユーザの参加/離脱を通知する</b></td>                                       
+    <td width="547" height="19" valign="top">      
+    このオプションがオンだと、ネット対戦中に、誰か他のユーザの飛行開始/終了をメッセージで知らせます。</td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="19" valign="top">      <b>ユーザ名の表示</b></td>                                       
+    <td width="547" height="19" valign="top">      ユーザ名の表示をAlways 
+    (常に表示)か、あるいは、一定距離内に接近したときのみ表示するかを指定します。</td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="32" valign="top"><b>空中衝突判定</b></td>      
+    <td width="547" height="32" valign="top">      ネット対戦でのMid Air 
+    Collisionの設定を、サーバー上の設定と同じ(Same as server)、常にオン (Enable)、常にオフ 
+    (Disable)、または、各PCごとの設定に任せる (Don't control)かを選択します。</td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="32" valign="top"><b>ブラックアウト</b></td>                       
+    <td width="547" height="32" valign="top">      ネット対戦でのBlack Outの設定を、サーバー上の設定と同じ(Same as 
+    server)、常にオン (Enable)、常にオフ (Disable)、または、各PCごとの設定に任せる (Don't 
+    control)かを選択します。</td>                       
+  </tr>      
+  <tr>      
+    <td width="151" height="32" valign="top"><b>どこでも着陸可能</b></td>                       
+    <td width="547" height="32" valign="top">      ネット対戦でのCan Land 
+    Anywhereの設定を、サーバー上の設定と同じ(Same as server)、常にオン (Enable)、常にオフ 
+    (Disable)、または、各PCごとの設定に任せる (Don't control)かを選択します。</td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="32" valign="top"><b>レーダーに映る最低高度</b></td>                      
+    <td width="547" height="32" valign="top">      <span lang="ja">&quot;Same as 
+    Server&quot;を選ぶと、飛行機がレーダーに映る最低高度を全クライアントでサーバーと同じ高度にします。</span></td>           
+  </tr>      
+  <tr>      
+    <td width="698" height="32" valign="top" colspan="2">
+    <b>Server 3</b><p>
+    <img border="0" src="netconfig_svr3j.png" width="447" height="385"></td>                      
+  </tr>      
+  <tr>      
+    <td width="151" height="32" valign="top"><b>禁止IPアドレス</b></td>                      
+    <td width="547" height="32" valign="top">      <span lang="ja">
+    このリストにあるIPアドレスからの接続要求があっても、サーバーが拒否します。</span></td>           
+  </tr>      
+  <tr>      
+    <td width="151" height="32" valign="top"><b>選択した禁止IPアドレスを削除</b></td>                      
+    <td width="547" height="32" valign="top">      <span lang="ja">
+    選択したIPアドレスをリストから削除します。</span></td>           
+  </tr>      
+  <tr>      
+    <td width="151" height="32" valign="top"><b>新しい禁止IPアドレスを追加</b></td>                      
+    <td width="547" height="32" valign="top">      <span lang="ja">IPアドレスを追加します。</span></td>           
+  </tr>      
+  <tr>      
+    <td colspan="2" width="704" height="19"><b><span lang="ja">その他</span></b></td>      
+  </tr>      
+  <tr>      
+    <td width="151" height="19"><b>デフォルトに戻す</b></td>      
+    <td width="547" height="19">    設定をデフォルトに戻します。</td>       
+  </tr>      
+  </table>      
+</div>
+</center>     
+
+          <p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+                <h2><a name="YFSUTIL"></a><b><u>フライト・レコード・ユーティリティ</u></b></h2>
+                <p><b>- 飛行記録の間引き</b></p>                 
+                <p>うまく飛行できたときなどは、飛行記録を友達にE-Mailで送ったり、Web                  
+                siteにアップロードしたりしたいと思います。しかし、フライトレコードファイルは、大きなファイルになりがちです。そのような場合、飛行記録の精度を減らして、ファイルサイズを減らすことができます。</p>
+                <p><b>注意:                  
+                いったん精度を減らしてしまうと、元に戻すことはできません。精度を下げる前に、元のデータをバックアップとしてセーブしておくことをお勧めします。</b></p>
+                <p>精度を下げるには、二通り方法があって、ひとつは、時間の精度を下げる方法、もうひとつは位置の精度を下げる方法です。時間の精度を下げるには、&quot;Flight                  
+                Record Utility&quot;から&quot;Set Time Interval&quot;を選んで、時間のステップを指定してください。デフォルトでは、0.05秒ステップになっていて、これは、0.05秒に一度飛行記録を取る、という意味です。これを0.1秒にすると、飛行記録のサイズは約半分になります。</p>                 
+                <p>もうひとつの方法は、位置の精度を下げる方法です。位置の精度を下げるには&quot;Flight                  
+                Record Utility&quot;から&quot;Set Space Precision&quot;を選んで、精度を指定してください(単位はメートル)。デフォルトでは、0.01(１センチ)の精度なので、飛行記録は、小数点以下2桁まで位置を記録します。</p>                 
+                <p><b>- 飛行記録の編集</b></p>                 
+                <p><img border="0" src="yfsutildlg.png" align="right" width="165" height="335">精度を落とす他に、飛行記録のいらない部分を削除して、おもしろい部分だけ残すことができます。それには、&quot;Flight                  
+                Record Utility&quot;から&quot;Edit Flight Record&quot;を選んでください。画面は、飛行記録再生と似ていますが、右のようなダイアログが開きます。それぞれのテキストボックス、ボタンの意味は以下の通りです。</p>                 
+                <p><b>注意:                  
+                いったんフライトレコードの一部を削除すると、元に戻すことはできません。編集前に元のデータをバックアップとしてセーブしておくことをお勧めします。</b></p>
+                <table border="1" width="500">
+                  <tr>
+                    <td width="118">T0, T1</td>                 
+                    <td width="366">タイムマーカーです。時刻を手動で入力することもできますし、&quot;Capture&quot;ボタンで押した時点の再生位置の時刻をセットすることもできます。</td>
+                  </tr>
+                  <tr>
+                    <td width="118">Jump</td>
+                    <td width="366">タイムマーカーの時刻にジャンプします。</td>
+                  </tr>
+                  <tr>
+                    <td width="118">Capture</td>
+                    <td width="366">再生位置の時刻をタイムマーカーにセットします。</td>
+                  </tr>
+                  <tr>
+                    <td width="118">Delete-Between T0 and T1</td>                 
+                    <td width="366">T0とT1の間のフライトレコードを削除します。</td>
+                  </tr>
+                  <tr>
+                    <td width="118">Delete-Before T0 and after T1</td>                 
+                    <td width="366">T0とT1の間のフライトレコードを残して他を削除します。</td>
+                  </tr>
+                  <tr>
+                    <td width="118">Play- ||</td>                 
+                    <td width="366">再生を一時停止します。</td>
+                  </tr>
+                  <tr>
+                    <td width="118">Play- &gt;</td>                 
+                    <td width="366">通常再生します。</td>
+                  </tr>
+                  <tr>
+                    <td width="118">Play- &lt;&lt;&lt;</td>                 
+                    <td width="366">高速巻き戻し再生</td>
+                  </tr>
+                  <tr>
+                    <td width="118">Play- &lt;&lt;</td>                 
+                    <td width="366">巻き戻し再生</td>
+                  </tr>
+                  <tr>
+                    <td width="118">Play- &gt;&gt;</td>                 
+                    <td width="366">速送り再生</td>
+                  </tr>
+                  <tr>
+                    <td width="118">Play- &gt;&gt;&gt;</td>                 
+                    <td width="366">高速速送り再生</td>
+                  </tr>
+                </table>
+                <p>  
+                <p>  
+                <p>  <a name="GROUNDVEHICLE"></a><u><b><font size="5">
+                地上物</font></b></u><p>  
+          <b><a name="GROUNDVEHICLECONTROL"></a>- 地上物の操作方法</b><p>  
+          &quot;シミュレーション&quot;→&quot;シミュレーション(地上物)の作成&quot;を選ぶか、または、&quot;シミュレーション&quot;→&quot;地対空基地防空ミッション&quot;を選ぶと、地上物に乗って操作することができます。<p>  
+          地上物に乗っているときの操作方法は次のとおりです。<blockquote>
+                <p>  <b>スロットル(デフォルトQ/Aキー、またはジョイスティックの第3軸):</b>&nbsp; 前進速度のコントロール<p>  
+            <b>ブレーキ（デフォルトBキー):</b> ブレーキオン/オフ<p>  <b>逆噴射キー(デフォルト「.」キー):</b> 後退<p align="left">  
+            <b>操縦桿:</b> 武装を選択していないとき→左右にターン, 武装選択時→発射方向のコントロール</p>                             
+          </blockquote>
+          <p align="left">  </p>                             
+          <p align="left">  <a name="GROUNDTOAIRDEFENSEMISSION"></a>-<b> 
+          地対空防衛ミッション</b></p>                             
+          <p align="left">  
+          &quot;シミュレーション&quot;→&quot;地対空基地防空ミッション&quot;を選ぶと、地対空防空ミッションができます。地対空防空ミッションは、地上物を操作して、攻撃してくる敵機を撃墜して、基地への被害を最小にすることが目的です。地対空防衛ミッションを選んで、次に、マップと操作する地上物を選んで、開始してください。すべてのマップで地対空防衛ミッションができるわけではなくて、地対空防衛ミッション用の地上物が配置してあるマップのみ選択可能です。</p>                             
+          <p align="left">  </p>                             
+          <p align="left">  </p>                             
+<h2 align="left"><u><a name="PROGRAMMING"></a>    3Dグラフィクスプログラミングに興味のある人へ</u></h2>                                   
+<p align="left">このプログラムは、 <a href="http://member.nifty.ne.jp/ysdynamics/impulse/impulse.html">Blue Impulse 3D Graphics SDK</a>および、                                       
+<a href="http://ciel.me.cmu.edu/soji/ysclass/ysclass.html">YS Geometric Calculation Library</a>を利用して開発しました。&nbsp;</p>      
+<p align="left">Blue Impulseは、インタラクティブな3Dグラフィクスプログラミング用SDKとして、僕の修士論文の研究で開発したツールキットです。このツールキットは比較的遅いプラットフォームでもそこそこ高速に動作します。また、クロスプラットフォームな点もひとつ大きな特徴です。現にこのフライトシミュレータ、コンパイルしなおせばX-WindowやSGIマシン上で動きます。ダイアログとかWin32依存の部分は動きませんが(#ifdef～#endifではじいてある)。もうひとつの特徴は、スケーラブルな点です。Windows上でコンパイルする場合、フラットシェーディングの標準バージョンのライブラリを使ってコンパイルすると比較的低スペックのマシンでも高速に動作しますが、高速な機種用にOpenGLバージョンのライブラリを使ってコンパイルすると、同じソースでそのままスムーズシェーディングのプログラムを得ることができます(例えばこのフライトシミュレータの標準バージョンとOpenGLバージョンみたいな感じ)。</p>                                       
+<p align="left">YS Geometric Calculation Libraryは、広範囲の3次元幾何計算機能を提供します。ベクタークラス、マトリクスクラス、シェルクラスはもちろん、シェルの当たり判定、ブーリアンオペレーションがあったり、さらに配列クラスやリンクリストクラスまで提供してます。</p>                                       
+<p align="left">両方のツールキットはフリーでオープンソースです。よかったら次のWebページを見に来てください。</p>      
+<ul>      
+  <li>      
+    <p align="left"><a href="http://member.nifty.ne.jp/ysdynamics/impulse/impulse.html">  Blue Impulse 3D Graphics SDK</a></li>                                        
+  <li>       
+    <p align="left">
+    <a href="http://cielab3.me.cmu.edu/~soji/ysclass/ysclass.html">YS Geometric Calculation Library</a></li>       
+</ul>       
+      <p align="left">が、YSFLIGHT2000のソースコードまでオープンという意味ではありません。YSFLIGHT2000のソースコードの公開の予定はありませんので、ご了承ください。それから、このツールキットはYSFLIGHT2000の基礎なっていますが、YSFLIGHT2000は、これに加えて結構な機能を追加しているので、Blue                                 
+      Impulse 3D Graphics SDKのツールを使ったら労せずして追加機とか追加マップが作れるわけではありません。Blue                                 
+      Impulse 3D Graphics SDKはYSFLIGHT2000のためのツールキットではなくて汎用3次元グラフィックスツールキットです。</p>                                     
+
+          <p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+<h2 align="left"><u><a name="CONTACT"></a>  連絡先</u></h2>                                     
+<p align="left"><img border="0" src="opengl_harrier.png" align="right" width="379" height="234">コメントなどありましたら、下記アドレスまでお気軽にメールください。&nbsp;</p>     
+<blockquote>     
+  <p align="left"><img border="0" src="email.png" width="170" height="18"></p>     
+</blockquote>     
+<p align="left">サポートWeb-Page:</p>     
+<blockquote>     
+  <p align="left"><a href="http://www.ysflight.com">http://www.ysflight.com</a></p>     
+</blockquote>     
+<p align="left">関連Web-Page:</p>      
+<blockquote>      
+  <p align="left"><a href="http://download.jp.ysflight.com">AIRPLANE        
+  SOFTWARE&nbsp;</a>&nbsp; -&nbsp;&nbsp; Download cool 3D airplane screensavers                                        
+  etc.</p>      
+  <p align="left"><a href="http://ciel.me.cmu.edu/soji/photo/photo.html">Airplane       
+  Photo Gallery</a>&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp; Tons of airplane                                        
+  photos.</p>      
+  <p align="left">  </p>      
+  <p align="left">  </p>      
+</blockquote>      
+<h2 align="left"><u><a name="APPENDIX-A"></a>Appendix A - 開始位置の表記について</u></h2>                                       
+<table border="1">     
+  <tr>     
+    <td>  RWxx_yy&nbsp;</td>     
+    <td>  滑走路上。xxは滑走路方向。yyは位置の便宜状の識別番号。</td>     
+  </tr>     
+  <tr>     
+    <td>NORTHxxxxx_yy,&nbsp;<br>     
+      SOUTHxxxxx_yy,&nbsp;<br>     
+      EASTxxxxx_yy,&nbsp;<br>     
+  WESTxxxxx_yy&nbsp;</td>     
+    <td>  北、南、東、西の高度xxxxx、開始位置識別番号yy。</td>     
+  </tr>     
+</table>     
+
+          <p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+<h2 align="left"><u><a name="APPENDIX-B"></a>  Appendix B - 例題ミッション</u></h2>                                       
+<p align="left">
+<img border="0" src="opengl_typhoon.png" align="right" width="519" height="412">このプログラムにはいくつかの例題ミッションが付属しています。この例題ミッションを飛行するには、<b>ファイル(F)-&gt;ミッションを開く</b>を選び、次に、ダイアログでミッションファイルを選んで、次に<b>今すぐ飛行開始</b>を
+押してください。&nbsp;</p>     
+<p align="left">以下にそれぞれについて簡単に説明します。</p>     
+<ul>     
+  <li>     
+    <p align="left"><b>EscortMission.yfs<br>
+    </b>前線基地に補給物資を搭載したC-130が飛来します。敵の攻撃を阻止して、C-130を無事前線基地まで護衛してください。</li>     
+  <li>     
+    <p align="left"><b>PirateAttack.yfs<br>
+    </b>貨物船が海賊の攻撃を受けています。空母から飛び立って、貨物船が沈没する前に海賊船をすべて撃沈してください。</li>     
+  <li>     
+    <p align="left"><b>fly_f22.yfs<br>     
+    </b>単にF-22で飛び上がるだけです。一応、旧バージョンの名残で残してあります。</li>     
+  <li>     
+    <p align="left"><b>A6M5vsB29.yfs</b><br>
+    B29の編隊が三沢基地を攻撃するために飛行しています。零戦で飛び立ち、爆弾を投下する前に迎撃してください。B-29は銃座から反撃してきます。また、八戸基地から1機、三沢基地から1機の味方機が一緒に飛び上がります。適切な指示を与えることで、迎撃作戦を有利に展開することができます。</li>     
+  <li>     
+    <p align="left"><b>P51vsG4M.yfs<br>
+    </b>
+    一式陸攻(G4M)の編隊が接近中です。基地を攻撃される前にP-51で迎撃してください。味方2機に適切な指示を与えることで、迎撃作戦を有利に展開することができます。</li>     
+  <li>     
+    <p align="left"><b>SpitfireVsFw190.yfs</b><br>
+    ロンドン上空、英国王立空軍Spitfireと、ドイツ空軍Focke Wulf 
+    190の空中戦です。無事、全敵機を撃ち落したら、ヒースロー空港に帰還してください。</li>     
+  <li>     
+    <p align="left"><b>fleetbattle1.yfs<br>
+    </b>
+    F-18Cで空母を僚機と飛び立ち、東に向かって飛んでください。そして、敵艦隊の攻撃を受けている味方空母が撃沈される前に敵艦隊を全滅させてください。ミッション終了後は、陸上の空港か空母に帰還してください。僚機にうまく指示を出すのが勝利のポイントです。</li>     
+  <li>     
+    <p align="left"><b>fleetbattle2.yfs<br>
+    </b>
+    F-18Cで空母を僚機と飛び立ち、東に向かって飛んでください。そして、空母を含む敵艦隊を全滅させてください。敵艦隊上空は護衛戦闘機が警戒しています。中距離ミサイルをうまく使って敵機を減らした後、残った護衛戦闘機は格闘戦で撃墜してください。ミッション終了後は、空母に帰還してください。これも、僚機にうまく指示を出すのが勝利のポイントです。</li>     
+  <li>     
+    <p align="left"><b>concorde_in_hawaii.yfs</b><br>
+    ハワイ島、コナ国際空港をコンコルドで飛び立ちましょう。Turn        
+    left heading 310。高度45,000ftまで上昇して、マッハ2.0まで加速、オアフ島が近づいたら降下減速しながらオアフ島の南側をヘディング260で通過、左に180度旋回してホノルル国際空港滑走路08LにILSアプローチしましょう。最終進入速度は160ktです。PageUp/PageDownキーで可変鼻(droop        
+    nose)をコントロールして下方視界を確保しましょう。</li>     
+  <li>    
+    <p align="left"><b>badiamond.yfs</b></li>    
+  <li>    
+    <p align="left"><b>bidiamond.yfs</b></li>    
+  <li>    
+    <p align="left"><b>tbdiamond.yfs</b></li>    
+</ul>    
+<blockquote>    
+    <p align="left">かの有名な、アメリカ海軍Blue Angels、アメリカ空軍Thunderbirds、航空自衛隊Blue Impulseの編隊長をやってみましょう。最初、滑走路上でスタートします。後ろを見ると、3機の僚機が見えます。(MキーかPOVボタンを使う)。                                       
+    <p align="left">離陸するには、アフターバーナー全開で、スロットルを最大まで引き上げます。(TABキーを一度押してからQキーをスロットルが全開になるまで連打する、あるいは、外付けスロットルレバーがあるならレバーを一番前まで押します)。&nbsp;     
+    <p align="left">離陸したら、10度～15度ピッチを維持してください。BキーかPOVボタンで後ろをときどき見てください。4番機がポジションに滑り込むのが見えるはずです。4番機が位置に入ったら、アフターバーナーを切ってスロットルを半分ぐらいまで下げてください。(TABキーをもう一度押してAキーを何度か押すか、あるいは外付けスロットルレバーを手前に引いてください)。     
+    <p align="left">ふたたびMキーまたはPOVを使って後ろを見ながら他の3機が追いつくのを待ちます。この間、ゆっくりした旋回ならしてもかまいません。     
+    <p align="left">ここまで来たら、あとはどう飛んでもかまいません。が、あなたは編隊長だということを忘れないでください。急激な機動、とくに急なロールにたいして後続機は着いて来れません。最悪空中衝突してしまいます。また、スロットルを最大や最小にすると、僚機はそれ以上加速/減速できずに遅れたりつんのめって前に出てしまったりします。速度は200kt～300ktを維持してください。<p align="left">トリガボタンの1または2を押すと、他の機がスモークを出します。ということで、スモークを出しながら、ダイヤモンドループ、ダイヤモンドロール、その他なんでもトライできます。注意としては、機動中は、常にプラスGを保つようにしてください。2G以上を維持するとより良いです。<p align="left">最後に、着陸です。他の飛行機は何も考えずについてきます。横に2機いるので滑走路のセンターラインにぴったり降りないと横の2機は滑走路から飛び出してしまいます。&nbsp;<p align="left">がんばって、トライしてみましょう。     
+</blockquote>     
+
+          <p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+<h2 align="left"><u><a name="APPENDIX-C"></a>  Appendix C - 地上攻撃ミッションについて</u></h2>                                       
+<p align="left">20000226バージョンから、地対空兵器が登場しました。というわけで、地上攻撃ミッションなど実施してみたくなります。各マップには、なぜか堅固に防衛された地上攻撃目標が存在します。なんで基地から20～30km圏内にこんな堅固に防衛された敵地上目標が? という疑問はひとまず置いて、とりあえず、地対空砲をくぐりながらの地上攻撃に挑戦してみることができます。マップによっては、開始位置に「CLOSEBY THE GROUND TARGET(地上目標近く)」というのがありますが、それ以外の場合は、飛んで探してみてください。地上目標の周囲は、対空機関砲、地対空ミサイルで防衛されているので、これらを避けながら地上目標に対してAGMと機関砲でアタックしてみてください。</p>                  
+<p align="left">また、那覇基地の南の方に突如出現した(?)小さな島に空母からA-4 Skyhawkで飛び立って攻撃するとかいうのはかなり歯ごたえがあります。A-6 Intruderで出たりA-10で出たりするとちょっと簡単過ぎるかもしれないですね。</p>                  
+<p align="left">20040113バージョンで、AIRSTRIKE_CHALLENGEマップを追加しました。このマップでは、市街地に紛れ込んだ戦車やトラックを周囲に被害を出さないように破壊したり、起伏のある地形を移動する戦車を攻撃したり、多数の対空砲に護衛された発電所を攻撃したり挑戦してみてください。すべての目標を破壊するには、A-10を使わないと難しいかもしれません。</p>        
+<p align="left">なお、<a href="#CLOSEAIRSUPPORTMISSION">近接支援ミッション</a>も参照してください。</p>        
+
+          <p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+        <h2><u><a name="COMPARAM"></a>Appendix D -          
+        コマンドパラメータについて</u></h2>
+        <p>YSFLIGHT起動時に、以下のコマンドパラメータを指定することができます。Windows版でもDOS窓から起動するときや、ロビーソフトから起動するときなどに指定することができます。</p>
+        <p>  -h<br>
+  -help</p>
+        <blockquote>
+          <p>ヘルプの表示。</p>
+        </blockquote>
+        <p>-keymenu</p>
+        <blockquote>
+          <p>キーメニュー。(マウスでメニューを選ぶのではなく、数字キーでメニューを指定)</p>
+        </blockquote>
+        <p>-replayrecord Filename</p> 
+        <blockquote>
+          <p>Filenameで指定したフライトレコードを再生する。</p>
+        </blockquote>
+        <p>-freeflight Airplane Field Position</p>          
+        <blockquote>
+          <p>Airplaneで指定した飛行機で、Fieldで指定したマップの開始位置Positionからフリーフライトを開始。</p>
+        </blockquote>
+        <p>-flyyfs Filename</p>          
+        <blockquote>
+          <p>Filenameで指定した.YFSファイルを読み込んで飛行開始。</p>
+        </blockquote>
+        <p>  -endurance Airplane Field NWingmen WingmenLvl UseMissile</p>          
+        <blockquote>
+          <p>15分耐久空中戦。<br>
+     NWingmen    : 0 to 2<br>          
+     WingmenLvl  : 1 to 5<br>          
+     UseMissile  : 0(not use) or 1(use)</p>          
+        </blockquote>
+        <p>  -intercept Airplane Field Stealth Escort HeavyBomber Bomb NEnemy NWingmen</p> 
+        <blockquote>
+          <p>15分耐久基地防空ミッション。<br>
+     Stealth     : 0(not allow stealth) or 1(allow stealth)<br>          
+     Escort      : 0(not allow fighter escort) or 1(allow fighter escort)<br>          
+     Bomb        : 0(not allow bomb) or 1(allow bomb)<br>          
+     NEnemy      : 1 to 5<br>          
+     NWingmen    : 0 to 2</p>          
+        </blockquote>
+        <p>-server Username Fieldname</p> 
+        <blockquote>
+          <p>ネットワークのサーバーモードを開始。Fieldnameは省略化。（省略するとデフォルトフィールドが使われる）</p>
+        </blockquote>
+        <p>  -client Username ServerHostName</p>          
+        <blockquote>
+          <p>ネット対戦のクライアントモードを開始。ServerHostNameで指定したホストに接続。</p>
+        </blockquote>
+        <p>-netport portNumber</p>          
+        <blockquote>
+          <p>ネット対戦のポート番号を指定。-clientまたは-serverオプションと同時に指定したときのみ有効。</p>
+        </blockquote>
+        <p>-autoexit</p>
+        <blockquote>
+          <p>飛行終了後自動的に終了。</p>
+        </blockquote>
+        <p>  -saveflight Filename</p>          
+        <blockquote>
+          <p>飛行終了後指定ファイル名でフライトレコードを保存。</p>
+        </blockquote>
+        <p>  -listairplane</p>
+        <blockquote>
+          <p>飛行機一覧をコンソールに出力。</p>
+        </blockquote>
+        <p>  -listfield</p>
+        <blockquote>
+          <p>選択可能なフィールド一覧をコンソールに出力。</p>
+        </blockquote>
+        <p>  -liststartpos Fieldname</p>          
+        <blockquote>
+          <p>選択可能な開始位置一覧をコンソールに出力。</p>
+        </blockquote>
+        <p>  -setdefaultconfig</p>
+        <blockquote>
+          <p>設定をデフォルトに戻す。</p>
+        </blockquote>
+        <p>  -setdefaultnetconfig</p>
+        <blockquote>
+          <p>ネットワーク設定をデフォルトに戻す。</p>
+        </blockquote>
+        <p>  -setdefaultkeyassign</p>
+        <blockquote>
+          <p>キーボード、ジョイスティック/マウスの割り当てをデフォルトに戻す。</p>
+        </blockquote>
+        <p>  -setdefaultoption</p>
+        <blockquote>
+          <p>オプションをデフォルトに戻す。</p>
+        </blockquote>
+
+          <p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+                  <h2><u><a name="CONFIGFILES"></a>Appendix E -          
+                  設定ファイルについて</u></h2>
+                  <p>Linux版では、設定ダイアログなどが出ないので、設定を変更するには直接設定ファイルをテキストエディタで編集する必要があります。設定ファイルの書き方については、documentフォルダ内の<a href="configfiles.txt">configfiles.txt</a>を参照してください。なお、もともとプログラムで書き換えることを前提にしていたので、パラメータの指定がないとそのまま落ちたりするのでご注意ください(^_^;)あと、日本語訳してませんがごめんなさい(^_^;)<p>なお、設定ファイルをいじって変になってしまったときは、次のコマンドパラメータを指定してプログラムを起動すると、初期化します。
+                  <blockquote>
+                <p>-setdefaultconfig</p>
+                <p>-setdefaultnetconfig</p>
+                <p>-setdefaultkeyassign</p>
+                <p>-setdefaultoption</p>
+                  </blockquote>
+                <p>  <p>(*) 20090611<span lang="ja">バージョンからLinux版もダイアログが使えるようになりました。</span><p align="left">  </p>                             
+
+          <p align="left">  </p>                             
+        <p align="left">ご意見、ご質問などありましたら、お気軽に次のメールアドレスまでメールください。</p>     
+        <blockquote>     
+            <p align="left"><img border="0" src="email.png" width="170" height="18"></p>     
+            <p align="left">  </p>     
+        </blockquote>     
+</body>     
+</html>

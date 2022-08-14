@@ -1,0 +1,361 @@
+REM Just select these airplanes in the airplane-selection dialog to make sure it doesn't crash.
+
+REM A-4_SKYHAWK
+REM A-6_INTRUDER
+REM A6M5_ZERO
+REM A-10A_THUNDERBOLT2
+REM AH-1_COBRA
+REM AH-64_APACHE
+REM AIRBUS300
+REM AIRBUS320
+REM ALPHAJET
+REM AMX
+REM AV-8B_HARRIER
+REM B-2_SPIRIT
+REM B-29_SUPERFORTRESS
+REM B-52_STRATOFORTRESS
+REM B737
+REM B747
+REM B767
+REM B777
+REM CESSNA_172R
+REM C-130_HERCULES
+REM CONCORDE
+REM DRAKEN
+REM EA-6B_PROWLER
+REM DIAMOND_ECLIPSE
+REM EUROFIGHTER_TYPHOON
+REM E-2C_HAWKEYE
+REM F-1
+REM F-2
+REM F-4EJ_PHANTOM
+REM F-4E_PHANTOM
+REM F-5_TIGER2
+REM F-14_TOMCAT
+REM F-15C_EAGLE
+REM F-15D_EAGLE
+REM F-15DJ_EAGLE
+REM F-15DJ_EAGLE_MADARA
+REM F-15DJ_EAGLE_CHAIRO
+REM F-15DJ_EAGLE_KURO
+REM F-15DJ_EAGLE_MIDORI
+REM F-15DJ_EAGLE_NAKAAO
+REM F-15DJ_EAGLE_SOTOAO
+REM F-15DJ_EAGLE_SOTOMIDORI
+REM F-15J_EAGLE
+REM F-16C_FIGHTINGFALCON
+REM F-16C_THUNDERBIRDS
+REM F-18C_HORNET
+REM F-18E_SUPERHORNET
+REM F-18C_BLUEANGELS
+REM F-22_RAPTOR
+REM F-86_BLUEIMPULSE
+REM F-100D_SUPERSABRE
+REM F-104_STARFIGHTER
+REM F-117A_NIGHTHAWK
+REM FOCKE_WULF_FW190
+REM GRIPEN
+REM G4M_TYPE1BOMBER
+REM HAWK
+REM HURRICANE
+REM HAWK_REDARROWS
+REM KFIR
+REM LANCASTER
+REM MU-2S
+REM MIG-15_FAGOT
+REM MIG-21_FISHBED
+REM MIG-23_FLOGGER
+REM MIG-29_FULCRUM
+REM MIRAGE2000
+REM P-51_MUSTANG
+REM PIPER_ARCHER(WASHIN-AIR_MARKING)
+REM RAFALE
+REM S-3_VIKING
+REM SPITFIRE
+REM SU-22_FITTER
+REM SU-24_FENCER
+REM SU-25_FROGFOOT
+REM SU-27_FLANKER
+REM T-2_BLUEIMPULSE
+REM T-4_BLUEIMPULSE
+REM T-400
+REM TORNADO
+REM TU-160_BLACKJACK
+REM U-125
+REM U-125A
+REM UH-60_BLACKHAWK
+REM UH-60J_BLACKHAWK
+REM V-107
+REM VIGGEN
+REM YS-11
+
+
+
+REM No space between GUI and : and following command.
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+
+
+REM Get out of demo mode.
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Simulation -> Create Flight
+GUI:CLICK $mainMenu sim/create
+WAITFOR:MODAL
+GUI:CLICK $activeModalDialog ok
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM Create Flight -> Fly
+
+GUI:CLICK $mainMenu sim/create
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+
+
+GUI:CLICK $activeModalDialog playerAirBtn
+
+
+GUI:SELECT $activeModalDialog airList A-4_SKYHAWK
+SLEEP:200
+GUI:SELECT $activeModalDialog airList A-6_INTRUDER
+SLEEP:200
+GUI:SELECT $activeModalDialog airList A6M5_ZERO
+SLEEP:200
+GUI:SELECT $activeModalDialog airList A-10A_THUNDERBOLT2
+SLEEP:200
+GUI:SELECT $activeModalDialog airList AH-1_COBRA
+SLEEP:200
+GUI:SELECT $activeModalDialog airList AH-64_APACHE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList AIRBUS300
+SLEEP:200
+GUI:SELECT $activeModalDialog airList AIRBUS320
+SLEEP:200
+GUI:SELECT $activeModalDialog airList ALPHAJET
+SLEEP:200
+GUI:SELECT $activeModalDialog airList AMX
+SLEEP:200
+GUI:SELECT $activeModalDialog airList AV-8B_HARRIER
+SLEEP:200
+GUI:SELECT $activeModalDialog airList B-2_SPIRIT
+SLEEP:200
+GUI:SELECT $activeModalDialog airList B-29_SUPERFORTRESS
+SLEEP:200
+GUI:SELECT $activeModalDialog airList B-52_STRATOFORTRESS
+SLEEP:200
+GUI:SELECT $activeModalDialog airList B737
+SLEEP:200
+GUI:SELECT $activeModalDialog airList B747
+SLEEP:200
+GUI:SELECT $activeModalDialog airList B767
+SLEEP:200
+GUI:SELECT $activeModalDialog airList B777
+SLEEP:200
+GUI:SELECT $activeModalDialog airList CESSNA_172R
+SLEEP:200
+GUI:SELECT $activeModalDialog airList C-130_HERCULES
+SLEEP:200
+GUI:SELECT $activeModalDialog airList CONCORDE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList DRAKEN
+SLEEP:200
+GUI:SELECT $activeModalDialog airList EA-6B_PROWLER
+SLEEP:200
+GUI:SELECT $activeModalDialog airList DIAMOND_ECLIPSE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList EUROFIGHTER_TYPHOON
+SLEEP:200
+GUI:SELECT $activeModalDialog airList E-2C_HAWKEYE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-1
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-2
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-4EJ_PHANTOM
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-4E_PHANTOM
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-5_TIGER2
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-14_TOMCAT
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-15C_EAGLE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-15D_EAGLE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-15DJ_EAGLE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-15DJ_EAGLE_MADARA
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-15DJ_EAGLE_CHAIRO
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-15DJ_EAGLE_KURO
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-15DJ_EAGLE_MIDORI
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-15DJ_EAGLE_NAKAAO
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-15DJ_EAGLE_SOTOAO
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-15DJ_EAGLE_SOTOMIDORI
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-15J_EAGLE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-16C_FIGHTINGFALCON
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-16C_THUNDERBIRDS
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-18C_HORNET
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-18E_SUPERHORNET
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-18C_BLUEANGELS
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-22_RAPTOR
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-86_BLUEIMPULSE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-100D_SUPERSABRE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-104_STARFIGHTER
+SLEEP:200
+GUI:SELECT $activeModalDialog airList F-117A_NIGHTHAWK
+SLEEP:200
+GUI:SELECT $activeModalDialog airList FOCKE_WULF_FW190
+SLEEP:200
+GUI:SELECT $activeModalDialog airList GRIPEN
+SLEEP:200
+GUI:SELECT $activeModalDialog airList G4M_TYPE1BOMBER
+SLEEP:200
+GUI:SELECT $activeModalDialog airList HAWK
+SLEEP:200
+GUI:SELECT $activeModalDialog airList HURRICANE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList HAWK_REDARROWS
+SLEEP:200
+GUI:SELECT $activeModalDialog airList KFIR
+SLEEP:200
+GUI:SELECT $activeModalDialog airList LANCASTER
+SLEEP:200
+GUI:SELECT $activeModalDialog airList MU-2S
+SLEEP:200
+GUI:SELECT $activeModalDialog airList MIG-15_FAGOT
+SLEEP:200
+GUI:SELECT $activeModalDialog airList MIG-21_FISHBED
+SLEEP:200
+GUI:SELECT $activeModalDialog airList MIG-23_FLOGGER
+SLEEP:200
+GUI:SELECT $activeModalDialog airList MIG-29_FULCRUM
+SLEEP:200
+GUI:SELECT $activeModalDialog airList MIRAGE2000
+SLEEP:200
+GUI:SELECT $activeModalDialog airList P-51_MUSTANG
+SLEEP:200
+GUI:SELECT $activeModalDialog airList PIPER_ARCHER(WASHIN-AIR_MARKING)
+SLEEP:200
+GUI:SELECT $activeModalDialog airList RAFALE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList S-3_VIKING
+SLEEP:200
+GUI:SELECT $activeModalDialog airList SPITFIRE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList SU-22_FITTER
+SLEEP:200
+GUI:SELECT $activeModalDialog airList SU-24_FENCER
+SLEEP:200
+GUI:SELECT $activeModalDialog airList SU-25_FROGFOOT
+SLEEP:200
+GUI:SELECT $activeModalDialog airList SU-27_FLANKER
+SLEEP:200
+GUI:SELECT $activeModalDialog airList T-2_BLUEIMPULSE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList T-4_BLUEIMPULSE
+SLEEP:200
+GUI:SELECT $activeModalDialog airList T-400
+SLEEP:200
+GUI:SELECT $activeModalDialog airList TORNADO
+SLEEP:200
+GUI:SELECT $activeModalDialog airList TU-160_BLACKJACK
+SLEEP:200
+GUI:SELECT $activeModalDialog airList U-125
+SLEEP:200
+GUI:SELECT $activeModalDialog airList U-125A
+SLEEP:200
+GUI:SELECT $activeModalDialog airList UH-60_BLACKHAWK
+SLEEP:200
+GUI:SELECT $activeModalDialog airList UH-60J_BLACKHAWK
+SLEEP:200
+GUI:SELECT $activeModalDialog airList V-107
+SLEEP:200
+GUI:SELECT $activeModalDialog airList VIGGEN
+SLEEP:200
+GUI:SELECT $activeModalDialog airList YS-11
+SLEEP:200
+
+
+GUI:CLICK $activeModalDialog ok
+
+
+GUI:CLICK $activeModalDialog flynow
+REM Joystick warning (may or may not)
+GUI:CLOSEMODAL
+
+REM Center Joystick
+RAWKEY:SPACE
+WAITFOR:FLYING
+
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+WAITFOR:GUI
+
+REM Result Dialog
+GUI:CLICK $activeModalDialog close
+WAITFOR:NO_MODAL
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM File -> Exit
+
+GUI:CLICK $mainMenu file/exit
+
+WAITFOR:MODAL
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+REM Really exit?
+GUI:CLICK $activeModalDialog ok

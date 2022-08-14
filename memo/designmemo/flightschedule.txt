@@ -1,0 +1,61 @@
+FsAirRouteAutopilot connected with FsAirTrafficSequence
+
+  数秒に一度、FsAirTrafficSequenceをアップデート。
+    FsExistence::GetCurrentDestinationがFsAirTrafficSequenceから現在の目的地(FIXまたはAIRPORT。そのうちVORとかADFも追加予定）を問い合わせて、FsAirTrafficSequenceに登録。
+
+  FsAirRouteAutopilotは、次のFIXまたはAIRPORTに向かう前に、FsAirTrafficSequenceに
+
+
+そのうち、FsAirTrafficControllerはFsAirTrafficSequenceを参照してシーケンスと支持を出すようにする。
+
+そのうち、FsExistence::GetCurrentDestinationはFsLandingAutopilotも考慮するようにする。
+
+空港に飛行機が止まっててタキシング中はどうするよ。一機が、空港と次のFIXを占有してるんだけど。
+
+
+////////////////////////////////////////////////////////////
+
+構想
+
+SCHEDULE INTERCEPT
+HOLDSTATUS CIRCLE/ALERT
+ATTACKRADIUS XXnm
+DURATION XXmin
+REFUEL WeaponConfigStrings
+BASEILS ILSname
+TARGETIFF 1 2 3 4
+TARGETTYPE GND/AIR/ALL
+TARGETNAME tag-name or ##PLAYER##
+ENDSCHEDULE
+
+実現するには、ヘリの攻撃自動操縦が必要 FsGroundAttackを拡張して対応？
+
+SCHEDULE AMBUSH
+TARGETNAME tag-name or ##PLAYER##
+TARGETTYPE GND/AIR/ALL
+TARGETIFF 1 2 3 4
+REFUEL WeaponConfigStrings
+ENDSCHEDULE
+
+
+SCHEDULE CROSSCOUNTRY
+ALTITUDE XXXXft EXACT/MINIMUM   <- MINIMUM指定の場合、XXXXftより上の正しい高度を飛ぶ
+VFR/IFR
+FROM ILSName1
+TO ILSDestin1 VIA NavAidName1 NavAidName2 NavAidName3 ....
+TO ILSDestin2 VIA NavAidName1 NavAidName2 NavAidName3 ....
+TO ILSDestin3 VIA NavAidName1 NavAidName2 NavAidName3 ....
+LOOP TRUE/FALSE
+ENDSCHEDULE
+
+実現には、TAXIWAY_TO_RUNWAYのIDが新規に必要。TAGには離陸ヘディングを記述、または、自動計算させる？
+
+
+SCHEDULE ACTIVEUPONBORADING
+AUTOPILOT
+ENDAUTOPILOT
+TAKECOMMAND TRUE/FALSE
+MESSAGE "MESSAGE"
+ENDSCHEDULE
+
+実現には、FsFormationでタキシングからついてくるような仕組みが必要

@@ -1,0 +1,20 @@
+(1) Ground Object type "RACE_CHECK_POINT"
+      Take three states:
+        Unpassed
+        Spinning
+        Passed
+    Should the flag be of FsGroundProperty or of FsGround?
+      FsGroundProperty:
+        There must be a specific class of ground objects that can be a check point.
+      FsGround:
+        Anything can be a check point.
+
+(2) RACE_CHECK_POINT collision -> Change state instead of getting damage.
+
+(3) Measure time from start to end.
+
+(4) Let fly with the competitor.  No collision.
+
+(5) Race courses must be in the separate .LST
+    rac*.lst
+    Read into the same field-list, but race can be started from racing field only.

@@ -1,0 +1,60 @@
+Test List
+
+Do this list with Joystick only
+             with Joystick + Throttle + Rudder
+             without Joystick and Throttle
+
+OGL DIB
+(X) (X) Rebuild
+(X) (X) Set Config to the default?
+(X) (X) Deleted unnecessary batch files and fserr.txt?
+(X) (X) Choose mouse as throttle and see what happens.
+(X) (X) Take Off
+(X) (X) Fly Maneuvers
+(X) (X) Stall
+(X) (X) Fly Below Bridges
+(X) (X) Landing
+( ) (X) Ground Attack
+( ) (X) Air to Air Combat
+( ) (X) Carrier Take Off
+(X) ( ) Drop off from the carrier flight deck
+( ) (X) Carrier Landing
+( ) (X) Carrier Touch & Go (Land without brake)
+( ) (X) Carrier Touch & Go (Miss the wires)
+(X) ( ) Crash into the carrier fuselage
+( ) (X) Crash into the carrier bridge from the air
+( ) (X) Crash into the carrier bridge from the flight deck
+( ) (X) Try all different fields
+(X) ( ) Play dogfight, Replay simulation through the game, Make sure kill credit doesn't change
+( ) (X) Can Mig-23 takeoff?
+( ) (X) Can Mig-21 takeoff?
+( ) (X) Can B747 takeorr?
+( ) (X) Can B777 takeorr?
+(X) ( ) Can Concorde takeorr?
+(X) ( ) Turn on sound
+(X) ( ) Score Consistency
+( ) (X) On the ground, quit before stopping. Result must show just "Landed".
+(X) ( ) Create Flight Record by the old version, make sure they play with no problem in the new version.
+(X) ( ) Land out of runway -> Must considered as "Out of runway"
+(X) ( ) Land at the bad attitude -> Must considered as "Crash"
+(X) ( ) Land at too high pitch -> Must considered as "Tail Strike"
+(X) ( ) Network Play play server, shot down and attack objects in the client
+( ) (X) Network Play play client, shot down and attack objects in the server
+( ) ( ) Network Option USEMISSILE
+( ) ( ) Network Option DEFAULTHST
+( ) ( ) Network Option DEFAULTUSR
+( ) ( ) Network Option RECORDCLNT
+( ) ( ) Network Option RECORDSRVR
+( ) ( ) Network Option DEFLTFIELD
+( ) ( ) Network Option DFAIRPLANE
+( ) ( ) Network Option DFSTPOSSVR
+( ) ( ) Network Option DFSTPOSCLI
+( ) ( ) Network Option DEFIFFSRVR
+( ) ( ) Network Option DEFIFFCLNT
+(X) (X) Removed all test keys?
+(X) ( ) Fly formation flights Blue Angels
+(X) ( ) Fly formation flights T-4 Blue Impulse
+(X) ( ) Fly formation flights T-2 Blue Impulse
+(X) ( ) Fly formation flights Thunderbirds
+(X) (X) Virus Scan (By Norton Anti Virus 2000/11/19 Virus Pattern)
+(X) (X) BS Key autopilot

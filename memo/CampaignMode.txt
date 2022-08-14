@@ -1,0 +1,35 @@
+
+YSFLIGHTキャンペーンモード
+
+
+次々に空港を制圧しながら、敵Head Quarterを目指すみたいな感じ。
+
+
+Issues:
+  セーブ。全ステータスをセーブするのは結構大変。でも、これやると、一フライトを複数に分けて飛ぶとかできるようになっていい鴨。
+  というか、StateSaveができるとそれで解決じゃね？
+
+  そして、それは既にNetworkにJoinしたときにやってる。サーバーがクライアントに全ステータスを送ってる。
+    全部じゃなかった。AutoPilotとか、ターゲットとか、モーションパスの情報は送ってない。
+
+  一戦ごとに、新しいフライトを始める？
+
+  やっぱり全ステータスセーブはきつい。Scenery内に、「空港」のRegion作ったんだから、それを活用する。
+  YSFにキャンペーンステートを追加？
+    CAMPAIGN OCCUPY "This Airport"
+    CAMPAIGN OCCUPY "And This Airport"
+  みたいな感じ。
+
+  それでも少なくとも地上物、空中物のMotionPathのどのへんかっていうのはセーブが必要か。
+
+  あとマスターコントロールがいる鴨。これは保存可能にする。
+
+
+Goal:
+  敵HQを破壊。
+
+
+Start:
+  Ground vehicle -> Move close to an aircraft and ride.
+  
+

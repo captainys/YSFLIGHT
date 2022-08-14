@@ -1,0 +1,34 @@
+IDENTIFY FUEL_TRUCK
+HTRADIUS 9m
+STRENGTH 2
+INITIGUN 0
+INITISAM 0
+MAXSPEED 45km/h
+MAXROTAT 45deg
+MINAIMPI 0deg
+MAXAIMPI 0deg
+AIMROTAT 0deg
+AIMPITCH 0deg
+GUNRANGE 0m
+ANTIGRND TRUE
+HUGROUND TRUE
+SAMRANGE 0m
+MINIDAMG 0
+GRNDTYPE VEHICLE
+SPLYFUEL TRUE
+SPLYAMMO TRUE
+
+CANMOVON PAVED
+USERCTRL DRIVE
+COCKPITP 0.0m 2.28m 2.06m  # x=+-0.607m may be nicer, but driver's seat position changes depending on the country...
+
+
+# Following lines are needed for controlling by user.
+MAXSPDRV 10km/h  # Max reverse speed
+MANESPD1 1km/h
+MANESPD2 25km/h  # Vehicle drifts with max steering input
+MANESPD3 45km/h  # Vehicle drifts with minimum steering input
+MAXACCEL 8km/h
+MAXAXLRV 8km/h
+MAXBRAKE 20km/h
+

@@ -1,0 +1,242 @@
+REM Some of Acro-Demos
+
+
+
+
+REM No space between GUI and : and following command.
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+GUI:CLOSEMODAL
+
+
+REM Get out of demo mode.
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+RAWKEY:ESC
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu acro/diatakeoff
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+
+
+GUI:CLICK $activeModalDialog playerAirBtn
+GUI:SELECT $activeModalDialog airList T-4_BLUEIMPULSE
+SLEEP:200
+
+#Get out of aircraft-selection
+GUI:CLICK $activeModalDialog ok
+
+#Start auto demo
+GUI:CLICK $activeModalDialog ok
+
+
+
+WAITFOR:FLYING
+
+
+
+WAITFOR:GUI
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu acro/lancastersplit
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+
+
+GUI:CLICK $activeModalDialog playerAirBtn
+GUI:SELECT $activeModalDialog airList HAWK_REDARROWS
+SLEEP:200
+
+#Get out of aircraft-selection
+GUI:CLICK $activeModalDialog ok
+
+#Start auto demo
+GUI:CLICK $activeModalDialog ok
+
+
+
+WAITFOR:FLYING
+
+
+
+WAITFOR:GUI
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu acro/downburst6
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+
+
+GUI:CLICK $activeModalDialog playerAirBtn
+GUI:SELECT $activeModalDialog airList F-18C_BLUEANGELS
+SLEEP:200
+
+#Get out of aircraft-selection
+GUI:CLICK $activeModalDialog ok
+
+#Start auto demo
+GUI:CLICK $activeModalDialog ok
+
+
+
+WAITFOR:FLYING
+
+
+
+WAITFOR:GUI
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu acro/bombburst4
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+
+
+GUI:CLICK $activeModalDialog playerAirBtn
+GUI:SELECT $activeModalDialog airList T-2_BLUEIMPULSE
+SLEEP:200
+
+#Get out of aircraft-selection
+GUI:CLICK $activeModalDialog ok
+
+#Start auto demo
+GUI:CLICK $activeModalDialog ok
+
+
+
+WAITFOR:FLYING
+
+
+
+WAITFOR:GUI
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu acro/tackcross
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+
+
+GUI:CLICK $activeModalDialog playerAirBtn
+GUI:SELECT $activeModalDialog airList F-16C_THUNDERBIRDS
+SLEEP:200
+
+#Get out of aircraft-selection
+GUI:CLICK $activeModalDialog ok
+
+#Start auto demo
+GUI:CLICK $activeModalDialog ok
+
+
+
+WAITFOR:FLYING
+
+
+
+WAITFOR:GUI
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+GUI:CLICK $mainMenu acro/rollingcombatpitch
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+
+
+GUI:CLICK $activeModalDialog playerAirBtn
+GUI:SELECT $activeModalDialog airList F-86_BLUEIMPULSE
+SLEEP:200
+
+#Get out of aircraft-selection
+GUI:CLICK $activeModalDialog ok
+
+#Start auto demo
+GUI:CLICK $activeModalDialog ok
+
+
+
+WAITFOR:FLYING
+
+
+
+WAITFOR:GUI
+GUI:CLICK $activeModalDialog ok
+
+
+
+
+
+REM ###########################################################################
+
+
+
+
+
+REM File -> Exit
+
+GUI:CLICK $mainMenu file/exit
+
+WAITFOR:MODAL
+REM Delete current flight?
+GUI:CLICK confirmDeleteDlg ok
+REM Really exit?
+GUI:CLICK $activeModalDialog ok

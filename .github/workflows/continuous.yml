@@ -23,7 +23,8 @@ jobs:
       run: cmake ../src
       working-directory: ./ci_windows
     - name: build
-      run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_d3d9 ysflight64_nownd
+      run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_nownd
+      # Cannot build ysflight64_d3d9 in github workflow because the virtual machine does not have DirectX9 libraries.
       working-directory: ./ci_windows
 
 

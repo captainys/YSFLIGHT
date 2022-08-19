@@ -43,6 +43,8 @@ jobs:
           sudo apt-get install libglu1-mesa-dev mesa-common-dev
     - name: install-ALSA
       run: sudo apt-get install libasound2 libasound2-dev
+    - name: install-PulseAudio
+      run: sudo apt-get install pulseaudio libpulse-dev
     - name: cmake
       run: cmake ../src -DCMAKE_BUILD_TYPE=Release
       working-directory: ./ci_ubuntu

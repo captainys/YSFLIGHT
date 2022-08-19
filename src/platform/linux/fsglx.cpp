@@ -11,6 +11,7 @@
 #include "fsoption.h"
 #include "fsconfig.h"
 
+#include "../../gui/fsmenu.h" // It is dirty, but FsMessageBox calls FsKeyMessageBox function.
 #include "fscontrol.h"
 
 #include <fsfilename.h>

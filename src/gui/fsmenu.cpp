@@ -394,7 +394,8 @@ void FsGuiMainDialog::OnButtonClick(FsGuiButton *btn)
 
 ////////////////////////////////////////////////////////////
 
-
+// I should be able to get rid of this blocking message box,
+// but fsglx.cpp is still calling it.
 YSBOOL FsKeyMessageBox(const char title[],const char msg[],const char *yesBtnTxt,const char *noBtnTxt)
 {
 	FsGuiDialog dlg;

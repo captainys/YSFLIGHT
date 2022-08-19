@@ -19,10 +19,11 @@ jobs:
       run: git clone https://github.com/captainys/public.git
     - name: mkdir
       run: mkdir ci_windows
+    - name: cmake
+      run: cmake ../src
+      working-directory: ./ci_windows
     - name: build
-      run: |
-          cmake ../src
-          cmake --build . --config Release --parallel
+      run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_d3d9 ysflight64_nownd
       working-directory: ./ci_windows
 
 
@@ -37,19 +38,21 @@ jobs:
       run: git clone https://github.com/captainys/public.git
     - name: mkdir
       run: mkdir ci_ubuntu
+    - name: apt-get-update
+      run: sudo apt-get update
     - name: install-OpenGL
-      run: |
-          sudo apt-get update
-          sudo apt-get install libglu1-mesa-dev mesa-common-dev
+      run: sudo apt-get install libglu1-mesa-dev mesa-common-dev
     - name: install-ALSA
       run: sudo apt-get install libasound2 libasound2-dev
     - name: install-PulseAudio
       run: sudo apt-get install pulseaudio libpulse-dev
+    - name: install-Python
+      run: sudo apt-get install python3 python-is-python3
     - name: cmake
       run: cmake ../src -DCMAKE_BUILD_TYPE=Release
       working-directory: ./ci_ubuntu
     - name: build
-      run: cmake --build . --config Release --parallel
+      run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_nownd
       working-directory: ./ci_ubuntu
 
 
@@ -68,5 +71,5 @@ jobs:
       run: cmake ../src -DCMAKE_BUILD_TYPE=Release
       working-directory: ./ci_macos
     - name: build
-      run: cmake --build . --config Release --parallel
+      run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_nownd
       working-directory: ./ci_macos

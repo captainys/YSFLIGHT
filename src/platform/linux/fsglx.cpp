@@ -11,7 +11,6 @@
 #include "fsoption.h"
 #include "fsconfig.h"
 
-#include "fsmenu.h"
 #include "fscontrol.h"
 
 #include <fsfilename.h>

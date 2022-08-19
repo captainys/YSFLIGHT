@@ -20,7 +20,11 @@ endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../public/src public)
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../public/src)
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../public/src public)
+else()
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../public/src public)
+endif()
 
 add_subdirectory(common)
 add_subdirectory(config)

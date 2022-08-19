@@ -42,3 +42,5 @@ If Apple, Google, and Microsoft want to kill all free software, the user should 
 I included iOS project in this repository, but I think it doesn't compile any more.
 
 I wanted to clean the source code more before releasing, but it is what it is.
+
+You may find strange to see CMakeFiles files in many places in this repository.  When I started using cmake, I accidentally typed cmake command from the wrong directory and contaminated my source tree very often.  By having CMakeFiles, it prevented cmake from making a directory and prevented the contamination.  Now I am used to cmake, so it is very rare to accidentally contaminate my source tree, but I am just keeping those CMakeFiles files.

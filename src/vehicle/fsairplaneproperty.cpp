@@ -1133,7 +1133,7 @@ void FsAirplaneProperty::CycleSmokeSelector(void)
 	{
 		ctlSmokeSelector<<=1;
 	}
-	else 
+	else
 	{
 		ctlSmokeSelector=255;
 	}
@@ -1290,7 +1290,7 @@ YSBOOL FsAirplaneProperty::CheckTouchDownAndLayOnGround(double &gDistance)
 		{
 			if(airspeed>chManSpeed2)
 			{
-				staPosition.SetY(staPosition.y()+deepest); 
+				staPosition.SetY(staPosition.y()+deepest);
 				return YSTRUE;
 			}
 			else if(airspeed>chManSpeed1)
@@ -1889,7 +1889,7 @@ void FsAirplaneProperty::CalculateRotationalAcceleration(void)
 			else if(chDirectAttitudeControlReqThr2<GetThrottle())
 			{
 			}
-			else 
+			else
 			{
 				const double t=(GetThrottle()-chDirectAttitudeControlReqThr1)/(chDirectAttitudeControlReqThr2-chDirectAttitudeControlReqThr1);
 				effectiveness*=t;
@@ -2578,7 +2578,7 @@ void FsAirplaneProperty::ReadBackControl(FsFlightControl &ctl) const
 	ctl.ctlAileron=ctlAileron;
 	ctl.ctlRudder=GetRudderUserInput(); // 2014/07/03 Changed from GetRudder() to GetRudderUserInput()
 	                                    //            Reason: If I use GetRudder(), which is the total of
-	                                    //                    user input plus SmartRudder, SmartRudder and 
+	                                    //                    user input plus SmartRudder, SmartRudder and
 	                                    //                    user control resonate and go berserk.
 	ctl.ctlVgw=ctlVgw;
 	ctl.ctlThrVec=ctlThrVec;
@@ -3017,7 +3017,7 @@ void FsAirplaneProperty::NetworkDecode(FsNetReceivedAirplaneState &prevState,FsN
 		{
 			// If, it is the first packet, or the first packet since two seconds ago,
 			// let's reset it.  I.e., take it as it is.
-			T0Remote=TRemote-0.0; // -x.0 is for testing purpose. 
+			T0Remote=TRemote-0.0; // -x.0 is for testing purpose.
 			T0Local=TLocal;
 
 			recvState.tRemote=T0Remote;
@@ -3217,10 +3217,10 @@ void FsAirplaneProperty::AfterUnloadedFromCarrier(void)
 	//
 	// Probably the best solution is as soon as the airplane is unloaded, it should be checked if the airplane
 	// moved on to the next carrier, the airplane moved to an elevation grid, or really took off.
-	// 
+	//
 	// It means that this function must know FsSimulation.
 
-	// Second best solution >> 
+	// Second best solution >>
 	for(int i=0; i<GetNumTire(); i++)
 	{
 		YsVec3 tirePos=staMatrix*GetTirePosition(i);
@@ -4446,7 +4446,7 @@ void FsAirplaneProperty::DrawOrdinance(
 	{
 		if(YSTRUE==IsWeaponSlotCurrentlyVisible(i))
 		{
-			if(NULL!=weaponShapeOverrideStatic && 
+			if(NULL!=weaponShapeOverrideStatic &&
 			   FSWEAPON_NUMWEAPONTYPE>staWeaponSlot[i].wpnType &&
 			   nullptr!=weaponShapeOverrideStatic[(int)staWeaponSlot[i].wpnType])
 			{
@@ -4568,13 +4568,13 @@ void FsAirplaneProperty::DrawOrdinanceVisual(
 			pos=(*mat)*chWeaponSlot[i].pos;
 
 			if(YSTRUE!=coarse &&
-			   NULL!=weaponShapeOverrideStatic && 
+			   NULL!=weaponShapeOverrideStatic &&
 			   FSWEAPON_NUMWEAPONTYPE>staWeaponSlot[i].wpnType &&
 			   NULL!=weaponShapeOverrideStatic[(int)staWeaponSlot[i].wpnType])
 			{
 	 			weaponShapeOverrideStatic[(int)staWeaponSlot[i].wpnType].Draw(viewTfm,projTfm,pos,staAttitude,drawFlag);
 			}
-			else 
+			else
 			{
 				FsWeapon::DrawVisual(wpnType,coarse,viewTfm,projTfm,pos,staAttitude,drawFlag);
 			}
@@ -4619,13 +4619,13 @@ void FsAirplaneProperty::DrawOrdinanceShadow(
 			pos=(*mat)*chWeaponSlot[i].pos;
 
 			if(YSTRUE!=coarse &&
-			   NULL!=weaponShapeOverrideStatic && 
+			   NULL!=weaponShapeOverrideStatic &&
 			   FSWEAPON_NUMWEAPONTYPE>staWeaponSlot[i].wpnType &&
 			   NULL!=weaponShapeOverrideStatic[(int)staWeaponSlot[i].wpnType])
 			{
 	 			weaponShapeOverrideStatic[(int)staWeaponSlot[i].wpnType].DrawShadow(viewTfm,projTfm,pos,staAttitude,projPlnTfm);
 			}
-			else 
+			else
 			{
 				FsWeapon::DrawShadow(wpnType,coarse,viewTfm,projTfm,pos,staAttitude,projPlnTfm);
 			}
@@ -6121,7 +6121,7 @@ YSBOOL FsAirplaneProperty::FireWeapon(
 	}
 
 
-	if(wpnType==FSWEAPON_AIM9 || wpnType==FSWEAPON_AIM9X || wpnType==FSWEAPON_AGM65 || 
+	if(wpnType==FSWEAPON_AIM9 || wpnType==FSWEAPON_AIM9X || wpnType==FSWEAPON_AGM65 ||
 	   wpnType==FSWEAPON_BOMB || wpnType==FSWEAPON_ROCKET ||
 	   wpnType==FSWEAPON_AIM120 || wpnType==FSWEAPON_BOMB250 || wpnType==FSWEAPON_BOMB500HD || wpnType==FSWEAPON_FUELTANK)
 	{
@@ -6153,7 +6153,7 @@ YSBOOL FsAirplaneProperty::FireWeapon(
 			}
 		}
 
-		
+
 		if(slot>=0)
 		{
 			missilePos=chWeaponSlot[slot].pos;
@@ -6676,9 +6676,9 @@ YSBOOL FsAirplaneProperty::FreeFallBombIsLoaded(void) const
 YSBOOL FsAirplaneProperty::AntiGroundWeaponIsLoaded(void) const
 {
 	if(GetNumWeapon(FSWEAPON_GUN)>0 ||  // 2006/05/13
-	   GetNumWeapon(FSWEAPON_AGM65)>0 || 
-	   GetNumWeapon(FSWEAPON_ROCKET)>0 || 
-	   GetNumWeapon(FSWEAPON_BOMB)>0 || 
+	   GetNumWeapon(FSWEAPON_AGM65)>0 ||
+	   GetNumWeapon(FSWEAPON_ROCKET)>0 ||
+	   GetNumWeapon(FSWEAPON_BOMB)>0 ||
 	   GetNumWeapon(FSWEAPON_BOMB250)>0)
 	{
 		return YSTRUE;
@@ -8223,8 +8223,8 @@ YSRESULT FsAirplaneProperty::SendCommand(const char in[])
 
 		if(cmd<0 && strcmp(av[0],"HRDPOINT_")==0)  // 2006/07/20
 		{                                          // Band-aid for O.C.P. F-15E
-			cmd=keyWordList.GetId("HRDPOINT");     // 
-		}                                          // 
+			cmd=keyWordList.GetId("HRDPOINT");     //
+		}                                          //
 
 		if(cmd>=0)
 		{
@@ -8703,7 +8703,7 @@ YSRESULT FsAirplaneProperty::SendCommand(const char in[])
 				res=YSOK;
 				break;
 			case 114:   //"LMTBYHDP",  // Limit weapons by WeaponSlot definition.
-				res=YSOK; // Now it is always TRUE.  FsGetBool(chLimitWeaponBySlot,av[1]);  
+				res=YSOK; // Now it is always TRUE.  FsGetBool(chLimitWeaponBySlot,av[1]);
 				break;
 			case 115:   //"UNLOADWP",  // Unload All Weapons (Excluding Guns, Smokes, and Flare)
 				UnloadAllWeapon();
@@ -8807,7 +8807,7 @@ YSRESULT FsAirplaneProperty::SendCommand(const char in[])
 				if(ac>=8)
 				{
 					turretId=atoi(av[1]);
-					if(0<=turretId && 
+					if(0<=turretId &&
 					   turretId<chTurret.GetN() &&
 					   FsGetVec3(chTurret[turretId].cen,ac-2,av+2)==YSOK &&
 					   FsGetAtt3(chTurret[turretId].att,ac-5,av+5)==YSOK)
@@ -8820,7 +8820,7 @@ YSRESULT FsAirplaneProperty::SendCommand(const char in[])
 				if(ac>=5)
 				{
 					turretId=atoi(av[1]);
-					if(0<=turretId && 
+					if(0<=turretId &&
 					   turretId<chTurret.GetN() &&
 					   FsGetAngle(chTurret[turretId].pMin,av[2])==YSOK &&
 					   FsGetAngle(chTurret[turretId].pMax,av[3])==YSOK &&
@@ -8834,7 +8834,7 @@ YSRESULT FsAirplaneProperty::SendCommand(const char in[])
 				if(ac>=5)
 				{
 					turretId=atoi(av[1]);
-					if(0<=turretId && 
+					if(0<=turretId &&
 					   turretId<chTurret.GetN() &&
 					   FsGetAngle(chTurret[turretId].hMin,av[2])==YSOK &&
 					   FsGetAngle(chTurret[turretId].hMax,av[3])==YSOK &&
@@ -9817,7 +9817,7 @@ double FsAirplaneProperty::GetPayloadWeight(void) const
 		{
 			weight+=150.0;
 		}
-		else if(staWeaponSlot[i].wpnType==FSWEAPON_FUELTANK && 
+		else if(staWeaponSlot[i].wpnType==FSWEAPON_FUELTANK &&
 		        0<staWeaponSlot[i].nLoaded)
 		{
 			weight+=150.0+staWeaponSlot[i].fuelLoaded;
@@ -10282,6 +10282,7 @@ const double &FsAirplaneProperty::GetFullyManeuvableSpeed(void) const
 ////////////////////////////////////////////////////////////
 
 double FsGetJetEngineEfficiency(const double &alt)
+/* Updated for YSFCE on 23 August 2022 to remove the 20000m thrust efficiency asymptote that was a problem for YSF. Originally was set to 0 at 20000m. Now matches the 20000m to 32000m thrust efficiency to have a smooth transition.*/
 {
 	int a;
 	static double etaTab[]=
@@ -10291,7 +10292,7 @@ double FsGetJetEngineEfficiency(const double &alt)
 		0.8,  /*  8000m */
 		0.6,  /* 12000m */
 		0.3,  /* 16000m */
-		0.0   /* 20000m */
+		0.084991   /* 20000m */
 	};
 
 	a=(int)(alt/4000.0F);

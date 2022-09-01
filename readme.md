@@ -4,7 +4,7 @@ This repository is home to the YSFlight Community Edition fork of YSFlight. If y
 
 # DISCLAIMER
 
-This repository, nor the YSCEDC (YSFlight Community Edition Development Committee) is not supported, funded, endorsed or otherwise approved by Soji Yamakawa. YSCE Intends solely to be a modernization and revision of YSFlight whilst retaining its' ease of access (in regards to low end hardware) and ease of use (in regards to knowledge needed to play). YSCEDC is not administrated, maintained or otherwise under the authority of any community website, group or other organization. YSCE is intended to be a greater community project to revise the platform for the benefit of all users, and all members of the YSFlight community regardless of nationality or other status.
+This repository, nor the YSCEDC (YSFlight Community Edition Development Committee) is not supported, funded, endorsed or otherwise approved by Soji Yamakawa. YSCE Intends solely to be a modernization and revision of YSFlight whilst retaining its' ease of access (in regards to low end hardware) and ease of use (in regards to knowledge needed to play). YSCEDC is not administrated, maintained or otherwise under the authority of any community website, group or other organization. YSCE is intended to be a greater community project to revise the platform for the benefit of all members of the YSFlight community regardless of nationality or other status.
 
 YSCEDC claims no responsibility or liability for use of this code and compiled software by the end user and is provided AS-IS WITH NO WARRANTY WHATSOEVER.
 

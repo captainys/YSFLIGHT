@@ -202,11 +202,11 @@ $$g = 9.807$$
 The Lift and Drag Coefficient calculations are performed when the DAT File goes through the auto-calculate process.
 
 ## Lift Coeficient Calculation
-$$C_{L_0} = \frac{\left(WEIGHCLN + WEIGFUEL\right)\;g}{0.5 \;\rho_{REFACRUS}\;REFVCRUS^2\;WINGAREA}$$
+$$C_{L_0} = \frac{g \;\left(WEIGHCLN + WEIGFUEL\right)}{0.5 \;\rho_{REFACRUS}\;REFVCRUS^2\;WINGAREA}$$
 
 <br>
 
-$$C_{L_{Land}} = \left(m \; g\right) / \left( 0.5 \;\rho_{Sea}\;V^2\;WINGAREA \right) / \left( 1.0 + CLBYFLAP \right) \; / \; \left( 1.0 + CLVARGEO \right)$$
+$$C_{L_{Land}} = \left(\frac{ g \; \left(WEIGHCLN + WEIGFUEL \right)}{0.5 \;\rho_{Sea}\;V^2\;WINGAREA} \right) \; \left(\frac{1}{ 1.0 + CLBYFLAP }\right) \; \left(\frac{1}{ 1.0 + CLVARGEO }\right)$$
 
 <br>
 
@@ -219,9 +219,12 @@ where:
 - $C_{L_0}$ = Lift coefficient at zero angle of attack.
 - $C_{L_{Land}}$ = Lift coefficient at landing approach angle of attack
 
+<br>
+
 ### Lift Coefficient For Helicopters
 
 Note: For helicopters, $C_{L_0}$ and $C_{L_{Slope}}$ are zero.
+
 <br>
 
 ## Drag Coefficient Calculation for Fixed-Wing Aircraft
@@ -235,7 +238,7 @@ $$C_{D_{0}} = \frac{T_{Cruise}}{0.5 \; \rho_{REFACRUS}\;V^2\;WINGAREA}$$
 
 <br>
 
-$$C_{D_{Land}} = T_{Landing} \; / \; \left( 0.5 \; \rho_{Sea} \; REFVLAND^2 \; WINGAREA \right) \; / \; \left( 1.0 + CLBYFLAP \right) \; / \; \left( 1.0 + CLVARGEO \right) \; / \; \left( 1.0 + CDBYGEAR \right)$$
+$$C_{D_{Land}} = \left(\frac{T_{Landing}}{\left( 0.5 \; \rho_{Sea} \; REFVLAND^2 \; WINGAREA \right)}\right) \; \left(\frac{1}{ 1.0 + CLBYFLAP }\right) \; \left(\frac{1}{ 1.0 + CLVARGEO }\right) \; \left(\frac{1}{ 1.0 + CDBYGEAR }\right)$$
 
 <br>
 
@@ -282,7 +285,7 @@ All aircraft (fixed-wing and helicopter) have brakes to slow them down.
 
 ## Helicopter Brake Constant
 
-$$C_B = \frac{\left( WEIGHCLN \; + \; WEIGFUEL \right) \;V^2}{2 \; REFLNRWY}$$
+$$C_B = \frac{\left( WEIGHCLN \; + \; WEIGFUEL \right) \;V^2}{2 \;\times\; REFLNRWY}$$
 
 Where:
 - $V$ = 30 m/s
@@ -290,7 +293,7 @@ Where:
 
 ## Fixed Wing Brake Constant
 
-$$C_B = \frac{\left( WEIGHCLN \; + \; WEIGFUEL \right) \; REFVLAND^2}{2 \; REFLNRWY}$$
+$$C_B = \frac{\left( WEIGHCLN \; + \; WEIGFUEL \right) \; REFVLAND^2}{2 \; \times \; REFLNRWY}$$
 
 
 # DAT Variables

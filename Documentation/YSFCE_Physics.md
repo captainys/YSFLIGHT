@@ -283,17 +283,29 @@ $$C_{D_{Const}} = 0$$
 
 All aircraft (fixed-wing and helicopter) have brakes to slow them down.
 
-## Helicopter Brake Constant
+## Braking Force
 
-$$C_B = \frac{\left( WEIGHCLN \; + \; WEIGFUEL \right) \;V^2}{2 \;\times\; REFLNRWY}$$
+The brake force is calculated by:
+
+$$F_B = B \; \times\; C_B$$
+
+Where:
+- $F_B$ is the braking force
+- $B$ is the amount of brakes applied
+- $C_B$ is the braking constant.
+
+### Braking Constant Calculation
+
+Helicopters have a different braking constant than fixed-wing aircraft:
+
+$$C_{B_{Helo}} = \frac{\left( WEIGHCLN \; + \; WEIGFUEL \right) \;V^2}{2 \;\times\; REFLNRWY}$$
 
 Where:
 - $V$ = 30 m/s
 
+For fixed wing aircraft the REFVLAND value is used instead of 30 m/s
 
-## Fixed Wing Brake Constant
-
-$$C_B = \frac{\left( WEIGHCLN \; + \; WEIGFUEL \right) \; REFVLAND^2}{2 \; \times \; REFLNRWY}$$
+$$C_{B_{Wing}} = \frac{\left( WEIGHCLN \; + \; WEIGFUEL \right) \; REFVLAND^2}{2 \; \times \; REFLNRWY}$$
 
 
 # DAT Variables

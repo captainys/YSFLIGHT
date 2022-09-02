@@ -50,14 +50,6 @@ The YSFlight atmospheric model is based on the 1976 U.S. Standard Atmosphere mod
 
 Jet engine performance is a function of DAT variables and altitude. 
 
-| DAT Variable | Data | Definition | Unit Type |
-| ------------ | ---| ---------- | --------------- |
-| AFTBURNR | TRUE/FALSE | Indicates if the aircraft has an afterburning engine. Automatically set to FALSE if propeller DAT Variables are in the DAT file. | N/A |
-| THRAFTBN | float | The maximum afterburning thrust output of the engine at sea level | Weight |
-| THRMILIT | float | The maximum non-afterburning thrust output of the engine at sea level | Weight |
-| FUELABRN | float | Amount of fuel burned per second at maximum afterburning thrust setting at sea level | Weight |
-| FUELMILI | float | Amount of fuel burned per second at maximum non-afterburning thrust setting at sea level | Weight |
-
 <br>
 
 ## Jet Engine Thrust
@@ -137,13 +129,6 @@ Where:
 
 The propeller thrust calculation involves air speed for slow and high-speed calculations. Propeller engines use the following DAT files.
 
-| DAT Variable | Data | Definition | Unit Type |
-| ------------ | ---| ---------- | --------------- |
-| PROPELLR | float | Power of the engine | Power |
-| PROPVMIN | float | Speed where T = P/V becomes valid. Defaults to 30m/s if not supplied. | Speed |
-| PROPEFCY | float | The efficiency factor of the propeller. Defaults to 0.7 if not supplied | None | 
-| FUELMILI | float | Amount of fuel burned per second at maximum thrust setting at sea level | Weight |
-
 <br>
 
 ## Slow Speed Thrust
@@ -215,29 +200,6 @@ $$g = 9.807$$
 # Lift & Drag Coefficient Calculation
 
 The Lift and Drag Coefficient calculations are performed when the DAT File goes through the auto-calculate process.
-
-## DAT Variables:
-| DAT Variable | Data | Definition | Unit Type |
-| ------------ | ---| ---------- | --------------- |
-| WEIGHCLN | float | Weight of aircraft without fuel or cargo/weapons | Weight |
-| WEIGFUEL | float | Maximum weight of fuel that can be loaded | Weight |
-| REFVCRUS | float | Cruise Speed | Speed |
-| REFACRUS | float | Cruise Altitude | Length |
-| REFTCRUS | float | Cruise throttle setting | N/A |
-| REFVCRUS | float | Cruise Speed | Speed |
-| WINGAREA | float | Wing Area | Area | 
-| CLVARGEO | float | $C_L$ Effect due to variable geometry wing | N/A |
-| CLBYFLAP | float | $C_L$ Effect due to flaps | N/A |
-| REFAOALD | float | Landing approach angle of attack | Angle |
-| CRITAOAP | float | Positive critical angle of attack | Angle |
-| CRITAOAM | float | Negative critical angle of attack | Angle |
-| MAXSPEED | float | Maximum Speed | Speed |
-| REFTHRLD | float | Throttle setting at landing | N/A |
-| REFVLAND | float | Landing Speed | Speed |
-| CDVARGEO | float | $C_D$ effect due to variable geometry wing | N/A |
-| CDBYFLAP | float | $C_D$ effect due to flaps | N/A |
-| CDBYGEAR | float | $C_D$ effect due to landing gear | N/A |
-
 
 ## Lift Coeficient Calculation
 $$C_{L_0} = \frac{\left(WEIGHCLN + WEIGFUEL\right)\;g}{0.5 \;\rho_{REFACRUS}\;REFVCRUS^2\;WINGAREA}$$
@@ -314,43 +276,95 @@ $$C_{D_{Const}} = 0$$
 <br>
 
 
+# Brakes
+
+All aircraft (fixed-wing and helicopter) have brakes to slow them down.
+
+## Helicopter Brake Constant
+
+$$C_B = \frac{\left( WEIGHCLN \; + \; WEIGFUEL \right) \;V^2}{2 \; REFLNRWY}$$
+
+Where:
+- $V$ = 30 m/s
+
+
+## Fixed Wing Brake Constant
+
+$$C_B = \frac{\left( WEIGHCLN \; + \; WEIGFUEL \right) \; REFVLAND^2}{2 \; REFLNRWY}$$
+
+
+# DAT Variables
+
+The following table of DAT variables are used during the performance model calculations for YSFCE.
+
+| DAT Variable | Data | Definition | Unit Type |
+| ------------ | ---| ---------- | --------------- |
+| WEIGHCLN | float | Weight of aircraft without fuel or cargo/weapons | Weight |
+| WEIGFUEL | float | Maximum weight of fuel that can be loaded | Weight |
+| PROPELLR | float | Power of the engine | Power |
+| PROPVMIN | float | Speed where T = P/V becomes valid. Defaults to 30m/s if not supplied. | Speed |
+| PROPEFCY | float | The efficiency factor of the propeller. Defaults to 0.7 if not supplied | None | 
+| AFTBURNR | Boolean | Indicates if the aircraft has an afterburning engine. Automatically set to FALSE if propeller DAT Variables are in the DAT file. | N/A |
+| THRAFTBN | float | The maximum afterburning thrust output of the engine at sea level | Weight |
+| THRMILIT | float | The maximum non-afterburning thrust output of the engine at sea level | Weight |
+| FUELABRN | float | Amount of fuel burned per second at maximum afterburning thrust setting at sea level | Weight |
+| FUELMILI | float | Amount of fuel burned per second at maximum non-afterburning thrust setting at sea level | Weight |
+| WINGAREA | float | Wing Area | Area | 
+| CLVARGEO | float | $C_L$ Effect due to variable geometry wing | N/A |
+| CDVARGEO | float | $C_D$ effect due to variable geometry wing | N/A |
+| CLBYFLAP | float | $C_L$ Effect due to flaps | N/A |
+| CDBYFLAP | float | $C_D$ effect due to flaps | N/A |
+| CDBYGEAR | float | $C_D$ effect due to landing gear | N/A |
+| CRITAOAP | float | Positive critical angle of attack | Angle |
+| CRITAOAM | float | Negative critical angle of attack | Angle |
+| MAXSPEED | float | Maximum Speed | Speed |
+| REFVCRUS | float | Cruise Speed | Speed |
+| REFACRUS | float | Cruise Altitude | Length |
+| REFTCRUS | float | Cruise throttle setting | N/A |
+| REFVCRUS | float | Cruise Speed | Speed |
+| REFAOALD | float | Landing approach angle of attack | Angle |
+| REFTHRLD | float | Throttle setting at landing | N/A |
+| REFVLAND | float | Landing Speed | Speed |
+| REFLNRWY | float | Runway distance required to stop | Length |
+
 
 
 # Units
 
-YSFlight and YSFCE have many different allowable units for different parameters:
+YSFlight and YSFCE have many different allowable units for different parameters. For each unit type, YSFlight will convert whatever the user inputs into a default unit for all internal calculations.
 
-| Type | Units | 
-| -- | -- |
-| Length | Foot (ft), Meter (m), Inch (in), Centameter (Cm), Statute Mile (sm), Nautical Mile (nm) | 
-| Area | Square Inches ($in^2$), Square Meters ($m^2$) | 
-| Weight | Kilograms (kg), Pound (lb), Tonne (t), Newton (N) | 
-| Speed | Mach, Kilometers Per Hour (km/h), Meters per Second (m/s), Knots (kt) | 
-| Angle | Degrees (deg), Radians (rad) | 
-| Power | Horsepower (HP), Jules per Second (J/s) |
+| Type | Units | YSFlight Unit |
+| -- | -- | -- |
+| Length | Foot (ft) <br> Meter (m) <br> Inch (in) <br> Centameter (Cm) <br> Statute Mile (sm) <br> Nautical Mile (nm) | Meter (m) |
+| Area | Square Inches ($in^2$), <br> Square Meters ($m^2$) | Square Meters ($m^2$) |
+| Weight | Kilograms (kg) <br> Pound (lb) <br> Tonne (t) <br>  Newton (N) | Newton (N) |
+| Speed | Mach <br>  Kilometers Per Hour (km/h) <br>  Meters per Second (m/s) <br>  Knots (kt) | Meters per Second (m/s) |
+| Angle | Degrees (deg) <br> Radians (rad) | Radians (rad) |
+| Power | Horsepower (HP) <br>  Jules per Second (J/s) a.k.a. Watts (W) | Watts (W) |
 
 
 ## Unit Conversions
 
-YSFCE has several different unit options beyond SI units. When converting these, we use the following equations:
+YSFCE uses the following equations to convert units to the default units used for internal calculations
 
 | Type | Unit | Equation | Output|
 | - | - | - | - |
-| Force/Weight | lb | $0.453597 \times g$ | N|
-| Force/Weight | t | $1000 \times g$ | N |
-| Speed | Mach | $340 \times v$ | m/s |
-| Speed | km/h | $\frac{1000}{3600} \times v$ | m/s |
-| Speed | kt | $\frac{1852}{3600} \times v$ | m/s |
-| Angle | deg | $\frac{\pi}{180} \times \alpha$ | radians |
-| Area | $in^2$ | $0.000645 \times A$| $m^2$ |
-| Length | in | $0.0254 \times l$ | m |
-| Length | ft | $0.3048 \times l$ | m |
-| Length | km | $1000 \times l$ | m |
-| Length | Cm | $100 \times l$ | m |
-| Length | sm | $1609.0 \times l$ | m |
-| Length | nm | $1852 \times l$ | m |
-| Power | HP | $740 \times P$ | W |
-| Power | J/s | $P$ | W |
+| Weight | kg | $kg \times g$ | N |
+| Weight | lb | $lb \times0.453597 \times g$ | N|
+| Weight | t | $t \times1000 \times g$ | N |
+| Speed | Mach | $340 \times Mach$ | m/s |
+| Speed | km/h | $\frac{1000}{3600} \times km/h$ | m/s |
+| Speed | kt | $\frac{1852}{3600} \times kt$ | m/s |
+| Angle | deg | $\frac{\pi}{180} \times deg$ | radians |
+| Area | $in^2$ | $0.000645 \times in^2$| $m^2$ |
+| Length | in | $0.0254 \times in$ | m |
+| Length | ft | $0.3048 \times ft$ | m |
+| Length | km | $1000 \times km$ | m |
+| Length | Cm | $100 \times Cm$ | m |
+| Length | sm | $1609.0 \times sm$ | m |
+| Length | nm | $1852 \times nm$ | m |
+| Power | HP | $740 \times HP$ | W |
+
 
 
 

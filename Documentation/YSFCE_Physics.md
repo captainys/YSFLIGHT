@@ -135,11 +135,11 @@ The propeller thrust calculation involves air speed for slow and high-speed calc
 
 When airspeed is below the PROPVMIN DAT variable setting there is a different equation for calculating how much thrust the engine produces.
 
-$$P = PROPELLR \; \times \; Thr \; \times \; \frac{PROPEFCY}{PROPVMIN}$$ 
+$$P = PROPELLR   \times   Thr   \times   \frac{PROPEFCY}{PROPVMIN}$$ 
 
 <br>
 
-$$T = \frac{\rho_{sea}}{\rho_{alt}} \; \times \; \frac{P}{V}$$
+$$T = \frac{\rho_{sea}}{\rho_{alt}}   \times   \frac{P}{V}$$
 
 where:
 - $P$ = Power
@@ -157,15 +157,15 @@ When airspeed is equal to or above the PROPVMIN DAT variable setting the followi
 
 Upon loading the aircraft the following property is calculated:
 
-$$PropK = - \left(\frac{PROPELLR \; \times \; PROPEFCY}{PROPVMIN^2}\right)$$
+$$PropK = - \left(\frac{PROPELLR   \times   PROPEFCY}{PROPVMIN^2}\right)$$
 
 Which is used in calcualting the thrust of the aircraft
 
-$$T_{Static} = PROPELLR \; \times \; \frac{PROPEFCY}{PROPVMIN}$$
+$$T_{Static} = PROPELLR   \times   \frac{PROPEFCY}{PROPVMIN}$$
 
 <br>
 
-$$T_{Moving} = T_{Static} - PropK \left(PROPVMIN \;\times\; V \right)$$ 
+$$T_{Moving} = T_{Static} - PropK \left(PROPVMIN  \times  V \right)$$ 
 
 Where:
 - $T_{Static}$ Static thrust of propeller engine
@@ -202,11 +202,11 @@ $$g = 9.807$$
 The Lift and Drag Coefficient calculations are performed when the DAT File goes through the auto-calculate process.
 
 ## Lift Coeficient Calculation
-$$C_{L_0} = \frac{g \;\left(WEIGHCLN + WEIGFUEL\right)}{0.5 \;\rho_{REFACRUS}\;REFVCRUS^2\;WINGAREA}$$
+$$C_{L_0} = \frac{g  \left(WEIGHCLN + WEIGFUEL\right)}{0.5  \rho_{REFACRUS} REFVCRUS^2 WINGAREA}$$
 
 <br>
 
-$$C_{L_{Land}} = \left(\frac{ g \; \left(WEIGHCLN + WEIGFUEL \right)}{0.5 \;\rho_{Sea}\;V^2\;WINGAREA} \right) \; \left(\frac{1}{ 1.0 + CLBYFLAP }\right) \; \left(\frac{1}{ 1.0 + CLVARGEO }\right)$$
+$$C_{L_{Land}} = \left(\frac{ g   \left(WEIGHCLN + WEIGFUEL \right)}{0.5  \rho_{Sea} V^2 WINGAREA} \right)   \left(\frac{1}{ 1.0 + CLBYFLAP }\right)   \left(\frac{1}{ 1.0 + CLVARGEO }\right)$$
 
 <br>
 
@@ -234,19 +234,19 @@ The drag coefficient has a lot of different considerations that need to be calcu
 - $T_{V_{MAX}}$ = Thrust at REFACRUS, and MAXSPEED and a throttle setting of 1.0 or Max AB.
 - $T_{Landing}$ = Thrust at REFVLAND throttle setting, sea level and at REFVLAND speed without afterburner.
 
-$$C_{D_{0}} = \frac{T_{Cruise}}{0.5 \; \rho_{REFACRUS}\;V^2\;WINGAREA}$$
+$$C_{D_{0}} = \frac{T_{Cruise}}{0.5   \rho_{REFACRUS} V^2 WINGAREA}$$
 
 <br>
 
-$$C_{D_{Land}} = \left(\frac{T_{Landing}}{\left( 0.5 \; \rho_{Sea} \; REFVLAND^2 \; WINGAREA \right)}\right) \; \left(\frac{1}{ 1.0 + CLBYFLAP }\right) \; \left(\frac{1}{ 1.0 + CLVARGEO }\right) \; \left(\frac{1}{ 1.0 + CDBYGEAR }\right)$$
+$$C_{D_{Land}} = \left(\frac{T_{Landing}}{\left( 0.5   \rho_{Sea}   REFVLAND^2   WINGAREA \right)}\right)   \left(\frac{1}{ 1.0 + CLBYFLAP }\right)   \left(\frac{1}{ 1.0 + CLVARGEO }\right)   \left(\frac{1}{ 1.0 + CDBYGEAR }\right)$$
 
 <br>
 
-$$C_{D_{Const}} = \frac{C_{D_{Land}} \; - \; C_{D_{0}}}{REFAOALD^2}$$
+$$C_{D_{Const}} = \frac{C_{D_{Land}}   -   C_{D_{0}}}{REFAOALD^2}$$
 
 <br>
 
-$$C_{D_{MAX}} = \frac{T_{V_{MAX}}}{0.5 \; \rho_{REVACRUS} \; MAXSPEED^2 \; WINGAREA}$$
+$$C_{D_{MAX}} = \frac{T_{V_{MAX}}}{0.5   \rho_{REVACRUS}   MAXSPEED^2   WINGAREA}$$
 
 
 <br>
@@ -255,7 +255,7 @@ $$C_{D_{MAX}} = \frac{T_{V_{MAX}}}{0.5 \; \rho_{REVACRUS} \; MAXSPEED^2 \; WINGA
 
 Need to calculate properties for the propeller engine.
 
-$$PropK = - \left(\frac{PROPELLR \; \times \; PROPEFCY}{PROPVMIN^2}\right)$$
+$$PropK = - \left(\frac{PROPELLR   \times   PROPEFCY}{PROPVMIN^2}\right)$$
 
 Then we can begin to calculate the reference thrust data
 - $T_{Ref}$ = Thrust at $Thr_{Ref}$, REFVCRUS, and REFACRUS conditions.
@@ -263,11 +263,11 @@ Then we can begin to calculate the reference thrust data
 $$Thr_{Ref} = MAXSPEED \sin\left(\frac{\pi}{18}\right)$$
 <br>
 
-$$T = T_{ref} \; \sin \left( \frac{\pi}{18}  \right)$$
+$$T = T_{ref}   \sin \left( \frac{\pi}{18}  \right)$$
 
 From these reference properties, we can calculate the drag conditions
 
-$$C_{D_{0}} = \frac{T}{0.5 \; \rho_{REVACRUS} \; MAXSPEED^2 \; WINGAREA}$$
+$$C_{D_{0}} = \frac{T}{0.5   \rho_{REVACRUS}   MAXSPEED^2   WINGAREA}$$
 <br>
 
 $$C_{D_{0_{MAX}}} = C_{D_{0}}$$
@@ -287,7 +287,7 @@ All aircraft (fixed-wing and helicopter) have brakes to slow them down.
 
 The brake force is calculated by:
 
-$$F_B = B \; \times\; C_B$$
+$$F_B = B   \times  C_B$$
 
 Where:
 - $F_B$ is the braking force
@@ -298,14 +298,14 @@ Where:
 
 Helicopters have a different braking constant than fixed-wing aircraft:
 
-$$C_{B_{Helo}} = \frac{\left( WEIGHCLN \; + \; WEIGFUEL \right) \;V^2}{2 \;\times\; REFLNRWY}$$
+$$C_{B_{Helo}} = \frac{\left( WEIGHCLN   +   WEIGFUEL \right)  V^2}{2  \times  REFLNRWY}$$
 
 Where:
 - $V$ = 30 m/s
 
-For fixed wing aircraft the REFVLAND value is used instead of 30 m/s
+For fixed wing aircraft the REFVLAND value is used instead of 30 m/s.
 
-$$C_{B_{Wing}} = \frac{\left( WEIGHCLN \; + \; WEIGFUEL \right) \; REFVLAND^2}{2 \; \times \; REFLNRWY}$$
+$$C_{B_{Wing}} = \frac{\left( WEIGHCLN   +   WEIGFUEL \right)   REFVLAND^2}{2   \times   REFLNRWY}$$
 
 
 # DAT Variables

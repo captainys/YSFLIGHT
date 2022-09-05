@@ -23,6 +23,7 @@ Current YSCEDC Contributors (Code, Design, Advisory):
 * Vertex
 * Doomsday
 * Indy
+* Hornet
 
 To compile YSCE at this time, please follow the instructions below as prepared for the original YSFlight repository by Soji Yamakawa.
 

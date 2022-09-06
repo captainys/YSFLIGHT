@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest a feature for YSCE.
 title: "[FEATURE] Feature Title"
-labels: ''
+labels: 'feature request'
 assignees: ''
 
 ---

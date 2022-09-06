@@ -58,11 +58,11 @@ The thrust of the jet engine is calculated based on the DAT file, throttle setti
 
 For non-afterburning operations:
 
-$$T = \eta \, \times \, Thr \, \times \, THRMILIT$$
+$$T = \eta   \times   Thr   \times   THRMILIT$$
 
 For afterburning operations: 
 
-$$T = \eta \, \times \, THRMILIT \, \times \, (THRAFTBN \, - \, THRMILIT) \, \times \, Thr$$
+$$T = \eta   \times   THRMILIT   \times   (THRAFTBN   -   THRMILIT)   \times   Thr$$
 
 Where:
 - $\eta$ is the Jet Engine Thrust Efficiency
@@ -93,11 +93,11 @@ The DAT file defines the sea-level fuel consumption at maximum afterburning and 
 
 For Afterburning operations:
 
-$$\dot{F} = dt \, \times \, FUELABRN$$
+$$\dot{F} = dt   \times   FUELABRN$$
 
 For non-Afterburning operations:
 
-$$\dot{F} = dt \, \times \, FUELMILI \, \times \, Thr$$
+$$\dot{F} = dt   \times   FUELMILI   \times   Thr$$
 
 Where:
 - $\dot{F}$ is the change in fuel weight
@@ -108,13 +108,15 @@ Where:
 
 ### Future YSFCE Fuel Consumption
 
+This future scheme allows for a closer approximation of Thrust Specific Fuel Consumption.
+
 For Afterburning Operations:
 
-$$\dot{F} = dt \, \times \, FUELABRN \, \times \, \left( \frac{T}{THRAFTBN} \right)$$
+$$\dot{F} = dt   \times   FUELABRN   \times   \left( \frac{T}{THRAFTBN} \right)$$
 
 For Non-Afterburning Operations:
 
-$$\dot{F} = dt \, \times \, FUELMILI \, \times \, Thr \times \, \left( \frac{T}{THRAFTBN} \right)$$
+$$\dot{F} = dt   \times   FUELMILI   \times   Thr \times   \left( \frac{T}{THRAFTBN} \right)$$
 
 Where:
 - $\dot{F}$ is the change in fuel weight
@@ -181,7 +183,7 @@ Where:
 
 The mach number of the aircraft is calculated by first determining the speed of sound at the aircraft's altitude and then dividing the aircraft's speed by that value:
 
-$$Mach \, = \, \frac{V}{a}$$
+$$Mach   =   \frac{V}{a}$$
 
 Where:
 - $V$ is the aircraft's speed
@@ -268,6 +270,7 @@ $$T = T_{ref}  \times \sin \left( \frac{\pi}{18}  \right)$$
 From these reference properties, we can calculate the drag conditions
 
 $$C_{D_{0}} = \frac{T}{0.5  \times \rho_{REVACRUS}  \times  MAXSPEED^2  \times WINGAREA}$$
+
 <br>
 
 $$C_{D_{0_{MAX}}} = C_{D_{0}}$$
@@ -308,6 +311,20 @@ For fixed wing aircraft the REFVLAND value is used instead of 30 m/s.
 $$C_{B_{Wing}} = \frac{\left( WEIGHCLN   +   WEIGFUEL \right)  \times REFVLAND^2}{2   \times   REFLNRWY}$$
 
 
+
+
+# Variable Geometry
+
+The variable geometry wing position is controlled by VGWSPED1 and VGWSPED2.
+
+- When the aircraft's speed is below VGWSPED1, then the VGW value is 1, or fully swept forward. 
+- When the aircraft's speed is above VGWSPED2, then the VGW value is 0, or fully swept back.
+- When the aircraft's speed is between VGWSPED1 and VGWSPED2, then the following equation is used:
+
+$$VGW = 1 - \frac{V - VGWSPED1}{VGWSPED2 - VGWSPED1}$$
+
+
+
 # DAT Variables
 
 The following table of DAT variables are used during the performance model calculations for YSFCE.
@@ -346,7 +363,7 @@ The following table of DAT variables are used during the performance model calcu
 
 # Units
 
-YSFlight and YSFCE have many different allowable units for different parameters. For each unit type, YSFlight will convert whatever the user inputs into a default unit for all internal calculations.
+YSFlight and YSFlight Community Edition back-end uses standard [SI units](https://en.wikipedia.org/wiki/International_System_of_Units), but allows for users to see measurements in a variety of units and allows for performance data to be entered in a variety of units. Whatever allowable unit the user enters, the backend will convert it into standard SI units.
 
 | Type | Units | YSFlight Unit |
 | -- | -- | -- |
@@ -356,6 +373,7 @@ YSFlight and YSFCE have many different allowable units for different parameters.
 | Speed | Mach <br>  Kilometers Per Hour (km/h) <br>  Meters per Second (m/s) <br>  Knots (kt) | Meters per Second (m/s) |
 | Angle | Degrees (deg) <br> Radians (rad) | Radians (rad) |
 | Power | Horsepower (HP) <br>  Jules per Second (J/s) a.k.a. Watts (W) | Watts (W) |
+| Time | Seconds (s) | Seconds (s) |
 
 
 ## Unit Conversions

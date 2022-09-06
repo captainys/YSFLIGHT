@@ -41,20 +41,24 @@ CATEGORY has two functions:
 
 - Filter the list of models in the aircraft selection menu
 - Control targeted angle of bank for the autopilot.
+- Kill Score
 
 The permitted inputs and the hard-coded auto-pilot bank angle are defined below:.
 
-| CATEGORY | Bank Angle (rad) | Bank Angle (deg) |
-| -- | :-: | :-: |
-| AEROBATIC | $\pi \times \frac{8}{18}$ | 80 |
-| ATTACKER |  $\frac{\pi}{3}$ | 60 |
-| FIGHTER |  $\pi \times \frac{8}{18}$ | 80 |
-| HEAVYBOMBER |  $\frac{\pi}{6}$ | 30 |
-| NORMAL |  $\frac{\pi}{6}$ | 30 |
-| TRAINER |  $\frac{\pi}{3}$ | 60 |
-| UTILIY | $\frac{\pi}{6}$ | 30 |
-| WW2FIGHTER |   $\pi \times \frac{8}{18}$ | 80 |
-| WW2BOMBER |  $\frac{\pi}{6}$ | 30 |
+| CATEGORY | Bank Angle (rad) | Bank Angle (deg) | Kill Score |
+| -- | :-: | :-: | :-: |
+| AEROBATIC | $\pi \times \frac{8}{18}$ | 80 | 5 |
+| ATTACKER |  $\frac{\pi}{3}$ | 60 | 30 | 30 |
+| FIGHTER |  $\pi \times \frac{8}{18}$ | 80 | 20 |
+| HEAVYBOMBER |  $\frac{\pi}{6}$ | 30 | 40 |
+| NORMAL |  $\frac{\pi}{6}$ | 30 | 5 |
+| TRAINER |  $\frac{\pi}{3}$ | 60 | 10 |
+| UTILIY | $\frac{\pi}{6}$ | 30 | 5 |
+| WW2ATTACKER | Unknown | Unknown | 30 |
+| WW2BOMBER |  $\frac{\pi}{6}$ | 30 | 40 |
+| WW2DIVEBOMBER | Unknown | Unknown | 30 |
+| WW2FIGHTER |   $\pi \times \frac{8}{18}$ | 80 | 20 |
+
 
 <br>
 
@@ -87,6 +91,28 @@ Defines the maximum thrust a jet engine will produce without afterburner at sea-
 > THRSTREV 0.2
 
 Defines how efficient the reverse thrust of an engine is.
+
+<br>
+
+## PROPELLR
+
+> PROPELLR 150HP
+
+Defines how powerful a propeller engine is.
+
+## PROPVMIN
+
+> PROPVMIN 70kt
+
+Defines the transition point between slow and high-speed propeller thrust calculations. If not defined YSFlight defaults to 30 m/s.
+
+<br>
+
+## PROPEFCY
+
+> PROPEFCY 0.8
+
+Defines how efficient the a propeller engine is. Defaults to 0.7 if not defined in DAT files.
 
 <br>
 
@@ -192,7 +218,9 @@ The position of the viewpoint relative to the center of the viewport. To explain
 
 > LEFTGEAR -1.94m -2.03m -0.71m
 
-Defines the location of the left main landing gear interface with the ground.
+Defines the location of the left main landing gear interface with the ground. If not defined, YSFlight uses an equivalent to:
+
+> LEFTGEAR -3m -1m -3m
 
 See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more about the order of inputs.
 
@@ -202,7 +230,9 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 > RIGHGEAR 1.94m -2.03m -0.71m
 
-Defines the location of the right main landing gear interface with the ground.
+Defines the location of the right main landing gear interface with the ground. If not defined, YSFlight uses an equivalent to:
+
+> RIGHGEAR 3m -1m -3m
 
 See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more about the order of inputs.
 
@@ -212,7 +242,9 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 > WHELGEAR 0.00m -2.06m 5.16m
 
-Defines the location of the nose or tail landing gear interface with the ground.
+Defines the location of the nose or tail landing gear interface with the ground. If not defined, YSFlight uses an equivalent to:
+
+> WHELGEAR 0m -1m 2m
 
 See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more about the order of inputs.
 
@@ -222,7 +254,9 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 > ARRESTER 0.00m -1.76m -3.79m
 
-Defines the position of the arresting gear hookpoint.
+Defines the position of the arresting gear hookpoint. If not defined, YSFlight uses an equivalent to:
+
+> ARRESTER 0m -3m -1m
 
 See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more about the order of inputs.
 
@@ -252,13 +286,13 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 > GUNINTVL 0.075
 
-Defines the interval (in seconds) between bullets firing. Note that all MACHNGUN and MACHNGNX weapons fire at the same time.
+Defines the interval (in seconds) between bullets firing. Note that all MACHNGUN and MACHNGNX weapons fire at the same time. If not defined, YSFlight defaults to 0.075.
 
 <br>
 
 ## GUNDIREC
 
-> GUNDIREC  0.0m 0.0m -1.0m     #MACHINE GUN DIRECTION
+> GUNDIREC  0.0m 0.0m -1.0m    
 
 Defines the direction (unit vector) of the MACHNGUN. Note: Setting to 0m 0m 0m shoots directly north or south regardless of aircraft attitude 
 
@@ -268,7 +302,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 ## SMOKEGEN
 
-> SMOKEGEN  0.0m  0.0m -15.17m  #SMOKE GENERATOR POSITION
+> SMOKEGEN  0.0m  0.0m -15.17m  
 
 Defines the location of the smoke point origin. Multiple smoke points can be defined using repeated SMOKEGEN lines.
 
@@ -278,9 +312,11 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 ## VAPORPO0
 
-> VAPORPO0  5.1m  0.55m -5.60m  #VAPOR POSITION (Wings Swept back)
+> VAPORPO0  5.1m  0.55m -5.60m 
 
-Define the location of the wing-tip vapor origin when the variable geometry wings are swept fully back.
+Define the location of the wing-tip vapor origin when the variable geometry wings are swept fully back. If not defined, YSFlight defaults to:
+
+> VAPORPO0  5m  0m 0m
 
 See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more about the order of inputs.
 
@@ -290,7 +326,9 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 > VAPORPO1  8.6m  0.55m -3.20m  #VAPOR POSITION (Wings Spread)
 
-Define the location of the wing-tip vapor origin when the variable geometry wings are swept fully forward.
+Define the location of the wing-tip vapor origin when the variable geometry wings are swept fully forward.If not defined, YSFlight defaults to:
+
+> VAPORPO1  5m  0m 0m
 
 See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more about the order of inputs.
 
@@ -354,7 +392,7 @@ Defines the amount of damage that the aircraft can absorb before it is destroyed
 
 > CRITAOAP  20deg               #CRITICAL AOA POSITIVE
 
-
+Defines the angle of attack (positive, nose-up direction) at which the aircraft aerodynamically stalls.
 
 <br>
 
@@ -362,11 +400,15 @@ Defines the amount of damage that the aircraft can absorb before it is destroyed
 
 > CRITAOAM -15deg               #CRITICAL AOA NEGATIVE
 
+Defines the angle of attack (negative, nose-down direction) at which the aircraft aerodynamically stalls.
+
 <br>
 
 ## MAXCDAOA
 
-> MAXCDAOA 40deg                #AOA at which Cd becomes the largest
+> MAXCDAOA 40deg        
+
+Defines the angle of attack at which maximum $C_D$ is reached on the $C_D$ vs $\alpha$ curve. If not defined, YSFlight uses 45 degrees.
 
 <br>
 
@@ -581,6 +623,248 @@ The minimum airspeed (indicated air speed) needed for any aerodynamic control ov
 The minimum air speed (indicated air speed) needed for fully controlled flight.
 
 <br>
+
+## PSTMPTCH
+
+>PSTMPTCH 10deg 
+
+The rate of pitch possible in the post-stall region of the $C_L$ vs $\alpha$ curve.(deg/s). 
+
+**NOTE:** Only used for Helicopters, VTOL aircraft and super-maneuverable aircraft (like the F-22).
+
+<br>
+
+## PSTMYAW_
+
+> PSTMYAW_ 10deg 
+
+The rate of yaw possible in post-stall region of the $C_L$ vs $\alpha$ curve. (deg/s)
+
+**NOTE:** Only used for Helicopters, VTOL aircraft and super-maneuverable aircraft (like the F-22).
+
+<br>
+
+## PSTMROLL
+
+> PSTMROLL 10deg  
+
+The rate of roll possible in post-stall region of the $C_L$ vs $\alpha$ curve. (deg/s)
+
+**NOTE:** Only used for Helicopters, VTOL aircraft and super-maneuverable aircraft (like the F-22).
+
+
+<br>
+
+## PSTMPWR1
+
+> PSTMPWR1 0.2  
+
+The minimum throttle setting to have direct attitude control in the post-stall region of the $C_L$ vs $\alpha$ curve.
+
+If not defined in the DAT file, YSFlight defaults to 0.15.
+
+**NOTE:** For helicopters, this should be set to zero.
+
+
+<br>
+
+## PSTMPWR2
+
+> PSTMPWR1 0.8  
+
+The minimum throttle setting to have fully effective direct attitude control in the post-stall region of the $C_L$ vs $\alpha$ curve.
+
+If not defined in the DAT File, YSFlight defaults to 0.8.
+
+**NOTE:** For helicopters, this should be set to zero.
+
+<br>
+
+## CPITMANE
+
+> CPITMANE 8.0
+
+The pitch maneuverability constant controls how quickly the aircraft reacts to a pitch input. A lower value means a slower response to pitch inputs.
+
+<br>
+
+## CPITSTAB
+
+> CPITSTAB 2.0
+
+The pitch stability constant damps out pitch inputs when pitch inputs are returned to neutral.
+
+<br>
+
+## CYAWMANE
+
+> CYAWMANE 5.0
+
+The Yaw Maneuverability constant controls how responsive the yaw is and how fast the aircraft will reach maximum input side slip angle with a full yaw input. A lower value means a slower reaction to yaw inputs.
+
+<br>
+
+## CYAWSTAB
+
+> CYAWSTAB 3.0
+
+The yaw stability constant controls how stable the yaw axis is and how quickly the aircraft will return to a neutral side slip angle when the pedal input is released.
+
+<br>
+
+## CROLLMAN
+
+> CROLLMAN 3.0
+
+The roll maneuverability constant controls how quickly the aircraft will reach maximum roll rate. A lower value means a slower reaction to roll inputs.
+
+<br>
+
+## CTLLDGEA
+
+> CTLLDGEA TRUE
+
+Control if the landing gear will be down when the aircraft spawns.
+
+<br>
+
+## CTLBRAKE
+
+> CTLBRAKE FALSE 
+
+Control if the brake will be engaged when the aircraft spawns.
+
+<br>
+
+## CTLSPOIL
+
+> CTLSPOIL 0.0
+
+Control how far the spoiler is extended when the aircraft spawns. 0 is fully retracted and 1 is fully extended.
+
+<br>
+
+## CTLABRNR
+
+> CTLABRNR FALSE
+
+Control if the afterburner is engaged when the aircraft spawns.
+
+<br>
+
+## CTLTHROT
+
+> CTLTHROT 0.0 
+
+Set the throttle position when the aircraft spawns.
+
+<br>
+
+## CTLIFLAP
+
+> CTLIFLAP 0.0 
+
+Control how far the flap is extended when the aircraft spawns. 0 is fully retracted and 1 is fully extended.
+
+<br>
+
+## CTLINVGW
+
+> CTLINVGW 1.0
+
+Control how far the variable geometry wings are extended when the aircraft spawns. 0 is fully swept and 1 is fully extended.
+
+<br>
+
+
+## CTLATVGW
+
+> CTLATVGW TRUE
+
+Allow the user to override the automatic speed-controlled variable geometry wing movement.
+
+<br>
+
+
+## HRDPOINT
+
+> HRDPOINT -0.893m -1.141m 1.169m B500*2 AGM65*2 AIM120*2 AIM9*2 AIM9X*2 $INTERNAL<br> 
+> HRDPOINT 0m -1.465m 0.675m FUEL&1200
+
+There are three parts to the Hardpoint definition lines. 
+
+### Hardpoint location
+
+The position of the hardpoint defines where the weapon SRF model origin (0,0,0) will render.
+
+See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more about the order of inputs.
+
+### Permitted Weapons
+
+Only one weapon type is allowed on a hardpoint at a time. For all weapons besides external fuel tanks, multiple weapons of the same type may be loaded on a hardpoint. For external fuel tanks, the quantity of fuel (in kg) is defined as shown in the second example, but if not defined, YSFlight will use 800kg. For all other weapons the maximum quantity of the weapon that can be loaded is defined with an asterix * and then the number.
+
+### Internal Weapons
+
+Some hardpoints can be defined as INTERNAL which means that for all bombs on that hardpoint, the bomb bay doors need to be open before the bomb can be dropped. If the weapon bay is closed when the player tries to drop a bomb, the weapon bay will be automatically opened and then the player must command another bomb drop.
+
+
+<br>
+
+
+## GUNSIGHT
+
+> GUNSIGHT TRUE
+
+Allows the aircraft to have a radar ranging gunsight. YSFlight assumes TRUE if not defined in the DAT File.
+
+<br>
+
+
+## GUNPOWER
+
+> GUNPOWER 4
+
+Defines how much damage each bullet does. If not defined, GUNPOWER defaults to 1.
+
+<br>
+
+
+## 
+
+>
+
+<br>
+
+
+## 
+
+>
+
+<br>
+
+
+## 
+
+>
+
+<br>
+
+
+## 
+
+>
+
+<br>
+
+
+## 
+
+>
+
+<br>
+
+
+
 
 
 # Aircraft DAT Variable Summary

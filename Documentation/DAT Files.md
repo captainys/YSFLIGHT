@@ -622,6 +622,12 @@ The minimum airspeed (indicated air speed) needed for any aerodynamic control ov
 
 The minimum air speed (indicated air speed) needed for fully controlled flight.
 
+## MANESPD3
+
+> MANESPD3 150kt
+
+Defines the best maneuverability speed.
+
 <br>
 
 ## PSTMPTCH
@@ -672,9 +678,7 @@ If not defined in the DAT file, YSFlight defaults to 0.15.
 
 > PSTMPWR1 0.8  
 
-The minimum throttle setting to have fully effective direct attitude control in the post-stall region of the $C_L$ vs $\alpha$ curve.
-
-If not defined in the DAT File, YSFlight defaults to 0.8.
+The minimum throttle setting to have fully effective direct attitude control in the post-stall region of the $C_L$ vs $\alpha$ curve. If not defined in the DAT File, YSFlight defaults to 0.8.
 
 **NOTE:** For helicopters, this should be set to zero.
 
@@ -829,40 +833,155 @@ Defines how much damage each bullet does. If not defined, GUNPOWER defaults to 1
 <br>
 
 
-## 
+## INITIGUN
 
->
+> INITIGUN 2000
 
-<br>
-
-
-## 
-
->
+Defines how many bullets the aircraft will have when it spawns.
 
 <br>
 
 
-## 
+## TIREFRIC
 
->
+> TIREFRIC 0.1
 
-<br>
-
-
-## 
-
->
+The friction coefficient between the tires and the ground. Adds extra "drag" on the ground.
 
 <br>
 
 
-## 
+## BMBAYRCS
 
->
+> BMBAYRCS 0.5
+
+Defines the addition to the aircraft's RCS when the bomb bay is fully open. When the  bomb bay is in transition, the RCS increase is proportional to how open the bay is.
+
 
 <br>
 
+
+## RADARCRS
+
+> RADARCRS 1.5
+
+Defines the basic radar cross section of the aircraft without weapons or bomb bay open.
+
+<br>
+
+
+## WPNSHAPE
+
+>WPNSHAPE FUEL STATIC aircraft/f22_fueltank.srf <br> WPNSHAPE FUEL FLYING aircraft/f22_fueltank.srf
+
+WPNSHAPE allows for specific weapon skins to override the default weapon skins in both flying and pre-launch states. There are 3 parts to the WPNSHAPE line:
+- Weapon code (see Weapon documentation)
+- Weapon state (STATIC or FLYING)
+- Path to the weapon skin (.srf or .dnm file).
+
+
+<br>
+
+
+## WEAPONCH
+
+> WEAPONCH SMK
+
+Defines the default weapon channel selected when the aircraft spawns in. Uses the weapon codes ==(insert link to weapon documentation)== but also the following
+- SMK for loaded smoke.
+- GUN for the aircraft's gun
+
+If the variable is not included in the DAT file then the aircraft defaults to the GUN as the initially selected weapon upon spawning in.
+
+<br>
+
+## SMOKEOIL
+
+> SMOKEOIL 100.0kg
+
+Loads smoke oil in the aircraft to allow for default smoke generation when the aircraft spawns. Otherwise smoke generation needs to be added in the pre-flight menu when selecting the aircraft configuration.
+
+<br>
+
+## SMOKECOL
+
+> SMOKECOL 0 128 32 32
+
+Defines the smoke color for a specific smoke generator position using RGB color values on the 0 to 255 scale. Must be placed after the smoke generator is defined.
+
+> SMOKECOL [SMOKEGEN index, 0 = first] [Red] [Green] [Blue]
+
+
+<br>
+
+
+## SMOKEGEN
+
+> SMOKEGEN -7.92m -2.22m 6.60m
+
+Defines the location of a smoke generation point in 3d space.
+
+See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more about the order of inputs.
+
+<br>
+
+## 
+
+> 
+
+<br>
+
+## 
+
+> 
+
+<br>
+
+## 
+
+> 
+
+<br>
+
+## 
+
+> 
+
+<br>
+
+## 
+
+> 
+
+<br>
+
+## 
+
+> 
+
+<br>
+
+## 
+
+> 
+
+<br>
+
+## 
+
+> 
+
+<br>
+
+## 
+
+> 
+
+<br>
+
+## 
+
+> 
 
 
 

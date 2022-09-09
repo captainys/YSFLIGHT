@@ -311,7 +311,7 @@ For fixed wing aircraft the REFVLAND value is used instead of 30 m/s.
 $$C_{B_{Wing}} = \frac{\left( WEIGHCLN   +   WEIGFUEL \right)  \times REFVLAND^2}{2   \times   REFLNRWY}$$
 
 
-
+<br>
 
 # Variable Geometry
 
@@ -324,6 +324,18 @@ The variable geometry wing position is controlled by VGWSPED1 and VGWSPED2.
 $$VGW = 1 - \frac{V - VGWSPED1}{VGWSPED2 - VGWSPED1}$$
 
 
+
+<br>
+
+# Radar Crossection
+
+$$RCS = RADARCRS + BMBAYRCS \times \left(staBombBayDoor + staGear\right)$$
+
+The exception to this is if weapons are loaded on hardpoints that are not flagged as "Internal". If any weapon other than fuel or flarepods are loaded on these stations then the RCS of the aircraft is set to 1.0.
+
+The effect of RCS can be found on [YSFHQ here](https://forum.ysfhq.com/viewtopic.php?f=307&t=10851).
+
+<br>
 
 # DAT Variables
 

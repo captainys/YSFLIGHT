@@ -50,3 +50,26 @@ This document contains specifications for YSFlight Comunity Edition Weapon perfo
 | AIM9X | 0.5 |  | 23 |  |
 | AIM120 | 3 |  | 25 |  |
 | AGM65 | 1.6 |  |  |  |
+
+
+# Weapon Falling Properties
+
+
+## B500HD
+
+High drag bombs use the following equation to simulate the flight profile of a high-drag bomb.
+
+In the drag equation, the drag coefficient and the area are combined.
+
+$$C_D S = 0.8$$
+
+<br>
+
+$$Drag = 0.5 \times C_D S \times V^2 \times \rho$$
+
+and the acceleration is as follows:
+
+$$a = \frac{Drag}{m}$$
+
+where:
+- $m$ = 226.8 kg

@@ -229,7 +229,77 @@ Note: For helicopters, $C_{L_0}$ and $C_{L_{Slope}}$ are zero.
 
 <br>
 
-## Drag Coefficient Calculation for Fixed-Wing Aircraft
+### Lift Coefficient Regions
+
+There are several regions to the Lift Coefficient curve which are defined by the DAT File.
+- Negative AoA Decay
+- Negative AoA Flat
+- Between CRITAOAM and CRITAOAP
+- Positive AoA Flay
+- Positive AoA Decay
+
+When $\alpha$ is in the Negative AoA Decay region:
+
+$$\tau = 1.0 - \left(\frac{\left(CRITAOAM - FLATCLR2\right) - \alpha}{CLDECAY2}\right)$$
+
+<br>
+
+$$C_{L_{min}} = \left(C_{L_{0}} + CRITAOAM \times C_{L_{slope}}\right) \times \left(1.0 + CLBYFLAP \times staFlap \right)$$
+
+<br>
+
+$$C_L = C_{L_{min}} \times \tau$$
+
+<br>
+
+When $\alpha$ is in the Negative AoA Flat region:
+
+$$C_L = \left( C_{L_{0}} + CRITAOAM \times C_{L_{slope}} \right) \times \left(1.0 + CLBYFLAP \times staFlap \right)$$
+
+<br>
+
+When $\alpha$ is between CRITAOAM and CRITAOAP:
+
+$$C_L = \left(C_{L_{0}} + \alpha \times C_{L_{slope}}  \right) \times \left( 1 + staFlap \times CLBYFLAP   \right)$$
+
+<br>
+
+When $\alpha$ is in the Positive AoA Flat region:
+
+$$C_L = \left(C_{L_{0}}  + CRITAOAP \times C_{L_{slope}} \right) \times \left(1.0 + CLBYFLAP \times staFlap \right)$$
+
+<br>
+
+
+When $\alpha$ is in the Positive AoA Decay region:
+
+$$\tau = 1.0 - \left(\frac{\alpha - \left(CRITAOAP + FLATCLR1 \right)}{CLDECAY1}\right)$$
+
+<br>
+
+$$maxCl=(C_{L_{0}} + CRITAOAP \times C_{L_{slope}}) \times \left(1.0 + CLBYFLAP \times staFlap \right)$$
+
+<br>
+
+$$C_L = C_{L_{max}} \times \tau$$
+
+
+<br>
+
+
+### Lift Coefficient for Variable Geometry Wings
+
+When an aircraft has Variable Geometry Wings, the following modification is applied to the lift coefficient calculated in earlier sections:
+
+$$C_L = C_L \times \left(1.0 + CLVARGEO \times staVgw \right)$$
+
+<br>
+
+## Drag Coefficient Calculation 
+
+The Drag coefficient is calculated in real time and has some approximations made to simplify the equations in the back end.
+
+### Fixed-Wing Aircraft Drag Coefficient Fundementals
 
 The drag coefficient has a lot of different considerations that need to be calculated before drag coefficients can be calculated.
 - $T_{Cruise}$ = Thrust at REFTCRUS, REFVCRUS, and REFACRUS conditions.
@@ -253,7 +323,7 @@ $$C_{D_{MAX}} = \frac{T_{V_{MAX}}}{0.5  \times \rho_{REVACRUS} \times  MAXSPEED^
 
 <br>
 
-## Drag Coefficient Calculation for Helicopters
+### Helicopter Drag Coefficient Fundementals
 
 Need to calculate properties for the propeller engine.
 
@@ -280,6 +350,55 @@ $$C_{D_{0_{MAX}}} = C_{D_{0}}$$
 $$C_{D_{Const}} = 0$$
 
 <br>
+
+
+
+### Drag Coefficient Buildup
+
+When calculating drag, the angle of attack is artificially bound:
+
+$$-1 \times MAXCDAOA \le \alpha \le MAXCDAOA$$
+
+<br>
+
+Afterwards, the drag coefficient is built up as different influences are accounted for.
+
+#### Initial Cd Calculation
+
+
+The initial drag coefficient is calculated as such:
+
+$${C_D}_1 = C_{D_{0}} + C_{D_{Const}} \times \alpha^2$$
+
+<br>
+
+#### Critical Speed Drag Coefficient Buildup
+
+If the aircraft is faster than CRITSPED, or if $C_{D_{MAX}}$ is less than $C_{D_{0}}$ the the following additional contributions are calculated:
+
+$${C_D}_2 = {C_D}_1 + \left(C_{D_{MAX}} - C_{D_{0}} \right) \times \frac{V - CRITSPED}{MAXSPEED - CRITSPED}$$
+ 
+<br>
+
+#### Spoiler Drag Coefficient Buildup
+
+NOTE: If the aircraft doesn't have CDSPOILR defined, then it defaults to zero. If the aircraft doesn't have CDVARGEO defined, it defaults to zero.
+
+$${C_D}_3 = {C_D}_2 \times \left(1.0 + CDSPOILR \times staSpoiler\right) \times \left(1.0 + CDVARGEO \times staVgw\right) \times \left(1.0 + CDBYFLAP \times staFlap\right) \times \left(1.0 + CDBYGEAR \times staGear\right)$$
+
+
+<br>
+
+
+
+
+
+# Indicated Air Speed
+
+Indicated air speed is calculated by the following formula:
+
+$$IAS = TAS \times \sqrt\frac{\rho_{alt}}{1.225}$$
+
 
 
 # Brakes
@@ -321,7 +440,7 @@ The variable geometry wing position is controlled by VGWSPED1 and VGWSPED2.
 - When the aircraft's speed is above VGWSPED2, then the VGW value is 0, or fully swept back.
 - When the aircraft's speed is between VGWSPED1 and VGWSPED2, then the following equation is used:
 
-$$VGW = 1 - \frac{V - VGWSPED1}{VGWSPED2 - VGWSPED1}$$
+$$staVGW = 1 - \frac{V - VGWSPED1}{VGWSPED2 - VGWSPED1}$$
 
 
 

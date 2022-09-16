@@ -6674,6 +6674,14 @@ void FsSimulation::SimDrawShadowMap(const ActualViewMode &actualViewMode) const
 			}
 		}
 	}
+	else
+	{
+		auto &commonTexture=FsCommonTexture::GetCommonTexture();
+		for(int i=0; i<commonTexture.GetMaxNumShadowMap(); ++i)
+		{
+			FsDisableShadowMap(5+i,0+i);
+		}
+	}
 }
 
 void FsSimulation::SimDrawGuiDialog(void) const
@@ -7256,7 +7264,7 @@ void FsSimulation::SimDrawField(const ActualViewMode &actualViewMode,const class
 
 void FsSimulation::SimDrawShadow(const ActualViewMode &actualViewMode,const class FsProjection &proj) const  // For OpenGL/Direct3D, not for BlueImpulseSDK
 {
-	if(YSTRUE!=FsIsShadowMapAvailable())
+	if(YSTRUE!=FsIsShadowMapAvailable() || cfgPtr->drawShadow!=YSTRUE)
 	{
 		FsBeginDrawShadow();  // Set polygon offset -1,-1 and enable.
 		SimDrawComplexShadow(actualViewMode,proj);

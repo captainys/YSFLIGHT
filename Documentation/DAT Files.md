@@ -919,7 +919,7 @@ Defines the smoke color for a specific smoke generator position using RGB color 
 
 > SMOKEGEN -7.92m -2.22m 6.60m
 
-Defines the location of a smoke generation point in 3d space.
+Defines the location of a smoke generation point in 3d space. You can define up to 8 SMOKEGEN points.
 
 See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more about the order of inputs.
 

@@ -377,6 +377,12 @@ $${C_D}_1 = C_{D_{0}} + C_{D_{Const}} \times \alpha^2$$
 If the aircraft is faster than CRITSPED, or if $C_{D_{MAX}}$ is less than $C_{D_{0}}$ the the following additional contributions are calculated:
 
 $${C_D}_2 = {C_D}_1 + \left(C_{D_{MAX}} - C_{D_{0}} \right) \times \frac{V - CRITSPED}{MAXSPEED - CRITSPED}$$
+
+<br>
+
+Otherwise:
+
+$${C_D}_2 = {C_D}_1$$
  
 <br>
 

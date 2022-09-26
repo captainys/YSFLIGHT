@@ -12015,12 +12015,19 @@ void FsSimulation::ViewingControl(FSBUTTONFUNCTION fnc,FSUSERCONTROL userControl
 		{
 			if(mainWindowViewmode==FSANOTHERAIRPLANE)
 			{
+				int i,nAir;
+
+				nAir=GetNumAirplane();
 				focusAir=FindNextAirplane(focusAir);
-				for(int i=0; i<2; ++i) // NULL and playerPlane may appear in a sequence.
+				for(i=0; i<nAir; ++i)
 				{
-					if(focusAir==NULL || focusAir==GetPlayerObject())
+					if(focusAir==NULL || focusAir==GetPlayerObject() || focusAir->IsAlive()!=YSTRUE)
 					{
 						focusAir=FindNextAirplane(focusAir);
+					}
+					else
+					{
+						break;
 					}
 				}
 			}
@@ -12034,12 +12041,19 @@ void FsSimulation::ViewingControl(FSBUTTONFUNCTION fnc,FSUSERCONTROL userControl
 		{
 			if(mainWindowViewmode==FSANOTHERAIRPLANE)
 			{
+				int i,nAir;
+
+				nAir=GetNumAirplane();
 				focusAir=FindPrevAirplane(focusAir);
-				for(int i=0; i<2; ++i) // NULL and playerPlane may appear in a sequence.
+				for(i=0; i<nAir; ++i)
 				{
-					if(focusAir==NULL || focusAir==GetPlayerObject())
+					if(focusAir==NULL || focusAir==GetPlayerObject() || focusAir->IsAlive()!=YSTRUE)
 					{
 						focusAir=FindPrevAirplane(focusAir);
+					}
+					else
+					{
+						break;
 					}
 				}
 			}

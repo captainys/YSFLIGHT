@@ -9,11 +9,13 @@ All DAT Files allow lines to be commented out if the row begins with "REM". Addi
 
 # Aircraft DAT Variables
 
-All of the aircraft DAT Variables are defined in this section. In addition to the constraints and information in the sections below, also see the [table below](#Aircraft-DAT-Variable-Summary) for specific requirements in terms of the units and inputs.
+All of the aircraft DAT Variables are defined in sub-sections below in no particular order. In addition to the constraints and information in the sections below, also see the [table below](#Aircraft-DAT-Variable-Summary) for specific requirements in terms of the units and inputs.
 
 <br>
 
-## IDENTIFY
+## Aircraft Identification & Classification
+
+### IDENTIFY
 
 > IDENTIFY "DIAMOND_ECLIPSE"
 
@@ -23,7 +25,7 @@ The in-game name of the aircraft, which is displayed to users in the aircraft se
 
 <br>
 
-## SUBSTNAM
+### SUBSTNAM
 
 > SUBSTNAM "F-18C_HORNET"
 
@@ -33,7 +35,7 @@ The name of the plane (as specified in the IDENTIFY line of a .dat file) can be 
 
 <br>
 
-## CATEGORY
+### CATEGORY
 
 > CATEGORY FIGHTER
 
@@ -59,10 +61,76 @@ The permitted inputs and the hard-coded auto-pilot bank angle are defined below:
 | WW2DIVEBOMBER | Unknown | Unknown | 30 |
 | WW2FIGHTER |   $\pi \times \frac{8}{18}$ | 80 | 20 |
 
+<br>
+
+### HITRADIUS
+
+> HITRADIUS 50m
+
+The radius that defines a sphere around the aircraft origin where colisions will start to be calculated.
+
+
 
 <br>
 
-## AFTBURNR
+### AIRCLASS
+
+> AIRCLASS HELICOPTER
+
+Defines the DAT as either a helicopter or Airplane. Must be either "HELICOPTER", or "AIRPLANE"
+
+<br>
+
+### STRENGTH
+
+> STRENGTH 12
+
+Defines the amount of damage that the aircraft can absorb before it is destroyed. If not defined in the DAT file, it defaults to 10.
+
+<br>
+
+### STALHORN
+
+> STALHORN TRUE                 #STALL WARNING HORN
+
+Enables stall warning sound when true
+
+<br>
+
+### GEARHORN
+
+> GEARHORN FALSE                #NO LANDING-GEAR WARNING HORN (for low-altitude aerobatics)
+
+Enables landing gear horn when true. Horn sounds when gear is up, flaps are down, and the aircraft is in a descent below 500ft
+
+<br>
+
+
+### RADARCRS
+
+> RADARCRS 1.5
+
+Defines the basic radar cross section of the aircraft without weapons or bomb bay open.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br>
+## Engine Parameters
+
+The following parameters define a Jet or Propeller engine's characteristics in YSFlight.
+
+### AFTBURNR
 
 > AFTBURNR TRUE
 
@@ -70,7 +138,7 @@ Indicates if the engine has an afterburner or not. Required for all engine types
 
 <br>
 
-## THRAFTBN
+### THRAFTBN
 
 > THRAFTBN 20.0t
 
@@ -78,7 +146,7 @@ Defines the maximum thrust an afterburning jet engine will produce in afterburne
 
 <br>
 
-## THRMILIT
+### THRMILIT
 
 > THRMILIT 12.0t
 
@@ -86,7 +154,7 @@ Defines the maximum thrust a jet engine will produce without afterburner at sea-
 
 <br>
 
-## THRSTREV
+### THRSTREV
 
 > THRSTREV 0.2
 
@@ -94,13 +162,13 @@ Defines how efficient the reverse thrust of an engine is.
 
 <br>
 
-## PROPELLR
+### PROPELLR
 
 > PROPELLR 150HP
 
 Defines how powerful a propeller engine is.
 
-## PROPVMIN
+### PROPVMIN
 
 > PROPVMIN 70kt
 
@@ -108,7 +176,7 @@ Defines the transition point between slow and high-speed propeller thrust calcul
 
 <br>
 
-## PROPEFCY
+### PROPEFCY
 
 > PROPEFCY 0.8
 
@@ -116,7 +184,7 @@ Defines how efficient the a propeller engine is. Defaults to 0.7 if not defined 
 
 <br>
 
-## WEIGHCLN
+### WEIGHCLN
 
 > WEIGHCLN 630kg
 
@@ -124,7 +192,7 @@ Defines the empty weight (no fuel or payload) of the aircraft.
 
 <br>
 
-## WEIGFUEL
+### WEIGFUEL
 
 > WEIGFUEL 100kg
 
@@ -134,7 +202,7 @@ Defines the maximum weight of the fuel that can be loaded in the internal tanks.
 
 <br>
 
-## WEIGLOAD
+### WEIGLOAD
 
 > WEIGLOAD 300kg
 
@@ -142,7 +210,7 @@ The weight of the payload of the aircraft.
 
 <br>
 
-## FUELABRN
+### FUELABRN
 
 > FUELABRN 2.5kg
 
@@ -150,7 +218,7 @@ The weight of fuel burned per second at maximum afterburner throttle setting at 
 
 <br>
 
-## FUELMILI
+### FUELMILI
 
 > FUELMILI 0.015kg
 
@@ -158,7 +226,7 @@ The weight of fuel burned per second at maximum non-afterburner throttle setting
 
 <br>
 
-## COCKPITP
+### COCKPITP
 
 > COCKPITP -0.21m  0.40m  2.05m
 
@@ -168,7 +236,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## EXCAMERA
+### EXCAMERA
 
 > EXCAMERA "DORSAL" 0m 2.5m 2.25m 180deg 5deg 0deg OUTSIDE
 
@@ -180,7 +248,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## INSTPANL
+### INSTPANL
 
 > INSTPANL aircraft/eclipse.ist
 
@@ -188,7 +256,7 @@ Custom instrument panels (.ist) can be added to the cockpit.
 
 <br>
 
-## ISPNLPOS
+### ISPNLPOS
 
 > ISPNLPOS -0.21m  0.40m  2.355404m
 
@@ -198,7 +266,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## ISPNLSCL
+### ISPNLSCL
 
 > ISPNLSCL 0.38
 
@@ -206,7 +274,7 @@ Define the scaling factor to be applied to the instrument panel to fit it into t
 
 <br>
 
-## SCRNCNTR
+### SCRNCNTR
 
 > SCRNCNTR 0.0 0.24
 
@@ -214,7 +282,7 @@ The position of the viewpoint relative to the center of the viewport. To explain
 
 <br>
 
-## LEFTGEAR
+### LEFTGEAR
 
 > LEFTGEAR -1.94m -2.03m -0.71m
 
@@ -226,7 +294,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## RIGHGEAR
+### RIGHGEAR
 
 > RIGHGEAR 1.94m -2.03m -0.71m
 
@@ -238,7 +306,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## WHELGEAR
+### WHELGEAR
 
 > WHELGEAR 0.00m -2.06m 5.16m
 
@@ -250,7 +318,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## ARRESTER
+### ARRESTER
 
 > ARRESTER 0.00m -1.76m -3.79m
 
@@ -262,7 +330,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## MACHNGUN
+### MACHNGUN
 
 > MACHNGUN  2.8m -0.23m  2.35m  #MACHINE GUN POSITION
 
@@ -272,7 +340,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## MACHNGNX
+### MACHNGNX
 
 > MACHNGN2  2.03m -0.59m  2.59m  #MACHINE GUN POSITION <br>MACHNGN3  2.22m -0.58m  2.59m  #MACHINE GUN POSITION<br>MACHNGN4  2.40m -0.56m  2.59m  #MACHINE GUN POSITION<br>MACHNGN5 -1.87m -0.61m  2.59m  #MACHINE GUN POSITION<br>MACHNGN6 -2.03m -0.59m  2.59m  #MACHINE GUN POSITION<br>MACHNGN7 -2.22m -0.58m  2.59m  #MACHINE GUN POSITION<br>MACHNGN8 -2.40m -0.56m  2.59m  #MACHINE GUN POSITION
 
@@ -282,7 +350,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## GUNINTVL
+### GUNINTVL
 
 > GUNINTVL 0.075
 
@@ -290,7 +358,7 @@ Defines the interval (in seconds) between bullets firing. Note that all MACHNGUN
 
 <br>
 
-## GUNDIREC
+### GUNDIREC
 
 > GUNDIREC  0.0m 0.0m -1.0m    
 
@@ -300,7 +368,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## SMOKEGEN
+### SMOKEGEN
 
 > SMOKEGEN  0.0m  0.0m -15.17m  
 
@@ -310,7 +378,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## VAPORPO0
+### VAPORPO0
 
 > VAPORPO0  5.1m  0.55m -5.60m 
 
@@ -322,7 +390,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## VAPORPO1
+### VAPORPO1
 
 > VAPORPO1  8.6m  0.55m -3.20m  #VAPOR POSITION (Wings Spread)
 
@@ -336,7 +404,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## HTRADIUS
+### HTRADIUS
 
 > HTRADIUS  8.0m                #OUTSIDE SPHERE RADIUS
 
@@ -345,25 +413,12 @@ This is maximum distance from which YSFlight will attempt collision detection. I
 **Note:** YSFlight will not perform collision detection if the distance between object A and object B is greater than the sum of their HTRADIUS.
 
 
-<br>
 
-## STALHORN
 
-> STALHORN TRUE                 #STALL WARNING HORN
-
-Enables stall warning sound when true
 
 <br>
 
-## GEARHORN
-
-> GEARHORN FALSE                #NO LANDING-GEAR WARNING HORN (for low-altitude aerobatics)
-
-Enables landing gear horn when true. Horn sounds when gear is up, flaps are down, and the aircraft is in a descent below 500ft
-
-<br>
-
-## FLAPPOSI
+### FLAPPOSI
 
 > FLAPPOSI 0.0                  #FLAP POSITION 1 <br> FLAPPOSI 0.4                  #FLAP POSITION 2 <br> FLAPPOSI 1.0                  #FLAP POSITION 3
 
@@ -371,7 +426,7 @@ Overrides the default 25 percent incriment in flap extension or retraction with 
 
 <br>
 
-## TRIGGERX
+### TRIGGERX
 
 > TRIGGER1 GUN<br>TRIGGER2 AAM<br>TRIGGER3 AGM<br>TRIGGER4 SMK
 
@@ -379,16 +434,9 @@ Defines the order in which weapons will appear in the player's HUD. Currently no
 
 <br>
 
-## STRENGTH
-
-> STRENGTH 12
-
-Defines the amount of damage that the aircraft can absorb before it is destroyed. If not defined in the DAT file, it defaults to 10.
 
 
-<br>
-
-## CRITAOAP
+### CRITAOAP
 
 > CRITAOAP  20deg               #CRITICAL AOA POSITIVE
 
@@ -396,7 +444,7 @@ Defines the angle of attack (positive, nose-up direction) at which the aircraft 
 
 <br>
 
-## CRITAOAM
+### CRITAOAM
 
 > CRITAOAM -15deg               #CRITICAL AOA NEGATIVE
 
@@ -404,7 +452,7 @@ Defines the angle of attack (negative, nose-down direction) at which the aircraf
 
 <br>
 
-## MAXCDAOA
+### MAXCDAOA
 
 > MAXCDAOA 40deg        
 
@@ -412,32 +460,39 @@ Defines the angle of attack at which maximum $C_D$ is reached on the $C_D$ vs $\
 
 <br>
 
-## FLATCLR1
+### FLATCLR1
 
-> FLATCLR1 3deg                 #Cl stays the same this angle beyond critical AOA (plus side)
+> FLATCLR1 3deg                 
 
-<br>
-
-## FLATCLR2
-
-> FLATCLR2 3deg                 #Cl stays the same this angle beyond critical AOA (minus side)
+Defines the additional of angle of attack the Lift Coefficient Curve will remain at the maximum Lift coefficient value beyond the critical AOA [(CRITAOAP)](#CRITAOAP). The default value of this parameter is zero if it is not defined in the DAT File.
 
 <br>
 
-## CLDECAY1
+### FLATCLR2
 
-> CLDECAY1 15deg                #After flat Cl range, Cl decays to zero in this range of angle (plus side)
+> FLATCLR2 3deg                 
 
-<br>
-
-## CLDECAY2
-
-> CLDECAY2 10deg                #After flat Cl range, Cl decays to zero in this range of angle (minus side)
-
+Defines the additional of angle of attack the Lift Coefficient Curve will remain at the minimum Lift coefficient value below the critical AOA [(CRITAOAM)](#CRITAOAM). The default value of this parameter is zero if it is not defined in the DAT File.
 
 <br>
 
-## CRITSPED
+### CLDECAY1
+
+> CLDECAY1 15deg                
+
+Defines how much angle of attack it takes the Lift Coefficient Curve to decay from the maximum lift coefficient to zero. Controls the region from $CRITAOAP + FLATCLR1$ to $CRITAOAP + FLATCLR1 + CLDECAY1$. The default value of this parameter is zero if it is not defined in the DAT file.
+
+<br>
+
+### CLDECAY2
+
+> CLDECAY2 10deg                
+
+Defines how much angle of attack it takes the Lift Coefficient Curve to decay from the minimum lift coefficient to zero. Controls the region from $CRITAOAM - FLATCLR1$ to $CRITAOAM - FLATCLR1 - CLDECAY1$. The default value of this parameter is zero if it is not defined in the DAT file.
+
+<br>
+
+### CRITSPED
 
 > CRITSPED 0.9MACH
 
@@ -445,7 +500,7 @@ The speed at which the aircraft meets supersonic drag
 
 <br>
 
-## MAXSPEED
+### MAXSPEED
 
 > MAXSPEED 2.5MACH 
 
@@ -453,7 +508,7 @@ The maximum speed the aircraft can fly. Used for calculating Drag Coefficient.
 
 <br>
 
-## HASSPOIL
+### HASSPOIL
 
 > HASSPOIL TRUE  
 
@@ -461,7 +516,7 @@ A flag if the aircraft has an extendable spoiler.
 
 <br>
 
-## RETRGEAR
+### RETRGEAR
 
 > RETRGEAR TRUE 
 
@@ -469,7 +524,7 @@ A flag if the landing gear is retractable.
 
 <br>
 
-## VARGEOMW
+### VARGEOMW
 
 > VARGEOMW FALSE
 
@@ -477,7 +532,7 @@ A flag if the aircraft has variable geometry wings that need to sweep based on a
 
 <br>
 
-## CLVARGEO
+### CLVARGEO
 
 > CLVARGEO 0.0
 
@@ -485,7 +540,7 @@ The increase in $C_L$ when the wings are fully swept forward. When Wings are at 
 
 <br>
 
-## CDVARGEO
+### CDVARGEO
 
 > CDVARGEO 0.0   
 
@@ -493,7 +548,7 @@ The increase in $C_D$ when the wings are fully swept forward. When Wings are at 
 
 <br>
 
-## CLBYFLAP
+### CLBYFLAP
 
 > CLBYFLAP 0.1 
 
@@ -501,7 +556,7 @@ The increase in $C_L$ when the flaps are fully lowered. When flaps are at an int
 
 <br>
 
-## CDBYFLAP
+### CDBYFLAP
 
 > CDBYFLAP 0.2  
 
@@ -509,7 +564,7 @@ The increase in $C_D$ when the flaps are fully lowered. When flaps are at an int
 
 <br>
 
-## CDBYGEAR
+### CDBYGEAR
 
 > CDBYGEAR 0.5           
 
@@ -517,7 +572,7 @@ The increase in $C_D$ when the landing gear are lowered.
 
 <br>
 
-## CDSPOILR
+### CDSPOILR
 
 > CDSPOILR 2.0
 
@@ -525,7 +580,7 @@ The increase in $C_D$ when the spoiler is deployed.
 
 <br>
 
-## WINGAREA
+### WINGAREA
 
 > WINGAREA 70m^2 
 
@@ -533,7 +588,7 @@ The wing area for the aircraft, used in the lift and drag calculations. Cannot b
 
 <br>
 
-## VGWSPED1
+### VGWSPED1
 
 > VGWSPED1 0.5MACH
 
@@ -541,7 +596,7 @@ The speed at which the Variable Geometry Wing begins to sweep back. The default 
 
 <br>
 
-## VGWSPED2
+### VGWSPED2
 
 > VGWSPED2 0.85MACH
 
@@ -550,7 +605,7 @@ The speed at which the Variable Geometry Wing reaches fully swept back. The defa
 
 <br>
 
-## MXIPTAOA
+### MXIPTAOA
 
 > MXIPTAOA 23.0deg 
 
@@ -558,7 +613,7 @@ The maximum angle of attack (positive and negative) that the player can command.
 
 <br>
 
-## MXIPTSSA
+### MXIPTSSA
 
 > MXIPTSSA 5.0deg 
 
@@ -566,7 +621,7 @@ The maximum angle of side-slip (positive and negative) that the player can comma
 
 <br>
 
-## MXIPTROL
+### MXIPTROL
 
 > MXIPTROL 360.0deg
 
@@ -574,7 +629,7 @@ The maximum instantaneous roll rate that the player can command.
 
 <br>
 
-## THRSTVCTR
+### THRSTVCTR
 
 > TRSTVCTR TRUE
 
@@ -584,7 +639,7 @@ Indication if the aircraft has thrust vectoring, or off-axis thrust vector.
 
 <br>
 
-## TRSTDIR0
+### TRSTDIR0
 
 > TRSTDIR0 0.0m 0.0m 1.0m
 
@@ -596,7 +651,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## TRSTDIR1
+### TRSTDIR1
 
 > TRSTDIR1 0.0m 1.0m 0.0m 
 
@@ -608,7 +663,7 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## MANESPD1
+### MANESPD1
 
 > MANESPD1 60kt 
 
@@ -616,13 +671,13 @@ The minimum airspeed (indicated air speed) needed for any aerodynamic control ov
 
 <br>
 
-## MANESPD2
+### MANESPD2
 
 > MANESPD2 85kt 
 
 The minimum air speed (indicated air speed) needed for fully controlled flight.
 
-## MANESPD3
+### MANESPD3
 
 > MANESPD3 150kt
 
@@ -630,7 +685,7 @@ Defines the best maneuverability speed.
 
 <br>
 
-## PSTMPTCH
+### PSTMPTCH
 
 >PSTMPTCH 10deg 
 
@@ -640,7 +695,7 @@ The rate of pitch possible in the post-stall region of the $C_L$ vs $\alpha$ cur
 
 <br>
 
-## PSTMYAW_
+### PSTMYAW_
 
 > PSTMYAW_ 10deg 
 
@@ -650,7 +705,7 @@ The rate of yaw possible in post-stall region of the $C_L$ vs $\alpha$ curve. (d
 
 <br>
 
-## PSTMROLL
+### PSTMROLL
 
 > PSTMROLL 10deg  
 
@@ -661,7 +716,7 @@ The rate of roll possible in post-stall region of the $C_L$ vs $\alpha$ curve. (
 
 <br>
 
-## PSTMPWR1
+### PSTMPWR1
 
 > PSTMPWR1 0.2  
 
@@ -669,22 +724,30 @@ The minimum throttle setting to have direct attitude control in the post-stall r
 
 If not defined in the DAT file, YSFlight defaults to 0.15.
 
-**NOTE:** For helicopters, this should be set to zero.
+**NOTE:** When YSFlight post-stall maneuverability was developed, a patch to all helicopters became required in order to let helicopters retain attitude control at low throttle settings.
+
+> REM Helo Patch for 2015 <br>
+PSTMPWR1 -0.1 <br>
+PSTMPWR2 -0.1
 
 
 <br>
 
-## PSTMPWR2
+### PSTMPWR2
 
 > PSTMPWR1 0.8  
 
 The minimum throttle setting to have fully effective direct attitude control in the post-stall region of the $C_L$ vs $\alpha$ curve. If not defined in the DAT File, YSFlight defaults to 0.8.
 
-**NOTE:** For helicopters, this should be set to zero.
+**NOTE:** When YSFlight post-stall maneuverability was developed, a patch to all helicopters became required in order to let helicopters retain attitude control at low throttle settings.
+
+> REM Helo Patch for 2015 <br>
+PSTMPWR1 -0.1 <br>
+PSTMPWR2 -0.1
 
 <br>
 
-## CPITMANE
+### CPITMANE
 
 > CPITMANE 8.0
 
@@ -692,7 +755,7 @@ The pitch maneuverability constant controls how quickly the aircraft reacts to a
 
 <br>
 
-## CPITSTAB
+### CPITSTAB
 
 > CPITSTAB 2.0
 
@@ -700,7 +763,7 @@ The pitch stability constant damps out pitch inputs when pitch inputs are return
 
 <br>
 
-## CYAWMANE
+### CYAWMANE
 
 > CYAWMANE 5.0
 
@@ -708,7 +771,7 @@ The Yaw Maneuverability constant controls how responsive the yaw is and how fast
 
 <br>
 
-## CYAWSTAB
+### CYAWSTAB
 
 > CYAWSTAB 3.0
 
@@ -716,7 +779,7 @@ The yaw stability constant controls how stable the yaw axis is and how quickly t
 
 <br>
 
-## CROLLMAN
+### CROLLMAN
 
 > CROLLMAN 3.0
 
@@ -724,7 +787,7 @@ The roll maneuverability constant controls how quickly the aircraft will reach m
 
 <br>
 
-## CTLLDGEA
+### CTLLDGEA
 
 > CTLLDGEA TRUE
 
@@ -732,7 +795,7 @@ Control if the landing gear will be down when the aircraft spawns.
 
 <br>
 
-## CTLBRAKE
+### CTLBRAKE
 
 > CTLBRAKE FALSE 
 
@@ -740,7 +803,7 @@ Control if the brake will be engaged when the aircraft spawns.
 
 <br>
 
-## CTLSPOIL
+### CTLSPOIL
 
 > CTLSPOIL 0.0
 
@@ -748,7 +811,7 @@ Control how far the spoiler is extended when the aircraft spawns. 0 is fully ret
 
 <br>
 
-## CTLABRNR
+### CTLABRNR
 
 > CTLABRNR FALSE
 
@@ -756,7 +819,7 @@ Control if the afterburner is engaged when the aircraft spawns.
 
 <br>
 
-## CTLTHROT
+### CTLTHROT
 
 > CTLTHROT 0.0 
 
@@ -764,7 +827,7 @@ Set the throttle position when the aircraft spawns.
 
 <br>
 
-## CTLIFLAP
+### CTLIFLAP
 
 > CTLIFLAP 0.0 
 
@@ -772,7 +835,7 @@ Control how far the flap is extended when the aircraft spawns. 0 is fully retrac
 
 <br>
 
-## CTLINVGW
+### CTLINVGW
 
 > CTLINVGW 1.0
 
@@ -781,7 +844,7 @@ Control how far the variable geometry wings are extended when the aircraft spawn
 <br>
 
 
-## CTLATVGW
+### CTLATVGW
 
 > CTLATVGW TRUE
 
@@ -790,24 +853,24 @@ Allow the user to override the automatic speed-controlled variable geometry wing
 <br>
 
 
-## HRDPOINT
+### HRDPOINT
 
-> HRDPOINT -0.893m -1.141m 1.169m B500*2 AGM65*2 AIM120*2 AIM9*2 AIM9X*2 $INTERNAL<br> 
+> HRDPOINT -0.893m -1.141m 1.169m B500\*2 AGM65\*2 AIM120\*2 AIM9\*2 AIM9X\*2 $INTERNAL<br> 
 > HRDPOINT 0m -1.465m 0.675m FUEL&1200
 
 There are three parts to the Hardpoint definition lines. 
 
-### Hardpoint location
+#### Hardpoint location
 
 The position of the hardpoint defines where the weapon SRF model origin (0,0,0) will render.
 
 See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more about the order of inputs.
 
-### Permitted Weapons
+#### Permitted Weapons
 
 Only one weapon type is allowed on a hardpoint at a time. For all weapons besides external fuel tanks, multiple weapons of the same type may be loaded on a hardpoint. For external fuel tanks, the quantity of fuel (in kg) is defined as shown in the second example, but if not defined, YSFlight will use 800kg. For all other weapons the maximum quantity of the weapon that can be loaded is defined with an asterix * and then the number.
 
-### Internal Weapons
+#### Internal Weapons
 
 Some hardpoints can be defined as INTERNAL which means that for all bombs on that hardpoint, the bomb bay doors need to be open before the bomb can be dropped. If the weapon bay is closed when the player tries to drop a bomb, the weapon bay will be automatically opened and then the player must command another bomb drop.
 
@@ -815,7 +878,7 @@ Some hardpoints can be defined as INTERNAL which means that for all bombs on tha
 <br>
 
 
-## GUNSIGHT
+### GUNSIGHT
 
 > GUNSIGHT TRUE
 
@@ -824,7 +887,7 @@ Allows the aircraft to have a radar ranging gunsight. YSFlight assumes TRUE if n
 <br>
 
 
-## GUNPOWER
+### GUNPOWER
 
 > GUNPOWER 4
 
@@ -833,7 +896,7 @@ Defines how much damage each bullet does. If not defined, GUNPOWER defaults to 1
 <br>
 
 
-## INITIGUN
+### INITIGUN
 
 > INITIGUN 2000
 
@@ -842,7 +905,7 @@ Defines how many bullets the aircraft will have when it spawns.
 <br>
 
 
-## TIREFRIC
+### TIREFRIC
 
 > TIREFRIC 0.1
 
@@ -851,26 +914,18 @@ The friction coefficient between the tires and the ground. Adds extra "drag" on 
 <br>
 
 
-## BMBAYRCS
+### BMBAYRCS
 
 > BMBAYRCS 0.5
 
 Defines the addition to the aircraft's RCS when the bomb bay is fully open. When the  bomb bay is in transition, the RCS increase is proportional to how open the bay is.
 
 
-<br>
-
-
-## RADARCRS
-
-> RADARCRS 1.5
-
-Defines the basic radar cross section of the aircraft without weapons or bomb bay open.
 
 <br>
 
 
-## WPNSHAPE
+### WPNSHAPE
 
 >WPNSHAPE FUEL STATIC aircraft/f22_fueltank.srf <br> WPNSHAPE FUEL FLYING aircraft/f22_fueltank.srf
 
@@ -883,7 +938,7 @@ WPNSHAPE allows for specific weapon skins to override the default weapon skins i
 <br>
 
 
-## WEAPONCH
+### WEAPONCH
 
 > WEAPONCH SMK
 
@@ -895,7 +950,7 @@ If the variable is not included in the DAT file then the aircraft defaults to th
 
 <br>
 
-## SMOKEOIL
+### SMOKEOIL
 
 > SMOKEOIL 100.0kg
 
@@ -903,19 +958,20 @@ Loads smoke oil in the aircraft to allow for default smoke generation when the a
 
 <br>
 
-## SMOKECOL
+### SMOKECOL
 
 > SMOKECOL 0 128 32 32
 
-Defines the smoke color for a specific smoke generator position using RGB color values on the 0 to 255 scale. Must be placed after the smoke generator is defined.
+Defines the smoke color for a specific smoke generator position using RGB color values on the 0 to 255 scale. Must be placed after the smoke generator is defined. If the smoke generator index is zero, then the smoke color applies to all smoke generators.
 
-> SMOKECOL [SMOKEGEN index, 0 = first] [Red] [Green] [Blue]
+
+> SMOKECOL [SMOKEGEN index, 0 = All] [Red] [Green] [Blue]
 
 
 <br>
 
 
-## SMOKEGEN
+### SMOKEGEN
 
 > SMOKEGEN -7.92m -2.22m 6.60m
 
@@ -925,64 +981,213 @@ See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more ab
 
 <br>
 
-## 
+### LOADWEPN
+
+> LOADWEPN RKT 38 <br>
+LOADWEPN B250 8
+
+Defines an initial loadout of an aircraft for the airplane selection and configuration pre-flight page in YSFLIGHT, or a default weapon loadout for AI aircraft in-game. Must always be followed by a weapon type and then a number of that weapon that should be loaded.
+
+> LOADWEPN [Weapon Type] [Number of Weapon]
+
+<br>
+
+### WPNSHAPE
+
+> WPNSHAPE FUEL STATIC aircraft/f22_fueltank.srf <br>
+WPNSHAPE FUEL FLYING aircraft/f22_fueltank.srf
+
+Defines custom SRF file to use for a specific weapon during either the STATIC (on-aircraft) or FLYING (post-launch) states for a weapon. The path to the SRF file must be either a relative path to the Dat file in the same directory or a sub-directory, orthe path must be an aboslute path from the main YSFlight directory.
+
+If the same SRF is desired for both states, then it must be explicitly stated as shown in the example above. 
+
+For any Weapons that the aircraft can load that are not defined by a custom WPNSHAPE, then the default weapons in the YSFLIGHT/misc folder will be used.
+
+> WPNSHAPE [Weapon Type] [STATIC/FLYING] [Path to SRF]
+
+<br>
+
+### FLAREPOS
+
+>  FLAREPOS  2.75m -0.86m -2.87m  20.0m 0.0m 0.0m
+
+Defines a custom flare position and initial velocity vector. The first three values are the position coordinates of the flare launcher and the final 3 values are the velocity vector.
+
+See the [Coordinate System Definition](#-YSFlight-Coordinate-System) for more about the order of inputs.
+
+
+<br>
+
+### PSTMSPD1
+
+> PSTMSPD1 100kt
+
+The speed below which the post-stall attitude controls are fully effective. Between PSTMSPD1 and [PSTMSPD2](#PSTMSPD2), the post-stall attitude controls become more effective in a linear manner as speed is reduced.
+
+<br>
+
+### PSTMSPD2
+
+> PSTMSPD2 180kt
+
+The speed above which the post-stall attitude controls have no effect. Between [PSTMSPD1](#PSTMSPD1) and PSTMSPD2, the post-stall attitude controls become more effective in a linear manner as speed is reduced.
+
+<br>
+
+### INITZOOM
+
+> INITZOOM 1.7
+
+An initial zoom factor on the view position.
+
+<br>
+
+### CKPITIST  
+
+> CKPITIST FALSE  
+
+Controls if the Cockpit Instrument panel defined via [INSTPANL](#INSTPANL) can be seen only in an [EXCAMERA](#EXCAMERA) view position.
+
+<br>
+
+### CKPITHUD  
+
+> CKPITHUD TRUE  
+
+Controls if the HUD can be seen only in an [EXCAMERA](#EXCAMERA) view position.
+
+<br>
+
+### VRGMNOSE
+
+> VRGMNOSE TRUE
+
+Defines if the aircraft has a variable geometry Nose for landing (like the Concorde or Tu-144). Allows the use of the thrust vector animation without any thrust vectoring of the engine.
+
+<br>
+
+### LMTBYHDP
+
+> LMTBYHDP True
+
+Limits the maximum number of a weapon that can be loaded by the nubmer of hardpoint slots available for that weapon type. Overrides other weapon initializations.
+
+<br>
+
+### LOOKOFST
+
+> LOOKOFST 0m -0.661863m 1.293641m
+
+Look-at Offset of the cockpit view postion
+
+<br>
+
+### 
 
 > 
 
 <br>
 
-## 
+### 
 
 > 
 
 <br>
 
-## 
+### 
 
 > 
 
 <br>
 
-## 
+### 
 
 > 
 
 <br>
 
-## 
+### 
 
 > 
 
 <br>
 
-## 
+### 
 
 > 
 
 <br>
 
-## 
+### 
 
 > 
 
 <br>
 
-## 
+### 
 
 > 
 
 <br>
 
-## 
+### 
 
 > 
 
 <br>
 
-## 
+### 
 
 > 
 
+<br>
+
+### 
+
+> 
+
+<br>
+
+### 
+
+> 
+
+<br>
+
+### 
+
+> 
+
+<br>
+
+### 
+
+> 
+
+
+<br>
+
+### 
+
+> 
+
+<br>
+
+### 
+
+> 
+
+<br>
+
+### 
+
+> 
+
+<br>
+
+### 
+
+> 
 
 
 

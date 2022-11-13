@@ -55,6 +55,20 @@ This document contains specifications for YSFlight Comunity Edition Weapon perfo
 # Weapon Falling Properties
 
 
+
+
+
+# Explosion Damage vs Distance From Epicenter
+
+
+
+$$dmg = 1.0 + destructivePower \times \frac{range - \sqrt{distance}}{range}$$
+
+Where:
+- destructivePower = damage that weapon can cause
+- distance = distance between weapon and object centers
+- range = fusing range of the weapon
+
 ## B500HD
 
 High drag bombs use the following equation to simulate the flight profile of a high-drag bomb.

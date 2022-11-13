@@ -374,7 +374,7 @@ $${C_D}_1 = C_{D_{0}} + C_{D_{Const}} \times \alpha^2$$
 
 #### Critical Speed Drag Coefficient Buildup
 
-If the aircraft is faster than CRITSPED, or if $C_{D_{MAX}}$ is less than $C_{D_{0}}$ the the following additional contributions are calculated:
+If the aircraft is faster than CRITSPED, or if $C_{D_{MAX}}$ is less than $C_{D_{0}}$ and CRITSPED is slower than MAXSPEED, the the following additional contributions are calculated:
 
 $${C_D}_2 = {C_D}_1 + \left(C_{D_{MAX}} - C_{D_{0}} \right) \times \frac{V - CRITSPED}{MAXSPEED - CRITSPED}$$
 
@@ -386,7 +386,7 @@ $${C_D}_2 = {C_D}_1$$
  
 <br>
 
-#### Spoiler Drag Coefficient Buildup
+#### Effector Drag Coefficient Buildup
 
 NOTE: If the aircraft doesn't have CDSPOILR defined, then it defaults to zero. If the aircraft doesn't have CDVARGEO defined, it defaults to zero.
 
@@ -520,7 +520,7 @@ YSFCE uses the following equations to convert units to the default units used fo
 | Type | Unit | Equation | Output|
 | - | - | - | - |
 | Weight | kg | $kg \times g$ | N |
-| Weight | lb | $lb \times0.453597 \times g$ | N|
+| Weight | lb | $lb \times 0.453597 \times g$ | N|
 | Weight | t | $t \times1000 \times g$ | N |
 | Speed | Mach | $340 \times Mach$ | m/s |
 | Speed | km/h | $\frac{1000}{3600} \times km/h$ | m/s |

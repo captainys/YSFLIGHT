@@ -127,7 +127,7 @@ Where:
 
 <br>
 
-# Propeller Engine Performance
+# Simple Propeller Engine Performance
 
 The propeller thrust calculation involves air speed for slow and high-speed calculations. Propeller engines use the following DAT files.
 
@@ -176,6 +176,29 @@ Where:
 - $PropK$ = Unknown constant, probably a flux with J/s [^1]
 
 [^1]: Need to understand what this means in real world
+
+<br>
+
+
+
+
+
+
+
+# Real Propeller Thrust
+
+In 2015 YSFlight, Soji introduced the real propeller engine model which also unlocked the ability to have multiple propeller engines.
+
+## Blades
+Each engine defines performance for a single blade, and then multiplies that by the number of propellers in the engine.
+
+
+
+
+
+
+
+
 
 <br>
 
@@ -395,9 +418,16 @@ $${C_D}_3 = {C_D}_2 \times \left(1.0 + CDSPOILR \times staSpoiler\right) \times 
 
 <br>
 
+# Tire Friction
+
+When on-ground the TIREFRIC DAT variable defines a dynamic friction coefficient that will slow down the aircraft. 
+
+$$F_{tire} = F_{Normal} * TIREFRIC$$
+
+Where the normal force is simply the weight of the aircraft, minus any aerodynamic lift, and accounts for any slope the aircraft is on.
 
 
-
+<br>
 
 # Indicated Air Speed
 

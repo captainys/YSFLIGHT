@@ -343,6 +343,7 @@ inline const wchar_t *FsGetTextResource(const char *key,const wchar_t *alternati
 #define FSGUI_MAINDLG_SAVE                                FsGetTextResource("maindlg/save",L"Save Flight")
 #define FSGUI_MAINDLG_FLYNOW                              FsGetTextResource("maindlg/flynow",L"Fly Now!")
 #define FSGUI_MAINDLG_PLAYRECORD                          FsGetTextResource("maindlg/playrecord",L"Play Record")
+#define FSGUI_MAINDLG_JOIN                                FsGetTextResource("maindlg/playrecord",L"Play Record")
 
 #define FSGUI_EXITDLG_MESSAGE                             FsGetTextResource("exitdlg/message",L"Exit Program?")
 #define FSGUI_EXITDLG_EXIT                                FsGetTextResource("exitdlg/exit",L"Exit (Y)")

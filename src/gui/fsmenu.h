@@ -48,16 +48,17 @@ public:
 	FsGuiStatic *statusMsg;
 	FsGuiButton *newFlightBtn,*loadFlightBtn,*saveFlightBtn;
 	FsGuiButton *flyNowBtn,*replayRecordBtn,*retryPrevMissionBtn;
-	FsGuiButton *englishBtn,*languageBtn;
+	FsGuiButton *englishBtn,*languageBtn, *joinBtn;
 	FsGuiButton *showConsoleBtn;
 
 	FsGuiButton *votePageBtn;
 
 	class FsGuiMainCanvas *canvas;
 	class FsRunLoop *runLoop;
-
+	int prevWid, prevHei;
 	void Make(void);
 	virtual void OnButtonClick(FsGuiButton *btn);
+	void AutoArrangeDialog(void);
 };
 
 char FsTranslateKey(int fskey);

@@ -36,7 +36,7 @@ const wchar_t *FsGetDebugInfoFile(void);
 
 const wchar_t *FsGetSharewareRegistFileName(YsWString &fn,int i);
 
-#define FSGUI_ABOUTDLG_BANNER                             "misc/banner.png"
+#define FSGUI_ABOUTDLG_BANNER                             "misc/ysfhq_main.png"
 
 
 

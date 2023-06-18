@@ -177,13 +177,13 @@ YSRESULT FsApplyNonScreenOption(const FsOption &opt)
 	FsGuiObject::defHScrollBar=opt.fontHeight;
 	FsGuiObject::defHAnnotation=opt.fontHeight*9/10;
 
-	FsGuiObject::scheme=FsGuiObject::MODERN;
+	FsGuiObject::scheme=FsGuiObject::PLAIN;
 
 	FsGuiObject::defDialogBgCol.SetDoubleRGB(0.75,0.75,0.75);
 
 	FsGuiObject::defTabBgCol.SetDoubleRGB(0.82,0.82,0.82);
-	FsGuiObject::defTabClosedFgCol.SetDoubleRGB(0.8,0.8,0.8);
-	FsGuiObject::defTabClosedBgCol.SetDoubleRGB(0.2,0.2,0.2);
+	FsGuiObject::defTabClosedFgCol.SetDoubleRGB(0.0,0.0,0.0);
+	FsGuiObject::defTabClosedBgCol.SetDoubleRGB(0.5,0.5,0.5);
 
 	FsGuiObject::defBgCol.SetDoubleRGB(0.85,0.85,0.85);
 	FsGuiObject::defFgCol.SetDoubleRGB(0.0,0.0,0.0);
@@ -193,9 +193,8 @@ YSRESULT FsApplyNonScreenOption(const FsOption &opt)
 
 	FsGuiObject::defListFgCol.SetDoubleRGB(0.0,0.0,0.0);
 	FsGuiObject::defListBgCol.SetDoubleRGB(0.8,0.8,0.8);
-	FsGuiObject::defListActiveFgCol.SetDoubleRGB(1.0,1.0,1.0);
+	FsGuiObject::defListActiveFgCol.SetDoubleRGB(0,0,0);
 	FsGuiObject::defListActiveBgCol.SetDoubleRGB(0.3,0.3,0.7);
 
 	return YSOK;
 }
-

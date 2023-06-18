@@ -1,2 +1,2 @@
 #include "resource.h"
-MAINICON        ICON    DISCARDABLE     "icon1.ico"
+MAINICON        ICON    DISCARDABLE     "pass2_light.ico"

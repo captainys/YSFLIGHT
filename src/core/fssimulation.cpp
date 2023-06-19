@@ -4089,7 +4089,10 @@ void FsSimulation::SimCacheRectRegion(void)
 
 void FsSimulation::UpdateGroundTerrainElevationAndNormal(FsGround *gndPtr)
 {
-	if(gndPtr->IsAlive()==YSTRUE)
+	//fix from pasutisu (see https://github.com/YSCEDC/YSCE/commit/0faa3597c3ed8fae01bb02d8cbae2e9ce4cf98cf)
+	if (gndPtr->IsAlive() == YSTRUE &&
+	   (gndPtr->Prop().IsOnCarrier() == YSTRUE ||
+		gndPtr->Prop().GetWhoIsInControl() != FSVEHICLE_CTRL_BY_NOBODY))
 	{
 		const YsVec3 &pos=gndPtr->GetPosition();
 
@@ -7168,6 +7171,10 @@ void FsSimulation::SimDrawGround(const ActualViewMode &actualViewMode,const FsPr
 				continue;
 			}
 
+			//calculate object position in player's view
+			YsVec3 objViewPos, objPos;
+			objPos = seeker->GetPosition();
+			objViewPos = actualViewMode.viewMat * objPos;
 
 			double objRad,distance,apparentRad;
 
@@ -7175,7 +7182,8 @@ void FsSimulation::SimDrawGround(const ActualViewMode &actualViewMode,const FsPr
 			distance=(seeker->GetPosition()-viewPoint).GetLength();
 			apparentRad=objRad*proj.prjPlnDist/distance;
 
-			if(apparentRad>=1)  // Apparent Radius is larger than 1 pixels
+			// only draw if apparent radius is larger than 1 pixel AND object is in player view
+			if(apparentRad>=1 && objViewPos.z() + objRad >= 0.0)
 			{
 				switch(cfgPtr->gndLod)
 				{

@@ -178,7 +178,7 @@ void FsAirplaneProperty::InitializeState(void)
 	staHdgBug=0.0;
 
 
-	staVectorMarker=YSFALSE;
+	staVectorMarker=YSTRUE;
 
 	// Temporary
 	staWoc=FSWEAPON_GUN;

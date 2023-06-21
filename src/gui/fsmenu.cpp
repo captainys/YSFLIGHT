@@ -305,40 +305,23 @@ void FsGuiMainMenu::OnSelectMenuItem(FsGuiPopUpMenuItem *item)
 
 void FsGuiMainDialog::Make(void)
 {
-	prevWid = 0;
-	prevHei = 0;
-
-	SetTopLeftCorner(16,18);
+	SetTopLeftCorner(16,48);
 
 	SetTextMessage("-- YSFLIGHT --");
 
 	statusMsg=AddStaticText(0,FSKEY_NULL,"(Status)",80,1,YSTRUE);
 	newFlightBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,FSGUI_MAINDLG_CREATE,YSTRUE);
-	newFlightBtn->SetWidth(241);
-	AddStaticText(0,FSKEY_NULL,"",80,1,YSTRUE);
-	retryPrevMissionBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,FSGUI_MAINDLG_RETRY,YSTRUE);
-	retryPrevMissionBtn->SetWidth(241);
-	AddStaticText(0,FSKEY_NULL,"",80,1,YSTRUE);
+	retryPrevMissionBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,FSGUI_MAINDLG_RETRY,YSFALSE);
 	loadFlightBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,FSGUI_MAINDLG_OPEN,YSTRUE);
-	loadFlightBtn->SetWidth(241);
-	AddStaticText(0,FSKEY_NULL,"",80,1,YSTRUE);
-	saveFlightBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,FSGUI_MAINDLG_SAVE,YSTRUE);
-	AddStaticText(0,FSKEY_NULL,"",80,1,YSTRUE);
+	saveFlightBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,FSGUI_MAINDLG_SAVE,YSFALSE);
 	flyNowBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,FSGUI_MAINDLG_FLYNOW,YSTRUE);
-	AddStaticText(0,FSKEY_NULL,"",80,1,YSTRUE);
-	replayRecordBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,FSGUI_MAINDLG_PLAYRECORD,YSTRUE);
-	AddStaticText(0,FSKEY_NULL,"",80,1,YSTRUE);
+	replayRecordBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,FSGUI_MAINDLG_PLAYRECORD,YSFALSE);
+
 	englishBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,FSGUI_COMMON_ENGLISH,YSTRUE);
-	englishBtn->SetWidth(64);
 	languageBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,FSGUI_COMMON_AUTOLANGUAGE,YSFALSE);
-	languageBtn->SetWidth(168);
-	AddStaticText(0,FSKEY_NULL,"",80,1,YSTRUE);
-	joinBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,FSGUI_MAINDLG_JOIN,YSTRUE);
-	joinBtn->SetWidth(241);
-	AddStaticText(0,FSKEY_NULL,"",80,1,YSTRUE);
+
 	showConsoleBtn=AddTextButton(0,FSKEY_NULL,FSGUI_CHECKBOX,FSGUI_MAINDLG_SHOWCONSOLE,YSTRUE);
-	showConsoleBtn->SetWidth(241);
-	AddStaticText(0,FSKEY_NULL,"",80,1,YSTRUE);
+
 	if(FsGetDate()<=20100315)
 	{
 		AddStaticText(0,FSKEY_NULL,FSGUI_VOTEYSFLIGHTDLG_MESSAGE,YSTRUE);
@@ -346,10 +329,8 @@ void FsGuiMainDialog::Make(void)
 		votePageBtn=AddTextButton(0,FSKEY_NULL,FSGUI_PUSHBUTTON,
 		    "http://www.vector.co.jp/award/vote.html?no=se121250&vasts=vote",YSTRUE);
 	}
-	YsColor bgCol;
-	bgCol.SetIntRGBA(200,200,200,128);
-	SetTransparency(YSFALSE);
-	SetBackgroundColor(bgCol);
+
+	SetTransparency(YSTRUE);
 	Fit();
 }
 
@@ -393,12 +374,6 @@ void FsGuiMainDialog::OnButtonClick(FsGuiButton *btn)
 	{
 	    YsOpenURL("http://www.vector.co.jp/award/vote.html?no=se121250&vasts=vote");
 	}
-	else if(btn == joinBtn)
-	{
-		canvas->Net_StartClientMode(nullptr);
-
-	}
-
 
 
 
@@ -411,19 +386,6 @@ void FsGuiMainDialog::OnButtonClick(FsGuiButton *btn)
 	}
 }
 
-void FsGuiMainDialog::AutoArrangeDialog(void)
-{
-	int wid,hei;
-	FsGetWindowSize(wid,hei);
-	
-		if (prevWid != wid){
-			printf("Calling now");
-			SetSize(255,hei);
-			//Move(wid-dlgWid-48,14);
-			prevWid = wid;
-			
-		}
-}
 
 
 ////////////////////////////////////////////////////////////
@@ -563,3 +525,6 @@ void FsKeySetAutomaticLanguage(void)
 	opt.Save(FsGetOptionFile());
 	FsMakeLocalizationFromOption(opt);
 }
+
+
+

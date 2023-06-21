@@ -63,7 +63,6 @@
 
 	mainDlg->Initialize();
 	mainDlg->Make();
-	mainDlg->AutoArrangeDialog();
 }
 
 ////////////////////////////////////////////////////////////
@@ -145,8 +144,8 @@ FsGuiMainCanvas::~FsGuiMainCanvas()
 /* virtual */ void FsGuiMainCanvas::OnInterval(void)
 {
 	auto world=runLoop->GetWorld();
+
 	auto nextReadiness=readiness;
-	mainDlg->AutoArrangeDialog();
 	if(world->SimulationIsPrepared()!=YSTRUE)
 	{
 		nextReadiness=SIMULATION_NOT_READY;
@@ -162,8 +161,6 @@ FsGuiMainCanvas::~FsGuiMainCanvas()
 
 	if(nextReadiness!=readiness)
 	{
-		
-		
 		switch(nextReadiness)
 		{
 		case SIMULATION_NOT_READY:
@@ -221,7 +218,6 @@ void FsGuiMainCanvas::MakeMainDialog(FsRunLoop *runLoop)
 	mainDlg->runLoop=runLoop;
 	mainDlg->Make();
 	mainDlg->SetIsPermanent(YSTRUE);
-	mainDlg->AutoArrangeDialog();
 	AddDialog(mainDlg);
 }
 
@@ -435,3 +431,4 @@ class FsGuiSelectMissionDialog *FsGuiMainCanvas::StartSelectMissionDialog(void)
 	}
 	return nullptr;
 }
+

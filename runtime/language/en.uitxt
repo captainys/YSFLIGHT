@@ -312,6 +312,7 @@ $BGCOL 0
 +maindlg/save                                      #Save Flight
 +maindlg/flynow                                    #Fly Now!
 +maindlg/playrecord                                #Play Record
++maindlg/join                                      #Join Server
 
 +exitdlg/message                                   #Exit Program?
 +exitdlg/exit                                      #Exit (Y)

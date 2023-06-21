@@ -4089,7 +4089,9 @@ void FsSimulation::SimCacheRectRegion(void)
 
 void FsSimulation::UpdateGroundTerrainElevationAndNormal(FsGround *gndPtr)
 {
-	if(gndPtr->IsAlive()==YSTRUE)
+	if(gndPtr->IsAlive()==YSTRUE &&
+	   (gndPtr->Prop().IsOnCarrier()==YSTRUE ||
+	    gndPtr->Prop().GetWhoIsInControl()!=FSVEHICLE_CTRL_BY_NOBODY))
 	{
 		const YsVec3 &pos=gndPtr->GetPosition();
 

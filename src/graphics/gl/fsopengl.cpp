@@ -824,21 +824,30 @@ void FsDrawTitleBmp(const YsBitmap &bmp,YSBOOL tile)
 	bmpWid=bmp.GetWidth();
 	bmpHei=bmp.GetHeight();
 
+	YsBitmap scaledBmp;
+	
+	float xScale = (float)wid/(float)bmpWid;
+	float yScale = (float)hei/(float)bmpHei;
+	float scale = (xScale>yScale ? xScale : yScale);
+
+	scaledBmp.ScaleCopy(bmpWid*scale,bmpHei*scale,bmp);
+
+
 	if(tile==YSTRUE)
 	{
-		for(x=0; x<wid; x+=bmpWid)
+		for(x=0; x<wid; x+=bmpWid*scale)
 		{
-			for(y=hei-1; y>0; y-=bmpHei)
+			for(y=hei-1; y>0; y-=bmpHei*scale)
 			{
 				glRasterPos2i(x,y);
-				glDrawPixels(bmpWid,bmpHei,GL_RGBA,GL_UNSIGNED_BYTE,bmp.GetRGBABitmapPointer());
+				glDrawPixels(bmpWid*scale,bmpHei*scale,GL_RGBA,GL_UNSIGNED_BYTE,scaledBmp.GetRGBABitmapPointer());
 			}
 		}
 	}
 	else
 	{
-		glRasterPos2i(wid-bmpWid,hei-1);
-		glDrawPixels(bmpWid,bmpHei,GL_RGBA,GL_UNSIGNED_BYTE,bmp.GetRGBABitmapPointer());
+		glRasterPos2i(0,hei-1);
+		glDrawPixels(bmpWid*scale,bmpHei*scale,GL_RGBA,GL_UNSIGNED_BYTE,scaledBmp.GetRGBABitmapPointer());
 	}
 
 	glFlush();
@@ -913,4 +922,3 @@ void FsClearClipRect(void)
 void FsGraphicsTest(int i)
 {
 }
-

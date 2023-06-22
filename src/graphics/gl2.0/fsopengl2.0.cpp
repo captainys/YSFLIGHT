@@ -471,7 +471,7 @@ void FsFogOn(const YsColor &col,const double &visibility)
 	// f  0:Completely fogged out   1:Clear
 	// f=e^(-d*d)
 	// d  0:Clear      Infinity: Completely fogged out
-	// 99% fogged out means:  e^(-d*d)=0.01  Whatfs d?
+	// 99% fogged out means:  e^(-d*d)=0.01  Whatï¿½fs d?
 	// -d*d=loge(0.01)
 	// -d*d= -4.60517
 	// d=2.146
@@ -1064,15 +1064,29 @@ void FsDrawTitleBmp(const YsBitmap &bmp,YSBOOL tile)
 	glGenTextures(1,texId);
 
 	int x,y;
-	const int bmpWid=bmp.GetWidth();
-	const int bmpHei=bmp.GetHeight();
-	const unsigned char *bmpPtr=bmp.GetRGBABitmapPointer();
+	int bmpWid=bmp.GetWidth();
+	int bmpHei=bmp.GetHeight();
 
+
+	
+	
 	int wid,hei;
 	FsGetWindowSize(wid,hei);
 
 	// zoomFactor=float(wid)/float(bmp.GetWidth());
 	// glPixelZoom(zoomFactor,zoomFactor);
+
+	YsBitmap scaledBmp;
+
+	float xScale = (float)wid/(float)bmpWid;
+	float yScale = (float)hei/(float)bmpHei;
+	float scale = (xScale>yScale ? xScale : yScale); //Scale the image to fit the window
+
+	scaledBmp.ScaleCopy(bmpWid*scale,bmpHei*scale,bmp);
+
+	const unsigned char *bmpPtr=scaledBmp.GetRGBABitmapPointer();
+	bmpWid = scaledBmp.GetWidth();
+	bmpHei = scaledBmp.GetHeight();
 
 	GLenum prevActiveTexture;
 	GLuint prevBinding2d;
@@ -1098,7 +1112,7 @@ void FsDrawTitleBmp(const YsBitmap &bmp,YSBOOL tile)
 	}
 	else
 	{
-		YsGLSLRenderTexture2D(renderer,wid-bmpWid,hei-1,YSGLSL_HALIGN_LEFT,YSGLSL_VALIGN_BOTTOM,bmpWid,bmpHei,texId[0]);
+		YsGLSLRenderTexture2D(renderer,0,hei-1,YSGLSL_HALIGN_LEFT,YSGLSL_VALIGN_BOTTOM,bmpWid,bmpHei,texId[0]);
 	}
 
 	glBindTexture(GL_TEXTURE_2D,prevBinding2d);
@@ -1222,4 +1236,3 @@ void FsGraphicsTest(int i)
 	YsGLSLRenderTexture2D(bitmapRenderer,0,0,YSGLSL_HALIGN_LEFT,YSGLSL_VALIGN_TOP,256,256,i);
 	YsGLSLEndUseBitmapRenderer(bitmapRenderer);
 }
-

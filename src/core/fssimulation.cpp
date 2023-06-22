@@ -4089,10 +4089,9 @@ void FsSimulation::SimCacheRectRegion(void)
 
 void FsSimulation::UpdateGroundTerrainElevationAndNormal(FsGround *gndPtr)
 {
-	//fix from pasutisu (see https://github.com/YSCEDC/YSCE/commit/0faa3597c3ed8fae01bb02d8cbae2e9ce4cf98cf)
 	if (gndPtr->IsAlive() == YSTRUE &&
-	   (gndPtr->Prop().IsOnCarrier() == YSTRUE ||
-		gndPtr->Prop().GetWhoIsInControl() != FSVEHICLE_CTRL_BY_NOBODY))
+		(gndPtr->Prop().IsOnCarrier() == YSTRUE ||
+			gndPtr->Prop().GetWhoIsInControl() != FSVEHICLE_CTRL_BY_NOBODY))
 	{
 		const YsVec3 &pos=gndPtr->GetPosition();
 

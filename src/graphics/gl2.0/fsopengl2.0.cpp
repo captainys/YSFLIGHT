@@ -273,12 +273,19 @@ void FsInitializeOpenGL(void)
 	// glEnable(GL_POLYGON_OFFSET_FILL);
 	// glPolygonOffset(1,1);
 
+	int sampleBuffers;
+	glGetIntegerv(GL_SAMPLE_BUFFERS_ARB, &sampleBuffers);
+	printf("SAMPLE_BUFFERS_ARB = %d\n", sampleBuffers);
+
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
 
 	glStencilOp(GL_KEEP,GL_KEEP,GL_INCR);
 	glEnable(GL_STENCIL_TEST);
 	glStencilFunc(GL_ALWAYS,0,0);
+
+	glEnable(GL_MULTISAMPLE);
+	glHint(GL_MULTISAMPLE_FILTER_HINT_NV, GL_NICEST);
 
 	YsGLSLCreateSharedRenderer();
 	YsGLSLSetShared3DRendererAlphaCutOff(0.02f);

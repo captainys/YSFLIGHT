@@ -332,6 +332,7 @@ void FsGuiConfigDialog::MakeOpenGLDialog(FsWorld *,FsFlightConfig &)
 	useDlistWeaponBtn       =AddTextButton( 8,FSKEY_NULL,FSGUI_CHECKBOX,FSGUI_CFGDLG_DISPLISTWEAPON ,YSTRUE);
 	useGroundTextureBtn     =AddTextButton( 9,FSKEY_NULL,FSGUI_CHECKBOX,FSGUI_CFGDLG_GNDTEXTURE     ,YSFALSE);
 	useRunwayLightTextureBtn=AddTextButton(10,FSKEY_NULL,FSGUI_CHECKBOX,FSGUI_CFGDLG_RWLIGHTTEXTURE ,YSTRUE);
+	msaaButton			    =AddTextButton(11, FSKEY_NULL, FSGUI_CHECKBOX, FSGUI_CFGDLG_ANTIALIASING, YSFALSE);
 
 	YsArray <YsArray <FsGuiDialogItem *> > dlgItemMatrix;
 	dlgItemMatrix.Increment();
@@ -543,6 +544,7 @@ void FsGuiConfigDialog::InitializeDialog(FsWorld *,FsFlightConfig &cfg)
 	useDlistWeaponBtn->SetCheck(cfg.useOpenGlListForWeapon);
 	useGroundTextureBtn->SetCheck(cfg.useOpenGlGroundTexture);
 	useRunwayLightTextureBtn->SetCheck(cfg.useOpenGlRunwayLightTexture);
+	msaaButton->SetCheck(cfg.useOpenGlAntiAliasing);
 
 	troubleFrequency->SetPositionByScaledValue(cfg.aircraftTroubleFrequency);
 	aircraftReliability->SetPositionByScaledValue(cfg.aircraftReliability);
@@ -696,6 +698,7 @@ void FsGuiConfigDialog::RetrieveConfig(FsFlightConfig &cfg)
 	cfg.useOpenGlListForWeapon=useDlistWeaponBtn->GetCheck();
 	cfg.useOpenGlGroundTexture=useGroundTextureBtn->GetCheck();
 	cfg.useOpenGlRunwayLightTexture=useRunwayLightTextureBtn->GetCheck();
+	cfg.useOpenGlAntiAliasing=msaaButton->GetCheck();
 
 	cfg.aircraftTroubleFrequency=troubleFrequency->GetScaledValue();
 	cfg.aircraftReliability=(int)aircraftReliability->GetScaledValue();

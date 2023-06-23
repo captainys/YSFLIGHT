@@ -50,6 +50,7 @@ public:
 	FsGuiButton *trspObjBtn,*trspSmkBtn,*trspVaporBtn,*reducePeepHoleBtn;
 	FsGuiButton *useDlistCloudBtn,*useDlistExplosionBtn,*useDlistWeaponBtn;
 	FsGuiButton *useGroundTextureBtn,*useRunwayLightTextureBtn;
+	FsGuiButton* msaaButton;
 
 #ifdef __APPLE__
 	FsGuiButton *useOpenGlAntiAliasing;

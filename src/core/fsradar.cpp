@@ -15,7 +15,7 @@ void FsHorizontalRadar::Draw(
 	 int mode,const double &airAltLimit) const
 	// mode 0:air to air    1: air to gnd    2:bombing
 {
-	const double mag=double(YsAbs(x2-x1))/(rangeInX*1600.0); // Conversion from meters to miles
+	const double mag=double(YsAbs(x2-x1))/(rangeInX*1852); // Conversion from meters to miles
 	const int mkSize=3;
 
 
@@ -105,7 +105,7 @@ void FsHorizontalRadar::DrawBasic(
     const FsExistence &withRespectTo,const YsVec3 &pos,const YsAtt3 &att,
     int mode,const double &airAltLimit) const
 {
-	const double mag=double(YsAbs(x2-x1))/(rangeInX*1600.0); // Conversion from meters to miles
+	const double mag=double(YsAbs(x2-x1))/(rangeInX*1852); // Conversion from meters to n miles
 	int x,y,xx,yy;
 	YsAtt3 attH;
 	YsMatrix4x4 ref;
@@ -116,7 +116,7 @@ void FsHorizontalRadar::DrawBasic(
 	FsDrawRect(x1,y1,x2,y2,YsGreen(),YSFALSE);
 
 	char str[256];
-	sprintf(str,"%d MILES",int(rangeInX));
+	sprintf(str,"%d NM",int(rangeInX));
 	FsDrawString(x1+8,y1+24,str,YsGreen());
 
 

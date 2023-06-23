@@ -645,11 +645,11 @@ void FsSubMenu::Draw(const class FsSimulation *sim,class FsFlightConfig &cfg,int
 					vorId=subMenuBase+i;
 					if(stationInRange[vorId]->Prop().GetAircraftCarrierProperty()!=NULL)
 					{
-						sprintf(buf,"%d. ILS [%s] (%.0lf miles)",i+1,(const char *)stationInRange[vorId]->name,stationDist[vorId]/1609.0);
+						sprintf(buf,"%d. ILS [%s] (%.0lf nautical miles)",i+1,(const char *)stationInRange[vorId]->name,YsUnitConv::MtoNM(stationDist[vorId]));
 					}
 					else
 					{
-						sprintf(buf,"%d. [%s] (%.0lf miles)",i+1,(const char *)stationInRange[vorId]->name,stationDist[vorId]/1609.0);
+						sprintf(buf,"%d. [%s] (%.0lf nautical miles)",i+1,(const char *)stationInRange[vorId]->name,YsUnitConv::MtoNM(stationDist[vorId]));
 					}
 					FsDrawString(sx,sy,buf,YsWhite());
 					sy+=fsAsciiRenderer.GetFontHeight();

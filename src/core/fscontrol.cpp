@@ -75,7 +75,7 @@ void FsFlightControl::Initialize(void)
 	ctlSensitivity=1.0;
 
 	ctlNavId=0;
-	ctlVectorMarker=YSFALSE;
+	ctlVectorMarker=YSTRUE;
 
 	brakeHold=YSFALSE;
 	spoilerHold=YSFALSE;

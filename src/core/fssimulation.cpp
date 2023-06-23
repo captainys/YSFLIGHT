@@ -8054,7 +8054,7 @@ void FsSimulation::SimDrawRadar(const ActualViewMode &actualViewMode) const
 	if(NULL!=GetPlayerGround())
 	{
 		const FsGround *playerGround=GetPlayerGround();
-		const double radarRange=10.0; // 10 miles
+		const double radarRange=10.0; // 10 nm miles
 
 		int wid,hei;
 		FsGetWindowSize(wid,hei);

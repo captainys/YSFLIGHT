@@ -641,7 +641,7 @@ void FsGuiNewFlightDialogClass::InitializeDialog(FsWorld *world,const FsNewFligh
 		if(info.envInfo.fog==YSTRUE)
 		{
 			v=info.envInfo.fogVisibility;
-			v/=1609.0;
+			v/=1852.0;
 			visibility->SetNumber((int)v);
 		}
 		else
@@ -925,7 +925,7 @@ void FsGuiNewFlightDialogClass::OnNumberBoxChange(FsGuiNumberBox *nbx,int prevNu
 		if(nbx==visibility)
 		{
 			info.envInfo.fog=YSTRUE;
-			info.envInfo.fogVisibility=(double)nbx->GetNumber()*1609.0;
+			info.envInfo.fogVisibility=(double)nbx->GetNumber()*1852.0;
 		}
 
 

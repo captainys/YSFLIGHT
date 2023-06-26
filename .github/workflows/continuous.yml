@@ -55,22 +55,3 @@ jobs:
     - name: build
       run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_nownd
       working-directory: ./ci_ubuntu
-
-
-
-  build-macos:
-
-    runs-on: macos-10.15
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: checkout_public
-      run: git clone https://github.com/captainys/public.git
-    - name: mkdir
-      run: mkdir ci_macos
-    - name: cmake
-      run: cmake ../src -DCMAKE_BUILD_TYPE=Release
-      working-directory: ./ci_macos
-    - name: build
-      run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_nownd
-      working-directory: ./ci_macos

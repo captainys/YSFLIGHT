@@ -55,3 +55,4 @@ jobs:
     - name: build
       run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_nownd
       working-directory: ./ci_ubuntu
+# MacOS was here, but Nodoka kicked it off a short pier.

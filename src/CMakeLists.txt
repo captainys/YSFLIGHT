@@ -21,9 +21,9 @@ endif()
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/../public/src)
-	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../public/src public)
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../ysce_public/src public)
 else()
-	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../public/src public)
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../ysce_public/src public)
 endif()
 
 add_subdirectory(common)

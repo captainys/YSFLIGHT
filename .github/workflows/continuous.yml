@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: checkout_public
-      run: git clone https://github.com/captainys/public.git
+      run: git clone https://github.com/YSCEDC/ysce_public.git
     - name: mkdir
       run: mkdir ci_windows
     - name: cmake
@@ -36,7 +36,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: checkout_public
-      run: git clone https://github.com/captainys/public.git
+      run: git clone https://github.com/YSCEDC/ysce_public.git
     - name: mkdir
       run: mkdir ci_ubuntu
     - name: apt-get-update

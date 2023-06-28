@@ -274,6 +274,7 @@ YSRESULT FsDogfight::SearchTarget(FsAirplane &air,FsSimulation *sim)
 	trg=NULL;
 	targetAirplaneKey=YSNULLHASHKEY;
 
+	//AI plane current position
 	pos=air.Prop().GetPosition();
 
 	FsAirplane *can;
@@ -281,9 +282,13 @@ YSRESULT FsDogfight::SearchTarget(FsAirplane &air,FsSimulation *sim)
 	can=NULL;
 	while(NULL!=(can=sim->FindNextAirplane(can)))
 	{
+		//is the target valid? (target IFF check, target airplane state)
 		if(YSTRUE==CanBeTarget(&air,can))
 		{
+			//tpos: current target's position
 			tpos=can->GetPosition();
+
+			//choose the closest target
 			if(trg==NULL || (tpos-pos).GetSquareLength()<min)
 			{
 				trg=can;
@@ -294,12 +299,14 @@ YSRESULT FsDogfight::SearchTarget(FsAirplane &air,FsSimulation *sim)
 
 	if(NULL!=trg)
 	{
+		//valid target found - set mode accordingly
 		if(mode==DFMODE_NOTARGET /*-1*/)
 		{
 			mode=DFMODE_NORMAL/*0*/;
 		}
 		targetAirplaneKey=FsExistence::GetSearchKey(trg);
 
+		//rel1 = AI's relative position to the target aircraft
 		GetRelativePosition(rel1,trg->GetPosition(),air,sim);
 		rel2=rel1;
 		rel3=rel1;
@@ -307,6 +314,7 @@ YSRESULT FsDogfight::SearchTarget(FsAirplane &air,FsSimulation *sim)
 	}
 	else
 	{
+		//no target found
 		targetAirplaneKey=YSNULLHASHKEY;
 		mode=DFMODE_NOTARGET/*-1*/;
 		return YSERR;
@@ -340,6 +348,7 @@ FsAirplane *FsDogfight::GetTarget(FsSimulation *sim)
 	return sim->FindAirplane(targetAirplaneKey);
 }
 
+//check for emergency recovery condition(s) - stall or low altitude?
 YSRESULT FsDogfight::MakePriorityDecision(FsAirplane &air)
 {
 	if(mode==DFMODE_NOTARGET/*-1*/ || air.Prop().GetFlightState()==FSSTALL)
@@ -358,11 +367,12 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 	const YsVec3 &pos=air.GetPosition();
 	YsVec3 tpos;
 
-
-
+	//if in standby mode, tick down the standby timer 
 	if(mode==DFMODE_STANDBY_GROUND_TIMER/*102*/)  // Wait for standBy seconds.
 	{
 		standBy-=dt;
+
+		//go to normal mode if standBy timer has lapsed
 		if(standBy<YsTolerance)
 		{
 			mode=DFMODE_NORMAL/*0*/;
@@ -373,9 +383,11 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		}
 	}
 
-
+	//step timers
 	clock+=dt;
 	modeDuration+=dt;
+
+	//reset the current mode timer if AI switched modes
 	if(mode!=prevMode)
 	{
 		modeDuration=0.0;
@@ -383,6 +395,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 	}
 
 
+	//if AI has a pending target, set tgt key if it's alive and has valid IFF
 	if(pendingTargetAirId>=0)
 	{
 		FsAirplane *pendingTarget;
@@ -393,6 +406,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		}
 		pendingTargetAirId=-1;
 	}
+	//ditto from above for pending wingman
 	if(pendingWingmanAirId>=0)
 	{
 		FsAirplane *pendingWingman;
@@ -404,6 +418,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		pendingWingmanAirId=-1;
 	}
 // printf("DF1\n");
+	//ditto from above, but check pending target by name instead of ID
 	if(pendingTargetName.Strlen()>0)
 	{
 // printf("DF2\n");
@@ -418,6 +433,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 	}
 
 
+	//check if the current target is attacking the aircraft that the AI is defending
 	FsAirplane *target=GetTarget(sim);
 	FsAirplane *defendThis=sim->FindAirplane(defendThisAirplaneKey);
 	if(defendThis!=NULL && target!=NULL)
@@ -427,6 +443,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		FsAutopilot *ap=target->GetAutopilot();
 		if(ap!=NULL && ap->Type()==FSAUTOPILOT_DOGFIGHT) // ap->WhatItIs()==FsDogfight::ClassName)
 		{
+			//is the target airplane trying to attack a plane the AI is protecting?
 			FsDogfight *df=(FsDogfight *)ap;
 			if(df->GetTarget(sim)==defendThis)
 			{
@@ -434,6 +451,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			}
 		}
 		// If none of the airplanes is chasing the defend target, don't need to update the target.
+		//if the current target is not trying to attack the aircraft that the AI is defending, try to find a target that is attacking said defense aircraft
 		if(targetOk!=YSTRUE)
 		{
 			FsAirplane *tst=NULL;
@@ -457,7 +475,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 
 
 
-
+	//if we cannot find a valid target
 	if(target==NULL || target->Prop().IsActive()!=YSTRUE || target->iff==air.iff)
 	{
 		if(SearchTarget(air,sim)!=YSOK || (target=GetTarget(sim))==NULL)
@@ -468,8 +486,10 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 
 	tpos=target->GetPosition();
 
+	//if target is too far away, try to find a new target
 	if((tpos-pos).GetSquareLength()>giveUpDist*giveUpDist)  // 20km
 	{
+		//if we still could not find a valid target
 		if(SearchTarget(air,sim)!=YSOK)
 		{
 			goto NOTARGET;
@@ -482,30 +502,34 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 
 	radar=atan2(sqrt(rel1.x()*rel1.x()+rel1.y()*rel1.y()),YsAbs(rel1.z()));
 
-
+	//handle standby mode(s)
 	if(DFMODE_STANDBY_GROUND/*100*/==mode || DFMODE_STANDBY_AIR/*101*/==mode)  // Wait until the target comes close
 	{
+		//get out of standby and begin a target search after modeDuration reaches a threshold
 		if(modeDuration>1.0)
 		{
 			SearchTarget(air,sim);
 			modeDuration=0.0;
 		}
 
+		//go to normal mode if target is close enough (standby used as distance in modes 100/101)
 		if((tpos-pos).GetSquareLength()<YsSqr(standBy))
 		{
 			mode=DFMODE_NORMAL/*0*/;
 		}
 		else
 		{
+			//exit: target too far, continue in standby mode
 			return YSOK;
 		}
 	}
 
-
+	//avoid crashing into target 
 	if(target!=NULL && DangerOfCollision(air,*target)==YSTRUE)
 	{
 		mode=DFMODE_AVOIDING_HEADON_COLLISION/*6*/;
 	}
+	//check if the target is at low altitude based on altitude and radar angle
 	else if(target!=NULL && air.GetPosition().y()<GetAllowableAltitude(33.0,air) && (DFMODE_TARGET_INFRONT/*2*/!=mode || radar>YsDegToRad(3.0)))
 	{
 		mode=DFMODE_TARGET_FLYINGLOW/*5*/;
@@ -525,21 +549,47 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			// 	gLimitCorrection=0.5;
 			// }
 
+			//if target is out of range, get within range
 			if(YSTRUE!=TargetIsWithinCombatRange(air,*target))
 			{
 				mode=DFMODE_CRUISE_TO_COMBAT_AREA;
 			}
+
+			//check if target is in front of the AI's aircraft:
+			//if target is within a 30 degree cone of AI aircraft's attitude: 
+			//   /
+			//  /
+			// / 30 degrees
+			//-----------------> AI aircraft attitude (relative Z axis)
+			// \ 30 degreees
+			//  \
+			//   \
+
 			else if(rel1.z()>0.0 && radar<YsDegToRad(30.0))
 			{
 				mode=DFMODE_TARGET_INFRONT/*2*/;  // Target is Right In Front
 			}
+
+			//check if target is behind the AI's aircraft:
+			//if target is within a backSenseRange-degree cone of AI aircraft's rear attitude: 
+			//   /
+			//  /
+			// / backSenseRange degrees (default 20 degrees)
+			//-----------------> AI aircraft rear attitude (relative Z axis, opposite dir)
+			// \ backSenseRange degreees
+			//  \
+			//   \
+
 			else if(rel1.z()<0.0 && radar<backSenseRange)
 			{
 				mode=DFMODE_TARGET_ONBACK_BREAK/*3*/;  // Target is on the back!!
 				nextClock=clock+double(rand()%100)/100.0;
 			}
+
+			//if the target is not in front or behind the AI's aircraft and current mode has been active for a while:
 			else if(modeDuration>20.0)
 			{
+				//50-50: perform a yo-yo or climb
 				if(rand()%2==0)
 				{
 					mode=DFMODE_HIGH_G_YO_YO/*7*/;
@@ -549,6 +599,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 					mode=DFMODE_CLIMB_UP/*8*/;
 				}
 			}
+			//if being attacked by wingman's target and AI aircraft's pitch is below 45 degrees, act as a decoy
 			else if(BeingChasedByWingmansTarget(air,sim)==YSTRUE && air.GetAttitude().p()<YsPi/4.0)
 			{
 				jinkDesigBank=0.0;
@@ -557,23 +608,29 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			}
 		}
 		break;
+	//current mode: target is behind AI's aircraft
 	case DFMODE_TARGET_ONBACK/*1*/:
 		{
+			//if the aircraft is now in front of us, set mode accordingly
 			if(rel1.z()>0.0 && radar<YsDegToRad(30.0))
 			{
 				mode=DFMODE_TARGET_INFRONT/*2*/; // Eventually Got Target On The Scope!!
 			}
+			//if target is not strictly in front or behind AI aircraft, return to normal mode
 			else if(rel1.z()>0.0 || radar>backSenseRange)
 			{
 				mode=DFMODE_NORMAL/*0*/;
 			}
 		}
 		break;
+	//current mode: target is in front of AI's aircraft
 	case DFMODE_TARGET_INFRONT/*2*/:
 		{
+			//if target has been in front for a while and is no longer strictly "in front" of AI's aircraft
 			if((modeDuration>=20.0 && radar>YsDegToRad(40.0)) ||  // <- Dead lock
 			    rel1.z()<0.0 || radar>YsDegToRad(50.0))  // <- The target is no longer in front of the airplane.
 			{
+				//randomly choose: go back to normal mode, climb, or yo-yo
 				int d;
 				d=rand()%4;
 				switch(d)
@@ -600,11 +657,15 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			}
 		}
 		break;
+	//current mode: target aircraft is far away in front of AI's aircraft
 	case DFMODE_TARGET_INFRONT_FARAWAY/*4*/:
 		{
+			//calc horizontal distance from AI aircraft (XZ plane)
 			YsVec3 horizontalDist;
 			horizontalDist=tpos-pos;
 			horizontalDist.SetY(0.0);
+
+			//if target is <5000 m from AI aircraft OR AI's pitch/bank are above certain thresholds
 			if(horizontalDist.GetSquareLength()<5000.0*5000.0 ||
 			   YsAbs(air.GetAttitude().p())>YsDegToRad(45.0) ||
 			   cos(air.GetAttitude().b())>0.94)
@@ -615,10 +676,14 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		break;
 	case DFMODE_TARGET_FLYINGLOW/*5*/:
 		{
+			//get AI aircraft's current velocity
 			YsVec3 vel;
 			air.Prop().GetVelocity(vel);
+
+			//if AI aircraft's pitch is above 30 deg or aircraft is climbing (positive Y vel)
 			if(air.GetAttitude().p()>YsDegToRad(30.0) || vel.y()>0.0)
 			{
+				//randomly choose mode: yo-yo maneuver or go back to normal 
 				if(rand()%3==1)
 				{
 					mode=DFMODE_HIGH_G_YO_YO/*7*/;
@@ -630,14 +695,17 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			}
 		}
 		break;
+	//current mode: try not to crash into target
 	case DFMODE_AVOIDING_HEADON_COLLISION/*6*/:
 		{
+			//nothing to avoid anymore, so go back to normal mode
 			if(target==NULL)
 			{
 				mode=DFMODE_NORMAL/*0*/;
 			}
 			else
 			{
+				//no danger of collision, go back to normal mode
 				YsVec3 rel;
 				rel=target->GetPosition()-air.GetPosition();
 				air.GetAttitude().MulInverse(rel,rel);
@@ -648,8 +716,10 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			}
 		}
 		break;
+	//current mode: yo-yo maneuver
 	case DFMODE_HIGH_G_YO_YO/*7*/:
 		{
+			//mode timer is stale, go back to normal mode
 			if(modeDuration>=10.0)
 			{
 				mode=DFMODE_NORMAL/*0*/;
@@ -658,10 +728,11 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			{
 				YsVec3 h;
 				YsAtt3 hAtt;
-				h=target->GetPosition()-air.GetPosition();
-				hAtt=air.GetAttitude();
-				hAtt.SetP(0.0);
-				hAtt.MulInverse(h,h);
+				h=target->GetPosition()-air.GetPosition(); //h = target position relative to AI aircraft's position
+				hAtt=air.GetAttitude();					   //hAtt = AI aircraft's attitude
+				hAtt.SetP(0.0);							   //now, hAtt = XZ plane/component of AI aircraft's attidude (pitch angle zeroed out)
+				hAtt.MulInverse(h,h);					   //rotate relative position vector by negative hAtt?
+
 				if(h.z()>0.0 && YsAbs(h.x())<h.z()/20.0)
 				{
 					mode=DFMODE_NORMAL/*0*/;
@@ -669,31 +740,39 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			}
 		}
 		break;
+	//current mode: climbing - immediately go back to normal now?
 	case DFMODE_CLIMB_UP/*8*/:
 		{
 			mode=DFMODE_NORMAL/*0*/;  // Nothing now
 		}
 		break;
 	case DFMODE_ACT_AS_DECOY_LEVELOFF/*200*/: // Act as decoy (level off)
+		//if no longer being chased, go back to normal
 		if(BeingChasedByWingmansTarget(air,sim)!=YSTRUE)
 		{
 			mode=DFMODE_NORMAL/*0*/;
 		}
+		//if pitch is less than +/- 20 degrees, transition to decoy/jinking mode
 		else if(fabs(air.GetAttitude().p())<YsPi/9.0)
 		{
 			mode=DFMODE_ACT_AS_DECOY_JINKING/*201*/;
 		}
 		break;
 	case DFMODE_ACT_AS_DECOY_JINKING/*201*/: // Act as decoy
+		//if no longer being chased, go back to normal (stop being a decoy)
 		if(BeingChasedByWingmansTarget(air,sim)!=YSTRUE)
 		{
 			mode=DFMODE_NORMAL/*0*/;
 		}
+		//if the wingman is closing in on their target
 		else if(WingmanClosingIn(air,sim)==YSTRUE)
 		{
 			int a;
 			a=rand();
 			a&=255;
+			//choose randomly:
+			//	jink to either side 
+			//	barrel roll up to either side
 			if(a<64)
 			{
 				mode=DFMODE_ACT_AS_DECOY_BREAK/*202*/;
@@ -719,46 +798,59 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		}
 		break;
 	case DFMODE_ACT_AS_DECOY_BREAK/*202*/:
+		//if no longer being chased, stop being a decoy (go to normal mode)
 		if(BeingChasedByWingmansTarget(air,sim)!=YSTRUE)
 		{
 			mode=DFMODE_NORMAL/*0*/;
 		}
+		//if mode timer is stale, go back to jinking
 		else if(modeDuration>15.0)
 		{
 			mode=DFMODE_ACT_AS_DECOY_JINKING/*201*/;
 		}
 		break;
+	//current mode: decoy state, barrel roll pitch up
 	case DFMODE_ACT_AS_DECOY_BARRELROLL_PITCHUP/*203*/:
+		//if no longer being chased, stop being a decoy (go to normal mode)
 		if(BeingChasedByWingmansTarget(air,sim)!=YSTRUE)
 		{
 			mode=DFMODE_NORMAL/*0*/;
 		}
+		//if bank angle and pitch angle are both less than +/- 10 degrees, begin roll
 		else if(fabs(air.GetAttitude().b())<YsPi/18.0 && air.GetAttitude().p()>YsPi/18.0)
 		{
 			mode=DFMODE_ACT_AS_DECOY_BARRELROLL_ROLL/*204*/;
 		}
 		break;
+	//current mode: decoy state, actively rolling
 	case DFMODE_ACT_AS_DECOY_BARRELROLL_ROLL/*204*/:
+		//if no longer being chased, stop being a decoy (go to normal mode)
 		if(BeingChasedByWingmansTarget(air,sim)!=YSTRUE)
 		{
 			mode=DFMODE_NORMAL/*0*/;
 		}
 		else
 		{
+			//if not rolling and bank angle less than +/- 90 degrees, set roll state
 			if(jinkRollState==0 && fabs(air.GetAttitude().b())>YsPi/2.0)
 			{
 				jinkRollState=1;
 			}
+			//if roll state set above and bank angle < +/- 10 degrees, go to jinking mode
 			else if(jinkRollState==1 && fabs(air.GetAttitude().b())<YsPi/18.0)
 			{
 				mode=DFMODE_ACT_AS_DECOY_JINKING/*201*/;
 			}
 		}
 		break;
+	//current mode: move to target (too far away to engage)
 	case DFMODE_CRUISE_TO_COMBAT_AREA:
 		{
+			//move to target's XZ position (override Y with cruising alt)
 			YsVec3 cruiseDestination=target->GetPosition();
 			cruiseDestination.SetY(cruiseAlt);
+
+			//configure cruise autopilot
 			cruiseAP->SetSingleDestination(cruiseDestination);
 			cruiseAP->speed=0.0;
 			cruiseAP->throttle=1.0;
@@ -766,11 +858,14 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			cruiseAP->MakeDecision(air,sim,dt);
 
 			nextTargetSearchTimer-=dt;
+
+			//if search timer expires: reset search timer and search for new target
 			if(YsTolerance>nextTargetSearchTimer)
 			{
 				nextTargetSearchTimer=1.0+(double)(rand()%100)/20.0;
 				SearchTarget(air,sim);
 			}
+			//if target is within range, exit cruise mode (go to normal mode)
 			if(YSTRUE==TargetIsWithinCombatRange(air,*target))
 			{
 				mode=DFMODE_NORMAL;

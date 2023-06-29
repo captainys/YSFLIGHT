@@ -19,7 +19,7 @@ public:
 
 	void Make(const class FsWorld *world,const class FsNetConfig &netcfg);
 	void ResetFieldListBySearchKeyword(const FsWorld *world,FsGuiListBox *fieldList,FsGuiTextBox *fieldSearch);
-
+	
 	virtual void FieldSelectionChanged(void);
 	virtual void OnButtonClick(FsGuiButton *btn);
 	virtual void OnListBoxSelChange(FsGuiListBox *lbx,int prevSel);
@@ -29,7 +29,7 @@ public:
 class FsGuiStartClientDialog : public FsGuiDialog
 {
 public:
-	FsGuiButton *okBtn,*cancelBtn;
+	FsGuiButton *okBtn,*cancelBtn, *serverListBtn;
 	FsGuiTextBox *userNameTxt,*hostAddrTxt,*portTxt;
 	FsGuiDropList *hostHist;
 	YSRESULT res;
@@ -37,6 +37,9 @@ public:
 	void Make(const class FsNetConfig &netcfg);
 	virtual void OnDropListSelChange(FsGuiDropList *drp,int prevSel);
 	virtual void OnButtonClick(FsGuiButton *btn);
+	void FetchJsonServerList(const std::string url, std::function<void(std::string)> callback);
+	void UpdateGUI(const std::string& json);
+	void FsGuiStartClientDialog::OnServerListDialogClosed(FsGuiDialog *dlg, int);
 };
 
 ////////////////////////////////////////////////////////////
@@ -107,6 +110,37 @@ public:
 
 	virtual void OnButtonClick(FsGuiButton *btn);
 };
+
+class ServerListItem
+{
+public:
+	std::string name;
+	std::string address;
+	std::string website;
+	std::string port;
+	std::string map;
+	int version;
+	int players;
+	
+
+
+
+};
+
+class FsGuiNetServerListDialog : public FsGuiDialog
+{
+public:
+	FsGuiButton *okBtn, *cancelBtn;
+	std::vector<ServerListItem> servers;
+	ServerListItem selectedServer;
+	YSRESULT res;
+
+	void Make(const std::vector<ServerListItem>& servers);
+	void OnButtonClick(FsGuiButton *btn);
+	ServerListItem GetSelectedServer();
+
+};
+
 
 /* } */
 #endif

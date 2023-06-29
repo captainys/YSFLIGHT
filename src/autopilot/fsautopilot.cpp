@@ -1311,7 +1311,7 @@ double FsAutopilot::FollowTarget
 	airAtt.MulInverse(aprVel,targetVelocity);
 
 
-	if(aimingGun==YSTRUE && 0.0<rel.z() && rel.z()<500.0)  // Adjust for gun
+	if(aimingGun==YSTRUE && 0.0<rel.z() && rel.z()<700.0)  // Adjust for gun
 	{
 		YsVec3 gun,dir;
 		air.Prop().GetGunPosition(gun,dir);

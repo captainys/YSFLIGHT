@@ -9,6 +9,8 @@ YSBOOL FsTestKeyWordMatch(const YsString &str,YSSIZE_T ac,const YsString av[]);
 double FsNumerical1stDifferentiation(const double &t1,const double &v1,const double &t2,const double &v2,const double &t3,const double &v3,const double &t);
 double FsNumerical2ndDifferentiation(const double &t1,const double &v1,const double &t2,const double &v2,const double &t3,const double &v3,const double &t);
 
+int FsGetRandomBetween(int min, int max);
+
 
 double FsGetLevelTurnRadius(const double v,const double bank);
 

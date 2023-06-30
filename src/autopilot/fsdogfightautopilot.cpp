@@ -977,7 +977,7 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 {
 	// char n[256];
 	// air.Prop().GetIdentifier(n);
-	// printf("DF: Mode %d %lf %s\n",mode,modeDuration,n);
+	printf("DF ApplyControl(): Mode %d %lf\n",mode,modeDuration);
 
 	FsAirplane *target=GetTarget(sim);
 
@@ -1479,11 +1479,11 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 						air.Prop().TurnOffBankController();
 						if(int(nextClock)%2==0)
 						{
-							air.Prop().SetAileron(0.1);
+							air.Prop().SetAileron(0.7);
 						}
 						else
 						{
-							air.Prop().SetAileron(-0.1);
+							air.Prop().SetAileron(-0.7);
 						}
 					}
 
@@ -1492,11 +1492,11 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 					{
 						if(int(nextClock)%2==0)
 						{
-							air.Prop().BankController(YsDegToRad(45.0));
+							air.Prop().BankController(YsDegToRad(70));
 						}
 						else
 						{
-							air.Prop().BankController(YsDegToRad(-45.0));
+							air.Prop().BankController(YsDegToRad(70));
 						}
 					}
 

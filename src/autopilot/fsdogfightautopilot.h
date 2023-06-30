@@ -103,7 +103,7 @@ public:
 	double g1,g2,g3;
 	double gLimit,gLimitCorrection;
 	double backSenseRange;
-	double clock,nextClock;
+	double clock, nextClock, nextBreakClock;
 	double fireClock,flareClock;
 	double standBy;
 	//  Used in mode 0:  Count how long mode 0 is lasting

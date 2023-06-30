@@ -26,6 +26,7 @@ FsDogfight::FsDogfight()
 	backSenseRange=YsDegToRad(20.0);
 	clock=0.0;
 	nextClock=0.0;
+	nextBreakClock = 0.0;
 	fireClock=0.0;
 	flareClock=0.0;
 
@@ -535,7 +536,6 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		mode=DFMODE_TARGET_FLYINGLOW/*5*/;
 	}
 
-
 	switch(mode)
 	{
 	case DFMODE_NORMAL/*0*/:
@@ -580,14 +580,22 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			//  \
 			//   \
 
-			else if(rel1.z()<0.0 && radar<backSenseRange)
+			else if(rel1.z()<0.0 && radar < YsDegToRad(45.0))
 			{
-				mode=DFMODE_TARGET_ONBACK_BREAK/*3*/;  // Target is on the back!!
-				nextClock=clock+double(rand()%100)/100.0;
+				if (nextBreakClock < clock)
+				{
+					mode = DFMODE_TARGET_ONBACK_BREAK/*3*/;  // Target is on the back!!
+					nextClock = clock + double(rand() % 100) / 100.0;
+					nextBreakClock = clock + FsGetRandomBetween(1, 5);
+				}
+				else
+				{
+					mode = DFMODE_TARGET_ONBACK;
+				}
 			}
 
 			//if the target is not in front or behind the AI's aircraft and current mode has been active for a while:
-			else if(modeDuration>20.0)
+			else if(modeDuration>5.0)
 			{
 				//50-50: perform a yo-yo or climb
 				if(rand()%2==0)
@@ -611,13 +619,20 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 	//current mode: target is behind AI's aircraft
 	case DFMODE_TARGET_ONBACK/*1*/:
 		{
+			//attempt to shake again 
+			if (rel1.z() < 0.0 && nextBreakClock < clock)
+			{
+				mode = DFMODE_TARGET_ONBACK_BREAK;
+				nextClock = clock + double(rand() % 100) / 100.0;
+				nextBreakClock = clock + FsGetRandomBetween(1, 5);
+			}
 			//if the aircraft is now in front of us, set mode accordingly
 			if(rel1.z()>0.0 && radar<YsDegToRad(30.0))
 			{
 				mode=DFMODE_TARGET_INFRONT/*2*/; // Eventually Got Target On The Scope!!
 			}
 			//if target is not strictly in front or behind AI aircraft, return to normal mode
-			else if(rel1.z()>0.0 || radar>backSenseRange)
+			else if(rel1.z()>0.0 && radar>=YsDegToRad(30.0))
 			{
 				mode=DFMODE_NORMAL/*0*/;
 			}
@@ -1274,7 +1289,7 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 					// The target is on the back
 					air.Prop().TurnOffBankController();
 					air.Prop().TurnOffPitchController();
-					air.Prop().GController(maxg);
+					air.Prop().GController(gLimit);
 					air.Prop().SetAileron(0.0);
 					air.Prop().SetRudder(0.0);
 
@@ -1471,7 +1486,7 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 				else if(mode==DFMODE_TARGET_ONBACK_BREAK/*3*/)
 				{
 					// Begin Breaking Off
-					air.Prop().GController(maxg);
+					air.Prop().GController(gLimit);
 
 					//if above 2200m: override bank controller, aileron left or right 
 					if(pos->y()>=2200.0)

@@ -23,7 +23,7 @@ FsDogfight::FsDogfight()
 	g2=0.0;
 	g3=0.0;
 	gLimit=9.0;
-	backSenseRange=YsDegToRad(20.0);
+	backSenseRange=YsDegToRad(45.0);
 	clock=0.0;
 	nextClock=0.0;
 	nextBreakClock = 0.0;
@@ -580,7 +580,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			//  \
 			//   \
 
-			else if(rel1.z()<0.0 && radar < YsDegToRad(45.0))
+			else if(rel1.z()<0.0 && radar < backSenseRange)
 			{
 				if (nextBreakClock < clock)
 				{

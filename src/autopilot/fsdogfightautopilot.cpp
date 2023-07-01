@@ -536,6 +536,10 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		mode=DFMODE_TARGET_FLYINGLOW/*5*/;
 	}
 
+	FSWEAPONTYPE chasingWeaponType;
+	YsVec3 chasingWeaponPos;
+	YSBOOL missileChasing = sim->IsMissileChasing(chasingWeaponType, chasingWeaponPos, &air);
+
 	switch(mode)
 	{
 	case DFMODE_NORMAL/*0*/:
@@ -549,8 +553,26 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			// 	gLimitCorrection=0.5;
 			// }
 
+			FSWEAPONTYPE chasingWeaponType;
+			YsVec3 chasingWeaponPos;
+
+			if (missileChasing)
+			{
+				if (nextBreakClock < clock)
+				{
+					//printf("missile chasing, transition to DFMODE_TARGET_ONBACK_BREAK\n");
+					mode = DFMODE_TARGET_ONBACK_BREAK/*3*/;  // Target is on the back!!
+					UpdateBreakClocks();
+				}
+				else
+				{
+					//printf("missile chasing, transition to DFMODE_TARGET_ONBACK (nextBreakClock timer not expired)\n");
+					mode = DFMODE_TARGET_ONBACK;
+				}
+			}
+
 			//if target is out of range, get within range
-			if(YSTRUE!=TargetIsWithinCombatRange(air,*target))
+			else if(YSTRUE!=TargetIsWithinCombatRange(air,*target))
 			{
 				mode=DFMODE_CRUISE_TO_COMBAT_AREA;
 			}
@@ -574,19 +596,18 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			//if target is within a backSenseRange-degree cone of AI aircraft's rear attitude: 
 			//   /
 			//  /
-			// / backSenseRange degrees (default 20 degrees)
+			// / backSenseRange degrees
 			//-----------------> AI aircraft rear attitude (relative Z axis, opposite dir)
 			// \ backSenseRange degreees
 			//  \
 			//   \
 
-			else if(rel1.z()<0.0 && radar < backSenseRange)
+			else if(rel1.z()<0.0 && radar < backSenseRange && (tpos - air.GetPosition()).GetLength() <= 500.0)
 			{
 				if (nextBreakClock < clock)
 				{
 					mode = DFMODE_TARGET_ONBACK_BREAK/*3*/;  // Target is on the back!!
-					nextClock = clock + double(rand() % 100) / 100.0;
-					nextBreakClock = clock + FsGetRandomBetween(1, 5);
+					UpdateBreakClocks();
 				}
 				else
 				{
@@ -623,16 +644,15 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			if (rel1.z() < 0.0 && nextBreakClock < clock)
 			{
 				mode = DFMODE_TARGET_ONBACK_BREAK;
-				nextClock = clock + double(rand() % 100) / 100.0;
-				nextBreakClock = clock + FsGetRandomBetween(1, 5);
+				UpdateBreakClocks();
 			}
 			//if the aircraft is now in front of us, set mode accordingly
-			if(rel1.z()>0.0 && radar<YsDegToRad(30.0))
+			if(rel1.z()>0.0 && radar<YsDegToRad(30.0) && missileChasing == YSFALSE)
 			{
 				mode=DFMODE_TARGET_INFRONT/*2*/; // Eventually Got Target On The Scope!!
 			}
 			//if target is not strictly in front or behind AI aircraft, return to normal mode
-			else if(rel1.z()>0.0 && radar>=YsDegToRad(30.0))
+			else if(rel1.z()>0.0 && radar>=YsDegToRad(30.0) && missileChasing == YSFALSE)
 			{
 				mode=DFMODE_NORMAL/*0*/;
 			}
@@ -1840,5 +1860,11 @@ YSBOOL FsDogfight::TargetIsWithinCombatRange(const FsExistence &air,const FsExis
 const double FsDogfight::GetCombatRange(void) const
 {
 	return combatThreshold;
+}
+
+void FsDogfight::UpdateBreakClocks(void)
+{
+	nextClock = clock + double(rand() % 100) / 100.0;
+	nextBreakClock = clock + (double)FsGetRandomBetween(1, 5);
 }
 

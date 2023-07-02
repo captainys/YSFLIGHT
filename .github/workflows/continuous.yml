@@ -28,7 +28,7 @@ jobs:
     - name: mkdir
       run: mkdir ci_windows
     - name: cmake
-      run: cmake ../src
+      run: cmake ../src -DCMAKE_PREFIX_PATH=vcpkg/installed/x64-windows
       working-directory: ./ci_windows
     - name: build
       run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_nownd
@@ -50,7 +50,7 @@ jobs:
         vcpkgArguments: --triplet x64-linux curl nlohmann-json
         vcpkgGitCommitId: 5b1214315250939257ef5d62ecdcbca18cf4fb1c
     - name: Install dependencies
-      run: vcpkg install --triplet x64-linux curl nlohmann-json
+      run: vcpkg install --triplet x64-linux
       working-directory: ../src
     - name: checkout_public
       run: git clone https://github.com/captainys/public.git
@@ -67,7 +67,7 @@ jobs:
     - name: install-Python
       run: sudo apt-get install python3 python-is-python3
     - name: cmake
-      run: cmake ../src -DCMAKE_BUILD_TYPE=Release
+      run: cmake ../src -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=vcpkg/installed/x64-linux
       working-directory: ./ci_ubuntu
     - name: build
       run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_nownd

@@ -51,7 +51,7 @@ jobs:
         vcpkgGitCommitId: 5b1214315250939257ef5d62ecdcbca18cf4fb1c
     - name: Install dependencies
       run: vcpkg install --triplet x64-linux
-      working-directory: ../src
+      working-directory: src
     - name: checkout_public
       run: git clone https://github.com/captainys/public.git
     - name: mkdir

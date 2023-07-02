@@ -15,6 +15,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Install vcpkg
+      uses: actions/setup-vcpkg@v2
+    - name: Install dependencies
+      run: vcpkg install -q --triplet x64-windows curl nlohmann-json
     - name: checkout_public
       run: git clone https://github.com/captainys/public.git
     - name: mkdir
@@ -35,6 +39,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Install vcpkg
+      uses: actions/setup-vcpkg@v2
+    - name: Install dependencies
+      run: vcpkg install -q --triplet x64-linux curl nlohmann-json
     - name: checkout_public
       run: git clone https://github.com/captainys/public.git
     - name: mkdir

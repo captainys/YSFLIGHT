@@ -43,7 +43,7 @@ public:
 	virtual void OnButtonClick(FsGuiButton *btn);
 	void FetchJsonServerList(const std::string url, std::function<void(std::string)> callback);
 	void UpdateGUI(const std::string& json);
-	void FsGuiStartClientDialog::OnServerListDialogClosed(FsGuiDialog *dlg, int);
+	void FsGuiStartClientDialog::OnServerListDialogClosed(FsGuiDialog *dlg, int returnCode);
 };
 
 ////////////////////////////////////////////////////////////

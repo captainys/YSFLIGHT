@@ -364,7 +364,7 @@ void FsGuiStartClientDialog::UpdateGUI(const std::string& json)
 	}
 }
 
-void FsGuiStartClientDialog::OnServerListDialogClosed(FsGuiDialog *dlg, int){
+void FsGuiStartClientDialog::OnServerListDialogClosed(FsGuiDialog *dlg, int returnCode){
 	auto serverListDlg = dynamic_cast<FsGuiNetServerListDialog*>(dlg);
 	if (serverListDlg != nullptr){
 		if (YSOK == serverListDlg->res){

@@ -67,7 +67,7 @@ jobs:
     - name: install-Python
       run: sudo apt-get install python3 python-is-python3
     - name: cmake
-      run: cmake ../src -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=vcpkg/installed/x64-linux
+      run: cmake ../src -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/home/runner/work/YSCE/YSCE/vcpkg/installed/x64-linux -DCMAKE_TOOLCHAIN_FILE=/home/runner/work/YSCE/YSCE/vcpkg/scripts/buildsystems/vcpkg.cmake
       working-directory: ./ci_ubuntu
     - name: build
       run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_nownd

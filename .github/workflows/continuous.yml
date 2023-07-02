@@ -14,9 +14,12 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: run-vcpkg
       uses: lukka/run-vcpkg@v11.1
+      with:
+        vcpkgJsonGlob: ../src/vcpkg.json,
+        vcpkgGitCommitId: required:false
     - name: Install dependencies
       run: vcpkg install -q --triplet x64-windows curl nlohmann-json
     - name: checkout_public
@@ -38,11 +41,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+
     - name: Install vcpkg
       uses: lukka/run-vcpkg@v11.1
-    - name: Install dependencies
-      run: vcpkg install -q --triplet x64-linux curl nlohmann-json
+      with:
+        vcpkgArguments: --triplet x64-linux curl nlohmann-json
+        vcpkgDirectory: 
     - name: checkout_public
       run: git clone https://github.com/captainys/public.git
     - name: mkdir

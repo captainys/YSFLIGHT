@@ -19,7 +19,7 @@ jobs:
       uses: lukka/run-vcpkg@v11.1
       with:
         vcpkgJsonGlob: ../src/vcpkg.json,
-        vcpkgGitCommitId: required:false
+        vcpkgGitCommitId: 5b1214315250939257ef5d62ecdcbca18cf4fb1c
     - name: Install dependencies
       run: vcpkg install -q --triplet x64-windows curl nlohmann-json
     - name: checkout_public

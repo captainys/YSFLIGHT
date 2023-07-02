@@ -20,8 +20,6 @@ jobs:
       with:
         vcpkgJsonGlob: ../src/vcpkg.json,
         vcpkgGitCommitId: 5b1214315250939257ef5d62ecdcbca18cf4fb1c
-    - name: Install dependencies
-      run: vcpkg install -q --triplet x64-windows curl nlohmann-json
     - name: checkout_public
       run: git clone https://github.com/captainys/public.git
     - name: mkdir

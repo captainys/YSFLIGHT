@@ -15,8 +15,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install vcpkg
-      uses: actions/setup-vcpkg@v2
+    - name: run-vcpkg
+      uses: lukka/run-vcpkg@v11.1
     - name: Install dependencies
       run: vcpkg install -q --triplet x64-windows curl nlohmann-json
     - name: checkout_public
@@ -40,7 +40,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install vcpkg
-      uses: actions/setup-vcpkg@v2
+      uses: lukka/run-vcpkg@v11.1
     - name: Install dependencies
       run: vcpkg install -q --triplet x64-linux curl nlohmann-json
     - name: checkout_public

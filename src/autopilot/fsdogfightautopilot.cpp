@@ -540,6 +540,20 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 	YsVec3 chasingWeaponPos;
 	YSBOOL missileChasing = sim->IsMissileChasing(chasingWeaponType, chasingWeaponPos, &air);
 
+	if (missileChasing)
+	{
+		if (nextBreakClock < clock)
+		{
+			mode = DFMODE_TARGET_ONBACK_BREAK/*3*/;
+			UpdateBreakClocks();
+		}
+		else
+		{
+			mode = DFMODE_TARGET_ONBACK;
+		}
+		return YSOK; //missile evasion should take priority over other decisions, don't continue to decide 
+	}
+
 	switch(mode)
 	{
 	case DFMODE_NORMAL/*0*/:
@@ -553,26 +567,8 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			// 	gLimitCorrection=0.5;
 			// }
 
-			FSWEAPONTYPE chasingWeaponType;
-			YsVec3 chasingWeaponPos;
-
-			if (missileChasing)
-			{
-				if (nextBreakClock < clock)
-				{
-					//printf("missile chasing, transition to DFMODE_TARGET_ONBACK_BREAK\n");
-					mode = DFMODE_TARGET_ONBACK_BREAK/*3*/;  // Target is on the back!!
-					UpdateBreakClocks();
-				}
-				else
-				{
-					//printf("missile chasing, transition to DFMODE_TARGET_ONBACK (nextBreakClock timer not expired)\n");
-					mode = DFMODE_TARGET_ONBACK;
-				}
-			}
-
 			//if target is out of range, get within range
-			else if(YSTRUE!=TargetIsWithinCombatRange(air,*target))
+			if(YSTRUE!=TargetIsWithinCombatRange(air,*target))
 			{
 				mode=DFMODE_CRUISE_TO_COMBAT_AREA;
 			}

@@ -643,12 +643,12 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 				UpdateBreakClocks();
 			}
 			//if the aircraft is now in front of us, set mode accordingly
-			if(rel1.z()>0.0 && radar<YsDegToRad(30.0) && missileChasing == YSFALSE)
+			if(rel1.z()>0.0 && radar<YsDegToRad(30.0))
 			{
 				mode=DFMODE_TARGET_INFRONT/*2*/; // Eventually Got Target On The Scope!!
 			}
 			//if target is not strictly in front or behind AI aircraft, return to normal mode
-			else if(rel1.z()>0.0 && radar>=YsDegToRad(30.0) && missileChasing == YSFALSE)
+			else if(rel1.z()>0.0 && radar>=YsDegToRad(30.0))
 			{
 				mode=DFMODE_NORMAL/*0*/;
 			}

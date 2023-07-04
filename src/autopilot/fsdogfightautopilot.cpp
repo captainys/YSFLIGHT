@@ -1508,26 +1508,26 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 					if(pos->y()>=2200.0)
 					{
 						air.Prop().TurnOffBankController();
-						if(int(nextClock)%2==0)
+						if(rand() % 2 == 0)
 						{
-							air.Prop().SetAileron(0.7);
+							air.Prop().SetAileron(1.0);
 						}
 						else
 						{
-							air.Prop().SetAileron(-0.7);
+							air.Prop().SetAileron(-1.0);
 						}
 					}
 
 					//if below 2200m: bank left or right 45 degrees
 					else
 					{
-						if(int(nextClock)%2==0)
+						if(rand() % 2 == 0)
 						{
-							air.Prop().BankController(YsDegToRad(70));
+							air.Prop().BankController(YsDegToRad(45));
 						}
 						else
 						{
-							air.Prop().BankController(YsDegToRad(70));
+							air.Prop().BankController(YsDegToRad(45));
 						}
 					}
 

@@ -501,6 +501,8 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		}
 	}
 
+	double targetDist = (tpos - air.GetPosition()).GetLength();
+
 	radar=atan2(sqrt(rel1.x()*rel1.x()+rel1.y()*rel1.y()),YsAbs(rel1.z()));
 
 	//handle standby mode(s)
@@ -597,7 +599,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			//  \
 			//   \
 
-			else if(rel1.z()<0.0 && radar < backSenseRange && (tpos - air.GetPosition()).GetLength() <= 500.0)
+			else if(rel1.z()<0.0 && radar < backSenseRange && targetDist <= 500.0)
 			{
 				if (nextBreakClock < clock)
 				{

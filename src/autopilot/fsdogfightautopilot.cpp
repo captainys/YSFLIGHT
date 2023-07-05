@@ -545,7 +545,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		if (nextBreakClock < clock)
 		{
 			mode = DFMODE_TARGET_ONBACK_BREAK/*3*/;
-			UpdateBreakClocks();
+			UpdateBreakClocks(0.5, 2.0);
 		}
 		else
 		{
@@ -603,7 +603,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 				if (nextBreakClock < clock)
 				{
 					mode = DFMODE_TARGET_ONBACK_BREAK/*3*/;  // Target is on the back!!
-					UpdateBreakClocks();
+					UpdateBreakClocks(0.5, 4.0);
 				}
 				else
 				{
@@ -640,7 +640,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			if (rel1.z() < 0.0 && nextBreakClock < clock)
 			{
 				mode = DFMODE_TARGET_ONBACK_BREAK;
-				UpdateBreakClocks();
+				UpdateBreakClocks(0.5, 4.0);
 			}
 			//if the aircraft is now in front of us, set mode accordingly
 			if(rel1.z()>0.0 && radar<YsDegToRad(30.0))
@@ -1860,9 +1860,9 @@ const double FsDogfight::GetCombatRange(void) const
 	return combatThreshold;
 }
 
-void FsDogfight::UpdateBreakClocks(void)
+void FsDogfight::UpdateBreakClocks(double minDuration, double maxDuration)
 {
 	nextClock = clock + double(rand() % 100) / 100.0;
-	nextBreakClock = clock + FsGetRandomBetween(1.0, 5.0);
+	nextBreakClock = clock + FsGetRandomBetween(minDuration, maxDuration);
 }
 

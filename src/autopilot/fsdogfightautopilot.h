@@ -142,7 +142,7 @@ public:
 
 	YSBOOL TargetIsWithinCombatRange(const FsExistence &air,const FsExistence &target) const;
 	const double GetCombatRange(void) const;
-	void UpdateBreakClocks(void);
+	void UpdateBreakClocks(double minDuration, double maxDuration);
 };
 
 

@@ -1508,20 +1508,22 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 					if(pos->y()>=2200.0)
 					{
 						air.Prop().TurnOffBankController();
-						if(rand() % 2 == 0)
+
+						double aileronStrength = FsGetRandomBetween(0.5, 1.0);
+						if ((int)nextBreakClock % 2 == 0)
 						{
-							air.Prop().SetAileron(1.0);
+							air.Prop().SetAileron(aileronStrength);
 						}
 						else
 						{
-							air.Prop().SetAileron(-1.0);
+							air.Prop().SetAileron(-aileronStrength);
 						}
 					}
 
 					//if below 2200m: bank left or right 45 degrees
 					else
 					{
-						if(rand() % 2 == 0)
+						if ((int)nextBreakClock % 2 == 0)
 						{
 							air.Prop().BankController(YsDegToRad(45));
 						}
@@ -1861,6 +1863,6 @@ const double FsDogfight::GetCombatRange(void) const
 void FsDogfight::UpdateBreakClocks(void)
 {
 	nextClock = clock + double(rand() % 100) / 100.0;
-	nextBreakClock = clock + (double)FsGetRandomBetween(1, 5);
+	nextBreakClock = clock + FsGetRandomBetween(1.0, 5.0);
 }
 

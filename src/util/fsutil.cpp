@@ -625,3 +625,10 @@ int FsGetRandomBetween(int min, int max)
 	return min + rand() / (RAND_MAX / (max - min + 1) + 1);
 }
 
+double FsGetRandomBetween(double min, double max)
+{
+	double random = ((double)rand()) / (double)RAND_MAX;
+	double range = max - min;
+	return (random * range) + min;
+}
+

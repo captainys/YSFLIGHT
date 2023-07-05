@@ -538,9 +538,8 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 
 	FSWEAPONTYPE chasingWeaponType;
 	YsVec3 chasingWeaponPos;
-	YSBOOL missileChasing = sim->IsMissileChasing(chasingWeaponType, chasingWeaponPos, &air);
 
-	if (missileChasing)
+	if (sim->IsMissileChasing(chasingWeaponType, chasingWeaponPos, &air))
 	{
 		if (nextBreakClock < clock)
 		{

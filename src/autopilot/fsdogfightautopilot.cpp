@@ -1328,6 +1328,13 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 					air.Prop().SetAileron(0.0);
 					air.Prop().SetRudder(0.0);
 
+					//if the target is close, try to cut speed and have them overshoot
+					double targetDist = (target->GetPosition() - air.GetPosition()).GetLength();
+					if (targetDist <= 500.0 && (int)nextBreakClock % 2)
+					{
+						air.Prop().SpeedController(target->Prop().GetVelocity() * 0.6);
+					}
+
 					air.Prop().SetAirTargetKey(YSNULLHASHKEY);
 				}
 				else if(mode==DFMODE_TARGET_INFRONT/*2*/)

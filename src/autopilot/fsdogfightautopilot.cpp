@@ -475,7 +475,8 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 	{
 		if(SearchTarget(air,sim)!=YSOK || (target=GetTarget(sim))==NULL)
 		{
-			goto NOTARGET;
+			mode = DFMODE_NOTARGET;
+			return YSOK;
 		}
 	}
 
@@ -487,12 +488,10 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		//if we still could not find a valid target
 		if(SearchTarget(air,sim)!=YSOK)
 		{
-			goto NOTARGET;
+			mode = DFMODE_NOTARGET/*-1*/;
+			return YSOK;
 		}
-		else
-		{
-			tpos=target->GetPosition();  // Update to newer one
-		}
+		tpos=target->GetPosition();  // Update to newer one
 	}
 
 	double targetDist = (tpos - air.GetPosition()).GetLength();
@@ -924,10 +923,6 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		break;
 	}
 
-	return YSOK;
-
-NOTARGET:
-	mode=DFMODE_NOTARGET/*-1*/;
 	return YSOK;
 }
 

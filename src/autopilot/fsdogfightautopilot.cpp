@@ -351,18 +351,10 @@ FsAirplane *FsDogfight::GetTarget(FsSimulation *sim)
 	return sim->FindAirplane(targetAirplaneKey);
 }
 
-//check for emergency recovery condition(s) - stall or low altitude?
+//check for emergency recovery condition(s) - stall or low altitude
 YSRESULT FsDogfight::MakePriorityDecision(FsAirplane &air)
 {
-	if(mode==DFMODE_NOTARGET/*-1*/ || air.Prop().GetFlightState()==FSSTALL)
-	{
-		return FsAutopilot::MakePriorityDecision(air);
-	}
-	else
-	{
-		emr=EMR_NONE;
-		return YSOK;
-	}
+	return FsAutopilot::MakePriorityDecision(air);
 }
 
 YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double &dt)

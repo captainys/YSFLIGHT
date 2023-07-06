@@ -525,6 +525,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 	if(target!=NULL && DangerOfCollision(air,*target)==YSTRUE)
 	{
 		mode=DFMODE_AVOIDING_HEADON_COLLISION/*6*/;
+		return YSOK; //crash avoidance shoudl take priority over other decisions, don't continue to decide
 	}
 	//check if the target is at low altitude based on altitude and radar angle
 	else if(target!=NULL && air.GetPosition().y()<GetAllowableAltitude(33.0,air) && (DFMODE_TARGET_INFRONT/*2*/!=mode || radar>YsDegToRad(3.0)))

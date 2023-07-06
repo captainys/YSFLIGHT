@@ -1090,14 +1090,14 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 					if((chasingWeaponPos-air.GetPosition()).GetSquareLength()<4000.0*4000.0)
 					{
 						air.Prop().SetDispenseFlareButton(YSTRUE);
-						flareClock = clock + (double)FsGetRandomBetween(6, 10);
+						flareClock = clock + FsGetRandomBetween(6.0, 10.0);
 					}
 					break;
 				case FSWEAPON_AIM9:
 					if((chasingWeaponPos-air.GetPosition()).GetSquareLength()<2000.0*2000.0)
 					{
 						air.Prop().SetDispenseFlareButton(YSTRUE);
-						flareClock=clock + (double)FsGetRandomBetween(2, 6);
+						flareClock=clock + FsGetRandomBetween(2.0, 6.0);
 					}
 					break;
 
@@ -1105,7 +1105,7 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 					if((chasingWeaponPos-air.GetPosition()).GetSquareLength()<1000.0*1000.0)
 					{
 						air.Prop().SetDispenseFlareButton(YSTRUE);
-						flareClock=clock + (double)FsGetRandomBetween(1, 3);
+						flareClock=clock + FsGetRandomBetween(1.0, 3.0);
 					}
 					break;
 			

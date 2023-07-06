@@ -1027,7 +1027,7 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 {
 	// char n[256];
 	// air.Prop().GetIdentifier(n);
-	printf("DF ApplyControl(): Mode %d %lf\n",mode,modeDuration);
+	//printf("DF ApplyControl(): Mode %d %lf\n",mode,modeDuration);
 
 	FsAirplane *target=GetTarget(sim);
 

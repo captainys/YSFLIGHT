@@ -1407,11 +1407,11 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 							double delay;
 							if(targetNew!=NULL && targetNew->GetPosition().y()>=330.0)
 							{
-								delay = (double)FsGetRandomBetween(2, 6);
+								delay = FsGetRandomBetween(2.0, 6.0);
 							}
 							else
 							{
-								delay= (double)FsGetRandomBetween(1, 3);
+								delay= FsGetRandomBetween(1.0, 3.0);
 							}
 
 							//if a valid new target was found, reset fire clock
@@ -1433,7 +1433,7 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 								{
 									air.Prop().FireWeapon
 									   (blockedByBombBayDoor,sim,sim->GetClock(),sim->GetWeaponStore(),&air,shortRangeType);
-									fireClock=clock + (double)FsGetRandomBetween(3, 7);
+									fireClock=clock + FsGetRandomBetween(3.0, 7.0);
 								}
 							}
 						}
@@ -1461,7 +1461,7 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 								YSBOOL blockedByBombBayDoor;
 								air.Prop().FireWeapon
 								   (blockedByBombBayDoor,sim,sim->GetClock(),sim->GetWeaponStore(),&air,FSWEAPON_AIM120);
-								fireClock=clock + (double)FsGetRandomBetween(10, 14);
+								fireClock=clock + FsGetRandomBetween(10.0, 14.0);
 							}
 						}
 						else

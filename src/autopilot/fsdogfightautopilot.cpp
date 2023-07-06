@@ -22,6 +22,7 @@ FsDogfight::FsDogfight()
 	g1=0.0;
 	g2=0.0;
 	g3=0.0;
+	lastDamageValue = 0.0;
 	gLimit=9.0;
 	backSenseRange=YsDegToRad(45.0);
 	clock=0.0;
@@ -310,7 +311,8 @@ YSRESULT FsDogfight::SearchTarget(FsAirplane &air,FsSimulation *sim)
 		//rel1 = AI's relative position to the target aircraft
 		GetRelativePosition(rel1,trg->GetPosition(),air,sim);
 		rel2=rel1;
-		rel3=rel1;
+		rel3 = rel1;
+
 		return YSOK;
 	}
 	else
@@ -541,6 +543,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 	FSWEAPONTYPE chasingWeaponType;
 	YsVec3 chasingWeaponPos;
 
+	//if being chased by a missile, evade 
 	if (sim->IsMissileChasing(chasingWeaponType, chasingWeaponPos, &air))
 	{
 		if (nextBreakClock < clock)
@@ -553,6 +556,19 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 			mode = DFMODE_TARGET_ONBACK;
 		}
 		return YSOK; //missile evasion should take priority over other decisions, don't continue to decide 
+	}
+
+	//if AI aircraft just took damage, evade
+	double currDamageValue = air.Prop().GetDamageTolerance();
+	if (fabs(currDamageValue - lastDamageValue) >= YsTolerance && mode != DFMODE_TARGET_ONBACK_BREAK)
+	{
+		lastDamageValue = currDamageValue;
+		printf("took damage!\n");
+
+		mode = DFMODE_TARGET_ONBACK_BREAK/*3*/;
+		UpdateBreakClocks(0.25, 1.0);
+
+		return YSOK; //threat evasion should take priority over other decisions, don't continue to decide 
 	}
 
 	switch(mode)
@@ -637,14 +653,23 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 	//current mode: target is behind AI's aircraft
 	case DFMODE_TARGET_ONBACK/*1*/:
 		{
-			//attempt to shake again 
+			//target still on back: try to maneuver again 
 			if (rel1.z() < 0.0 && nextBreakClock < clock)
 			{
-				mode = DFMODE_TARGET_ONBACK_BREAK;
-				UpdateBreakClocks(0.5, 4.0);
+				//1 in 4 chance: yo-yo
+				if (rand() % 4 == 0)
+				{
+					mode = DFMODE_HIGH_G_YO_YO;
+				}
+				//3 in 4 chance: break/bank again
+				else
+				{
+					mode = DFMODE_TARGET_ONBACK_BREAK;
+					UpdateBreakClocks(0.5, 4.0);
+				}
 			}
 			//if the aircraft is now in front of us, set mode accordingly
-			if(rel1.z()>0.0 && radar<YsDegToRad(30.0))
+			else if(rel1.z()>0.0 && radar<YsDegToRad(30.0))
 			{
 				mode=DFMODE_TARGET_INFRONT/*2*/; // Eventually Got Target On The Scope!!
 			}

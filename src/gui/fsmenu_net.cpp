@@ -46,6 +46,10 @@
 #include "fsguicommondialog.h"
 #include "fsguimaincanvas.h"
 
+
+
+
+
 void FsGuiMainCanvas::Net_StartServerMode(FsGuiPopUpMenuItem *)
 {
 	auto world=runLoop->GetWorld();
@@ -153,7 +157,7 @@ void FsGuiMainCanvas::Net_StartClientMode_JoystickWarned(FsGuiDialog *,int)
 
 	auto dlg=FsGuiDialog::CreateSelfDestructiveDialog<FsGuiStartClientDialog>();
 	dlg->Initialize();
-	dlg->Make(cfg);
+	dlg->Make(cfg, runLoop->GetWorld());
 	dlg->BindCloseModalCallBack(&THISCLASS::Net_StartClientMode_OptionSelected,this);
 
 	AttachModalDialog(dlg);

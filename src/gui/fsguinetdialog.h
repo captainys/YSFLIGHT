@@ -19,7 +19,7 @@ public:
 
 	void Make(const class FsWorld *world,const class FsNetConfig &netcfg);
 	void ResetFieldListBySearchKeyword(const FsWorld *world,FsGuiListBox *fieldList,FsGuiTextBox *fieldSearch);
-
+	
 	virtual void FieldSelectionChanged(void);
 	virtual void OnButtonClick(FsGuiButton *btn);
 	virtual void OnListBoxSelChange(FsGuiListBox *lbx,int prevSel);
@@ -29,14 +29,21 @@ public:
 class FsGuiStartClientDialog : public FsGuiDialog
 {
 public:
-	FsGuiButton *okBtn,*cancelBtn;
+	int fontSize;
+	YsArray <const char *> fldList;
+	FsGuiButton *okBtn,*cancelBtn, *serverListBtn;
 	FsGuiTextBox *userNameTxt,*hostAddrTxt,*portTxt;
 	FsGuiDropList *hostHist;
 	YSRESULT res;
+	
+	
 
-	void Make(const class FsNetConfig &netcfg);
+	void Make(const class FsNetConfig &netcfg, const class FsWorld *world);
 	virtual void OnDropListSelChange(FsGuiDropList *drp,int prevSel);
 	virtual void OnButtonClick(FsGuiButton *btn);
+	void FetchJsonServerList(const std::string url, std::function<void(std::string)> callback);
+	void UpdateGUI(const std::string& json);
+	void OnServerListDialogClosed(FsGuiDialog *dlg, int returnCode);
 };
 
 ////////////////////////////////////////////////////////////
@@ -107,6 +114,55 @@ public:
 
 	virtual void OnButtonClick(FsGuiButton *btn);
 };
+
+class FsGuiNetServerListOfflineDialog : public FsGuiDialog
+{
+	public:
+	FsGuiButton *okBtn, *cancelBtn;
+
+	void Make();
+	void OnButtonClick(FsGuiButton *btn);
+
+};
+
+class ServerListItem
+{
+public:
+	std::string name;
+	std::string address;
+	std::string website;
+	std::string port;
+	std::string map;
+	int version;
+	int players;
+	
+
+
+
+};
+
+class FsGuiNetServerListDialog : public FsGuiDialog
+{
+public:
+	FsGuiButton *okBtn, *cancelBtn;
+	FsGuiListBox *serverList;
+	FsGuiStatic *serverName, *serverAddress, *serverWebsite, *serverPort, *serverMap, *serverVersion, *serverPlayers;
+	FsGuiStatic *serverNameLabel, *serverAddressLabel, *serverWebsiteLabel, *serverPortLabel, *serverMapLabel, *serverVersionLabel, *serverPlayersLabel;
+	std::vector<ServerListItem> servers;
+	YsArray <const char *> fldList;
+	ServerListItem selectedServer;
+	YSRESULT res;
+	YsColor green, red;
+	int wid, hei;
+	int boxSpacing = 32;
+
+	void Make(const std::vector<ServerListItem>& servers, YsArray <const char *> &fldList);
+	void OnButtonClick(FsGuiButton *btn);
+	void OnListBoxSelChange(FsGuiListBox *lbx, int prevSel);
+	ServerListItem GetSelectedServer();
+
+};
+
 
 /* } */
 #endif

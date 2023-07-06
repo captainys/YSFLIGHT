@@ -15,7 +15,7 @@ if("${CMAKE_SYSTEM_NAME}" STREQUAL "WindowsStore")
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /ZW")
 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /ZW")
 endif()
-
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg.json)
 
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})

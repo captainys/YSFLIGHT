@@ -26,6 +26,13 @@
 
 #include "fsguinetdialog.h"
 
+#include <curl/curl.h>
+
+#include <nlohmann/json.hpp>
+
+#include <string>
+#include <iostream>
+#include <thread>
 
 
 void FsGuiStartServerDialog::Make(const class FsWorld *world,const FsNetConfig &netcfg)
@@ -157,10 +164,19 @@ void FsGuiStartServerDialog::OnTextBoxChange(FsGuiTextBox *txt)
 
 ////////////////////////////////////////////////////////////
 
-void FsGuiStartClientDialog::Make(const FsNetConfig &netcfg)
-{
-	SetTransparency(YSFALSE);
+void FsGuiStartClientDialog::Make(const FsNetConfig &netcfg, const class FsWorld *world)
+{	
+	//Build a field list
+	int i;
+	const char *fldName;
+	for(i=0; NULL!=(fldName=world->GetFieldTemplateName(i)); i++)
+	{
+		fldList.Append(fldName);
+	}
+	YsQuickSortString <int> (fldList.GetN(),fldList,NULL);
 
+	SetTransparency(YSFALSE);
+	
 	SetTextMessage("-- STARTING NETWORK CLIENT --");
 
 	okBtn=AddTextButton(MkId("ok"),FSKEY_ENTER,FSGUI_PUSHBUTTON,FSGUI_COMMON_OK,YSTRUE);
@@ -191,7 +207,7 @@ void FsGuiStartClientDialog::Make(const FsNetConfig &netcfg)
 		histStr[i]=hist.addrLog[i];
 	}
 	hostHist=AddDropList(4,FSKEY_NULL,"",histStr.GetN(),histStr,12,32,32,YSTRUE);
-
+	serverListBtn = AddTextButton(MkId("serverlist"), FSKEY_NULL, FSGUI_PUSHBUTTON, "Server List", YSTRUE);
 	Fit();
 }
 
@@ -207,8 +223,17 @@ void FsGuiStartClientDialog::OnButtonClick(FsGuiButton *btn)
 		res=YSERR;
 		CloseModalDialog(0);
 	}
-}
+	if(btn==serverListBtn)
+	{
+		std::string url = "https://ysflight.org/serverlist/?json=1";
+		auto callback = [this](std::string jsonData){
+			UpdateGUI(jsonData);
+			};
 
+		std::thread threadObj(&FsGuiStartClientDialog::FetchJsonServerList, this, url, callback);
+		threadObj.detach();
+	}
+}
 
 void FsGuiStartClientDialog::OnDropListSelChange(FsGuiDropList *drp,int )
 {
@@ -243,6 +268,112 @@ void FsGuiStartClientDialog::OnDropListSelChange(FsGuiDropList *drp,int )
 			if(0<port.Strlen())
 			{
 				portTxt->SetText(port);
+			}
+		}
+	}
+}
+
+size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp)
+{
+	((std::string*)userp)->append((char*)contents, size * nmemb);
+	return size * nmemb;
+}
+
+void FsGuiStartClientDialog::FetchJsonServerList(const std::string url, std::function<void(std::string)> callback)
+{
+	// Fetch the JSON from the URL string:
+	CURL *curl=curl_easy_init();
+	CURLcode res;
+	long resCode;
+	std::string json;
+
+	curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+	curl_easy_setopt(curl, CURLOPT_WRITEDATA, &json);
+
+
+
+	res = curl_easy_perform(curl);
+	
+	curl_easy_strerror(res);
+
+	if (res != CURLE_OK)
+	{
+		printf("curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+		
+		
+	}
+	else
+	{
+		curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &resCode);
+		curl_easy_cleanup(curl);
+		printf("Response code: %d\n", resCode);
+		if (resCode == 200)
+		{
+			callback(json);
+		}
+		else
+		{
+			auto dlg = FsGuiDialog::CreateSelfDestructiveDialog <FsGuiNetServerListOfflineDialog>();
+			dlg->Make();
+			AttachModalDialog(dlg);
+		}
+	}
+	
+}
+
+void FsGuiStartClientDialog::UpdateGUI(const std::string& json)
+{
+	
+	auto jsonServerList = nlohmann::json::parse(json);
+	if (jsonServerList.contains("servers") && jsonServerList["servers"].is_array())
+	{
+		
+		auto servers = jsonServerList["servers"];
+		std::vector<ServerListItem> serverListItems;
+
+		for (auto server : servers)
+		{
+			if (server.contains("name") && server["name"].is_string() &&
+				server.contains("ip") && server["ip"].is_string() &&
+				server.contains("port") && server["port"].is_number_integer())
+			{
+				auto game = server["game"];
+				if (game["status"] == "Online"){
+					ServerListItem item;
+					item.name = server["name"];
+					item.address = server["ip"];
+					int port = server["port"];
+					item.port = std::to_string(port);
+					item.map = game["map"];
+					item.players = game["players"]["total"];
+					item.website = server["website"];
+					item.version = game["version"];
+
+					serverListItems.push_back(item);
+
+				}
+			}
+		}
+		
+		auto dlg = FsGuiDialog::CreateSelfDestructiveDialog<FsGuiNetServerListDialog>();
+		dlg->Make(serverListItems, fldList);
+		dlg->BindCloseModalCallBack(&FsGuiStartClientDialog::OnServerListDialogClosed,this);
+		AttachModalDialog(dlg);
+
+	}
+}
+
+void FsGuiStartClientDialog::OnServerListDialogClosed(FsGuiDialog *dlg, int returnCode){
+	auto serverListDlg = dynamic_cast<FsGuiNetServerListDialog*>(dlg);
+	if (serverListDlg != nullptr){
+		if (YSOK == serverListDlg->res){
+			auto server = serverListDlg->GetSelectedServer();
+			if (!server.name.empty()){
+				hostAddrTxt->SetText(server.address.c_str());
+				portTxt->SetText(server.port.c_str());
+				res = YSOK;
+				CloseModalDialog(0);
 			}
 		}
 	}
@@ -758,4 +889,171 @@ void FsGuiNetConfigDialog::OnButtonClick(FsGuiButton *btn)
 	else if(btn==svrConfigInterceptMission)
 	{
 	}
+}
+
+////////////////////////////////////////////////////////////
+
+void FsGuiNetServerListOfflineDialog::Make(){
+	Initialize();
+
+	SetTopLeftCorner(32,32);
+	AddStaticText(0, FSKEY_NULL,"Server list offline",YSTRUE);
+	okBtn=AddTextButton(0,FSKEY_ENTER,FSGUI_PUSHBUTTON,"OK",YSTRUE);
+	Fit();
+}
+
+void FsGuiNetServerListOfflineDialog::OnButtonClick(FsGuiButton *btn){
+	if(btn==okBtn){
+		CloseModalDialog(0);
+	}
+}
+
+////////////////////////////////////////////////////////////
+
+void FsGuiNetServerListDialog::Make(const std::vector<ServerListItem>& servers, YsArray <const char *> &fldList){
+	this->servers= servers;
+	this->fldList= fldList;
+	
+	GetUnicodeCharacterBitmapSize(wid,hei);
+	
+	Initialize();
+	SetBackgroundColor(FsGuiObject::defTabBgCol);
+	SetTextMessage("-- Server Browser --");
+	YsArray <const char *> serverListBoxItems;
+	
+	green.SetIntRGB(34,120,57);
+	red.SetIntRGB(120,34,34);
+
+	// Iterate through the servers, and add buttons.
+	for(int i =0; i < servers.size(); i++){
+		const char *nameYs = servers[i].name.c_str();
+		serverListBoxItems.Append(nameYs);
+	}
+	YsQuickSortString <int> (serverListBoxItems.GetN(), serverListBoxItems, NULL);
+
+	serverList=AddListBox(MkId("serverList"),FSKEY_NULL,"Server list", serverListBoxItems.GetN(), serverListBoxItems, 10, boxSpacing * 2 - (defHSpaceUnit/hei),YSTRUE);
+
+	AddStaticText(0,FSKEY_NULL,"",16,2,YSTRUE);
+
+	serverNameLabel = AddStaticText(0,FSKEY_NULL,"Server Name",boxSpacing,2,YSTRUE);
+	serverNameLabel->SetDrawFrame(YSTRUE);
+	serverNameLabel->SetFill(YSTRUE);
+
+	serverMapLabel = AddStaticText(0,FSKEY_NULL,"Map",boxSpacing,2,YSFALSE);
+	serverMapLabel->SetDrawFrame(YSTRUE);
+	serverMapLabel->SetFill(YSTRUE);
+
+	serverName = AddStaticText(0,FSKEY_NULL,"",boxSpacing,2,YSTRUE);
+	serverName->SetDrawFrame(YSTRUE);
+
+	serverMap = AddStaticText(0,FSKEY_NULL,"",boxSpacing,2,YSFALSE);
+	serverMap->SetDrawFrame(YSTRUE);
+
+	serverPlayersLabel = AddStaticText(0,FSKEY_NULL,"Players",boxSpacing,2,YSTRUE);
+	serverPlayersLabel->SetDrawFrame(YSTRUE);
+	serverPlayersLabel->SetFill(YSTRUE);
+
+	serverVersionLabel = AddStaticText(0,FSKEY_NULL,"Version",boxSpacing,2,YSFALSE);
+	serverVersionLabel->SetDrawFrame(YSTRUE);
+	serverVersionLabel->SetFill(YSTRUE);
+
+	serverPlayers = AddStaticText(0,FSKEY_NULL,"",boxSpacing,2,YSTRUE);
+	serverPlayers->SetDrawFrame(YSTRUE);
+
+	serverVersion = AddStaticText(0,FSKEY_NULL,"",boxSpacing,2,YSFALSE);
+	serverVersion->SetDrawFrame(YSTRUE);
+		
+	
+	okBtn = AddTextButton(MkId("ok"),FSKEY_ENTER,FSGUI_PUSHBUTTON,FSGUI_COMMON_OK,YSTRUE);
+	cancelBtn=AddTextButton(MkId("cancel"),FSKEY_ESC,FSGUI_PUSHBUTTON,FSGUI_COMMON_CANCEL,YSFALSE);
+	
+	Fit();
+
+}
+
+void FsGuiNetServerListDialog::OnButtonClick(FsGuiButton *btn){
+	int id = btn->GetIdent();	
+
+	if(btn==cancelBtn){
+		res = YSERR;
+		CloseModalDialog(0);
+	}
+	else if(btn==okBtn){
+		res = YSOK;
+		CloseModalDialog(0);
+	}
+
+}
+
+void FsGuiNetServerListDialog::OnListBoxSelChange(FsGuiListBox *lbx,int prevSel){
+	YsString selectedName;
+	
+	if (YSOK== lbx->GetSelectedString(selectedName)){
+		for(int i =0; i < servers.size(); i++){
+			if(servers[i].name == selectedName.Txt()){
+				selectedServer = servers[i];
+				YsString serverNameStr = selectedServer.name.c_str();
+				YsString serverMapStr = selectedServer.map.c_str();
+				
+				
+				YsString serverPlayersStr = std::to_string(selectedServer.players).c_str();
+				
+				serverNameStr.resize(boxSpacing, ' ');
+				serverMapStr.resize(boxSpacing-12, ' ');
+
+				serverName->SetText(serverNameStr);
+				serverName->wid=boxSpacing*wid+defHSpaceUnit;
+				
+				YSRESULT mapInstalled = YSERR;
+
+				for (int i=0; i<fldList.GetN(); ++i)
+				{
+					if (0==strcmp(fldList[i],selectedServer.map.c_str()))
+					{
+						mapInstalled=YSOK;
+						break;
+					}
+				}
+
+				if (mapInstalled==YSOK){
+					serverMap->SetFgColor(green);
+					serverMap->SetText(serverMapStr + " ✓ - (Installed)");
+				}
+				else{
+					serverMap->SetFgColor(red);
+					serverMap->SetText(serverMapStr + " ✗ - (Not Installed)");
+				}
+				serverMap->wid=boxSpacing*wid+defHSpaceUnit;
+				serverPlayers->SetText(serverPlayersStr);
+				
+
+				if (selectedServer.players==0){
+					serverPlayers->SetFgColor(red);
+
+				}
+				else{
+					serverPlayers->SetFgColor(green);
+
+				
+				}
+				serverPlayers->wid=boxSpacing*wid+defHSpaceUnit;
+
+				if(selectedServer.version == YSFLIGHT_NETVERSION){
+					serverVersion->SetText("✓");
+					serverVersion->SetFgColor(green);
+				}
+				else{
+					serverVersion->SetText("✗");
+					serverVersion->SetFgColor(red);
+				}
+				serverVersion->wid=boxSpacing*wid+defHSpaceUnit;
+				break;
+			}
+		}
+
+	}
+}
+
+ServerListItem FsGuiNetServerListDialog::GetSelectedServer(){
+	return selectedServer;
 }

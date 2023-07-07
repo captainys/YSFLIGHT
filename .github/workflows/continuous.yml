@@ -14,13 +14,21 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+    - name: run-vcpkg
+      uses: lukka/run-vcpkg@v11.1
+      with:
+        vcpkgJsonGlob: ../src/vcpkg.json,
+        vcpkgGitCommitId: 5b1214315250939257ef5d62ecdcbca18cf4fb1c
+    - name: Install dependencies
+      run: vcpkg install --triplet x64-windows
+      working-directory: src
     - name: checkout_public
       run: git clone https://github.com/YSCEDC/ysce_public.git
     - name: mkdir
       run: mkdir ci_windows
     - name: cmake
-      run: cmake ../src
+      run: cmake ../src -DCMAKE_PREFIX_PATH=D:/a/YSCE/YSCE/vcpkg/installed/x64-windows -DCMAKE_TOOLCHAIN_FILE=D:/a/YSCE/YSCE/vcpkg/scripts/buildsystems/vcpkg.cmake
       working-directory: ./ci_windows
     - name: build
       run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_nownd
@@ -34,7 +42,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+
+    - name: Install vcpkg
+      uses: lukka/run-vcpkg@v11.1
+      with:
+        vcpkgArguments: --triplet x64-linux
+        vcpkgGitCommitId: 5b1214315250939257ef5d62ecdcbca18cf4fb1c
+    - name: Install dependencies
+      run: vcpkg install --triplet x64-linux
+      working-directory: src
     - name: checkout_public
       run: git clone https://github.com/YSCEDC/ysce_public.git
     - name: mkdir
@@ -50,7 +67,7 @@ jobs:
     - name: install-Python
       run: sudo apt-get install python3 python-is-python3
     - name: cmake
-      run: cmake ../src -DCMAKE_BUILD_TYPE=Release
+      run: cmake ../src -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/home/runner/work/YSCE/YSCE/vcpkg/installed/x64-linux -DCMAKE_TOOLCHAIN_FILE=/home/runner/work/YSCE/YSCE/vcpkg/scripts/buildsystems/vcpkg.cmake
       working-directory: ./ci_ubuntu
     - name: build
       run: cmake --build . --config Release --parallel --target ysflight64_gl1 ysflight64_gl2 ysflight64_gl1demo ysflight64_gl2demo ysflight64_nownd

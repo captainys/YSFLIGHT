@@ -555,7 +555,6 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 	if (fabs(currDamageValue - lastDamageValue) >= YsTolerance && mode != DFMODE_TARGET_ONBACK_BREAK)
 	{
 		lastDamageValue = currDamageValue;
-		printf("took damage!\n");
 
 		mode = DFMODE_TARGET_ONBACK_BREAK/*3*/;
 		UpdateBreakClocks(0.25, 1.0);
@@ -1319,7 +1318,7 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 					// The target is on the back
 					air.Prop().TurnOffBankController();
 					air.Prop().TurnOffPitchController();
-					air.Prop().GController(gLimit);
+					air.Prop().GController(maxg);
 					air.Prop().SetAileron(0.0);
 					air.Prop().SetRudder(0.0);
 
@@ -1523,7 +1522,7 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 				else if(mode==DFMODE_TARGET_ONBACK_BREAK/*3*/)
 				{
 					// Begin Breaking Off
-					air.Prop().GController(gLimit);
+					air.Prop().GController(maxg);
 
 					//if above 2200m: override bank controller, aileron left or right 
 					if(pos->y()>=2200.0)

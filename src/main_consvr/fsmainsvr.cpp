@@ -85,7 +85,7 @@ static char FsWorkingDirectory[512];
 
 static void FsCaptureWorkingDirectory(void)
 {
-	_getcwd(FsWorkingDirectory,511);
+	getcwd(FsWorkingDirectory,511);
 	long long int l=strlen(FsWorkingDirectory);
 	if(l>0 && (FsWorkingDirectory[l-1]=='/' || FsWorkingDirectory[l-1]=='\\'))
 	{
@@ -142,7 +142,7 @@ int main(int ac,char *av[])
 		{                                                                       // 2005/03/14
 			pth[strlen(pth)-1]=0;                                               // 2005/03/14
 		}                                                                       // 2005/03/14
-		_chdir(pth);                                                             // 2005/03/14
+		chdir(pth);                                                             // 2005/03/14
 		printf("Move CWD to %s\n",pth);                                         // 2005/03/14
 	}                                                                           // 2005/03/14
 

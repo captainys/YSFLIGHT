@@ -139,7 +139,7 @@ FsLazyWindowApplication::FsLazyWindowApplication()
 		{                                                                       // 2005/03/14
 			pth[strlen(pth)-1]=0;                                               // 2005/03/14
 		}                                                                       // 2005/03/14
-		_chdir(pth);                                                             // 2005/03/14
+		chdir(pth);                                                             // 2005/03/14
 		printf("Move CWD to %s\n",pth);                                         // 2005/03/14
 	}                                                                           // 2005/03/14
 

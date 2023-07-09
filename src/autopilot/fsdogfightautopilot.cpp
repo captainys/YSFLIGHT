@@ -1075,6 +1075,20 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 		   flareClock<clock &&
 		   sim->IsMissileChasing(chasingWeaponType,chasingWeaponPos,&air)==YSTRUE) 
 		{
+			double missileDist = (chasingWeaponPos - air.GetPosition()).GetLength();
+			double flareClockStep = YsGreater(2.0, missileDist / 500);
+			double randomStep = FsGetRandomBetween(0.0, 1.0);
+			if (rand() % 2)
+			{
+				flareClockStep += randomStep;
+			}
+			else
+			{
+				flareClockStep -= randomStep;
+			}
+			printf("missile dist: %lf\n", missileDist);
+			printf("flare clock step: %lf\n", flareClockStep);
+
 			//dispense flare and reset flare timer based on missile distance to AI aircraft
 			switch(chasingWeaponType) // Adapted from Pasutisu's code.
 			{
@@ -1084,14 +1098,14 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 					if((chasingWeaponPos-air.GetPosition()).GetSquareLength()<4000.0*4000.0)
 					{
 						air.Prop().SetDispenseFlareButton(YSTRUE);
-						flareClock = clock + FsGetRandomBetween(6.0, 10.0);
+						flareClock = clock + flareClockStep;
 					}
 					break;
 				case FSWEAPON_AIM9:
 					if((chasingWeaponPos-air.GetPosition()).GetSquareLength()<2000.0*2000.0)
 					{
 						air.Prop().SetDispenseFlareButton(YSTRUE);
-						flareClock=clock + FsGetRandomBetween(2.0, 6.0);
+						flareClock = clock + flareClockStep;
 					}
 					break;
 
@@ -1099,7 +1113,7 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 					if((chasingWeaponPos-air.GetPosition()).GetSquareLength()<1000.0*1000.0)
 					{
 						air.Prop().SetDispenseFlareButton(YSTRUE);
-						flareClock=clock + FsGetRandomBetween(1.0, 3.0);
+						flareClock = clock + flareClockStep;
 					}
 					break;
 			

@@ -9751,6 +9751,11 @@ YSBOOL FsSimulation::IsMissileChasing(FSWEAPONTYPE &wpnType,YsVec3 &wpnPos,const
 	return bulletHolder.IsLockedOn(wpnType,wpnPos,ex);
 }
 
+FsWeapon* FsSimulation::GetLockedOn(const FsExistence* ex) const
+{
+	return bulletHolder.GetLockedOn(ex);
+}
+
 YSBOOL FsSimulation::AllRecordedFlightsAreOver(double &lastRecordTime)
 {
 	int nRecorded,nOver;

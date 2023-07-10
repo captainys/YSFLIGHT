@@ -996,6 +996,7 @@ public:
 
 	YSBOOL IsLockedOn(const FsExistence *ex) const;
 	YSBOOL IsMissileChasing(FSWEAPONTYPE &wpnType,YsVec3 &wpnPos,const FsExistence *ex) const;
+	FsWeapon* GetLockedOn(const FsExistence* ex) const;
 
 protected:
 	YSBOOL AllRecordedFlightsAreOver(double &lastRecordTime);

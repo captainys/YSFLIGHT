@@ -8297,17 +8297,17 @@ void FsSimulation::SimDrawHud3d(const YsVec3 &fakeViewPos,const YsAtt3 &instView
 			if (bulletHolder.IsLockedOn(playerPlane) == YSTRUE)
 			{
 				//FsDrawString(sx, sy, "!!MISSILE!!", YsRed());
-				hud2->DrawHUDText(0.0, 0.7, 0.05, 0.1, YsString("MISSILE"));
+				hud2->DrawHUDText(0.0, 0.7, 0.05, 0.1, YsString("MISSILE"), YsRed());
 			}
 			else if (IsLockedOn(playerPlane) == YSTRUE)
 			{
 				//FsDrawString(sx, sy, "!!YOU ARE LOCKED ON!!", YsRed());
-				hud2->DrawHUDText(0.0, 0.7, 0.05, 0.1, YsString("YOU ARE LOCKED ON"));
+				hud2->DrawHUDText(0.0, 0.7, 0.05, 0.1, YsString("WARNING"), YsYellow());
 			}
 			else if (playerPlane->Prop().GetFlightState() == FSSTALL)
 			{
 				//FsDrawString(sx, sy, "STALL", YsYellow());
-				hud2->DrawHUDText(0.0, 0.7, 0.05, 0.1, YsString("STALL"));
+				hud2->DrawHUDText(0.0, 0.7, 0.05, 0.1, YsString("STALL"), YsYellow());
 			}
 		}
 

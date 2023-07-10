@@ -977,7 +977,7 @@ void FsHud2::DrawBank(const double &bank)
 	triColBuf.Add(hudCol);
 }
 
-void FsHud2::DrawHUDText(const double& x0, const double& y0, const double& fontWid, const double& fontHei, const YsString& str)
+void FsHud2::DrawHUDText(const double& x0, const double& y0, const double& fontWid, const double& fontHei, const YsString& str, YsColor color)
 {
 	double centerTxtOffsetX = 0.0;
 	if (str.length() % 2 == 0)
@@ -988,7 +988,7 @@ void FsHud2::DrawHUDText(const double& x0, const double& y0, const double& fontW
 	{
 		centerTxtOffsetX = fontWid * (double)str.length() / 2.0;
 	}
-	FsAddWireFontVertexBuffer(lineVtxBuf, lineColBuf, triVtxBuf, triColBuf, x0 - centerTxtOffsetX, y0, zPlane, str, hudCol, fontWid, fontHei);
+	FsAddWireFontVertexBuffer(lineVtxBuf, lineColBuf, triVtxBuf, triColBuf, x0 - centerTxtOffsetX, y0, zPlane, str, color, fontWid, fontHei);
 
 	//float frameVtx[12] =
 	//{

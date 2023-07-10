@@ -541,7 +541,7 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 		if (nextBreakClock < clock)
 		{
 			mode = DFMODE_TARGET_ONBACK_BREAK/*3*/;
-			UpdateBreakClocks(0.5, 2.0);
+			UpdateBreakClocks(0.5, 1.5);
 		}
 		else
 		{
@@ -611,7 +611,16 @@ YSRESULT FsDogfight::MakeDecision(FsAirplane &air,FsSimulation *sim,const double
 				if (nextBreakClock < clock)
 				{
 					mode = DFMODE_TARGET_ONBACK_BREAK/*3*/;  // Target is on the back!!
-					UpdateBreakClocks(0.5, 4.0);
+
+					//if someone is locked on or a missile is tailing, break more urgently
+					if (sim->IsLockedOn(&air, YSTRUE) || sim->GetLockedOn(&air) != NULL)
+					{
+						UpdateBreakClocks(0.5, 1.5);
+					}
+					else
+					{
+						UpdateBreakClocks(0.1, 4.0);
+					}
 				}
 				else
 				{
@@ -1063,46 +1072,49 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 		woc=air.Prop().GetWeaponOfChoice();
 		air.Prop().SetAllVirtualButton(YSFALSE);
 
-
-		// 2005/04/01 >>
-		//"chasing" = actively locked & pursuing the AI aircraft
-		FSWEAPONTYPE chasingWeaponType; 
-		YsVec3 chasingWeaponPos;
+		FsWeapon* seeker = sim->GetLockedOn(&air);
 
 		//if the AI aircraft has flares AND the flare timer has lapsed AND there is a missile pursuing 
-		//	IsMissileChasing(): sets chasingWeaponType & chasingWeaponPos to the missile targeting the AI's aircraft (if any)
-		if(air.Prop().GetNumWeapon(FSWEAPON_FLARE)>0 && 
-		   flareClock<clock &&
-		   sim->IsMissileChasing(chasingWeaponType,chasingWeaponPos,&air)==YSTRUE) 
+		if(air.Prop().GetNumWeapon(FSWEAPON_FLARE)>0 
+			&& flareClock<clock 
+			&& seeker != NULL)
 		{
-			double missileDist = (chasingWeaponPos - air.GetPosition()).GetLength();
-			double flareClockStep = YsGreater(2.0, missileDist / 500);
-			double randomStep = FsGetRandomBetween(0.0, 1.0);
-			if (rand() % 2)
+			//don't flare immediately on missile launch 
+			double chasingWeaponDistTraveled = air.Prop().GetAAMRange(seeker->type) - seeker->lifeRemain;
+			if (chasingWeaponDistTraveled >= 500.0)
 			{
-				flareClockStep += randomStep;
-			}
-			else
-			{
-				flareClockStep -= randomStep;
-			}
-			printf("missile dist: %lf\n", missileDist);
-			printf("flare clock step: %lf\n", flareClockStep);
+				//"chasing" = actively locked & pursuing the AI aircraft
+				YsVec3 chasingWeaponPos = seeker->pos;
+				FSWEAPONTYPE chasingWeaponType = seeker->type;
 
-			//dispense flare and reset flare timer based on missile distance to AI aircraft
-			switch(chasingWeaponType) // Adapted from Pasutisu's code.
-			{
+				double missileDist = (chasingWeaponPos - air.GetPosition()).GetLength();
+				double flareClockStep = YsGreater(2.0, missileDist / 500);
+				double randomStep = FsGetRandomBetween(0.0, 1.0);
+				if (rand() % 2)
+				{
+					flareClockStep += randomStep;
+				}
+				else
+				{
+					flareClockStep -= randomStep;
+				}
+				printf("missile dist: %lf\n", missileDist);
+				printf("flare clock step: %lf\n", flareClockStep);
+
+				//dispense flare and reset flare timer based on missile distance to AI aircraft
+				switch (chasingWeaponType) // Adapted from Pasutisu's code.
+				{
 				default:
 					break;
 				case FSWEAPON_AIM120:
-					if((chasingWeaponPos-air.GetPosition()).GetSquareLength()<4000.0*4000.0)
+					if ((chasingWeaponPos - air.GetPosition()).GetSquareLength() < 4000.0 * 4000.0)
 					{
 						air.Prop().SetDispenseFlareButton(YSTRUE);
 						flareClock = clock + flareClockStep;
 					}
 					break;
 				case FSWEAPON_AIM9:
-					if((chasingWeaponPos-air.GetPosition()).GetSquareLength()<2000.0*2000.0)
+					if ((chasingWeaponPos - air.GetPosition()).GetSquareLength() < 2000.0 * 2000.0)
 					{
 						air.Prop().SetDispenseFlareButton(YSTRUE);
 						flareClock = clock + flareClockStep;
@@ -1110,13 +1122,14 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 					break;
 
 				case FSWEAPON_AIM9X:
-					if((chasingWeaponPos-air.GetPosition()).GetSquareLength()<1000.0*1000.0)
+					if ((chasingWeaponPos - air.GetPosition()).GetSquareLength() < 1000.0 * 1000.0)
 					{
 						air.Prop().SetDispenseFlareButton(YSTRUE);
 						flareClock = clock + flareClockStep;
 					}
 					break;
-			
+
+				}
 			}
 		}
 		// 2005/04/01 <<

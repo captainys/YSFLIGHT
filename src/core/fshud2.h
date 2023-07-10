@@ -60,6 +60,7 @@ public:
 	    YSBOOL isDme,const double &dme,
 	    YSBOOL selected,YSBOOL inop);
 
+	void DrawHUDText(const double& x0, const double& y0, const double& fontWid, const double& fontHei, const YsString& str);
 	void DrawAltitude(const double &x0,const double &y0,const double &wid,const double &hei,const double &altInMeter);
 	void DrawVSI(const double &x0,const double &y0,const double &wid,const double &hei,const double &ftPerMin);
 

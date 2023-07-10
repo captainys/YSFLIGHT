@@ -977,6 +977,44 @@ void FsHud2::DrawBank(const double &bank)
 	triColBuf.Add(hudCol);
 }
 
+void FsHud2::DrawHUDText(const double& x0, const double& y0, const double& fontWid, const double& fontHei, const YsString& str)
+{
+	double centerTxtOffsetX = 0.0;
+	if (str.length() % 2 == 0)
+	{
+		centerTxtOffsetX = fontWid * (double)str.length() / 2.0 + fontWid / 2.0;
+	}
+	else
+	{
+		centerTxtOffsetX = fontWid * (double)str.length() / 2.0;
+	}
+	FsAddWireFontVertexBuffer(lineVtxBuf, lineColBuf, triVtxBuf, triColBuf, x0 - centerTxtOffsetX, y0, zPlane, str, hudCol, fontWid, fontHei);
+
+	//float frameVtx[12] =
+	//{
+	//	(float)(x0),(float)(y0)    ,zPlane,
+	//	(float)(x0 + wid),(float)(y0)    ,zPlane,
+	//	(float)(x0 + wid),(float)(y0 + hei),zPlane,
+	//	(float)(x0),(float)(y0 + hei),zPlane,
+	//};
+	//lineVtxBuf.Add(frameVtx[0], frameVtx[1], frameVtx[2]);
+	//lineVtxBuf.Add(frameVtx[3], frameVtx[4], frameVtx[5]);
+	//lineVtxBuf.Add(frameVtx[3], frameVtx[4], frameVtx[5]);
+	//lineVtxBuf.Add(frameVtx[6], frameVtx[7], frameVtx[8]);
+	//lineVtxBuf.Add(frameVtx[6], frameVtx[7], frameVtx[8]);
+	//lineVtxBuf.Add(frameVtx[9], frameVtx[10], frameVtx[11]);
+	//lineVtxBuf.Add(frameVtx[9], frameVtx[10], frameVtx[11]);
+	//lineVtxBuf.Add(frameVtx[0], frameVtx[1], frameVtx[2]);
+	//lineColBuf.Add(hudCol);
+	//lineColBuf.Add(hudCol);
+	//lineColBuf.Add(hudCol);
+	//lineColBuf.Add(hudCol);
+	//lineColBuf.Add(hudCol);
+	//lineColBuf.Add(hudCol);
+	//lineColBuf.Add(hudCol);
+	//lineColBuf.Add(hudCol);
+}
+
 void FsHud2::DrawAltitude(const double &x0,const double &y0,const double &wid,const double &hei,const double &altInMeter)
 {
 	// Dimension: (0,0)-(0.2,1.0);

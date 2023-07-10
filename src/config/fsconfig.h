@@ -63,6 +63,7 @@ public:
 	YSBOOL useOpenGlAntiAliasing;
 
 	YSBOOL useSimpleHud;
+	YSBOOL displayTextWarnings;
 
 	int aircraftReliability;          // See FsSimulation::PlayerAircraftGetTrouble
 	double aircraftTroubleFrequency;  // See FsSimulation::PlayerAircraftGetTrouble

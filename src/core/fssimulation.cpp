@@ -7813,7 +7813,7 @@ void FsSimulation::SimDrawForeground(const ActualViewMode &actualViewMode,const 
 	printf("SimDrawForeground-10\n");
 #endif
 
-	if(playerPlane!=NULL && playerPlane->Prop().IsActive()==YSTRUE && demoMode!=YSTRUE)
+	if(playerPlane!=NULL && playerPlane->Prop().IsActive()==YSTRUE && demoMode!=YSTRUE && cfgPtr->displayTextWarnings)
 	{
 		int sx,sy;
 		FsGetWindowSize(sx,sy);

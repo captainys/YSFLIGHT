@@ -7837,30 +7837,6 @@ void FsSimulation::SimDrawForeground(const ActualViewMode &actualViewMode,const 
 	printf("SimDrawForeground-10\n");
 #endif
 
-	//if(playerPlane!=NULL && playerPlane->Prop().IsActive()==YSTRUE && demoMode!=YSTRUE && cfgPtr->displayTextWarnings)
-	//{
-	//	int sx,sy;
-	//	FsGetWindowSize(sx,sy);
-	//	sx/=2;
-	//	sy/=2;
-	//	if(bulletHolder.IsLockedOn(playerPlane)==YSTRUE)
-	//	{
-	//		sx-=40;
-	//		FsDrawString(sx,sy,"!!MISSILE!!",YsRed());
-	//	}
-	//	else if(IsLockedOn(playerPlane)==YSTRUE)
-	//	{
-	//		sx-=80;
-	//		FsDrawString(sx,sy,"!!YOU ARE LOCKED ON!!",YsRed());
-	//	}
-	//	else if(playerPlane->Prop().GetFlightState()==FSSTALL)
-	//	{
-	//		sx-=30;
-	//		FsDrawString(sx,sy,"STALL",YsYellow());
-	//	}
-	//}
-
-
 #ifdef CRASHINVESTIGATION_SIMDRAWFOREGROUND
 	printf("SimDrawForeground-11\n");
 #endif
@@ -8316,7 +8292,7 @@ void FsSimulation::SimDrawHud3d(const YsVec3 &fakeViewPos,const YsAtt3 &instView
 			}
 		}
 
-		if (playerPlane != NULL && playerPlane->Prop().IsActive() && cfgPtr->displayTextWarnings == YSFALSE)
+		if (playerPlane != NULL && playerPlane->Prop().IsActive())
 		{
 			if (bulletHolder.IsLockedOn(playerPlane) == YSTRUE)
 			{

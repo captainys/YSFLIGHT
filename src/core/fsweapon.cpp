@@ -3045,6 +3045,21 @@ YSBOOL FsWeaponHolder::IsLockedOn(FSWEAPONTYPE &wpnType,YsVec3 &wpnPos,const FsE
 	return YSFALSE;
 }
 
+//returns a reference to the weapon currently pursuing ex, or NULL if none was found 
+FsWeapon* FsWeaponHolder::GetLockedOn(const FsExistence* ex) const
+{
+	FsWeapon* seeker;
+	for (seeker = activeList; seeker != NULL; seeker = seeker->next)
+	{
+		if (seeker->lifeRemain > YsTolerance && seeker->target == ex)
+		{
+			return seeker;
+		}
+	}
+	return NULL;
+}
+
+
 YSRESULT FsWeaponHolder::FindFirstMissilePositionThatIsReallyGuided(YsVec3 &vec,YsAtt3 &att) const
 {
 	double maxLifeRemain;

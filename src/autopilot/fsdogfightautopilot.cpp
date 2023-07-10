@@ -1351,7 +1351,9 @@ YSRESULT FsDogfight::ApplyControl(FsAirplane &air,FsSimulation *sim,const double
 
 					//if the target is close, try to cut speed and have them overshoot
 					double targetDist = (target->GetPosition() - air.GetPosition()).GetLength();
-					if (targetDist <= 500.0 && (int)nextBreakClock % 2)
+					if (targetDist <= 500.0 
+						&& (int)nextBreakClock % 2
+						&& target->Prop().GetVelocity() * 0.6 >= air.Prop().GetMinimumManeuvableSpeed())
 					{
 						air.Prop().SpeedController(target->Prop().GetVelocity() * 0.6);
 					}

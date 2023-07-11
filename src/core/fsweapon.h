@@ -299,6 +299,7 @@ public:
 
 	YSBOOL IsLockedOn(const FsExistence *ex) const;
 	YSBOOL IsLockedOn(FSWEAPONTYPE &wpnType,YsVec3 &wpnPos,const FsExistence *ex) const;
+	FsWeapon* GetLockedOn(const FsExistence* ex) const;
 
 	YSRESULT FindFirstMissilePositionThatIsReallyGuided(YsVec3 &vec,YsAtt3 &att) const;
 	YSRESULT FindOldestMissilePosition(YsVec3 &vec,YsAtt3 &att,const FsExistence *fired) const;

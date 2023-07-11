@@ -101,9 +101,10 @@ public:
 	double radar;
 	YsVec3 rel1,rel2,rel3;
 	double g1,g2,g3;
+	double lastDamageValue;
 	double gLimit,gLimitCorrection;
 	double backSenseRange;
-	double clock,nextClock;
+	double clock, nextClock, nextBreakClock;
 	double fireClock,flareClock;
 	double standBy;
 	//  Used in mode 0:  Count how long mode 0 is lasting
@@ -142,6 +143,7 @@ public:
 
 	YSBOOL TargetIsWithinCombatRange(const FsExistence &air,const FsExistence &target) const;
 	const double GetCombatRange(void) const;
+	void UpdateBreakClocks(double minDuration, double maxDuration);
 };
 
 

@@ -620,3 +620,15 @@ YSRESULT FsGetAtt3(YsAtt3 &att,YSSIZE_T ac,const YsString av[])
 	return YSERR;
 }
 
+int FsGetRandomBetween(int min, int max) 
+{
+	return min + rand() / (RAND_MAX / (max - min + 1) + 1);
+}
+
+double FsGetRandomBetween(double min, double max)
+{
+	double random = ((double)rand()) / (double)RAND_MAX;
+	double range = max - min;
+	return (random * range) + min;
+}
+

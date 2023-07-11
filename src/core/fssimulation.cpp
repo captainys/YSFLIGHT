@@ -9726,7 +9726,7 @@ double FsSimulation::GetLastRecordTime(void)
 	return t0;
 }
 
-YSBOOL FsSimulation::IsLockedOn(const FsExistence *ex) const
+YSBOOL FsSimulation::IsLockedOn(const FsExistence *ex, YSBOOL missileLockOnly) const
 {
 	if(NULL!=ex)
 	{
@@ -9737,6 +9737,14 @@ YSBOOL FsSimulation::IsLockedOn(const FsExistence *ex) const
 			if(airplane->IsAlive()==YSTRUE &&
 			   airplane->Prop().GetAirTargetKey()==FsExistence::GetSearchKey(ex))
 			{
+				FSWEAPONTYPE selectedWeapon = airplane->Prop().GetWeaponOfChoice();
+				if (missileLockOnly == YSTRUE 
+					&& selectedWeapon != FSWEAPON_AIM9 
+					&& selectedWeapon != FSWEAPON_AIM9X 
+					&& selectedWeapon != FSWEAPON_AIM120)
+				{
+					return YSFALSE;
+				}
 				return YSTRUE;
 			}
 		}
@@ -9749,6 +9757,11 @@ YSBOOL FsSimulation::IsLockedOn(const FsExistence *ex) const
 YSBOOL FsSimulation::IsMissileChasing(FSWEAPONTYPE &wpnType,YsVec3 &wpnPos,const FsExistence *ex) const
 {
 	return bulletHolder.IsLockedOn(wpnType,wpnPos,ex);
+}
+
+FsWeapon* FsSimulation::GetLockedOn(const FsExistence* ex) const
+{
+	return bulletHolder.GetLockedOn(ex);
 }
 
 YSBOOL FsSimulation::AllRecordedFlightsAreOver(double &lastRecordTime)

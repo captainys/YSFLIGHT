@@ -526,9 +526,6 @@ void FsSubMenu::ProcessSubMenu(class FsSimulation *sim,class FsFlightConfig &cfg
 		case FSKEY_I:
 			YsFlip(cfg.showIAS);
 			break;
-		case FSKEY_R:
-			YsFlip(cfg.displayTextWarnings);
-			break;
 		}
 		break;
 	}
@@ -980,18 +977,6 @@ void FsSubMenu::Draw(const class FsSimulation *sim,class FsFlightConfig &cfg,int
 			break;
 		}
 		sy+=fsAsciiRenderer.GetFontHeight();
-
-		switch (cfg.displayTextWarnings)
-		{
-		case YSTRUE:
-			FsDrawString(sx, sy, "R: Display Text Warnings (Now: ON)", YsWhite());
-			break;
-		default:
-		case YSFALSE:
-			FsDrawString(sx, sy, "R: Display Text Warnings (Now: OFF)", YsWhite());
-			break;
-		}
-		sy += fsAsciiRenderer.GetFontHeight();
 
 		break;
 	case FSSUBMENU_GUNNER:

@@ -53,7 +53,6 @@ void FsFlightConfig::SetDefault(void)
 	useHudAlways=YSFALSE;
 
 	useSimpleHud=YSFALSE;
-	displayTextWarnings=YSFALSE;
 
 	neverDrawAirplaneContainer=YSFALSE;
 

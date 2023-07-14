@@ -8298,20 +8298,20 @@ void FsSimulation::SimDrawHud3d(const YsVec3 &fakeViewPos,const YsAtt3 &instView
 		{
 			if (bulletHolder.IsLockedOn(playerPlane) == YSTRUE)
 			{
-				hud2->DrawHUDText(0.0, 0.7, 0.05, 0.07, YsString("MISSILE"), YsRed());
+				hud2->DrawHUDText(0.0, 0.65, 0.025, 0.04, YsString("MISSILE"), YsRed());
 			}
 			else if (IsLockedOn(playerPlane) == YSTRUE)
 			{
-				hud2->DrawHUDText(0.0, 0.7, 0.05, 0.07, YsString("WARNING"), YsYellow());
+				hud2->DrawHUDText(0.0, 0.65, 0.025, 0.04, YsString("LOCK WARNING"), YsYellow());
 			}
 			else if (playerPlane->Prop().GetFlightState() == FSSTALL)
 			{
-				hud2->DrawHUDText(0.0, 0.7, 0.05, 0.07, YsString("STALL"), YsYellow());
+				hud2->DrawHUDText(0.0, 0.65, 0.025, 0.04, YsString("STALL"), YsYellow());
 			}
 
 			if (playerPlane->Prop().IsOutOfRunway() == YSTRUE)
 			{
-				hud2->DrawHUDText(0.0, 0.8, 0.05, 0.07, YsString("OVERRUN"), YsRed());
+				hud2->DrawHUDText(0.0, 0.65, 0.025, 0.04, YsString("OVERRUN"), YsRed());
 			}
 		}
 
